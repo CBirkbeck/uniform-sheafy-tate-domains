@@ -1,0 +1,87 @@
+diff --git a/ingest/tex2ptx.py b/ingest/tex2ptx.py
+index 03f93fc..8f4b528 100644
+--- a/ingest/tex2ptx.py
++++ b/ingest/tex2ptx.py
+@@ -64,6 +64,10 @@ def xml_escape(s: str) -> str:
+     return s.replace("&", "&amp;").replace("<", "&lt;")
+ 
+ 
++def xml_attr_escape(s: str) -> str:
++    return xml_escape(s).replace('"', "&quot;")
++
++
+ def find_env_end(text: str, start: int, env: str) -> int:
+     """Index just past \\end{env}, honoring nesting of the same env."""
+     depth = 1
+@@ -413,6 +417,37 @@ def convert_inline(s: str, refs: "RefMap") -> str:
+             out.append("<c>" + convert_inline(inner, refs) + "</c>")
+             i = j + 1
+             continue
++        m = re.match(r"\\href\{", s[i:])
++        if m:
++            url_end = match_brace(s, i + m.end() - 1)
++            text_start = url_end + 1
++            if text_start >= n or s[text_start] != "{":
++                raise ValueError(r"\href requires a second braced argument")
++            text_end = match_brace(s, text_start)
++            url = (s[i + m.end():url_end]
++                   .replace(r"\_", "_")
++                   .replace(r"\%", "%")
++                   .replace(r"\#", "#")
++                   .replace(r"\&", "&"))
++            text = s[text_start + 1:text_end]
++            out.append(
++                f'<url href="{xml_attr_escape(url)}">'
++                + convert_inline(text, refs) + "</url>")
++            i = text_end + 1
++            continue
++        m = re.match(r"\\url\{", s[i:])
++        if m:
++            url_end = match_brace(s, i + m.end() - 1)
++            url = (s[i + m.end():url_end]
++                   .replace(r"\_", "_")
++                   .replace(r"\%", "%")
++                   .replace(r"\#", "#")
++                   .replace(r"\&", "&"))
++            out.append(
++                f'<url href="{xml_attr_escape(url)}"><c>'
++                + xml_escape(url) + "</c></url>")
++            i = url_end + 1
++            continue
+         m = re.match(r"\\texorpdfstring\{", s[i:])
+         if m:
+             j = match_brace(s, i + m.end() - 1)
+diff --git a/tests/test_units.py b/tests/test_units.py
+index 3a542c6..db62279 100644
+--- a/tests/test_units.py
++++ b/tests/test_units.py
+@@ -186,6 +186,29 @@ def test_tex2ptx_rewrites_and_profile(tmp_path):
+     assert r.returncode == 1 and "unsupported numbering profile" in r.stderr
+ 
+ 
++def test_tex2ptx_href_and_url(tmp_path):
++    draft = tmp_path / "d.tex"
++    draft.write_text(
++        "\\documentclass{amsart}\n\\title{T}\\author{A}\n"
++        "\\begin{document}\n\\section{One}\\label{sec:one}\n"
++        "See \\href{https://example.test/a\\%20b?x=1\\&y=2}"
++        "{the \\emph{source}} and "
++        "\\url{https://example.test/file\\_name}.\n"
++        "\\end{document}\n")
++    out = tmp_path / "src"
++    r = subprocess.run(
++        [sys.executable, str(TOOL / "ingest" / "tex2ptx.py"), str(draft),
++         "--out", str(out),
++         "--numbering", str(tmp_path / "n.json")],
++        capture_output=True, text=True)
++    assert r.returncode == 0, r.stderr
++    body = (out / "sec-one.ptx").read_text()
++    assert ('<url href="https://example.test/a%20b?x=1&amp;y=2">'
++            'the <em>source</em></url>') in body
++    assert ('<url href="https://example.test/file_name">'
++            '<c>https://example.test/file_name</c></url>') in body
++
++
+ def test_tex2ptx_tolerates_missing_maps(tmp_path):
+     draft = tmp_path / "d.tex"
+     draft.write_text(

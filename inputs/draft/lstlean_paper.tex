@@ -1,0 +1,41 @@
+% Compact Lean language for the listings package, adapted from the
+% user-supplied lstlean.tex definition.
+\lstdefinelanguage{lean}{
+  morekeywords={import,namespace,section,end,open,variable,variables,
+    theorem,lemma,corollary,example,def,definition,structure,class,
+    instance,inductive,where,by,have,show,exact,apply,refine,
+    let,in,if,then,else,match,with,fun,forall,exists,noncomputable,
+    protected,private,local,attribute,set_option,universe,universes,
+    check},
+  morekeywords=[2]{Type,Prop},
+  sensitive=true,
+  morecomment=[l][\itshape\color{commentcolor}]{--},
+  morecomment=[s][\color{commentcolor}]{/-}{-/},
+  morestring=[b]",
+  keywordstyle=\color{keywordcolor},
+  keywordstyle=[2]\color{sortcolor},
+  identifierstyle=\color{black},
+  stringstyle=\color{symbolcolor},
+  showstringspaces=false,
+  keepspaces=true,
+  breaklines=true,
+  columns=fullflexible,
+  literate=
+    {¬}{{$\neg$}}1
+    {·}{{$\cdot$}}1
+    {ι}{{$\iota$}}1
+    {⁺}{{$^{+}$}}1
+    {₀}{{$_0$}}1
+    {ℕ}{{$\mathbb{N}$}}1
+    {ℝ}{{$\mathbb{R}$}}1
+    {→}{{$\to$}}1
+    {↥}{{$\uparrow$}}1
+    {∀}{{$\forall$}}1
+    {∃}{{$\exists$}}1
+    {∈}{{$\in$}}1
+    {∧}{{$\wedge$}}1
+    {≤}{{$\leq$}}1
+    {⊆}{{$\subseteq$}}1
+    {⋃}{{$\bigcup$}}1
+    {𝒪}{{$\mathcal O$}}1
+}

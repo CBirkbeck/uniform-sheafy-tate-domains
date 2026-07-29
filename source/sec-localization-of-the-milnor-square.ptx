@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-localization-of-the-milnor-square">
+  <title>Localization of the Milnor square</title>
+  <introduction>
+    <p>
+      We now prove that every rational localization preserves the defining pullback.  The argument is formulated entirely in terms of the chosen rings of definition.
+    </p>
+  </introduction>
+  <subsection xml:id="sec-localization-of-the-milnor-square-graph-koszul-complexes-over-affinoid">
+    <title>Graph Koszul complexes over affinoid algebras</title>
+    <p>
+      The following lemma will be used both at the noetherian comparison vertices and at the finite heads in <xref ref="sec-rationally-reduced"/>.  Let <m>E</m> be an affinoid <m>k</m>-algebra, choose a noetherian <m>\varpi</m>-adically complete ring of definition <m>E_0\subset E</m>, and let
+<m>f_1,\dots,f_m,g\in E_0</m> generate the unit ideal in <m>E</m>.  Put
+<me>P_E=E\langle T_1,\dots,T_m\rangle,
+  \qquad
+  P_{E,0}=E_0\langle T_1,\dots,T_m\rangle,</me>
+and set <m>r_i=gT_i-f_i</m>.
+    </p>
+    <lemma xml:id="lem-koszul">
+      <statement>
+        <p>
+          The Koszul complex <m>K_{P_E}(r_1,\dots,r_m)</m> is exact in positive degrees.  Every differential is continuous and strict onto its image, and every image is closed.  In particular, if
+<me>d_{1,E}:P_E^m\longrightarrow P_E,
+  \qquad
+  J_E=\im(d_{1,E}),</me>
+then <m>J_E</m> is closed.  Moreover, there exists <m>h_E\geq 0</m> such that
+          <men xml:id="eq-ideal-denominators">\varpi^{h_E}(J_E\cap P_{E,0})
+  \subset d_{1,E}(P_{E,0}^m).</men>
+          There also exists <m>z_E\geq 0</m> such that
+          <men xml:id="eq-syzygy-denominators">\varpi^{z_E}\bigl(\ker(d_{1,E})\cap P_{E,0}^m\bigr)
+  \subset d_{2,E}\bigl(\textstyle\bigwedge^2 P_{E,0}^m\bigr).</men>
+          Here positive-degree exactness means
+<m>\operatorname{Exact}(d_{q+1,E},d_{q,E})</m> for every <m>q\geq0</m>, equivalently exactness at the term of exterior degree <m>q+1</m>.  It does not assert exactness at exterior degree zero and does not assert that <m>d_{1,E}</m> is surjective onto <m>P_E</m>.  For <m>m=0</m>, the positive-degree assertion is vacuous.
+        </p>
+      </statement>
+      <lean project="AdicSpaces" ref="FiniteJet.GraphKoszul.koszulGraph_restricted_exact">Lean (koszulGraph_restricted_exact)</lean>
+      <lean project="AdicSpaces" ref="FiniteJet.GraphKoszul.koszulDifferential_isStrict">Lean (koszulDifferential_isStrict)</lean>
+      <lean project="AdicSpaces" ref="FiniteJet.GraphKoszul.isClosed_range_koszulDifferential">Lean (isClosed_range_koszulDifferential)</lean>
+      <lean project="AdicSpaces" ref="FiniteJet.GraphKoszul.pow_smul_graphIdeal_inter_unitBall_subset">Lean (pow_smul_graphIdeal_inter_unitBall_subset)</lean>
+      <lean project="AdicSpaces" ref="FiniteJet.GraphKoszul.pow_smul_ker_d1_inter_subset">Lean (pow_smul_ker_d1_inter_subset)</lean>
+      <proof>
+        <p>
+          First work over <m>E[T_1,\dots,T_m]</m>.  Let <m>\mathfrak p</m> be a prime which does not contain all the <m>r_i</m>, and choose <m>j</m> with <m>r_j\notin\mathfrak p</m>.  Then <m>r_j</m> is a unit after localization at <m>\mathfrak p</m>.  If <m>e_1,\dots,e_m</m> is the standard basis used to form the Koszul complex and <m>d</m> is the Koszul differential, define a degree-<m>1</m> homotopy by
+<me>h(\omega)=r_j^{-1}e_j\wedge\omega.</me>
+The standard Koszul identity
+<me>d(e_j\wedge\omega)=r_j\omega-e_j\wedge d(\omega)</me>
+gives
+<me>dh+hd=\operatorname{id}.</me>
+Thus the identity chain map is chain-homotopic to the zero map; this is what it means here for the localized complex to be <em>contractible</em>.  In particular it is exact: if <m>d\omega=0</m>, then
+<me>\omega=(dh+hd)(\omega)=d(h\omega),</me>
+so every cycle is a boundary.  Now let <m>\mathfrak p</m> contain every <m>r_i</m>, and choose
+<m>1=a_0g+\sum_i a_if_i</m>.  In the local ring,
+<me>g\left(a_0+\sum_i a_iT_i\right)=1+\sum_i a_ir_i.</me>
+The right-hand side is a unit, so <m>g</m> is a unit.  After translating <m>T_i</m> by <m>f_i/g</m>, the sequence <m>(r_i)</m> differs by units from the coordinate sequence <m>(T_i)</m>, which is regular over an arbitrary coefficient ring.  Hence the polynomial Koszul complex is exact in positive degrees.
+        </p>
+        <p>
+          The ring <m>E_0</m> is noetherian and <m>\varpi</m>-adically complete.  More precisely, the canonical map
+<me>E[T_1,\ldots,T_m]=E_0[T_1,\ldots,T_m][1/\varpi]
+  \longrightarrow
+  E_0\langle T_1,\ldots,T_m\rangle[1/\varpi]=P_E</me>
+is flat: <m>E_0[T_1,\ldots,T_m]</m> is noetherian, its <m>\varpi</m>-adic completion
+<m>E_0\langle T_1,\ldots,T_m\rangle</m> is flat over it by noetherian adic-completion flatness <xref ref="bib-Stacks" detail="Tag 00MB"/>, and localization at <m>\varpi</m> preserves flatness.  Flat base change therefore carries the positive-degree polynomial Koszul exactness to <m>P_E</m>.
+        </p>
+        <p>
+          Finally, <m>P_E</m> is a complete noetherian Tate ring.  Huber's finite-module results imply that homomorphisms between finite <m>P_E</m>-modules are strict and that their images are closed <xref ref="bib-Huber94" detail="Lemmas 2.3 and 2.4"/>.  Applying the bounded-denominator criterion <xref ref="eq-strictness"/> to <m>d_{1,E}</m> and to <m>d_{2,E}</m> onto <m>\ker(d_{1,E})</m> gives <xref ref="eq-ideal-denominators"/> and <xref ref="eq-syzygy-denominators"/>.
+        </p>
+      </proof>
+    </lemma>
+  </subsection>
+  <subsection xml:id="sec-localization-of-the-milnor-square-the-graph-ideals-form-a">
+    <title>The graph ideals form a pullback</title>
+    <p>
+      Fix a rational datum
+<me>\alpha=(f_1,\dots,f_m;g)</me>
+in <m>A</m>.  Multiplying all entries by a common power of <m>\varpi</m>, we assume
+<m>f_1,\dots,f_m,g\in A_0</m>.  For <m>E\in\{A,B,C,D\}</m> use the notation <m>P_E</m>, <m>P_{E,0}</m>, and <m>d_{1,E}</m> introduced above, and abbreviate the graph ideal <m>J_{E,\alpha}</m> to <m>J_E</m>.
+    </p>
+    <p>
+      The exact integral row <xref ref="eq-integral-milnor"/> and the coefficientwise section of
+<m>C_0\to D_0</m> give an exact sequence
+      <men xml:id="eq-tate-ambient">0\longrightarrow P_{A,0}\longrightarrow
+  P_{B,0}\oplus P_{C,0}\longrightarrow P_{D,0}\longrightarrow 0.</men>
+      The map <m>P_{C,0}\to P_{D,0}</m> is surjective, as are the induced maps on finite free modules and their exterior powers.  Exactness is coefficientwise: a compatible restricted coefficient pair lifts to <m>A_0</m>, and the lifted coefficients still tend to zero <m>\varpi</m>-adically because <xref ref="eq-integral-milnor"/> remains exact after multiplication by every power of <m>\varpi</m>.
+    </p>
+    <lemma xml:id="lem-graph-pullback">
+      <statement>
+        <p>
+          The graph ideal <m>J_A</m> is closed in <m>P_A</m>, and the canonical map
+<me>J_A\longrightarrow J_B\times_{J_D}J_C</me>
+is an isomorphism.  Moreover,
+          <men xml:id="eq-ideal-row">0\longrightarrow J_A\longrightarrow J_B\oplus J_C
+  \longrightarrow J_D\longrightarrow 0</men>
+          is strict exact.
+        </p>
+      </statement>
+      <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.ideal_pullback_controlled">Lean (ideal_pullback_controlled)</lean>
+      <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.isClosed_IA">Lean (isClosed_IA)</lean>
+      <proof>
+        <p>
+          We first prove the algebraic pullback statement.  Let
+<m>(x_B,x_C)\in J_B\times_{J_D}J_C</m>.  Choose <m>u_B\in P_B^m</m> and
+<m>u_C\in P_C^m</m> with
+<m>d_{1,B}(u_B)=x_B</m> and <m>d_{1,C}(u_C)=x_C</m>.  Their difference in <m>P_D^m</m> lies in
+<m>\ker(d_{1,D})</m>.  By <xref ref="lem-koszul"/>, it is <m>d_{2,D}(v_D)</m> for some
+<m>v_D\in\bigwedge^2P_D^m</m>.  Lift <m>v_D</m> to
+<m>v_C\in\bigwedge^2P_C^m</m> and replace <m>u_C</m> by <m>u_C+d_{2,C}(v_C)</m>.  The new pair of coefficient vectors has the same image in <m>P_D^m</m>, hence comes from
+<m>u_A\in P_A^m</m> by <xref ref="eq-tate-ambient"/>.  Then <m>d_{1,A}(u_A)</m> maps to
+<m>(x_B,x_C)</m>.  This proves the asserted algebraic isomorphism.
+        </p>
+        <p>
+          We next verify bounded denominators.  Choose exponents <m>h_B,h_C,z_D</m> as in
+<xref ref="lem-koszul"/>, and put <m>h=\max\{h_B,h_C\}</m>.  Suppose that
+<m>(x_B,x_C)</m> belongs to the pullback and lies in <m>P_{B,0}\oplus P_{C,0}</m>.  Choose
+<m>u_B\in P_{B,0}^m</m> and <m>u_C\in P_{C,0}^m</m> such that
+<me>d_{1,B}(u_B)=\varpi^h x_B,
+  \qquad
+  d_{1,C}(u_C)=\varpi^h x_C.</me>
+The difference <m>s=(u_B)_D-(u_C)_D</m> belongs to
+<m>\ker(d_{1,D})\cap P_{D,0}^m</m>.  By <xref ref="eq-syzygy-denominators"/>, choose
+<m>v_D\in\bigwedge^2P_{D,0}^m</m> with
+<m>d_{2,D}(v_D)=\varpi^{z_D}s</m>.  Lift <m>v_D</m> to
+<m>v_C\in\bigwedge^2P_{C,0}^m</m> and set
+<me>u_C'=\varpi^{z_D}u_C+d_{2,C}(v_C).</me>
+Then <m>(u_C')_D=\varpi^{z_D}(u_B)_D</m> and
+<m>d_{1,C}(u_C')=\varpi^{h+z_D}x_C</m>.  By <xref ref="eq-tate-ambient"/>, the compatible integral pair
+<m>(\varpi^{z_D}u_B,u_C')</m> comes from <m>u_A\in P_{A,0}^m</m>.  Thus
+          <men xml:id="eq-JA-strict">\varpi^{h+z_D}\bigl((J_B\times_{J_D}J_C)
+  \cap(P_{B,0}\oplus P_{C,0})\bigr)
+  \subset d_{1,A}(P_{A,0}^m).</men>
+          This proves strictness of the pullback identification.  The fiber product <m>J_B\times_{J_D}J_C</m> is closed in
+<m>P_B\oplus P_C</m>, because <m>J_B</m> and <m>J_C</m> are closed and the matching condition is closed.  The integral row <xref ref="eq-tate-ambient"/> identifies <m>P_A</m> strictly with the kernel of <m>P_B\oplus P_C\to P_D</m>.  Together with <xref ref="eq-JA-strict"/>, this shows that <m>J_A</m> is closed in <m>P_A</m>.
+        </p>
+        <p>
+          Finally, the map <m>J_B\oplus J_C\to J_D</m> is surjective: lift a coefficient vector in
+<m>P_D^m</m> to <m>P_C^m</m> and apply <m>d_1</m>.  If the element of <m>J_D</m> is integral, then
+<xref ref="eq-ideal-denominators"/> for <m>E=D</m> shows that a fixed power of <m>\varpi</m> has an integral coefficient vector, which can be lifted to <m>P_{C,0}^m</m>.  Thus this surjection is strict.  Together with <xref ref="eq-JA-strict"/>, this proves strict exactness of <xref ref="eq-ideal-row"/>.
+        </p>
+      </proof>
+    </lemma>
+    <proposition xml:id="prop-localized-milnor">
+      <statement>
+        <p>
+          For every rational datum <m>\alpha</m> in <m>A</m>, the canonical sequence
+          <men xml:id="eq-localized-row">0\longrightarrow A_\alpha\longrightarrow
+  B_\alpha\oplus C_\alpha\longrightarrow D_\alpha\longrightarrow 0</men>
+          is strict exact, and <m>C_\alpha\to D_\alpha</m> is a strict surjection.  Equivalently,
+<me>A_\alpha\cong B_\alpha\times_{D_\alpha}C_\alpha.</me>
+These identifications are natural under rational refinement.
+        </p>
+      </statement>
+      <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.loc_row_exact">Lean (loc_row_exact)</lean>
+      <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.loc_pair_isEmbedding">Lean (loc_pair_isEmbedding)</lean>
+      <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.locRhoC_surjective">Lean (locRhoC_surjective)</lean>
+      <proof>
+        <p>
+          By <xref ref="lem-graph-pullback"/>, all four graph ideals are closed.  Hence the graph model
+<xref ref="eq-graph-model"/> gives
+<me>E_\alpha=P_E/J_E
+  \qquad(E=A,B,C,D).</me>
+The two exact rows <xref ref="eq-tate-ambient"/> and <xref ref="eq-ideal-row"/> give algebraic exactness of <xref ref="eq-localized-row"/>.
+        </p>
+        <p>
+          Let <m>E_{\alpha,0}</m> be the image of <m>P_{E,0}</m> in <m>E_\alpha</m>; this is a ring of definition.  Since <m>P_{C,0}\to P_{D,0}</m> is surjective, so is
+<m>C_{\alpha,0}\to D_{\alpha,0}</m>.  Thus <m>C_\alpha\to D_\alpha</m> is a strict surjection.
+        </p>
+        <p>
+          It remains to check strictness at the left.  Let <m>x\in A_\alpha</m> have images in
+<m>B_{\alpha,0}</m> and <m>C_{\alpha,0}</m>.  Choose representatives
+<m>b_0\in P_{B,0}</m> and <m>c_0\in P_{C,0}</m>.  Their difference
+<me>\delta=(b_0)_D-(c_0)_D</me>
+belongs to <m>J_D\cap P_{D,0}</m>.  Choose <m>h_D</m> as in
+<xref ref="eq-ideal-denominators"/>.  There is <m>u_D\in P_{D,0}^m</m> with
+<m>d_{1,D}(u_D)=\varpi^{h_D}\delta</m>.  Lift <m>u_D</m> to
+<m>u_C\in P_{C,0}^m</m>.  Then
+<me>\left(\varpi^{h_D}b_0,
+  \varpi^{h_D}c_0+d_{1,C}(u_C)\right)</me>
+is a compatible pair in <m>P_{B,0}\oplus P_{C,0}</m>, so it comes from
+<m>P_{A,0}</m>.  Its class in <m>A_\alpha</m> is <m>\varpi^{h_D}x</m>.  Therefore
+<me>\varpi^{h_D}\Bigl(A_\alpha\cap
+  (B_{\alpha,0}\oplus C_{\alpha,0})\Bigr)
+  \subset A_{\alpha,0},</me>
+which is the bounded-denominator criterion for strictness.
+        </p>
+        <p>
+          All maps used above are induced by the original coefficient maps and the universal property of rational localization.  Huber's presentation independence and transitivity therefore make the pullback identifications natural under rational refinement.
+        </p>
+      </proof>
+    </proposition>
+  </subsection>
+</section>

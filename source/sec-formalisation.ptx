@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appendix xml:id="sec-formalisation">
+  <title>Lean formalisation and verification</title>
+  <introduction>
+    <p>
+      This appendix concerns the finite-jet construction of <xref ref="thm-main"/>; the
+weighted-parity construction of <xref ref="sec-rationally-reduced"/> has not yet been
+formalised.  Rather than reproduce the proofs, we record the three definitions
+which are most useful for comparing the formal statement with the mathematics in
+the paper.  The complete development is pinned to
+<url href="https://github.com/CBirkbeck/AINTLIB/commit/b007a4f3d4226f00a684b402715aa542e2f0bcdc">commit
+<c>b007a4f3d</c></url> of AINTLIB.
+    </p>
+    <remark xml:id="rem-lean-publication">
+      <title>Draft reproducibility note</title>
+      <statement>
+        <p>
+          The commit used for this draft exists in the local AINTLIB repository, but is not
+currently reachable from the public GitHub repository.  Thus the source
+hyperlinks in this appendix are publication targets, rather than links which can
+yet be followed.  The commit should be restored under a permanent branch or tag
+before the paper is released.
+        </p>
+      </statement>
+    </remark>
+    <p>
+      The audit was run with Lean <c>4.33.0-rc1</c> and mathlib commit
+<c>fd1d54bc</c>.  It built all <m>24</m> targeted
+modules and the <m>3307</m>-job umbrella target, found no <c>sorry</c> or
+<c>admit</c> in the finite-jet development, and checked the axioms of the
+headline declarations.  The
+<url href="https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/.mathlib-quality/fjp-cdvf/final-report.md">full
+audit report</url> records the commands and their output.
+    </p>
+  </introduction>
+  <subsection xml:id="sec-formalisation-sheafiness">
+    <title>Sheafiness</title>
+    <p>
+      For an open subset <m>V\subseteq\Spa(A,A^+)</m>, the type
+<c>limitSections V</c> is the projective limit of the sections over the
+rational subdomains contained in <m>V</m>.  The all-open sheaf condition is
+formalised as follows; the source is
+<url href="https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/Adic%20spaces/SheafyPair.lean"><c>SheafyPair.lean</c></url>.
+    </p>
+    <pre>
+    structure IsLimitSheaf (A : Type u) [CommRing A] [TopologicalSpace A]
+    [IsTopologicalRing A] [PlusSubring A] [IsHuberRing A]
+    [HasLocLiftPowerBounded A] : Prop where
+  injective : ∀ {V : Opens ↥(Spa A A⁺)} {ι : Type u}
+    {U : ι → Opens ↥(Spa A A⁺)}
+    (hle : ∀ i, U i ≤ V)
+    (_ : (V : Set ↥(Spa A A⁺)) ⊆ ⋃ i, (U i : Set ↥(Spa A A⁺)))
+    {x y : ↥(limitSections V)},
+    (∀ i, limitRestrict (hle i) x = limitRestrict (hle i) y) → x = y
+  glue : ∀ {V : Opens ↥(Spa A A⁺)} {ι : Type u}
+    {U : ι → Opens ↥(Spa A A⁺)}
+    (hle : ∀ i, U i ≤ V)
+    (_ : (V : Set ↥(Spa A A⁺)) ⊆ ⋃ i, (U i : Set ↥(Spa A A⁺)))
+    (s : ∀ i, ↥(limitSections (U i))),
+    (∀ i j,
+      limitRestrict (inf_le_left (a := U i) (b := U j)) (s i) =
+      limitRestrict (inf_le_right (a := U i) (b := U j)) (s j)) →
+    ∃ x : ↥(limitSections V), ∀ i, limitRestrict (hle i) x = s i
+  isEmbedding : ∀ {V : Opens ↥(Spa A A⁺)} {ι : Type u}
+    {U : ι → Opens ↥(Spa A A⁺)}
+    (hle : ∀ i, U i ≤ V)
+    (_ : (V : Set ↥(Spa A A⁺)) ⊆ ⋃ i, (U i : Set ↥(Spa A A⁺))),
+    Topology.IsEmbedding (limitRestrictProd hle)
+    </pre>
+    <p>
+      The first field is the usual separation axiom: two sections which agree on a
+cover are equal.  The second is the gluing axiom, with compatibility expressed
+by restricting to <m>U_i\cap U_j</m>.  These are precisely the two algebraic parts
+of the ordinary sheaf condition.  The final field remembers that we are
+working with topological rings.  It says that restriction to the product over
+the cover is a topological embedding; together with the first two fields this
+identifies the sections on <m>V</m>, with their projective-limit topology, with the
+matching-family equaliser as a topological ring.
+    </p>
+    <p>
+      For a complete Tate ring, the user-facing definition installs a chosen valid
+ring of integral elements and invokes this all-open condition.  The ring-level
+definition then quantifies over both the choice of completion and the plus
+ring.  These definitions are in
+<url href="https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/Adic%20spaces/SheafyRing.lean"><c>SheafyRing.lean</c></url>.
+    </p>
+    <pre>
+    def IsSheafyFor (Aplus : RingOfIntegralElements A) : Prop :=
+  letI := Aplus.toPlusSubring
+  haveI : IsRingOfIntegralElements (A⁺ : Subring A) := Aplus.2
+  haveI : HasLocLiftPowerBounded A := hasLocLiftPowerBounded_faithful
+  IsLimitSheaf A
+
+def IsSheafyComplete : Prop :=
+  ∀ Aplus : RingOfIntegralElements A, IsSheafyFor A Aplus
+
+def IsSheafyTateRing : Prop :=
+  ∀ (P : PairOfDefinition A)
+    (Bplus : RingOfIntegralElements (CompletionModel A P)),
+    IsSheafyFor (CompletionModel A P) Bplus
+    </pre>
+    <p>
+      Thus <c>IsSheafyFor A Aplus</c> is the formal counterpart of saying that the
+Huber pair <m>(A,A^+)</m> is sheafy.  The two local instances in its definition
+contain the bookkeeping needed to construct the structure presheaf; they do
+not add a mathematical hypothesis.  The universal quantifiers in
+<c>IsSheafyTateRing</c> make the ring-level notion independent of the chosen
+pair of definition and ring of integral elements.
+    </p>
+  </subsection>
+  <subsection xml:id="sec-formalisation-strong-noetherianity">
+    <title>Strong noetherianity</title>
+    <p>
+      The formal definition first constructs the restricted power-series ring.  A
+coefficient function tends to zero along the cofinite filter exactly when,
+for every neighbourhood of zero, all but finitely many coefficients belong to
+that neighbourhood.  The definitions below are from
+<url href="https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/Adic%20spaces/RestrictedPowerSeries.lean"><c>RestrictedPowerSeries.lean</c></url>.
+    </p>
+    <pre>
+    def MvPowerSeries.IsRestricted {k : ℕ} {A : Type*}
+    [CommRing A] [TopologicalSpace A]
+    (f : MvPowerSeries (Fin k) A) : Prop :=
+  Tendsto (fun s : Fin k →₀ ℕ => MvPowerSeries.coeff s f)
+    cofinite (nhds 0)
+
+class IsStronglyNoetherian (A : Type*) [CommRing A]
+    [TopologicalSpace A] [NonarchimedeanRing A] : Prop where
+  isNoetherianRing_restricted : ∀ k : ℕ,
+    IsNoetherianRing (restrictedMvPowerSeriesSubring k A)
+    </pre>
+    <p>
+      The subring <c>restrictedMvPowerSeriesSubring k A</c> therefore consists of
+the usual restricted series in <m>k</m> variables, and is the formal model of
+<m>A\langle T_1,\ldots,T_k\rangle</m>.  Requiring this ring to be noetherian for
+every <m>k</m> is exactly the standard definition of strong noetherianity used in
+the paper.  The use of multivariate power series rather than an iterated
+one-variable construction is only an implementation choice.
+    </p>
+  </subsection>
+  <subsection xml:id="sec-formalisation-the-finite-jet-example">
+    <title>The finite-jet example</title>
+    <p>
+      We finally record the definition of the example itself.  In the following
+code, <c>PowerSeries.Restricted R 1</c> is the radius-one Tate algebra in one
+variable over <m>R</m>, <c>RestrictedLaurent K</c> is
+<m>K\langle W,W^{-1}\rangle</m>, and <c>DualNumber R</c> is <m>R[Q]/(Q^2)</m>.
+The source is
+<url href="https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/Adic%20spaces/FJP/Over/JetRings.lean"><c>FJP/Over/JetRings.lean</c></url>.
+    </p>
+    <pre>
+    abbrev L : Type u := RestrictedLaurent K
+
+abbrev JetC : Type u := PowerSeries.Restricted (L K) (1 : ℝ)
+
+abbrev JetB : Type u :=
+  DualNumber (PowerSeries.Restricted K (1 : ℝ))
+
+abbrev JetD : Type u := DualNumber (L K)
+
+noncomputable def jetSupport : Subring (JetC K) where
+  carrier := {f |
+    qCoeff K 0 f ∈ nonnegSubring K ∧
+    qCoeff K 1 f ∈ nonnegSubring K}
+  zero_mem' := by
+    constructor &lt;;> rw [qCoeff_zero] &lt;;> exact zero_mem _
+  one_mem' := by
+    constructor &lt;;> rw [qCoeff_one]
+    · rw [if_pos rfl]; exact one_mem _
+    · rw [if_neg one_ne_zero]; exact zero_mem _
+  add_mem' := fun {f g} hf hg => by
+    constructor &lt;;> rw [qCoeff_add]
+    · exact add_mem hf.1 hg.1
+    · exact add_mem hf.2 hg.2
+  neg_mem' := fun {f} hf => by
+    constructor &lt;;> rw [qCoeff_neg]
+    · exact neg_mem hf.1
+    · exact neg_mem hf.2
+  mul_mem' := fun {f g} hf hg => by
+    constructor
+    · rw [qCoeff_zero_mul]
+      exact mul_mem hf.1 hg.1
+    · rw [qCoeff_one_mul]
+      exact add_mem (mul_mem hf.1 hg.2) (mul_mem hf.2 hg.1)
+
+abbrev JetA : Type u := ↥(jetSupport K)
+    </pre>
+    <p>
+      The predicate <c>nonnegSubring K</c> cuts out
+<m>K\langle W\rangle</m> inside <m>K\langle W,W^{-1}\rangle</m>.  Consequently the
+carrier condition says that the coefficients of <m>Q^0</m> and <m>Q^1</m> have no
+negative powers of <m>W</m>, while the coefficients of <m>Q^n</m> for <m>n\geq2</m> are
+unrestricted.  In other words, <c>JetA K</c> is precisely
+<me>\left\{f_0(W)+Qf_1(W)+Q^2h(W,W^{-1},Q)\ \middle|\
+    \substack{f_0,f_1\in K\langle W\rangle\\
+              h\in L\langle Q\rangle}\right\},</me>
+which is the support description of <m>A</m> used in <xref ref="eq-support-A0"/> after
+inverting <m>\varpi</m>.  The closure fields in <c>jetSupport</c> are the direct
+formal check that this support condition defines a subring.
+    </p>
+    <p>
+      The file also constructs the four maps in the Milnor square and proves
+<c>milnorRow_exact</c>: every compatible pair in
+<c>JetB K</c> and <c>JetC K</c> comes from a unique element of
+<c>JetA K</c>.  Thus the concrete support subring is proved to realise the
+pullback <m>B\times_D C</m>; Lean does not merely assume that identification.
+The public endpoints, collected in
+<url href="https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/Adic%20spaces/FJP/Over/SheafyEndpoints.lean"><c>SheafyEndpoints</c></url>,
+include the following.
+    </p>
+    <pre>
+    theorem finiteJet_isDomain : IsDomain (JetA K) :=
+  inferInstance
+
+theorem finiteJet_not_noetherian :
+    ¬ IsNoetherianRing (JetA K) :=
+  not_isNoetherianRing_JetA K
+
+theorem finiteJet_isUniform_of_dvr
+    [IsDiscreteValuationRing 𝒪[K]] :
+    TopologicalRing.IsUniform (JetA K) :=
+  finiteJet_isUniform K (Uniformizer.ofDVR K)
+
+theorem finiteJet_not_stablyUniform_of_dvr
+    [IsDiscreteValuationRing 𝒪[K]] :
+    ¬ TopologicalRing.IsStablyUniform (JetA K) :=
+  finiteJet_not_stablyUniform K (Uniformizer.ofDVR K)
+
+theorem finiteJet_isSheafyTateRing_of_dvr
+    [IsDiscreteValuationRing 𝒪[K]] :
+    IsSheafyTateRing (JetA K) :=
+  finiteJet_isSheafyTateRing K (Uniformizer.ofDVR K)
+    </pre>
+    <p>
+      Here <m>K</m> is any complete nontrivially normed ultrametric field for which
+<m>\mathcal O[K]=\{x:\lVert x\rVert\leq1\}</m> is a discrete valuation ring.  No
+local compactness, finiteness of the residue field, characteristic, or
+perfection assumption is used.  The final declaration applies the preceding
+definition of sheafiness to the finite-jet ring; the development also proves,
+for every valid plus ring, the corresponding categorical sheaf statement for
+the genuine all-open structure presheaf with its projective-limit topology.
+    </p>
+    <p>
+      The graph<ndash/>Koszul argument of <xref ref="lem-koszul"/>, the rational-chart
+calculation, and the transfer of sheafiness through the concrete Milnor square
+are too large to reproduce usefully here.  They are contained respectively in
+<url href="https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/Adic%20spaces/FJP/KoszulRestrictedExactness.lean">the
+restricted-exactness file</url>
+and
+<url href="https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/Adic%20spaces/FJP/KoszulStrictClosed.lean">the
+strictness and closed-image file</url>,
+<url href="https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/Adic%20spaces/FJP/Over/Chart.lean"><c>FJP/Over/Chart.lean</c></url>,
+and
+<url href="https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/Adic%20spaces/FJP/Over/SheafTransfer.lean"><c>FJP/Over/SheafTransfer.lean</c></url>.
+    </p>
+  </subsection>
+</appendix>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-the-global-ring">
+  <title>The global ring</title>
+  <p>
+    In this section we identify the finite-jet algebra with a concrete support
+subring and prove that it is a complete uniform domain.
+  </p>
+  <p>
+    Set
+<me>L=L_0[1/\varpi],\quad
+  B=B_0[1/\varpi],\quad
+  C=C_0[1/\varpi],\quad
+  D=D_0[1/\varpi].</me>
+The map <m>C_0\to D_0</m> has a continuous <m>k^\circ</m>-linear section given by truncation in the <m>Q</m>-variable:
+<me>f_0+Qf_1\longmapsto f_0+Qf_1.</me>
+Consequently
+    <men xml:id="eq-integral-milnor">0\longrightarrow A_0\longrightarrow B_0\oplus C_0
+  \longrightarrow D_0\longrightarrow 0</men>
+    is exact, and <m>A_0</m> is <m>\varpi</m>-adically complete.  After inverting <m>\varpi</m> we obtain a strict Milnor square
+<me>\begin{matrix}
+A&amp;\longrightarrow&amp;C\\
+\downarrow&amp;&amp;\downarrow\\
+B&amp;\longrightarrow&amp;D.
+\end{matrix}</me>
+In fact, the chosen rings of definition already make the integral row exact, so no powers of <m>\varpi</m> are lost in the defining square.
+  </p>
+  <p>
+    The map <m>B_0\to D_0</m> is injective.  Projection to <m>C_0</m> therefore identifies <m>A_0</m> with the subring
+    <men xml:id="eq-support-A0">A_0=
+  \left\{
+  f_0(W)+Qf_1(W)+Q^2h(W,W^{-1},Q):
+  f_0,f_1\in k^\circ\langle W\rangle,
+  \ h\in C_0
+  \right\}.</men>
+    Equivalently, <m>A_0</m> consists of the restricted series
+    <men xml:id="eq-monomial-support">\sum_{(a,b)\in S}c_{a,b}W^aQ^b,
+  \qquad
+  S=\{(a,b)\in\mathbf Z\times\mathbf N: b\leq 1\Rightarrow a\geq 0\},</men>
+    with <m>c_{a,b}\in k^\circ</m>.  Here restricted means that, for every <m>n</m>, only finitely many coefficients are nonzero modulo <m>\varpi^n</m>.  The set <m>S</m> is closed under addition, so this is a subring of <m>C_0</m>.  The same description with coefficients in <m>k</m> gives <m>A\subset C</m>.
+  </p>
+  <p>
+    Write
+<me>\iota_B:A\to B,\qquad \iota_C:A\to C,\qquad
+  \rho_B:B\to D,\qquad \rho_C:C\to D</me>
+for the structural maps.  Although all topologies in this paper are specified by rings of definition, we will use once the coefficientwise Gauss norms whose unit balls are the displayed rings of definition.  Give <m>A</m> the restricted Gauss norm from <m>C</m>.  For
+<m>a=f_0+Qf_1+Q^2h</m>, the coefficient formulas give
+    <men xml:id="eq-structural-map-bounds">\lVert\iota_C(a)\rVert_C=\lVert a\rVert_A,
+  \qquad
+  \lVert\iota_B(a)\rVert_B\leq \lVert a\rVert_A,
+  \qquad
+  \lVert\rho_B(b)\rVert_D\leq\lVert b\rVert_B,
+  \qquad
+  \lVert\rho_C(c)\rVert_D\leq\lVert c\rVert_C.</men>
+    Thus every structural map is norm-nonincreasing.  These estimates will be used only to verify preservation of power-bounded elements in <xref ref="thm-sheafy"/>; they are not being used as an alternative definition of the topology.
+  </p>
+  <proposition xml:id="prop-uniform-domain">
+    <statement>
+      <p>
+        The ring <m>A</m> is a complete uniform Tate <m>k</m>-algebra and an integral domain.  Moreover,
+<me>A^\circ=A_0.</me>
+      </p>
+    </statement>
+    <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_isUniform_of_dvr">Lean (finiteJet_isUniform_of_dvr)</lean>
+    <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_isDomain">Lean (finiteJet_isDomain)</lean>
+    <proof>
+      <p>
+        For <m>0\neq c\in C</m>, define
+<me>\nu(c)=\max\{n\in\mathbf Z:c\in\varpi^nC_0\}.</me>
+This maximum exists because <m>C_0</m> is <m>\varpi</m>-adically separated and <m>C=C_0[1/\varpi]</m>.  We claim that
+        <men xml:id="eq-additive-order">\nu(cc')=\nu(c)+\nu(c')
+  \qquad (c,c'\neq 0).</men>
+        After multiplying <m>c</m> and <m>c'</m> by suitable powers of <m>\varpi</m>, it is enough to treat the case
+<m>c,c'\in C_0\setminus\varpi C_0</m>.  Their reductions are nonzero elements of
+<me>C_0/\varpi C_0\cong\widetilde{k}[W,W^{-1},Q].</me>
+This is a domain, so the product of the reductions is nonzero.  This proves
+<xref ref="eq-additive-order"/>; in particular, <m>C</m> is a domain.
+      </p>
+      <p>
+        The support description gives
+<me>A_0=A\cap C_0.</me>
+Every element of <m>A_0</m> is power-bounded because <m>A_0</m> is a subring.  Conversely, let <m>a\in A\setminus A_0</m>.  Then <m>\nu(a)&lt;0</m>, and by <xref ref="eq-additive-order"/>,
+<m>\nu(a^n)=n\nu(a)</m>.  Hence the powers of <m>a</m> cannot all lie in any fixed
+<m>\varpi^{-r}A_0</m>.  Thus <m>a</m> is not power-bounded.  It follows that <m>A^\circ=A_0</m>, so <m>A</m> is uniform.  Completeness follows from the completeness of <m>A_0</m>, and <m>A</m> is a domain because it is a subring of <m>C</m>.
+      </p>
+    </proof>
+  </proposition>
+</section>

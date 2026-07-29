@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-sheafiness">
+  <title>Sheafiness</title>
+  <p>
+    We isolate the elementary descent statement used to transfer sheafiness from the three comparison rings.
+  </p>
+  <lemma xml:id="lem-sheaf-transfer">
+    <title>Sheaf transfer</title>
+    <statement>
+      <p>
+        Let
+<me>\begin{matrix}
+R&amp;\longrightarrow&amp;C\\
+\downarrow&amp;&amp;\downarrow\\
+B&amp;\longrightarrow&amp;D
+\end{matrix}</me>
+be a commutative square of complete Tate Huber pairs.  For <m>E\in\{B,C,D\}</m>, write
+<me>p_E:X_E=\Spa(E,E^+)\longrightarrow X_R=\Spa(R,R^+)</me>
+for the induced map.  For a rational domain <m>U\subset X_R</m>, put
+<m>U_E=p_E^{-1}(U)</m>, and set <m>U_R=U</m>.  Suppose that for every rational domain <m>U\subset X_R</m> the section rings satisfy a natural strict exact sequence
+        <men xml:id="eq-sheaf-transfer-row">0\longrightarrow \cO_R(U)\longrightarrow
+  \cO_B(U_B)\oplus\cO_C(U_C)
+  \longrightarrow\cO_D(U_D)\longrightarrow 0.</men>
+        If the Huber pairs associated with <m>B,C,D</m> are sheafy as complete topological rings, then the Huber pair associated with <m>R</m> is sheafy as a complete topological ring.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        We first work on the rational basis.  Let
+<m>U=\bigcup_{i=1}^nU_i</m> be a finite rational covering.  For <m>E\in\{R,B,C,D\}</m>, let
+<me>r_E:\cO_E(U_E)\longrightarrow\prod_i\cO_E((U_i)_E)</me>
+denote product restriction, using <m>U_R=U</m> and <m>(U_i)_R=U_i</m> as specified in the statement.  The first map in
+<xref ref="eq-sheaf-transfer-row"/> is a topological embedding, and the same is true after replacing <m>U</m> by any <m>U_i</m>.  Since <m>B</m> and <m>C</m> are sheafy, <m>r_B</m> and <m>r_C</m> are topological embeddings.  Naturality gives a commutative square
+<me>\begin{matrix}
+\cO_R(U)&amp;\longrightarrow&amp;\cO_B(U_B)\oplus\cO_C(U_C)\\
+\downarrow r_R&amp;&amp;\downarrow r_B\oplus r_C\\
+\prod_i\cO_R(U_i)&amp;\longrightarrow&amp;
+\prod_i\bigl(\cO_B((U_i)_B)\oplus\cO_C((U_i)_C)\bigr).
+\end{matrix}</me>
+The top and right arrows are topological embeddings, as is the bottom arrow.  It follows that <m>r_R</m> is a topological embedding.
+      </p>
+      <p>
+        Now let <m>x_i\in\cO_R(U_i)</m> be a matching family.  Its images in the <m>B</m>- and <m>C</m>-section rings glue to elements
+<me>b\in\cO_B(U_B),
+  \qquad
+  c\in\cO_C(U_C).</me>
+Their images in <m>\cO_D(U_D)</m> agree after restriction to every <m>(U_i)_D</m>.  Since the structure presheaf for <m>D</m> is separated, they agree globally.  Exactness on <m>U</m> therefore gives
+<m>x\in\cO_R(U)</m> mapping to <m>(b,c)</m>.  Exactness on each <m>U_i</m> shows that
+<m>x|_{U_i}=x_i</m>, and uniqueness follows in the same way.  Thus <m>r_R</m> identifies
+<m>\cO_R(U)</m> homeomorphically with the matching-family equalizer, which is closed in the finite product because all section rings are Hausdorff.
+      </p>
+      <p>
+        The underlying presheaf is therefore a sheaf by the sheaf-on-a-basis theorem
+<xref ref="bib-Stacks" detail="Tag 009O"/>.  To retain the topology on arbitrary opens, let <m>V=\bigcup_\lambda V_\lambda</m> be an open covering and let <m>M</m> be its matching-family equalizer with the subspace topology.  For every rational <m>U\subset V</m>, quasi-compactness gives a finite rational cover of <m>U</m> subordinate to the <m>V_\lambda</m>.  Restriction from <m>M</m> to that finite cover, followed by the rational-basis result, gives a continuous map <m>M\to\cO_R(U)</m>, independent of the chosen subordinate cover.  These maps are compatible under rational restriction.  Since
+<me>\cO_R(V)=\varprojlim_{U\subset V,\ U\ \mathrm{rational}}\cO_R(U)</me>
+with its projective-limit topology, the inverse of the algebraic gluing map <m>\cO_R(V)\to M</m> is continuous.  Hence the gluing map is a homeomorphism, as required.
+      </p>
+    </proof>
+  </lemma>
+  <theorem xml:id="thm-sheafy">
+    <statement>
+      <p>
+        The Huber pair <m>(A,A^\circ)</m> is sheafy.
+      </p>
+    </statement>
+    <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_isSheafyTateRing_of_dvr">Lean (finiteJet_isSheafyTateRing_of_dvr)</lean>
+    <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr">Lean (finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr)</lean>
+    <proof>
+      <p>
+        Give <m>B,C,D</m> their maximal rings of integral elements.  The max/Gauss estimates <xref ref="eq-structural-map-bounds"/> show that every structural map is norm-nonincreasing.  Consequently it sends bounded subsets to bounded subsets; in particular, if <m>x</m> is power-bounded, then the set of powers of its image is the image of the bounded set <m>\{x^n:n\geq0\}</m>.  The structural maps therefore send power-bounded elements to power-bounded elements and define morphisms of Huber pairs.
+      </p>
+      <p>
+        For a rational domain <m>U\subset\Spa(A,A^\circ)</m>, its inverse image in each comparison spectrum is defined by the image of the same rational datum.  By
+<xref ref="prop-localized-milnor"/>, the corresponding section rings form the natural exact sequence required in <xref ref="lem-sheaf-transfer"/>.  Each of <m>B,C,D</m> is an affinoid <m>k</m>-algebra, hence is sheafy by Huber's theorem <xref ref="bib-Huber94" detail="Theorem 2.2"/>.  The conclusion follows from <xref ref="lem-sheaf-transfer"/>.
+      </p>
+    </proof>
+  </theorem>
+  <remark xml:id="rem-pushout-diagram">
+    <title>Affinoid versus global pushouts</title>
+    <statement>
+      <p>
+        The coefficient descriptions of the maximal plus rings give
+<me>A^\circ=B^\circ\times_{D^\circ}C^\circ.</me>
+Indeed, a compatible pair which is power-bounded in <m>B</m> and <m>C</m> has its constant and linear <m>Q</m>-coefficients in both <m>k\langle W\rangle</m> and <m>L_0</m>; their intersection is <m>k^\circ\langle W\rangle</m>, while the higher <m>Q</m>-tail is already integral in <m>C_0</m>.  Together with the pullback topology, this says that the defining square is a pullback of complete Huber pairs.
+      </p>
+      <p>
+        Put <m>X_E=\Spa(E,E^\circ)</m> for <m>E\in\{A,B,C,D\}</m>.  Huber's affinoid mapping theorem identifies morphisms between affinoid adic spaces with continuous morphisms of the corresponding complete Huber pairs <xref ref="bib-Huber94" detail="Proposition 2.1"/>.  Hence, for every affinoid adic space <m>Z</m>, the natural map
+<me>\operatorname{Hom}(X_A,Z)\longrightarrow
+ \operatorname{Hom}(X_B,Z)
+ \times_{\operatorname{Hom}(X_D,Z)}
+ \operatorname{Hom}(X_C,Z)</me>
+is bijective.  Thus the contravariant square
+<me>\begin{matrix}
+X_D&amp;\longrightarrow&amp;X_C\\
+\downarrow&amp;&amp;\downarrow\\
+X_B&amp;\longrightarrow&amp;X_A
+\end{matrix}</me>
+is a pushout in the full subcategory of affinoid adic spaces.
+      </p>
+      <p>
+        This does not make it a pushout in the category of all adic spaces: there the same map must be bijective for an arbitrary, possibly nonaffinoid, target <m>Z</m>.  In fact, uniqueness already fails for an explicit nonaffinoid target.  Let
+<me>U_1=\{x\in X_A:|Q^2(x)|\leq |\varpi(x)|\},\qquad
+ U_2=\{x\in X_A:|1|\leq |W(x)|\},\qquad U=U_1\cup U_2.</me>
+The map <m>X_B\to X_A</m> factors through <m>U_1</m>, because <m>Q^2=0</m> in <m>B</m>, while <m>X_C\to X_A</m> factors through <m>U_2</m>, because both <m>W</m> and <m>W^{-1}</m> are power-bounded in <m>C</m> and hence <m>|W|=1</m> on <m>X_C</m>.
+      </p>
+      <p>
+        The open subset <m>U</m> is proper.  Use additive valuations with values in <m>\Gamma=\mathbf Z^3_{\mathrm{lex}}</m> and, for a nonzero restricted series in the support description <xref ref="eq-monomial-support"/>, put
+<me>v\left(\sum c_{a,b}W^aQ^b\right)
+ =\min_{\mathrm{lex}}\{(v_k(c_{a,b}),b,a):c_{a,b}\neq0\}.</me>
+Restrictedness makes the minimum exist, and the initial-term argument for the lexicographic monomial order makes <m>v</m> multiplicative.  The support condition makes it nonnegative on <m>A_0=A^\circ</m>, while <m>v(\varpi)>0</m>, so it is continuous and defines a point <m>x\in X_A</m>.  Since
+<me>v(Q^2)=(0,2,0)&lt;(1,0,0)=v(\varpi),\qquad v(W)=(0,0,1)>0,</me>
+one has <m>|Q^2(x)|>|\varpi(x)|</m> and <m>|W(x)|&lt;1</m>; hence <m>x\notin U</m>.
+      </p>
+      <p>
+        Adic spaces may be glued along open subspaces.  Glue two copies of <m>X_A</m> along <m>U</m> and write <m>Z=X_A^{(1)}\cup_U X_A^{(2)}</m>.  The two open immersions <m>j_1,j_2:X_A\to Z</m> agree on <m>U</m>, so they agree after precomposition with both <m>X_B\to X_A</m> and <m>X_C\to X_A</m>, but they are distinct at the two unglued copies of <m>x</m>.  The displayed Hom map is therefore not injective for this <m>Z</m>.  Thus <m>X_A</m> is not the pushout in the full category of adic spaces.  More generally, the same doubling argument shows that a cocone whose two legs factor through a proper open subspace of its vertex cannot be a pushout in that category.  We do not know whether the original span admits some other, necessarily nonaffinoid, pushout object.
+      </p>
+    </statement>
+    <proof>
+      <title>Proof of <xref ref="thm-main"/></title>
+      <p>
+        Uniformity and the domain property are <xref ref="prop-uniform-domain"/>; sheafiness is
+<xref ref="thm-sheafy"/>; and failure of stable uniformity is
+<xref ref="prop-not-stably-uniform"/>.
+      </p>
+    </proof>
+  </remark>
+</section>

@@ -1,0 +1,33 @@
+output/
+.cache/
+.paperforge-venv/
+__pycache__/
+*.egg-info/
+vendor/
+logs/
+tmp/
+.DS_Store
+._*
+*~
+
+# Machine-local configuration + core-XSL shims (paperforge init/doctor
+# regenerate these; committed files carry no machine paths)
+.paperforge.local.toml
+xsl/core-local/
+
+# LaTeX intermediates
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Built copy of the editable LaTeX draft (release PDFs live under output/)
+inputs/draft/main.pdf
+
+# Local audit/style corpora: keep their manifests and provenance, but do not
+# publish downloaded papers or reference PDFs in the GitHub repository.
+references/pdfs/*.pdf
+style-corpus/arxiv/*/
+style-corpus/author-hosted/*/

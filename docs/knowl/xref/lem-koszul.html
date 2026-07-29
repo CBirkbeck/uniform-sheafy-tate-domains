@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h2 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical">
+<div class="para">The Koszul complex <span class="process-math">\(K_{P_E}(r_1,\dots,r_m)\)</span> is exact in positive degrees.  Every differential is continuous and strict onto its image, and every image is closed.  In particular, if</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d_{1,E}:P_E^m\longrightarrow P_E,
+\qquad
+J_E=\im(d_{1,E}),
+\end{equation*}
+</div>
+<div class="para">then <span class="process-math">\(J_E\)</span> is closed.  Moreover, there exists <span class="process-math">\(h_E\geq 0\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation}
+\varpi^{h_E}(J_E\cap P_{E,0})
+\subset d_{1,E}(P_{E,0}^m).\tag{5.1}
+\end{equation}
+</div>
+<div class="para">There also exists <span class="process-math">\(z_E\geq 0\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation}
+\varpi^{z_E}\bigl(\ker(d_{1,E})\cap P_{E,0}^m\bigr)
+\subset d_{2,E}\bigl(\textstyle\bigwedge^2 P_{E,0}^m\bigr).\tag{5.2}
+\end{equation}
+</div>
+<div class="para">Here positive-degree exactness means <span class="process-math">\(\operatorname{Exact}(d_{q+1,E},d_{q,E})\)</span> for every <span class="process-math">\(q\geq0\text{,}\)</span> equivalently exactness at the term of exterior degree <span class="process-math">\(q+1\text{.}\)</span>  It does not assert exactness at exterior degree zero and does not assert that <span class="process-math">\(d_{1,E}\)</span> is surjective onto <span class="process-math">\(P_E\text{.}\)</span>  For <span class="process-math">\(m=0\text{,}\)</span> the positive-degree assertion is vacuous.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-koszul-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=FiniteJet.GraphKoszul.koszulGraph_restricted_exact#doc" data-lean-ref="FiniteJet.GraphKoszul.koszulGraph_restricted_exact" data-lean-project="AdicSpaces" title="Formalized as FiniteJet.GraphKoszul.koszulGraph_restricted_exact in AdicSpaces">Lean (koszulGraph_restricted_exact)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=FiniteJet.GraphKoszul.koszulDifferential_isStrict#doc" data-lean-ref="FiniteJet.GraphKoszul.koszulDifferential_isStrict" data-lean-project="AdicSpaces" title="Formalized as FiniteJet.GraphKoszul.koszulDifferential_isStrict in AdicSpaces">Lean (koszulDifferential_isStrict)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=FiniteJet.GraphKoszul.isClosed_range_koszulDifferential#doc" data-lean-ref="FiniteJet.GraphKoszul.isClosed_range_koszulDifferential" data-lean-project="AdicSpaces" title="Formalized as FiniteJet.GraphKoszul.isClosed_range_koszulDifferential in AdicSpaces">Lean (isClosed_range_koszulDifferential)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=FiniteJet.GraphKoszul.pow_smul_graphIdeal_inter_unitBall_subset#doc" data-lean-ref="FiniteJet.GraphKoszul.pow_smul_graphIdeal_inter_unitBall_subset" data-lean-project="AdicSpaces" title="Formalized as FiniteJet.GraphKoszul.pow_smul_graphIdeal_inter_unitBall_subset in AdicSpaces">Lean (pow_smul_graphIdeal_inter_unitBall_subset)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=FiniteJet.GraphKoszul.pow_smul_ker_d1_inter_subset#doc" data-lean-ref="FiniteJet.GraphKoszul.pow_smul_ker_d1_inter_subset" data-lean-project="AdicSpaces" title="Formalized as FiniteJet.GraphKoszul.pow_smul_ker_d1_inter_subset in AdicSpaces">Lean (pow_smul_ker_d1_inter_subset)</a><div class="autopermalink" aria-hidden="true" data-description="Lemma 5.1"><a tabindex="-1" href="#lem-koszul" title="Copy heading and permalink for Lemma 5.1" aria-label="Copy heading and permalink for Lemma 5.1">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">First work over <span class="process-math">\(E[T_1,\dots,T_m]\text{.}\)</span>  Let <span class="process-math">\(\mathfrak p\)</span> be a prime which does not contain all the <span class="process-math">\(r_i\text{,}\)</span> and choose <span class="process-math">\(j\)</span> with <span class="process-math">\(r_j\notin\mathfrak p\text{.}\)</span>  Then <span class="process-math">\(r_j\)</span> is a unit after localization at <span class="process-math">\(\mathfrak p\text{.}\)</span>  If <span class="process-math">\(e_1,\dots,e_m\)</span> is the standard basis used to form the Koszul complex and <span class="process-math">\(d\)</span> is the Koszul differential, define a degree-<span class="process-math">\(1\)</span> homotopy by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h(\omega)=r_j^{-1}e_j\wedge\omega.
+\end{equation*}
+</div>
+<div class="para">The standard Koszul identity</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d(e_j\wedge\omega)=r_j\omega-e_j\wedge d(\omega)
+\end{equation*}
+</div>
+<div class="para">gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+dh+hd=\operatorname{id}.
+\end{equation*}
+</div>
+<div class="para">Thus the identity chain map is chain-homotopic to the zero map; this is what it means here for the localized complex to be <em class="emphasis">contractible</em>.  In particular it is exact: if <span class="process-math">\(d\omega=0\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\omega=(dh+hd)(\omega)=d(h\omega),
+\end{equation*}
+</div>
+<div class="para">so every cycle is a boundary.  Now let <span class="process-math">\(\mathfrak p\)</span> contain every <span class="process-math">\(r_i\text{,}\)</span> and choose <span class="process-math">\(1=a_0g+\sum_i a_if_i\text{.}\)</span>  In the local ring,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g\left(a_0+\sum_i a_iT_i\right)=1+\sum_i a_ir_i.
+\end{equation*}
+</div>
+<div class="para">The right-hand side is a unit, so <span class="process-math">\(g\)</span> is a unit.  After translating <span class="process-math">\(T_i\)</span> by <span class="process-math">\(f_i/g\text{,}\)</span> the sequence <span class="process-math">\((r_i)\)</span> differs by units from the coordinate sequence <span class="process-math">\((T_i)\text{,}\)</span> which is regular over an arbitrary coefficient ring.  Hence the polynomial Koszul complex is exact in positive degrees.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-koszul-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">The ring <span class="process-math">\(E_0\)</span> is noetherian and <span class="process-math">\(\varpi\)</span>-adically complete.  More precisely, the canonical map</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/bib-Stacks.html">
+\begin{equation*}
+E[T_1,\ldots,T_m]=E_0[T_1,\ldots,T_m][1/\varpi]
+\longrightarrow
+E_0\langle T_1,\ldots,T_m\rangle[1/\varpi]=P_E
+\end{equation*}
+</div>
+<div class="para">is flat: <span class="process-math">\(E_0[T_1,\ldots,T_m]\)</span> is noetherian, its <span class="process-math">\(\varpi\)</span>-adic completion <span class="process-math">\(E_0\langle T_1,\ldots,T_m\rangle\)</span> is flat over it by noetherian adic-completion flatness <a href="#bib-Stacks" class="xref" data-knowl="./knowl/xref/bib-Stacks.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-Stacks">[bib-Stacks, Tag 00MB]</a>, and localization at <span class="process-math">\(\varpi\)</span> preserves flatness.  Flat base change therefore carries the positive-degree polynomial Koszul exactness to <span class="process-math">\(P_E\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-koszul-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Finally, <span class="process-math">\(P_E\)</span> is a complete noetherian Tate ring.  Huber’s finite-module results imply that homomorphisms between finite <span class="process-math">\(P_E\)</span>-modules are strict and that their images are closed <a href="#bib-Huber94" class="xref" data-knowl="./knowl/xref/bib-Huber94.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-Huber94">[bib-Huber94, Lemmas 2.3 and 2.4]</a>.  Applying the bounded-denominator criterion <a href="#eq-strictness" class="xref" data-knowl="./knowl/xref/eq-strictness.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1">(2.1)</a> to <span class="process-math">\(d_{1,E}\)</span> and to <span class="process-math">\(d_{2,E}\)</span> onto <span class="process-math">\(\ker(d_{1,E})\)</span> gives <a href="#eq-ideal-denominators" class="xref" data-knowl="./knowl/xref/eq-ideal-denominators.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.1">(5.1)</a> and <a href="#eq-syzygy-denominators" class="xref" data-knowl="./knowl/xref/eq-syzygy-denominators.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.2">(5.2)</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-koszul-7-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 5.1.1"><a tabindex="-1" href="#lem-koszul-7" title="Copy heading and permalink for Proof 5.1.1" aria-label="Copy heading and permalink for Proof 5.1.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="#lem-koszul">In Context</a></span>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="proposition theorem-like"><h2 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical">
+<div class="para">There is a canonical isometric isomorphism</div>
+<div class="displaymath process-math">
+\begin{equation}
+\mathcal A\left\langle\frac{W}{\varpi}\right\rangle
+\xrightarrow{\ \sim\ }\mathcal B,
+\qquad W\longmapsto\varpi X.\tag{7.14}
+\end{equation}
+</div>
+<div class="para">The graph ideal <span class="process-math">\((W-\varpi X)\)</span> in <span class="process-math">\(\mathcal A\langle X\rangle\)</span> is closed, so no additional separated quotient is required.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-weighted-chart-identification-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proposition 7.6"><a tabindex="-1" href="#prop-weighted-chart-identification" title="Copy heading and permalink for Proposition 7.6" aria-label="Copy heading and permalink for Proposition 7.6">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">On rings of definition define</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-weighted-chart-lattice.html ./knowl/xref/eq-weighted-chart-norm.html">
+\begin{equation*}
+q_0:\mathcal A_0\langle X\rangle\longrightarrow\mathcal B_0,
+\qquad
+q_0(W^aX^cU^\nu)=\varpi^aX^{a+c}U^\nu.
+\end{equation*}
+</div>
+<div class="para">For a target monomial define a <span class="process-math">\(k^\circ\)</span>-linear section by</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-weighted-chart-lattice.html ./knowl/xref/eq-weighted-chart-norm.html">
+\begin{equation}
+s\bigl(b_{d,\nu}X^dU^\nu\bigr)
+=\varpi^{-\omega(\nu)}b_{d,\nu}
+W^{\omega(\nu)}X^{d-\omega(\nu)}U^\nu.\tag{7.15}
+\end{equation}
+</div>
+<div class="para">The divisibility and support conditions in <a href="#eq-weighted-chart-lattice" class="xref" data-knowl="./knowl/xref/eq-weighted-chart-lattice.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.12">(7.12)</a> make this well-defined, and <a href="#eq-weighted-chart-norm" class="xref" data-knowl="./knowl/xref/eq-weighted-chart-norm.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.13">(7.13)</a> shows that <span class="process-math">\(s\)</span> is isometric.  Moreover, <span class="process-math">\(q_0s=\operatorname{id}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-weighted-chart-identification-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">It remains to identify the kernel.  Let <span class="process-math">\(M=W^aX^cU^\nu\)</span> and put <span class="process-math">\(r=a-\omega(\nu)\geq0\text{.}\)</span>  If <span class="process-math">\(r&gt;0\text{,}\)</span> set</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-weighted-chart-norm.html ./knowl/xref/eq-weighted-chart-identification.html">
+\begin{equation*}
+D(M)=W^{\omega(\nu)}X^cU^\nu
+\sum_{j=0}^{r-1}W^{r-1-j}(\varpi X)^j,
+\end{equation*}
+</div>
+<div class="para">and set <span class="process-math">\(D(M)=0\)</span> when <span class="process-math">\(r=0\text{.}\)</span>  Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-weighted-chart-norm.html ./knowl/xref/eq-weighted-chart-identification.html">
+\begin{equation}
+M-sq_0(M)=(W-\varpi X)D(M).\tag{7.16}
+\end{equation}
+</div>
+<div class="para">Each basis monomial occurring in <span class="process-math">\(D(M)\)</span> is still allowed in <span class="process-math">\(\mathcal A_0\langle X\rangle\text{,}\)</span> and all its scalar coefficients have norm at most one. Thus <span class="process-math">\(D\)</span> is norm-nonincreasing on finite-support series and extends continuously to the <span class="process-math">\(c_0\)</span>-completion.  If <span class="process-math">\(x\in\ker(q_0)\text{,}\)</span> then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-weighted-chart-norm.html ./knowl/xref/eq-weighted-chart-identification.html">
+\begin{equation*}
+x=x-sq_0(x)=(W-\varpi X)D(x).
+\end{equation*}
+</div>
+<div class="para">The reverse inclusion is immediate, so</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-weighted-chart-norm.html ./knowl/xref/eq-weighted-chart-identification.html">
+\begin{equation}
+\ker(q_0)=(W-\varpi X)\mathcal A_0\langle X\rangle.\tag{7.17}
+\end{equation}
+</div>
+<div class="para">Since <span class="process-math">\(q_0\)</span> is a split surjection onto the complete ring <span class="process-math">\(\mathcal B_0\text{,}\)</span> this kernel is closed. The quotient norm is exactly <a href="#eq-weighted-chart-norm" class="xref" data-knowl="./knowl/xref/eq-weighted-chart-norm.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.13">(7.13)</a>: boundedness of <span class="process-math">\(q_0\)</span> gives one inequality, and the isometric section gives the reverse inequality.  Inverting <span class="process-math">\(\varpi\)</span> proves <a href="#eq-weighted-chart-identification" class="xref" data-knowl="./knowl/xref/eq-weighted-chart-identification.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.14">(7.14)</a> and the closedness assertion.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-weighted-chart-identification-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.6.1"><a tabindex="-1" href="#prop-weighted-chart-identification-2" title="Copy heading and permalink for Proof 7.6.1" aria-label="Copy heading and permalink for Proof 7.6.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="#prop-weighted-chart-identification">In Context</a></span>
+</body>
+</html>

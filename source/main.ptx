@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <docinfo>
+    <document-id>uniform-sheafy-tate-domains</document-id>
+    <macros>
+\newcommand{\Spa}{\operatorname{Spa}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\notn}[2]{\class{ptxnotn-#1}{#2}}
+\newcommand{\notnfar}[2]{\class{ptxfar}{\class{ptxnotn-#1}{#2}}}
+    </macros>
+  </docinfo>
+  <article xml:id="paper">
+    <title>Uniform sheafy Tate domains that are not stably uniform</title>
+    <frontmatter>
+      <titlepage>
+        <author><personname>Anonymous</personname></author>
+      </titlepage>
+      <abstract>
+<p>
+  Work of Buzzard<ndash/>Verberkmoes and, independently, Mihara shows that stable uniformity is a sufficient criterion for a Tate Huber ring to be sheafy, meaning that the structure presheaf of topological rings on its associated adic space is a sheaf. In this paper we construct examples of uniform sheafy rings which are not stably uniform, answering Question<nbsp/>7 of Kedlaya's <em>Nonarchimedean Scottish Book</em>. The examples were found in collaboration with ChatGPT 5.6 Sol. The first has been fully formalised in Lean<nbsp/>4; its proof rests on showing that a particular strict pullback of complete Tate rings is preserved by rational localisation. The second, whose bad localisation remains an integral domain, is proved here but has not yet been formalised.
+</p>
+      </abstract>
+    </frontmatter>
+    <xi:include href="./sec-introduction.ptx"/>
+    <xi:include href="./sec-conventions.ptx"/>
+    <xi:include href="./sec-the-global-ring.ptx"/>
+    <xi:include href="./sec-a-nonuniform-rational-localization.ptx"/>
+    <xi:include href="./sec-localization-of-the-milnor-square.ptx"/>
+    <xi:include href="./sec-sheafiness.ptx"/>
+    <xi:include href="./sec-rationally-reduced.ptx"/>
+    <backmatter xml:id="backmatter">
+      <xi:include href="./sec-formalisation.ptx"/>
+      <references xml:id="references">
+      <title>References</title>
+      <biblio type="raw" xml:id="bib-BK">
+      F.<nbsp/>Bambozzi and K.<nbsp/>Kremnizer, <em>On the sheafyness property of spectra of Banach rings</em>, J. Lond. Math. Soc. (2) <alert>109</alert> (2024), no.<nbsp/>1, e12855.
+      </biblio>
+      <biblio type="raw" xml:id="bib-BGR">
+      S.<nbsp/>Bosch, U.<nbsp/>Güntzer, and R.<nbsp/>Remmert, <em>Non-Archimedean Analysis</em>, Grundlehren der mathematischen Wissenschaften, vol.<nbsp/>261, Springer-Verlag, Berlin, 1984.
+      </biblio>
+      <biblio type="raw" xml:id="bib-BV">
+      K.<nbsp/>Buzzard and A.<nbsp/>Verberkmoes, <em>Stably uniform affinoids are sheafy</em>, J. Reine Angew. Math. <alert>740</alert> (2018), 25<ndash/>39.
+      </biblio>
+      <biblio type="raw" xml:id="bib-HK">
+      D.<nbsp/>Hansen and K.<nbsp/>S. Kedlaya, <em>Sheafiness criteria for Huber rings</em>, preprint, version of 23 April 2025, <url href="https://kskedlaya.org/papers/criteria.pdf"><c>https://kskedlaya.org/papers/criteria.pdf</c></url>.
+      </biblio>
+      <biblio type="raw" xml:id="bib-Huber94">
+      R.<nbsp/>Huber, <em>A generalization of formal schemes and rigid analytic varieties</em>, Math. Z. <alert>217</alert> (1994), 513<ndash/>551.
+      </biblio>
+      <biblio type="raw" xml:id="bib-KedlayaAWS">
+      K.<nbsp/>S. Kedlaya, <em>Sheaves, stacks, and shtukas</em>, Arizona Winter School notes, 2017, <url href="https://swc-math.github.io/aws/2017/2017KedlayaNotes.pdf"><c>https://swc-math.github.io/aws/2017/2017KedlayaNotes.pdf</c></url>.
+      </biblio>
+      <biblio type="raw" xml:id="bib-ConradL15">
+      B.<nbsp/>Conrad, <em>Points and lft maps</em>, Perfectoid Spaces Seminar, Lecture<nbsp/>15, <url href="https://virtualmath1.stanford.edu/~conrad/Perfseminar/Notes/L15.pdf"><c>https://virtualmath1.stanford.edu/~conrad/Perfseminar/Notes/L15.pdf</c></url>.
+      </biblio>
+      <biblio type="raw" xml:id="bib-KST">
+      M.<nbsp/>Kerz, S.<nbsp/>Saito, and G.<nbsp/>Tamme, <em><m>K</m>-theory of non-archimedean rings II</em>, Nagoya Math. J. <alert>251</alert> (2023), 669<ndash/>685.
+      </biblio>
+      <biblio type="raw" xml:id="bib-Milnor">
+      J.<nbsp/>Milnor, <em>Introduction to Algebraic <m>K</m>-Theory</em>, Annals of Mathematics Studies, vol.<nbsp/>72, Princeton University Press, Princeton, 1971.
+      </biblio>
+      <biblio type="raw" xml:id="bib-Mihara">
+      T.<nbsp/>Mihara, <em>On Tate's acyclicity and uniformity of Berkovich spectra and adic spectra</em>, Israel J. Math. <alert>216</alert> (2016), no.<nbsp/>1, 61<ndash/>105.
+      </biblio>
+      <biblio type="raw" xml:id="bib-Scottish">
+      K.<nbsp/>S. Kedlaya, <em>The Nonarchimedean Scottish Book</em>, Problem<nbsp/>7, <url href="https://scripts.mit.edu/~kedlaya/wiki/index.php?title=The_Nonarchimedean_Scottish_Book">available online</url>.
+      </biblio>
+      <biblio type="raw" xml:id="bib-Stacks">
+      The Stacks Project Authors, <em>The Stacks Project</em>, <url href="https://stacks.math.columbia.edu"><c>https://stacks.math.columbia.edu</c></url>.
+      </biblio>
+      <biblio type="raw" xml:id="bib-Temkin">
+      M.<nbsp/>Temkin, <em>Non-archimedean pinchings</em>, Math. Z. <alert>301</alert> (2022), no.<nbsp/>2, 2099<ndash/>2109.
+      </biblio>
+      </references>
+    </backmatter>
+  </article>
+</pretext>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<publication>
+    <latex font-size="11"/>
+    <source>
+        <directories external="../assets" generated="../generated-assets"/>
+        <!-- Default detail tier plus PDF-only content (notation index).
+             Un-componented (core) content is always retained. -->
+        <version include="print"/>
+    </source>
+</publication>

@@ -1,0 +1,594 @@
+{
+ "snapshot": "current",
+ "source": "inputs/draft/main.tex",
+ "items": {
+  "sec-introduction": {
+   "kind": "section",
+   "label": null,
+   "number": "1",
+   "section": "1"
+  },
+  "thm-main": {
+   "kind": "theorem",
+   "label": "thm:main",
+   "number": "1.1",
+   "section": "1"
+  },
+  "def-strict-milnor": {
+   "kind": "definition",
+   "label": "def:strict-milnor",
+   "number": "1.2",
+   "section": "1"
+  },
+  "rem-earlier-work": {
+   "kind": "remark",
+   "label": "rem:earlier-work",
+   "number": "1.3",
+   "section": "1"
+  },
+  "sec-conventions": {
+   "kind": "section",
+   "label": "sec:conventions",
+   "number": "2",
+   "section": "2"
+  },
+  "eq-strictness": {
+   "kind": "equation",
+   "label": "eq:strictness",
+   "number": "(1)",
+   "section": "2"
+  },
+  "eq-graph-ideal-definition": {
+   "kind": "equation",
+   "label": "eq:graph-ideal-definition",
+   "number": "(2)",
+   "section": "2"
+  },
+  "eq-graph-model": {
+   "kind": "equation",
+   "label": "eq:graph-model",
+   "number": "(3)",
+   "section": "2"
+  },
+  "sec-the-global-ring": {
+   "kind": "section",
+   "label": null,
+   "number": "3",
+   "section": "3"
+  },
+  "eq-integral-milnor": {
+   "kind": "equation",
+   "label": "eq:integral-milnor",
+   "number": "(4)",
+   "section": "3"
+  },
+  "eq-support-A0": {
+   "kind": "equation",
+   "label": "eq:support-A0",
+   "number": "(5)",
+   "section": "3"
+  },
+  "eq-monomial-support": {
+   "kind": "equation",
+   "label": "eq:monomial-support",
+   "number": "(6)",
+   "section": "3"
+  },
+  "eq-structural-map-bounds": {
+   "kind": "equation",
+   "label": "eq:structural-map-bounds",
+   "number": "(7)",
+   "section": "3"
+  },
+  "prop-uniform-domain": {
+   "kind": "proposition",
+   "label": "prop:uniform-domain",
+   "number": "3.1",
+   "section": "3"
+  },
+  "eq-additive-order": {
+   "kind": "equation",
+   "label": "eq:additive-order",
+   "number": "(8)",
+   "section": "3"
+  },
+  "sec-a-nonuniform-rational-localization": {
+   "kind": "section",
+   "label": null,
+   "number": "4",
+   "section": "4"
+  },
+  "prop-bad-chart": {
+   "kind": "proposition",
+   "label": "prop:bad-chart",
+   "number": "4.1",
+   "section": "4"
+  },
+  "eq-infinitely-divisible": {
+   "kind": "equation",
+   "label": "eq:infinitely-divisible",
+   "number": "(9)",
+   "section": "4"
+  },
+  "prop-not-stably-uniform": {
+   "kind": "proposition",
+   "label": "prop:not-stably-uniform",
+   "number": "4.2",
+   "section": "4"
+  },
+  "sec-localization-of-the-milnor-square": {
+   "kind": "section",
+   "label": null,
+   "number": "5",
+   "section": "5"
+  },
+  "sec-localization-of-the-milnor-square-graph-koszul-complexes-over-affinoid": {
+   "kind": "subsection",
+   "label": null,
+   "number": "5.1",
+   "section": "5"
+  },
+  "lem-koszul": {
+   "kind": "lemma",
+   "label": "lem:koszul",
+   "number": "5.1",
+   "section": "5"
+  },
+  "eq-ideal-denominators": {
+   "kind": "equation",
+   "label": "eq:ideal-denominators",
+   "number": "(10)",
+   "section": "5"
+  },
+  "eq-syzygy-denominators": {
+   "kind": "equation",
+   "label": "eq:syzygy-denominators",
+   "number": "(11)",
+   "section": "5"
+  },
+  "sec-localization-of-the-milnor-square-the-graph-ideals-form-a": {
+   "kind": "subsection",
+   "label": null,
+   "number": "5.2",
+   "section": "5"
+  },
+  "eq-tate-ambient": {
+   "kind": "equation",
+   "label": "eq:tate-ambient",
+   "number": "(12)",
+   "section": "5"
+  },
+  "lem-graph-pullback": {
+   "kind": "lemma",
+   "label": "lem:graph-pullback",
+   "number": "5.2",
+   "section": "5"
+  },
+  "eq-ideal-row": {
+   "kind": "equation",
+   "label": "eq:ideal-row",
+   "number": "(13)",
+   "section": "5"
+  },
+  "eq-JA-strict": {
+   "kind": "equation",
+   "label": "eq:JA-strict",
+   "number": "(14)",
+   "section": "5"
+  },
+  "prop-localized-milnor": {
+   "kind": "proposition",
+   "label": "prop:localized-milnor",
+   "number": "5.3",
+   "section": "5"
+  },
+  "eq-localized-row": {
+   "kind": "equation",
+   "label": "eq:localized-row",
+   "number": "(15)",
+   "section": "5"
+  },
+  "sec-sheafiness": {
+   "kind": "section",
+   "label": null,
+   "number": "6",
+   "section": "6"
+  },
+  "lem-sheaf-transfer": {
+   "kind": "lemma",
+   "label": "lem:sheaf-transfer",
+   "number": "6.1",
+   "section": "6"
+  },
+  "eq-sheaf-transfer-row": {
+   "kind": "equation",
+   "label": "eq:sheaf-transfer-row",
+   "number": "(16)",
+   "section": "6"
+  },
+  "thm-sheafy": {
+   "kind": "theorem",
+   "label": "thm:sheafy",
+   "number": "6.2",
+   "section": "6"
+  },
+  "rem-pushout-diagram": {
+   "kind": "remark",
+   "label": "rem:pushout-diagram",
+   "number": "6.3",
+   "section": "6"
+  },
+  "sec-rationally-reduced": {
+   "kind": "section",
+   "label": "sec:rationally-reduced",
+   "number": "7",
+   "section": "7"
+  },
+  "def-rationally-stably-reduced": {
+   "kind": "definition",
+   "label": "def:rationally-stably-reduced",
+   "number": "7.1",
+   "section": "7"
+  },
+  "thm-rationally-reduced-example": {
+   "kind": "theorem",
+   "label": "thm:rationally-reduced-example",
+   "number": "7.2",
+   "section": "7"
+  },
+  "sec-rationally-reduced-the-weighted-parity-algebra": {
+   "kind": "subsection",
+   "label": null,
+   "number": "7.1",
+   "section": "7"
+  },
+  "eq-parity-weight": {
+   "kind": "equation",
+   "label": "eq:parity-weight",
+   "number": "(17)",
+   "section": "7"
+  },
+  "eq-parity-monoid": {
+   "kind": "equation",
+   "label": "eq:parity-monoid",
+   "number": "(18)",
+   "section": "7"
+  },
+  "eq-omega-subadditive": {
+   "kind": "equation",
+   "label": "eq:omega-subadditive",
+   "number": "(19)",
+   "section": "7"
+  },
+  "eq-parity-gauss-norm": {
+   "kind": "equation",
+   "label": "eq:parity-gauss-norm",
+   "number": "(20)",
+   "section": "7"
+  },
+  "eq-parity-algebra": {
+   "kind": "equation",
+   "label": "eq:parity-algebra",
+   "number": "(21)",
+   "section": "7"
+  },
+  "eq-parity-ring-of-definition": {
+   "kind": "equation",
+   "label": "eq:parity-ring-of-definition",
+   "number": "(22)",
+   "section": "7"
+  },
+  "eq-finite-head-presentation": {
+   "kind": "equation",
+   "label": "eq:finite-head-presentation",
+   "number": "(23)",
+   "section": "7"
+  },
+  "lem-finite-stage-normal-form": {
+   "kind": "lemma",
+   "label": "lem:finite-stage-normal-form",
+   "number": "7.3",
+   "section": "7"
+  },
+  "eq-finite-stage-normal-form": {
+   "kind": "equation",
+   "label": "eq:finite-stage-normal-form",
+   "number": "(24)",
+   "section": "7"
+  },
+  "eq-finite-stage-substitution": {
+   "kind": "equation",
+   "label": "eq:finite-stage-substitution",
+   "number": "(25)",
+   "section": "7"
+  },
+  "eq-A-completion-of-heads": {
+   "kind": "equation",
+   "label": "eq:A-completion-of-heads",
+   "number": "(26)",
+   "section": "7"
+  },
+  "eq-parity-factorization": {
+   "kind": "equation",
+   "label": "eq:parity-factorization",
+   "number": "(27)",
+   "section": "7"
+  },
+  "prop-parity-uniform-domain": {
+   "kind": "proposition",
+   "label": "prop:parity-uniform-domain",
+   "number": "7.4",
+   "section": "7"
+  },
+  "prop-parity-nonnoetherian": {
+   "kind": "proposition",
+   "label": "prop:parity-nonnoetherian",
+   "number": "7.5",
+   "section": "7"
+  },
+  "sec-rationally-reduced-a-reduced-nonuniform-rational-chart": {
+   "kind": "subsection",
+   "label": null,
+   "number": "7.2",
+   "section": "7"
+  },
+  "eq-weighted-chart-lattice": {
+   "kind": "equation",
+   "label": "eq:weighted-chart-lattice",
+   "number": "(28)",
+   "section": "7"
+  },
+  "eq-weighted-chart-norm": {
+   "kind": "equation",
+   "label": "eq:weighted-chart-norm",
+   "number": "(29)",
+   "section": "7"
+  },
+  "prop-weighted-chart-identification": {
+   "kind": "proposition",
+   "label": "prop:weighted-chart-identification",
+   "number": "7.6",
+   "section": "7"
+  },
+  "eq-weighted-chart-identification": {
+   "kind": "equation",
+   "label": "eq:weighted-chart-identification",
+   "number": "(30)",
+   "section": "7"
+  },
+  "eq-weighted-section": {
+   "kind": "equation",
+   "label": "eq:weighted-section",
+   "number": "(31)",
+   "section": "7"
+  },
+  "eq-weighted-division-identity": {
+   "kind": "equation",
+   "label": "eq:weighted-division-identity",
+   "number": "(32)",
+   "section": "7"
+  },
+  "eq-weighted-kernel": {
+   "kind": "equation",
+   "label": "eq:weighted-kernel",
+   "number": "(33)",
+   "section": "7"
+  },
+  "prop-weighted-chart-domain-nonuniform": {
+   "kind": "proposition",
+   "label": "prop:weighted-chart-domain-nonuniform",
+   "number": "7.7",
+   "section": "7"
+  },
+  "eq-Tn-power-norms": {
+   "kind": "equation",
+   "label": "eq:Tn-power-norms",
+   "number": "(34)",
+   "section": "7"
+  },
+  "sec-rationally-reduced-small-perturbations-of-rational-data": {
+   "kind": "subsection",
+   "label": null,
+   "number": "7.3",
+   "section": "7"
+  },
+  "lem-small-perturbation": {
+   "kind": "lemma",
+   "label": "lem:small-perturbation",
+   "number": "7.8",
+   "section": "7"
+  },
+  "eq-integral-bezout": {
+   "kind": "equation",
+   "label": "eq:integral-bezout",
+   "number": "(35)",
+   "section": "7"
+  },
+  "eq-small-perturbation-bound": {
+   "kind": "equation",
+   "label": "eq:small-perturbation-bound",
+   "number": "(36)",
+   "section": "7"
+  },
+  "sec-rationally-reduced-finite-head-rational-localization": {
+   "kind": "subsection",
+   "label": null,
+   "number": "7.4",
+   "section": "7"
+  },
+  "eq-tail-basis": {
+   "kind": "equation",
+   "label": "eq:tail-basis",
+   "number": "(37)",
+   "section": "7"
+  },
+  "eq-tail-decomposition": {
+   "kind": "equation",
+   "label": "eq:tail-decomposition",
+   "number": "(38)",
+   "section": "7"
+  },
+  "eq-tail-multiplication": {
+   "kind": "equation",
+   "label": "eq:tail-multiplication",
+   "number": "(39)",
+   "section": "7"
+  },
+  "eq-head-retraction": {
+   "kind": "equation",
+   "label": "eq:head-retraction",
+   "number": "(40)",
+   "section": "7"
+  },
+  "prop-coefficientwise-localization": {
+   "kind": "proposition",
+   "label": "prop:coefficientwise-localization",
+   "number": "7.9",
+   "section": "7"
+  },
+  "eq-coefficientwise-localization": {
+   "kind": "equation",
+   "label": "eq:coefficientwise-localization",
+   "number": "(41)",
+   "section": "7"
+  },
+  "eq-coefficientwise-restriction": {
+   "kind": "equation",
+   "label": "eq:coefficientwise-restriction",
+   "number": "(42)",
+   "section": "7"
+  },
+  "eq-c0-quotient": {
+   "kind": "equation",
+   "label": "eq:c0-quotient",
+   "number": "(43)",
+   "section": "7"
+  },
+  "cor-finite-head-presentation": {
+   "kind": "corollary",
+   "label": "cor:finite-head-presentation",
+   "number": "7.10",
+   "section": "7"
+  },
+  "eq-arbitrary-finite-head-presentation": {
+   "kind": "equation",
+   "label": "eq:arbitrary-finite-head-presentation",
+   "number": "(44)",
+   "section": "7"
+  },
+  "sec-rationally-reduced-sheafiness": {
+   "kind": "subsection",
+   "label": null,
+   "number": "7.5",
+   "section": "7"
+  },
+  "thm-parity-strongly-sheafy": {
+   "kind": "theorem",
+   "label": "thm:parity-strongly-sheafy",
+   "number": "7.11",
+   "section": "7"
+  },
+  "eq-split-spectrum-map": {
+   "kind": "equation",
+   "label": "eq:split-spectrum-map",
+   "number": "(45)",
+   "section": "7"
+  },
+  "eq-cover-coefficientwise": {
+   "kind": "equation",
+   "label": "eq:cover-coefficientwise",
+   "number": "(46)",
+   "section": "7"
+  },
+  "eq-head-cech": {
+   "kind": "equation",
+   "label": "eq:head-cech",
+   "number": "(47)",
+   "section": "7"
+  },
+  "eq-coefficientwise-gluing-bound": {
+   "kind": "equation",
+   "label": "eq:coefficientwise-gluing-bound",
+   "number": "(48)",
+   "section": "7"
+  },
+  "eq-strong-sheafy-decomposition": {
+   "kind": "equation",
+   "label": "eq:strong-sheafy-decomposition",
+   "number": "(49)",
+   "section": "7"
+  },
+  "sec-rationally-reduced-reducedness-of-all-rational-localizations": {
+   "kind": "subsection",
+   "label": null,
+   "number": "7.6",
+   "section": "7"
+  },
+  "lem-formal-series-reduced": {
+   "kind": "lemma",
+   "label": "lem:formal-series-reduced",
+   "number": "7.12",
+   "section": "7"
+  },
+  "eq-formal-series-ring": {
+   "kind": "equation",
+   "label": "eq:formal-series-ring",
+   "number": "(50)",
+   "section": "7"
+  },
+  "thm-parity-rationally-reduced": {
+   "kind": "theorem",
+   "label": "thm:parity-rationally-reduced",
+   "number": "7.13",
+   "section": "7"
+  },
+  "eq-reduced-localization-decomposition": {
+   "kind": "equation",
+   "label": "eq:reduced-localization-decomposition",
+   "number": "(51)",
+   "section": "7"
+  },
+  "eq-formal-embedding": {
+   "kind": "equation",
+   "label": "eq:formal-embedding",
+   "number": "(52)",
+   "section": "7"
+  },
+  "rem-second-example-relation": {
+   "kind": "remark",
+   "label": "rem:second-example-relation",
+   "number": "7.14",
+   "section": "7"
+  },
+  "sec-formalisation": {
+   "kind": "appendix",
+   "label": "sec:formalisation",
+   "number": "A",
+   "section": "A"
+  },
+  "rem-lean-publication": {
+   "kind": "remark",
+   "label": "rem:lean-publication",
+   "number": "A.1",
+   "section": "A"
+  },
+  "sec-formalisation-sheafiness": {
+   "kind": "subsection",
+   "label": null,
+   "number": "A.1",
+   "section": "A"
+  },
+  "sec-formalisation-strong-noetherianity": {
+   "kind": "subsection",
+   "label": null,
+   "number": "A.2",
+   "section": "A"
+  },
+  "sec-formalisation-the-finite-jet-example": {
+   "kind": "subsection",
+   "label": null,
+   "number": "A.3",
+   "section": "A"
+  }
+ }
+}

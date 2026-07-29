@@ -1,0 +1,83 @@
+# paperforge instance config — the annotated catalogue of every knob
+# lives in <paperforge>/templates/paper.toml; docs/CONFIGURATION.md
+# documents the semantics. Machine-local values (the PreTeXt core
+# XSL path) belong in .paperforge.local.toml, not here.
+
+[paperforge]
+instance_schema = 1
+
+[paper]
+title = "Uniform sheafy Tate domains that are not stably uniform"
+slug = "uniform-sheafy-tate-domains"
+document_id = "uniform-sheafy-tate-domains"
+
+[inputs]
+ai_draft = "inputs/draft/main.tex"
+# Compatibility key for Paperforge's current lean-links validator.  The
+# normalized formalization below is authoritative; remove this duplicate once
+# upstream validator issue #TODO accepts the normalized schema.
+lean_project = "../GitHub/aintlib-adic-fjp/projects/AdicSpaces"
+
+[formalizations.primary]
+name = "AdicSpaces"
+root = "../GitHub/aintlib-adic-fjp/projects/AdicSpaces"
+# module = "TopModuleDir"      # census/docs subset inside root
+# docs_root = "../lean/"       # deployed docs URL prefix
+declmap = "crosswalk/lean-decl-map.json"
+
+[ingest]
+mathbb_letters = ""
+numbering_profile = "amsart-shared-section-theorems-global-equations"
+# authors = ["Jane Doe|Dept|University", "@draft"]
+
+[[ingest.literal_rewrites]]
+from = "\\begin{lstlisting}"
+to = "\\begin{verbatim}"
+
+[[ingest.literal_rewrites]]
+from = "\\end{lstlisting}"
+to = "\\end{verbatim}"
+
+[style]
+corpus = "style-corpus/"
+advice = "style-corpus/ADVICE.md"
+
+[references]
+pdf_dir = "references/pdfs/"
+bib = "source/references.ptx"
+labels = "references/bib-labels.json"
+
+[notation]
+far_words = 1500
+near_hover_delay_ms = 200
+far_hover_delay_ms = 500
+defsite_highlight_delay_ms = 120
+
+[detail]
+default_level = 1
+max_level = 3
+
+[plagiarism]
+ngram = 7
+error_run = 12
+sources = ["references/pdfs/"]
+
+# These five short sections already open with purpose-setting prose in the
+# LaTeX draft. Paperforge cannot currently distinguish that case from a
+# missing PreTeXt <introduction> when the section has no subsections, so the
+# decision is recorded explicitly rather than duplicating the opening text.
+[validators.section_summaries]
+exempt = [
+  "sec-introduction",
+  "sec-conventions",
+  "sec-the-global-ring",
+  "sec-a-nonuniform-rational-localization",
+  "sec-sheafiness",
+]
+
+[build]
+web_output = "output/web"
+print_output = "output/print"
+
+[site]
+dir = "web-assets/site"

@@ -1,0 +1,3 @@
+# Paperforge/PreTeXt vendor output is committed verbatim for GitHub Pages.
+docs/** -whitespace
+patches/*.patch -whitespace

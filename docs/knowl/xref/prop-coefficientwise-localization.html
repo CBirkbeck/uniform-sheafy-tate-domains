@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="proposition theorem-like"><h2 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Coefficientwise localization.</span>
+</h2>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(\alpha\)</span> be a rational datum in <span class="process-math">\(\mathcal A_N\text{,}\)</span> and put <span class="process-math">\(P=(\mathcal A_N)_\alpha\text{.}\)</span>  There is a canonical topological algebra isomorphism</div>
+<div class="displaymath process-math">
+\begin{equation}
+\mathcal A_\alpha
+\xrightarrow{\ \sim\ }
+\widehat{\bigoplus}_{\mu}^{\,c_0}Pe_\mu.\tag{7.25}
+\end{equation}
+</div>
+<div class="para">It is natural for rational refinements represented in a finite head: if <span class="process-math">\(P\to Q\)</span> is the corresponding head restriction map, the induced restriction sends</div>
+<div class="displaymath process-math">
+\begin{equation}
+\sum_\mu p_\mu e_\mu
+\longmapsto
+\sum_\mu (p_\mu|_Q)e_\mu.\tag{7.26}
+\end{equation}
+</div>
+<div class="para">The same statement holds after increasing <span class="process-math">\(N\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proposition 7.9: Coefficientwise localization"><a tabindex="-1" href="#prop-coefficientwise-localization" title="Copy heading and permalink for Proposition 7.9: Coefficientwise localization" aria-label="Copy heading and permalink for Proposition 7.9: Coefficientwise localization">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">Let</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-koszul.html">
+\begin{equation*}
+R=\mathcal A_N\langle T_1,\ldots,T_m\rangle,
+\qquad
+I=(gT_i-f_i)_i\subset R.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\mathcal A_N\)</span> is affinoid, the graph ideal <span class="process-math">\(I\)</span> is closed and the graph map <span class="process-math">\(d_1:R^m\to I\)</span> is strict; this is the degree-zero conclusion of <a href="#lem-koszul" class="xref" data-knowl="./knowl/xref/lem-koszul.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.1">Lemma 5.1</a>.  In particular, there is a constant <span class="process-math">\(C\)</span> such that every <span class="process-math">\(y\in I\)</span> has a lift <span class="process-math">\(x\in R^m\)</span> with <span class="process-math">\(\lVert x\rVert\leq C\lVert y\rVert\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">By <a href="#eq-tail-decomposition" class="xref" data-knowl="./knowl/xref/eq-tail-decomposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.22">(7.22)</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-tail-decomposition.html ./knowl/xref/eq-coefficientwise-localization.html">
+\begin{equation*}
+\mathcal A\langle T_1,\ldots,T_m\rangle
+\cong
+\widehat{\bigoplus}_{\mu}^{\,c_0}Re_\mu.
+\end{equation*}
+</div>
+<div class="para">Because the graph relations lie in the finite head, the graph differential acts coefficientwise.  Its image is exactly</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-tail-decomposition.html ./knowl/xref/eq-coefficientwise-localization.html">
+\begin{equation*}
+\widehat{\bigoplus}_{\mu}^{\,c_0}Ie_\mu.
+\end{equation*}
+</div>
+<div class="para">Indeed, the inclusion from left to right is immediate.  Conversely, for a null family <span class="process-math">\((y_\mu)_\mu\)</span> in <span class="process-math">\(I\text{,}\)</span> choose coefficientwise lifts <span class="process-math">\(x_\mu\)</span> with <span class="process-math">\(\lVert x_\mu\rVert\leq C\lVert y_\mu\rVert\text{;}\)</span> then <span class="process-math">\((x_\mu)_\mu\)</span> is again a null family. Thus the graph ideal over <span class="process-math">\(\mathcal A\)</span> is closed and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-tail-decomposition.html ./knowl/xref/eq-coefficientwise-localization.html">
+\begin{equation}
+\frac{\widehat{\bigoplus}_{\mu}^{c_0}Re_\mu}
+{\widehat{\bigoplus}_{\mu}^{c_0}Ie_\mu}
+\cong
+\widehat{\bigoplus}_{\mu}^{c_0}(R/I)e_\mu\tag{7.27}
+\end{equation}
+</div>
+<div class="para">as complete topological modules and as algebras.  Since <span class="process-math">\(R/I=P\text{,}\)</span> this proves <a href="#eq-coefficientwise-localization" class="xref" data-knowl="./knowl/xref/eq-coefficientwise-localization.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.25">(7.25)</a>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Every map used in <a href="#eq-c0-quotient" class="xref" data-knowl="./knowl/xref/eq-c0-quotient.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.27">(7.27)</a> is induced by the canonical graph quotient.  If a further rational datum lies in the head, its graph differential is again coefficientwise, so the same construction gives <a href="#eq-coefficientwise-restriction" class="xref" data-knowl="./knowl/xref/eq-coefficientwise-restriction.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.26">(7.26)</a>.  Presentation independence and transitivity of rational localization extend this compatibility to iterated refinements and to a larger finite head.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.9.1"><a tabindex="-1" href="#prop-coefficientwise-localization-3" title="Copy heading and permalink for Proof 7.9.1" aria-label="Copy heading and permalink for Proof 7.9.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="#prop-coefficientwise-localization">In Context</a></span>
+</body>
+</html>
