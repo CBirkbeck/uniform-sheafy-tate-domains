@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xml:id="sec-rationally-reduced">
-  <title>A rationally stably reduced example</title>
+  <title>A second example</title>
   <introduction>
     <p>
       The finite-jet construction above loses uniformity because separated completion creates a
-nilpotent.  We now give a second construction in which the bad rational localization is an
+nilpotent.  We now give a second construction in which the bad rational localisation is an
 integral domain.  The loss of uniformity is instead caused by an unbounded family of
 nonnilpotent power-bounded elements.
     </p>
-    <definition xml:id="def-rationally-stably-reduced">
-      <statement>
-        <p>
-          A complete Tate ring is <em>rationally stably reduced</em> if every finite iterated rational
-localization is reduced.  This terminology is used only in the present paper; it is meant to
-avoid confusion with geometric reducedness after extension of the ground field.
-        </p>
-      </statement>
-    </definition>
     <theorem xml:id="thm-rationally-reduced-example">
       <statement>
         <p>
@@ -36,12 +27,12 @@ avoid confusion with geometric reducedness after extension of the ground field.
           </li>
           <li>
             <p>
-              The ring <m>\mathcal A</m> is rationally stably reduced.
+              Every finite iterated rational localisation of <m>\mathcal A</m> is reduced.
             </p>
           </li>
           <li>
             <p>
-              The genuine rational localization
+              The rational localisation
       <me>\mathcal B=\mathcal A\left\langle\frac{W}{\varpi}\right\rangle</me>
       is an integral domain but is not uniform.
             </p>
@@ -49,7 +40,7 @@ avoid confusion with geometric reducedness after extension of the ground field.
         </ol>
         <p>
           In particular, failure of stable uniformity need not be caused by a nilpotent in the bad
-rational localization.
+rational localisation.
         </p>
       </statement>
     </theorem>
@@ -195,7 +186,8 @@ so <m>\mathcal A</m> is not noetherian.
   <subsection xml:id="sec-rationally-reduced-a-reduced-nonuniform-rational-chart">
     <title>A reduced nonuniform rational chart</title>
     <p>
-      The datum <m>(W;\varpi)</m> is a genuine rational datum: the ideal <m>(W,\varpi)</m> is open because <m>\varpi</m> is a unit of <m>\mathcal A</m>.  Define the complete <m>k^\circ</m>-algebra
+      The ideal <m>(W,\varpi)</m> is open because <m>\varpi</m> is a unit of <m>\mathcal A</m>.
+Define the complete <m>k^\circ</m>-algebra
       <men xml:id="eq-weighted-chart-lattice">\mathcal B_0=
   \left\{
     \sum_{\substack{\nu\in\mathbf N^{(I)},\ d\geq\omega(\nu)}}
@@ -217,7 +209,7 @@ so <m>\mathcal A</m> is not noetherian.
           <men xml:id="eq-weighted-chart-identification">\mathcal A\left\langle\frac{W}{\varpi}\right\rangle
   \xrightarrow{\ \sim\ }\mathcal B,
   \qquad W\longmapsto\varpi X.</men>
-          The graph ideal <m>(W-\varpi X)</m> in <m>\mathcal A\langle X\rangle</m> is closed, so no additional
+          The ideal <m>(W-\varpi X)</m> in <m>\mathcal A\langle X\rangle</m> is closed, so no additional
 separated quotient is required.
         </p>
       </statement>
@@ -309,7 +301,7 @@ For <m>r\geq0</m>, formula <xref ref="eq-weighted-chart-norm"/> gives
   \qquad(0\leq j\leq m),</men>
           and write <m>\alpha'=(f_1',\ldots,f_m';g')</m>.  Then <m>\alpha'</m> is a rational datum,
 <m>\alpha</m> and <m>\alpha'</m> define the same rational subset of <m>\Spa(E,E^+)</m>, and their completed
-rational localizations are canonically isomorphic.
+rational localisations are canonically isomorphic.
         </p>
       </statement>
       <proof>
@@ -332,7 +324,7 @@ The perturbations have value at most <m>|\varpi|^{\ell+1}&lt;|g(x)|</m>, so
 argument to the primed Bezout relation proves the reverse inclusion.
         </p>
         <p>
-          Let <m>E_\alpha</m> be the first rational localization and put
+          Let <m>E_\alpha</m> be the first rational localisation and put
 <me>q=\frac{\varpi^\ell}{g}
    =a_0+\sum_i a_i\frac{f_i}{g}\in E_\alpha^\circ.</me>
 Then
@@ -351,8 +343,8 @@ universal-property uniqueness makes them inverse.  The isomorphism is therefore 
       </proof>
     </lemma>
   </subsection>
-  <subsection xml:id="sec-rationally-reduced-finite-head-rational-localization">
-    <title>Finite-head rational localization</title>
+  <subsection xml:id="sec-rationally-reduced-finite-head-rational-localisation">
+    <title>Finite-head rational localisation</title>
     <p>
       Fix <m>N\geq1</m>.  For a tail multi-index
 <m>\mu=(\mu_n)_{n>N}\in\mathbf N^{(\{n>N\})}</m>, write
@@ -369,7 +361,7 @@ universal-property uniqueness makes them inverse.  The isomorphism is therefore 
       <men xml:id="eq-head-retraction">\rho_N:\mathcal A\longrightarrow\mathcal A_N.</men>
     </p>
     <proposition xml:id="prop-coefficientwise-localization">
-      <title>Coefficientwise localization</title>
+      <title>Coefficientwise localisation</title>
       <statement>
         <p>
           Let <m>\alpha</m> be a rational datum in <m>\mathcal A_N</m>, and put
@@ -391,7 +383,7 @@ corresponding head restriction map, the induced restriction sends
 <me>R=\mathcal A_N\langle T_1,\ldots,T_m\rangle,
   \qquad
   I=(gT_i-f_i)_i\subset R.</me>
-Since <m>\mathcal A_N</m> is affinoid, the graph ideal <m>I</m> is closed and the graph map
+Since <m>\mathcal A_N</m> is affinoid, the ideal <m>I</m> is closed and
 <m>d_1:R^m\to I</m> is strict; this is the degree-zero conclusion of
 <xref ref="lem-koszul"/>.  In particular, there is a constant <m>C</m> such that every <m>y\in I</m> has a
 lift <m>x\in R^m</m> with <m>\lVert x\rVert\leq C\lVert y\rVert</m>.
@@ -401,13 +393,13 @@ lift <m>x\in R^m</m> with <m>\lVert x\rVert\leq C\lVert y\rVert</m>.
 <me>\mathcal A\langle T_1,\ldots,T_m\rangle
   \cong
   \widehat{\bigoplus}_{\mu}^{\,c_0}Re_\mu.</me>
-Because the graph relations lie in the finite head, the graph differential acts
+Because the relations lie in the finite head, <m>d_1</m> acts
 coefficientwise.  Its image is exactly
 <me>\widehat{\bigoplus}_{\mu}^{\,c_0}Ie_\mu.</me>
 Indeed, the inclusion from left to right is immediate.  Conversely, for a null family
 <m>(y_\mu)_\mu</m> in <m>I</m>, choose coefficientwise lifts <m>x_\mu</m> with
 <m>\lVert x_\mu\rVert\leq C\lVert y_\mu\rVert</m>; then <m>(x_\mu)_\mu</m> is again a null family.
-Thus the graph ideal over <m>\mathcal A</m> is closed and
+Thus the corresponding ideal over <m>\mathcal A</m> is closed and
           <men xml:id="eq-c0-quotient">\frac{\widehat{\bigoplus}_{\mu}^{c_0}Re_\mu}
        {\widehat{\bigoplus}_{\mu}^{c_0}Ie_\mu}
   \cong
@@ -416,10 +408,10 @@ Thus the graph ideal over <m>\mathcal A</m> is closed and
 <xref ref="eq-coefficientwise-localization"/>.
         </p>
         <p>
-          Every map used in <xref ref="eq-c0-quotient"/> is induced by the canonical graph quotient.  If a
-further rational datum lies in the head, its graph differential is again coefficientwise, so the
+          Every map used in <xref ref="eq-c0-quotient"/> is induced by the canonical quotient.  If a
+further rational datum lies in the head, its first Koszul differential is again coefficientwise, so the
 same construction gives <xref ref="eq-coefficientwise-restriction"/>.  Presentation independence and
-transitivity of rational localization extend this compatibility to iterated refinements and to a
+transitivity of rational localisation extend this compatibility to iterated refinements and to a
 larger finite head.
         </p>
       </proof>
@@ -428,9 +420,9 @@ larger finite head.
       <title>Finite-head presentation</title>
       <statement>
         <p>
-          Every rational localization of <m>\mathcal A</m> is canonically isomorphic to a ring of the form
+          Every rational localisation of <m>\mathcal A</m> is canonically isomorphic to a ring of the form
           <men xml:id="eq-arbitrary-finite-head-presentation">\widehat{\bigoplus}_{\mu}^{\,c_0}Pe_\mu,</men>
-          where <m>P</m> is a rational localization of some affinoid head <m>\mathcal A_N</m>.  Under this
+          where <m>P</m> is a rational localisation of some affinoid head <m>\mathcal A_N</m>.  Under this
 identification the inclusions obtained by enlarging the head have norm-nonincreasing algebra
 retractions, and their union is dense.
         </p>
@@ -438,7 +430,7 @@ retractions, and their union is dense.
       <proof>
         <p>
           Start with a rational datum in <m>\mathcal A</m>.  Multiplying all entries by one power of
-<m>\varpi</m> does not change the rational subset or localization, so assume that the entries lie in
+<m>\varpi</m> does not change the rational subset or localisation, so assume that the entries lie in
 <m>\mathcal A_0</m>.  Choose an integral Bezout relation
 <me>\varpi^\ell=\sum_j a_jd_j,
   \qquad a_j\in\mathcal A_0.</me>
@@ -446,13 +438,13 @@ By <xref ref="eq-A-completion-of-heads"/>, for some <m>N</m> the entries <m>d_j<
 <m>d_j'\in\mathcal A_N\cap\mathcal A_0</m> satisfying
 <m>d_j'-d_j\in\varpi^{\ell+1}\mathcal A_0</m>.  By
 <xref ref="lem-small-perturbation"/>, the primed datum gives the same rational subset and the same
-completed localization.  The primed integral Bezout relation produced in that lemma remains
+completed localisation.  The primed integral Bezout relation produced in that lemma remains
 valid after applying the retraction <m>\rho_N</m>; hence the primed datum is a rational datum already
 in <m>\mathcal A_N</m>.  Now apply <xref ref="prop-coefficientwise-localization"/>.
         </p>
         <p>
           For <m>M\geq N</m>, put <m>P_M=(\mathcal A_M)_\alpha</m>.  The same proposition, with head <m>M</m>,
-identifies the localization with the <m>c_0</m>-sum over the variables of index <m>>M</m>.  Coefficient
+identifies the localisation with the <m>c_0</m>-sum over the variables of index <m>>M</m>.  Coefficient
 projection gives a norm-nonincreasing retraction to <m>P_M</m>, and finite tail truncation proves
 that <m>\bigcup_MP_M</m> is dense.
         </p>
@@ -479,7 +471,7 @@ that <m>\bigcup_MP_M</m> is dense.
 for some <m>M</m>.  Let <m>E_U^+</m> be the plus ring defining the rational subspace <m>U</m>; it need not
 equal the maximal ring <m>E^\circ</m>.  Choose the standard closed ring of definition
 <m>P_{M,0}\subset P_M^\circ</m> furnished by the head graph presentation.  The coefficientwise
-graph quotient gives a closed ring of definition
+quotient by these relations gives a closed ring of definition
 <me>E_0=\widehat{\bigoplus}_{\mu}^{c_0}P_{M,0}e_\mu\subseteq E_U^+.</me>
 The inclusion holds because <m>E_U^+</m> is an open, hence closed, subring containing the integral
 graph algebra.  After enlarging the head, finite tail truncation shows that the corresponding
@@ -562,8 +554,8 @@ the preceding proof applies verbatim.  Therefore every finite Tate extension is 
       </proof>
     </theorem>
   </subsection>
-  <subsection xml:id="sec-rationally-reduced-reducedness-of-all-rational-localizations">
-    <title>Reducedness of all rational localizations</title>
+  <subsection xml:id="sec-rationally-reduced-reducedness-of-all-rational-localisations">
+    <title>Reducedness of all rational localisations</title>
     <lemma xml:id="lem-formal-series-reduced">
       <statement>
         <p>
@@ -589,22 +581,22 @@ nilpotent, every <m>\tau_{J_0}</m> kills it; joint coefficient detection then ki
     <theorem xml:id="thm-parity-rationally-reduced">
       <statement>
         <p>
-          Every finite iterated rational localization of <m>\mathcal A</m> is reduced.
+          Every finite iterated rational localisation of <m>\mathcal A</m> is reduced.
         </p>
       </statement>
       <proof>
         <p>
-          By transitivity of rational localization, it is enough to treat one rational localization.  Use
+          By transitivity of rational localisation, it is enough to treat one rational localisation.  Use
 <xref ref="cor-finite-head-presentation"/> to write it as
           <men xml:id="eq-reduced-localization-decomposition">E\cong\widehat{\bigoplus}_{\mu}^{c_0}Pe_\mu,
   \qquad P=(\mathcal A_N)_\alpha.</men>
           The affinoid algebra <m>\mathcal A_N</m> is a domain by
-<xref ref="lem-finite-stage-normal-form"/>.  A rational localization of a reduced affinoid algebra is
+<xref ref="lem-finite-stage-normal-form"/>.  A rational localisation of a reduced affinoid algebra is
 reduced <xref ref="bib-BGR" detail="Corollary 7.3.2/10"/>; see also
 <xref ref="bib-KedlayaAWS" detail="Remark 1.2.16"/>.  Thus <m>P</m> is reduced.
         </p>
         <p>
-          The element <m>W</m> is a non-zero-divisor in <m>\mathcal A_N</m>.  Affinoid rational localization is
+          The element <m>W</m> is a non-zero-divisor in <m>\mathcal A_N</m>.  Affinoid rational localisation is
 algebraically flat <xref ref="bib-BGR" detail="Corollary 7.3.2/6"/>; see also
 <xref ref="bib-ConradL15" detail="Proposition 15.1.1, proof"/>.  Tensoring
 <m>0\to\mathcal A_N\xrightarrow{W}\mathcal A_N</m> with <m>P</m> therefore shows that multiplication
@@ -629,10 +621,10 @@ by <m>W</m> is injective on <m>P</m>.  If <m>P=0</m>, the conclusion is immediat
       <p>
         The uniform domain assertion is <xref ref="prop-parity-uniform-domain"/>, and nonnoetherianity is
 <xref ref="prop-parity-nonnoetherian"/>.  Strong sheafiness is
-<xref ref="thm-parity-strongly-sheafy"/>.  Rational stable reducedness is
-<xref ref="thm-parity-rationally-reduced"/>.  Finally,
+<xref ref="thm-parity-strongly-sheafy"/>.  Reducedness of all finite iterated rational
+localisations is <xref ref="thm-parity-rationally-reduced"/>.  Finally,
 <xref ref="prop-weighted-chart-identification"/>, <xref ref="prop-weighted-chart-domain-nonuniform"/> identify the
-genuine rational chart <m>|W|\leq|\varpi|</m> as a nonuniform integral domain.
+rational chart <m>|W|\leq|\varpi|</m> as a nonuniform integral domain.
       </p>
     </proof>
     <remark xml:id="rem-second-example-relation">
@@ -647,7 +639,7 @@ nonuniformity is witnessed by the unbounded family <m>(T_n)_{n\geq1}</m> of nonn
 power-bounded elements.  The use of an infinite monomial support and of unbounded
 power-bounded directions is in the tradition of the examples of Buzzard<ndash/>Verberkmoes and
 Mihara; the finite-head coefficientwise descent is the additional feature that makes sheafiness
-and rational stable reducedness accessible here.
+and reducedness after iterated rational localisation accessible here.
         </p>
       </statement>
     </remark>

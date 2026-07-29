@@ -253,7 +253,7 @@
       "via": "manual",
       "file": "Adic spaces/FJP/Over/StrictLocalization.lean",
       "line": 751,
-      "cited": "Lemma 5.2 (closed graph ideal)",
+      "cited": "Lemma 5.2 (closed defining ideal)",
       "kind": "theorem"
     }
   ],

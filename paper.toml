@@ -71,7 +71,7 @@ exempt = [
   "sec-introduction",
   "sec-conventions",
   "sec-the-global-ring",
-  "sec-a-nonuniform-rational-localization",
+  "sec-a-nonuniform-rational-localisation",
   "sec-sheafiness",
 ]
 

@@ -5,7 +5,7 @@
     Buzzard and Verberkmoes proved that every stably uniform Tate Huber ring is sheafy and exhibited both uniform rings which are not stably uniform and uniform rings which are not sheafy <xref ref="bib-BV"/>.  Hansen and Kedlaya subsequently asked whether a uniform sheafy Huber ring must be stably uniform <xref ref="bib-HK" detail="Remark 3.16"/>; this is also Question<nbsp/>7 of Kedlaya's <em>Nonarchimedean Scottish Book</em> <xref ref="bib-Scottish"/>.  We give a negative answer in two forms.
   </p>
   <p>
-    We begin with the finite-jet pinching algebra.  This is a nonnoetherian uniform integral domain for which a distinguished rational localisation is nonreduced, and hence is no longer uniform.  Let <m>k</m> be a complete discretely valued nonarchimedean field, with valuation ring <m>k^\circ</m>, uniformizer <m>\varpi</m>, and residue field <m>\widetilde{k}</m>.  Put
+    We begin with the finite-jet pullback.  This is a nonnoetherian uniform integral domain for which a distinguished rational localisation is nonreduced, and hence is no longer uniform.  Let <m>k</m> be a complete discretely valued nonarchimedean field, with valuation ring <m>k^\circ</m>, uniformizer <m>\varpi</m>, and residue field <m>\widetilde{k}</m>.  Put
 <me>L_0=k^\circ\langle W,W^{-1}\rangle,
   \qquad
   B_0=k^\circ\langle W,Q\rangle/(Q^2),</me>
@@ -44,7 +44,10 @@ so <m>A</m> is not stably uniform.
     <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_isSheafyFor_of_dvr">Lean (finiteJet_isSheafyFor_of_dvr)</lean>
   </theorem>
   <p>
-    The proof uses a localisation theorem for Milnor squares of complete Tate rings.  The terminology is classical rather than new.  Milnor's patching theorem describes projective modules over a pullback ring with a surjective leg, and diagrams of this kind are now called Milnor squares <xref ref="bib-Milnor" detail="Section 2"/>.  Milnor squares of complete Tate rings also appear explicitly in the analytic <m>K</m>-theory work of Kerz<ndash/>Saito<ndash/>Tamme <xref ref="bib-KST" detail="Section 3"/>.
+    The proof uses Milnor squares of complete Tate rings.  Recall that a cartesian square of
+rings with a surjective leg is called a Milnor square <xref ref="bib-Milnor" detail="Section 2"/>; the
+complete Tate setting is used by Kerz<ndash/>Saito<ndash/>Tamme in their work on analytic
+<m>K</m>-theory <xref ref="bib-KST" detail="Section 3"/>.
   </p>
   <definition xml:id="def-strict-milnor">
     <statement>
@@ -63,28 +66,42 @@ is strict exact, and <m>C\to D</m> is a strict surjection.
     </statement>
   </definition>
   <p>
-    The adjective <q>strict</q> records the topology.  In the present Banach setting it is not an additional hypothesis on the initial diagram: after rotating the square if necessary, every Milnor square of complete Tate <m>k</m>-algebras in the sense of Kerz<ndash/>Saito<ndash/>Tamme is strict by the nonarchimedean open mapping theorem <xref ref="bib-KST" detail="Lemma 3.1"/>.  We retain the adjective because the substantive point proved here is that every completed rational localisation is again a Milnor square, with the corresponding strictness and bounded-denominator control, naturally under refinement.  It follows that if <m>B,C,D</m> are sheafy, then so is <m>R</m>.  Since <m>\Spa</m> is contravariant, the associated square is a pushout in the full subcategory of affinoid adic spaces, but not in the category of all adic spaces; <xref ref="rem-pushout-diagram"/> explains the distinction and the failure for nonaffinoid targets.  One may ask whether there is an example which does not rely on a rational localisation becoming nonreduced, and this is exactly what the second example achieves.
+    After rotating the square if necessary, the initial Milnor square is strict by the
+nonarchimedean open mapping theorem <xref ref="bib-KST" detail="Lemma 3.1"/>.  Our main input is that
+strictness persists after completed rational localisation and is compatible with
+refinement.  This allows sheafiness to be transferred from <m>B,C,D</m> to <m>R</m>.  The
+associated square of affinoid adic spaces is a pushout among affinoid spaces, but not
+among all adic spaces; see <xref ref="rem-pushout-diagram"/>.  The second example shows that
+the failure of stable uniformity need not come from a nonreduced localisation.
   </p>
   <p>
-    Both constructions emerged from an extended interaction with ChatGPT 5.6 Sol, after a number of unsuccessful attempts with earlier models.  Since the first example was found in this way, we regarded machine-checked verification as an important part of the argument.  The resulting Lean development, together with the precise correspondence between its definitions and those used here, is described in <xref ref="sec-formalisation"/>.
+    Both examples were found in collaboration with ChatGPT 5.6 Sol.  The first has been
+formalised in Lean; <xref ref="sec-formalisation"/> describes the statements used and their
+relation with the definitions in this paper.
   </p>
   <remark xml:id="rem-earlier-work">
     <title>Relation with earlier work</title>
     <statement>
       <p>
-        It is difficult to determine precisely how an AI system arrived at such a construction, and hence to identify every human source that may have influenced it.  We therefore record the closest related work which may have contributed ideas to the constructions below.
+        Buzzard<ndash/>Verberkmoes construct a uniform affinoid ring with a nonuniform rational
+localisation and, separately, a uniform affinoid ring whose structure presheaf is not a
+sheaf <xref ref="bib-BV" detail="Propositions 17 and 18"/>.  Mihara gives further examples of both
+phenomena <xref ref="bib-Mihara"/>.  These examples do not give a uniform sheafy ring which is not
+stably uniform.
       </p>
       <p>
-        The closest precedents for the pathology are the examples of Buzzard<ndash/>Verberkmoes and Mihara.  Buzzard<ndash/>Verberkmoes construct a uniform affinoid ring with a nonuniform rational localization and, separately, a uniform affinoid ring whose structure presheaf is not a sheaf <xref ref="bib-BV" detail="Propositions 17 and 18"/>.  Mihara gives further examples of uniform Banach and affinoid rings for which rational localization loses uniformity, including a separate non-sheafy uniform affinoid ring <xref ref="bib-Mihara"/>.  Thus the phenomena <q>uniform but not stably uniform</q> and <q>uniform but not sheafy</q> were already known.  What those examples did not supply was a proof that a non-stably-uniform example is nevertheless sheafy.
+        The strict Koszul result used in <xref ref="lem-koszul"/> is due to
+Ben-Bassat<ndash/>Kremnizer and Bambozzi<ndash/>Kremnizer
+<xref ref="bib-BBK" detail="Definition 5.7 and Lemmas 5.13--5.14"/>
+<xref ref="bib-BK" detail="Definitions 4.5--4.6, Proposition 4.9, Lemma 4.11, and
+Corollary 4.13"/>.  We use its lattice form to prove that rational localisation
+preserves the finite-jet Milnor square.  The resulting uniform sheafy domain which is
+not stably uniform appears to be new.
       </p>
       <p>
-        The pullback terminology also has a direct precedent.  A cartesian square of rings with a surjective leg is a classical Milnor square, named for Milnor's theorem which patches projective modules from the two comparison rings <xref ref="bib-Milnor" detail="Section 2"/>.  Kerz<ndash/>Saito<ndash/>Tamme already work explicitly with Milnor squares of complete Tate rings, construct compatible rings of definition by an open-mapping argument, and prove analytic <m>K</m>-theory excision for them <xref ref="bib-KST" detail="Section 3"/>.  Thus neither the term <q>Milnor square</q>, its complete-Tate version, nor the basic topological pullback mechanism is new here.  We use the adjective <q>strict</q> to keep the topological exactness and bounded-denominator estimates visible; we have not found it used as standard terminology for this particular nonarchimedean situation.  The input particular to the present application is the observation that strict Koszul regularity makes every rational localisation of the finite-jet square strict and natural under refinement, followed by the sheaf-transfer argument.
-      </p>
-      <p>
-        After applying the contravariant functor <m>\Spa</m>, the ring pullback produces a pushout-shaped diagram of affinoid adic spaces; see <xref ref="rem-pushout-diagram"/>.  It is also analogous to a nonarchimedean pinching, but Temkin's pinching theorem concerns a finite gluing morphism, whereas in the present diagram <m>\Spa(D,D^\circ)\to\Spa(B,B^\circ)</m> is a rational open immersion and is not finite <xref ref="bib-Temkin"/>.  Finally, the graph complex used below is the strict Koszul complex of Ben-Bassat<ndash/>Kremnizer and Bambozzi<ndash/>Kremnizer <xref ref="bib-BBK" detail="Definition 5.7 and Lemmas 5.13--5.14"/><xref ref="bib-BK" detail="Definitions 4.5--4.6, Proposition 4.9, Lemma 4.11, and Corollary 4.13"/>.  In particular, the strict Koszul regularity asserted in <xref ref="lem-koszul"/> is not new.  We retain a proof because we need the resulting lattice exponents explicitly.  The finite-jet combination producing a uniform sheafy domain which is not stably uniform appears to be new.
-      </p>
-      <p>
-        The weighted-parity construction of <xref ref="sec-rationally-reduced"/> is even closer in spirit to the infinite monomial-support examples of Buzzard<ndash/>Verberkmoes and Mihara.
+        The weighted-parity construction of <xref ref="sec-rationally-reduced"/> is closer to the
+infinite monomial-support examples of Buzzard<ndash/>Verberkmoes and Mihara.  Its additional
+feature is that rational localisation can be calculated in a noetherian finite head.
       </p>
     </statement>
   </remark>

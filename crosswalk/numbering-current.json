@@ -92,7 +92,7 @@
    "number": "(8)",
    "section": "3"
   },
-  "sec-a-nonuniform-rational-localization": {
+  "sec-a-nonuniform-rational-localisation": {
    "kind": "section",
    "label": null,
    "number": "4",
@@ -116,13 +116,13 @@
    "number": "4.2",
    "section": "4"
   },
-  "sec-localization-of-the-milnor-square": {
+  "sec-localisation-of-the-milnor-square": {
    "kind": "section",
    "label": null,
    "number": "5",
    "section": "5"
   },
-  "sec-localization-of-the-milnor-square-graph-koszul-complexes-over-affinoid": {
+  "sec-localisation-of-the-milnor-square-koszul-complexes-for-rational-localisations": {
    "kind": "subsection",
    "label": null,
    "number": "5.1",
@@ -146,7 +146,7 @@
    "number": "(11)",
    "section": "5"
   },
-  "sec-localization-of-the-milnor-square-the-graph-ideals-form-a": {
+  "sec-localisation-of-the-milnor-square-the-defining-ideals-under-pullback": {
    "kind": "subsection",
    "label": null,
    "number": "5.2",
@@ -224,16 +224,10 @@
    "number": "7",
    "section": "7"
   },
-  "def-rationally-stably-reduced": {
-   "kind": "definition",
-   "label": "def:rationally-stably-reduced",
-   "number": "7.1",
-   "section": "7"
-  },
   "thm-rationally-reduced-example": {
    "kind": "theorem",
    "label": "thm:rationally-reduced-example",
-   "number": "7.2",
+   "number": "7.1",
    "section": "7"
   },
   "sec-rationally-reduced-the-weighted-parity-algebra": {
@@ -287,7 +281,7 @@
   "lem-finite-stage-normal-form": {
    "kind": "lemma",
    "label": "lem:finite-stage-normal-form",
-   "number": "7.3",
+   "number": "7.2",
    "section": "7"
   },
   "eq-finite-stage-normal-form": {
@@ -317,13 +311,13 @@
   "prop-parity-uniform-domain": {
    "kind": "proposition",
    "label": "prop:parity-uniform-domain",
-   "number": "7.4",
+   "number": "7.3",
    "section": "7"
   },
   "prop-parity-nonnoetherian": {
    "kind": "proposition",
    "label": "prop:parity-nonnoetherian",
-   "number": "7.5",
+   "number": "7.4",
    "section": "7"
   },
   "sec-rationally-reduced-a-reduced-nonuniform-rational-chart": {
@@ -347,7 +341,7 @@
   "prop-weighted-chart-identification": {
    "kind": "proposition",
    "label": "prop:weighted-chart-identification",
-   "number": "7.6",
+   "number": "7.5",
    "section": "7"
   },
   "eq-weighted-chart-identification": {
@@ -377,7 +371,7 @@
   "prop-weighted-chart-domain-nonuniform": {
    "kind": "proposition",
    "label": "prop:weighted-chart-domain-nonuniform",
-   "number": "7.7",
+   "number": "7.6",
    "section": "7"
   },
   "eq-Tn-power-norms": {
@@ -395,7 +389,7 @@
   "lem-small-perturbation": {
    "kind": "lemma",
    "label": "lem:small-perturbation",
-   "number": "7.8",
+   "number": "7.7",
    "section": "7"
   },
   "eq-integral-bezout": {
@@ -410,7 +404,7 @@
    "number": "(36)",
    "section": "7"
   },
-  "sec-rationally-reduced-finite-head-rational-localization": {
+  "sec-rationally-reduced-finite-head-rational-localisation": {
    "kind": "subsection",
    "label": null,
    "number": "7.4",
@@ -443,7 +437,7 @@
   "prop-coefficientwise-localization": {
    "kind": "proposition",
    "label": "prop:coefficientwise-localization",
-   "number": "7.9",
+   "number": "7.8",
    "section": "7"
   },
   "eq-coefficientwise-localization": {
@@ -467,7 +461,7 @@
   "cor-finite-head-presentation": {
    "kind": "corollary",
    "label": "cor:finite-head-presentation",
-   "number": "7.10",
+   "number": "7.9",
    "section": "7"
   },
   "eq-arbitrary-finite-head-presentation": {
@@ -485,7 +479,7 @@
   "thm-parity-strongly-sheafy": {
    "kind": "theorem",
    "label": "thm:parity-strongly-sheafy",
-   "number": "7.11",
+   "number": "7.10",
    "section": "7"
   },
   "eq-split-spectrum-map": {
@@ -518,7 +512,7 @@
    "number": "(49)",
    "section": "7"
   },
-  "sec-rationally-reduced-reducedness-of-all-rational-localizations": {
+  "sec-rationally-reduced-reducedness-of-all-rational-localisations": {
    "kind": "subsection",
    "label": null,
    "number": "7.6",
@@ -527,7 +521,7 @@
   "lem-formal-series-reduced": {
    "kind": "lemma",
    "label": "lem:formal-series-reduced",
-   "number": "7.12",
+   "number": "7.11",
    "section": "7"
   },
   "eq-formal-series-ring": {
@@ -539,7 +533,7 @@
   "thm-parity-rationally-reduced": {
    "kind": "theorem",
    "label": "thm:parity-rationally-reduced",
-   "number": "7.13",
+   "number": "7.12",
    "section": "7"
   },
   "eq-reduced-localization-decomposition": {
@@ -557,19 +551,13 @@
   "rem-second-example-relation": {
    "kind": "remark",
    "label": "rem:second-example-relation",
-   "number": "7.14",
+   "number": "7.13",
    "section": "7"
   },
   "sec-formalisation": {
    "kind": "appendix",
    "label": "sec:formalisation",
    "number": "A",
-   "section": "A"
-  },
-  "rem-lean-publication": {
-   "kind": "remark",
-   "label": "rem:lean-publication",
-   "number": "A.1",
    "section": "A"
   },
   "sec-formalisation-sheafiness": {
@@ -590,7 +578,7 @@
    "number": "A.3",
    "section": "A"
   },
-  "sec-formalisation-scope-of-the-formal-correspondence": {
+  "sec-formalisation-scope-of-the-formalisation": {
    "kind": "subsection",
    "label": null,
    "number": "A.4",
