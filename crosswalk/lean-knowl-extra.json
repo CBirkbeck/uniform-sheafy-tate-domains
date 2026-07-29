@@ -1,0 +1,222 @@
+{
+  "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc",
+  "declarations": [
+    {
+      "decl": "ValuationSpectrum.IsSheafy",
+      "file": "Adic spaces/StructureSheaf.lean",
+      "line": 371,
+      "kind": "class",
+      "include_body": true,
+      "cited": "Appendix: finite-rational-cover sheafiness"
+    },
+    {
+      "decl": "ValuationSpectrum.IsLimitSheaf",
+      "file": "Adic spaces/SheafyPair.lean",
+      "line": 525,
+      "kind": "structure",
+      "include_body": true,
+      "cited": "Appendix: all-open sheaf condition"
+    },
+    {
+      "decl": "ValuationSpectrum.isSheafy_iff_isLimitSheaf",
+      "file": "Adic spaces/SheafyPair.lean",
+      "line": 727,
+      "kind": "theorem",
+      "cited": "Appendix: equivalence of rational-cover and all-open definitions"
+    },
+    {
+      "decl": "ValuationSpectrum.IsSheafOfTopologicalRings",
+      "file": "Adic spaces/StructurePresheafBundled.lean",
+      "line": 291,
+      "kind": "def",
+      "include_body": true,
+      "cited": "Appendix: Wedhorn's representable formulation"
+    },
+    {
+      "decl": "ValuationSpectrum.isSheafOfTopologicalRings_iff_isLimitSheaf",
+      "file": "Adic spaces/StructurePresheafBundled.lean",
+      "line": 442,
+      "kind": "theorem",
+      "cited": "Appendix: equivalence with Wedhorn's formulation"
+    },
+    {
+      "decl": "ValuationSpectrum.IsSheafyFor",
+      "file": "Adic spaces/SheafyRing.lean",
+      "line": 100,
+      "kind": "def",
+      "include_body": true,
+      "cited": "Appendix: sheafiness for a chosen ring of integral elements"
+    },
+    {
+      "decl": "ValuationSpectrum.IsSheafyComplete",
+      "file": "Adic spaces/SheafyRing.lean",
+      "line": 110,
+      "kind": "def",
+      "include_body": true,
+      "cited": "Appendix: complete-ring sheafiness"
+    },
+    {
+      "decl": "ValuationSpectrum.IsSheafyTateRing",
+      "file": "Adic spaces/SheafyRing.lean",
+      "line": 229,
+      "kind": "def",
+      "include_body": true,
+      "cited": "Appendix: Tate-ring sheafiness"
+    },
+    {
+      "decl": "ValuationSpectrum.isSheafyFor_congr",
+      "file": "Adic spaces/RelativeStandardRefinement.lean",
+      "line": 185,
+      "kind": "theorem",
+      "cited": "Appendix: independence of the plus ring"
+    },
+    {
+      "decl": "ValuationSpectrum.isSheafyFor_iff_standardSheafCondition",
+      "file": "Adic spaces/RelativeStandardRefinement.lean",
+      "line": 193,
+      "kind": "theorem",
+      "cited": "Appendix: standard-cover equivalence"
+    },
+    {
+      "decl": "ValuationSpectrum.isSheafyFor_iff_isSheafyComplete",
+      "file": "Adic spaces/RelativeStandardRefinement.lean",
+      "line": 201,
+      "kind": "theorem",
+      "cited": "Appendix: chosen-pair/all-pairs equivalence"
+    },
+    {
+      "decl": "ValuationSpectrum.isSheafyTateRing_iff_for_completionModel",
+      "file": "Adic spaces/SheafyCompletionModel.lean",
+      "line": 204,
+      "kind": "theorem",
+      "cited": "Appendix: completion-model independence"
+    },
+    {
+      "decl": "ValuationSpectrum.isSheafyTateRing_iff_isSheafyComplete",
+      "file": "Adic spaces/SheafyCompletionModel.lean",
+      "line": 232,
+      "kind": "theorem",
+      "cited": "Appendix: complete Tate-ring equivalence"
+    },
+    {
+      "decl": "MvPowerSeries.IsRestricted",
+      "file": "Adic spaces/RestrictedPowerSeries.lean",
+      "line": 68,
+      "kind": "def",
+      "include_body": true,
+      "cited": "Appendix: restricted power series"
+    },
+    {
+      "decl": "restrictedMvPowerSeriesSubring",
+      "file": "Adic spaces/RestrictedPowerSeries.lean",
+      "line": 78,
+      "kind": "def",
+      "cited": "Appendix: the restricted power-series ring"
+    },
+    {
+      "decl": "IsStronglyNoetherian",
+      "file": "Adic spaces/RestrictedPowerSeries.lean",
+      "line": 243,
+      "kind": "class",
+      "include_body": true,
+      "cited": "Appendix: strong noetherianity"
+    },
+    {
+      "decl": "FiniteJetOver.L",
+      "file": "Adic spaces/FJP/Over/JetRings.lean",
+      "line": 60,
+      "kind": "abbrev",
+      "include_body": true,
+      "cited": "Appendix: finite-jet coefficient ring"
+    },
+    {
+      "decl": "FiniteJetOver.JetC",
+      "file": "Adic spaces/FJP/Over/JetRings.lean",
+      "line": 63,
+      "kind": "abbrev",
+      "include_body": true,
+      "cited": "Appendix: finite-jet Milnor square"
+    },
+    {
+      "decl": "FiniteJetOver.JetB",
+      "file": "Adic spaces/FJP/Over/JetRings.lean",
+      "line": 67,
+      "kind": "abbrev",
+      "include_body": true,
+      "cited": "Appendix: finite-jet Milnor square"
+    },
+    {
+      "decl": "FiniteJetOver.JetD",
+      "file": "Adic spaces/FJP/Over/JetRings.lean",
+      "line": 71,
+      "kind": "abbrev",
+      "include_body": true,
+      "cited": "Appendix: finite-jet Milnor square"
+    },
+    {
+      "decl": "FiniteJetOver.jetSupport",
+      "file": "Adic spaces/FJP/Over/JetRings.lean",
+      "line": 269,
+      "kind": "def",
+      "include_body": true,
+      "cited": "Appendix: support definition of the FJP algebra"
+    },
+    {
+      "decl": "FiniteJetOver.JetA",
+      "file": "Adic spaces/FJP/Over/JetRings.lean",
+      "line": 294,
+      "kind": "abbrev",
+      "include_body": true,
+      "cited": "Appendix: the FJP algebra"
+    },
+    {
+      "decl": "FiniteJetOver.milnorRow_exact",
+      "file": "Adic spaces/FJP/Over/JetRings.lean",
+      "line": 448,
+      "kind": "theorem",
+      "cited": "Appendix: exactness of the Milnor row"
+    },
+    {
+      "decl": "FiniteJetOver.isSheafy_JetA",
+      "file": "Adic spaces/FJP/Over/SheafTransfer.lean",
+      "line": 730,
+      "kind": "theorem",
+      "cited": "Appendix: finite-rational-cover theorem actually constructed"
+    },
+    {
+      "decl": "FiniteJetOver.finiteJet_isSheafyFor",
+      "file": "Adic spaces/FJP/Over/SheafyEndpoints.lean",
+      "line": 95,
+      "kind": "theorem",
+      "cited": "Appendix: chosen-pair all-open endpoint"
+    },
+    {
+      "decl": "FiniteJetOver.finiteJet_isSheafyComplete",
+      "file": "Adic spaces/FJP/Over/SheafyEndpoints.lean",
+      "line": 175,
+      "kind": "theorem",
+      "cited": "Appendix: all-plus-rings endpoint"
+    },
+    {
+      "decl": "FiniteJetOver.finiteJet_isSheafyTateRing",
+      "file": "Adic spaces/FJP/Over/SheafyEndpoints.lean",
+      "line": 191,
+      "kind": "theorem",
+      "cited": "Appendix: Tate-ring endpoint"
+    },
+    {
+      "decl": "FiniteJetOver.finiteJet_isSheafyFor_of_dvr",
+      "file": "Adic spaces/FJP/Over/SheafyEndpoints.lean",
+      "line": 274,
+      "kind": "theorem",
+      "cited": "Appendix: public DVR chosen-pair endpoint"
+    },
+    {
+      "decl": "FiniteJetOver.finiteJet_isSheafyComplete_of_dvr",
+      "file": "Adic spaces/FJP/Over/SheafyEndpoints.lean",
+      "line": 319,
+      "kind": "theorem",
+      "cited": "Appendix: public DVR all-plus-rings endpoint"
+    }
+  ]
+}

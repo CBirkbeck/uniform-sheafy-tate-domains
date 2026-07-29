@@ -18,11 +18,16 @@
     <xsl:text>\DeclareUnicodeCharacter{00AC}{\ensuremath{\neg}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{00B7}{\ensuremath{\cdot}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{03B9}{\ensuremath{\iota}}&#xa;</xsl:text>
+    <xsl:text>\DeclareUnicodeCharacter{03D6}{\ensuremath{\varpi}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{207A}{\ensuremath{^{+}}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{2080}{\ensuremath{_{0}}}&#xa;</xsl:text>
+    <xsl:text>\DeclareUnicodeCharacter{2081}{\ensuremath{_{1}}}&#xa;</xsl:text>
+    <xsl:text>\DeclareUnicodeCharacter{2082}{\ensuremath{_{2}}}&#xa;</xsl:text>
+    <xsl:text>\DeclareUnicodeCharacter{2083}{\ensuremath{_{3}}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{2115}{\ensuremath{\mathbb{N}}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{211D}{\ensuremath{\mathbb{R}}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{2192}{\ensuremath{\to}}&#xa;</xsl:text>
+    <xsl:text>\DeclareUnicodeCharacter{2194}{\ensuremath{\leftrightarrow}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{21A5}{\ensuremath{\uparrow}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{2200}{\ensuremath{\forall}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{2203}{\ensuremath{\exists}}&#xa;</xsl:text>
@@ -31,6 +36,8 @@
     <xsl:text>\DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{2286}{\ensuremath{\subseteq}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{22C3}{\ensuremath{\bigcup}}&#xa;</xsl:text>
+    <xsl:text>\DeclareUnicodeCharacter{27E8}{\ensuremath{\langle}}&#xa;</xsl:text>
+    <xsl:text>\DeclareUnicodeCharacter{27E9}{\ensuremath{\rangle}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{1D4AA}{\ensuremath{\mathcal O}}</xsl:text>
   </xsl:param>
   <xsl:variable name="author-metadata"

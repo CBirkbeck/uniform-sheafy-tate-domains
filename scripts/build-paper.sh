@@ -11,6 +11,8 @@ fi
 
 export PATH="$paper_root/.paperforge-venv/bin:$PATH"
 
+python3 "$paper_root/scripts/build-lean-knowls.py" "$paper_root"
+
 (
   cd "$paper_root/inputs/draft"
   latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
@@ -19,6 +21,8 @@ export PATH="$paper_root/.paperforge-venv/bin:$PATH"
 cd "$paper_root"
 "$paperforge_bin" doctor
 "$paperforge_bin" build web
+mkdir -p "$paper_root/output/web/lean"
+rsync -a --delete "$paper_root/web-assets/lean/" "$paper_root/output/web/lean/"
 "$paperforge_bin" check
 "$paperforge_bin" build arxiv --pdf
 

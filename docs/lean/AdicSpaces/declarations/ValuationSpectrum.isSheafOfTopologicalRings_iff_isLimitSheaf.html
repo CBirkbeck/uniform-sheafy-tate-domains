@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ValuationSpectrum.isSheafOfTopologicalRings_iff_isLimitSheaf · Lean source</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font: 16px/1.55 system-ui, sans-serif; }
+    main { max-width: 72rem; margin: 0 auto; padding: 2rem 1.2rem 4rem; }
+    nav { margin-bottom: 1.5rem; }
+    a { color: #176b43; }
+    @media (prefers-color-scheme: dark) { a { color: #84d8aa; } }
+    h1 { overflow-wrap: anywhere; font: 650 1.45rem/1.25 ui-monospace, monospace; }
+    .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
+             letter-spacing: .06em; }
+    .doc { max-width: 62rem; }
+    pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
+           background: color-mix(in srgb, CanvasText 7%, Canvas); }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .meta, .used-for { color: color-mix(in srgb, CanvasText 70%, Canvas);
+                        font-size: .9rem; }
+    .provenance { margin-top: 2rem; padding-top: 1rem;
+                   border-top: 1px solid color-mix(in srgb, CanvasText 18%, Canvas);
+                   font-size: .9rem; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../../../paper.html">← Return to the paper</a></nav>
+  <div class="kind">theorem</div>
+  <h1>ValuationSpectrum.isSheafOfTopologicalRings_iff_isLimitSheaf</h1>
+  <div class="doc"><div class="lean-doc"><p><strong>Wedhorn Remark 8.20</strong> for the all-open structure presheaf: the representable<br>condition (&quot;for every topological ring <code>T</code>, <code>Hom(T, 𝒪_X(−))</code> is a sheaf of sets&quot;) is<br>equivalent to the concrete pair (ring-sheaf axioms) + (topological embedding into the<br>cover product), i.e. to <code>IsLimitSheaf</code>.</p><p><code>⟸</code> is <code>IsLimitSheaf.homGlue</code>. For <code>⟹</code>: the element-level axioms are recovered by<br>testing along the discrete polynomial ring <code>ULift ℤ[X]</code> (an element is the image of<br><code>X</code>; homomorphisms from a discrete ring are continuous); the embedding condition is<br>recovered by testing along <code>𝒪_X(V)</code> itself re-topologized with the topology induced<br>from <code>∏ᵢ 𝒪_X(Uᵢ)</code> — the glued homomorphism against the identity&#x27;s restriction family<br>is the identity (by uniqueness), which is exactly continuity of<br><code>(𝒪_X(V), induced) → (𝒪_X(V), projective)</code>.</p></div></div>
+  <p class="used-for"><strong>Used in the paper for:</strong> Appendix: equivalence with Wedhorn&#x27;s formulation</p>
+  <pre><code>theorem isSheafOfTopologicalRings_iff_isLimitSheaf :
+    IsSheafOfTopologicalRings A ↔ IsLimitSheaf A</code></pre>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/StructurePresheafBundled.lean:442–443</code><br>
+  AINTLIB commit <code>b007a4f3d4226f00a684b402715aa542e2f0bcdc</code>.</p>
+  <p class="meta">This is the archival declaration extracted from the pinned
+  source tree.  The corresponding AINTLIB commit was not publicly reachable
+  when this page was built, so no external upstream link is offered here.</p>
+  <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
+  The finite-jet development uses restricted power-series code adapted from
+  <a href="https://github.com/WilliamCoram/PhD">William Coram's PhD repository</a>;
+  the vendored source headers also credit Bingyu Xia for power-series equivalence
+  lemmas.  This is infrastructure provenance, not an attribution of this
+  paper-specific declaration.</aside>
+</main>
+</body>
+</html>

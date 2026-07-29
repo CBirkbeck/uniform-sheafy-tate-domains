@@ -34,8 +34,14 @@
       <xi:include href="./sec-formalisation.ptx"/>
       <references xml:id="references">
       <title>References</title>
+      <biblio type="raw" xml:id="bib-AINTLIB">
+      C.<nbsp/>Birkbeck and contributors, <em>AINTLIB: AdicSpaces formalisation</em>, Lean<nbsp/>4 source code, commit <c>b007a4f3d4226f00a684b402715aa542e2f0bcdc</c>, 2026, <url href="https://github.com/CBirkbeck/AINTLIB"><c>https://github.com/CBirkbeck/AINTLIB</c></url>.
+      </biblio>
+      <biblio type="raw" xml:id="bib-BBK">
+      O.<nbsp/>Ben-Bassat and K.<nbsp/>Kremnizer, <em>Non-Archimedean analytic geometry as relative algebraic geometry</em>, Ann. Fac. Sci. Toulouse Math. (6) <alert>26</alert> (2017), no.<nbsp/>1, 49<ndash/>126, <url href="https://doi.org/10.5802/afst.1526">doi:10.5802/afst.1526</url>.
+      </biblio>
       <biblio type="raw" xml:id="bib-BK">
-      F.<nbsp/>Bambozzi and K.<nbsp/>Kremnizer, <em>On the sheafyness property of spectra of Banach rings</em>, J. Lond. Math. Soc. (2) <alert>109</alert> (2024), no.<nbsp/>1, e12855.
+      F.<nbsp/>Bambozzi and K.<nbsp/>Kremnizer, <em>On the sheafyness property of spectra of Banach rings</em>, J. Lond. Math. Soc. (2) <alert>109</alert> (2024), no.<nbsp/>1, e12855, <url href="https://doi.org/10.1112/jlms.12855">doi:10.1112/jlms.12855</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-BGR">
       S.<nbsp/>Bosch, U.<nbsp/>Güntzer, and R.<nbsp/>Remmert, <em>Non-Archimedean Analysis</em>, Grundlehren der mathematischen Wissenschaften, vol.<nbsp/>261, Springer-Verlag, Berlin, 1984.
@@ -43,11 +49,14 @@
       <biblio type="raw" xml:id="bib-BV">
       K.<nbsp/>Buzzard and A.<nbsp/>Verberkmoes, <em>Stably uniform affinoids are sheafy</em>, J. Reine Angew. Math. <alert>740</alert> (2018), 25<ndash/>39.
       </biblio>
+      <biblio type="raw" xml:id="bib-CoramXia">
+      W.<nbsp/>Coram and B.<nbsp/>Xia, <em>Restricted power-series and power-series equivalence code</em>, Lean source files in the <c>WilliamCoram/PhD</c> repository, commit <c>e8fcf8fbff848a95475ab62ae2568cbb73961de8</c>, 2026, <url href="https://github.com/WilliamCoram/PhD"><c>https://github.com/WilliamCoram/PhD</c></url>.
+      </biblio>
       <biblio type="raw" xml:id="bib-HK">
       D.<nbsp/>Hansen and K.<nbsp/>S. Kedlaya, <em>Sheafiness criteria for Huber rings</em>, preprint, version of 23 April 2025, <url href="https://kskedlaya.org/papers/criteria.pdf"><c>https://kskedlaya.org/papers/criteria.pdf</c></url>.
       </biblio>
       <biblio type="raw" xml:id="bib-Huber94">
-      R.<nbsp/>Huber, <em>A generalization of formal schemes and rigid analytic varieties</em>, Math. Z. <alert>217</alert> (1994), 513<ndash/>551.
+      R.<nbsp/>Huber, <em>A generalization of formal schemes and rigid analytic varieties</em>, Math. Z. <alert>217</alert> (1994), 513<ndash/>551, <url href="https://doi.org/10.1007/BF02571959">doi:10.1007/BF02571959</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-KedlayaAWS">
       K.<nbsp/>S. Kedlaya, <em>Sheaves, stacks, and shtukas</em>, Arizona Winter School notes, 2017, <url href="https://swc-math.github.io/aws/2017/2017KedlayaNotes.pdf"><c>https://swc-math.github.io/aws/2017/2017KedlayaNotes.pdf</c></url>.
@@ -57,6 +66,12 @@
       </biblio>
       <biblio type="raw" xml:id="bib-KST">
       M.<nbsp/>Kerz, S.<nbsp/>Saito, and G.<nbsp/>Tamme, <em><m>K</m>-theory of non-archimedean rings II</em>, Nagoya Math. J. <alert>251</alert> (2023), 669<ndash/>685.
+      </biblio>
+      <biblio type="raw" xml:id="bib-Lean4">
+      L.<nbsp/>de Moura and S.<nbsp/>Ullrich, <em>The Lean 4 theorem prover and programming language</em>, in <em>Automated Deduction<mdash/>CADE 28</em>, Lecture Notes in Comput. Sci., vol.<nbsp/>12699, Springer, 2021, 625<ndash/>635, <url href="https://doi.org/10.1007/978-3-030-79876-5_37">doi:10.1007/978-3-030-79876-5\_37</url>.
+      </biblio>
+      <biblio type="raw" xml:id="bib-mathlib">
+      The mathlib Community, <em>The Lean mathematical library</em>, in <em>Proceedings of the 9th ACM SIGPLAN International Conference on Certified Programs and Proofs</em>, ACM, 2020, 367<ndash/>381, <url href="https://doi.org/10.1145/3372885.3373824">doi:10.1145/3372885.3373824</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-Milnor">
       J.<nbsp/>Milnor, <em>Introduction to Algebraic <m>K</m>-Theory</em>, Annals of Mathematics Studies, vol.<nbsp/>72, Princeton University Press, Princeton, 1971.
@@ -72,6 +87,9 @@
       </biblio>
       <biblio type="raw" xml:id="bib-Temkin">
       M.<nbsp/>Temkin, <em>Non-archimedean pinchings</em>, Math. Z. <alert>301</alert> (2022), no.<nbsp/>2, 2099<ndash/>2109.
+      </biblio>
+      <biblio type="raw" xml:id="bib-Wedhorn">
+      T.<nbsp/>Wedhorn, <em>Adic spaces</em>, 2019, <url href="https://arxiv.org/abs/1910.05934">arXiv:1910.05934</url>.
       </biblio>
       </references>
     </backmatter>

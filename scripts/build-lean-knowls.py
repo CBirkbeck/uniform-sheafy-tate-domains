@@ -1,0 +1,498 @@
+#!/usr/bin/env python3
+"""Build self-contained Lean declaration knowls from a pinned AINTLIB commit.
+
+Paperforge normally builds its inline Lean registry from doc-gen4 output.  The
+formalization snapshot used by this paper is not currently published with
+doc-gen4 pages, so this script extracts the declaration source directly with
+``git show``.  It produces both:
+
+* ``web-assets/lean-knowls-AdicSpaces.js`` for the inline knowls; and
+* ``web-assets/lean/AdicSpaces/declarations/*.html`` for ordinary/new-tab
+  navigation.
+
+The generated pages are a fixed source snapshot: they do not depend on the
+AINTLIB commit being reachable on GitHub at run time.
+"""
+
+from __future__ import annotations
+
+import argparse
+import html
+import json
+import re
+import subprocess
+import sys
+from pathlib import Path
+
+try:
+    import tomllib
+except ModuleNotFoundError as exc:  # pragma: no cover - Python < 3.11
+    raise SystemExit("build-lean-knowls.py requires Python 3.11 or newer") from exc
+
+
+PINNED_COMMIT = "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+PROJECT = "AdicSpaces"
+
+DECL_LINE_RE = re.compile(
+    r"^(?P<indent>[ \t]*)"
+    r"(?:@\[[^\]]*\]\s*)*"
+    r"(?P<mods>(?:(?:noncomputable|protected|private|unsafe|opaque)\s+)*)"
+    r"(?P<kind>class|structure|def|abbrev|theorem|lemma)\s+"
+    r"(?P<name>[^\s(:\[{]+)"
+)
+TOP_COMMAND_RE = re.compile(
+    r"^(?:@\[[^\]]*\]\s*)*"
+    r"(?:(?:noncomputable|protected|private|unsafe|opaque)\s+)*"
+    r"(?:class|structure|def|abbrev|theorem|lemma|instance|example|axiom|"
+    r"inductive|namespace|section|end|variable|include|omit|open|attribute|"
+    r"local|scoped|syntax|macro|notation|universe)\b"
+)
+
+
+def run_git(repo: Path, *args: str) -> str:
+    proc = subprocess.run(
+        ["git", "-C", str(repo), *args],
+        check=False,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    if proc.returncode:
+        detail = proc.stderr.strip() or proc.stdout.strip()
+        raise RuntimeError(f"git {' '.join(args)} failed: {detail}")
+    return proc.stdout
+
+
+def deep_merge(base: dict, overlay: dict) -> dict:
+    result = dict(base)
+    for key, value in overlay.items():
+        if isinstance(value, dict) and isinstance(result.get(key), dict):
+            result[key] = deep_merge(result[key], value)
+        else:
+            result[key] = value
+    return result
+
+
+def load_config(root: Path) -> dict:
+    with (root / "paper.toml").open("rb") as handle:
+        config = tomllib.load(handle)
+    local = root / ".paperforge.local.toml"
+    if local.is_file():
+        with local.open("rb") as handle:
+            config = deep_merge(config, tomllib.load(handle))
+    return config
+
+
+def formalization_root(root: Path, override: str | None) -> Path:
+    if override:
+        candidate = Path(override).expanduser()
+    else:
+        config = load_config(root)
+        candidate = Path(
+            config.get("formalizations", {})
+            .get("primary", {})
+            .get("root")
+            or config.get("inputs", {}).get("lean_project")
+            or "/Users/mcu22seu/Documents/GitHub/aintlib-adic-fjp/projects/AdicSpaces"
+        ).expanduser()
+    if not candidate.is_absolute():
+        candidate = root / candidate
+    candidate = candidate.resolve()
+    if not candidate.is_dir():
+        raise RuntimeError(f"Lean project root does not exist: {candidate}")
+    return candidate
+
+
+def collect_declarations(root: Path, declmap_path: Path, extra_path: Path) -> list[dict]:
+    declmap = json.loads((root / declmap_path).read_text())
+    extra_data = json.loads((root / extra_path).read_text())
+    if extra_data.get("commit") not in (None, PINNED_COMMIT):
+        raise RuntimeError(
+            f"{extra_path} pins {extra_data['commit']}, expected {PINNED_COMMIT}"
+        )
+
+    merged: dict[str, dict] = {}
+    uses: dict[str, list[str]] = {}
+
+    def add(entry: dict) -> None:
+        decl = entry.get("decl")
+        if not decl or not entry.get("file"):
+            raise RuntimeError(f"declaration entry needs decl and file: {entry!r}")
+        if decl in merged and merged[decl]["file"] != entry["file"]:
+            raise RuntimeError(
+                f"{decl} is assigned to two files: "
+                f"{merged[decl]['file']} and {entry['file']}"
+            )
+        merged.setdefault(decl, {}).update(entry)
+        cited = entry.get("cited")
+        if cited and cited not in uses.setdefault(decl, []):
+            uses[decl].append(cited)
+
+    for entries in declmap.values():
+        for entry in entries:
+            if not entry.get("private"):
+                add(entry)
+    for entry in extra_data.get("declarations", []):
+        add(entry)
+
+    for decl, entry in merged.items():
+        entry["uses"] = uses.get(decl, [])
+    return [merged[name] for name in sorted(merged)]
+
+
+def line_offsets(source: str) -> tuple[list[str], list[int]]:
+    lines = source.splitlines(keepends=True)
+    offsets: list[int] = []
+    offset = 0
+    for line in lines:
+        offsets.append(offset)
+        offset += len(line)
+    return lines, offsets
+
+
+def declaration_at(source: str, decl: str, line_hint: int | None) -> tuple[int, int, str, str]:
+    lines, offsets = line_offsets(source)
+    candidates: list[tuple[int, re.Match[str]]] = []
+    for index, line in enumerate(lines):
+        match = DECL_LINE_RE.match(line)
+        if not match:
+            continue
+        written_name = match.group("name")
+        if decl == written_name or decl.endswith("." + written_name):
+            candidates.append((index, match))
+    if not candidates:
+        raise RuntimeError(f"could not locate declaration {decl}")
+    if line_hint:
+        index, match = min(candidates, key=lambda item: abs(item[0] + 1 - line_hint))
+    elif len(candidates) == 1:
+        index, match = candidates[0]
+    else:
+        where = ", ".join(str(i + 1) for i, _ in candidates)
+        raise RuntimeError(f"ambiguous declaration {decl}; candidates at lines {where}")
+    return offsets[index], index, match.group("kind"), match.group("name")
+
+
+def preceding_doc_comment(source: str, start: int) -> str:
+    prefix = source[:start]
+    trimmed = prefix.rstrip()
+    if not trimmed.endswith("-/"):
+        return ""
+    doc_start = trimmed.rfind("/--")
+    if doc_start < 0:
+        return ""
+    doc_end = trimmed.find("-/", doc_start)
+    if doc_end != len(trimmed) - 2:
+        return ""
+    return trimmed[doc_start + 3 : doc_end].strip()
+
+
+def declaration_block(source: str, start: int, line_index: int) -> str:
+    lines, offsets = line_offsets(source)
+    end = len(source)
+    for index in range(line_index + 1, len(lines)):
+        line = lines[index]
+        if line.startswith("/-!"):
+            end = offsets[index]
+            break
+        if line[:1].isspace():
+            continue
+        if TOP_COMMAND_RE.match(line):
+            end = offsets[index]
+            break
+    block = source[start:end].rstrip()
+    # A doc comment for the following declaration can precede a modifier such
+    # as ``include ... in``; never absorb that comment into this declaration.
+    trailing_doc = block.rfind("\n/--")
+    if trailing_doc >= 0:
+        after = block.find("-/", trailing_doc)
+        if after >= 0 and not block[after + 2 :].strip():
+            block = block[:trailing_doc].rstrip()
+    return block
+
+
+def body_marker(block: str, name: str) -> int | None:
+    """Return the top-level definition/proof marker in a declaration block."""
+    name_at = block.find(name)
+    pos = name_at + len(name) if name_at >= 0 else 0
+    depth = 0
+    in_string = False
+    escaped = False
+    line_comment = False
+    block_comment = 0
+    while pos < len(block):
+        pair = block[pos : pos + 2]
+        char = block[pos]
+        if line_comment:
+            if char == "\n":
+                line_comment = False
+            pos += 1
+            continue
+        if block_comment:
+            if pair == "/-":
+                block_comment += 1
+                pos += 2
+            elif pair == "-/":
+                block_comment -= 1
+                pos += 2
+            else:
+                pos += 1
+            continue
+        if in_string:
+            if escaped:
+                escaped = False
+            elif char == "\\":
+                escaped = True
+            elif char == '"':
+                in_string = False
+            pos += 1
+            continue
+        if pair == "--":
+            line_comment = True
+            pos += 2
+            continue
+        if pair == "/-":
+            block_comment = 1
+            pos += 2
+            continue
+        if char == '"':
+            in_string = True
+            pos += 1
+            continue
+        if char in "([{":
+            depth += 1
+            pos += 1
+            continue
+        if char in ")]}":
+            depth = max(0, depth - 1)
+            pos += 1
+            continue
+        if depth == 0 and pair == ":=":
+            line_prefix = block[block.rfind("\n", 0, pos) + 1 : pos]
+            if not re.search(r"\b(?:let|letI|have|haveI)\b", line_prefix):
+                return pos
+            pos += 2
+            continue
+        if depth == 0 and block.startswith("where", pos):
+            before = block[pos - 1] if pos else " "
+            after = block[pos + 5] if pos + 5 < len(block) else " "
+            if not (before.isalnum() or before in "_'") and not (
+                after.isalnum() or after in "_'"
+            ):
+                return pos
+        pos += 1
+    return None
+
+
+def doc_html(doc: str) -> str:
+    if not doc:
+        return ""
+
+    parts = re.split(r"\n\s*\n", doc)
+    rendered: list[str] = []
+    for part in parts:
+        lines = [line.strip() for line in part.splitlines()]
+        text = "\n".join(lines)
+        chunks = text.split("`")
+        inline = "".join(
+            f"<code>{html.escape(chunk)}</code>" if index % 2 else html.escape(chunk)
+            for index, chunk in enumerate(chunks)
+        )
+        inline = re.sub(
+            r"\*\*(.+?)\*\*", r"<strong>\1</strong>", inline, flags=re.S
+        )
+        rendered.append("<p>" + inline.replace("\n", "<br>") + "</p>")
+    return '<div class="lean-doc">' + "".join(rendered) + "</div>"
+
+
+def slug_for(decl: str) -> str:
+    return re.sub(r"[^A-Za-z0-9_.-]+", "-", decl) + ".html"
+
+
+def inline_html(
+    decl: str,
+    kind: str,
+    code: str,
+    doc: str,
+    repo_path: str,
+    line_start: int,
+    line_end: int,
+) -> str:
+    return (
+        '<div class="lean-knowl-head">'
+        f'<span class="lean-decl-kind">{html.escape(kind)}</span> '
+        f"<code>{html.escape(decl)}</code></div>"
+        + doc_html(doc)
+        + '<pre class="lean-source"><code class="language-lean">'
+        + html.escape(code)
+        + "</code></pre>"
+        + '<div class="lean-source-meta">'
+        + html.escape(repo_path)
+        + f":{line_start}–{line_end} · commit {PINNED_COMMIT[:12]}"
+        + "</div>"
+    )
+
+
+def standalone_html(
+    decl: str,
+    kind: str,
+    code: str,
+    doc: str,
+    repo_path: str,
+    line_start: int,
+    line_end: int,
+    uses: list[str],
+) -> str:
+    uses_html = ""
+    if uses:
+        uses_html = (
+            '<p class="used-for"><strong>Used in the paper for:</strong> '
+            + "; ".join(html.escape(item) for item in uses)
+            + "</p>"
+        )
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{html.escape(decl)} · Lean source</title>
+  <style>
+    :root {{ color-scheme: light dark; }}
+    body {{ margin: 0; font: 16px/1.55 system-ui, sans-serif; }}
+    main {{ max-width: 72rem; margin: 0 auto; padding: 2rem 1.2rem 4rem; }}
+    nav {{ margin-bottom: 1.5rem; }}
+    a {{ color: #176b43; }}
+    @media (prefers-color-scheme: dark) {{ a {{ color: #84d8aa; }} }}
+    h1 {{ overflow-wrap: anywhere; font: 650 1.45rem/1.25 ui-monospace, monospace; }}
+    .kind {{ color: #176b43; font-size: .82rem; text-transform: uppercase;
+             letter-spacing: .06em; }}
+    .doc {{ max-width: 62rem; }}
+    pre {{ padding: 1rem; overflow-x: auto; border-radius: .45rem;
+           background: color-mix(in srgb, CanvasText 7%, Canvas); }}
+    code {{ font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }}
+    .meta, .used-for {{ color: color-mix(in srgb, CanvasText 70%, Canvas);
+                        font-size: .9rem; }}
+    .provenance {{ margin-top: 2rem; padding-top: 1rem;
+                   border-top: 1px solid color-mix(in srgb, CanvasText 18%, Canvas);
+                   font-size: .9rem; }}
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../../../paper.html">← Return to the paper</a></nav>
+  <div class="kind">{html.escape(kind)}</div>
+  <h1>{html.escape(decl)}</h1>
+  <div class="doc">{doc_html(doc)}</div>
+  {uses_html}
+  <pre><code>{html.escape(code)}</code></pre>
+  <p class="meta">Pinned source: <code>{html.escape(repo_path)}:{line_start}–{line_end}</code><br>
+  AINTLIB commit <code>{PINNED_COMMIT}</code>.</p>
+  <p class="meta">This is the archival declaration extracted from the pinned
+  source tree.  The corresponding AINTLIB commit was not publicly reachable
+  when this page was built, so no external upstream link is offered here.</p>
+  <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
+  The finite-jet development uses restricted power-series code adapted from
+  <a href="https://github.com/WilliamCoram/PhD">William Coram's PhD repository</a>;
+  the vendored source headers also credit Bingyu Xia for power-series equivalence
+  lemmas.  This is infrastructure provenance, not an attribution of this
+  paper-specific declaration.</aside>
+</main>
+</body>
+</html>
+"""
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "instance", nargs="?", type=Path, default=Path(__file__).resolve().parents[1]
+    )
+    parser.add_argument("--lean-root", help="override the configured Lean project root")
+    parser.add_argument(
+        "--declmap", type=Path, default=Path("crosswalk/lean-decl-map.json")
+    )
+    parser.add_argument(
+        "--extra", type=Path, default=Path("crosswalk/lean-knowl-extra.json")
+    )
+    args = parser.parse_args()
+
+    root = args.instance.resolve()
+    lean_root = formalization_root(root, args.lean_root)
+    repo = Path(run_git(lean_root, "rev-parse", "--show-toplevel").strip())
+    run_git(repo, "cat-file", "-e", PINNED_COMMIT + "^{commit}")
+    project_prefix = lean_root.relative_to(repo).as_posix()
+    declarations = collect_declarations(root, args.declmap, args.extra)
+
+    pages = root / "web-assets" / "lean" / PROJECT / "declarations"
+    pages.mkdir(parents=True, exist_ok=True)
+    registry: dict[str, dict[str, str]] = {}
+    expected_pages: set[str] = set()
+
+    for entry in declarations:
+        repo_path = f"{project_prefix}/{entry['file']}"
+        source = run_git(repo, "show", f"{PINNED_COMMIT}:{repo_path}")
+        start, line_index, kind, written_name = declaration_at(
+            source, entry["decl"], entry.get("line")
+        )
+        block = declaration_block(source, start, line_index)
+        if not entry.get("include_body", False):
+            marker = body_marker(block, written_name)
+            if marker is not None:
+                block = block[:marker].rstrip()
+        doc = preceding_doc_comment(source, start)
+        line_start = source.count("\n", 0, start) + 1
+        line_end = line_start + block.count("\n")
+        slug = slug_for(entry["decl"])
+        href = f"./lean/{PROJECT}/declarations/{slug}"
+        registry[entry["decl"]] = {
+            "html": inline_html(
+                entry["decl"],
+                kind,
+                block,
+                doc,
+                repo_path,
+                line_start,
+                line_end,
+            ),
+            "href": href,
+        }
+        (pages / slug).write_text(
+            standalone_html(
+                entry["decl"],
+                kind,
+                block,
+                doc,
+                repo_path,
+                line_start,
+                line_end,
+                entry["uses"],
+            )
+        )
+        expected_pages.add(slug)
+
+    for stale in pages.glob("*.html"):
+        if stale.name not in expected_pages:
+            stale.unlink()
+
+    registry_path = root / "web-assets" / f"lean-knowls-{PROJECT}.js"
+    registry_path.write_text(
+        "// Generated by scripts/build-lean-knowls.py from AINTLIB commit "
+        + PINNED_COMMIT
+        + ".\nwindow.PAPERFORGE_LEAN_KNOWLS = Object.assign(\n"
+        + "  window.PAPERFORGE_LEAN_KNOWLS || {},\n  "
+        + json.dumps(registry, ensure_ascii=False, indent=2)
+        + "\n);\n"
+    )
+    print(
+        f"lean-knowls: {len(registry)} declarations from {PINNED_COMMIT[:12]} "
+        f"-> {registry_path.relative_to(root)}"
+    )
+    print(f"lean-pages: {len(expected_pages)} -> {pages.relative_to(root)}")
+    return 0
+
+
+if __name__ == "__main__":
+    try:
+        raise SystemExit(main())
+    except (OSError, RuntimeError, ValueError, json.JSONDecodeError) as exc:
+        print(f"build-lean-knowls: error: {exc}", file=sys.stderr)
+        raise SystemExit(1)
