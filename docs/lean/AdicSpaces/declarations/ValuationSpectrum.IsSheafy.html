@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ValuationSpectrum.IsSheafy · Lean source</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font: 16px/1.55 system-ui, sans-serif; }
+    main { max-width: 72rem; margin: 0 auto; padding: 2rem 1.2rem 4rem; }
+    nav { margin-bottom: 1.5rem; }
+    a { color: #176b43; }
+    @media (prefers-color-scheme: dark) { a { color: #84d8aa; } }
+    h1 { overflow-wrap: anywhere; font: 650 1.45rem/1.25 ui-monospace, monospace; }
+    .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
+             letter-spacing: .06em; }
+    .doc { max-width: 62rem; }
+    pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
+           background: color-mix(in srgb, CanvasText 7%, Canvas); }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .meta, .used-for { color: color-mix(in srgb, CanvasText 70%, Canvas);
+                        font-size: .9rem; }
+    .provenance { margin-top: 2rem; padding-top: 1rem;
+                   border-top: 1px solid color-mix(in srgb, CanvasText 18%, Canvas);
+                   font-size: .9rem; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../../../paper.html">← Return to the paper</a></nav>
+  <div class="kind">class</div>
+  <h1>ValuationSpectrum.IsSheafy</h1>
+  <div class="doc"><div class="lean-doc"><p><strong>Internal finite rational-cover criterion</strong> for a fixed pair <code>(A, A⁺)</code> — the<br>proof-engine class of the 8.28(b) campaign. <strong>Naming note (WO3, 2026-07-20): this is<br>NOT the literature&#x27;s ring-level &quot;sheafy&quot; (Wedhorn Definition 8.26)</strong> — that is<br><code>IsSheafyTateRing</code> (<code>SheafyRing.lean</code>), which quantifies over the rings of integral<br>elements of the completion; the pair-level public notion is <code>IsSheafyFor</code> (bundled<br>valid pair, genuine all-open presheaf), equivalent to this class at complete Tate<br>scope by <code>isSheafy_iff_isLimitSheaf</code>. New code should state results through those;<br>this class remains as the internal criterion the existing proof corpus is written<br>against.</p><p>An affinoid ring <code>(A, A⁺)</code> satisfies this criterion if the rational-localization<br>presheaf satisfies, on every rational cover, the conditions that Remark 8.20 makes<br>equivalent to the sheaf-of-topological-rings property — two conditions on every<br>rational cover <code>C</code> —<br>quantified over coverings of rational subsets by rational subsets in Wedhorn<br>Definition 7.29&#x27;s sense (<code>RationalCoveringData.IsRational</code>: base and pieces have <code>T·A</code><br>open in <code>A</code>, wedhorn.txt:3100, 4143):<br>1. <strong><code>embedding</code></strong>: the product restriction <code>O_X(base) → ∏ O_X(cover_i)</code> is a<br><strong>topological embedding</strong> (injective + the source topology equals the<br>subspace topology induced from the product topology on the target).<br>2. <strong><code>gluing</code></strong>: compatible families on the cover have a global pre-image<br>(necessarily unique by <code>embedding.injective</code>).</p><p>The <code>embedding</code> field subsumes the sheaf-of-sets injectivity (<code>Topology.IsEmbedding</code><br>implies <code>Function.Injective</code>); together with <code>gluing</code> it gives the full sheaf<br>condition in the category of (complete) topological rings.</p><p><strong>Proof route for strongly noetherian Tate rings</strong> (Wedhorn Thm 8.28(b)):<br>1. <strong>Example 6.38</strong> gives <code>presheafValue D ≃_top A⟨X⟩/(closed ideal)</code> as a<br>*topological* ring iso (universal property + Wedhorn Prop 6.17).<br>2. <strong>Lemma 8.31</strong> (flatness) + <strong>Cor 8.32</strong> (faithful flatness of the product<br>restriction) give the <strong>algebraic</strong> sheaf-of-sets injectivity.<br>3. <strong>Lemma 8.33</strong> (3×3 diagram chase) + <strong>Lemma 8.34</strong> (refinement transfer)<br>transport the topological structure from the Tate-algebra-quotient side.<br>Quotient maps of Tate algebras are continuous and open, so the diagram chase<br>preserves the topological embedding through the refinement.</p><p>See <code>docs/plans/2026-04-08-wedhorn-vs-zavyalov.md</code>.</p></div></div>
+  <p class="used-for"><strong>Used in the paper for:</strong> Appendix: finite-rational-cover sheafiness</p>
+  <pre><code>class IsSheafy (A : Type u) [CommRing A] [TopologicalSpace A]
+    [IsTopologicalRing A] [inst₁ : PlusSubring A] [inst₂ : IsHuberRing A]
+    [T2Space A] [NonarchimedeanRing A]
+    [letI : UniformSpace A := IsTopologicalAddGroup.rightUniformSpace A; CompleteSpace A]
+    [IsRingOfIntegralElements (A⁺)] : Prop where
+  embedding : ∀ (C : RationalCoveringData A), C.IsRational →
+    Topology.IsEmbedding (productRestrictionSub A C)
+  gluing : ∀ (C : RationalCoveringData A), C.IsRational →
+    ∀ (f : ∀ (D : ↥C.covers), presheafValue D.1),
+    (∀ (D₁ D₂ : ↥C.covers)
+       (D₃ : RationalLocData A)
+       (h₃₁ : rationalOpen D₃.T D₃.s ⊆ rationalOpen D₁.1.T D₁.1.s)
+       (h₃₂ : rationalOpen D₃.T D₃.s ⊆ rationalOpen D₂.1.T D₂.1.s),
+       restrictionMap D₁.1 D₃ h₃₁ (f D₁) =
+         restrictionMap D₂.1 D₃ h₃₂ (f D₂)) →
+    ∃ x : presheafValue C.base, ∀ (D : ↥C.covers),
+      restrictionMap C.base D.1 (C.hsubset D.1 D.2) x = f D</code></pre>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/StructureSheaf.lean:371–387</code><br>
+  AINTLIB commit <code>b007a4f3d4226f00a684b402715aa542e2f0bcdc</code>.</p>
+  <p class="meta">This is the archival declaration extracted from the pinned
+  source tree.  The corresponding AINTLIB commit was not publicly reachable
+  when this page was built, so no external upstream link is offered here.</p>
+  <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
+  The finite-jet development uses restricted power-series code adapted from
+  <a href="https://github.com/WilliamCoram/PhD">William Coram's PhD repository</a>;
+  the vendored source headers also credit Bingyu Xia for power-series equivalence
+  lemmas.  This is infrastructure provenance, not an attribution of this
+  paper-specific declaration.</aside>
+</main>
+</body>
+</html>

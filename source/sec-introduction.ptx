@@ -26,19 +26,22 @@ and endow <m>A</m> with the topology defined by the ring of definition <m>A_0</m
   <theorem xml:id="thm-main">
     <statement>
       <p>
-        The ring <m>A</m> is a complete uniform Tate <m>k</m>-algebra and an integral domain, with
-<m>A^\circ=A_0</m>.  The Huber pair <m>(A,A^\circ)</m> is sheafy.  However,
+        The ring <m>A</m> is a complete uniform nonnoetherian Tate <m>k</m>-algebra and an
+integral domain, with <m>A^\circ=A_0</m>.  The Huber pair <m>(A,A^\circ)</m> is sheafy.
+However,
 <me>A\left\langle \frac{W}{\varpi}\right\rangle
   \cong k\langle X,Q\rangle/(Q^2),
   \qquad X=\frac{W}{\varpi},</me>
 so <m>A</m> is not stably uniform.
       </p>
     </statement>
+    <lean project="AdicSpaces" ref="FiniteJetOver.isTateRing_JetA">Lean (isTateRing_JetA)</lean>
     <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_isUniform_of_dvr">Lean (finiteJet_isUniform_of_dvr)</lean>
+    <lean project="AdicSpaces" ref="FiniteJetOver.isPowerBounded_JetA_iff">Lean (isPowerBounded_JetA_iff)</lean>
     <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_isDomain">Lean (finiteJet_isDomain)</lean>
     <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_not_noetherian">Lean (finiteJet_not_noetherian)</lean>
     <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_not_stablyUniform_of_dvr">Lean (finiteJet_not_stablyUniform_of_dvr)</lean>
-    <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_isSheafyTateRing_of_dvr">Lean (finiteJet_isSheafyTateRing_of_dvr)</lean>
+    <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_isSheafyFor_of_dvr">Lean (finiteJet_isSheafyFor_of_dvr)</lean>
   </theorem>
   <p>
     The proof uses a localisation theorem for Milnor squares of complete Tate rings.  The terminology is classical rather than new.  Milnor's patching theorem describes projective modules over a pullback ring with a surjective leg, and diagrams of this kind are now called Milnor squares <xref ref="bib-Milnor" detail="Section 2"/>.  Milnor squares of complete Tate rings also appear explicitly in the analytic <m>K</m>-theory work of Kerz<ndash/>Saito<ndash/>Tamme <xref ref="bib-KST" detail="Section 3"/>.
@@ -75,10 +78,10 @@ is strict exact, and <m>C\to D</m> is a strict surjection.
         The closest precedents for the pathology are the examples of Buzzard<ndash/>Verberkmoes and Mihara.  Buzzard<ndash/>Verberkmoes construct a uniform affinoid ring with a nonuniform rational localization and, separately, a uniform affinoid ring whose structure presheaf is not a sheaf <xref ref="bib-BV" detail="Propositions 17 and 18"/>.  Mihara gives further examples of uniform Banach and affinoid rings for which rational localization loses uniformity, including a separate non-sheafy uniform affinoid ring <xref ref="bib-Mihara"/>.  Thus the phenomena <q>uniform but not stably uniform</q> and <q>uniform but not sheafy</q> were already known.  What those examples did not supply was a proof that a non-stably-uniform example is nevertheless sheafy.
       </p>
       <p>
-        The pullback terminology also has a direct precedent.  A cartesian square of rings with a surjective leg is a classical Milnor square, named for Milnor's theorem which patches projective modules from the two comparison rings <xref ref="bib-Milnor" detail="Section 2"/>.  Kerz<ndash/>Saito<ndash/>Tamme already work explicitly with Milnor squares of complete Tate rings, construct compatible rings of definition by an open-mapping argument, and prove analytic <m>K</m>-theory excision for them <xref ref="bib-KST" detail="Section 3"/>.  Thus neither the term <q>Milnor square</q>, its complete-Tate version, nor the basic topological pullback mechanism is new here.  We use the adjective <q>strict</q> to keep the topological exactness and bounded-denominator estimates visible; we have not found it used as standard terminology for this particular nonarchimedean situation.  The new input needed for the present application is the graph<ndash/>Koszul theorem showing that completed rational localisation preserves the square strictly and naturally, followed by the sheaf-transfer argument.
+        The pullback terminology also has a direct precedent.  A cartesian square of rings with a surjective leg is a classical Milnor square, named for Milnor's theorem which patches projective modules from the two comparison rings <xref ref="bib-Milnor" detail="Section 2"/>.  Kerz<ndash/>Saito<ndash/>Tamme already work explicitly with Milnor squares of complete Tate rings, construct compatible rings of definition by an open-mapping argument, and prove analytic <m>K</m>-theory excision for them <xref ref="bib-KST" detail="Section 3"/>.  Thus neither the term <q>Milnor square</q>, its complete-Tate version, nor the basic topological pullback mechanism is new here.  We use the adjective <q>strict</q> to keep the topological exactness and bounded-denominator estimates visible; we have not found it used as standard terminology for this particular nonarchimedean situation.  The input particular to the present application is the observation that strict Koszul regularity makes every rational localisation of the finite-jet square strict and natural under refinement, followed by the sheaf-transfer argument.
       </p>
       <p>
-        After applying the contravariant functor <m>\Spa</m>, the ring pullback produces a pushout-shaped diagram of affinoid adic spaces; see <xref ref="rem-pushout-diagram"/>.  It is also analogous to a nonarchimedean pinching, but Temkin's pinching theorem concerns a finite gluing morphism, whereas in the present diagram <m>\Spa(D,D^\circ)\to\Spa(B,B^\circ)</m> is a rational open immersion and is not finite <xref ref="bib-Temkin"/>.  Finally, the use of graph Koszul complexes to present rational localizations and control strict exactness over noetherian Tate algebras is closely related to the homological framework of Bambozzi<ndash/>Kremnizer <xref ref="bib-BK" detail="Section 4"/>.  These works provide the closest conceptual precedents for the ingredients of the construction; the finite-jet combination producing a uniform sheafy domain which is not stably uniform appears to be new.
+        After applying the contravariant functor <m>\Spa</m>, the ring pullback produces a pushout-shaped diagram of affinoid adic spaces; see <xref ref="rem-pushout-diagram"/>.  It is also analogous to a nonarchimedean pinching, but Temkin's pinching theorem concerns a finite gluing morphism, whereas in the present diagram <m>\Spa(D,D^\circ)\to\Spa(B,B^\circ)</m> is a rational open immersion and is not finite <xref ref="bib-Temkin"/>.  Finally, the graph complex used below is the strict Koszul complex of Ben-Bassat<ndash/>Kremnizer and Bambozzi<ndash/>Kremnizer <xref ref="bib-BBK" detail="Definition 5.7 and Lemmas 5.13--5.14"/><xref ref="bib-BK" detail="Definitions 4.5--4.6, Proposition 4.9, Lemma 4.11, and Corollary 4.13"/>.  In particular, the strict Koszul regularity asserted in <xref ref="lem-koszul"/> is not new.  We retain a proof because we need the resulting lattice exponents explicitly.  The finite-jet combination producing a uniform sheafy domain which is not stably uniform appears to be new.
       </p>
       <p>
         The weighted-parity construction of <xref ref="sec-rationally-reduced"/> is even closer in spirit to the infinite monomial-support examples of Buzzard<ndash/>Verberkmoes and Mihara.

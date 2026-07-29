@@ -16,14 +16,16 @@ be the corresponding rational localization on <m>|W|\leq |\varpi|</m>, and write
   <proposition xml:id="prop-bad-chart">
     <statement>
       <p>
-        There is a canonical isomorphism of complete Tate <m>k</m>-algebras
+        There is a canonical isomorphism of complete topological rings
 <me>A_{\mathrm{in}}\cong k\langle X,Q\rangle/(Q^2),
   \qquad W\longmapsto\varpi X.</me>
       </p>
     </statement>
     <lean project="AdicSpaces" ref="FiniteJetOver.chartDatum_isRational">Lean (chartDatum_isRational)</lean>
     <lean project="AdicSpaces" ref="FiniteJetOver.chartEquiv">Lean (chartEquiv)</lean>
-    <lean project="AdicSpaces" ref="FiniteJetOver.not_isUniform_chart">Lean (not_isUniform_chart)</lean>
+    <lean project="AdicSpaces" ref="FiniteJetOver.chartEquiv_continuous">Lean (chartEquiv_continuous)</lean>
+    <lean project="AdicSpaces" ref="FiniteJetOver.chartEquiv_symm_continuous">Lean (chartEquiv_symm_continuous)</lean>
+    <lean project="AdicSpaces" ref="FiniteJetOver.chartEquiv_canonicalMap_W">Lean (chartEquiv_canonicalMap_W)</lean>
     <proof>
       <p>
         Let
@@ -65,7 +67,8 @@ This sends <m>A_0</m> into <m>T_0</m>, and it sends <m>W/\varpi</m> to <m>X</m>.
         The ring <m>A</m> is not stably uniform.
       </p>
     </statement>
-    <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_not_stablyUniform_of_dvr">Lean</lean>
+    <lean project="AdicSpaces" ref="FiniteJetOver.not_isUniform_chart">Lean (not_isUniform_chart)</lean>
+    <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_not_stablyUniform_of_dvr">Lean (finiteJet_not_stablyUniform_of_dvr)</lean>
     <proof>
       <p>
         In <m>T=k\langle X,Q\rangle/(Q^2)</m>, every element of the line <m>kQ</m> is nilpotent and hence power-bounded.  This line is not bounded with respect to the ring of definition <m>T_0</m>: for every <m>r\geq 0</m>,

@@ -589,6 +589,18 @@
    "label": null,
    "number": "A.3",
    "section": "A"
+  },
+  "sec-formalisation-scope-of-the-formal-correspondence": {
+   "kind": "subsection",
+   "label": null,
+   "number": "A.4",
+   "section": "A"
+  },
+  "sec-formalisation-mathematical-and-code-provenance": {
+   "kind": "subsection",
+   "label": null,
+   "number": "A.5",
+   "section": "A"
   }
  }
 }

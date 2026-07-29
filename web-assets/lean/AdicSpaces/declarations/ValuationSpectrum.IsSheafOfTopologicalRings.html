@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ValuationSpectrum.IsSheafOfTopologicalRings · Lean source</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font: 16px/1.55 system-ui, sans-serif; }
+    main { max-width: 72rem; margin: 0 auto; padding: 2rem 1.2rem 4rem; }
+    nav { margin-bottom: 1.5rem; }
+    a { color: #176b43; }
+    @media (prefers-color-scheme: dark) { a { color: #84d8aa; } }
+    h1 { overflow-wrap: anywhere; font: 650 1.45rem/1.25 ui-monospace, monospace; }
+    .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
+             letter-spacing: .06em; }
+    .doc { max-width: 62rem; }
+    pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
+           background: color-mix(in srgb, CanvasText 7%, Canvas); }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .meta, .used-for { color: color-mix(in srgb, CanvasText 70%, Canvas);
+                        font-size: .9rem; }
+    .provenance { margin-top: 2rem; padding-top: 1rem;
+                   border-top: 1px solid color-mix(in srgb, CanvasText 18%, Canvas);
+                   font-size: .9rem; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../../../paper.html">← Return to the paper</a></nav>
+  <div class="kind">def</div>
+  <h1>ValuationSpectrum.IsSheafOfTopologicalRings</h1>
+  <div class="doc"><div class="lean-doc"><p><strong>&quot;<code>𝒪_X</code> is a sheaf of topological rings&quot;</strong> in Wedhorn&#x27;s sense (Remark 8.20,<br>first form): for <strong>every</strong> topological commutative ring <code>T</code> — with no completeness,<br>separation, or discreteness restriction — the presheaf <code>V ↦ Hom_cont(T, 𝒪_X(V))</code> of<br>continuous ring homomorphisms is a sheaf of sets: every family of continuous ring<br>homomorphisms into the members of an open cover that is compatible on pairwise<br>intersections arises from a <strong>unique</strong> continuous ring homomorphism into <code>𝒪_X(V)</code>.</p><p><strong>DEPRECATION NOTE (P0.4, 2026-07-20)</strong>: this Spa-specific formulation is<br>superseded by the generic <code>TopCat.Presheaf.IsSheafOfTopologicalRings</code> at<br><code>structurePresheaf A</code> — the two are equivalent by<br><code>structurePresheaf_isSheafOfTopologicalRings_iff</code> +<br><code>isSheafOfTopologicalRings_iff_isLimitSheaf</code>. New statements should use the<br>generic predicate; this one remains for the equivalence theorems and existing<br>consumers.</p></div></div>
+  <p class="used-for"><strong>Used in the paper for:</strong> Appendix: Wedhorn&#x27;s representable formulation</p>
+  <pre><code>def IsSheafOfTopologicalRings : Prop :=
+  ∀ (T : Type u) [CommRing T] [TopologicalSpace T] [IsTopologicalRing T],
+    ∀ {V : Opens ↥(Spa A A⁺)} {ι : Type u} {U : ι → Opens ↥(Spa A A⁺)}
+      (hle : ∀ i, U i ≤ V)
+      (_ : (V : Set ↥(Spa A A⁺)) ⊆ ⋃ i, (U i : Set ↥(Spa A A⁺)))
+      (f : ∀ i, T →+* ↥(limitSections (U i))), (∀ i, Continuous (f i)) →
+      (∀ i j, (limitRestrict (inf_le_left (a := U i) (b := U j))).comp (f i) =
+              (limitRestrict (inf_le_right (a := U i) (b := U j))).comp (f j)) →
+      ∃! g : {g : T →+* ↥(limitSections V) // Continuous g},
+        ∀ i, (limitRestrict (hle i)).comp g.1 = f i</code></pre>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/StructurePresheafBundled.lean:291–300</code><br>
+  AINTLIB commit <code>b007a4f3d4226f00a684b402715aa542e2f0bcdc</code>.</p>
+  <p class="meta">This is the archival declaration extracted from the pinned
+  source tree.  The corresponding AINTLIB commit was not publicly reachable
+  when this page was built, so no external upstream link is offered here.</p>
+  <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
+  The finite-jet development uses restricted power-series code adapted from
+  <a href="https://github.com/WilliamCoram/PhD">William Coram's PhD repository</a>;
+  the vendored source headers also credit Bingyu Xia for power-series equivalence
+  lemmas.  This is infrastructure provenance, not an attribution of this
+  paper-specific declaration.</aside>
+</main>
+</body>
+</html>

@@ -96,8 +96,9 @@ and endow $A$ with the topology defined by the ring of definition $A_0$.
 The main result is the following.
 
 \begin{theorem}\label{thm:main}
-The ring $A$ is a complete uniform Tate $k$-algebra and an integral domain, with
-$A^\circ=A_0$.  The Huber pair $(A,A^\circ)$ is sheafy.  However,
+The ring $A$ is a complete uniform nonnoetherian Tate $k$-algebra and an
+integral domain, with $A^\circ=A_0$.  The Huber pair $(A,A^\circ)$ is sheafy.
+However,
 \[
   A\left\langle \frac{W}{\varpi}\right\rangle
   \cong k\langle X,Q\rangle/(Q^2),
@@ -135,9 +136,9 @@ It is difficult to determine precisely how an AI system arrived at such a constr
 
 The closest precedents for the pathology are the examples of Buzzard--Verberkmoes and Mihara.  Buzzard--Verberkmoes construct a uniform affinoid ring with a nonuniform rational localization and, separately, a uniform affinoid ring whose structure presheaf is not a sheaf \cite[Propositions 17 and 18]{BV}.  Mihara gives further examples of uniform Banach and affinoid rings for which rational localization loses uniformity, including a separate non-sheafy uniform affinoid ring \cite{Mihara}.  Thus the phenomena ``uniform but not stably uniform'' and ``uniform but not sheafy'' were already known.  What those examples did not supply was a proof that a non-stably-uniform example is nevertheless sheafy.
 
-The pullback terminology also has a direct precedent.  A cartesian square of rings with a surjective leg is a classical Milnor square, named for Milnor's theorem which patches projective modules from the two comparison rings \cite[Section~2]{Milnor}.  Kerz--Saito--Tamme already work explicitly with Milnor squares of complete Tate rings, construct compatible rings of definition by an open-mapping argument, and prove analytic $K$-theory excision for them \cite[Section~3]{KST}.  Thus neither the term ``Milnor square'', its complete-Tate version, nor the basic topological pullback mechanism is new here.  We use the adjective ``strict'' to keep the topological exactness and bounded-denominator estimates visible; we have not found it used as standard terminology for this particular nonarchimedean situation.  The new input needed for the present application is the graph--Koszul theorem showing that completed rational localisation preserves the square strictly and naturally, followed by the sheaf-transfer argument.
+The pullback terminology also has a direct precedent.  A cartesian square of rings with a surjective leg is a classical Milnor square, named for Milnor's theorem which patches projective modules from the two comparison rings \cite[Section~2]{Milnor}.  Kerz--Saito--Tamme already work explicitly with Milnor squares of complete Tate rings, construct compatible rings of definition by an open-mapping argument, and prove analytic $K$-theory excision for them \cite[Section~3]{KST}.  Thus neither the term ``Milnor square'', its complete-Tate version, nor the basic topological pullback mechanism is new here.  We use the adjective ``strict'' to keep the topological exactness and bounded-denominator estimates visible; we have not found it used as standard terminology for this particular nonarchimedean situation.  The input particular to the present application is the observation that strict Koszul regularity makes every rational localisation of the finite-jet square strict and natural under refinement, followed by the sheaf-transfer argument.
 
-After applying the contravariant functor $\Spa$, the ring pullback produces a pushout-shaped diagram of affinoid adic spaces; see \cref{rem:pushout-diagram}.  It is also analogous to a nonarchimedean pinching, but Temkin's pinching theorem concerns a finite gluing morphism, whereas in the present diagram $\Spa(D,D^\circ)\to\Spa(B,B^\circ)$ is a rational open immersion and is not finite \cite{Temkin}.  Finally, the use of graph Koszul complexes to present rational localizations and control strict exactness over noetherian Tate algebras is closely related to the homological framework of Bambozzi--Kremnizer \cite[Section~4]{BK}.  These works provide the closest conceptual precedents for the ingredients of the construction; the finite-jet combination producing a uniform sheafy domain which is not stably uniform appears to be new.
+After applying the contravariant functor $\Spa$, the ring pullback produces a pushout-shaped diagram of affinoid adic spaces; see \cref{rem:pushout-diagram}.  It is also analogous to a nonarchimedean pinching, but Temkin's pinching theorem concerns a finite gluing morphism, whereas in the present diagram $\Spa(D,D^\circ)\to\Spa(B,B^\circ)$ is a rational open immersion and is not finite \cite{Temkin}.  Finally, the graph complex used below is the strict Koszul complex of Ben-Bassat--Kremnizer and Bambozzi--Kremnizer \cite[Definition~5.7 and Lemmas~5.13--5.14]{BBK}\cite[Definitions~4.5--4.6, Proposition~4.9, Lemma~4.11, and Corollary~4.13]{BK}.  In particular, the strict Koszul regularity asserted in \cref{lem:koszul} is not new.  We retain a proof because we need the resulting lattice exponents explicitly.  The finite-jet combination producing a uniform sheafy domain which is not stably uniform appears to be new.
 
 The weighted-parity construction of \cref{sec:rationally-reduced} is even closer in spirit to the infinite monomial-support examples of Buzzard--Verberkmoes and Mihara.
 \end{remark}
@@ -145,7 +146,13 @@ The weighted-parity construction of \cref{sec:rationally-reduced} is even closer
 
 \section{Conventions and notation}\label{sec:conventions}
 
-We follow Huber for Huber pairs, adic spectra, rational subsets, and rational localisation \cite{Huber94}; the bounded-denominator language for strictness follows Buzzard--Verberkmoes \cite{BV}, and the graph presentation is also discussed by Hansen--Kedlaya \cite{HK}.
+We follow Huber for Huber pairs, adic spectra, rational subsets, and rational
+localisation \cite{Huber94}, and use Wedhorn's account for strong
+noetherianity and sheafiness
+\cite[Proposition and Definition~6.36, Section~8.1]{Wedhorn}; the
+bounded-denominator language for strictness follows Buzzard--Verberkmoes
+\cite{BV}, and the graph presentation is also discussed by Hansen--Kedlaya
+\cite{HK}.
 
 Throughout, $E$ denotes a complete Tate $k$-algebra.  In the discretely valued setting of this paper, this means that $E$ contains a topologically nilpotent unit and admits an open bounded $k^\circ$-subalgebra $E_0$ such that
 \[
@@ -284,7 +291,8 @@ for the structural maps.  Although all topologies in this paper are specified by
 Thus every structural map is norm-nonincreasing.  These estimates will be used only to verify preservation of power-bounded elements in \cref{thm:sheafy}; they are not being used as an alternative definition of the topology.
 
 \begin{proposition}\label{prop:uniform-domain}
-The ring $A$ is a complete uniform Tate $k$-algebra and an integral domain.  Moreover,
+The ring $A$ is a complete uniform nonnoetherian Tate $k$-algebra and an
+integral domain.  Moreover,
 \[
   A^\circ=A_0.
 \]
@@ -315,6 +323,20 @@ The support description gives
 Every element of $A_0$ is power-bounded because $A_0$ is a subring.  Conversely, let $a\in A\setminus A_0$.  Then $\nu(a)<0$, and by \eqref{eq:additive-order},
 $\nu(a^n)=n\nu(a)$.  Hence the powers of $a$ cannot all lie in any fixed
 $\varpi^{-r}A_0$.  Thus $a$ is not power-bounded.  It follows that $A^\circ=A_0$, so $A$ is uniform.  Completeness follows from the completeness of $A_0$, and $A$ is a domain because it is a subring of $C$.
+
+For nonnoetherianity, let $J=\ker(\iota_B)=Q^2C\subset A$.  If $J$ were
+generated by $a_1,\ldots,a_r$, then, for every $\ell\in L$, comparison of the
+$Q^2$-coefficient in an expression
+\[
+  Q^2\ell=\sum_i x_i a_i,\qquad x_i\in A,
+\]
+would express $\ell$ as a $k\langle W\rangle$-linear combination of the
+$Q^2$-coefficients of the $a_i$.  This would make
+$L=k\langle W,W^{-1}\rangle$ a finite $k\langle W\rangle$-module, which is
+impossible: a finite algebra is integral, whereas a monic equation for
+$W^{-1}$, after multiplication by a power of $W$, would put
+$1$ in the proper ideal $(W)\subset k\langle W\rangle$.  Thus $J$ is not
+finitely generated, and $A$ is not noetherian.
 \end{proof}
 
 
@@ -335,7 +357,7 @@ be the corresponding rational localization on $|W|\leq |\varpi|$, and write
 $X=W/\varpi$.  By the ring-of-definition construction, $A_{\mathrm{in}}$ is the separated completion of the subring generated by $A_0$ and $X$.
 
 \begin{proposition}\label{prop:bad-chart}
-There is a canonical isomorphism of complete Tate $k$-algebras
+There is a canonical isomorphism of complete topological rings
 \[
   A_{\mathrm{in}}\cong k\langle X,Q\rangle/(Q^2),
   \qquad W\longmapsto\varpi X.
@@ -415,6 +437,15 @@ $f_1,\dots,f_m,g\in E_0$ generate the unit ideal in $E$.  Put
 \]
 and set $r_i=gT_i-f_i$.
 
+The strict Koszul regularity in the next lemma is known.  In the language of
+Banach--Tate rings it is the graph-complex criterion of
+Bambozzi--Kremnizer
+\cite[Definitions~4.5--4.6, Proposition~4.9, Lemma~4.11, and
+Corollary~4.13]{BK}, building on
+Ben-Bassat--Kremnizer \cite[Definition~5.7 and Lemmas~5.13--5.14]{BBK}.
+We record the result in a lattice-sensitive form because the two powers of
+$\varpi$ are what enter the pullback argument.
+
 \begin{lemma}\label{lem:koszul}
 The Koszul complex $K_{P_E}(r_1,\dots,r_m)$ is exact in positive degrees.  Every differential is continuous and strict onto its image, and every image is closed.  In particular, if
 \[
@@ -458,7 +489,7 @@ $1=a_0g+\sum_i a_if_i$.  In the local ring,
 \[
   g\left(a_0+\sum_i a_iT_i\right)=1+\sum_i a_ir_i.
 \]
-The right-hand side is a unit, so $g$ is a unit.  After translating $T_i$ by $f_i/g$, the sequence $(r_i)$ differs by units from the coordinate sequence $(T_i)$, which is regular over an arbitrary coefficient ring.  Hence the polynomial Koszul complex is exact in positive degrees.
+The right-hand side is a unit, so $g$ is a unit.  After translating $T_i$ by $f_i/g$, the sequence $(r_i)$ differs by units from the coordinate sequence $(T_i)$, which is regular over an arbitrary coefficient ring.  Hence the polynomial Koszul complex is exact in positive degrees \cite[Tag~062F]{Stacks}.
 
 The ring $E_0$ is noetherian and $\varpi$-adically complete.  More precisely, the canonical map
 \[
@@ -467,7 +498,7 @@ The ring $E_0$ is noetherian and $\varpi$-adically complete.  More precisely, th
   E_0\langle T_1,\ldots,T_m\rangle[1/\varpi]=P_E
 \]
 is flat: $E_0[T_1,\ldots,T_m]$ is noetherian, its $\varpi$-adic completion
-$E_0\langle T_1,\ldots,T_m\rangle$ is flat over it by noetherian adic-completion flatness \cite[Tag 00MB]{Stacks}, and localization at $\varpi$ preserves flatness.  Flat base change therefore carries the positive-degree polynomial Koszul exactness to $P_E$.
+$E_0\langle T_1,\ldots,T_m\rangle$ is flat over it by noetherian adic-completion flatness \cite[Tag 00MB]{Stacks}, and localization at $\varpi$ preserves flatness.  Flat base change therefore carries the positive-degree polynomial Koszul exactness to $P_E$ \cite[Tag~062H]{Stacks}.
 
 Finally, $P_E$ is a complete noetherian Tate ring.  Huber's finite-module results imply that homomorphisms between finite $P_E$-modules are strict and that their images are closed \cite[Lemmas 2.3 and 2.4]{Huber94}.  Applying the bounded-denominator criterion \eqref{eq:strictness} to $d_{1,E}$ and to $d_{2,E}$ onto $\ker(d_{1,E})$ gives \eqref{eq:ideal-denominators} and \eqref{eq:syzygy-denominators}.
 \end{proof}
@@ -557,7 +588,8 @@ is strict exact, and $C_\alpha\to D_\alpha$ is a strict surjection.  Equivalentl
 \[
   A_\alpha\cong B_\alpha\times_{D_\alpha}C_\alpha.
 \]
-These identifications are natural under rational refinement.
+The coefficient maps used in these identifications commute with rational
+restriction.
 \end{proposition}
 
 \begin{proof}
@@ -720,7 +752,8 @@ Adic spaces may be glued along open subspaces.  Glue two copies of $X_A$ along $
 \end{remark}
 
 \begin{proof}[Proof of \cref{thm:main}]
-Uniformity and the domain property are \cref{prop:uniform-domain}; sheafiness is
+Completeness, uniformity, nonnoetherianity, and the domain property are
+\cref{prop:uniform-domain}; sheafiness is
 \cref{thm:sheafy}; and failure of stable uniformity is
 \cref{prop:not-stably-uniform}.
 \end{proof}
@@ -1398,35 +1431,74 @@ and rational stable reducedness accessible here.
 
 This appendix concerns the finite-jet construction of \cref{thm:main}; the
 weighted-parity construction of \cref{sec:rationally-reduced} has not yet been
-formalised.  Rather than reproduce the proofs, we record the three definitions
-which are most useful for comparing the formal statement with the mathematics in
-the paper.  The complete development is pinned to
-\href{https://github.com/CBirkbeck/AINTLIB/commit/b007a4f3d4226f00a684b402715aa542e2f0bcdc}{commit
-\texttt{b007a4f3d}} of AINTLIB.
+formalised.  We record the definitions actually used by the proof, the
+equivalences which connect them to the usual mathematical formulations, and
+the public endpoint for the example.  The complete development is pinned to
+commit \texttt{b007a4f3d} of AINTLIB \cite{AINTLIB}.
 
 \begin{remark}[Draft reproducibility note]\label{rem:lean-publication}
-The commit used for this draft exists in the local AINTLIB repository, but is not
-currently reachable from the public GitHub repository.  Thus the source
-hyperlinks in this appendix are publication targets, rather than links which can
-yet be followed.  The commit should be restored under a permanent branch or tag
-before the paper is released.
+The commit used for this draft exists in the audited local AINTLIB repository,
+but is not currently reachable from its public GitHub repository.  The
+interactive edition of this paper therefore contains an archival declaration
+snapshot: each Lean button opens the exact statement from the pinned
+Git object in an inline knowl and also links to a permanent page within the
+paper site.  The complete proof sources should still be restored under a
+permanent AINTLIB branch or tag before archival publication.
 \end{remark}
 
-The audit was run with Lean \texttt{4.33.0-rc1} and mathlib commit
+The audit was run with Lean \texttt{4.33.0-rc1} \cite{Lean4} and mathlib commit
 \texttt{fd1d54bc}.  It built all $24$ targeted
 modules and the $3307$-job umbrella target, found no \texttt{sorry} or
 \texttt{admit} in the finite-jet development, and checked the axioms of the
-headline declarations.  The
-\href{https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/.mathlib-quality/fjp-cdvf/final-report.md}{full
-audit report} records the commands and their output.
+headline declarations.  Those declarations use only
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; in
+particular no \texttt{sorryAx} occurs.  The
+\href{https://github.com/CBirkbeck/uniform-sheafy-tate-domains/blob/main/PAPERFORGE_CHECK.md}{paper audit report}
+records the commands and their output.
 
 \subsection{Sheafiness}
 
-For an open subset $V\subseteq\Spa(A,A^+)$, the type
+The finite-jet proof first establishes a condition on finite rational covers.
+Its historical internal class is \texttt{IsSheafy}, in the
+\texttt{ValuationSpectrum} namespace and defined in
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.IsSheafy.html}{\texttt{StructureSheaf.lean}}.
+
+\begin{lstlisting}
+class IsSheafy (A : Type u) [CommRing A] [TopologicalSpace A]
+    [IsTopologicalRing A] [inst₁ : PlusSubring A]
+    [inst₂ : IsHuberRing A] [T2Space A] [NonarchimedeanRing A]
+    [letI : UniformSpace A :=
+      IsTopologicalAddGroup.rightUniformSpace A; CompleteSpace A]
+    [IsRingOfIntegralElements (A⁺)] : Prop where
+  embedding : ∀ (C : RationalCoveringData A), C.IsRational →
+    Topology.IsEmbedding (productRestrictionSub A C)
+  gluing : ∀ (C : RationalCoveringData A), C.IsRational →
+    ∀ (f : ∀ (D : ↥C.covers), presheafValue D.1),
+    (∀ (D₁ D₂ : ↥C.covers) (D₃ : RationalLocData A)
+      (h₃₁ : rationalOpen D₃.T D₃.s ⊆
+        rationalOpen D₁.1.T D₁.1.s)
+      (h₃₂ : rationalOpen D₃.T D₃.s ⊆
+        rationalOpen D₂.1.T D₂.1.s),
+      restrictionMap D₁.1 D₃ h₃₁ (f D₁) =
+        restrictionMap D₂.1 D₃ h₃₂ (f D₂)) →
+    ∃ x : presheafValue C.base, ∀ (D : ↥C.covers),
+      restrictionMap C.base D.1 (C.hsubset D.1 D.2) x = f D
+\end{lstlisting}
+
+The \texttt{embedding} field is separation together with the required
+topology: the map from the sections on the base to the product of the sections
+on the cover is a topological embedding.  The \texttt{gluing} field is
+surjectivity onto matching families.  Although compatibility is written using
+all common rational refinements, the exact-intersection compatibility theorem
+proves that this is equivalent to agreement on the usual pairwise rational
+intersections.  Thus this is precisely the finite-rational-basis form of the
+topological sheaf condition.
+
+For an arbitrary open subset $V\subseteq\Spa(A,A^+)$,
 \texttt{limitSections V} is the projective limit of the sections over the
-rational subdomains contained in $V$.  The all-open sheaf condition is
-formalised as follows; the source is
-\href{https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/Adic\%20spaces/SheafyPair.lean}{\texttt{SheafyPair.lean}}.
+rational subdomains contained in $V$.  The corresponding all-open condition is
+\texttt{IsLimitSheaf}, from
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.IsLimitSheaf.html}{\texttt{SheafyPair.lean}}.
 
 \begin{lstlisting}
 structure IsLimitSheaf (A : Type u) [CommRing A] [TopologicalSpace A]
@@ -1463,11 +1535,30 @@ the cover is a topological embedding; together with the first two fields this
 identifies the sections on $V$, with their projective-limit topology, with the
 matching-family equaliser as a topological ring.
 
+For complete Tate pairs the rational-basis and all-open predicates are
+equivalent:
+
+\begin{lstlisting}
+theorem isSheafy_iff_isLimitSheaf :
+    IsSheafy A ↔ IsLimitSheaf A :=
+  ⟨fun _ => isLimitSheaf_of_isSheafy,
+    isSheafy_of_isLimitSheaf⟩
+\end{lstlisting}
+
+The forward implication is the sheaf-on-a-rational-basis theorem used by the
+formalisation; the converse simply restricts the all-open condition to
+rational covers.  The further theorem
+\texttt{structurePresheaf\_isSheafOfTopologicalRings\_iff} identifies
+\texttt{IsLimitSheaf A} with the representable topological-ring formulation
+of Wedhorn's Remark~8.20 for the bundled structure presheaf.  There is also an
+implication to mathlib's ordinary categorical sheaf predicate, but not an
+equivalence: that predicate alone forgets the topological-embedding clause.
+
 For a complete Tate ring, the user-facing definition installs a chosen valid
 ring of integral elements and invokes this all-open condition.  The ring-level
 definition then quantifies over both the choice of completion and the plus
 ring.  These definitions are in
-\href{https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/Adic\%20spaces/SheafyRing.lean}{\texttt{SheafyRing.lean}}.
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.IsSheafyFor.html}{\texttt{SheafyRing.lean}}.
 
 \begin{lstlisting}
 def IsSheafyFor (Aplus : RingOfIntegralElements A) : Prop :=
@@ -1486,11 +1577,19 @@ def IsSheafyTateRing : Prop :=
 \end{lstlisting}
 
 Thus \texttt{IsSheafyFor A Aplus} is the formal counterpart of saying that the
-Huber pair $(A,A^+)$ is sheafy.  The two local instances in its definition
-contain the bookkeeping needed to construct the structure presheaf; they do
-not add a mathematical hypothesis.  The universal quantifiers in
-\texttt{IsSheafyTateRing} make the ring-level notion independent of the chosen
-pair of definition and ring of integral elements.
+Huber pair $(A,A^+)$ is sheafy.  The local declarations install the bundled
+plus ring, its validity proof, and the derived localization-lift package; none
+is an additional mathematical hypothesis.  In complete Tate scope, the
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.isSheafyFor_iff_isSheafyComplete.html}{chosen-plus-ring
+equivalence} proves that one valid plus ring is enough, using standard
+rational refinements.  The fixed-completion and complete-ring equivalences in
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.isSheafyTateRing_iff_for_completionModel.html}{\texttt{SheafyCompletionModel.lean}}
+show that one may also choose a completion model.  Thus the universal
+quantifiers in
+\texttt{IsSheafyTateRing} make the result independent of both choices.
+This is the Tate, or analytic, specialization of Wedhorn's
+Definition~8.26 \cite[Definition~8.26]{Wedhorn}; the formalisation does not
+define the corresponding notion for a general nonanalytic f-adic ring.
 
 \subsection{Strong noetherianity}
 
@@ -1498,7 +1597,7 @@ The formal definition first constructs the restricted power-series ring.  A
 coefficient function tends to zero along the cofinite filter exactly when,
 for every neighbourhood of zero, all but finitely many coefficients belong to
 that neighbourhood.  The definitions below are from
-\href{https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/Adic\%20spaces/RestrictedPowerSeries.lean}{\texttt{RestrictedPowerSeries.lean}}.
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/IsStronglyNoetherian.html}{\texttt{RestrictedPowerSeries.lean}}.
 
 \begin{lstlisting}
 def MvPowerSeries.IsRestricted {k : ℕ} {A : Type*}
@@ -1516,9 +1615,12 @@ class IsStronglyNoetherian (A : Type*) [CommRing A]
 The subring \texttt{restrictedMvPowerSeriesSubring k A} therefore consists of
 the usual restricted series in $k$ variables, and is the formal model of
 $A\langle T_1,\ldots,T_k\rangle$.  Requiring this ring to be noetherian for
-every $k$ is exactly the standard definition of strong noetherianity used in
-the paper.  The use of multivariate power series rather than an iterated
-one-variable construction is only an implementation choice.
+every $k$ is the complete-ring specialization of Wedhorn's definition of
+strong noetherianity
+\cite[Proposition and Definition~6.36]{Wedhorn}: Wedhorn writes the completed
+restricted power-series ring over the completion of $A$, and here $A$ is
+already complete.  The use of multivariate power series rather than an
+iterated one-variable construction is only an implementation choice.
 
 \subsection{The finite-jet example}
 
@@ -1527,7 +1629,7 @@ code, \texttt{PowerSeries.Restricted R 1} is the radius-one Tate algebra in one
 variable over $R$, \texttt{RestrictedLaurent K} is
 $K\langle W,W^{-1}\rangle$, and \texttt{DualNumber R} is $R[Q]/(Q^2)$.
 The source is
-\href{https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/Adic\%20spaces/FJP/Over/JetRings.lean}{\texttt{FJP/Over/JetRings.lean}}.
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.JetA.html}{\texttt{FJP/Over/JetRings.lean}}.
 
 \begin{lstlisting}
 abbrev L : Type u := RestrictedLaurent K
@@ -1586,9 +1688,28 @@ The file also constructs the four maps in the Milnor square and proves
 \texttt{JetB K} and \texttt{JetC K} comes from a unique element of
 \texttt{JetA K}.  Thus the concrete support subring is proved to realise the
 pullback $B\times_D C$; Lean does not merely assume that identification.
-The public endpoints, collected in
-\href{https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/Adic\%20spaces/FJP/Over/SheafyEndpoints.lean}{\texttt{SheafyEndpoints}},
-include the following.
+The Milnor argument then constructs the rational-cover definition displayed
+above:
+
+\begin{lstlisting}
+include ϖ hK₀ in
+theorem isSheafy_JetA :
+    ValuationSpectrum.IsSheafy (JetA K) where
+  embedding := fun C hC =>
+    productRestrictionSub_isEmbedding_JetA ϖ hK₀ C hC
+  gluing := fun C hC f hcompat =>
+    gluing_JetA ϖ hK₀ C hC f hcompat
+\end{lstlisting}
+
+Here $\varpi$ is a parameter of type \texttt{Uniformizer K}.  The other
+layer-one input says that \texttt{unitBall K} is noetherian.  This is the
+definition used in the proof of the FJP example.  The
+equivalence \texttt{isSheafy\_iff\_isLimitSheaf} upgrades it to all opens;
+standard-refinement independence then upgrades the canonical maximal plus
+ring to every valid plus ring, and completion-model independence gives the
+ring-level theorem.  The public endpoints are collected in
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.finiteJet_isSheafyFor_of_dvr.html}{\texttt{SheafyEndpoints}},
+and include the following.
 
 \begin{lstlisting}
 theorem finiteJet_isDomain : IsDomain (JetA K) :=
@@ -1608,38 +1729,131 @@ theorem finiteJet_not_stablyUniform_of_dvr
     ¬ TopologicalRing.IsStablyUniform (JetA K) :=
   finiteJet_not_stablyUniform K (Uniformizer.ofDVR K)
 
+theorem finiteJet_isSheafyFor_of_dvr
+    [IsDiscreteValuationRing 𝒪[K]] :
+    IsSheafyFor (JetA K) (finiteJetPlus K) :=
+  finiteJet_isSheafyFor K (Uniformizer.ofDVR K)
+    (isNoetherianRing_unitBall K)
+
 theorem finiteJet_isSheafyTateRing_of_dvr
     [IsDiscreteValuationRing 𝒪[K]] :
     IsSheafyTateRing (JetA K) :=
   finiteJet_isSheafyTateRing K (Uniformizer.ofDVR K)
+    (isNoetherianRing_unitBall K)
 \end{lstlisting}
 
 Here $K$ is any complete nontrivially normed ultrametric field for which
 $\mathcal O[K]=\{x:\lVert x\rVert\leq1\}$ is a discrete valuation ring.  No
 local compactness, finiteness of the residue field, characteristic, or
-perfection assumption is used.  The final declaration applies the preceding
-definition of sheafiness to the finite-jet ring; the development also proves,
-for every valid plus ring, the corresponding categorical sheaf statement for
-the genuine all-open structure presheaf with its projective-limit topology.
+perfection assumption is used.  The pair-level declaration
+\texttt{finiteJet\_isSheafyFor\_of\_dvr} is the literal formal counterpart of
+the claim that $(A,A^\circ)$ is sheafy.  The final declaration is stronger:
+it is independent of the completion model and of the plus ring.  For every
+valid \texttt{Bplus}, the development also proves
+\[
+\begin{split}
+&\texttt{TopCat.Presheaf.IsSheafOfTopologicalRings}\\[-2pt]
+&\qquad
+\texttt{(ValuationSpectrum.structurePresheaf (JetA K))},
+\end{split}
+\]
+under the name
+\texttt{finiteJet\_structurePresheaf\_isSheafOfTopologicalRings\_all\_of\_dvr}.
+This is the genuine all-open structure presheaf with its projective-limit
+topology.
+
+\subsection{Scope of the formal correspondence}
+
+The clause-by-clause audit gives the following qualifications.  Completeness
+of \texttt{JetA K} is an instance, and
+\texttt{isTateRing\_JetA} supplies its Tate structure.  The paper's $A_0$ is
+represented in Lean by the Gauss-norm unit ball; the theorem
+\texttt{isPowerBounded\_JetA\_iff} says that an element is power-bounded
+exactly when its norm is at most one.  Thus this is the formal content of
+$A^\circ=A_0$, although the code does not introduce a second object literally
+named \texttt{A0}.
+
+For the bad chart, \texttt{chartEquiv} is an exported ring equivalence.
+Together the two continuity theorems make this ring equivalence a
+homeomorphism.  The canonical-map theorem identifies the displayed
+generators.
+The implementation respects constants, but the audited API does not bundle
+this as a \texttt{K}-\texttt{AlgEquiv}; this is why
+\cref{prop:bad-chart} is stated as an isomorphism of complete topological
+rings.
+
+The five conclusions of \cref{lem:koszul} are all formalised, but at the
+normed specialization needed here: the chosen ring of definition is
+\texttt{unitBall E}, the Tate algebra carries its Gauss norm, and the
+uniformizer scales that norm exactly.  The more general formulation for an
+arbitrary noetherian $\varpi$-adic $E_0$ in the printed lemma follows from
+Huber's finite-module strictness and comparison of lattices; there is not yet
+a Lean wrapper carrying out that comparison.  Likewise, Lean proves the
+specialized finite-jet instance of the abstract sheaf-transfer lemma
+\cref{lem:sheaf-transfer}, namely \texttt{isSheafy\_JetA}; it does not yet
+export the general lemma for an arbitrary strict Milnor square.  For
+\cref{prop:localized-milnor}, the exact row, embedding, open surjection, and
+the restriction-compatibility of the component maps are separate
+declarations rather than one bundled result.  These are packaging
+limitations, not assumptions used silently in the finite-jet endpoint.
 
 The graph--Koszul argument of \cref{lem:koszul}, the rational-chart
 calculation, and the transfer of sheafiness through the concrete Milnor square
 are too large to reproduce usefully here.  They are contained respectively in
-\href{https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/Adic\%20spaces/FJP/KoszulRestrictedExactness.lean}{the
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.GraphKoszul.koszulGraph_restricted_exact.html}{the
 restricted-exactness file}
 and
-\href{https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/Adic\%20spaces/FJP/KoszulStrictClosed.lean}{the
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.GraphKoszul.koszulDifferential_isStrict.html}{the
 strictness and closed-image file},
-\href{https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/Adic\%20spaces/FJP/Over/Chart.lean}{\texttt{FJP/Over/Chart.lean}},
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.chartEquiv.html}{\texttt{FJP/Over/Chart.lean}},
 and
-\href{https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/Adic\%20spaces/FJP/Over/SheafTransfer.lean}{\texttt{FJP/Over/SheafTransfer.lean}}.
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.isSheafy_JetA.html}{\texttt{FJP/Over/SheafTransfer.lean}}.
+
+\subsection{Mathematical and code provenance}
+
+The formal structure presheaf, rational-cover criterion, and the
+strongly-noetherian sheaf theorem follow Huber's construction
+\cite[Theorem~2.2 and Lemmas~2.3--2.6]{Huber94} and Wedhorn's systematic
+formulation
+\cite[Proposition and Definition~6.36, Remark~8.20, Definition~8.26,
+Theorem~8.28(b), Corollary~8.32, and Lemmas~8.33--8.34]{Wedhorn}.
+The passage between a fixed plus ring and all plus rings follows the standard
+rational-refinement argument recorded by Kedlaya
+\cite[Lemma~1.6.8 and Remark~1.6.9]{KedlayaAWS}.  The graph-complex input is
+attributed above to Ben-Bassat--Kremnizer and Bambozzi--Kremnizer; Huber's
+finite-module lemmas and the bounded-denominator criterion of
+Buzzard--Verberkmoes supply the lattice form used in the proof.
+
+The development is written in Lean~4 \cite{Lean4} on top of mathlib
+\cite{mathlib}.  The formalisation-specific files live in AINTLIB
+\cite{AINTLIB}.  Its restricted power-series and restricted Laurent-series
+infrastructure includes Apache-2.0-licensed code adapted from William Coram's
+\texttt{PhD} repository, with equivalence code attributed there to Bingyu
+Xia \cite{CoramXia}.  The vendored source headers and commit history retain
+those attributions.  The finite-jet definitions, localization proofs, and
+sheaf-transfer endpoints discussed in this appendix are the AINTLIB-specific
+part of the development.
 
 \begin{thebibliography}{99}
+
+\bibitem{AINTLIB}
+C.~Birkbeck and contributors,
+\emph{AINTLIB: AdicSpaces formalisation},
+Lean~4 source code, commit
+\texttt{b007a4f3d4226f00a684b402715aa542e2f0bcdc}, 2026,
+\url{https://github.com/CBirkbeck/AINTLIB}.
+
+\bibitem{BBK}
+O.~Ben-Bassat and K.~Kremnizer,
+\emph{Non-Archimedean analytic geometry as relative algebraic geometry},
+Ann. Fac. Sci. Toulouse Math. (6) \textbf{26} (2017), no.~1, 49--126,
+\href{https://doi.org/10.5802/afst.1526}{doi:10.5802/afst.1526}.
 
 \bibitem{BK}
 F.~Bambozzi and K.~Kremnizer,
 \emph{On the sheafyness property of spectra of Banach rings},
-J. Lond. Math. Soc. (2) \textbf{109} (2024), no.~1, e12855.
+J. Lond. Math. Soc. (2) \textbf{109} (2024), no.~1, e12855,
+\href{https://doi.org/10.1112/jlms.12855}{doi:10.1112/jlms.12855}.
 
 \bibitem{BGR}
 S.~Bosch, U.~G\"untzer, and R.~Remmert,
@@ -1652,6 +1866,13 @@ K.~Buzzard and A.~Verberkmoes,
 \emph{Stably uniform affinoids are sheafy},
 J. Reine Angew. Math. \textbf{740} (2018), 25--39.
 
+\bibitem{CoramXia}
+W.~Coram and B.~Xia,
+\emph{Restricted power-series and power-series equivalence code},
+Lean source files in the \texttt{WilliamCoram/PhD} repository,
+commit \texttt{e8fcf8fbff848a95475ab62ae2568cbb73961de8}, 2026,
+\url{https://github.com/WilliamCoram/PhD}.
+
 \bibitem{HK}
 D.~Hansen and K.~S. Kedlaya,
 \emph{Sheafiness criteria for Huber rings},
@@ -1661,7 +1882,8 @@ preprint, version of 23 April 2025,
 \bibitem{Huber94}
 R.~Huber,
 \emph{A generalization of formal schemes and rigid analytic varieties},
-Math. Z. \textbf{217} (1994), 513--551.
+Math. Z. \textbf{217} (1994), 513--551,
+\href{https://doi.org/10.1007/BF02571959}{doi:10.1007/BF02571959}.
 
 
 \bibitem{KedlayaAWS}
@@ -1680,6 +1902,20 @@ Perfectoid Spaces Seminar, Lecture~15,
 M.~Kerz, S.~Saito, and G.~Tamme,
 \emph{$K$-theory of non-archimedean rings II},
 Nagoya Math. J. \textbf{251} (2023), 669--685.
+
+\bibitem{Lean4}
+L.~de Moura and S.~Ullrich,
+\emph{The Lean 4 theorem prover and programming language},
+in \emph{Automated Deduction---CADE 28},
+Lecture Notes in Comput. Sci., vol.~12699, Springer, 2021, 625--635,
+\href{https://doi.org/10.1007/978-3-030-79876-5_37}{doi:10.1007/978-3-030-79876-5\_37}.
+
+\bibitem{mathlib}
+The mathlib Community,
+\emph{The Lean mathematical library},
+in \emph{Proceedings of the 9th ACM SIGPLAN International Conference on
+Certified Programs and Proofs}, ACM, 2020, 367--381,
+\href{https://doi.org/10.1145/3372885.3373824}{doi:10.1145/3372885.3373824}.
 
 \bibitem{Milnor}
 J.~Milnor,
@@ -1706,6 +1942,12 @@ The Stacks Project Authors,
 M.~Temkin,
 \emph{Non-archimedean pinchings},
 Math. Z. \textbf{301} (2022), no.~2, 2099--2109.
+
+\bibitem{Wedhorn}
+T.~Wedhorn,
+\emph{Adic spaces},
+2019,
+\href{https://arxiv.org/abs/1910.05934}{arXiv:1910.05934}.
 
 \end{thebibliography}
 

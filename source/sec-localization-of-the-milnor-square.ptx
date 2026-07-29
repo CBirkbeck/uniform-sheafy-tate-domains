@@ -16,6 +16,16 @@
   P_{E,0}=E_0\langle T_1,\dots,T_m\rangle,</me>
 and set <m>r_i=gT_i-f_i</m>.
     </p>
+    <p>
+      The strict Koszul regularity in the next lemma is known.  In the language of
+Banach<ndash/>Tate rings it is the graph-complex criterion of
+Bambozzi<ndash/>Kremnizer
+<xref ref="bib-BK" detail="Definitions 4.5--4.6, Proposition 4.9, Lemma 4.11, and
+Corollary 4.13"/>, building on
+Ben-Bassat<ndash/>Kremnizer <xref ref="bib-BBK" detail="Definition 5.7 and Lemmas 5.13--5.14"/>.
+We record the result in a lattice-sensitive form because the two powers of
+<m>\varpi</m> are what enter the pullback argument.
+    </p>
     <lemma xml:id="lem-koszul">
       <statement>
         <p>
@@ -34,6 +44,7 @@ then <m>J_E</m> is closed.  Moreover, there exists <m>h_E\geq 0</m> such that
         </p>
       </statement>
       <lean project="AdicSpaces" ref="FiniteJet.GraphKoszul.koszulGraph_restricted_exact">Lean (koszulGraph_restricted_exact)</lean>
+      <lean project="AdicSpaces" ref="FiniteJet.KoszulFree.koszulDifferential_continuous">Lean (koszulDifferential_continuous)</lean>
       <lean project="AdicSpaces" ref="FiniteJet.GraphKoszul.koszulDifferential_isStrict">Lean (koszulDifferential_isStrict)</lean>
       <lean project="AdicSpaces" ref="FiniteJet.GraphKoszul.isClosed_range_koszulDifferential">Lean (isClosed_range_koszulDifferential)</lean>
       <lean project="AdicSpaces" ref="FiniteJet.GraphKoszul.pow_smul_graphIdeal_inter_unitBall_subset">Lean (pow_smul_graphIdeal_inter_unitBall_subset)</lean>
@@ -51,7 +62,7 @@ Thus the identity chain map is chain-homotopic to the zero map; this is what it 
 so every cycle is a boundary.  Now let <m>\mathfrak p</m> contain every <m>r_i</m>, and choose
 <m>1=a_0g+\sum_i a_if_i</m>.  In the local ring,
 <me>g\left(a_0+\sum_i a_iT_i\right)=1+\sum_i a_ir_i.</me>
-The right-hand side is a unit, so <m>g</m> is a unit.  After translating <m>T_i</m> by <m>f_i/g</m>, the sequence <m>(r_i)</m> differs by units from the coordinate sequence <m>(T_i)</m>, which is regular over an arbitrary coefficient ring.  Hence the polynomial Koszul complex is exact in positive degrees.
+The right-hand side is a unit, so <m>g</m> is a unit.  After translating <m>T_i</m> by <m>f_i/g</m>, the sequence <m>(r_i)</m> differs by units from the coordinate sequence <m>(T_i)</m>, which is regular over an arbitrary coefficient ring.  Hence the polynomial Koszul complex is exact in positive degrees <xref ref="bib-Stacks" detail="Tag 062F"/>.
         </p>
         <p>
           The ring <m>E_0</m> is noetherian and <m>\varpi</m>-adically complete.  More precisely, the canonical map
@@ -59,7 +70,7 @@ The right-hand side is a unit, so <m>g</m> is a unit.  After translating <m>T_i<
   \longrightarrow
   E_0\langle T_1,\ldots,T_m\rangle[1/\varpi]=P_E</me>
 is flat: <m>E_0[T_1,\ldots,T_m]</m> is noetherian, its <m>\varpi</m>-adic completion
-<m>E_0\langle T_1,\ldots,T_m\rangle</m> is flat over it by noetherian adic-completion flatness <xref ref="bib-Stacks" detail="Tag 00MB"/>, and localization at <m>\varpi</m> preserves flatness.  Flat base change therefore carries the positive-degree polynomial Koszul exactness to <m>P_E</m>.
+<m>E_0\langle T_1,\ldots,T_m\rangle</m> is flat over it by noetherian adic-completion flatness <xref ref="bib-Stacks" detail="Tag 00MB"/>, and localization at <m>\varpi</m> preserves flatness.  Flat base change therefore carries the positive-degree polynomial Koszul exactness to <m>P_E</m> <xref ref="bib-Stacks" detail="Tag 062H"/>.
         </p>
         <p>
           Finally, <m>P_E</m> is a complete noetherian Tate ring.  Huber's finite-module results imply that homomorphisms between finite <m>P_E</m>-modules are strict and that their images are closed <xref ref="bib-Huber94" detail="Lemmas 2.3 and 2.4"/>.  Applying the bounded-denominator criterion <xref ref="eq-strictness"/> to <m>d_{1,E}</m> and to <m>d_{2,E}</m> onto <m>\ker(d_{1,E})</m> gives <xref ref="eq-ideal-denominators"/> and <xref ref="eq-syzygy-denominators"/>.
@@ -93,6 +104,8 @@ is an isomorphism.  Moreover,
           is strict exact.
         </p>
       </statement>
+      <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.ext_pair_injective">Lean (ext_pair_injective)</lean>
+      <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.ideal_row_surjective">Lean (ideal_row_surjective)</lean>
       <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.ideal_pullback_controlled">Lean (ideal_pullback_controlled)</lean>
       <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.isClosed_IA">Lean (isClosed_IA)</lean>
       <proof>
@@ -145,12 +158,17 @@ Then <m>(u_C')_D=\varpi^{z_D}(u_B)_D</m> and
   B_\alpha\oplus C_\alpha\longrightarrow D_\alpha\longrightarrow 0</men>
           is strict exact, and <m>C_\alpha\to D_\alpha</m> is a strict surjection.  Equivalently,
 <me>A_\alpha\cong B_\alpha\times_{D_\alpha}C_\alpha.</me>
-These identifications are natural under rational refinement.
+The coefficient maps used in these identifications commute with rational
+restriction.
         </p>
       </statement>
       <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.loc_row_exact">Lean (loc_row_exact)</lean>
       <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.loc_pair_isEmbedding">Lean (loc_pair_isEmbedding)</lean>
       <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.locRhoC_surjective">Lean (locRhoC_surjective)</lean>
+      <lean project="AdicSpaces" ref="FiniteJetOver.locRhoC_continuous">Lean (locRhoC_continuous)</lean>
+      <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.locRhoC_isOpenMap">Lean (locRhoC_isOpenMap)</lean>
+      <lean project="AdicSpaces" ref="FiniteJetOver.presheafValueMapC_restriction">Lean (presheafValueMapC_restriction)</lean>
+      <lean project="AdicSpaces" ref="FiniteJetOver.presheafValueMapB_restriction">Lean (presheafValueMapB_restriction)</lean>
       <proof>
         <p>
           By <xref ref="lem-graph-pullback"/>, all four graph ideals are closed.  Hence the graph model

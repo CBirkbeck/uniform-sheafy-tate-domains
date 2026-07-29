@@ -32,26 +32,43 @@ The following claims were also read in context:
 | Buzzard--Verberkmoes, Lemma 2 and Propositions 17--18 | These supply the strictness criterion and the two standard uniformity/sheafiness pathologies described in the introduction. |
 | Huber, Proposition 1.3 and Lemma 1.5 | These support the universal property and presentation-independence statements for rational localisations. |
 | Huber, Theorem 2.2 and Lemmas 2.3--2.4 | These support sheafiness for strongly noetherian Tate rings and the strictness/closed-image input for finite modules. |
-| Stacks Project, Tags 00MB and 009O | These support completion flatness and checking a sheaf on a basis. |
+| Wedhorn, Proposition and Definition 6.36; Remark 8.20; Definition 8.26; Theorem 8.28(b); Lemmas 8.31--8.34 | These support the definitions of strong noetherianity and sheafiness, the representable topological-ring formulation, and the strongly-noetherian proof route used by the formalisation. |
+| Stacks Project, Tags 062F, 062H, 00MB, and 009O | These support Koszul exactness for regular sequences, flat base change, completion flatness, and checking a sheaf on a basis. |
 | Kedlaya, AWS Remark 1.2.16 | This is the reduced-affinoid rational-localisation statement used in the second example. |
 | Conrad, Proposition 15.1.1 | Its proof invokes the two BGR corollaries cited in the paper. |
-| Bambozzi--Kremnizer, Section 4 | This develops rational localisations through Koszul complexes, as stated in the related-work discussion. |
+| Ben-Bassat--Kremnizer, Definition 5.7, Remark 5.8, and Lemmas 5.13--5.14 | These give the earlier strict graph-complex framework. |
+| Bambozzi--Kremnizer, Definitions 4.5--4.6, Proposition 4.9, Lemma 4.11, and Corollary 4.13 | These prove strict Koszul regularity for rational localisations. Consequently Lemma 5.1 is presented as a lattice-sensitive restatement, not as a new result. |
 
 ## Lean crosswalk
 
 `crosswalk/lean-decl-map.json` was curated manually after the generated
 candidate incorrectly associated the sheafiness theorem with an unrelated
-Witt-vector declaration.  The accepted map now covers:
+Witt-vector declaration.  The accepted map now covers, clause by clause:
 
-- the uniform-domain and non-noetherian finite-jet endpoints;
-- the bad rational chart and failure of stable uniformity;
-- restricted Koszul exactness, strictness, and closed-image estimates;
-- exactness of the localised Milnor row; and
-- the final rational-cover and all-open sheafiness endpoints.
+- the Tate, uniform, power-bounded, domain, and nonnoetherian finite-jet
+  endpoints;
+- the bad rational chart, both continuity directions, generator formulas, and
+  failure of stable uniformity;
+- restricted Koszul exactness, continuity, strictness, closed images, and both
+  denominator estimates;
+- the ideal pullback and every topological clause of the localised Milnor row,
+  including restriction compatibility; and
+- the finite-rational-cover, chosen-pair all-open, completion-independent, and
+  public structure-presheaf sheafiness endpoints.
 
-No doc-gen4 site exists for the audited snapshot yet, so the web build makes
-the automatic theorem badges inert rather than emitting links to missing
-documentation pages.  The appendix supplies pinned source-file links instead.
+No doc-gen4 site exists for the audited snapshot, and the pinned AINTLIB commit
+is not currently public.  The web build therefore extracts exact declaration
+statements from the pinned local Git object.  Every automatic theorem badge
+opens a Roe-style inline knowl and has a working standalone archival page as
+its ordinary link.  The generator also covers the appendix definitions and
+equivalence chain.  Its pages record the source path and commit and credit the
+Coram/Xia restricted-series infrastructure.
+
+The claim audit found three scope distinctions, now stated explicitly in the
+appendix: Lean proves the unit-ball/Gauss-norm specialization of Lemma 5.1; the
+chart is exported as a bicontinuous `RingEquiv`, not a bundled `K`-algebra
+equivalence; and the general sheaf-transfer lemma is formalised only in its
+specialized finite-jet instance.  None affects the final finite-jet endpoint.
 
 The AINTLIB audit used Lean `4.33.0-rc1` with mathlib commit
 `fd1d54bcac5caba4eff2ea3421c47d907333f515`.  The 24 targeted FJP modules and

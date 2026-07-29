@@ -2,7 +2,13 @@
 <section xml:id="sec-conventions">
   <title>Conventions and notation</title>
   <p>
-    We follow Huber for Huber pairs, adic spectra, rational subsets, and rational localisation <xref ref="bib-Huber94"/>; the bounded-denominator language for strictness follows Buzzard<ndash/>Verberkmoes <xref ref="bib-BV"/>, and the graph presentation is also discussed by Hansen<ndash/>Kedlaya <xref ref="bib-HK"/>.
+    We follow Huber for Huber pairs, adic spectra, rational subsets, and rational
+localisation <xref ref="bib-Huber94"/>, and use Wedhorn's account for strong
+noetherianity and sheafiness
+<xref ref="bib-Wedhorn" detail="Proposition and Definition 6.36, Section 8.1"/>; the
+bounded-denominator language for strictness follows Buzzard<ndash/>Verberkmoes
+<xref ref="bib-BV"/>, and the graph presentation is also discussed by Hansen<ndash/>Kedlaya
+<xref ref="bib-HK"/>.
   </p>
   <p>
     Throughout, <m>E</m> denotes a complete Tate <m>k</m>-algebra.  In the discretely valued setting of this paper, this means that <m>E</m> contains a topologically nilpotent unit and admits an open bounded <m>k^\circ</m>-subalgebra <m>E_0</m> such that

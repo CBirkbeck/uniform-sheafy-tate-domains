@@ -508,9 +508,10 @@
     });
   }
 
-  // Lean badges open the declaration's doc entry inline, knowl-style, when
-  // the build-time registry (lean-knowls.js) has it; otherwise (or on
-  // modified click) they navigate to the docs as plain links.
+  // Lean badges open the declaration's source entry inline, knowl-style,
+  // when the build-time registry has it.  Their real href is also replaced
+  // by the registry's self-contained page, so modified clicks and browser
+  // "open in new tab" commands have a useful destination.
   function wireLeanKnowls() {
     var REG = window.PAPERFORGE_LEAN_KNOWLS || {};
     // The registry is generated FROM the built docs, so when it is present
@@ -519,7 +520,12 @@
     // a registry we cannot tell, so links are left alone.
     if (window.PAPERFORGE_LEAN_KNOWLS) {
       document.querySelectorAll("a.lean-link").forEach(function (a) {
-        if (REG[a.getAttribute("data-lean-ref")]) return;
+        var entry = REG[a.getAttribute("data-lean-ref")];
+        if (entry) {
+          a.setAttribute("href", entry.href);
+          a.setAttribute("aria-expanded", "false");
+          return;
+        }
         a.removeAttribute("href");
         a.classList.add("lean-nolink");
         a.title += " (no documentation page)";
@@ -545,7 +551,7 @@
         "Lean declaration " + a.getAttribute("data-lean-ref"));
       panel.innerHTML = entry.html +
         '<div class="lean-knowl-foot"><a href="' + entry.href +
-        '">full documentation ↗</a></div>';
+        '">open declaration page ↗</a></div>';
       a.insertAdjacentElement("afterend", panel);
       a._leanKnowl = panel;
       a.setAttribute("aria-expanded", "true");

@@ -63,6 +63,8 @@ with its projective-limit topology, the inverse of the algebraic gluing map <m>\
         The Huber pair <m>(A,A^\circ)</m> is sheafy.
       </p>
     </statement>
+    <lean project="AdicSpaces" ref="FiniteJetOver.isSheafy_JetA_of_dvr">Lean (isSheafy_JetA_of_dvr)</lean>
+    <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_isSheafyFor_of_dvr">Lean (finiteJet_isSheafyFor_of_dvr)</lean>
     <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_isSheafyTateRing_of_dvr">Lean (finiteJet_isSheafyTateRing_of_dvr)</lean>
     <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr">Lean (finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr)</lean>
     <proof>
@@ -118,7 +120,8 @@ one has <m>|Q^2(x)|>|\varpi(x)|</m> and <m>|W(x)|&lt;1</m>; hence <m>x\notin U</
     <proof>
       <title>Proof of <xref ref="thm-main"/></title>
       <p>
-        Uniformity and the domain property are <xref ref="prop-uniform-domain"/>; sheafiness is
+        Completeness, uniformity, nonnoetherianity, and the domain property are
+<xref ref="prop-uniform-domain"/>; sheafiness is
 <xref ref="thm-sheafy"/>; and failure of stable uniformity is
 <xref ref="prop-not-stably-uniform"/>.
       </p>
