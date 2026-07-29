@@ -64,7 +64,7 @@ Work of Buzzard--Verberkmoes and, independently, Mihara shows that stable unifor
 \end{abstract}
 
 \subjclass[2020]{Primary 14G22; Secondary 13J10}
-\keywords{Huber ring, adic spectrum, sheafiness, stable uniformity, rational localization, Milnor square}
+\keywords{Huber ring, adic spectrum, sheafiness, stable uniformity, rational localisation, Milnor square}
 
 \maketitle
 
@@ -72,7 +72,7 @@ Work of Buzzard--Verberkmoes and, independently, Mihara shows that stable unifor
 
 Buzzard and Verberkmoes proved that every stably uniform Tate Huber ring is sheafy and exhibited both uniform rings which are not stably uniform and uniform rings which are not sheafy \cite{BV}.  Hansen and Kedlaya subsequently asked whether a uniform sheafy Huber ring must be stably uniform \cite[Remark~3.16]{HK}; this is also Question~7 of Kedlaya's \emph{Nonarchimedean Scottish Book} \cite{Scottish}.  We give a negative answer in two forms.
 
-We begin with the finite-jet pinching algebra.  This is a nonnoetherian uniform integral domain for which a distinguished rational localisation is nonreduced, and hence is no longer uniform.  Let $k$ be a complete discretely valued nonarchimedean field, with valuation ring $k^\circ$, uniformizer $\varpi$, and residue field $\widetilde{k}$.  Put
+We begin with the finite-jet pullback.  This is a nonnoetherian uniform integral domain for which a distinguished rational localisation is nonreduced, and hence is no longer uniform.  Let $k$ be a complete discretely valued nonarchimedean field, with valuation ring $k^\circ$, uniformizer $\varpi$, and residue field $\widetilde{k}$.  Put
 \[
   L_0=k^\circ\langle W,W^{-1}\rangle,
   \qquad
@@ -107,7 +107,10 @@ However,
 so $A$ is not stably uniform.
 \end{theorem}
 
-The proof uses a localisation theorem for Milnor squares of complete Tate rings.  The terminology is classical rather than new.  Milnor's patching theorem describes projective modules over a pullback ring with a surjective leg, and diagrams of this kind are now called Milnor squares \cite[Section~2]{Milnor}.  Milnor squares of complete Tate rings also appear explicitly in the analytic $K$-theory work of Kerz--Saito--Tamme \cite[Section~3]{KST}.
+The proof uses Milnor squares of complete Tate rings.  Recall that a cartesian square of
+rings with a surjective leg is called a Milnor square \cite[Section~2]{Milnor}; the
+complete Tate setting is used by Kerz--Saito--Tamme in their work on analytic
+$K$-theory \cite[Section~3]{KST}.
 
 \begin{definition}\label{def:strict-milnor}
 A commutative square of complete Tate $k$-algebras
@@ -126,21 +129,37 @@ is a \emph{strict Milnor square} if it is cartesian, the sequence of underlying 
 is strict exact, and $C\to D$ is a strict surjection.
 \end{definition}
 
-The adjective ``strict'' records the topology.  In the present Banach setting it is not an additional hypothesis on the initial diagram: after rotating the square if necessary, every Milnor square of complete Tate $k$-algebras in the sense of Kerz--Saito--Tamme is strict by the nonarchimedean open mapping theorem \cite[Lemma~3.1]{KST}.  We retain the adjective because the substantive point proved here is that every completed rational localisation is again a Milnor square, with the corresponding strictness and bounded-denominator control, naturally under refinement.  It follows that if $B,C,D$ are sheafy, then so is $R$.  Since $\Spa$ is contravariant, the associated square is a pushout in the full subcategory of affinoid adic spaces, but not in the category of all adic spaces; \cref{rem:pushout-diagram} explains the distinction and the failure for nonaffinoid targets.  One may ask whether there is an example which does not rely on a rational localisation becoming nonreduced, and this is exactly what the second example achieves.
+After rotating the square if necessary, the initial Milnor square is strict by the
+nonarchimedean open mapping theorem \cite[Lemma~3.1]{KST}.  Our main input is that
+strictness persists after completed rational localisation and is compatible with
+refinement.  This allows sheafiness to be transferred from $B,C,D$ to $R$.  The
+associated square of affinoid adic spaces is a pushout among affinoid spaces, but not
+among all adic spaces; see \cref{rem:pushout-diagram}.  The second example shows that
+the failure of stable uniformity need not come from a nonreduced localisation.
 
-Both constructions emerged from an extended interaction with ChatGPT 5.6 Sol, after a number of unsuccessful attempts with earlier models.  Since the first example was found in this way, we regarded machine-checked verification as an important part of the argument.  The resulting Lean development, together with the precise correspondence between its definitions and those used here, is described in \cref{sec:formalisation}.
+Both examples were found in collaboration with ChatGPT 5.6 Sol.  The first has been
+formalised in Lean; \cref{sec:formalisation} describes the statements used and their
+relation with the definitions in this paper.
 
 
 \begin{remark}[Relation with earlier work]\label{rem:earlier-work}
-It is difficult to determine precisely how an AI system arrived at such a construction, and hence to identify every human source that may have influenced it.  We therefore record the closest related work which may have contributed ideas to the constructions below.
+Buzzard--Verberkmoes construct a uniform affinoid ring with a nonuniform rational
+localisation and, separately, a uniform affinoid ring whose structure presheaf is not a
+sheaf \cite[Propositions 17 and 18]{BV}.  Mihara gives further examples of both
+phenomena \cite{Mihara}.  These examples do not give a uniform sheafy ring which is not
+stably uniform.
 
-The closest precedents for the pathology are the examples of Buzzard--Verberkmoes and Mihara.  Buzzard--Verberkmoes construct a uniform affinoid ring with a nonuniform rational localization and, separately, a uniform affinoid ring whose structure presheaf is not a sheaf \cite[Propositions 17 and 18]{BV}.  Mihara gives further examples of uniform Banach and affinoid rings for which rational localization loses uniformity, including a separate non-sheafy uniform affinoid ring \cite{Mihara}.  Thus the phenomena ``uniform but not stably uniform'' and ``uniform but not sheafy'' were already known.  What those examples did not supply was a proof that a non-stably-uniform example is nevertheless sheafy.
+The strict Koszul result used in \cref{lem:koszul} is due to
+Ben-Bassat--Kremnizer and Bambozzi--Kremnizer
+\cite[Definition~5.7 and Lemmas~5.13--5.14]{BBK}
+\cite[Definitions~4.5--4.6, Proposition~4.9, Lemma~4.11, and
+Corollary~4.13]{BK}.  We use its lattice form to prove that rational localisation
+preserves the finite-jet Milnor square.  The resulting uniform sheafy domain which is
+not stably uniform appears to be new.
 
-The pullback terminology also has a direct precedent.  A cartesian square of rings with a surjective leg is a classical Milnor square, named for Milnor's theorem which patches projective modules from the two comparison rings \cite[Section~2]{Milnor}.  Kerz--Saito--Tamme already work explicitly with Milnor squares of complete Tate rings, construct compatible rings of definition by an open-mapping argument, and prove analytic $K$-theory excision for them \cite[Section~3]{KST}.  Thus neither the term ``Milnor square'', its complete-Tate version, nor the basic topological pullback mechanism is new here.  We use the adjective ``strict'' to keep the topological exactness and bounded-denominator estimates visible; we have not found it used as standard terminology for this particular nonarchimedean situation.  The input particular to the present application is the observation that strict Koszul regularity makes every rational localisation of the finite-jet square strict and natural under refinement, followed by the sheaf-transfer argument.
-
-After applying the contravariant functor $\Spa$, the ring pullback produces a pushout-shaped diagram of affinoid adic spaces; see \cref{rem:pushout-diagram}.  It is also analogous to a nonarchimedean pinching, but Temkin's pinching theorem concerns a finite gluing morphism, whereas in the present diagram $\Spa(D,D^\circ)\to\Spa(B,B^\circ)$ is a rational open immersion and is not finite \cite{Temkin}.  Finally, the graph complex used below is the strict Koszul complex of Ben-Bassat--Kremnizer and Bambozzi--Kremnizer \cite[Definition~5.7 and Lemmas~5.13--5.14]{BBK}\cite[Definitions~4.5--4.6, Proposition~4.9, Lemma~4.11, and Corollary~4.13]{BK}.  In particular, the strict Koszul regularity asserted in \cref{lem:koszul} is not new.  We retain a proof because we need the resulting lattice exponents explicitly.  The finite-jet combination producing a uniform sheafy domain which is not stably uniform appears to be new.
-
-The weighted-parity construction of \cref{sec:rationally-reduced} is even closer in spirit to the infinite monomial-support examples of Buzzard--Verberkmoes and Mihara.
+The weighted-parity construction of \cref{sec:rationally-reduced} is closer to the
+infinite monomial-support examples of Buzzard--Verberkmoes and Mihara.  Its additional
+feature is that rational localisation can be calculated in a noetherian finite head.
 \end{remark}
 
 
@@ -151,8 +170,8 @@ localisation \cite{Huber94}, and use Wedhorn's account for strong
 noetherianity and sheafiness
 \cite[Proposition and Definition~6.36, Section~8.1]{Wedhorn}; the
 bounded-denominator language for strictness follows Buzzard--Verberkmoes
-\cite{BV}, and the graph presentation is also discussed by Hansen--Kedlaya
-\cite{HK}.
+\cite{BV}, and the quotient presentation of a rational localisation is also
+discussed by Hansen--Kedlaya \cite{HK}.
 
 Throughout, $E$ denotes a complete Tate $k$-algebra.  In the discretely valued setting of this paper, this means that $E$ contains a topologically nilpotent unit and admits an open bounded $k^\circ$-subalgebra $E_0$ such that
 \[
@@ -162,21 +181,17 @@ Throughout, $E$ denotes a complete Tate $k$-algebra.  In the discretely valued s
 \]
 is a basis of neighbourhoods of zero.  Such an $E_0$ is called a \emph{ring of definition}.  We always choose it closed, hence $\varpi$-adically complete.  A subset of $E$ is bounded if it is contained in $\varpi^{-r}E_0$ for some $r\geq0$.  If $M$ is a complete topological $k$-vector space, an open bounded $k^\circ$-submodule $M_0\subset M$ will be called a lattice.
 
-An element $x\in E$ is \emph{power-bounded} if the set $\{x^n:n\geq0\}$ is bounded.  The ring of power-bounded elements is denoted $E^\circ$; equivalently,
-\[
-  x\in E^\circ
-  \quad\Longleftrightarrow\quad
-  x^n\in\varpi^{-r}E_0\text{ for all }n\geq0
-  \text{ and some }r\geq0.
-\]
-The ring $E$ is \emph{uniform} if $E^\circ$ is bounded, equivalently if
-\[
-  \varpi^rE^\circ\subset E_0
-\]
-for some $r\geq0$.  It is \emph{strongly noetherian} if
-$E\langle Z_1,\ldots,Z_s\rangle$ is noetherian for every $s\geq0$.  These conditions do not depend on the chosen ring of definition.
+We write $E^\circ$ for the ring of power-bounded elements.  The ring $E$ is
+\emph{uniform} if $E^\circ$ is bounded, and \emph{strongly noetherian} if
+$E\langle Z_1,\ldots,Z_s\rangle$ is noetherian for every $s\geq0$.
 
-A \emph{ring of integral elements}, or \emph{plus ring}, is an open subring $E^+\subseteq E^\circ$ which is integrally closed in $E$; a \emph{Huber pair} is a pair $(E,E^+)$.  We call $(E,E^+)$ \emph{sheafy} if its structure presheaf is a sheaf of complete topological rings.  Thus on every finite rational cover the map to the matching-family equaliser must be a homeomorphism, not merely an algebraic isomorphism.  Sections on arbitrary opens carry the projective-limit topology over rational subdomains.  We call $E$ \emph{strongly sheafy} if every finite Tate extension $E\langle Z_1,\ldots,Z_s\rangle$, equipped with its maximal plus ring, is sheafy.
+A \emph{ring of integral elements} is an open subring
+$E^+\subseteq E^\circ$ which is integrally closed in $E$.  We call the Huber pair
+$(E,E^+)$ \emph{sheafy} when its structure presheaf is a sheaf of complete
+topological rings; in particular, the map to the matching-family equaliser for a
+finite rational cover is a homeomorphism.  We call $E$ \emph{strongly sheafy} if
+every $E\langle Z_1,\ldots,Z_s\rangle$, with its maximal ring of integral elements,
+is sheafy.
 
 We use the following bounded-denominator form of strictness.  Let $u:M\to N$ be a continuous $k$-linear map and choose lattices $M_0\subset M$ and $N_0\subset N$.  Then $u$ is strict if and only if there exists $a\geq0$ such that
 \begin{equation}\label{eq:strictness}
@@ -184,42 +199,42 @@ We use the following bounded-denominator form of strictness.  Let $u:M\to N$ be 
 \end{equation}
 For a surjection this becomes $\varpi^aN_0\subset u(M_0)$.  For an injection it says that the lattice induced from the target is bounded in the source.  This is the criterion used by Buzzard--Verberkmoes \cite[Lemma~2]{BV}.  We use the term \emph{strict Milnor square} in the sense of \cref{def:strict-milnor}; the underlying algebraic terminology is standard \cite{Milnor,KST}.
 
-We now recall rational localization in the form that will be used below.  We take every rational datum to have at least one numerator; an empty list may be padded by $f_1=0$.  Let
+We take every rational datum to have at least one numerator; an empty list may be
+padded by $f_1=0$.  Let
 $\alpha=(f_1,\dots,f_m;g)$ be a rational datum in $E$, so the ideal generated by
 $g,f_1,\dots,f_m$ is open.  Since $E$ is a Tate $k$-algebra, this ideal is the unit ideal.  After multiplying the entire datum by a common power of $\varpi$, we may assume that all entries lie in $E_0$.
 
-The rational localization $E_\alpha$ is the separated $\varpi$-adic completion of $E[1/g]$ for the ring of definition generated by
+The rational localisation $E_\alpha$ is the separated $\varpi$-adic completion of $E[1/g]$ for the ring of definition generated by
 \[
   E_0\left[\frac{f_1}{g},\dots,\frac{f_m}{g}\right].
 \]
-It is independent of the ring of definition and of the presentation of the rational domain, and it is transitive under rational refinement.  Equivalently, if
+It is independent of the ring of definition and of the presentation of the rational
+domain, and it is transitive under rational refinement.  Put
 \[
-  P_E=E\langle T_1,\dots,T_m\rangle
+  T_E=E\langle T_1,\dots,T_m\rangle
   =E_0\langle T_1,\dots,T_m\rangle[1/\varpi],
   \qquad r_i=gT_i-f_i,
 \]
-then the ideal
+and
 \begin{equation}\label{eq:graph-ideal-definition}
-  J_{E,\alpha}:=(r_1,\dots,r_m)
+  I_{E,\alpha}:=(r_1,\dots,r_m)
   =\operatorname{im}\left(
-    P_E^m\xrightarrow{\ d_{1,E}\ }P_E
-  \right)\subset P_E,
+    T_E^m\xrightarrow{\ d_{1,E}\ }T_E
+  \right)\subset T_E,
   \qquad
   d_{1,E}(u_1,\dots,u_m)=\sum_i u_i(gT_i-f_i),
 \end{equation}
-is called the \emph{graph ideal} associated with the rational datum $\alpha$.  When the datum is fixed, we abbreviate it to $J_E$.  Before closedness has been proved, one must distinguish this algebraic ideal from its closure $\overline{J_{E,\alpha}}$; the rational localization is
+Then
 \begin{equation}\label{eq:graph-model}
-  E_\alpha\cong P_E/\overline{J_{E,\alpha}}.
+  E_\alpha\cong T_E/\overline{I_{E,\alpha}}.
 \end{equation}
-The terminology comes from the equations themselves.  After inverting $g$, the relations $gT_i-f_i=0$ become
-\[
-  T_i=\frac{f_i}{g}\qquad(1\leq i\leq m),
-\]
-so they cut out the graph of the tuple $(f_1/g,\dots,f_m/g)$ in the relative affine $m$-space over $E[1/g]$.  The Tate variables are power-bounded, so the same presentation records the rational inequalities $|f_i|\leq |g|$.
-These statements are standard: see Huber's universal property and presentation-independence results \cite[(1.2), Proposition 1.3, Lemma 1.5]{Huber94}; the graph presentation is also recorded explicitly in \cite[Definition 3.6]{HK}.
+Here the bar is necessary until the ideal has been shown to be closed.  This is the
+standard quotient presentation of rational localisation; see
+\cite[(1.2), Proposition~1.3, Lemma~1.5]{Huber94} and
+\cite[Definition~3.6]{HK}.
 
 
-We use the standard literature convention that a Tate ring is \emph{stably uniform} when the completed localization associated with every genuine rational datum is uniform.
+A Tate ring is \emph{stably uniform} if every rational localisation is uniform.
 
 
 \section{The global ring}
@@ -272,12 +287,13 @@ Equivalently, $A_0$ consists of the restricted series
 with $c_{a,b}\in k^\circ$.  Here restricted means that, for every $n$, only finitely many coefficients are nonzero modulo $\varpi^n$.  The set $S$ is closed under addition, so this is a subring of $C_0$.  The same description with coefficients in $k$ gives $A\subset C$.
 
 
-Write
+Equip $A,B,C,D$ with the coefficientwise Gauss norms whose unit balls are the
+displayed rings of definition.  Write
 \[
   \iota_B:A\to B,\qquad \iota_C:A\to C,\qquad
   \rho_B:B\to D,\qquad \rho_C:C\to D
 \]
-for the structural maps.  Although all topologies in this paper are specified by rings of definition, we will use once the coefficientwise Gauss norms whose unit balls are the displayed rings of definition.  Give \(A\) the restricted Gauss norm from \(C\).  For
+for the structural maps, and give \(A\) the restricted Gauss norm from \(C\).  For
 \(a=f_0+Qf_1+Q^2h\), the coefficient formulas give
 \begin{equation}\label{eq:structural-map-bounds}
   \lVert\iota_C(a)\rVert_C=\lVert a\rVert_A,
@@ -288,7 +304,7 @@ for the structural maps.  Although all topologies in this paper are specified by
   \qquad
   \lVert\rho_C(c)\rVert_D\leq\lVert c\rVert_C.
 \end{equation}
-Thus every structural map is norm-nonincreasing.  These estimates will be used only to verify preservation of power-bounded elements in \cref{thm:sheafy}; they are not being used as an alternative definition of the topology.
+Thus every structural map is norm-nonincreasing.
 
 \begin{proposition}\label{prop:uniform-domain}
 The ring $A$ is a complete uniform nonnoetherian Tate $k$-algebra and an
@@ -340,7 +356,7 @@ finitely generated, and $A$ is not noetherian.
 \end{proof}
 
 
-\section{A nonuniform rational localization}
+\section{A nonuniform rational localisation}
 
 We next compute the rational chart which witnesses the failure of stable
 uniformity.
@@ -349,11 +365,11 @@ Consider the datum
 \[
   \alpha_{\mathrm{in}}=(W;\varpi).
 \]
-It is a genuine rational datum: the ideal \((\varpi,W)\) is open (indeed \(\varpi\) is a unit in \(A\)).  Let
+The ideal \((\varpi,W)\) is open, since \(\varpi\) is a unit in \(A\).  Let
 \[
   A_{\mathrm{in}}=A\left\langle\frac{W}{\varpi}\right\rangle
 \]
-be the corresponding rational localization on $|W|\leq |\varpi|$, and write
+be the corresponding rational localisation on $|W|\leq |\varpi|$, and write
 $X=W/\varpi$.  By the ring-of-definition construction, $A_{\mathrm{in}}$ is the separated completion of the subring generated by $A_0$ and $X$.
 
 \begin{proposition}\label{prop:bad-chart}
@@ -418,164 +434,167 @@ In $T=k\langle X,Q\rangle/(Q^2)$, every element of the line $kQ$ is nilpotent an
 \[
   \varpi^r\bigl(\varpi^{-(r+1)}Q\bigr)=\varpi^{-1}Q\notin T_0.
 \]
-Thus $T$ is not uniform.  By \cref{prop:bad-chart}, a genuine rational localization of the uniform ring $A$ is nonuniform.
+Thus $T$ is not uniform.  By \cref{prop:bad-chart}, a rational localisation of the
+uniform ring $A$ is nonuniform.
 \end{proof}
 
 
-\section{Localization of the Milnor square}
+\section{Localisation of the Milnor square}
 
-We now prove that every rational localization preserves the defining pullback.  The argument is formulated entirely in terms of the chosen rings of definition.
+In this section we prove that rational localisation preserves the defining pullback.
+We first record the strict Koszul estimate needed for the proof.
 
-\subsection{Graph Koszul complexes over affinoid algebras}
+\subsection{Koszul complexes for rational localisations}
 
-The following lemma will be used both at the noetherian comparison vertices and at the finite heads in \cref{sec:rationally-reduced}.  Let $E$ be an affinoid $k$-algebra, choose a noetherian $\varpi$-adically complete ring of definition $E_0\subset E$, and let
+Let $E$ be an affinoid $k$-algebra, choose a noetherian
+$\varpi$-adically complete ring of definition $E_0\subset E$, and let
 $f_1,\dots,f_m,g\in E_0$ generate the unit ideal in $E$.  Put
 \[
-  P_E=E\langle T_1,\dots,T_m\rangle,
+  T_E=E\langle T_1,\dots,T_m\rangle,
   \qquad
-  P_{E,0}=E_0\langle T_1,\dots,T_m\rangle,
+  T_{E,0}=E_0\langle T_1,\dots,T_m\rangle,
 \]
 and set $r_i=gT_i-f_i$.
 
-The strict Koszul regularity in the next lemma is known.  In the language of
-Banach--Tate rings it is the graph-complex criterion of
-Bambozzi--Kremnizer
+We give $T_E$ the topology for which
+$\{\varpi^nT_{E,0}\}_{n\geq0}$ is a basis of neighbourhoods of zero.  The term
+$\bigwedge^qT_E^m$ has the finite-module topology defined by the lattice
+$\bigwedge^qT_{E,0}^m$; equivalently, in the standard exterior basis it has the
+finite product topology.  Images have the subspace topology.  Thus a
+differential is strict when it is open onto its image, or equivalently when its
+coimage is homeomorphic to its image.
+
+The following strict Koszul result is known
+\cite[Definition~5.7 and Lemmas~5.13--5.14]{BBK}
 \cite[Definitions~4.5--4.6, Proposition~4.9, Lemma~4.11, and
-Corollary~4.13]{BK}, building on
-Ben-Bassat--Kremnizer \cite[Definition~5.7 and Lemmas~5.13--5.14]{BBK}.
-We record the result in a lattice-sensitive form because the two powers of
-$\varpi$ are what enter the pullback argument.
+Corollary~4.13]{BK}.  We state the two bounded-denominator consequences which
+will be used in the pullback argument.
 
 \begin{lemma}\label{lem:koszul}
-The Koszul complex $K_{P_E}(r_1,\dots,r_m)$ is exact in positive degrees.  Every differential is continuous and strict onto its image, and every image is closed.  In particular, if
+The Koszul complex
 \[
-  d_{1,E}:P_E^m\longrightarrow P_E,
-  \qquad
-  J_E=\im(d_{1,E}),
+  0\longrightarrow \bigwedge^mT_E^m\longrightarrow\cdots
+  \longrightarrow\bigwedge^2T_E^m\xrightarrow{d_{2,E}}
+  T_E^m\xrightarrow{d_{1,E}}T_E
 \]
-then $J_E$ is closed.  Moreover, there exists $h_E\geq 0$ such that
+is exact in positive degrees.  Every differential is continuous and strict onto
+its image, and every image is closed.  In particular, if
+\[
+  I_E=(r_1,\ldots,r_m)=\im(d_{1,E})\subset T_E,
+  \qquad
+  d_{1,E}(u_1,\ldots,u_m)=\sum_i u_ir_i,
+\]
+then $I_E$ is closed.  Moreover, there exists
+$h_E\in\mathbf Z_{\geq0}$ such that
 \begin{equation}\label{eq:ideal-denominators}
-  \varpi^{h_E}(J_E\cap P_{E,0})
-  \subset d_{1,E}(P_{E,0}^m).
+  \varpi^{h_E}(I_E\cap T_{E,0})
+  \subset d_{1,E}(T_{E,0}^m).
 \end{equation}
-There also exists $z_E\geq 0$ such that
+There also exists $z_E\in\mathbf Z_{\geq0}$ such that
 \begin{equation}\label{eq:syzygy-denominators}
-  \varpi^{z_E}\bigl(\ker(d_{1,E})\cap P_{E,0}^m\bigr)
-  \subset d_{2,E}\bigl(\textstyle\bigwedge^2 P_{E,0}^m\bigr).
+  \varpi^{z_E}\bigl(\ker(d_{1,E})\cap T_{E,0}^m\bigr)
+  \subset d_{2,E}\bigl(\textstyle\bigwedge^2 T_{E,0}^m\bigr).
 \end{equation}
-Here positive-degree exactness means
-\(\operatorname{Exact}(d_{q+1,E},d_{q,E})\) for every \(q\geq0\), equivalently exactness at the term of exterior degree \(q+1\).  It does not assert exactness at exterior degree zero and does not assert that \(d_{1,E}\) is surjective onto \(P_E\).  For \(m=0\), the positive-degree assertion is vacuous.
 \end{lemma}
 
 \begin{proof}
-First work over $E[T_1,\dots,T_m]$.  Let $\mathfrak p$ be a prime which does not contain all the $r_i$, and choose $j$ with $r_j\notin\mathfrak p$.  Then $r_j$ is a unit after localization at $\mathfrak p$.  If $e_1,\dots,e_m$ is the standard basis used to form the Koszul complex and $d$ is the Koszul differential, define a degree-$1$ homotopy by
-\[
-  h(\omega)=r_j^{-1}e_j\wedge\omega.
-\]
-The standard Koszul identity
-\[
-  d(e_j\wedge\omega)=r_j\omega-e_j\wedge d(\omega)
-\]
-gives
-\[
-  dh+hd=\operatorname{id}.
-\]
-Thus the identity chain map is chain-homotopic to the zero map; this is what it means here for the localized complex to be \emph{contractible}.  In particular it is exact: if $d\omega=0$, then
-\[
-  \omega=(dh+hd)(\omega)=d(h\omega),
-\]
-so every cycle is a boundary.  Now let $\mathfrak p$ contain every $r_i$, and choose
-$1=a_0g+\sum_i a_if_i$.  In the local ring,
-\[
-  g\left(a_0+\sum_i a_iT_i\right)=1+\sum_i a_ir_i.
-\]
-The right-hand side is a unit, so $g$ is a unit.  After translating $T_i$ by $f_i/g$, the sequence $(r_i)$ differs by units from the coordinate sequence $(T_i)$, which is regular over an arbitrary coefficient ring.  Hence the polynomial Koszul complex is exact in positive degrees \cite[Tag~062F]{Stacks}.
-
-The ring $E_0$ is noetherian and $\varpi$-adically complete.  More precisely, the canonical map
-\[
-  E[T_1,\ldots,T_m]=E_0[T_1,\ldots,T_m][1/\varpi]
-  \longrightarrow
-  E_0\langle T_1,\ldots,T_m\rangle[1/\varpi]=P_E
-\]
-is flat: $E_0[T_1,\ldots,T_m]$ is noetherian, its $\varpi$-adic completion
-$E_0\langle T_1,\ldots,T_m\rangle$ is flat over it by noetherian adic-completion flatness \cite[Tag 00MB]{Stacks}, and localization at $\varpi$ preserves flatness.  Flat base change therefore carries the positive-degree polynomial Koszul exactness to $P_E$ \cite[Tag~062H]{Stacks}.
-
-Finally, $P_E$ is a complete noetherian Tate ring.  Huber's finite-module results imply that homomorphisms between finite $P_E$-modules are strict and that their images are closed \cite[Lemmas 2.3 and 2.4]{Huber94}.  Applying the bounded-denominator criterion \eqref{eq:strictness} to $d_{1,E}$ and to $d_{2,E}$ onto $\ker(d_{1,E})$ gives \eqref{eq:ideal-denominators} and \eqref{eq:syzygy-denominators}.
+Positive-degree exactness follows from the strict Koszul regularity result
+cited above.  Since $T_E$ is a complete Tate ring with noetherian ring of
+definition $T_{E,0}$, Huber's finite-module lemmas show that the differentials
+are continuous and strict and that their images are closed
+\cite[Lemmas~2.3 and 2.4]{Huber94}.  Apply \eqref{eq:strictness} to
+$d_{1,E}:T_E^m\to I_E$, using the target lattice
+$I_E\cap T_{E,0}$.  Exactness identifies
+$\im(d_{2,E})=\ker(d_{1,E})$; applying the same criterion to $d_{2,E}$ with
+target lattice $\ker(d_{1,E})\cap T_{E,0}^m$ gives
+\eqref{eq:ideal-denominators} and \eqref{eq:syzygy-denominators}.
 \end{proof}
 
 
-\subsection{The graph ideals form a pullback}
+\subsection{The defining ideals under pullback}
 
 Fix a rational datum
 \[
   \alpha=(f_1,\dots,f_m;g)
 \]
 in $A$.  Multiplying all entries by a common power of $\varpi$, we assume
-$f_1,\dots,f_m,g\in A_0$.  For $E\in\{A,B,C,D\}$ use the notation $P_E$, $P_{E,0}$, and $d_{1,E}$ introduced above, and abbreviate the graph ideal $J_{E,\alpha}$ to $J_E$.
+$f_1,\dots,f_m,g\in A_0$.  For $E\in\{A,B,C,D\}$ use the notation
+$T_E$, $T_{E,0}$, and $d_{1,E}$ introduced above, and write
+\[
+  I_E=(gT_1-f_1,\ldots,gT_m-f_m)\subset T_E.
+\]
 
 The exact integral row \eqref{eq:integral-milnor} and the coefficientwise section of
 $C_0\to D_0$ give an exact sequence
 \begin{equation}\label{eq:tate-ambient}
-  0\longrightarrow P_{A,0}\longrightarrow
-  P_{B,0}\oplus P_{C,0}\longrightarrow P_{D,0}\longrightarrow 0.
+  0\longrightarrow T_{A,0}\longrightarrow
+  T_{B,0}\oplus T_{C,0}\longrightarrow T_{D,0}\longrightarrow 0.
 \end{equation}
-The map $P_{C,0}\to P_{D,0}$ is surjective, as are the induced maps on finite free modules and their exterior powers.  Exactness is coefficientwise: a compatible restricted coefficient pair lifts to $A_0$, and the lifted coefficients still tend to zero $\varpi$-adically because \eqref{eq:integral-milnor} remains exact after multiplication by every power of $\varpi$.
+The map $T_{C,0}\to T_{D,0}$ is surjective, as are the induced maps on
+finite free modules and their exterior powers.  Exactness is coefficientwise:
+a compatible restricted coefficient pair lifts to $A_0$, and the lifted
+coefficients still tend to zero $\varpi$-adically.
 
 \begin{lemma}\label{lem:graph-pullback}
-The graph ideal $J_A$ is closed in $P_A$, and the canonical map
+The ideal $I_A$ is closed in $T_A$, and the canonical map
 \[
-  J_A\longrightarrow J_B\times_{J_D}J_C
+  I_A\longrightarrow I_B\times_{I_D}I_C
 \]
 is an isomorphism.  Moreover,
 \begin{equation}\label{eq:ideal-row}
-  0\longrightarrow J_A\longrightarrow J_B\oplus J_C
-  \longrightarrow J_D\longrightarrow 0
+  0\longrightarrow I_A\longrightarrow I_B\oplus I_C
+  \longrightarrow I_D\longrightarrow 0
 \end{equation}
 is strict exact.
 \end{lemma}
 
 \begin{proof}
-We first prove the algebraic pullback statement.  Let
-$(x_B,x_C)\in J_B\times_{J_D}J_C$.  Choose $u_B\in P_B^m$ and
-$u_C\in P_C^m$ with
-$d_{1,B}(u_B)=x_B$ and $d_{1,C}(u_C)=x_C$.  Their difference in $P_D^m$ lies in
+We first prove the algebraic statement.  Let
+$(x_B,x_C)\in I_B\times_{I_D}I_C$.  Choose $u_B\in T_B^m$ and
+$u_C\in T_C^m$ with
+$d_{1,B}(u_B)=x_B$ and $d_{1,C}(u_C)=x_C$.  Their difference in $T_D^m$ lies in
 $\ker(d_{1,D})$.  By \cref{lem:koszul}, it is $d_{2,D}(v_D)$ for some
-$v_D\in\bigwedge^2P_D^m$.  Lift $v_D$ to
-$v_C\in\bigwedge^2P_C^m$ and replace $u_C$ by $u_C+d_{2,C}(v_C)$.  The new pair of coefficient vectors has the same image in $P_D^m$, hence comes from
-$u_A\in P_A^m$ by \eqref{eq:tate-ambient}.  Then $d_{1,A}(u_A)$ maps to
+$v_D\in\bigwedge^2T_D^m$.  Lift $v_D$ to
+$v_C\in\bigwedge^2T_C^m$ and replace $u_C$ by $u_C+d_{2,C}(v_C)$.  The new pair of coefficient vectors has the same image in $T_D^m$, hence comes from
+$u_A\in T_A^m$ by \eqref{eq:tate-ambient}.  Then $d_{1,A}(u_A)$ maps to
 $(x_B,x_C)$.  This proves the asserted algebraic isomorphism.
 
-We next verify bounded denominators.  Choose exponents $h_B,h_C,z_D$ as in
-\cref{lem:koszul}, and put $h=\max\{h_B,h_C\}$.  Suppose that
-$(x_B,x_C)$ belongs to the pullback and lies in $P_{B,0}\oplus P_{C,0}$.  Choose
-$u_B\in P_{B,0}^m$ and $u_C\in P_{C,0}^m$ such that
+We now make this correction with bounded denominators.  The exponents $h_B$
+and $h_C$ make the coefficient lifts integral, whilst $z_D$ makes the
+syzygy correction integral.  Put $h=\max\{h_B,h_C\}$, and suppose that
+$(x_B,x_C)$ belongs to the pullback and lies in
+$T_{B,0}\oplus T_{C,0}$.  Choose
+$u_B\in T_{B,0}^m$ and $u_C\in T_{C,0}^m$ such that
 \[
   d_{1,B}(u_B)=\varpi^h x_B,
   \qquad
   d_{1,C}(u_C)=\varpi^h x_C.
 \]
 The difference $s=(u_B)_D-(u_C)_D$ belongs to
-$\ker(d_{1,D})\cap P_{D,0}^m$.  By \eqref{eq:syzygy-denominators}, choose
-$v_D\in\bigwedge^2P_{D,0}^m$ with
+$\ker(d_{1,D})\cap T_{D,0}^m$.  By \eqref{eq:syzygy-denominators}, choose
+$v_D\in\bigwedge^2T_{D,0}^m$ with
 $d_{2,D}(v_D)=\varpi^{z_D}s$.  Lift $v_D$ to
-$v_C\in\bigwedge^2P_{C,0}^m$ and set
+$v_C\in\bigwedge^2T_{C,0}^m$ and set
 \[
   u_C'=\varpi^{z_D}u_C+d_{2,C}(v_C).
 \]
 Then $(u_C')_D=\varpi^{z_D}(u_B)_D$ and
 $d_{1,C}(u_C')=\varpi^{h+z_D}x_C$.  By \eqref{eq:tate-ambient}, the compatible integral pair
-$(\varpi^{z_D}u_B,u_C')$ comes from $u_A\in P_{A,0}^m$.  Thus
+$(\varpi^{z_D}u_B,u_C')$ comes from $u_A\in T_{A,0}^m$.  Thus
 \begin{equation}\label{eq:JA-strict}
-  \varpi^{h+z_D}\bigl((J_B\times_{J_D}J_C)
-  \cap(P_{B,0}\oplus P_{C,0})\bigr)
-  \subset d_{1,A}(P_{A,0}^m).
+  \varpi^{h+z_D}\bigl((I_B\times_{I_D}I_C)
+  \cap(T_{B,0}\oplus T_{C,0})\bigr)
+  \subset d_{1,A}(T_{A,0}^m).
 \end{equation}
-This proves strictness of the pullback identification.  The fiber product $J_B\times_{J_D}J_C$ is closed in
-$P_B\oplus P_C$, because $J_B$ and $J_C$ are closed and the matching condition is closed.  The integral row \eqref{eq:tate-ambient} identifies $P_A$ strictly with the kernel of $P_B\oplus P_C\to P_D$.  Together with \eqref{eq:JA-strict}, this shows that $J_A$ is closed in $P_A$.
+This proves strictness of the pullback identification.  The fibre product
+$I_B\times_{I_D}I_C$ is closed in $T_B\oplus T_C$, and
+\eqref{eq:tate-ambient} identifies $T_A$ strictly with the kernel of
+$T_B\oplus T_C\to T_D$.  It follows from \eqref{eq:JA-strict} that $I_A$ is
+closed in $T_A$.
 
-Finally, the map $J_B\oplus J_C\to J_D$ is surjective: lift a coefficient vector in
-$P_D^m$ to $P_C^m$ and apply $d_1$.  If the element of $J_D$ is integral, then
-\eqref{eq:ideal-denominators} for $E=D$ shows that a fixed power of $\varpi$ has an integral coefficient vector, which can be lifted to $P_{C,0}^m$.  Thus this surjection is strict.  Together with \eqref{eq:JA-strict}, this proves strict exactness of \eqref{eq:ideal-row}.
+Finally, the map $I_B\oplus I_C\to I_D$ is surjective: lift a coefficient vector in
+$T_D^m$ to $T_C^m$ and apply $d_1$.  If the element of $I_D$ is integral, then
+\eqref{eq:ideal-denominators} for $E=D$ shows that a fixed power of $\varpi$ has an integral coefficient vector, which can be lifted to $T_{C,0}^m$.  Thus this surjection is strict.  Together with \eqref{eq:JA-strict}, this proves strict exactness of \eqref{eq:ideal-row}.
 \end{proof}
 
 \begin{proposition}\label{prop:localized-milnor}
@@ -593,33 +612,33 @@ restriction.
 \end{proposition}
 
 \begin{proof}
-By \cref{lem:graph-pullback}, all four graph ideals are closed.  Hence the graph model
+By \cref{lem:graph-pullback}, all four ideals are closed.  Hence
 \eqref{eq:graph-model} gives
 \[
-  E_\alpha=P_E/J_E
+  E_\alpha=T_E/I_E
   \qquad(E=A,B,C,D).
 \]
 The two exact rows \eqref{eq:tate-ambient} and \eqref{eq:ideal-row} give algebraic exactness of \eqref{eq:localized-row}.
 
-Let $E_{\alpha,0}$ be the image of $P_{E,0}$ in $E_\alpha$; this is a ring of definition.  Since $P_{C,0}\to P_{D,0}$ is surjective, so is
+Let $E_{\alpha,0}$ be the image of $T_{E,0}$ in $E_\alpha$; this is a ring of definition.  Since $T_{C,0}\to T_{D,0}$ is surjective, so is
 $C_{\alpha,0}\to D_{\alpha,0}$.  Thus $C_\alpha\to D_\alpha$ is a strict surjection.
 
 It remains to check strictness at the left.  Let $x\in A_\alpha$ have images in
 $B_{\alpha,0}$ and $C_{\alpha,0}$.  Choose representatives
-$b_0\in P_{B,0}$ and $c_0\in P_{C,0}$.  Their difference
+$b_0\in T_{B,0}$ and $c_0\in T_{C,0}$.  Their difference
 \[
   \delta=(b_0)_D-(c_0)_D
 \]
-belongs to $J_D\cap P_{D,0}$.  Choose $h_D$ as in
-\eqref{eq:ideal-denominators}.  There is $u_D\in P_{D,0}^m$ with
+belongs to $I_D\cap T_{D,0}$.  Choose $h_D$ as in
+\eqref{eq:ideal-denominators}.  There is $u_D\in T_{D,0}^m$ with
 $d_{1,D}(u_D)=\varpi^{h_D}\delta$.  Lift $u_D$ to
-$u_C\in P_{C,0}^m$.  Then
+$u_C\in T_{C,0}^m$.  Then
 \[
   \left(\varpi^{h_D}b_0,
   \varpi^{h_D}c_0+d_{1,C}(u_C)\right)
 \]
-is a compatible pair in $P_{B,0}\oplus P_{C,0}$, so it comes from
-$P_{A,0}$.  Its class in $A_\alpha$ is $\varpi^{h_D}x$.  Therefore
+is a compatible pair in $T_{B,0}\oplus T_{C,0}$, so it comes from
+$T_{A,0}$.  Its class in $A_\alpha$ is $\varpi^{h_D}x$.  Therefore
 \[
   \varpi^{h_D}\Bigl(A_\alpha\cap
   (B_{\alpha,0}\oplus C_{\alpha,0})\Bigr)
@@ -627,7 +646,13 @@ $P_{A,0}$.  Its class in $A_\alpha$ is $\varpi^{h_D}x$.  Therefore
 \]
 which is the bounded-denominator criterion for strictness.
 
-All maps used above are induced by the original coefficient maps and the universal property of rational localization.  Huber's presentation independence and transitivity therefore make the pullback identifications natural under rational refinement.
+All maps used above come from the coefficient maps
+$A\to B,C$ and $B,C\to D$.  More generally, a homomorphism $E\to E'$ carrying
+a rational datum $\alpha$ to $\alpha'$ induces a coefficientwise map
+$T_E\to T_{E'}$ which sends the relations for $\alpha$ to those for
+$\alpha'$.  The pullback identifications therefore commute with these maps.
+Applying this to rational restriction, and then using presentation independence
+and transitivity, proves the asserted compatibility under refinement.
 \end{proof}
 
 \section{Sheafiness}
@@ -759,18 +784,12 @@ Completeness, uniformity, nonnoetherianity, and the domain property are
 \end{proof}
 
 
-\section{A rationally stably reduced example}\label{sec:rationally-reduced}
+\section{A second example}\label{sec:rationally-reduced}
 
 The finite-jet construction above loses uniformity because separated completion creates a
-nilpotent.  We now give a second construction in which the bad rational localization is an
+nilpotent.  We now give a second construction in which the bad rational localisation is an
 integral domain.  The loss of uniformity is instead caused by an unbounded family of
 nonnilpotent power-bounded elements.
-
-\begin{definition}\label{def:rationally-stably-reduced}
-A complete Tate ring is \emph{rationally stably reduced} if every finite iterated rational
-localization is reduced.  This terminology is used only in the present paper; it is meant to
-avoid confusion with geometric reducedness after extension of the ground field.
-\end{definition}
 
 \begin{theorem}\label{thm:rationally-reduced-example}
 There is a complete Tate $k$-algebra $\mathcal A$ with the following properties.
@@ -778,15 +797,15 @@ There is a complete Tate $k$-algebra $\mathcal A$ with the following properties.
 \item $\mathcal A$ is a uniform, nonnoetherian integral domain and
       $\mathcal A^\circ=\mathcal A_0$ for the ring of definition displayed below.
 \item The Huber pair $(\mathcal A,\mathcal A^\circ)$ is strongly sheafy.
-\item The ring $\mathcal A$ is rationally stably reduced.
-\item The genuine rational localization
+\item Every finite iterated rational localisation of $\mathcal A$ is reduced.
+\item The rational localisation
       \[
         \mathcal B=\mathcal A\left\langle\frac{W}{\varpi}\right\rangle
       \]
       is an integral domain but is not uniform.
 \end{enumerate}
 In particular, failure of stable uniformity need not be caused by a nilpotent in the bad
-rational localization.
+rational localisation.
 \end{theorem}
 
 \subsection{The weighted-parity algebra}
@@ -942,7 +961,8 @@ so $\mathcal A$ is not noetherian.
 
 \subsection{A reduced nonuniform rational chart}
 
-The datum $(W;\varpi)$ is a genuine rational datum: the ideal $(W,\varpi)$ is open because $\varpi$ is a unit of $\mathcal A$.  Define the complete $k^\circ$-algebra
+The ideal $(W,\varpi)$ is open because $\varpi$ is a unit of $\mathcal A$.
+Define the complete $k^\circ$-algebra
 \begin{equation}\label{eq:weighted-chart-lattice}
   \mathcal B_0=
   \left\{
@@ -968,7 +988,7 @@ There is a canonical isometric isomorphism
   \xrightarrow{\ \sim\ }\mathcal B,
   \qquad W\longmapsto\varpi X.
 \end{equation}
-The graph ideal $(W-\varpi X)$ in $\mathcal A\langle X\rangle$ is closed, so no additional
+The ideal $(W-\varpi X)$ in $\mathcal A\langle X\rangle$ is closed, so no additional
 separated quotient is required.
 \end{proposition}
 
@@ -1069,7 +1089,7 @@ Let $d_j'\in E_0$ satisfy
 \end{equation}
 and write $\alpha'=(f_1',\ldots,f_m';g')$.  Then $\alpha'$ is a rational datum,
 $\alpha$ and $\alpha'$ define the same rational subset of $\Spa(E,E^+)$, and their completed
-rational localizations are canonically isomorphic.
+rational localisations are canonically isomorphic.
 \end{lemma}
 
 \begin{proof}
@@ -1093,7 +1113,7 @@ $|g'(x)|=|g(x)|$ and
 $|f_i'(x)|\leq|g'(x)|$.  This proves one inclusion of rational subsets.  Applying the same
 argument to the primed Bezout relation proves the reverse inclusion.
 
-Let $E_\alpha$ be the first rational localization and put
+Let $E_\alpha$ be the first rational localisation and put
 \[
   q=\frac{\varpi^\ell}{g}
    =a_0+\sum_i a_i\frac{f_i}{g}\in E_\alpha^\circ.
@@ -1116,7 +1136,7 @@ homomorphism in the opposite direction.  Both composites restrict to the identit
 universal-property uniqueness makes them inverse.  The isomorphism is therefore canonical.
 \end{proof}
 
-\subsection{Finite-head rational localization}
+\subsection{Finite-head rational localisation}
 
 Fix $N\geq1$.  For a tail multi-index
 $\mu=(\mu_n)_{n>N}\in\mathbf N^{(\{n>N\})}$, write
@@ -1140,7 +1160,7 @@ $e_0$ is a norm-nonincreasing algebra retraction
   \rho_N:\mathcal A\longrightarrow\mathcal A_N.
 \end{equation}
 
-\begin{proposition}[Coefficientwise localization]\label{prop:coefficientwise-localization}
+\begin{proposition}[Coefficientwise localisation]\label{prop:coefficientwise-localization}
 Let $\alpha$ be a rational datum in $\mathcal A_N$, and put
 $P=(\mathcal A_N)_\alpha$.  There is a canonical topological algebra isomorphism
 \begin{equation}\label{eq:coefficientwise-localization}
@@ -1165,7 +1185,7 @@ Let
   \qquad
   I=(gT_i-f_i)_i\subset R.
 \]
-Since $\mathcal A_N$ is affinoid, the graph ideal $I$ is closed and the graph map
+Since $\mathcal A_N$ is affinoid, the ideal $I$ is closed and
 $d_1:R^m\to I$ is strict; this is the degree-zero conclusion of
 \cref{lem:koszul}.  In particular, there is a constant $C$ such that every $y\in I$ has a
 lift $x\in R^m$ with $\lVert x\rVert\leq C\lVert y\rVert$.
@@ -1176,7 +1196,7 @@ By \eqref{eq:tail-decomposition},
   \cong
   \widehat{\bigoplus}_{\mu}^{\,c_0}Re_\mu.
 \]
-Because the graph relations lie in the finite head, the graph differential acts
+Because the relations lie in the finite head, $d_1$ acts
 coefficientwise.  Its image is exactly
 \[
   \widehat{\bigoplus}_{\mu}^{\,c_0}Ie_\mu.
@@ -1184,7 +1204,7 @@ coefficientwise.  Its image is exactly
 Indeed, the inclusion from left to right is immediate.  Conversely, for a null family
 $(y_\mu)_\mu$ in $I$, choose coefficientwise lifts $x_\mu$ with
 $\lVert x_\mu\rVert\leq C\lVert y_\mu\rVert$; then $(x_\mu)_\mu$ is again a null family.
-Thus the graph ideal over $\mathcal A$ is closed and
+Thus the corresponding ideal over $\mathcal A$ is closed and
 \begin{equation}\label{eq:c0-quotient}
   \frac{\widehat{\bigoplus}_{\mu}^{c_0}Re_\mu}
        {\widehat{\bigoplus}_{\mu}^{c_0}Ie_\mu}
@@ -1194,26 +1214,26 @@ Thus the graph ideal over $\mathcal A$ is closed and
 as complete topological modules and as algebras.  Since $R/I=P$, this proves
 \eqref{eq:coefficientwise-localization}.
 
-Every map used in \eqref{eq:c0-quotient} is induced by the canonical graph quotient.  If a
-further rational datum lies in the head, its graph differential is again coefficientwise, so the
+Every map used in \eqref{eq:c0-quotient} is induced by the canonical quotient.  If a
+further rational datum lies in the head, its first Koszul differential is again coefficientwise, so the
 same construction gives \eqref{eq:coefficientwise-restriction}.  Presentation independence and
-transitivity of rational localization extend this compatibility to iterated refinements and to a
+transitivity of rational localisation extend this compatibility to iterated refinements and to a
 larger finite head.
 \end{proof}
 
 \begin{corollary}[Finite-head presentation]\label{cor:finite-head-presentation}
-Every rational localization of $\mathcal A$ is canonically isomorphic to a ring of the form
+Every rational localisation of $\mathcal A$ is canonically isomorphic to a ring of the form
 \begin{equation}\label{eq:arbitrary-finite-head-presentation}
   \widehat{\bigoplus}_{\mu}^{\,c_0}Pe_\mu,
 \end{equation}
-where $P$ is a rational localization of some affinoid head $\mathcal A_N$.  Under this
+where $P$ is a rational localisation of some affinoid head $\mathcal A_N$.  Under this
 identification the inclusions obtained by enlarging the head have norm-nonincreasing algebra
 retractions, and their union is dense.
 \end{corollary}
 
 \begin{proof}
 Start with a rational datum in $\mathcal A$.  Multiplying all entries by one power of
-$\varpi$ does not change the rational subset or localization, so assume that the entries lie in
+$\varpi$ does not change the rational subset or localisation, so assume that the entries lie in
 $\mathcal A_0$.  Choose an integral Bezout relation
 \[
   \varpi^\ell=\sum_j a_jd_j,
@@ -1223,12 +1243,12 @@ By \eqref{eq:A-completion-of-heads}, for some $N$ the entries $d_j$ admit approx
 $d_j'\in\mathcal A_N\cap\mathcal A_0$ satisfying
 $d_j'-d_j\in\varpi^{\ell+1}\mathcal A_0$.  By
 \cref{lem:small-perturbation}, the primed datum gives the same rational subset and the same
-completed localization.  The primed integral Bezout relation produced in that lemma remains
+completed localisation.  The primed integral Bezout relation produced in that lemma remains
 valid after applying the retraction $\rho_N$; hence the primed datum is a rational datum already
 in $\mathcal A_N$.  Now apply \cref{prop:coefficientwise-localization}.
 
 For $M\geq N$, put $P_M=(\mathcal A_M)_\alpha$.  The same proposition, with head $M$,
-identifies the localization with the $c_0$-sum over the variables of index $>M$.  Coefficient
+identifies the localisation with the $c_0$-sum over the variables of index $>M$.  Coefficient
 projection gives a norm-nonincreasing retraction to $P_M$, and finite tail truncation proves
 that $\bigcup_MP_M$ is dense.
 \end{proof}
@@ -1252,7 +1272,7 @@ $X=\Spa(\mathcal A,\mathcal A^\circ)$.  Let $U\subset X$ be rational.  By
 for some $M$.  Let $E_U^+$ be the plus ring defining the rational subspace $U$; it need not
 equal the maximal ring $E^\circ$.  Choose the standard closed ring of definition
 $P_{M,0}\subset P_M^\circ$ furnished by the head graph presentation.  The coefficientwise
-graph quotient gives a closed ring of definition
+quotient by these relations gives a closed ring of definition
 \[
   E_0=\widehat{\bigoplus}_{\mu}^{c_0}P_{M,0}e_\mu\subseteq E_U^+.
 \]
@@ -1343,7 +1363,7 @@ The finite heads remain affinoid, the retractions and perturbation lemma are unc
 the preceding proof applies verbatim.  Therefore every finite Tate extension is sheafy.
 \end{proof}
 
-\subsection{Reducedness of all rational localizations}
+\subsection{Reducedness of all rational localisations}
 
 \begin{lemma}\label{lem:formal-series-reduced}
 Let $P$ be a reduced ring and let $J$ be any index set.  Define
@@ -1368,22 +1388,22 @@ nilpotent, every $\tau_{J_0}$ kills it; joint coefficient detection then kills t
 \end{proof}
 
 \begin{theorem}\label{thm:parity-rationally-reduced}
-Every finite iterated rational localization of $\mathcal A$ is reduced.
+Every finite iterated rational localisation of $\mathcal A$ is reduced.
 \end{theorem}
 
 \begin{proof}
-By transitivity of rational localization, it is enough to treat one rational localization.  Use
+By transitivity of rational localisation, it is enough to treat one rational localisation.  Use
 \cref{cor:finite-head-presentation} to write it as
 \begin{equation}\label{eq:reduced-localization-decomposition}
   E\cong\widehat{\bigoplus}_{\mu}^{c_0}Pe_\mu,
   \qquad P=(\mathcal A_N)_\alpha.
 \end{equation}
 The affinoid algebra $\mathcal A_N$ is a domain by
-\cref{lem:finite-stage-normal-form}.  A rational localization of a reduced affinoid algebra is
+\cref{lem:finite-stage-normal-form}.  A rational localisation of a reduced affinoid algebra is
 reduced \cite[Corollary 7.3.2/10]{BGR}; see also
 \cite[Remark 1.2.16]{KedlayaAWS}.  Thus $P$ is reduced.
 
-The element $W$ is a non-zero-divisor in $\mathcal A_N$.  Affinoid rational localization is
+The element $W$ is a non-zero-divisor in $\mathcal A_N$.  Affinoid rational localisation is
 algebraically flat \cite[Corollary 7.3.2/6]{BGR}; see also
 \cite[Proposition 15.1.1, proof]{ConradL15}.  Tensoring
 $0\to\mathcal A_N\xrightarrow{W}\mathcal A_N$ with $P$ therefore shows that multiplication
@@ -1406,10 +1426,10 @@ $x_\mu=0$ for every $\mu$, so $\Phi$ is injective.  By
 \begin{proof}[Proof of \cref{thm:rationally-reduced-example}]
 The uniform domain assertion is \cref{prop:parity-uniform-domain}, and nonnoetherianity is
 \cref{prop:parity-nonnoetherian}.  Strong sheafiness is
-\cref{thm:parity-strongly-sheafy}.  Rational stable reducedness is
-\cref{thm:parity-rationally-reduced}.  Finally,
+\cref{thm:parity-strongly-sheafy}.  Reducedness of all finite iterated rational
+localisations is \cref{thm:parity-rationally-reduced}.  Finally,
 \cref{prop:weighted-chart-identification,prop:weighted-chart-domain-nonuniform} identify the
-genuine rational chart $|W|\leq|\varpi|$ as a nonuniform integral domain.
+rational chart $|W|\leq|\varpi|$ as a nonuniform integral domain.
 \end{proof}
 
 \begin{remark}[Relation with the first construction]\label{rem:second-example-relation}
@@ -1421,7 +1441,7 @@ nonuniformity is witnessed by the unbounded family $(T_n)_{n\geq1}$ of nonnilpot
 power-bounded elements.  The use of an infinite monomial support and of unbounded
 power-bounded directions is in the tradition of the examples of Buzzard--Verberkmoes and
 Mihara; the finite-head coefficientwise descent is the additional feature that makes sheafiness
-and rational stable reducedness accessible here.
+and reducedness after iterated rational localisation accessible here.
 \end{remark}
 
 
@@ -1430,31 +1450,17 @@ and rational stable reducedness accessible here.
 \section{Lean formalisation and verification}\label{sec:formalisation}
 
 This appendix concerns the finite-jet construction of \cref{thm:main}; the
-weighted-parity construction of \cref{sec:rationally-reduced} has not yet been
-formalised.  We record the definitions actually used by the proof, the
-equivalences which connect them to the usual mathematical formulations, and
-the public endpoint for the example.  The complete development is pinned to
-commit \texttt{b007a4f3d} of AINTLIB \cite{AINTLIB}.
+second example has not yet been formalised.  We give the definitions of
+sheafiness and strong noetherianity used in the development, explain their
+relation with the usual definitions, and record the definition and main
+theorems for the example.  The source is AINTLIB commit
+\texttt{b007a4f3d} \cite{AINTLIB}.
 
-\begin{remark}[Draft reproducibility note]\label{rem:lean-publication}
-The commit used for this draft exists in the audited local AINTLIB repository,
-but is not currently reachable from its public GitHub repository.  The
-interactive edition of this paper therefore contains an archival declaration
-snapshot: each Lean button opens the exact statement from the pinned
-Git object in an inline knowl and also links to a permanent page within the
-paper site.  The complete proof sources should still be restored under a
-permanent AINTLIB branch or tag before archival publication.
-\end{remark}
-
-The audit was run with Lean \texttt{4.33.0-rc1} \cite{Lean4} and mathlib commit
-\texttt{fd1d54bc}.  It built all $24$ targeted
-modules and the $3307$-job umbrella target, found no \texttt{sorry} or
-\texttt{admit} in the finite-jet development, and checked the axioms of the
-headline declarations.  Those declarations use only
-\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; in
-particular no \texttt{sorryAx} occurs.  The
-\href{https://github.com/CBirkbeck/uniform-sheafy-tate-domains/blob/main/PAPERFORGE_CHECK.md}{paper audit report}
-records the commands and their output.
+At the time of writing this commit is not available from the public AINTLIB
+repository.  The interactive version of the paper therefore includes the
+statement of each declaration, extracted from the pinned commit.  The
+\href{https://github.com/CBirkbeck/uniform-sheafy-tate-domains/blob/main/PAPERFORGE_CHECK.md}{verification report}
+records the Lean and mathlib versions, the build, and the axiom checks.
 
 \subsection{Sheafiness}
 
@@ -1485,14 +1491,11 @@ class IsSheafy (A : Type u) [CommRing A] [TopologicalSpace A]
       restrictionMap C.base D.1 (C.hsubset D.1 D.2) x = f D
 \end{lstlisting}
 
-The \texttt{embedding} field is separation together with the required
-topology: the map from the sections on the base to the product of the sections
-on the cover is a topological embedding.  The \texttt{gluing} field is
-surjectivity onto matching families.  Although compatibility is written using
-all common rational refinements, the exact-intersection compatibility theorem
-proves that this is equivalent to agreement on the usual pairwise rational
-intersections.  Thus this is precisely the finite-rational-basis form of the
-topological sheaf condition.
+The two fields say that restriction to a finite rational cover is a
+topological embedding and that every matching family glues.  Compatibility is
+written using common rational refinements; the exact-intersection theorem
+identifies this with the usual compatibility on pairwise intersections.  Thus
+\texttt{IsSheafy A} is the topological sheaf condition on the rational basis.
 
 For an arbitrary open subset $V\subseteq\Spa(A,A^+)$,
 \texttt{limitSections V} is the projective limit of the sections over the
@@ -1526,14 +1529,10 @@ structure IsLimitSheaf (A : Type u) [CommRing A] [TopologicalSpace A]
     Topology.IsEmbedding (limitRestrictProd hle)
 \end{lstlisting}
 
-The first field is the usual separation axiom: two sections which agree on a
-cover are equal.  The second is the gluing axiom, with compatibility expressed
-by restricting to $U_i\cap U_j$.  These are precisely the two algebraic parts
-of the ordinary sheaf condition.  The final field remembers that we are
-working with topological rings.  It says that restriction to the product over
-the cover is a topological embedding; together with the first two fields this
-identifies the sections on $V$, with their projective-limit topology, with the
-matching-family equaliser as a topological ring.
+The fields \texttt{injective} and \texttt{glue} are the usual sheaf axioms on
+arbitrary opens.  The final field says that the resulting map to the
+matching-family equaliser is also a topological embedding.  This is the extra
+condition needed for a sheaf of complete topological rings.
 
 For complete Tate pairs the rational-basis and all-open predicates are
 equivalent:
@@ -1545,19 +1544,16 @@ theorem isSheafy_iff_isLimitSheaf :
     isSheafy_of_isLimitSheaf⟩
 \end{lstlisting}
 
-The forward implication is the sheaf-on-a-rational-basis theorem used by the
-formalisation; the converse simply restricts the all-open condition to
-rational covers.  The further theorem
-\texttt{structurePresheaf\_isSheafOfTopologicalRings\_iff} identifies
-\texttt{IsLimitSheaf A} with the representable topological-ring formulation
-of Wedhorn's Remark~8.20 for the bundled structure presheaf.  There is also an
-implication to mathlib's ordinary categorical sheaf predicate, but not an
-equivalence: that predicate alone forgets the topological-embedding clause.
+The forward implication is the sheaf-on-a-rational-basis theorem, and the
+converse is restriction to rational covers.  The
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.isSheafOfTopologicalRings_iff_isLimitSheaf.html}{structure-presheaf equivalence}
+identifies \texttt{IsLimitSheaf A} with
+Wedhorn's topological-ring formulation \cite[Remark~8.20]{Wedhorn}.
+Mathlib's ordinary categorical sheaf predicate is weaker because it does not
+record the topology.
 
-For a complete Tate ring, the user-facing definition installs a chosen valid
-ring of integral elements and invokes this all-open condition.  The ring-level
-definition then quantifies over both the choice of completion and the plus
-ring.  These definitions are in
+For a complete Tate ring the following definitions fix a ring of integral
+elements and then remove the choices of plus ring and completion.  They are in
 \href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.IsSheafyFor.html}{\texttt{SheafyRing.lean}}.
 
 \begin{lstlisting}
@@ -1576,27 +1572,19 @@ def IsSheafyTateRing : Prop :=
     IsSheafyFor (CompletionModel A P) Bplus
 \end{lstlisting}
 
-Thus \texttt{IsSheafyFor A Aplus} is the formal counterpart of saying that the
-Huber pair $(A,A^+)$ is sheafy.  The local declarations install the bundled
-plus ring, its validity proof, and the derived localization-lift package; none
-is an additional mathematical hypothesis.  In complete Tate scope, the
+The predicate \texttt{IsSheafyFor A Aplus} says that the Huber pair
+$(A,A^+)$ is sheafy.  For complete Tate rings, the
 \href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.isSheafyFor_iff_isSheafyComplete.html}{chosen-plus-ring
-equivalence} proves that one valid plus ring is enough, using standard
-rational refinements.  The fixed-completion and complete-ring equivalences in
+equivalence} shows that this is independent of the chosen ring of integral
+elements.  The equivalences in
 \href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.isSheafyTateRing_iff_for_completionModel.html}{\texttt{SheafyCompletionModel.lean}}
-show that one may also choose a completion model.  Thus the universal
-quantifiers in
-\texttt{IsSheafyTateRing} make the result independent of both choices.
-This is the Tate, or analytic, specialization of Wedhorn's
-Definition~8.26 \cite[Definition~8.26]{Wedhorn}; the formalisation does not
-define the corresponding notion for a general nonanalytic f-adic ring.
+remove the choice of completion.  Consequently \texttt{IsSheafyTateRing} is
+the analytic specialisation of Wedhorn's Definition~8.26
+\cite[Definition~8.26]{Wedhorn}.
 
 \subsection{Strong noetherianity}
 
-The formal definition first constructs the restricted power-series ring.  A
-coefficient function tends to zero along the cofinite filter exactly when,
-for every neighbourhood of zero, all but finitely many coefficients belong to
-that neighbourhood.  The definitions below are from
+The definitions below are from
 \href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/IsStronglyNoetherian.html}{\texttt{RestrictedPowerSeries.lean}}.
 
 \begin{lstlisting}
@@ -1612,15 +1600,13 @@ class IsStronglyNoetherian (A : Type*) [CommRing A]
     IsNoetherianRing (restrictedMvPowerSeriesSubring k A)
 \end{lstlisting}
 
-The subring \texttt{restrictedMvPowerSeriesSubring k A} therefore consists of
-the usual restricted series in $k$ variables, and is the formal model of
-$A\langle T_1,\ldots,T_k\rangle$.  Requiring this ring to be noetherian for
-every $k$ is the complete-ring specialization of Wedhorn's definition of
-strong noetherianity
-\cite[Proposition and Definition~6.36]{Wedhorn}: Wedhorn writes the completed
-restricted power-series ring over the completion of $A$, and here $A$ is
-already complete.  The use of multivariate power series rather than an
-iterated one-variable construction is only an implementation choice.
+The cofinite convergence condition is the usual condition that the
+coefficients tend to zero, so
+\texttt{restrictedMvPowerSeriesSubring k A} represents
+$A\langle T_1,\ldots,T_k\rangle$.  The second declaration therefore says that
+these rings are noetherian for every $k$.  Since $A$ is already complete, this
+is Wedhorn's definition of strong noetherianity
+\cite[Proposition and Definition~6.36]{Wedhorn}.
 
 \subsection{The finite-jet example}
 
@@ -1673,23 +1659,21 @@ The predicate \texttt{nonnegSubring K} cuts out
 $K\langle W\rangle$ inside $K\langle W,W^{-1}\rangle$.  Consequently the
 carrier condition says that the coefficients of $Q^0$ and $Q^1$ have no
 negative powers of $W$, while the coefficients of $Q^n$ for $n\geq2$ are
-unrestricted.  In other words, \texttt{JetA K} is precisely
+unrestricted.  Thus \texttt{JetA K} is
 \[
   \left\{f_0(W)+Qf_1(W)+Q^2h(W,W^{-1},Q)\ \middle|\
     \substack{f_0,f_1\in K\langle W\rangle\\
               h\in L\langle Q\rangle}\right\},
 \]
 which is the support description of $A$ used in \cref{eq:support-A0} after
-inverting $\varpi$.  The closure fields in \texttt{jetSupport} are the direct
-formal check that this support condition defines a subring.
+inverting $\varpi$.
 
 The file also constructs the four maps in the Milnor square and proves
 \texttt{milnorRow\_exact}: every compatible pair in
 \texttt{JetB K} and \texttt{JetC K} comes from a unique element of
-\texttt{JetA K}.  Thus the concrete support subring is proved to realise the
-pullback $B\times_D C$; Lean does not merely assume that identification.
-The Milnor argument then constructs the rational-cover definition displayed
-above:
+\texttt{JetA K}.  This identifies the support subring with
+$B\times_D C$.  The sheaf argument produces the finite-rational-cover
+condition displayed above:
 
 \begin{lstlisting}
 include ϖ hK₀ in
@@ -1701,13 +1685,10 @@ theorem isSheafy_JetA :
     gluing_JetA ϖ hK₀ C hC f hcompat
 \end{lstlisting}
 
-Here $\varpi$ is a parameter of type \texttt{Uniformizer K}.  The other
-layer-one input says that \texttt{unitBall K} is noetherian.  This is the
-definition used in the proof of the FJP example.  The
-equivalence \texttt{isSheafy\_iff\_isLimitSheaf} upgrades it to all opens;
-standard-refinement independence then upgrades the canonical maximal plus
-ring to every valid plus ring, and completion-model independence gives the
-ring-level theorem.  The public endpoints are collected in
+Here $\varpi$ is a \texttt{Uniformizer K}, and the remaining input is the
+noetherianity of \texttt{unitBall K}.  This is the version of sheafiness proved
+directly for the example.  The equivalences above give the all-open and
+choice-independent statements.  The main theorems are collected in
 \href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.finiteJet_isSheafyFor_of_dvr.html}{\texttt{SheafyEndpoints}},
 and include the following.
 
@@ -1745,11 +1726,11 @@ theorem finiteJet_isSheafyTateRing_of_dvr
 Here $K$ is any complete nontrivially normed ultrametric field for which
 $\mathcal O[K]=\{x:\lVert x\rVert\leq1\}$ is a discrete valuation ring.  No
 local compactness, finiteness of the residue field, characteristic, or
-perfection assumption is used.  The pair-level declaration
-\texttt{finiteJet\_isSheafyFor\_of\_dvr} is the literal formal counterpart of
-the claim that $(A,A^\circ)$ is sheafy.  The final declaration is stronger:
-it is independent of the completion model and of the plus ring.  For every
-valid \texttt{Bplus}, the development also proves
+perfection assumption is used.  The theorem
+\texttt{finiteJet\_isSheafyFor\_of\_dvr} proves that $(A,A^\circ)$ is sheafy,
+whilst \texttt{finiteJet\_isSheafyTateRing\_of\_dvr} removes the choices of
+completion and ring of integral elements.  The corresponding all-open
+statement is
 \[
 \begin{split}
 &\texttt{TopCat.Presheaf.IsSheafOfTopologicalRings}\\[-2pt]
@@ -1757,49 +1738,35 @@ valid \texttt{Bplus}, the development also proves
 \texttt{(ValuationSpectrum.structurePresheaf (JetA K))},
 \end{split}
 \]
-under the name
-\texttt{finiteJet\_structurePresheaf\_isSheafOfTopologicalRings\_all\_of\_dvr}.
-This is the genuine all-open structure presheaf with its projective-limit
-topology.
+The
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr.html}{corresponding Lean theorem}
+proves this statement directly.
 
-\subsection{Scope of the formal correspondence}
+\subsection{Scope of the formalisation}
 
-The clause-by-clause audit gives the following qualifications.  Completeness
-of \texttt{JetA K} is an instance, and
-\texttt{isTateRing\_JetA} supplies its Tate structure.  The paper's $A_0$ is
-represented in Lean by the Gauss-norm unit ball; the theorem
-\texttt{isPowerBounded\_JetA\_iff} says that an element is power-bounded
-exactly when its norm is at most one.  Thus this is the formal content of
-$A^\circ=A_0$, although the code does not introduce a second object literally
-named \texttt{A0}.
+The paper's $A_0$ is represented by the Gauss-norm unit ball.
+The theorem \texttt{isPowerBounded\_JetA\_iff} identifies this unit ball with
+the power-bounded elements, giving $A^\circ=A_0$.  Completeness and the Tate
+structure are supplied by the corresponding instances.
 
 For the bad chart, \texttt{chartEquiv} is an exported ring equivalence.
-Together the two continuity theorems make this ring equivalence a
-homeomorphism.  The canonical-map theorem identifies the displayed
-generators.
-The implementation respects constants, but the audited API does not bundle
-this as a \texttt{K}-\texttt{AlgEquiv}; this is why
-\cref{prop:bad-chart} is stated as an isomorphism of complete topological
-rings.
+The two continuity theorems make it a homeomorphism, and the canonical-map
+theorem identifies $W$ and $Q$.  It is not bundled as a
+\texttt{K}-\texttt{AlgEquiv}, which is why \cref{prop:bad-chart} is stated for
+complete topological rings.
 
-The five conclusions of \cref{lem:koszul} are all formalised, but at the
-normed specialization needed here: the chosen ring of definition is
-\texttt{unitBall E}, the Tate algebra carries its Gauss norm, and the
-uniformizer scales that norm exactly.  The more general formulation for an
-arbitrary noetherian $\varpi$-adic $E_0$ in the printed lemma follows from
-Huber's finite-module strictness and comparison of lattices; there is not yet
-a Lean wrapper carrying out that comparison.  Likewise, Lean proves the
-specialized finite-jet instance of the abstract sheaf-transfer lemma
-\cref{lem:sheaf-transfer}, namely \texttt{isSheafy\_JetA}; it does not yet
-export the general lemma for an arbitrary strict Milnor square.  For
-\cref{prop:localized-milnor}, the exact row, embedding, open surjection, and
-the restriction-compatibility of the component maps are separate
-declarations rather than one bundled result.  These are packaging
-limitations, not assumptions used silently in the finite-jet endpoint.
+The conclusions of \cref{lem:koszul} are formalised in the normed setting used
+for the example: $T_E$ has its Gauss norm, $T_{E,0}$ is its unit ball, and the
+finite free terms have their sup norms.  The statement for an arbitrary
+noetherian $\varpi$-adic $E_0$ follows from Huber's finite-module results and
+comparison of lattices, but this comparison is not separately bundled in
+Lean.  Similarly, the development proves the finite-jet instance
+\texttt{isSheafy\_JetA} of \cref{lem:sheaf-transfer}, rather than the abstract
+lemma for every strict Milnor square.  The components of
+\cref{prop:localized-milnor} are separate declarations.
 
-The graph--Koszul argument of \cref{lem:koszul}, the rational-chart
-calculation, and the transfer of sheafiness through the concrete Milnor square
-are too large to reproduce usefully here.  They are contained respectively in
+The Koszul argument, the rational-chart calculation, and the transfer of
+sheafiness through the concrete Milnor square are contained respectively in
 \href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.GraphKoszul.koszulGraph_restricted_exact.html}{the
 restricted-exactness file}
 and
@@ -1819,8 +1786,8 @@ formulation
 Theorem~8.28(b), Corollary~8.32, and Lemmas~8.33--8.34]{Wedhorn}.
 The passage between a fixed plus ring and all plus rings follows the standard
 rational-refinement argument recorded by Kedlaya
-\cite[Lemma~1.6.8 and Remark~1.6.9]{KedlayaAWS}.  The graph-complex input is
-attributed above to Ben-Bassat--Kremnizer and Bambozzi--Kremnizer; Huber's
+\cite[Lemma~1.6.8 and Remark~1.6.9]{KedlayaAWS}.  The strict Koszul input is
+due to Ben-Bassat--Kremnizer and Bambozzi--Kremnizer; Huber's
 finite-module lemmas and the bounded-denominator criterion of
 Buzzard--Verberkmoes supply the lattice form used in the proof.
 
@@ -1830,7 +1797,7 @@ The development is written in Lean~4 \cite{Lean4} on top of mathlib
 infrastructure includes Apache-2.0-licensed code adapted from William Coram's
 \texttt{PhD} repository, with equivalence code attributed there to Bingyu
 Xia \cite{CoramXia}.  The vendored source headers and commit history retain
-those attributions.  The finite-jet definitions, localization proofs, and
+those attributions.  The finite-jet definitions, localisation proofs, and
 sheaf-transfer endpoints discussed in this appendix are the AINTLIB-specific
 part of the development.
 
@@ -1937,11 +1904,6 @@ K.~S. Kedlaya,
 The Stacks Project Authors,
 \emph{The Stacks Project},
 \url{https://stacks.math.columbia.edu}.
-
-\bibitem{Temkin}
-M.~Temkin,
-\emph{Non-archimedean pinchings},
-Math. Z. \textbf{301} (2022), no.~2, 2099--2109.
 
 \bibitem{Wedhorn}
 T.~Wedhorn,

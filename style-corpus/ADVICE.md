@@ -30,6 +30,16 @@ the coauthored formalisation papers chiefly as models for presenting Lean.
   lemma, section, or page locators whenever possible.
 - In an introduction, move from background and known work to the precise gap,
   then state the goal and any limitation of the result.
+- Use the older solo number-theory papers as the main model for density.  A
+  standard fact should normally receive a citation, a one-line reduction, or
+  “the result follows”; reserve detailed calculations for the mechanism which
+  is new in the present paper.
+- Do not paraphrase a display immediately after it unless the paraphrase adds
+  mathematical content.  In particular, avoid retrospective glosses such as
+  “this is what we mean by…”.  Define a term before using it, or omit the term.
+- Let notation advertise its role: for example, use \(T_E\) for a Tate algebra.
+  Give notation to recurring objects, but do not coin a name for a one-use
+  ideal or map.
 
 ## Lean in the paper
 
@@ -37,9 +47,10 @@ the coauthored formalisation papers chiefly as models for presenting Lean.
 - Display only the Lean declaration that a reader needs; link the proof and
   supporting API rather than printing a long proof term or a list of
   `#check` commands.
-- After each declaration, explain its fields or conjuncts in order.  Useful
-  sentence shapes are “The first field says…”, “The remaining condition
-  records…”, and “Thus this is the usual mathematical definition…”.
+- Explain only those fields which identify the declaration with the
+  mathematical notion or record a genuine topological condition.  Avoid the
+  line-by-line tutorial cadence of the 2023 proceedings paper for a
+  research-level article.
 - Explain typeclass or implementation choices only when they correspond to a
   genuine mathematical hypothesis or a deliberate difference from the printed
   statement.

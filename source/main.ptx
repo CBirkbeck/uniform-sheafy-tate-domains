@@ -26,8 +26,8 @@
     <xi:include href="./sec-introduction.ptx"/>
     <xi:include href="./sec-conventions.ptx"/>
     <xi:include href="./sec-the-global-ring.ptx"/>
-    <xi:include href="./sec-a-nonuniform-rational-localization.ptx"/>
-    <xi:include href="./sec-localization-of-the-milnor-square.ptx"/>
+    <xi:include href="./sec-a-nonuniform-rational-localisation.ptx"/>
+    <xi:include href="./sec-localisation-of-the-milnor-square.ptx"/>
     <xi:include href="./sec-sheafiness.ptx"/>
     <xi:include href="./sec-rationally-reduced.ptx"/>
     <backmatter xml:id="backmatter">
@@ -84,9 +84,6 @@
       </biblio>
       <biblio type="raw" xml:id="bib-Stacks">
       The Stacks Project Authors, <em>The Stacks Project</em>, <url href="https://stacks.math.columbia.edu"><c>https://stacks.math.columbia.edu</c></url>.
-      </biblio>
-      <biblio type="raw" xml:id="bib-Temkin">
-      M.<nbsp/>Temkin, <em>Non-archimedean pinchings</em>, Math. Z. <alert>301</alert> (2022), no.<nbsp/>2, 2099<ndash/>2109.
       </biblio>
       <biblio type="raw" xml:id="bib-Wedhorn">
       T.<nbsp/>Wedhorn, <em>Adic spaces</em>, 2019, <url href="https://arxiv.org/abs/1910.05934">arXiv:1910.05934</url>.

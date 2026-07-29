@@ -1,7 +1,7 @@
-# First author-voice review
+# Author-voice review
 
-This is a first pass intended to make the paper easier to continue editing in
-Chris Birkbeck's voice; it is not a wholesale rewrite.
+This records the style decisions used while revising the paper in Chris
+Birkbeck's voice.
 
 ## Corpus
 
@@ -13,9 +13,10 @@ modularity conjecture*.  The inventory is in
 `style-corpus/arxiv/MANIFEST.md` and
 `style-corpus/author-hosted/MANIFEST.md`.
 
-Solo-authored papers were given the greatest weight for prose; the recent
-coauthored formalisation papers were used chiefly to decide how much Lean code
-belongs in a mathematical article.
+The four older solo number-theory papers were given the greatest weight.  The
+2023 solo formalisation paper is useful for the order in which mathematics and
+Lean code are presented, but its line-by-line tutorial register is not the
+model for this paper.
 
 ## Recurring features
 
@@ -26,13 +27,17 @@ belongs in a mathematical article.
   “Using this…”, and “It follows that…”.
 - Limitations and implementation choices are stated directly, without
   promotional language.
-- Formalisation exposition proceeds from the mathematical notion to a short
-  Lean declaration and then explains the declaration's fields in order.
+- Standard material is compressed to a citation or short reduction; details
+  are kept for the mechanism which is new.
+- Notation is functional and names are economical.  A recurring construction
+  may be named, but a one-use ideal or map is normally just written down.
+- Lean exposition proceeds from the mathematical notion to a short
+  declaration and explains only the fields needed to identify the two.
 
 These observations have been distilled into `style-corpus/ADVICE.md`, which is
 the editable guide for later Paperforge prose passes.
 
-## Changes made in this pass
+## Changes made
 
 - Tightened the abstract and the opening of the introduction around the known
   result, the precise gap, and the two examples.
@@ -48,11 +53,14 @@ the editable guide for later Paperforge prose passes.
   5. the public finite-jet theorem endpoints.
 - Added an explanation immediately after each extract and linked longer proofs
   to the audited AINTLIB commit.
+- Rewrote Section 5 using \(T_E\) for the Tate algebra and stated the
+  topologies on every Koszul term before using the word “strict”.
+- Removed the coined term “graph ideal” and compressed the standard
+  contractibility argument.
+- Rebalanced the localisation section around the bounded-denominator chase,
+  which is the part needed for the new pullback argument.
+- Shortened defensive provenance prose and the field-by-field commentary in
+  the Lean appendix.
 
-## Deliberate limits
-
-The body proofs have not been globally restyled.  They should be reviewed
-section by section with the author, particularly the long localisation
-argument and the second, unformalised example.  The draft still says
-`Anonymous`; authorship metadata was not inferred or changed.  The style
-corpus is used as evidence about structure and register, not as a phrase bank.
+The draft still says `Anonymous`; authorship metadata has not been changed.
+The style corpus is evidence about structure and register, not a phrase bank.

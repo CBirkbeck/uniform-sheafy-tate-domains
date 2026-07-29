@@ -4,36 +4,18 @@
   <introduction>
     <p>
       This appendix concerns the finite-jet construction of <xref ref="thm-main"/>; the
-weighted-parity construction of <xref ref="sec-rationally-reduced"/> has not yet been
-formalised.  We record the definitions actually used by the proof, the
-equivalences which connect them to the usual mathematical formulations, and
-the public endpoint for the example.  The complete development is pinned to
-commit <c>b007a4f3d</c> of AINTLIB <xref ref="bib-AINTLIB"/>.
+second example has not yet been formalised.  We give the definitions of
+sheafiness and strong noetherianity used in the development, explain their
+relation with the usual definitions, and record the definition and main
+theorems for the example.  The source is AINTLIB commit
+<c>b007a4f3d</c> <xref ref="bib-AINTLIB"/>.
     </p>
-    <remark xml:id="rem-lean-publication">
-      <title>Draft reproducibility note</title>
-      <statement>
-        <p>
-          The commit used for this draft exists in the audited local AINTLIB repository,
-but is not currently reachable from its public GitHub repository.  The
-interactive edition of this paper therefore contains an archival declaration
-snapshot: each Lean button opens the exact statement from the pinned
-Git object in an inline knowl and also links to a permanent page within the
-paper site.  The complete proof sources should still be restored under a
-permanent AINTLIB branch or tag before archival publication.
-        </p>
-      </statement>
-    </remark>
     <p>
-      The audit was run with Lean <c>4.33.0-rc1</c> <xref ref="bib-Lean4"/> and mathlib commit
-<c>fd1d54bc</c>.  It built all <m>24</m> targeted
-modules and the <m>3307</m>-job umbrella target, found no <c>sorry</c> or
-<c>admit</c> in the finite-jet development, and checked the axioms of the
-headline declarations.  Those declarations use only
-<c>propext</c>, <c>Classical.choice</c>, and <c>Quot.sound</c>; in
-particular no <c>sorryAx</c> occurs.  The
-<url href="https://github.com/CBirkbeck/uniform-sheafy-tate-domains/blob/main/PAPERFORGE_CHECK.md">paper audit report</url>
-records the commands and their output.
+      At the time of writing this commit is not available from the public AINTLIB
+repository.  The interactive version of the paper therefore includes the
+statement of each declaration, extracted from the pinned commit.  The
+<url href="https://github.com/CBirkbeck/uniform-sheafy-tate-domains/blob/main/PAPERFORGE_CHECK.md">verification report</url>
+records the Lean and mathlib versions, the build, and the axiom checks.
     </p>
   </introduction>
   <subsection xml:id="sec-formalisation-sheafiness">
@@ -66,14 +48,11 @@ Its historical internal class is <c>IsSheafy</c>, in the
       restrictionMap C.base D.1 (C.hsubset D.1 D.2) x = f D
     </pre>
     <p>
-      The <c>embedding</c> field is separation together with the required
-topology: the map from the sections on the base to the product of the sections
-on the cover is a topological embedding.  The <c>gluing</c> field is
-surjectivity onto matching families.  Although compatibility is written using
-all common rational refinements, the exact-intersection compatibility theorem
-proves that this is equivalent to agreement on the usual pairwise rational
-intersections.  Thus this is precisely the finite-rational-basis form of the
-topological sheaf condition.
+      The two fields say that restriction to a finite rational cover is a
+topological embedding and that every matching family glues.  Compatibility is
+written using common rational refinements; the exact-intersection theorem
+identifies this with the usual compatibility on pairwise intersections.  Thus
+<c>IsSheafy A</c> is the topological sheaf condition on the rational basis.
     </p>
     <p>
       For an arbitrary open subset <m>V\subseteq\Spa(A,A^+)</m>,
@@ -108,14 +87,10 @@ rational subdomains contained in <m>V</m>.  The corresponding all-open condition
     Topology.IsEmbedding (limitRestrictProd hle)
     </pre>
     <p>
-      The first field is the usual separation axiom: two sections which agree on a
-cover are equal.  The second is the gluing axiom, with compatibility expressed
-by restricting to <m>U_i\cap U_j</m>.  These are precisely the two algebraic parts
-of the ordinary sheaf condition.  The final field remembers that we are
-working with topological rings.  It says that restriction to the product over
-the cover is a topological embedding; together with the first two fields this
-identifies the sections on <m>V</m>, with their projective-limit topology, with the
-matching-family equaliser as a topological ring.
+      The fields <c>injective</c> and <c>glue</c> are the usual sheaf axioms on
+arbitrary opens.  The final field says that the resulting map to the
+matching-family equaliser is also a topological embedding.  This is the extra
+condition needed for a sheaf of complete topological rings.
     </p>
     <p>
       For complete Tate pairs the rational-basis and all-open predicates are
@@ -128,20 +103,17 @@ equivalent:
     isSheafy_of_isLimitSheaf⟩
     </pre>
     <p>
-      The forward implication is the sheaf-on-a-rational-basis theorem used by the
-formalisation; the converse simply restricts the all-open condition to
-rational covers.  The further theorem
-<c>structurePresheaf_isSheafOfTopologicalRings_iff</c> identifies
-<c>IsLimitSheaf A</c> with the representable topological-ring formulation
-of Wedhorn's Remark<nbsp/>8.20 for the bundled structure presheaf.  There is also an
-implication to mathlib's ordinary categorical sheaf predicate, but not an
-equivalence: that predicate alone forgets the topological-embedding clause.
+      The forward implication is the sheaf-on-a-rational-basis theorem, and the
+converse is restriction to rational covers.  The
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.isSheafOfTopologicalRings_iff_isLimitSheaf.html">structure-presheaf equivalence</url>
+identifies <c>IsLimitSheaf A</c> with
+Wedhorn's topological-ring formulation <xref ref="bib-Wedhorn" detail="Remark 8.20"/>.
+Mathlib's ordinary categorical sheaf predicate is weaker because it does not
+record the topology.
     </p>
     <p>
-      For a complete Tate ring, the user-facing definition installs a chosen valid
-ring of integral elements and invokes this all-open condition.  The ring-level
-definition then quantifies over both the choice of completion and the plus
-ring.  These definitions are in
+      For a complete Tate ring the following definitions fix a ring of integral
+elements and then remove the choices of plus ring and completion.  They are in
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.IsSheafyFor.html"><c>SheafyRing.lean</c></url>.
     </p>
     <pre>
@@ -160,29 +132,21 @@ def IsSheafyTateRing : Prop :=
     IsSheafyFor (CompletionModel A P) Bplus
     </pre>
     <p>
-      Thus <c>IsSheafyFor A Aplus</c> is the formal counterpart of saying that the
-Huber pair <m>(A,A^+)</m> is sheafy.  The local declarations install the bundled
-plus ring, its validity proof, and the derived localization-lift package; none
-is an additional mathematical hypothesis.  In complete Tate scope, the
+      The predicate <c>IsSheafyFor A Aplus</c> says that the Huber pair
+<m>(A,A^+)</m> is sheafy.  For complete Tate rings, the
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.isSheafyFor_iff_isSheafyComplete.html">chosen-plus-ring
-equivalence</url> proves that one valid plus ring is enough, using standard
-rational refinements.  The fixed-completion and complete-ring equivalences in
+equivalence</url> shows that this is independent of the chosen ring of integral
+elements.  The equivalences in
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.isSheafyTateRing_iff_for_completionModel.html"><c>SheafyCompletionModel.lean</c></url>
-show that one may also choose a completion model.  Thus the universal
-quantifiers in
-<c>IsSheafyTateRing</c> make the result independent of both choices.
-This is the Tate, or analytic, specialization of Wedhorn's
-Definition<nbsp/>8.26 <xref ref="bib-Wedhorn" detail="Definition 8.26"/>; the formalisation does not
-define the corresponding notion for a general nonanalytic f-adic ring.
+remove the choice of completion.  Consequently <c>IsSheafyTateRing</c> is
+the analytic specialisation of Wedhorn's Definition<nbsp/>8.26
+<xref ref="bib-Wedhorn" detail="Definition 8.26"/>.
     </p>
   </subsection>
   <subsection xml:id="sec-formalisation-strong-noetherianity">
     <title>Strong noetherianity</title>
     <p>
-      The formal definition first constructs the restricted power-series ring.  A
-coefficient function tends to zero along the cofinite filter exactly when,
-for every neighbourhood of zero, all but finitely many coefficients belong to
-that neighbourhood.  The definitions below are from
+      The definitions below are from
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/IsStronglyNoetherian.html"><c>RestrictedPowerSeries.lean</c></url>.
     </p>
     <pre>
@@ -198,15 +162,13 @@ class IsStronglyNoetherian (A : Type*) [CommRing A]
     IsNoetherianRing (restrictedMvPowerSeriesSubring k A)
     </pre>
     <p>
-      The subring <c>restrictedMvPowerSeriesSubring k A</c> therefore consists of
-the usual restricted series in <m>k</m> variables, and is the formal model of
-<m>A\langle T_1,\ldots,T_k\rangle</m>.  Requiring this ring to be noetherian for
-every <m>k</m> is the complete-ring specialization of Wedhorn's definition of
-strong noetherianity
-<xref ref="bib-Wedhorn" detail="Proposition and Definition 6.36"/>: Wedhorn writes the completed
-restricted power-series ring over the completion of <m>A</m>, and here <m>A</m> is
-already complete.  The use of multivariate power series rather than an
-iterated one-variable construction is only an implementation choice.
+      The cofinite convergence condition is the usual condition that the
+coefficients tend to zero, so
+<c>restrictedMvPowerSeriesSubring k A</c> represents
+<m>A\langle T_1,\ldots,T_k\rangle</m>.  The second declaration therefore says that
+these rings are noetherian for every <m>k</m>.  Since <m>A</m> is already complete, this
+is Wedhorn's definition of strong noetherianity
+<xref ref="bib-Wedhorn" detail="Proposition and Definition 6.36"/>.
     </p>
   </subsection>
   <subsection xml:id="sec-formalisation-the-finite-jet-example">
@@ -261,22 +223,20 @@ abbrev JetA : Type u := ↥(jetSupport K)
 <m>K\langle W\rangle</m> inside <m>K\langle W,W^{-1}\rangle</m>.  Consequently the
 carrier condition says that the coefficients of <m>Q^0</m> and <m>Q^1</m> have no
 negative powers of <m>W</m>, while the coefficients of <m>Q^n</m> for <m>n\geq2</m> are
-unrestricted.  In other words, <c>JetA K</c> is precisely
+unrestricted.  Thus <c>JetA K</c> is
 <me>\left\{f_0(W)+Qf_1(W)+Q^2h(W,W^{-1},Q)\ \middle|\
     \substack{f_0,f_1\in K\langle W\rangle\\
               h\in L\langle Q\rangle}\right\},</me>
 which is the support description of <m>A</m> used in <xref ref="eq-support-A0"/> after
-inverting <m>\varpi</m>.  The closure fields in <c>jetSupport</c> are the direct
-formal check that this support condition defines a subring.
+inverting <m>\varpi</m>.
     </p>
     <p>
       The file also constructs the four maps in the Milnor square and proves
 <c>milnorRow_exact</c>: every compatible pair in
 <c>JetB K</c> and <c>JetC K</c> comes from a unique element of
-<c>JetA K</c>.  Thus the concrete support subring is proved to realise the
-pullback <m>B\times_D C</m>; Lean does not merely assume that identification.
-The Milnor argument then constructs the rational-cover definition displayed
-above:
+<c>JetA K</c>.  This identifies the support subring with
+<m>B\times_D C</m>.  The sheaf argument produces the finite-rational-cover
+condition displayed above:
     </p>
     <pre>
     include ϖ hK₀ in
@@ -288,13 +248,10 @@ theorem isSheafy_JetA :
     gluing_JetA ϖ hK₀ C hC f hcompat
     </pre>
     <p>
-      Here <m>\varpi</m> is a parameter of type <c>Uniformizer K</c>.  The other
-layer-one input says that <c>unitBall K</c> is noetherian.  This is the
-definition used in the proof of the FJP example.  The
-equivalence <c>isSheafy_iff_isLimitSheaf</c> upgrades it to all opens;
-standard-refinement independence then upgrades the canonical maximal plus
-ring to every valid plus ring, and completion-model independence gives the
-ring-level theorem.  The public endpoints are collected in
+      Here <m>\varpi</m> is a <c>Uniformizer K</c>, and the remaining input is the
+noetherianity of <c>unitBall K</c>.  This is the version of sheafiness proved
+directly for the example.  The equivalences above give the all-open and
+choice-independent statements.  The main theorems are collected in
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.finiteJet_isSheafyFor_of_dvr.html"><c>SheafyEndpoints</c></url>,
 and include the following.
     </p>
@@ -332,64 +289,50 @@ theorem finiteJet_isSheafyTateRing_of_dvr
       Here <m>K</m> is any complete nontrivially normed ultrametric field for which
 <m>\mathcal O[K]=\{x:\lVert x\rVert\leq1\}</m> is a discrete valuation ring.  No
 local compactness, finiteness of the residue field, characteristic, or
-perfection assumption is used.  The pair-level declaration
-<c>finiteJet_isSheafyFor_of_dvr</c> is the literal formal counterpart of
-the claim that <m>(A,A^\circ)</m> is sheafy.  The final declaration is stronger:
-it is independent of the completion model and of the plus ring.  For every
-valid <c>Bplus</c>, the development also proves
+perfection assumption is used.  The theorem
+<c>finiteJet_isSheafyFor_of_dvr</c> proves that <m>(A,A^\circ)</m> is sheafy,
+whilst <c>finiteJet_isSheafyTateRing_of_dvr</c> removes the choices of
+completion and ring of integral elements.  The corresponding all-open
+statement is
 <me>\begin{split}
 &amp;\texttt{TopCat.Presheaf.IsSheafOfTopologicalRings}\\[-2pt]
 &amp;\qquad
 \texttt{(ValuationSpectrum.structurePresheaf (JetA K))},
 \end{split}</me>
-under the name
-<c>finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr</c>.
-This is the genuine all-open structure presheaf with its projective-limit
-topology.
+The
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr.html">corresponding Lean theorem</url>
+proves this statement directly.
     </p>
   </subsection>
-  <subsection xml:id="sec-formalisation-scope-of-the-formal-correspondence">
-    <title>Scope of the formal correspondence</title>
+  <subsection xml:id="sec-formalisation-scope-of-the-formalisation">
+    <title>Scope of the formalisation</title>
     <p>
-      The clause-by-clause audit gives the following qualifications.  Completeness
-of <c>JetA K</c> is an instance, and
-<c>isTateRing_JetA</c> supplies its Tate structure.  The paper's <m>A_0</m> is
-represented in Lean by the Gauss-norm unit ball; the theorem
-<c>isPowerBounded_JetA_iff</c> says that an element is power-bounded
-exactly when its norm is at most one.  Thus this is the formal content of
-<m>A^\circ=A_0</m>, although the code does not introduce a second object literally
-named <c>A0</c>.
+      The paper's <m>A_0</m> is represented by the Gauss-norm unit ball.
+The theorem <c>isPowerBounded_JetA_iff</c> identifies this unit ball with
+the power-bounded elements, giving <m>A^\circ=A_0</m>.  Completeness and the Tate
+structure are supplied by the corresponding instances.
     </p>
     <p>
       For the bad chart, <c>chartEquiv</c> is an exported ring equivalence.
-Together the two continuity theorems make this ring equivalence a
-homeomorphism.  The canonical-map theorem identifies the displayed
-generators.
-The implementation respects constants, but the audited API does not bundle
-this as a <c>K</c>-<c>AlgEquiv</c>; this is why
-<xref ref="prop-bad-chart"/> is stated as an isomorphism of complete topological
-rings.
+The two continuity theorems make it a homeomorphism, and the canonical-map
+theorem identifies <m>W</m> and <m>Q</m>.  It is not bundled as a
+<c>K</c>-<c>AlgEquiv</c>, which is why <xref ref="prop-bad-chart"/> is stated for
+complete topological rings.
     </p>
     <p>
-      The five conclusions of <xref ref="lem-koszul"/> are all formalised, but at the
-normed specialization needed here: the chosen ring of definition is
-<c>unitBall E</c>, the Tate algebra carries its Gauss norm, and the
-uniformizer scales that norm exactly.  The more general formulation for an
-arbitrary noetherian <m>\varpi</m>-adic <m>E_0</m> in the printed lemma follows from
-Huber's finite-module strictness and comparison of lattices; there is not yet
-a Lean wrapper carrying out that comparison.  Likewise, Lean proves the
-specialized finite-jet instance of the abstract sheaf-transfer lemma
-<xref ref="lem-sheaf-transfer"/>, namely <c>isSheafy_JetA</c>; it does not yet
-export the general lemma for an arbitrary strict Milnor square.  For
-<xref ref="prop-localized-milnor"/>, the exact row, embedding, open surjection, and
-the restriction-compatibility of the component maps are separate
-declarations rather than one bundled result.  These are packaging
-limitations, not assumptions used silently in the finite-jet endpoint.
+      The conclusions of <xref ref="lem-koszul"/> are formalised in the normed setting used
+for the example: <m>T_E</m> has its Gauss norm, <m>T_{E,0}</m> is its unit ball, and the
+finite free terms have their sup norms.  The statement for an arbitrary
+noetherian <m>\varpi</m>-adic <m>E_0</m> follows from Huber's finite-module results and
+comparison of lattices, but this comparison is not separately bundled in
+Lean.  Similarly, the development proves the finite-jet instance
+<c>isSheafy_JetA</c> of <xref ref="lem-sheaf-transfer"/>, rather than the abstract
+lemma for every strict Milnor square.  The components of
+<xref ref="prop-localized-milnor"/> are separate declarations.
     </p>
     <p>
-      The graph<ndash/>Koszul argument of <xref ref="lem-koszul"/>, the rational-chart
-calculation, and the transfer of sheafiness through the concrete Milnor square
-are too large to reproduce usefully here.  They are contained respectively in
+      The Koszul argument, the rational-chart calculation, and the transfer of
+sheafiness through the concrete Milnor square are contained respectively in
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.GraphKoszul.koszulGraph_restricted_exact.html">the
 restricted-exactness file</url>
 and
@@ -411,8 +354,8 @@ formulation
 Theorem 8.28(b), Corollary 8.32, and Lemmas 8.33--8.34"/>.
 The passage between a fixed plus ring and all plus rings follows the standard
 rational-refinement argument recorded by Kedlaya
-<xref ref="bib-KedlayaAWS" detail="Lemma 1.6.8 and Remark 1.6.9"/>.  The graph-complex input is
-attributed above to Ben-Bassat<ndash/>Kremnizer and Bambozzi<ndash/>Kremnizer; Huber's
+<xref ref="bib-KedlayaAWS" detail="Lemma 1.6.8 and Remark 1.6.9"/>.  The strict Koszul input is
+due to Ben-Bassat<ndash/>Kremnizer and Bambozzi<ndash/>Kremnizer; Huber's
 finite-module lemmas and the bounded-denominator criterion of
 Buzzard<ndash/>Verberkmoes supply the lattice form used in the proof.
     </p>
@@ -423,7 +366,7 @@ Buzzard<ndash/>Verberkmoes supply the lattice form used in the proof.
 infrastructure includes Apache-2.0-licensed code adapted from William Coram's
 <c>PhD</c> repository, with equivalence code attributed there to Bingyu
 Xia <xref ref="bib-CoramXia"/>.  The vendored source headers and commit history retain
-those attributions.  The finite-jet definitions, localization proofs, and
+those attributions.  The finite-jet definitions, localisation proofs, and
 sheaf-transfer endpoints discussed in this appendix are the AINTLIB-specific
 part of the development.
     </p>

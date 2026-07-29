@@ -39,10 +39,11 @@ In fact, the chosen rings of definition already make the integral row exact, so 
     with <m>c_{a,b}\in k^\circ</m>.  Here restricted means that, for every <m>n</m>, only finitely many coefficients are nonzero modulo <m>\varpi^n</m>.  The set <m>S</m> is closed under addition, so this is a subring of <m>C_0</m>.  The same description with coefficients in <m>k</m> gives <m>A\subset C</m>.
   </p>
   <p>
-    Write
+    Equip <m>A,B,C,D</m> with the coefficientwise Gauss norms whose unit balls are the
+displayed rings of definition.  Write
 <me>\iota_B:A\to B,\qquad \iota_C:A\to C,\qquad
   \rho_B:B\to D,\qquad \rho_C:C\to D</me>
-for the structural maps.  Although all topologies in this paper are specified by rings of definition, we will use once the coefficientwise Gauss norms whose unit balls are the displayed rings of definition.  Give <m>A</m> the restricted Gauss norm from <m>C</m>.  For
+for the structural maps, and give <m>A</m> the restricted Gauss norm from <m>C</m>.  For
 <m>a=f_0+Qf_1+Q^2h</m>, the coefficient formulas give
     <men xml:id="eq-structural-map-bounds">\lVert\iota_C(a)\rVert_C=\lVert a\rVert_A,
   \qquad
@@ -51,7 +52,7 @@ for the structural maps.  Although all topologies in this paper are specified by
   \lVert\rho_B(b)\rVert_D\leq\lVert b\rVert_B,
   \qquad
   \lVert\rho_C(c)\rVert_D\leq\lVert c\rVert_C.</men>
-    Thus every structural map is norm-nonincreasing.  These estimates will be used only to verify preservation of power-bounded elements in <xref ref="thm-sheafy"/>; they are not being used as an alternative definition of the topology.
+    Thus every structural map is norm-nonincreasing.
   </p>
   <proposition xml:id="prop-uniform-domain">
     <statement>
