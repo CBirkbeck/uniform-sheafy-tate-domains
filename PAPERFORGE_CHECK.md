@@ -1,6 +1,6 @@
 # Paperforge and reference audit
 
-Audit date: 29 July 2026.
+Audit date: 30 July 2026.
 
 ## Result
 
@@ -54,11 +54,15 @@ Witt-vector declaration.  The accepted map now covers, clause by clause:
 - the ideal pullback and every topological clause of the localised Milnor row,
   including restriction compatibility; and
 - the finite-rational-cover, chosen-pair all-open, completion-independent, and
-  public structure-presheaf sheafiness endpoints.
+  public structure-presheaf sheafiness endpoints;
+- the weighted-parity support definition, Tate structure, uniformity, domain,
+  nonnoetherianity, and identification of the power-bounded elements;
+- the weighted-parity all-pairs sheaf theorem, nonuniform domain chart, and
+  failure of stable uniformity.
 
-No doc-gen4 site exists for the audited snapshot, and the pinned AINTLIB commit
-is not currently public.  The web build therefore extracts exact declaration
-statements from the pinned local Git object.  Every automatic theorem badge
+No doc-gen4 site exists for either audited snapshot, and neither AINTLIB
+commit is currently public.  The web build therefore extracts each exact
+declaration from its pinned local Git object.  Every automatic theorem badge
 opens a Roe-style inline knowl and has a working standalone archival page as
 its ordinary link.  The generator also covers the appendix definitions and
 equivalence chain.  Its pages record the source path and commit and credit the
@@ -70,11 +74,31 @@ chart is exported as a bicontinuous `RingEquiv`, not a bundled `K`-algebra
 equivalence; and the general sheaf-transfer lemma is formalised only in its
 specialized finite-jet instance.  None affects the final finite-jet endpoint.
 
+For the weighted-parity example, the audit separates the completed statements
+from the remaining reducedness argument.  Lean proves sheafiness for every
+ring of integral elements, proves that the distinguished chart is a
+nonuniform domain, and deduces failure of stable uniformity.  The current
+finite-chain reducedness declarations depend on `sorryAx` and have therefore
+not been given completion badges.  The code also supplies an isometric
+constant-series map from the coefficient field, although it is not bundled as
+an `Algebra K` instance.  Sheafiness of shifted-weight models and the
+bicontinuous Tate-extension equivalences are present, but the transported
+strong-sheafiness statement is not packaged as a single theorem and is not
+claimed in the paper.
+
 The AINTLIB audit used Lean `4.33.0-rc1` with mathlib commit
 `fd1d54bcac5caba4eff2ea3421c47d907333f515`.  The 24 targeted FJP modules and
 the 3,307-job umbrella build completed, no `sorry` or `admit` occurs in the FJP
 tree, and the inspected headline declarations use only `propext`,
 `Classical.choice`, and `Quot.sound`.
+
+The weighted-parity audit used work-in-progress snapshot
+`090a289211deb69117413e329325fe819aa7dbc2`.  `WP.Main` completed its
+3,178-job build.  Axiom checks on the construction, uniformity, domain,
+nonnoetherianity, power-bounded, sheafiness, chart, and non-stable-uniformity
+endpoints again report only `propext`, `Classical.choice`, and `Quot.sound`.
+Both finite-chain reducedness endpoints report `sorryAx`; the three remaining
+source gaps are in `WP/HeadReduced.lean`.
 
 ## Build-level warnings
 

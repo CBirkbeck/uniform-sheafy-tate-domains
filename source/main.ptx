@@ -19,7 +19,7 @@
       </titlepage>
       <abstract>
 <p>
-  Work of Buzzard<ndash/>Verberkmoes and, independently, Mihara shows that stable uniformity is a sufficient criterion for a Tate Huber ring to be sheafy, meaning that the structure presheaf of topological rings on its associated adic space is a sheaf. In this paper we construct examples of uniform sheafy rings which are not stably uniform, answering Question<nbsp/>7 of Kedlaya's <em>Nonarchimedean Scottish Book</em>. The examples were found in collaboration with ChatGPT 5.6 Sol. The first has been fully formalised in Lean<nbsp/>4; its proof rests on showing that a particular strict pullback of complete Tate rings is preserved by rational localisation. The second, whose bad localisation remains an integral domain, is proved here but has not yet been formalised.
+  Work of Buzzard<ndash/>Verberkmoes and, independently, Mihara shows that stable uniformity is a sufficient criterion for a Tate Huber ring to be sheafy, meaning that the structure presheaf of topological rings on its associated adic space is a sheaf. In this paper we construct examples of uniform sheafy rings which are not stably uniform, answering Question<nbsp/>7 of Kedlaya's <em>Nonarchimedean Scottish Book</em>. The examples were found in collaboration with ChatGPT 5.6 Sol. The first has been fully formalised in Lean<nbsp/>4; its proof rests on showing that a particular strict pullback of complete Tate rings is preserved by rational localisation. Formalisation of the second is ongoing: the construction, uniformity, sheafiness, and the nonuniform domain chart have been checked, but reducedness of every finite iterated rational localisation has not.
 </p>
       </abstract>
     </frontmatter>
@@ -35,7 +35,7 @@
       <references xml:id="references">
       <title>References</title>
       <biblio type="raw" xml:id="bib-AINTLIB">
-      C.<nbsp/>Birkbeck and contributors, <em>AINTLIB: AdicSpaces formalisation</em>, Lean<nbsp/>4 source code, commit <c>b007a4f3d4226f00a684b402715aa542e2f0bcdc</c>, 2026, <url href="https://github.com/CBirkbeck/AINTLIB"><c>https://github.com/CBirkbeck/AINTLIB</c></url>.
+      C.<nbsp/>Birkbeck and contributors, <em>AINTLIB: AdicSpaces formalisation</em>, Lean<nbsp/>4 source code, finite-jet snapshot <c>b007a4f3d4226f00a684b402715aa542e2f0bcdc</c> and weighted-parity work-in-progress snapshot <c>090a289211deb69117413e329325fe819aa7dbc2</c>, 2026, <url href="https://github.com/CBirkbeck/AINTLIB"><c>https://github.com/CBirkbeck/AINTLIB</c></url>.
       </biblio>
       <biblio type="raw" xml:id="bib-BBK">
       O.<nbsp/>Ben-Bassat and K.<nbsp/>Kremnizer, <em>Non-Archimedean analytic geometry as relative algebraic geometry</em>, Ann. Fac. Sci. Toulouse Math. (6) <alert>26</alert> (2017), no.<nbsp/>1, 49<ndash/>126, <url href="https://doi.org/10.5802/afst.1526">doi:10.5802/afst.1526</url>.

@@ -62,6 +62,26 @@
     "FiniteJetOver.StrictLoc.isClosed_IA": "The relation ideal `I_A = (gT_i-f_i)_i` is closed in `T_A`.",
     "FiniteJetOver.StrictLoc.loc_row_exact": "For every rational datum, the sequence `0 → A_α → B_α ⊕ C_α → D_α → 0` is algebraically exact.",
     "FiniteJetOver.StrictLoc.loc_pair_isEmbedding": "For every rational datum, the canonical map `A_α → B_α ×_{D_α} C_α` is a topological embedding. Together with algebraic exactness, this identifies `A_α` with the topological fibre product.",
-    "FiniteJetOver.StrictLoc.locRhoC_surjective": "For every rational datum, the induced map `C_α → D_α` is surjective."
+    "FiniteJetOver.StrictLoc.locRhoC_surjective": "For every rational datum, the induced map `C_α → D_α` is surjective.",
+    "WeightedParity.wpWeight": "For a finitely supported exponent vector `ν`, `wpWeight w ν` is the sum of `w(n)` over the nonzero indices at which `νₙ` is odd. Index zero is reserved for the variable `W` and does not contribute.",
+    "WeightedParity.WPMem": "An exponent vector belongs to the weighted-parity support precisely when its exponent of `W` is at least its parity weight. For `w(n)=n`, this is the paper’s monoid `S = {(a,ν) : a ≥ ω(ν)}`.",
+    "WeightedParity.wpSupport": "Inside the countable restricted Tate algebra `K⟨W,U₁,U₂,…⟩`, `wpSupport K w` consists of the series whose coefficients vanish outside the weighted-parity support monoid.",
+    "WeightedParity.WPA": "`WPA K w` is the weighted-parity support subring with the norm and topology inherited from the countable restricted Tate algebra.",
+    "WeightedParity.constA": "`constA` is the constant-series embedding `K → 𝒜`.",
+    "WeightedParity.norm_constA": "The constant-series embedding `K → 𝒜` preserves the norm.",
+    "WeightedParity.idWeight": "`idWeight(n)=n` is the weight used in the paper.",
+    "WeightedParity.WPAid": "`WPAid K` is `WPA K idWeight`; it is the Lean model of the paper’s weighted-parity algebra `𝒜`.",
+    "WeightedParity.isTateRing_WPA": "A chosen uniformizer of `K` gives `WPA K w` a topologically nilpotent unit, and hence makes it a Tate ring.",
+    "WeightedParity.weightedParity_isUniform_of_dvr": "If the valuation ring of `K` is a discrete valuation ring, then the weighted-parity algebra `𝒜` is uniform.",
+    "WeightedParity.weightedParity_isDomain": "The weighted-parity algebra `𝒜` is an integral domain.",
+    "WeightedParity.weightedParity_powerBounded_eq_unitBall": "The power-bounded elements of `𝒜` are exactly its norm unit ball. This is the ring denoted `𝒜₀` in the paper.",
+    "WeightedParity.weightedParity_not_noetherian": "The weighted-parity algebra `𝒜` is not noetherian.",
+    "WeightedParity.weightedParity_isSheafyComplete_of_dvr": "If the valuation ring of `K` is a discrete valuation ring, then `(𝒜,A⁺)` is sheafy for every ring of integral elements `A⁺`. In particular, the pair `(𝒜,𝒜°)` in the paper is sheafy.",
+    "WeightedParity.wp_structurePresheaf_isSheaf_all": "For any valid ring of integral elements `A⁺`, the all-open structure presheaf on `Spa(𝒜,A⁺)` is a sheaf. This is the direct all-open form of the weighted-parity sheaf theorem.",
+    "WeightedParity.chartDatum": "This is the rational datum `(W;ϖ)` on `𝒜`, defining the chart `{|W| ≤ |ϖ|}`.",
+    "WeightedParity.chartDatum_isRational": "The datum `(W;ϖ)` satisfies the unit-ideal condition required of a rational localisation datum.",
+    "WeightedParity.weightedParity_chart_isDomain": "The section ring on the rational chart `{|W| ≤ |ϖ|}` is an integral domain.",
+    "WeightedParity.weightedParity_chart_not_isUniform": "The section ring on the rational chart `{|W| ≤ |ϖ|}` is not uniform.",
+    "WeightedParity.weightedParity_not_stablyUniform_of_dvr": "If the valuation ring of `K` is a discrete valuation ring, then `𝒜` is not stably uniform."
   }
 }

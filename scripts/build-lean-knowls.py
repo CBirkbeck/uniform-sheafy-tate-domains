@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build self-contained Lean declaration knowls from a pinned AINTLIB commit.
+"""Build self-contained Lean declaration knowls from pinned AINTLIB snapshots.
 
 Paperforge normally builds its inline Lean registry from doc-gen4 output.  The
 formalization snapshot used by this paper is not currently published with
@@ -10,8 +10,10 @@ doc-gen4 pages, so this script extracts the declaration source directly with
 * ``web-assets/lean/AdicSpaces/declarations/*.html`` for ordinary/new-tab
   navigation.
 
-The generated pages are a fixed source snapshot: they do not depend on the
-AINTLIB commit being reachable on GitHub at run time.
+The generated pages are fixed source snapshots: they do not depend on the
+AINTLIB commits being reachable on GitHub at run time.  Entries may override
+the primary snapshot with a ``commit`` field; this is used for work that was
+formalised after the finite-jet snapshot.
 
 Reader-facing mathematical summaries may be supplied in
 ``crosswalk/lean-knowl-doc-overrides.json``.  The inline knowl uses the curated
@@ -35,7 +37,7 @@ except ModuleNotFoundError as exc:  # pragma: no cover - Python < 3.11
     raise SystemExit("build-lean-knowls.py requires Python 3.11 or newer") from exc
 
 
-PINNED_COMMIT = "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+PRIMARY_COMMIT = "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
 PROJECT = "AdicSpaces"
 
 DECL_LINE_RE = re.compile(
@@ -111,15 +113,17 @@ def formalization_root(root: Path, override: str | None) -> Path:
 def collect_declarations(root: Path, declmap_path: Path, extra_path: Path) -> list[dict]:
     declmap = json.loads((root / declmap_path).read_text())
     extra_data = json.loads((root / extra_path).read_text())
-    if extra_data.get("commit") not in (None, PINNED_COMMIT):
+    if extra_data.get("commit") not in (None, PRIMARY_COMMIT):
         raise RuntimeError(
-            f"{extra_path} pins {extra_data['commit']}, expected {PINNED_COMMIT}"
+            f"{extra_path} pins {extra_data['commit']}, expected {PRIMARY_COMMIT}"
         )
 
     merged: dict[str, dict] = {}
     uses: dict[str, list[str]] = {}
 
     def add(entry: dict) -> None:
+        entry = dict(entry)
+        entry.setdefault("commit", PRIMARY_COMMIT)
         decl = entry.get("decl")
         if not decl or not entry.get("file"):
             raise RuntimeError(f"declaration entry needs decl and file: {entry!r}")
@@ -150,9 +154,9 @@ def load_doc_overrides(root: Path, override_path: Path) -> dict[str, str]:
     if not path.is_file():
         return {}
     data = json.loads(path.read_text())
-    if data.get("commit") not in (None, PINNED_COMMIT):
+    if data.get("commit") not in (None, PRIMARY_COMMIT):
         raise RuntimeError(
-            f"{override_path} pins {data['commit']}, expected {PINNED_COMMIT}"
+            f"{override_path} pins {data['commit']}, expected {PRIMARY_COMMIT}"
         )
     if data.get("schema") not in (None, 1):
         raise RuntimeError(f"{override_path}: unsupported schema {data['schema']}")
@@ -379,6 +383,7 @@ def inline_html(
     line_start: int,
     line_end: int,
     curated_doc: bool,
+    commit: str,
 ) -> str:
     return (
         '<div class="lean-knowl-head">'
@@ -390,7 +395,7 @@ def inline_html(
         + "</code></pre>"
         + '<div class="lean-source-meta">'
         + html.escape(repo_path)
-        + f":{line_start}–{line_end} · commit {PINNED_COMMIT[:12]}"
+        + f":{line_start}–{line_end} · commit {commit[:12]}"
         + "</div>"
     )
 
@@ -406,7 +411,13 @@ def standalone_html(
     uses: list[str],
     curated_doc: bool,
     source_doc: str,
+    commit: str,
 ) -> str:
+    development = (
+        "The weighted-parity development"
+        if decl.startswith("WeightedParity.")
+        else "The finite-jet development"
+    )
     uses_html = ""
     if uses:
         uses_html = (
@@ -466,12 +477,12 @@ def standalone_html(
   {summary_note}{source_doc_details}{uses_html}
   <pre><code>{html.escape(code)}</code></pre>
   <p class="meta">Pinned source: <code>{html.escape(repo_path)}:{line_start}–{line_end}</code><br>
-  AINTLIB commit <code>{PINNED_COMMIT}</code>.</p>
+  AINTLIB commit <code>{commit}</code>.</p>
   <p class="meta">This is the archival declaration extracted from the pinned
   source tree.  The corresponding AINTLIB commit was not publicly reachable
   when this page was built, so no external upstream link is offered here.</p>
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
-  The finite-jet development uses restricted power-series code adapted from
+  {development} uses restricted power-series code adapted from
   <a href="https://github.com/WilliamCoram/PhD">William Coram's PhD repository</a>;
   the vendored source headers also credit Bingyu Xia for power-series equivalence
   lemmas.  This is infrastructure provenance, not an attribution of this
@@ -504,9 +515,11 @@ def main() -> int:
     root = args.instance.resolve()
     lean_root = formalization_root(root, args.lean_root)
     repo = Path(run_git(lean_root, "rev-parse", "--show-toplevel").strip())
-    run_git(repo, "cat-file", "-e", PINNED_COMMIT + "^{commit}")
     project_prefix = lean_root.relative_to(repo).as_posix()
     declarations = collect_declarations(root, args.declmap, args.extra)
+    commits = sorted({entry["commit"] for entry in declarations})
+    for commit in commits:
+        run_git(repo, "cat-file", "-e", commit + "^{commit}")
     doc_overrides = load_doc_overrides(root, args.doc_overrides)
     declaration_names = {entry["decl"] for entry in declarations}
     unknown_overrides = sorted(set(doc_overrides) - declaration_names)
@@ -522,8 +535,9 @@ def main() -> int:
     expected_pages: set[str] = set()
 
     for entry in declarations:
+        commit = entry["commit"]
         repo_path = f"{project_prefix}/{entry['file']}"
-        source = run_git(repo, "show", f"{PINNED_COMMIT}:{repo_path}")
+        source = run_git(repo, "show", f"{commit}:{repo_path}")
         start, line_index, kind, written_name = declaration_at(
             source, entry["decl"], entry.get("line")
         )
@@ -553,6 +567,7 @@ def main() -> int:
                 line_start,
                 line_end,
                 curated_doc,
+                commit,
             ),
             "href": href,
         }
@@ -568,6 +583,7 @@ def main() -> int:
                 entry["uses"],
                 curated_doc,
                 source_doc,
+                commit,
             )
         )
         expected_pages.add(slug)
@@ -578,15 +594,16 @@ def main() -> int:
 
     registry_path = root / "web-assets" / f"lean-knowls-{PROJECT}.js"
     registry_path.write_text(
-        "// Generated by scripts/build-lean-knowls.py from AINTLIB commit "
-        + PINNED_COMMIT
+        "// Generated by scripts/build-lean-knowls.py from AINTLIB commits "
+        + ", ".join(commits)
         + ".\nwindow.PAPERFORGE_LEAN_KNOWLS = Object.assign(\n"
         + "  window.PAPERFORGE_LEAN_KNOWLS || {},\n  "
         + json.dumps(registry, ensure_ascii=False, indent=2)
         + "\n);\n"
     )
     print(
-        f"lean-knowls: {len(registry)} declarations from {PINNED_COMMIT[:12]} "
+        f"lean-knowls: {len(registry)} declarations from "
+        f"{', '.join(commit[:12] for commit in commits)} "
         f"-> {registry_path.relative_to(root)}"
     )
     print(

@@ -83,8 +83,9 @@ the failure of stable uniformity need not come from a nonreduced localisation.
   </p>
   <p>
     Both examples were found in collaboration with ChatGPT 5.6 Sol.  The first has been
-formalised in Lean; <xref ref="sec-formalisation"/> describes the statements used and their
-relation with the definitions in this paper.
+formalised in Lean, and substantial parts of the second have also been checked.
+<xref ref="sec-formalisation"/> gives the precise scope of the two developments and relates
+their statements to the definitions used here.
   </p>
   <remark xml:id="rem-earlier-work">
     <title>Relation with earlier work</title>

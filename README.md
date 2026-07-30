@@ -10,11 +10,13 @@ source of truth remains the LaTeX draft:
 Interactive edition:
 <https://cbirkbeck.github.io/uniform-sheafy-tate-domains/>
 
-The appendix now prints the finite-rational-cover definition of sheafiness
-actually constructed by the FJP proof, its all-open equivalent, the
-completion- and plus-ring-independent variants, strong noetherianity, and the
-finite-jet pullback example.  It also records the exact scope of the
-formalisation and credits the Coram/Xia restricted-series infrastructure.
+The appendix prints the finite-rational-cover definition of sheafiness, its
+all-open equivalent, the completion- and plus-ring-independent variants,
+strong noetherianity, and the two example constructions.  For the
+weighted-parity example it distinguishes the verified uniformity, sheafiness,
+domain chart, and failure of stable uniformity from the still incomplete
+iterated-reducedness argument.  It also credits the Coram/Xia
+restricted-series infrastructure.
 
 ## Outputs
 
@@ -63,23 +65,24 @@ first author-voice pass.
 
 ## Lean source and publication note
 
-The audited formalisation is the existing local AINTLIB worktree:
+The interactive code is extracted from two audited local AINTLIB snapshots:
 
 ```text
-branch: fjp/cdvf-lemma51
-audited commit: b007a4f3d4226f00a684b402715aa542e2f0bcdc
+finite-jet branch: fjp/cdvf-lemma51
+finite-jet commit: b007a4f3d4226f00a684b402715aa542e2f0bcdc
+weighted-parity branch: wp/reduced-example
+weighted-parity commit: 090a289211deb69117413e329325fe819aa7dbc2
 project: projects/AdicSpaces
 ```
 
-At the time of this build, GitHub did not serve the pinned AINTLIB commit and
-the branch was absent from `git ls-remote`.  To keep the interactive paper
-usable, `scripts/build-lean-knowls.py` extracts the exact declaration
-statements from the local pinned Git object.  Every Paperforge Lean badge now
-opens that code inline, Roe-style, and its ordinary link opens a standalone
-archival declaration page under `lean/AdicSpaces/declarations/`.  These pages
-are self-contained and carry the source path, commit, and restricted-series
-code provenance.
+At the time of this build, GitHub did not serve either pinned snapshot.  To
+keep the interactive paper usable, `scripts/build-lean-knowls.py` extracts
+each declaration from the Git object recorded for that declaration.  Every
+Paperforge Lean badge opens that code inline, Roe-style, and its ordinary link
+opens a standalone archival declaration page under
+`lean/AdicSpaces/declarations/`.  The reducedness theorem for all finite
+iterated rational localisations has no completion badge because its current
+Lean endpoints still depend on `sorryAx`.
 
-Before archival publication, the full AINTLIB commit should still be
-published under a permanent branch or tag.  No AINTLIB branch is pushed by
-the paper build.
+Before archival publication, both AINTLIB snapshots should be published under
+permanent branches or tags.  No AINTLIB branch is pushed by the paper build.

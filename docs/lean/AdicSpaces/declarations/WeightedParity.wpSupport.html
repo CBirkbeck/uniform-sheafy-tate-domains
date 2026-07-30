@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WeightedParity.wpSupport · Lean source</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font: 16px/1.55 system-ui, sans-serif; }
+    main { max-width: 72rem; margin: 0 auto; padding: 2rem 1.2rem 4rem; }
+    nav { margin-bottom: 1.5rem; }
+    a { color: #176b43; }
+    @media (prefers-color-scheme: dark) { a { color: #84d8aa; } }
+    h1 { overflow-wrap: anywhere; font: 650 1.45rem/1.25 ui-monospace, monospace; }
+    .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
+             letter-spacing: .06em; }
+    .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
+    pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
+           background: color-mix(in srgb, CanvasText 7%, Canvas); }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .meta, .used-for { color: color-mix(in srgb, CanvasText 70%, Canvas);
+                        font-size: .9rem; }
+    .provenance { margin-top: 2rem; padding-top: 1rem;
+                   border-top: 1px solid color-mix(in srgb, CanvasText 18%, Canvas);
+                   font-size: .9rem; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../../../paper.html">← Return to the paper</a></nav>
+  <div class="kind">def</div>
+  <h1>WeightedParity.wpSupport</h1>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>Inside the countable restricted Tate algebra <code>K⟨W,U₁,U₂,…⟩</code>, <code>wpSupport K w</code> consists of the series whose coefficients vanish outside the weighted-parity support monoid.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>The weighted-parity support subring <code>𝒜 ⊂ K⟨W,U⟩</code> ([WP] eq:parity-algebra as a<br>support condition, per the rem:formalization support-subring convention): restricted<br>series whose coefficients are supported on the monoid <code>S</code>.</p></div></details>
+  <p class="used-for"><strong>Used in the paper for:</strong> Appendix: weighted-parity support subring</p>
+  <pre><code>noncomputable def wpSupport : Subring (Amb K) where
+  carrier := {f | ∀ t : ℕ →₀ ℕ, ¬ WPMem w t → MvPowerSeries.coeff t f.1 = 0}
+  zero_mem&#x27; := fun t _ =&gt; by
+    show MvPowerSeries.coeff t (0 : MvPowerSeries ℕ K) = 0
+    simp
+  one_mem&#x27; := fun t ht =&gt; by
+    show MvPowerSeries.coeff t (1 : MvPowerSeries ℕ K) = 0
+    classical
+    rcases eq_or_ne t 0 with rfl | h0
+    · exact absurd (wpMem_zero w) ht
+    · rw [MvPowerSeries.coeff_one, if_neg h0]
+  add_mem&#x27; := fun {f} {g} hf hg t ht =&gt; by
+    show MvPowerSeries.coeff t (f.1 + g.1) = 0
+    rw [map_add, hf t ht, hg t ht, add_zero]
+  neg_mem&#x27; := fun {f} hf t ht =&gt; by
+    show MvPowerSeries.coeff t (-f.1) = 0
+    rw [map_neg, hf t ht, neg_zero]
+  mul_mem&#x27; := fun {f} {g} hf hg t ht =&gt; by
+    show MvPowerSeries.coeff t (f.1 * g.1) = 0
+    classical
+    rw [MvPowerSeries.coeff_mul]
+    refine Finset.sum_eq_zero fun p hp =&gt; ?_
+    have hpt : p.1 + p.2 = t := Finset.HasAntidiagonal.mem_antidiagonal.mp hp
+    subst hpt
+    by_cases h1 : WPMem w p.1
+    · by_cases h2 : WPMem w p.2
+      · exact absurd (h1.add h2) ht
+      · rw [hg p.2 h2, mul_zero]
+    · rw [hf p.1 h1, zero_mul]</code></pre>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/WP/Algebra.lean:47–75</code><br>
+  AINTLIB commit <code>090a289211deb69117413e329325fe819aa7dbc2</code>.</p>
+  <p class="meta">This is the archival declaration extracted from the pinned
+  source tree.  The corresponding AINTLIB commit was not publicly reachable
+  when this page was built, so no external upstream link is offered here.</p>
+  <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
+  The weighted-parity development uses restricted power-series code adapted from
+  <a href="https://github.com/WilliamCoram/PhD">William Coram's PhD repository</a>;
+  the vendored source headers also credit Bingyu Xia for power-series equivalence
+  lemmas.  This is infrastructure provenance, not an attribution of this
+  paper-specific declaration.</aside>
+</main>
+</body>
+</html>
