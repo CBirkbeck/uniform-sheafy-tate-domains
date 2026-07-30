@@ -24,9 +24,10 @@ ring is sheafy.  We construct two uniform sheafy Tate domains which are
 not stably uniform, answering Question<nbsp/>7 of Kedlaya's
 <em>Nonarchimedean Scottish Book</em>.  In the first example a rational
 localisation is nonreduced, whilst in the second the nonuniform rational
-localisation is an integral domain.  Both constructions, including their
-sheafiness and the rational localisations witnessing failure of stable
-uniformity, have been formalised in Lean<nbsp/>4.
+localisation is an integral domain.  All the results in this paper are due to
+ChatGPT 5.6 Sol.  Both constructions, including their sheafiness and the
+rational localisations witnessing failure of stable uniformity, have been
+formalised in Lean<nbsp/>4.
 </p>
       </abstract>
     </frontmatter>
