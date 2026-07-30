@@ -26,7 +26,7 @@
 <div class="displaymath process-math">
 \begin{equation}
 \mathcal F_J(P)=
-\prod_{\mu\in\mathbf N^{(J)}}P\,U^\mu,\tag{7.33}
+\prod_{\mu\in\mathbf N^{(J)}}P\,U^\mu,\tag{7.24}
 \end{equation}
 </div>
 <div class="para">with multiplication by coefficientwise finite convolution.  Then <span class="process-math">\(\mathcal F_J(P)\)</span> is reduced.</div>
@@ -37,13 +37,23 @@
 <details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
 <article class="hiddenproof knowl__content">
 <div class="para logical">
-<div class="para">For every finite subset <span class="process-math">\(J_0\subset J\text{,}\)</span> setting the variables outside <span class="process-math">\(J_0\)</span> equal to zero gives a homomorphism</div>
+<div class="para">Since <span class="process-math">\(P\)</span> is reduced, the diagonal map</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\tau_{J_0}:\mathcal F_J(P)\longrightarrow P[[U_j:j\in J_0]].
+P\longrightarrow
+\prod_{\mathfrak p\in\operatorname{Spec}(P)}P/\mathfrak p
 \end{equation*}
 </div>
-<div class="para">These homomorphisms jointly detect all coefficients.  A finite-variable formal power-series ring over a reduced ring is reduced: the injection <span class="process-math">\(P\to\prod_{\mathfrak p\in\operatorname{Spec}(P)}P/\mathfrak p\)</span> induces an injection of formal power-series rings into a product of domains.  If an element of <span class="process-math">\(\mathcal F_J(P)\)</span> is nilpotent, every <span class="process-math">\(\tau_{J_0}\)</span> kills it; joint coefficient detection then kills the original element.</div>
+<div class="para">is injective.  Applying formal power series coefficientwise, and then commuting formal power series with this product, gives an injection</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal F_J(P)\longrightarrow
+\prod_{\mathfrak p\in\operatorname{Spec}(P)}
+\mathcal F_J(P/\mathfrak p).
+\end{equation*}
+</div>
+<div class="para">Each factor on the right is a domain, since its coefficient ring is a domain.  The product is therefore reduced, and so is <span class="process-math">\(\mathcal F_J(P)\text{.}\)</span>
+</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-formal-series-reduced-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Proof 7.11.1"><a tabindex="-1" href="#lem-formal-series-reduced-2" title="Copy heading and permalink for Proof 7.11.1" aria-label="Copy heading and permalink for Proof 7.11.1">🔗</a></div>

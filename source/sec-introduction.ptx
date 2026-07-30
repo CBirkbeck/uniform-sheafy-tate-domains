@@ -42,6 +42,7 @@ so <m>A</m> is not stably uniform.
       </p>
     </statement>
     <lean project="AdicSpaces" ref="FiniteJetOver.jetSupport">Lean (definition of JetA)</lean>
+    <lean project="AdicSpaces" ref="FiniteJetOver.isClosed_jetSupport">Lean (isClosed_jetSupport)</lean>
     <lean project="AdicSpaces" ref="FiniteJetOver.isTateRing_JetA">Lean (isTateRing_JetA)</lean>
     <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_isUniform_of_dvr">Lean (finiteJet_isUniform_of_dvr)</lean>
     <lean project="AdicSpaces" ref="FiniteJetOver.isPowerBounded_JetA_iff">Lean (isPowerBounded_JetA_iff)</lean>

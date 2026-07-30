@@ -9,6 +9,14 @@
       "kind": "def"
     },
     {
+      "decl": "FiniteJetOver.isClosed_jetSupport",
+      "via": "manual",
+      "file": "Adic spaces/FJP/Over/JetRings.lean",
+      "line": 298,
+      "cited": "Theorem 1.1 (closedness, hence completeness)",
+      "kind": "theorem"
+    },
+    {
       "decl": "FiniteJetOver.isTateRing_JetA",
       "via": "manual",
       "file": "Adic spaces/FJP/Over/JetRings.lean",
@@ -71,6 +79,14 @@
     }
   ],
   "prop-uniform-domain": [
+    {
+      "decl": "FiniteJetOver.isClosed_jetSupport",
+      "via": "manual",
+      "file": "Adic spaces/FJP/Over/JetRings.lean",
+      "line": 298,
+      "cited": "Proposition 3.1 (closedness, hence completeness)",
+      "kind": "theorem"
+    },
     {
       "decl": "FiniteJetOver.isTateRing_JetA",
       "via": "manual",

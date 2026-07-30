@@ -27,7 +27,7 @@
 \begin{equation}
 \mathcal A_\alpha
 \xrightarrow{\ \sim\ }
-\widehat{\bigoplus}_{\mu}^{\,c_0}Pe_\mu.\tag{7.25}
+\widehat{\bigoplus}_{\mu}^{\,c_0}Pe_\mu.\tag{7.21}
 \end{equation}
 </div>
 <div class="para">It is natural for rational refinements represented in a finite head: if <span class="process-math">\(P\to Q\)</span> is the corresponding head restriction map, the induced restriction sends</div>
@@ -35,7 +35,7 @@
 \begin{equation}
 \sum_\mu p_\mu e_\mu
 \longmapsto
-\sum_\mu (p_\mu|_Q)e_\mu.\tag{7.26}
+\sum_\mu (p_\mu|_Q)e_\mu.\tag{7.22}
 \end{equation}
 </div>
 <div class="para">The same statement holds after increasing <span class="process-math">\(N\text{.}\)</span>
@@ -48,45 +48,38 @@
 <article class="hiddenproof knowl__content">
 <div class="para logical">
 <div class="para">Let</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-koszul.html">
+<div class="displaymath process-math">
 \begin{equation*}
 R=\mathcal A_N\langle T_1,\ldots,T_m\rangle,
 \qquad
-I=(gT_i-f_i)_i\subset R.
+J=\overline{(gT_i-f_i)_i}\subset R,
+\qquad Q=R/J.
 \end{equation*}
 </div>
-<div class="para">Since <span class="process-math">\(\mathcal A_N\)</span> is affinoid, the ideal <span class="process-math">\(I\)</span> is closed and <span class="process-math">\(d_1:R^m\to I\)</span> is strict; this is the degree-zero conclusion of <a href="#lem-koszul" class="xref" data-knowl="./knowl/xref/lem-koszul.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.1">Lemma 5.1</a>.  In particular, there is a constant <span class="process-math">\(C\)</span> such that every <span class="process-math">\(y\in I\)</span> has a lift <span class="process-math">\(x\in R^m\)</span> with <span class="process-math">\(\lVert x\rVert\leq C\lVert y\rVert\text{.}\)</span>
+<div class="para">Evaluation at <span class="process-math">\(T_i=f_i/g\)</span> identifies <span class="process-math">\(Q\)</span> with the head rational localisation <span class="process-math">\(P\text{.}\)</span>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical">
-<div class="para">By <a href="#eq-tail-decomposition" class="xref" data-knowl="./knowl/xref/eq-tail-decomposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.22">(7.22)</a>,</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-tail-decomposition.html ./knowl/xref/eq-coefficientwise-localization.html">
+<div class="para">The tail decomposition applies after adjoining the variables <span class="process-math">\(T_i\text{.}\)</span>  Apply the quotient map <span class="process-math">\(R\to Q\)</span> to each tail coefficient.  Since the rational relations lie in the head, this gives a continuous homomorphism</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-tail-multiplication.html">
 \begin{equation*}
-\mathcal A\langle T_1,\ldots,T_m\rangle
-\cong
-\widehat{\bigoplus}_{\mu}^{\,c_0}Re_\mu.
+\Phi:\mathcal A_\alpha\longrightarrow
+\widehat{\bigoplus}_{\mu}^{c_0}Qe_\mu.
 \end{equation*}
 </div>
-<div class="para">Because the relations lie in the finite head, <span class="process-math">\(d_1\)</span> acts coefficientwise.  Its image is exactly</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-tail-decomposition.html ./knowl/xref/eq-coefficientwise-localization.html">
+<div class="para">Conversely, the canonical map from <span class="process-math">\(Q\)</span> to <span class="process-math">\(\mathcal A_\alpha\)</span> may be applied to every coefficient.  For a null family <span class="process-math">\((q_\mu)_\mu\)</span> the resulting series</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-tail-multiplication.html">
 \begin{equation*}
-\widehat{\bigoplus}_{\mu}^{\,c_0}Ie_\mu.
+\sum_\mu q_\mu e_\mu
 \end{equation*}
 </div>
-<div class="para">Indeed, the inclusion from left to right is immediate.  Conversely, for a null family <span class="process-math">\((y_\mu)_\mu\)</span> in <span class="process-math">\(I\text{,}\)</span> choose coefficientwise lifts <span class="process-math">\(x_\mu\)</span> with <span class="process-math">\(\lVert x_\mu\rVert\leq C\lVert y_\mu\rVert\text{;}\)</span> then <span class="process-math">\((x_\mu)_\mu\)</span> is again a null family. Thus the corresponding ideal over <span class="process-math">\(\mathcal A\)</span> is closed and</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-tail-decomposition.html ./knowl/xref/eq-coefficientwise-localization.html">
-\begin{equation}
-\frac{\widehat{\bigoplus}_{\mu}^{c_0}Re_\mu}
-{\widehat{\bigoplus}_{\mu}^{c_0}Ie_\mu}
-\cong
-\widehat{\bigoplus}_{\mu}^{c_0}(R/I)e_\mu\tag{7.27}
-\end{equation}
-</div>
-<div class="para">as complete topological modules and as algebras.  Since <span class="process-math">\(R/I=P\text{,}\)</span> this proves <a href="#eq-coefficientwise-localization" class="xref" data-knowl="./knowl/xref/eq-coefficientwise-localization.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.25">(7.25)</a>.</div>
+<div class="para">converges in <span class="process-math">\(\mathcal A_\alpha\text{,}\)</span> and defines a continuous homomorphism <span class="process-math">\(\Psi\)</span> in the other direction.  The multiplication rule <a href="#eq-tail-multiplication" class="xref" data-knowl="./knowl/xref/eq-tail-multiplication.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.19">(7.19)</a> shows that both maps are algebra homomorphisms.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para">Every map used in <a href="#eq-c0-quotient" class="xref" data-knowl="./knowl/xref/eq-c0-quotient.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.27">(7.27)</a> is induced by the canonical quotient.  If a further rational datum lies in the head, its first Koszul differential is again coefficientwise, so the same construction gives <a href="#eq-coefficientwise-restriction" class="xref" data-knowl="./knowl/xref/eq-coefficientwise-restriction.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.26">(7.26)</a>.  Presentation independence and transitivity of rational localisation extend this compatibility to iterated refinements and to a larger finite head.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">The two composites are the identity on finite tail sums with polynomial head coefficients.  These are dense on both sides, so continuity gives <span class="process-math">\(\Psi\Phi=1\)</span> and <span class="process-math">\(\Phi\Psi=1\text{.}\)</span>  Composing with <span class="process-math">\(Q\cong P\)</span> proves <a href="#eq-coefficientwise-localization" class="xref" data-knowl="./knowl/xref/eq-coefficientwise-localization.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.21">(7.21)</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">For a rational refinement in the head, the two evaluation maps commute with the head restriction map.  The preceding construction is therefore coefficientwise natural and gives <a href="#eq-coefficientwise-restriction" class="xref" data-knowl="./knowl/xref/eq-coefficientwise-restriction.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.22">(7.22)</a>. Presentation independence and transitivity give the same conclusion after enlarging the head.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Proof 7.8.1"><a tabindex="-1" href="#prop-coefficientwise-localization-3" title="Copy heading and permalink for Proof 7.8.1" aria-label="Copy heading and permalink for Proof 7.8.1">🔗</a></div>
 </article></details><span class="incontext"><a class="internal" href="#prop-coefficientwise-localization">In Context</a></span>

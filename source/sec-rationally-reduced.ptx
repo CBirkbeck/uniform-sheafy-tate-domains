@@ -109,28 +109,31 @@ extends multiplication continuously to <m>\mathcal A</m>.  Put
       </statement>
       <proof>
         <p>
-          Successive division by the monic relations <m>Y_n^2-W^{2n}Z_n</m> reduces every class uniquely
-to a sum
-<me>\sum_{\epsilon\in\{0,1\}^N}f_\epsilon(W,Z_1,\ldots,Z_N)Y^\epsilon.</me>
-The division process does not increase the Gauss norm, so the quotient norm is at most the
-maximum of the norms of the <m>f_\epsilon</m>.  Under <xref ref="eq-finite-stage-substitution"/>, the
-summand indexed by <m>\epsilon</m> has <m>U_n</m>-exponent congruent to <m>\epsilon_n</m> modulo <m>2</m>.
-Different parity classes therefore have disjoint monomial supports.  The image of the normal
-form consequently has Gauss norm exactly
-<m>\max_\epsilon\lVert f_\epsilon\rVert</m>.  Since the substitution is norm-nonincreasing on the
-original Tate algebra, the norm of this image is at most the quotient norm.  This proves both
-uniqueness and the isometry <xref ref="eq-finite-stage-normal-form"/>.
-        </p>
-        <p>
           Writing <m>\nu_n=2q_n+\epsilon_n</m> gives the unique factorization
           <men xml:id="eq-parity-factorization">W^aU^\nu
   =W^{a-\omega(\nu)}
    \prod_{n=1}^NY_n^{\epsilon_n}Z_n^{q_n}</men>
           whenever <m>a\geq\omega(\nu)</m> and <m>\nu</m> is supported in <m>\{1,\ldots,N\}</m>.  Thus the
-finite-stage image is exactly the claimed support algebra.  The same description proves that
-the transition maps are isometric.  Finally, every finite set of allowed monomials is contained
-in one finite stage, while finite-support series are dense in the restricted series
-<xref ref="eq-parity-algebra"/>; this proves <xref ref="eq-A-completion-of-heads"/>.
+finite-head support algebra is the sum of the subspaces
+<me>k\langle W,Z_1,\ldots,Z_N\rangle Y^\epsilon,
+  \qquad \epsilon\in\{0,1\}^N.</me>
+The summands have disjoint monomial supports, distinguished by the parities
+of the <m>U_n</m>-exponents.  The sum is therefore direct and its Gauss norm is
+the maximum of the norms of its components.
+        </p>
+        <p>
+          The substitution <xref ref="eq-finite-stage-substitution"/> kills
+<m>Y_n^2-W^{2n}Z_n</m> and hence gives a norm-nonincreasing map from the quotient
+<xref ref="eq-finite-head-presentation"/> to this support algebra.  In the other
+direction, send a parity decomposition
+<m>\sum_\epsilon f_\epsilon Y^\epsilon</m> to the class represented by the same
+sum.  This map is also norm-nonincreasing, and
+<xref ref="eq-parity-factorization"/> shows that the two maps are inverse.
+This proves the isometric normal form.  The same support description makes
+the transition maps isometric.  Finally, every finite set of allowed
+monomials lies in one head, and finite-support series are dense in
+<xref ref="eq-parity-algebra"/>; hence
+<xref ref="eq-A-completion-of-heads"/> follows.
         </p>
       </proof>
     </lemma>
@@ -148,12 +151,17 @@ in one finite stage, while finite-support series are dense in the restricted ser
       <proof>
         <p>
           The Gauss norm on the countable restricted Tate algebra
-<m>k\langle W,U_1,U_2,\ldots\rangle</m> is multiplicative.  Indeed, every nonzero restricted
-series attains its norm.  After scaling two nonzero series to norm one, reduction modulo
-<m>\varpi</m> leaves two nonzero polynomials in
-<m>\widetilde k[W,U_1,U_2,\ldots]</m>, and their product is nonzero.  Scaling back proves
-multiplicativity.  The support algebra <m>\mathcal A</m> embeds isometrically into this Tate
-algebra by <xref ref="eq-parity-algebra"/>, so its Gauss norm is also multiplicative and it is a
+<m>k\langle W,U_1,U_2,\ldots\rangle</m> is multiplicative.  To see this, note
+first that the norm of a nonzero restricted series is attained.  For each of
+two such series choose, among the norm-attaining exponents, the
+lexicographically largest one.  In the coefficient of the sum of these two
+exponents, the product of the chosen coefficients strictly dominates every
+other convolution term.  The ultrametric inequality therefore gives
+<me>\lVert fg\rVert_G=\lVert f\rVert_G\lVert g\rVert_G.</me>
+This is the countable restricted-series argument used in the formalisation,
+whose underlying Lean implementation is adapted from work of William Coram
+<xref ref="bib-CoramXia"/>.  The support algebra <m>\mathcal A</m> is a closed isometric
+subring of this Tate algebra, so its Gauss norm is multiplicative and it is a
 domain.
         </p>
         <p>
@@ -176,12 +184,15 @@ domain.
         <p>
           For <m>m\geq1</m>, let
 <me>I_m=(Z_1,\ldots,Z_m)\subset\mathcal A.</me>
-There is a compatible family of norm-nonincreasing maps on the finite stages, and hence a
-bounded homomorphism
+Define a norm-nonincreasing homomorphism
 <me>\psi_m:\mathcal A\longrightarrow k\langle T\rangle,</me>
-which sends <m>W</m> and every <m>Y_j</m> to zero, sends <m>Z_{m+1}</m> to <m>T</m>, and sends every other
-<m>Z_j</m> to zero.  The relations in <xref ref="eq-finite-head-presentation"/> are preserved.  The map
-<m>\psi_m</m> kills <m>I_m</m> but not <m>Z_{m+1}</m>.  Therefore
+by retaining only the coefficients of the monomials
+<m>U_{m+1}^{2q}</m> and sending that monomial to <m>T^q</m>.  The support condition
+shows directly that this is multiplicative: a product can contribute such a
+monomial only when both factors contribute monomials of the same form.
+Thus <m>\psi_m</m> sends <m>W</m> and every <m>Y_j</m> to zero, sends <m>Z_{m+1}</m> to <m>T</m>,
+and sends every other <m>Z_j</m> to zero.  It kills <m>I_m</m> but not <m>Z_{m+1}</m>.
+Therefore
 <me>I_1\subsetneq I_2\subsetneq I_3\subsetneq\cdots,</me>
 so <m>\mathcal A</m> is not noetherian.
         </p>
@@ -214,42 +225,32 @@ Define the complete <m>k^\circ</m>-algebra
           <men xml:id="eq-weighted-chart-identification">\mathcal A\left\langle\frac{W}{\varpi}\right\rangle
   \xrightarrow{\ \sim\ }\mathcal B,
   \qquad W\longmapsto\varpi X.</men>
-          The ideal <m>(W-\varpi X)</m> in <m>\mathcal A\langle X\rangle</m> is closed, so no additional
-separated quotient is required.
         </p>
       </statement>
       <proof>
         <p>
-          On rings of definition define
-<me>q_0:\mathcal A_0\langle X\rangle\longrightarrow\mathcal B_0,
-  \qquad
-  q_0(W^aX^cU^\nu)=\varpi^aX^{a+c}U^\nu.</me>
-For a target monomial define a <m>k^\circ</m>-linear section by
-          <men xml:id="eq-weighted-section">s\bigl(b_{d,\nu}X^dU^\nu\bigr)
-  =\varpi^{-\omega(\nu)}b_{d,\nu}
-   W^{\omega(\nu)}X^{d-\omega(\nu)}U^\nu.</men>
-          The divisibility and support conditions in <xref ref="eq-weighted-chart-lattice"/> make this
-well-defined, and <xref ref="eq-weighted-chart-norm"/> shows that <m>s</m> is isometric.  Moreover,
-<m>q_0s=\operatorname{id}</m>.
+          The datum <m>(W;\varpi)</m> already lies in the zeroth head
+<m>H_0=k\langle W\rangle</m>.  Let
+<me>Q=
+  H_0\langle T\rangle/
+  \overline{(\varpi T-W)}</me>
+be its separated completed quotient.  Evaluation at <m>W=\varpi X</m> and <m>T=X</m>
+gives a continuous map <m>Q\to k\langle X\rangle</m>.  Conversely, evaluation of
+<m>k\langle X\rangle</m> at the image of <m>T</m> gives a continuous map in the other
+direction.  The two maps are inverse by polynomial density, and the norm
+estimates in the two universal properties show that the isomorphism is
+isometric.
         </p>
         <p>
-          It remains to identify the kernel.  Let
-<m>M=W^aX^cU^\nu</m> and put <m>r=a-\omega(\nu)\geq0</m>.  If <m>r>0</m>, set
-<me>D(M)=W^{\omega(\nu)}X^cU^\nu
-       \sum_{j=0}^{r-1}W^{r-1-j}(\varpi X)^j,</me>
-and set <m>D(M)=0</m> when <m>r=0</m>.  Then
-          <men xml:id="eq-weighted-division-identity">M-sq_0(M)=(W-\varpi X)D(M).</men>
-          Each basis monomial occurring in <m>D(M)</m> is still allowed in
-<m>\mathcal A_0\langle X\rangle</m>, and all its scalar coefficients have norm at most one.
-Thus <m>D</m> is norm-nonincreasing on finite-support series and extends continuously to the
-<m>c_0</m>-completion.  If <m>x\in\ker(q_0)</m>, then
-<me>x=x-sq_0(x)=(W-\varpi X)D(x).</me>
-The reverse inclusion is immediate, so
-          <men xml:id="eq-weighted-kernel">\ker(q_0)=(W-\varpi X)\mathcal A_0\langle X\rangle.</men>
-          Since <m>q_0</m> is a split surjection onto the complete ring <m>\mathcal B_0</m>, this kernel is closed.
-The quotient norm is exactly <xref ref="eq-weighted-chart-norm"/>: boundedness of <m>q_0</m> gives one
-inequality, and the isometric section gives the reverse inequality.  Inverting <m>\varpi</m> proves
-<xref ref="eq-weighted-chart-identification"/> and the closedness assertion.
+          Apply the coefficientwise-localisation construction of
+<xref ref="prop-coefficientwise-localization"/> to this zeroth head.  It identifies
+the rational chart with the <m>c_0</m> tail algebra over <m>Q</m>.  After replacing
+<m>Q</m> by <m>k\langle X\rangle</m>, its elements and norm are exactly those in
+<xref ref="eq-weighted-chart-lattice"/> and
+<xref ref="eq-weighted-chart-norm"/>: the tail basis element of parity <m>\nu</m>
+contributes the factor <m>\varpi^{\omega(\nu)}</m>.  This gives
+<xref ref="eq-weighted-chart-identification"/>, and the head evaluation sends
+<m>W</m> to <m>\varpi X</m>.
         </p>
       </proof>
     </proposition>
@@ -263,26 +264,28 @@ inequality, and the isometric section gives the reverse inequality.  Inverting <
       <lean project="AdicSpaces" ref="WeightedParity.weightedParity_chart_not_isUniform">Lean (chart is nonuniform)</lean>
       <proof>
         <p>
-          The weighted convergence condition in <xref ref="eq-weighted-chart-lattice"/> implies ordinary
-restricted convergence, because
-<m>|b_{d,\nu}|\leq|\varpi|^{\omega(\nu)}
- |\varpi|^{-\omega(\nu)}|b_{d,\nu}|</m>.  Hence coefficientwise inclusion gives an injective
-homomorphism
-<me>\mathcal B\hookrightarrow k\langle X,U_1,U_2,\ldots\rangle.</me>
-The target is a domain by the Gauss-norm argument used in
-<xref ref="prop-parity-uniform-domain"/>; therefore <m>\mathcal B</m> is a domain.
+          Group a series in <m>\mathcal B</m> by its <m>U</m>-multi-index.  This gives a
+coefficientwise homomorphism
+<me>\mathcal B\longrightarrow
+  k\langle X\rangle[[U_1,U_2,\ldots]].</me>
+It is injective, and the target is a domain because
+<m>k\langle X\rangle</m> is a domain.  Hence <m>\mathcal B</m> is a domain.  In the
+finite-head formalisation below, this is the embedding of the corresponding
+<m>c_0</m> tail algebra into formal multivariable power series; the twisting
+element is <m>\varpi X</m>, which is a non-zero-divisor.
         </p>
         <p>
           Inside <m>\mathcal A</m> write <m>Y_n=W^nU_n</m>, as in
 <xref ref="eq-finite-stage-substitution"/>, and put
 <me>T_n=\varpi^{-n}Y_n=X^nU_n\in\mathcal B.</me>
-For <m>r\geq0</m>, formula <xref ref="eq-weighted-chart-norm"/> gives
-          <men xml:id="eq-Tn-power-norms">\lVert T_n^{2r}\rVert_{\mathrm{in}}=1,
+Formula <xref ref="eq-weighted-chart-norm"/> gives
+<me>\lVert T_n\rVert_{\mathrm{in}}=|\varpi|^{-n},
   \qquad
-  \lVert T_n^{2r+1}\rVert_{\mathrm{in}}=|\varpi|^{-n}.</men>
-          Thus every <m>T_n</m> is power-bounded.  The family <m>(T_n)_{n\geq1}</m> is not bounded: if
-<m>\varpi^N T_n\in\mathcal B_0</m>, then the coefficient of <m>X^nU_n</m> must be divisible by
-<m>\varpi^n</m>, which forces <m>N\geq n</m>.  No fixed <m>N</m> works for all <m>n</m>.  Hence
+  \lVert T_n^2\rVert_{\mathrm{in}}=1.</me>
+It follows by separating even and odd powers that the powers of each fixed
+<m>T_n</m> are bounded.  Thus every <m>T_n</m> is power-bounded.  The family
+<m>(T_n)_{n\geq1}</m> is not bounded, since its norms
+<m>|\varpi|^{-n}</m> are unbounded.  Hence
 <m>\mathcal B^\circ</m> is unbounded and <m>\mathcal B</m> is not uniform.
         </p>
       </proof>
@@ -331,21 +334,11 @@ The perturbations have value at most <m>|\varpi|^{\ell+1}&lt;|g(x)|</m>, so
 argument to the primed Bezout relation proves the reverse inclusion.
         </p>
         <p>
-          Let <m>E_\alpha</m> be the first rational localisation and put
-<me>q=\frac{\varpi^\ell}{g}
-   =a_0+\sum_i a_i\frac{f_i}{g}\in E_\alpha^\circ.</me>
-Then
-<me>\frac{g'}g=1+\varpi h_0q.</me>
-The second summand is topologically nilpotent.  After adjoining the finitely many
-power-bounded elements involved to a ring of definition, the geometric series for its inverse
-and all powers of that inverse lie in the same bounded subring.  Thus <m>g'/g</m> is a <m>1</m>-unit with
-power-bounded inverse, and
-<me>\frac{f_i'}{g'}
-  =\frac{f_i/g+\varpi h_iq}{1+\varpi h_0q}</me>
-is power-bounded.  The universal property gives a homomorphism
-<m>E_{\alpha'}\to E_\alpha</m>.  Repeating the argument with the primed Bezout relation gives a
-homomorphism in the opposite direction.  Both composites restrict to the identity on <m>E</m>;
-universal-property uniqueness makes them inverse.  The isomorphism is therefore canonical.
+          Rational localisation is independent of the datum used to present a rational
+subset.  The equality of the two subsets therefore gives restriction maps in
+both directions between <m>E_\alpha</m> and <m>E_{\alpha'}</m>.  Transitivity of
+rational restriction shows that their composites are the identity.  This is
+the required canonical isomorphism.
         </p>
       </proof>
     </lemma>
@@ -389,37 +382,38 @@ corresponding head restriction map, the induced restriction sends
           Let
 <me>R=\mathcal A_N\langle T_1,\ldots,T_m\rangle,
   \qquad
-  I=(gT_i-f_i)_i\subset R.</me>
-Since <m>\mathcal A_N</m> is affinoid, the ideal <m>I</m> is closed and
-<m>d_1:R^m\to I</m> is strict; this is the degree-zero conclusion of
-<xref ref="lem-koszul"/>.  In particular, there is a constant <m>C</m> such that every <m>y\in I</m> has a
-lift <m>x\in R^m</m> with <m>\lVert x\rVert\leq C\lVert y\rVert</m>.
+  J=\overline{(gT_i-f_i)_i}\subset R,
+  \qquad Q=R/J.</me>
+Evaluation at <m>T_i=f_i/g</m> identifies <m>Q</m> with the head rational localisation
+<m>P</m>.
         </p>
         <p>
-          By <xref ref="eq-tail-decomposition"/>,
-<me>\mathcal A\langle T_1,\ldots,T_m\rangle
-  \cong
-  \widehat{\bigoplus}_{\mu}^{\,c_0}Re_\mu.</me>
-Because the relations lie in the finite head, <m>d_1</m> acts
-coefficientwise.  Its image is exactly
-<me>\widehat{\bigoplus}_{\mu}^{\,c_0}Ie_\mu.</me>
-Indeed, the inclusion from left to right is immediate.  Conversely, for a null family
-<m>(y_\mu)_\mu</m> in <m>I</m>, choose coefficientwise lifts <m>x_\mu</m> with
-<m>\lVert x_\mu\rVert\leq C\lVert y_\mu\rVert</m>; then <m>(x_\mu)_\mu</m> is again a null family.
-Thus the corresponding ideal over <m>\mathcal A</m> is closed and
-          <men xml:id="eq-c0-quotient">\frac{\widehat{\bigoplus}_{\mu}^{c_0}Re_\mu}
-       {\widehat{\bigoplus}_{\mu}^{c_0}Ie_\mu}
-  \cong
-  \widehat{\bigoplus}_{\mu}^{c_0}(R/I)e_\mu</men>
-          as complete topological modules and as algebras.  Since <m>R/I=P</m>, this proves
+          The tail decomposition applies after adjoining the variables <m>T_i</m>.  Apply
+the quotient map <m>R\to Q</m> to each tail coefficient.  Since the rational
+relations lie in the head, this gives a continuous homomorphism
+<me>\Phi:\mathcal A_\alpha\longrightarrow
+  \widehat{\bigoplus}_{\mu}^{c_0}Qe_\mu.</me>
+Conversely, the canonical map from <m>Q</m> to <m>\mathcal A_\alpha</m> may be applied
+to every coefficient.  For a null family
+<m>(q_\mu)_\mu</m> the resulting series
+<me>\sum_\mu q_\mu e_\mu</me>
+converges in <m>\mathcal A_\alpha</m>, and defines a continuous homomorphism
+<m>\Psi</m> in the other direction.  The multiplication rule
+<xref ref="eq-tail-multiplication"/> shows that both maps are algebra
+homomorphisms.
+        </p>
+        <p>
+          The two composites are the identity on finite tail sums with polynomial
+head coefficients.  These are dense on both sides, so continuity gives
+<m>\Psi\Phi=1</m> and <m>\Phi\Psi=1</m>.  Composing with <m>Q\cong P</m> proves
 <xref ref="eq-coefficientwise-localization"/>.
         </p>
         <p>
-          Every map used in <xref ref="eq-c0-quotient"/> is induced by the canonical quotient.  If a
-further rational datum lies in the head, its first Koszul differential is again coefficientwise, so the
-same construction gives <xref ref="eq-coefficientwise-restriction"/>.  Presentation independence and
-transitivity of rational localisation extend this compatibility to iterated refinements and to a
-larger finite head.
+          For a rational refinement in the head, the two evaluation maps commute with
+the head restriction map.  The preceding construction is therefore
+coefficientwise natural and gives <xref ref="eq-coefficientwise-restriction"/>.
+Presentation independence and transitivity give the same conclusion after
+enlarging the head.
         </p>
       </proof>
     </proposition>
@@ -469,86 +463,44 @@ that <m>\bigcup_MP_M</m> is dense.
       <lean project="AdicSpaces" ref="WeightedParity.weightedParity_isSheafyComplete_of_dvr">Lean</lean>
       <proof>
         <p>
-          We first prove the topological sheaf condition on the rational basis of
-<m>X=\Spa(\mathcal A,\mathcal A^\circ)</m>.  Let <m>U\subset X</m> be rational.  By
-<xref ref="cor-finite-head-presentation"/>, choose a head presentation
-<me>E=\mathcal O_X(U)
-  \cong
-  \widehat{\bigoplus}_{\mu}^{c_0}P_Me_\mu,
-  \qquad P_M=(\mathcal A_M)_\alpha,</me>
-for some <m>M</m>.  Let <m>E_U^+</m> be the plus ring defining the rational subspace <m>U</m>; it need not
-equal the maximal ring <m>E^\circ</m>.  Choose the standard closed ring of definition
-<m>P_{M,0}\subset P_M^\circ</m> furnished by the head graph presentation.  The coefficientwise
-quotient by these relations gives a closed ring of definition
-<me>E_0=\widehat{\bigoplus}_{\mu}^{c_0}P_{M,0}e_\mu\subseteq E_U^+.</me>
-The inclusion holds because <m>E_U^+</m> is an open, hence closed, subring containing the integral
-graph algebra.  After enlarging the head, finite tail truncation shows that the corresponding
-head lattices are dense in <m>E_0</m>.
-        </p>
-        <p>
-          Suppose that <m>U=\bigcup_{i=1}^rU_i</m> is a finite rational cover.  Choose rational data for the
-<m>U_i</m> inside the Huber pair <m>(E,E_U^+)</m>.  Scale their entries into <m>E_0</m> and choose integral
-Bezout relations.  After a common enlargement of the head, the density just noted and
-<xref ref="lem-small-perturbation"/> replace all these data by data lying in one head lattice
-<m>P_{M,0}</m>, without changing any <m>U_i</m> or its completed section ring.  Applying the coefficient
-projection <m>E\to P_M</m> to the integral Bezout relation supplied by
-<xref ref="lem-small-perturbation"/> shows that each new datum is rational already in <m>P_M</m>.
-Let
-<me>V_i\subset\Spa(P_M,P_M^\circ)</me>
-be the corresponding rational domains.
-        </p>
-        <p>
-          We verify that the <m>V_i</m> cover.  The inclusion <m>P_M\to E</m> and coefficient projection
-<m>E\to P_M</m> are norm-nonincreasing and split each other.  They therefore define morphisms of
-the maximal Huber pairs and a split surjection
-          <men xml:id="eq-split-spectrum-map">\Spa(E,E^\circ)\longrightarrow\Spa(P_M,P_M^\circ).</men>
-          The maximal-pair spectrum <m>\Spa(E,E^\circ)</m> is a subspace of
-<m>\Spa(E,E_U^+)=U</m>.  Hence the given cover restricts to a cover of
-<m>\Spa(E,E^\circ)</m>.  On this subspace the restricted <m>U_i</m> are exactly the inverse images of
-the <m>V_i</m>.  The surjectivity in <xref ref="eq-split-spectrum-map"/> therefore implies that the
-<m>V_i</m> cover <m>\Spa(P_M,P_M^\circ)</m>.  This avoids identifying <m>U</m> with the maximal-pair
-spectrum, which need not be correct at higher-rank points.
-        </p>
-        <p>
-          Write
-<me>P_{M,i}=\mathcal O(V_i),
+          We first work with a finite rational cover <m>U=\bigcup_iU_i</m>.  Approximate the
+datum for <m>U</m> and the data for all the <m>U_i</m> simultaneously in one sufficiently
+large finite head.  The small perturbation lemma does not change the rational
+domains, and <xref ref="prop-coefficientwise-localization"/> gives compatible
+identifications
+<me>\mathcal O_X(U)\cong
+  \widehat{\bigoplus}_{\mu}^{c_0}Pe_\mu,
   \qquad
-  P_{M,ij}=\mathcal O(V_i\cap V_j).</me>
-Naturality in <xref ref="prop-coefficientwise-localization"/> gives canonical identifications
-          <men xml:id="eq-cover-coefficientwise">\mathcal O_X(U_i)
-  \cong\widehat{\bigoplus}_{\mu}^{c_0}P_{M,i}e_\mu,
-  \qquad
-  \mathcal O_X(U_i\cap U_j)
-  \cong\widehat{\bigoplus}_{\mu}^{c_0}P_{M,ij}e_\mu,</men>
-          under which every restriction map is coefficientwise.
+  \mathcal O_X(U_i)\cong
+  \widehat{\bigoplus}_{\mu}^{c_0}P_ie_\mu,</me>
+with coefficientwise restriction maps.  Here <m>P</m> is a rational localisation
+of one affinoid head and the <m>P_i</m> are rational localisations of <m>P</m>.  The
+domains defined by the <m>P_i</m> cover <m>\Spa(P,P^\circ)</m>: pull a point back along
+the split coefficient retraction to the tail algebra, use the original cover,
+and then apply the retraction again.
         </p>
         <p>
-          The affinoid algebra <m>P_M</m> is sheafy, so its rational-cover equalizer is an isomorphism of
-Banach spaces
-          <men xml:id="eq-head-cech">P_M\xrightarrow{\ \sim\ }
-  \operatorname{Eq}\left(
-    \prod_iP_{M,i}\rightrightarrows\prod_{i,j}P_{M,ij}
-  \right).</men>
-          Its inverse is bounded; fix a bound <m>C</m>.  Let <m>(x_i)_i</m> be a matching family in the section
-rings in <xref ref="eq-cover-coefficientwise"/>, and write
-<m>x_i=\sum_\mu x_{i,\mu}e_\mu</m>.  For each <m>\mu</m>, equation
-<xref ref="eq-head-cech"/> glues <m>(x_{i,\mu})_i</m> to a unique <m>x_\mu\in P_M</m>, with
-          <men xml:id="eq-coefficientwise-gluing-bound">\lVert x_\mu\rVert
-  \leq C\max_i\lVert x_{i,\mu}\rVert.</men>
-          Because the cover is finite and every coefficient family is null, the right side tends to zero.
-Thus <m>\sum_\mu x_\mu e_\mu</m> is an actual element of the <m>c_0</m>-sum and gives the unique
-global section.  The same bound proves that the restriction map is a topological embedding.
-Hence the structure presheaf satisfies the sheaf condition as complete topological rings on the
-rational basis.
+          Let <m>(x_i)_i</m> be a matching family and write
+<m>x_i=\sum_\mu x_{i,\mu}e_\mu</m>.  Since the head <m>P</m> is affinoid and sheafy,
+the matching family <m>(x_{i,\mu})_i</m> glues to a unique <m>q_\mu\in P</m> for every
+<m>\mu</m>.  It remains to check that <m>(q_\mu)_\mu</m> is a null family.  Its
+restrictions to every <m>P_i</m> tend to zero because each <m>x_i</m> belongs to a
+<m>c_0</m>-sum.  The product restriction map
+<me>P\longrightarrow\prod_iP_i</me>
+is a topological embedding, so it reflects convergence to zero.  Hence
+<m>q_\mu\to0</m>, and <m>\sum_\mu q_\mu e_\mu</m> is the required section over <m>U</m>.
+The same coefficientwise argument proves separation.
         </p>
         <p>
-          For an arbitrary open cover, apply the projective-limit argument used in the last paragraph of
-the proof of <xref ref="lem-sheaf-transfer"/>.  Namely, every rational subdomain of the open set is
-quasi-compact and admits a finite rational cover subordinate to the given cover; the rational-basis
-result glues continuously on that subdomain, and uniqueness makes these sections compatible
-under rational restriction.  The defining projective-limit topology on arbitrary-open sections
-then makes the inverse gluing map continuous.  Thus the public all-open structure presheaf is a
-sheaf of complete topological rings.
+          The image of the product restriction map for <m>\mathcal A</m> is therefore the
+matching-family equaliser.  This equaliser is closed, and the restriction map
+is continuous and injective.  The nonarchimedean closed-range theorem over
+the Tate ring <m>\mathcal A</m> now makes it a topological embedding.  We have
+proved the topological sheaf condition on finite rational covers.  The
+general rational-basis theorem upgrades this to the all-open structure
+presheaf, and its plus-ring independence gives the same conclusion for every
+ring of integral elements.  In particular, <m>(\mathcal A,\mathcal A^\circ)</m>
+is sheafy.
         </p>
       </proof>
     </theorem>
@@ -566,14 +518,17 @@ sheaf of complete topological rings.
       </statement>
       <proof>
         <p>
-          For every finite subset <m>J_0\subset J</m>, setting the variables outside <m>J_0</m> equal to zero gives
-a homomorphism
-<me>\tau_{J_0}:\mathcal F_J(P)\longrightarrow P[[U_j:j\in J_0]].</me>
-These homomorphisms jointly detect all coefficients.  A finite-variable formal power-series ring
-over a reduced ring is reduced: the injection
-<m>P\to\prod_{\mathfrak p\in\operatorname{Spec}(P)}P/\mathfrak p</m> induces an injection of
-formal power-series rings into a product of domains.  If an element of <m>\mathcal F_J(P)</m> is
-nilpotent, every <m>\tau_{J_0}</m> kills it; joint coefficient detection then kills the original element.
+          Since <m>P</m> is reduced, the diagonal map
+<me>P\longrightarrow
+  \prod_{\mathfrak p\in\operatorname{Spec}(P)}P/\mathfrak p</me>
+is injective.  Applying formal power series coefficientwise, and then
+commuting formal power series with this product, gives an injection
+<me>\mathcal F_J(P)\longrightarrow
+  \prod_{\mathfrak p\in\operatorname{Spec}(P)}
+  \mathcal F_J(P/\mathfrak p).</me>
+Each factor on the right is a domain, since its coefficient ring is a
+domain.  The product is therefore reduced, and so is
+<m>\mathcal F_J(P)</m>.
         </p>
       </proof>
     </lemma>

@@ -75,6 +75,7 @@ integral domain.  Moreover,
 <me>A^\circ=A_0.</me>
       </p>
     </statement>
+    <lean project="AdicSpaces" ref="FiniteJetOver.isClosed_jetSupport">Lean (isClosed_jetSupport)</lean>
     <lean project="AdicSpaces" ref="FiniteJetOver.isTateRing_JetA">Lean (isTateRing_JetA)</lean>
     <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_isUniform_of_dvr">Lean (finiteJet_isUniform_of_dvr)</lean>
     <lean project="AdicSpaces" ref="FiniteJetOver.isPowerBounded_JetA_iff">Lean (isPowerBounded_JetA_iff)</lean>
@@ -82,25 +83,19 @@ integral domain.  Moreover,
     <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_not_noetherian">Lean (finiteJet_not_noetherian)</lean>
     <proof>
       <p>
-        For <m>0\neq c\in C</m>, define
-<me>\nu(c)=\max\{n\in\mathbf Z:c\in\varpi^nC_0\}.</me>
-This maximum exists because <m>C_0</m> is <m>\varpi</m>-adically separated and <m>C=C_0[1/\varpi]</m>.  We claim that
-        <men xml:id="eq-additive-order">\nu(cc')=\nu(c)+\nu(c')
-  \qquad (c,c'\neq 0).</men>
-        After multiplying <m>c</m> and <m>c'</m> by suitable powers of <m>\varpi</m>, it is enough to treat the case
-<m>c,c'\in C_0\setminus\varpi C_0</m>.  Their reductions are nonzero elements of
-<me>C_0/\varpi C_0\cong\widetilde{k}[W,W^{-1},Q].</me>
-This is a domain, so the product of the reductions is nonzero.  This proves
-<xref ref="eq-additive-order"/>; in particular, <m>C</m> is a domain.
+        The Gauss norm on <m>L=k\langle W,W^{-1}\rangle</m> is multiplicative, and the
+restricted Gauss norm on <m>C=L\langle Q\rangle</m> is therefore multiplicative as
+well.  In particular, <m>C</m> is a domain, and hence so is its subring <m>A</m>.  The
+conditions on the constant and linear <m>Q</m>-coefficients which define <m>A</m> are
+closed conditions in <m>C</m>, so <m>A</m> is complete.  The image of <m>\varpi</m> in <m>A</m>
+is a topologically nilpotent unit, and therefore <m>A</m> is a Tate ring.
       </p>
       <p>
-        By the preceding coefficient description, <m>A</m> consists of the same restricted
-series as <m>A_0</m>, but with coefficients in <m>k</m>.  Such a series lies in <m>C_0</m>
-precisely when all of its coefficients lie in <m>k^\circ</m>.  Hence
-<me>A_0=A\cap C_0.</me>
-Every element of <m>A_0</m> is power-bounded because <m>A_0</m> is a subring.  Conversely, let <m>a\in A\setminus A_0</m>.  Then <m>\nu(a)&lt;0</m>, and by <xref ref="eq-additive-order"/>,
-<m>\nu(a^n)=n\nu(a)</m>.  Hence the powers of <m>a</m> cannot all lie in any fixed
-<m>\varpi^{-r}A_0</m>.  Thus <m>a</m> is not power-bounded.  It follows that <m>A^\circ=A_0</m>, so <m>A</m> is uniform.  Completeness follows from the completeness of <m>A_0</m>, and <m>A</m> is a domain because it is a subring of <m>C</m>.
+        The coefficient description of <m>A_0</m> shows that it is exactly the unit ball
+for the restricted Gauss norm on <m>A</m>.  Since this norm is multiplicative,
+<me>\lVert a^n\rVert=\lVert a\rVert^n.</me>
+It follows that <m>a</m> is power-bounded if and only if <m>\lVert a\rVert\leq1</m>.
+Thus <m>A^\circ=A_0</m>, and the unit ball is bounded, so <m>A</m> is uniform.
       </p>
       <p>
         For nonnoetherianity, let <m>J=\ker(\iota_B)=Q^2C\subset A</m>.  If <m>J</m> were

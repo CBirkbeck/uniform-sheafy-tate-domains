@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FiniteJetOver.chartEquiv · Lean source</title>
+  <title>FiniteJetOver.isClosed_jetSupport · Lean source</title>
   <style>
     :root { color-scheme: light dark; }
     body { margin: 0; font: 16px/1.55 system-ui, sans-serif; }
@@ -30,14 +30,14 @@
 <body>
 <main>
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
-  <div class="kind">def</div>
-  <h1>FiniteJetOver.chartEquiv</h1>
-  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>There is a ring equivalence between the rational chart <code>𝒪_𝓐({|W| ≤ |ϖ|})</code> and <code>K⟨X,Q⟩/(Q²)</code>. The forward map takes the first two <code>Q</code>-coefficients and rescales <code>W</code> to <code>ϖX</code>; the completed chart kills every element whose first two <code>Q</code>-coefficients vanish. The inverse evaluates <code>K⟨X⟩</code> at <code>W/ϖ</code> and adjoins the square-zero image of <code>Q</code>. The inverse identities use the two-jet decomposition and polynomial density. The companion continuity theorems make this a homeomorphism.</p></div></div>
+  <div class="kind">theorem</div>
+  <h1>FiniteJetOver.isClosed_jetSupport</h1>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>The support condition defining the finite-jet algebra <code>𝓐</code> cuts out a closed subring of the complete ring <code>𝓒</code>: membership of the constant and linear <code>Q</code>-coefficients in <code>K⟨W⟩</code> is a closed condition. The immediately following instance therefore makes <code>𝓐</code> complete.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
-  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>[FJP] Proposition 3.1</strong> over a general base: the chart is the square-zero disc<br>algebra, <code>𝒪_𝓐({|W| ≤ |ϖ|}) ≅ K⟨X⟩[Q]/(Q²) = 𝓑</code>, as topological rings.</p></div></details>
-  <p class="used-for"><strong>Used in the paper for:</strong> Proposition 4.1 (chart identification)</p>
-  <pre><code>def chartEquiv (ϖ : Uniformizer K) : presheafValue (chartDatum K ϖ) ≃+* JetB K</code></pre>
-  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/Over/Chart.lean:1431–1431</code><br>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>The support subring is closed in <code>𝒞</code> ([FJP] Lemma 2.2: &quot;Imposing the preceding closed<br>condition on the <code>Q⁰</code>- and <code>Q¹</code>-coefficients therefore cuts out a closed subspace of 𝒞&quot;).</p></div></details>
+  <p class="used-for"><strong>Used in the paper for:</strong> Theorem 1.1 (closedness, hence completeness); Proposition 3.1 (closedness, hence completeness)</p>
+  <pre><code>theorem isClosed_jetSupport : IsClosed ((jetSupport K : Set (JetC K)))</code></pre>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/Over/JetRings.lean:298–298</code><br>
   AINTLIB commit <code>b007a4f3d4226f00a684b402715aa542e2f0bcdc</code>.</p>
   <p class="meta">This is the archival declaration extracted from the pinned
   source tree.  The corresponding AINTLIB commit was not publicly reachable

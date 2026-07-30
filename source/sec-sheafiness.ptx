@@ -72,8 +72,32 @@ with its projective-limit topology, the inverse of the algebraic gluing map <m>\
         Give <m>B,C,D</m> their maximal rings of integral elements.  The max/Gauss estimates <xref ref="eq-structural-map-bounds"/> show that every structural map is norm-nonincreasing.  Consequently it sends bounded subsets to bounded subsets; in particular, if <m>x</m> is power-bounded, then the set of powers of its image is the image of the bounded set <m>\{x^n:n\geq0\}</m>.  The structural maps therefore send power-bounded elements to power-bounded elements and define morphisms of Huber pairs.
       </p>
       <p>
-        For a rational domain <m>U\subset\Spa(A,A^\circ)</m>, its inverse image in each comparison spectrum is defined by the image of the same rational datum.  By
-<xref ref="prop-localized-milnor"/>, the corresponding section rings form the natural exact sequence required in <xref ref="lem-sheaf-transfer"/>.  Each of <m>B,C,D</m> is an affinoid <m>k</m>-algebra, hence is sheafy by Huber's theorem <xref ref="bib-Huber94" detail="Theorem 2.2"/>.  The conclusion follows from <xref ref="lem-sheaf-transfer"/>.
+        Each of <m>B,C,D</m> is an affinoid <m>k</m>-algebra and is therefore sheafy by
+Huber's theorem <xref ref="bib-Huber94" detail="Theorem 2.2"/>.  We apply the argument of
+<xref ref="lem-sheaf-transfer"/> directly to a finite rational cover
+<m>U=\bigcup_iU_i</m> in <m>\Spa(A,A^\circ)</m>.  Push the datum for <m>U</m> and the data
+for the <m>U_i</m> to <m>B,C,D</m>.  If a section over <m>U</m> restricts to zero on every
+<m>U_i</m>, its images over <m>B</m> and <m>C</m> vanish by separatedness there.
+Injectivity of the localised Milnor row from
+<xref ref="prop-localized-milnor"/> then shows that the original section is zero.
+      </p>
+      <p>
+        Now take a matching family over the <m>U_i</m>.  Its images glue over <m>B</m> and
+<m>C</m>.  The two glued sections have the same image over <m>D</m>, since their
+restrictions agree on the pushed cover and the presheaf for <m>D</m> is
+separated.  Exactness of the localised Milnor row over <m>U</m> gives a section
+over <m>A</m>, and injectivity of the corresponding rows over the <m>U_i</m> shows
+that it restricts to the given family.
+      </p>
+      <p>
+        It remains to retain the topology.  The image of the product restriction
+map is the matching-family equaliser just described, which is closed in the
+finite product of the section rings.  The restriction map is continuous and
+injective, so the nonarchimedean closed-range theorem, using the
+topologically nilpotent unit of <m>A</m>, makes it a topological embedding.  This
+proves the sheaf condition on finite rational covers.  The
+sheaf-on-a-rational-basis theorem then gives the all-open topological sheaf
+condition for <m>(A,A^\circ)</m>.
       </p>
     </proof>
   </theorem>

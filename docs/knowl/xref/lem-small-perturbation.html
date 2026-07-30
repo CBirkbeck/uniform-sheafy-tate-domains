@@ -25,14 +25,14 @@
 <div class="para">Let <span class="process-math">\((E,E^+)\)</span> be a complete Tate Huber pair and choose a closed ring of definition <span class="process-math">\(E_0\subseteq E^+\text{.}\)</span>  Let <span class="process-math">\(\alpha=(f_1,\ldots,f_m;g)\)</span> be a rational datum whose entries lie in <span class="process-math">\(E_0\text{.}\)</span>  Write <span class="process-math">\(d_0=g\)</span> and <span class="process-math">\(d_i=f_i\)</span> for <span class="process-math">\(i\geq1\text{.}\)</span>  Suppose that for some <span class="process-math">\(\ell\geq0\)</span> there are <span class="process-math">\(a_0,\ldots,a_m\in E_0\)</span> with</div>
 <div class="displaymath process-math">
 \begin{equation}
-\varpi^\ell=\sum_{j=0}^m a_jd_j.\tag{7.19}
+\varpi^\ell=\sum_{j=0}^m a_jd_j.\tag{7.15}
 \end{equation}
 </div>
 <div class="para">Let <span class="process-math">\(d_j'\in E_0\)</span> satisfy</div>
 <div class="displaymath process-math">
 \begin{equation}
 d_j'-d_j\in\varpi^{\ell+1}E_0
-\qquad(0\leq j\leq m),\tag{7.20}
+\qquad(0\leq j\leq m),\tag{7.16}
 \end{equation}
 </div>
 <div class="para">and write <span class="process-math">\(\alpha'=(f_1',\ldots,f_m';g')\text{.}\)</span>  Then <span class="process-math">\(\alpha'\)</span> is a rational datum, <span class="process-math">\(\alpha\)</span> and <span class="process-math">\(\alpha'\)</span> define the same rational subset of <span class="process-math">\(\Spa(E,E^+)\text{,}\)</span> and their completed rational localisations are canonically isomorphic.</div>
@@ -55,7 +55,7 @@ d_j'-d_j\in\varpi^{\ell+1}E_0
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-small-perturbation-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\(x\)</span> lie in the rational subset defined by <span class="process-math">\(\alpha\text{.}\)</span>  Since <span class="process-math">\(a_j\in E_0\subseteq E^+\text{,}\)</span> relation <a href="#eq-integral-bezout" class="xref" data-knowl="./knowl/xref/eq-integral-bezout.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.19">(7.19)</a> gives</div>
+<div class="para">Let <span class="process-math">\(x\)</span> lie in the rational subset defined by <span class="process-math">\(\alpha\text{.}\)</span>  Since <span class="process-math">\(a_j\in E_0\subseteq E^+\text{,}\)</span> relation <a href="#eq-integral-bezout" class="xref" data-knowl="./knowl/xref/eq-integral-bezout.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.15">(7.15)</a> gives</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-integral-bezout.html">
 \begin{equation*}
 |\varpi|^\ell\leq |g(x)|.
@@ -64,29 +64,7 @@ d_j'-d_j\in\varpi^{\ell+1}E_0
 <div class="para">The perturbations have value at most <span class="process-math">\(|\varpi|^{\ell+1}&lt;|g(x)|\text{,}\)</span> so <span class="process-math">\(|g'(x)|=|g(x)|\)</span> and <span class="process-math">\(|f_i'(x)|\leq|g'(x)|\text{.}\)</span>  This proves one inclusion of rational subsets.  Applying the same argument to the primed Bezout relation proves the reverse inclusion.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-small-perturbation-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical">
-<div class="para">Let <span class="process-math">\(E_\alpha\)</span> be the first rational localisation and put</div>
-<div class="displaymath process-math">
-\begin{equation*}
-q=\frac{\varpi^\ell}{g}
-=a_0+\sum_i a_i\frac{f_i}{g}\in E_\alpha^\circ.
-\end{equation*}
-</div>
-<div class="para">Then</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\frac{g'}g=1+\varpi h_0q.
-\end{equation*}
-</div>
-<div class="para">The second summand is topologically nilpotent.  After adjoining the finitely many power-bounded elements involved to a ring of definition, the geometric series for its inverse and all powers of that inverse lie in the same bounded subring.  Thus <span class="process-math">\(g'/g\)</span> is a <span class="process-math">\(1\)</span>-unit with power-bounded inverse, and</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\frac{f_i'}{g'}
-=\frac{f_i/g+\varpi h_iq}{1+\varpi h_0q}
-\end{equation*}
-</div>
-<div class="para">is power-bounded.  The universal property gives a homomorphism <span class="process-math">\(E_{\alpha'}\to E_\alpha\text{.}\)</span>  Repeating the argument with the primed Bezout relation gives a homomorphism in the opposite direction.  Both composites restrict to the identity on <span class="process-math">\(E\text{;}\)</span> universal-property uniqueness makes them inverse.  The isomorphism is therefore canonical.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-small-perturbation-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">Rational localisation is independent of the datum used to present a rational subset.  The equality of the two subsets therefore gives restriction maps in both directions between <span class="process-math">\(E_\alpha\)</span> and <span class="process-math">\(E_{\alpha'}\text{.}\)</span>  Transitivity of rational restriction shows that their composites are the identity.  This is the required canonical isomorphism.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-small-perturbation-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Proof 7.7.1"><a tabindex="-1" href="#lem-small-perturbation-3" title="Copy heading and permalink for Proof 7.7.1" aria-label="Copy heading and permalink for Proof 7.7.1">🔗</a></div>
 </article></details><span class="incontext"><a class="internal" href="#lem-small-perturbation">In Context</a></span>

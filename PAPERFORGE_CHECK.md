@@ -39,6 +39,24 @@ The following claims were also read in context:
 | Ben-Bassat--Kremnizer, Definition 5.7, Remark 5.8, and Lemmas 5.13--5.14 | These give the earlier strict graph-complex framework. |
 | Bambozzi--Kremnizer, Definitions 4.5--4.6, Proposition 4.9, Lemma 4.11, and Corollary 4.13 | These prove strict Koszul regularity for rational localisations. Consequently Lemma 5.1 is presented as a lattice-sensitive restatement, not as a new result. |
 
+## Lean proof-route audit
+
+The prose proofs were compared with the bodies and direct dependencies of the
+declarations at the two pinned snapshots, rather than only with their theorem
+statements.  The resulting proof crosswalk is:
+
+| Paper result | Formal proof route and disposition |
+|---|---|
+| Proposition 3.1 | `JetA` is a closed support subring of `JetC`; multiplicativity of the restricted Gauss norm supplies the domain and power-bounded calculation, and nonnoetherianity is proved from the `Q²` coefficient. The paper now follows this route. |
+| Proposition 4.1 | `chartEquiv` first takes the two-jet and rescales `W` to `ϖX`. A zero two-jet is killed in the completion by writing it as `ϖⁿXⁿ` times a bounded element. The inverse evaluates at `W/ϖ`, and the inverse identities use the two-jet decomposition and polynomial density. The earlier shorter quotient argument was replaced by this proof. |
+| Lemma 5.1 | Positive-degree Koszul exactness is transported from the polynomial sequence along the flat map to the restricted Tate algebra. The degree-zero image is closed by noetherianity; higher images are closed kernels. The nonarchimedean closed-range theorem gives controlled lifts, from which strictness and the two lattice inclusions follow by scaling. |
+| Lemma 5.2 | Controlled `d₁`-lifts over `B` and `C` are compared over `D`; their difference is corrected by a controlled `d₂`-lift, which is lifted coefficientwise to `C`. The ambient Milnor pullback then gives the element over `A`. The same estimate proves closedness of `I_A` and strict exactness. |
+| Proposition 5.3 | Lean proves algebraic exactness by correcting defects of quotient representatives through `I_C`. A quotient-norm estimate gives the left-hand topological embedding, while the norm-preserving coefficient section proves that `C_α → D_α` is open. The proof has been rewritten accordingly. |
+| Theorem 6.2 | A rational cover and matching family are pushed to `B,C,D`; sheafiness there and the localised Milnor row give separation and gluing over `A`. The matching-family equaliser is closed, and the closed-range theorem gives the required topological embedding. Lean proves this concrete argument; the abstract Lemma 6.1 is not separately bundled. |
+| Propositions 7.3--7.6 | The weighted-parity development proves multiplicativity of the countable Gauss norm by choosing lexicographically maximal norm-attaining exponents, proves nonnoetherianity by direct coefficient extraction, and handles the distinguished chart by a completed head quotient and a tail-series embedding. The paper now uses these arguments. |
+| Proposition 7.8 and Theorem 7.10 | Finite-head localisation is constructed directly by applying the head quotient map to every `c₀` tail coefficient and summing coefficientwise for the inverse; it does not use the Koszul complex. Sheafiness glues head coefficients and uses the head restriction embedding to recover the `c₀` condition, followed by the closed-range theorem. |
+| Lemma 7.7 and reducedness | Lean contains the norm-unit-ball specialization of the small-perturbation lemma used in the sheaf proof. The formal-power-series reducedness lemma is complete, but reducedness after every iterated rational localisation still depends on `sorryAx`; the paper and badges mark that clause as unformalised. |
+
 ## Lean crosswalk
 
 `crosswalk/lean-decl-map.json` was curated manually after the generated
@@ -68,11 +86,20 @@ its ordinary link.  The generator also covers the appendix definitions and
 equivalence chain.  Its pages record the source path and commit and credit the
 Coram/Xia restricted-series infrastructure.
 
-The claim audit found three scope distinctions, now stated explicitly in the
-appendix: Lean proves the unit-ball/Gauss-norm specialization of Lemma 5.1; the
-chart is exported as a bicontinuous `RingEquiv`, not a bundled `K`-algebra
-equivalence; and the general sheaf-transfer lemma is formalised only in its
-specialized finite-jet instance.  None affects the final finite-jet endpoint.
+The Pages snapshot contains no orphaned xref knowls.  The build script now
+clears only the generated xref-knowl directory before the PreTeXt web build,
+so a withdrawn theorem or equation cannot survive as a stale standalone
+page.
+
+The claim audit found several scope distinctions, now stated explicitly in
+the appendix: Lean proves the unit-ball/Gauss-norm specialization of Lemma
+5.1; the chart is exported as a bicontinuous `RingEquiv`, not a bundled
+`K`-algebra equivalence; the constant-series map is explicit rather than an
+`Algebra K` instance; and the general sheaf-transfer lemma is formalised only
+in its specialized finite-jet instance.  For the second example, the Lean
+small-perturbation theorem is the norm-unit-ball specialization used in the
+argument.  None of these distinctions affects the completed finite-jet or
+weighted-parity sheafiness endpoints.
 
 For the weighted-parity example, the audit separates the completed statements
 from the remaining reducedness argument.  Lean proves sheafiness for every
