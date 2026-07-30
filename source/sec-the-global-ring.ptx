@@ -2,8 +2,8 @@
 <section xml:id="sec-the-global-ring">
   <title>The global ring</title>
   <p>
-    In this section we identify the finite-jet algebra with a concrete support
-subring and prove that it is a complete uniform domain.  Recall that
+    In this section we identify the finite-jet algebra with a concrete subring of
+<m>C</m> and prove that it is a complete uniform domain.  Recall that
 <me>L_0=k^\circ\langle W,W^{-1}\rangle,
   \qquad
   B_0=k^\circ\langle W,Q\rangle/(Q^2),</me>
@@ -39,7 +39,7 @@ In fact, the chosen rings of definition already make the integral row exact, so 
   </p>
   <p>
     The map <m>B_0\to D_0</m> is injective.  Projection to <m>C_0</m> therefore identifies <m>A_0</m> with the subring
-    <men xml:id="eq-support-A0">A_0=
+    <men xml:id="eq-coefficient-A0">A_0=
   \left\{
   f_0(W)+Qf_1(W)+Q^2h(W,W^{-1},Q):
   f_0,f_1\in k^\circ\langle W\rangle,
@@ -94,7 +94,9 @@ This is a domain, so the product of the reductions is nonzero.  This proves
 <xref ref="eq-additive-order"/>; in particular, <m>C</m> is a domain.
       </p>
       <p>
-        The support description gives
+        By the preceding coefficient description, <m>A</m> consists of the same restricted
+series as <m>A_0</m>, but with coefficients in <m>k</m>.  Such a series lies in <m>C_0</m>
+precisely when all of its coefficients lie in <m>k^\circ</m>.  Hence
 <me>A_0=A\cap C_0.</me>
 Every element of <m>A_0</m> is power-bounded because <m>A_0</m> is a subring.  Conversely, let <m>a\in A\setminus A_0</m>.  Then <m>\nu(a)&lt;0</m>, and by <xref ref="eq-additive-order"/>,
 <m>\nu(a^n)=n\nu(a)</m>.  Hence the powers of <m>a</m> cannot all lie in any fixed

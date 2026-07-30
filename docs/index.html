@@ -370,15 +370,15 @@ E_\alpha\cong T_E/\overline{I_{E,\alpha}}.\tag{2.3}
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The global ring</span>
 </h2>
 <div class="para logical" id="sec-the-global-ring-2">
-<div class="para">In this section we identify the finite-jet algebra with a concrete support subring and prove that it is a complete uniform domain.  Recall that</div>
-<div class="displaymath process-math" id="sec-the-global-ring-2-1">
+<div class="para">In this section we identify the finite-jet algebra with a concrete subring of <span class="process-math">\(C\)</span> and prove that it is a complete uniform domain.  Recall that</div>
+<div class="displaymath process-math" id="sec-the-global-ring-2-2">
 \begin{equation*}
 L_0=k^\circ\langle W,W^{-1}\rangle,
 \qquad
 B_0=k^\circ\langle W,Q\rangle/(Q^2),
 \end{equation*}
 </div>
-<div class="displaymath process-math" id="sec-the-global-ring-2-2">
+<div class="displaymath process-math" id="sec-the-global-ring-2-3">
 \begin{equation*}
 C_0=L_0\langle Q\rangle,
 \qquad
@@ -386,13 +386,13 @@ D_0=L_0\langle Q\rangle/(Q^2),
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(k^\circ\langle W,W^{-1}\rangle\)</span> denotes <span class="process-math">\(k^\circ\langle W,V\rangle/(WV-1)\text{.}\)</span>  The natural maps <span class="process-math">\(B_0\to D_0\)</span> and <span class="process-math">\(C_0\onto D_0\)</span> define</div>
-<div class="displaymath process-math" id="sec-the-global-ring-2-7">
+<div class="displaymath process-math" id="sec-the-global-ring-2-8">
 \begin{equation*}
 A_0=B_0\times_{D_0}C_0.
 \end{equation*}
 </div>
 <div class="para">We write</div>
-<div class="displaymath process-math" id="sec-the-global-ring-2-8">
+<div class="displaymath process-math" id="sec-the-global-ring-2-9">
 \begin{equation*}
 A=A_0[1/\varpi],\quad
 L=L_0[1/\varpi],\quad
@@ -433,7 +433,7 @@ B&amp;\longrightarrow&amp;D.
 </div>
 <div class="para logical" id="sec-the-global-ring-4">
 <div class="para">The map <span class="process-math">\(B_0\to D_0\)</span> is injective.  Projection to <span class="process-math">\(C_0\)</span> therefore identifies <span class="process-math">\(A_0\)</span> with the subring</div>
-<div class="displaymath process-math" id="eq-support-A0">
+<div class="displaymath process-math" id="eq-coefficient-A0">
 \begin{equation}
 A_0=
 \left\{
@@ -518,8 +518,8 @@ C_0/\varpi C_0\cong\widetilde{k}[W,W^{-1},Q].
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-uniform-domain-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="prop-uniform-domain-7-2">
-<div class="para">The support description gives</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-additive-order.html" id="prop-uniform-domain-7-2-1">
+<div class="para">By the preceding coefficient description, <span class="process-math">\(A\)</span> consists of the same restricted series as <span class="process-math">\(A_0\text{,}\)</span> but with coefficients in <span class="process-math">\(k\text{.}\)</span>  Such a series lies in <span class="process-math">\(C_0\)</span> precisely when all of its coefficients lie in <span class="process-math">\(k^\circ\text{.}\)</span>  Hence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-additive-order.html" id="prop-uniform-domain-7-2-6">
 \begin{equation*}
 A_0=A\cap C_0.
 \end{equation*}
@@ -606,7 +606,7 @@ A[X]/(\varpi X-W)\xrightarrow{\ \sim\ }A.
 G_0=A_0[W/\varpi]\subset A;
 \end{equation*}
 </div>
-<div class="para">it is the ring of definition whose separated <span class="process-math">\(\varpi\)</span>-adic completion defines <span class="process-math">\(A_{\mathrm{in}}\text{.}\)</span>  For <span class="process-math">\(y\in Q^2C_0\)</span> and every <span class="process-math">\(n\geq 0\text{,}\)</span> the support condition gives <span class="process-math">\(W^{-n}y\in A_0\text{.}\)</span>  In <span class="process-math">\(G_0\)</span> one has</div>
+<div class="para">it is the ring of definition whose separated <span class="process-math">\(\varpi\)</span>-adic completion defines <span class="process-math">\(A_{\mathrm{in}}\text{.}\)</span>  If <span class="process-math">\(y\in Q^2C_0\text{,}\)</span> its constant and linear <span class="process-math">\(Q\)</span>-coefficients vanish, so <span class="process-math">\(W^{-n}y\in A_0\)</span> for every <span class="process-math">\(n\geq0\text{.}\)</span>  In <span class="process-math">\(G_0\)</span> one has</div>
 <div class="displaymath process-math" id="eq-infinitely-divisible">
 \begin{equation}
 y=W^n(W^{-n}y)=\varpi^nX^n(W^{-n}y)\in\varpi^nG_0.\tag{4.1}
@@ -618,14 +618,14 @@ y=W^n(W^{-n}y)=\varpi^nX^n(W^{-n}y)\in\varpi^nG_0.\tag{4.1}
 </div>
 <div class="para logical" id="prop-bad-chart-7-2">
 <div class="para">Put</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-support-A0.html" id="prop-bad-chart-7-2-1">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-coefficient-A0.html" id="prop-bad-chart-7-2-1">
 \begin{equation*}
 T_0=k^\circ\langle X,Q\rangle/(Q^2),
 \qquad T=T_0[1/\varpi].
 \end{equation*}
 </div>
-<div class="para">Using the unique expression in <a href="#eq-support-A0" class="xref" data-knowl="./knowl/xref/eq-support-A0.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.2">(3.2)</a>, define</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-support-A0.html" id="prop-bad-chart-7-2-3">
+<div class="para">Using the unique expression in <a href="#eq-coefficient-A0" class="xref" data-knowl="./knowl/xref/eq-coefficient-A0.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.2">(3.2)</a>, define</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-coefficient-A0.html" id="prop-bad-chart-7-2-3">
 \begin{equation*}
 f_0(W)+Qf_1(W)+Q^2h
 \longmapsto
@@ -1042,15 +1042,15 @@ U_2=\{x\in X_A:|1|\leq |W(x)|\},\qquad U=U_1\cup U_2.
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-pushout-diagram-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
 <div class="para logical" id="rem-pushout-diagram-2-4">
-<div class="para">The open subset <span class="process-math">\(U\)</span> is proper.  Use additive valuations with values in <span class="process-math">\(\Gamma=\mathbf Z^3_{\mathrm{lex}}\)</span> and, for a nonzero restricted series in the support description <a href="#eq-monomial-support" class="xref" data-knowl="./knowl/xref/eq-monomial-support.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.3">(3.3)</a>, put</div>
+<div class="para">The open subset <span class="process-math">\(U\)</span> is proper.  Use additive valuations with values in <span class="process-math">\(\Gamma=\mathbf Z^3_{\mathrm{lex}}\)</span> and, for a nonzero restricted series written as in <a href="#eq-monomial-support" class="xref" data-knowl="./knowl/xref/eq-monomial-support.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.3">(3.3)</a>, put</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-monomial-support.html" id="rem-pushout-diagram-2-4-4">
 \begin{equation*}
 v\left(\sum c_{a,b}W^aQ^b\right)
 =\min_{\mathrm{lex}}\{(v_k(c_{a,b}),b,a):c_{a,b}\neq0\}.
 \end{equation*}
 </div>
-<div class="para">Restrictedness makes the minimum exist, and the initial-term argument for the lexicographic monomial order makes <span class="process-math">\(v\)</span> multiplicative.  The support condition makes it nonnegative on <span class="process-math">\(A_0=A^\circ\text{,}\)</span> while <span class="process-math">\(v(\varpi)&gt;0\text{,}\)</span> so it is continuous and defines a point <span class="process-math">\(x\in X_A\text{.}\)</span>  Since</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-monomial-support.html" id="rem-pushout-diagram-2-4-9">
+<div class="para">Restrictedness makes the minimum exist, and the initial-term argument for the lexicographic monomial order makes <span class="process-math">\(v\)</span> multiplicative.  The condition <span class="process-math">\(b\leq1\Rightarrow a\geq0\)</span> defining <span class="process-math">\(S\)</span> makes it nonnegative on <span class="process-math">\(A_0=A^\circ\text{,}\)</span> while <span class="process-math">\(v(\varpi)&gt;0\text{,}\)</span> so it is continuous and defines a point <span class="process-math">\(x\in X_A\text{.}\)</span>  Since</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-monomial-support.html" id="rem-pushout-diagram-2-4-11">
 \begin{equation*}
 v(Q^2)=(0,2,0)&lt;(1,0,0)=v(\varpi),\qquad v(W)=(0,0,1)&gt;0,
 \end{equation*}
@@ -2017,18 +2017,18 @@ abbrev JetA : Type u := ↥(jetSupport K)
 </pre>
 <div class="para logical" id="sec-formalisation-the-finite-jet-example-4">
 <div class="para">The predicate <code class="code-inline tex2jax_ignore">nonnegSubring K</code> cuts out <span class="process-math">\(K\langle W\rangle\)</span> inside <span class="process-math">\(K\langle W,W^{-1}\rangle\text{.}\)</span>  Consequently the carrier condition says that the coefficients of <span class="process-math">\(Q^0\)</span> and <span class="process-math">\(Q^1\)</span> have no negative powers of <span class="process-math">\(W\text{,}\)</span> while the coefficients of <span class="process-math">\(Q^n\)</span> for <span class="process-math">\(n\geq2\)</span> are unrestricted.  Thus <code class="code-inline tex2jax_ignore">JetA K</code> is</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-support-A0.html" id="sec-formalisation-the-finite-jet-example-4-10">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-coefficient-A0.html" id="sec-formalisation-the-finite-jet-example-4-10">
 \begin{equation*}
 \left\{f_0(W)+Qf_1(W)+Q^2h(W,W^{-1},Q)\ \middle|\
 \substack{f_0,f_1\in K\langle W\rangle\\
 h\in L\langle Q\rangle}\right\},
 \end{equation*}
 </div>
-<div class="para">which is the support description of <span class="process-math">\(A\)</span> used in <a href="#eq-support-A0" class="xref" data-knowl="./knowl/xref/eq-support-A0.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.2">(3.2)</a> after inverting <span class="process-math">\(\varpi\text{.}\)</span>
+<div class="para">which is the coefficient description of <span class="process-math">\(A\)</span> in <a href="#eq-coefficient-A0" class="xref" data-knowl="./knowl/xref/eq-coefficient-A0.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.2">(3.2)</a> after inverting <span class="process-math">\(\varpi\text{.}\)</span>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-formalisation-the-finite-jet-example-5">The file also constructs the four maps in the Milnor square and proves <code class="code-inline tex2jax_ignore">milnorRow_exact</code>: every compatible pair in <code class="code-inline tex2jax_ignore">JetB K</code> and <code class="code-inline tex2jax_ignore">JetC K</code> comes from a unique element of <code class="code-inline tex2jax_ignore">JetA K</code>.  This identifies the support subring with <span class="process-math">\(B\times_D C\text{.}\)</span>  The sheaf argument produces the finite-rational-cover condition displayed above:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-formalisation-the-finite-jet-example-5">The file also constructs the four maps in the Milnor square and proves <code class="code-inline tex2jax_ignore">milnorRow_exact</code>: every compatible pair in <code class="code-inline tex2jax_ignore">JetB K</code> and <code class="code-inline tex2jax_ignore">JetC K</code> comes from a unique element of <code class="code-inline tex2jax_ignore">JetA K</code>.  This identifies <code class="code-inline tex2jax_ignore">JetA K</code> with <span class="process-math">\(B\times_D C\text{.}\)</span>  The sheaf argument produces the finite-rational-cover condition displayed above:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <pre class="code-block tex2jax_ignore clipboardable">    include ϖ hK₀ in
 theorem isSheafy_JetA :

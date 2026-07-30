@@ -250,8 +250,8 @@ standard quotient presentation of rational localisation; see
 
 \section{The global ring}
 
-In this section we identify the finite-jet algebra with a concrete support
-subring and prove that it is a complete uniform domain.  Recall that
+In this section we identify the finite-jet algebra with a concrete subring of
+$C$ and prove that it is a complete uniform domain.  Recall that
 \[
   L_0=k^\circ\langle W,W^{-1}\rangle,
   \qquad
@@ -300,7 +300,7 @@ In fact, the chosen rings of definition already make the integral row exact, so 
 
 
 The map $B_0\to D_0$ is injective.  Projection to $C_0$ therefore identifies $A_0$ with the subring
-\begin{equation}\label{eq:support-A0}
+\begin{equation}\label{eq:coefficient-A0}
   A_0=
   \left\{
   f_0(W)+Qf_1(W)+Q^2h(W,W^{-1},Q):
@@ -362,7 +362,9 @@ $c,c'\in C_0\setminus\varpi C_0$.  Their reductions are nonzero elements of
 This is a domain, so the product of the reductions is nonzero.  This proves
 \eqref{eq:additive-order}; in particular, $C$ is a domain.
 
-The support description gives
+By the preceding coefficient description, $A$ consists of the same restricted
+series as $A_0$, but with coefficients in $k$.  Such a series lies in $C_0$
+precisely when all of its coefficients lie in $k^\circ$.  Hence
 \[
   A_0=A\cap C_0.
 \]
@@ -430,8 +432,9 @@ Under this identification,
   G_0=A_0[W/\varpi]\subset A;
 \]
 it is the ring of definition whose separated $\varpi$-adic completion
-defines $A_{\mathrm{in}}$.  For $y\in Q^2C_0$ and every $n\geq 0$, the
-support condition gives $W^{-n}y\in A_0$.  In $G_0$ one has
+defines $A_{\mathrm{in}}$.  If $y\in Q^2C_0$, its constant and linear
+$Q$-coefficients vanish, so $W^{-n}y\in A_0$ for every $n\geq0$.  In $G_0$
+one has
 \begin{equation}\label{eq:infinitely-divisible}
   y=W^n(W^{-n}y)=\varpi^nX^n(W^{-n}y)\in\varpi^nG_0.
 \end{equation}
@@ -442,7 +445,7 @@ Put
   T_0=k^\circ\langle X,Q\rangle/(Q^2),
   \qquad T=T_0[1/\varpi].
 \]
-Using the unique expression in \eqref{eq:support-A0}, define
+Using the unique expression in \eqref{eq:coefficient-A0}, define
 \[
   f_0(W)+Qf_1(W)+Q^2h
   \longmapsto
@@ -792,12 +795,18 @@ This does not make it a pushout in the category of all adic spaces: there the sa
 \]
 The map $X_B\to X_A$ factors through $U_1$, because $Q^2=0$ in $B$, while $X_C\to X_A$ factors through $U_2$, because both $W$ and $W^{-1}$ are power-bounded in $C$ and hence $|W|=1$ on $X_C$.
 
-The open subset $U$ is proper.  Use additive valuations with values in $\Gamma=\mathbf Z^3_{\mathrm{lex}}$ and, for a nonzero restricted series in the support description \eqref{eq:monomial-support}, put
+The open subset $U$ is proper.  Use additive valuations with values in
+$\Gamma=\mathbf Z^3_{\mathrm{lex}}$ and, for a nonzero restricted series
+written as in \eqref{eq:monomial-support}, put
 \[
  v\left(\sum c_{a,b}W^aQ^b\right)
  =\min_{\mathrm{lex}}\{(v_k(c_{a,b}),b,a):c_{a,b}\neq0\}.
 \]
-Restrictedness makes the minimum exist, and the initial-term argument for the lexicographic monomial order makes $v$ multiplicative.  The support condition makes it nonnegative on $A_0=A^\circ$, while $v(\varpi)>0$, so it is continuous and defines a point $x\in X_A$.  Since
+Restrictedness makes the minimum exist, and the initial-term argument for the
+lexicographic monomial order makes $v$ multiplicative.  The condition
+$b\leq1\Rightarrow a\geq0$ defining $S$ makes it nonnegative on
+$A_0=A^\circ$, while $v(\varpi)>0$, so it is continuous and defines a point
+$x\in X_A$.  Since
 \[
  v(Q^2)=(0,2,0)<(1,0,0)=v(\varpi),\qquad v(W)=(0,0,1)>0,
 \]
@@ -1695,13 +1704,13 @@ unrestricted.  Thus \texttt{JetA K} is
     \substack{f_0,f_1\in K\langle W\rangle\\
               h\in L\langle Q\rangle}\right\},
 \]
-which is the support description of $A$ used in \cref{eq:support-A0} after
-inverting $\varpi$.
+which is the coefficient description of $A$ in
+\cref{eq:coefficient-A0} after inverting $\varpi$.
 
 The file also constructs the four maps in the Milnor square and proves
 \texttt{milnorRow\_exact}: every compatible pair in
 \texttt{JetB K} and \texttt{JetC K} comes from a unique element of
-\texttt{JetA K}.  This identifies the support subring with
+\texttt{JetA K}.  This identifies \texttt{JetA K} with
 $B\times_D C$.  The sheaf argument produces the finite-rational-cover
 condition displayed above:
 

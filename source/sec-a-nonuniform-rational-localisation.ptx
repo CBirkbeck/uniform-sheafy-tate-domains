@@ -39,8 +39,9 @@ canonical isomorphism
 Under this identification,
 <me>G_0=A_0[W/\varpi]\subset A;</me>
 it is the ring of definition whose separated <m>\varpi</m>-adic completion
-defines <m>A_{\mathrm{in}}</m>.  For <m>y\in Q^2C_0</m> and every <m>n\geq 0</m>, the
-support condition gives <m>W^{-n}y\in A_0</m>.  In <m>G_0</m> one has
+defines <m>A_{\mathrm{in}}</m>.  If <m>y\in Q^2C_0</m>, its constant and linear
+<m>Q</m>-coefficients vanish, so <m>W^{-n}y\in A_0</m> for every <m>n\geq0</m>.  In <m>G_0</m>
+one has
         <men xml:id="eq-infinitely-divisible">y=W^n(W^{-n}y)=\varpi^nX^n(W^{-n}y)\in\varpi^nG_0.</men>
         Thus <m>Q^2C_0</m> maps to zero in the separated completion.  After multiplying by a suitable power of <m>\varpi</m>, the same conclusion holds for every element of <m>Q^2C</m>.
       </p>
@@ -48,7 +49,7 @@ support condition gives <m>W^{-n}y\in A_0</m>.  In <m>G_0</m> one has
         Put
 <me>T_0=k^\circ\langle X,Q\rangle/(Q^2),
   \qquad T=T_0[1/\varpi].</me>
-Using the unique expression in <xref ref="eq-support-A0"/>, define
+Using the unique expression in <xref ref="eq-coefficient-A0"/>, define
 <me>f_0(W)+Qf_1(W)+Q^2h
   \longmapsto
   f_0(\varpi X)+Qf_1(\varpi X).</me>
