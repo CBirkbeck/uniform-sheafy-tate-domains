@@ -15,6 +15,8 @@
     .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
              letter-spacing: .06em; }
     .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
     pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
            background: color-mix(in srgb, CanvasText 7%, Canvas); }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -30,7 +32,9 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">theorem</div>
   <h1>FiniteJetOver.StrictLoc.loc_row_exact</h1>
-  <div class="doc"><div class="lean-doc"><p>Algebraic exactness of the localized row: the pullback description of <code>𝓐_α</code><br>([FJP] (4.20)).</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For every rational datum, the sequence <code>0 → A_α → B_α ⊕ C_α → D_α → 0</code> is algebraically exact.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>Algebraic exactness of the localized row: the pullback description of <code>𝓐_α</code><br>([FJP] (4.20)).</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Proposition 5.3 (exact row)</p>
   <pre><code>theorem loc_row_exact (ϖ : Uniformizer K) (hK₀ : IsNoetherianRing (unitBall K))
     (hspan : Ideal.span ({g} ∪ Set.range f) = ⊤)

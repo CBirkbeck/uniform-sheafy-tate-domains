@@ -15,6 +15,8 @@
     .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
              letter-spacing: .06em; }
     .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
     pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
            background: color-mix(in srgb, CanvasText 7%, Canvas); }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -30,7 +32,9 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">theorem</div>
   <h1>ValuationSpectrum.isSheafOfTopologicalRings_iff_isLimitSheaf</h1>
-  <div class="doc"><div class="lean-doc"><p><strong>Wedhorn Remark 8.20</strong> for the all-open structure presheaf: the representable<br>condition (&quot;for every topological ring <code>T</code>, <code>Hom(T, 𝒪_X(−))</code> is a sheaf of sets&quot;) is<br>equivalent to the concrete pair (ring-sheaf axioms) + (topological embedding into the<br>cover product), i.e. to <code>IsLimitSheaf</code>.</p><p><code>⟸</code> is <code>IsLimitSheaf.homGlue</code>. For <code>⟹</code>: the element-level axioms are recovered by<br>testing along the discrete polynomial ring <code>ULift ℤ[X]</code> (an element is the image of<br><code>X</code>; homomorphisms from a discrete ring are continuous); the embedding condition is<br>recovered by testing along <code>𝒪_X(V)</code> itself re-topologized with the topology induced<br>from <code>∏ᵢ 𝒪_X(Uᵢ)</code> — the glued homomorphism against the identity&#x27;s restriction family<br>is the identity (by uniqueness), which is exactly continuity of<br><code>(𝒪_X(V), induced) → (𝒪_X(V), projective)</code>.</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>Wedhorn’s representable condition <code>IsSheafOfTopologicalRings A</code> is equivalent to separation, gluing and the topological-embedding condition for the all-open structure presheaf, namely <code>IsLimitSheaf A</code>.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>Wedhorn Remark 8.20</strong> for the all-open structure presheaf: the representable<br>condition (&quot;for every topological ring <code>T</code>, <code>Hom(T, 𝒪_X(−))</code> is a sheaf of sets&quot;) is<br>equivalent to the concrete pair (ring-sheaf axioms) + (topological embedding into the<br>cover product), i.e. to <code>IsLimitSheaf</code>.</p><p><code>⟸</code> is <code>IsLimitSheaf.homGlue</code>. For <code>⟹</code>: the element-level axioms are recovered by<br>testing along the discrete polynomial ring <code>ULift ℤ[X]</code> (an element is the image of<br><code>X</code>; homomorphisms from a discrete ring are continuous); the embedding condition is<br>recovered by testing along <code>𝒪_X(V)</code> itself re-topologized with the topology induced<br>from <code>∏ᵢ 𝒪_X(Uᵢ)</code> — the glued homomorphism against the identity&#x27;s restriction family<br>is the identity (by uniqueness), which is exactly continuity of<br><code>(𝒪_X(V), induced) → (𝒪_X(V), projective)</code>.</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Appendix: equivalence with Wedhorn&#x27;s formulation</p>
   <pre><code>theorem isSheafOfTopologicalRings_iff_isLimitSheaf :
     IsSheafOfTopologicalRings A ↔ IsLimitSheaf A</code></pre>

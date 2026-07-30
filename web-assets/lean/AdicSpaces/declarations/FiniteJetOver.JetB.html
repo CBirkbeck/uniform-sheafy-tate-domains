@@ -15,6 +15,8 @@
     .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
              letter-spacing: .06em; }
     .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
     pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
            background: color-mix(in srgb, CanvasText 7%, Canvas); }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -30,7 +32,9 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">abbrev</div>
   <h1>FiniteJetOver.JetB</h1>
-  <div class="doc"><div class="lean-doc"><p><code>𝓑 = K⟨W,Q⟩/(Q²)</code>, modelled as dual numbers over the vendored <code>K⟨W⟩</code> ([FJP] (1.4)<br>with Lemma 2.2&#x27;s isometric max-norm decomposition <code>k⟨W⟩ ⊕ Q·k⟨W⟩</code>).</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p><code>JetB K</code> is <code>𝓑 = K⟨W,Q⟩/(Q²)</code>, represented in Lean as the dual numbers over <code>K⟨W⟩</code>.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><code>𝓑 = K⟨W,Q⟩/(Q²)</code>, modelled as dual numbers over the vendored <code>K⟨W⟩</code> ([FJP] (1.4)<br>with Lemma 2.2&#x27;s isometric max-norm decomposition <code>k⟨W⟩ ⊕ Q·k⟨W⟩</code>).</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Appendix: finite-jet Milnor square</p>
   <pre><code>abbrev JetB : Type u := DualNumber (PowerSeries.Restricted K (1 : ℝ))</code></pre>
   <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/Over/JetRings.lean:67–67</code><br>

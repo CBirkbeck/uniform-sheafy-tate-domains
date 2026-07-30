@@ -15,6 +15,8 @@
     .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
              letter-spacing: .06em; }
     .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
     pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
            background: color-mix(in srgb, CanvasText 7%, Canvas); }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -30,7 +32,9 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">theorem</div>
   <h1>FiniteJetOver.milnorRow_exact</h1>
-  <div class="doc"><div class="lean-doc"><p>Exactness in the middle with uniqueness: a compatible pair <code>(b, c)</code> comes from a unique<br>element of 𝓐 ([FJP] Prop 2.1: &quot;Its kernel is the algebraic pullback (1.6)&quot;).</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For every pair <code>(b,c) ∈ 𝓑 × 𝓒</code> with the same image in <code>𝓓</code>, there is a unique <code>a ∈ 𝓐</code> mapping to <code>(b,c)</code>. Hence <code>𝓐 ≅ 𝓑 ×_𝓓 𝓒</code>.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>Exactness in the middle with uniqueness: a compatible pair <code>(b, c)</code> comes from a unique<br>element of 𝓐 ([FJP] Prop 2.1: &quot;Its kernel is the algebraic pullback (1.6)&quot;).</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Appendix: exactness of the Milnor row</p>
   <pre><code>theorem milnorRow_exact (b : JetB K) (c : JetC K) (h : rhoB K b = rhoC K c) :
     ∃! a : JetA K, jB K a = b ∧ iotaC K a = c</code></pre>

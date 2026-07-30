@@ -15,6 +15,8 @@
     .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
              letter-spacing: .06em; }
     .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
     pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
            background: color-mix(in srgb, CanvasText 7%, Canvas); }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -30,7 +32,9 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">theorem</div>
   <h1>FiniteJetOver.StrictLoc.ideal_row_surjective</h1>
-  <div class="doc"><div class="lean-doc"><p>Right strict surjectivity of the ideal row ([FJP] (4.11)).</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>The map <code>I_B ⊕ I_C → I_D</code> is surjective. Its proof also gives a uniform bounded-denominator lift, which is the right-hand strictness assertion in Lemma 5.2.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>Right strict surjectivity of the ideal row ([FJP] (4.11)).</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Lemma 5.2 (surjectivity of the ideal row)</p>
   <pre><code>theorem ideal_row_surjective (ϖ : Uniformizer K) (hK₀ : IsNoetherianRing (unitBall K))
     (hspan : Ideal.span ({g} ∪ Set.range f) = ⊤) :

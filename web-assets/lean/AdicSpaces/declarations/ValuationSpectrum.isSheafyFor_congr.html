@@ -15,6 +15,8 @@
     .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
              letter-spacing: .06em; }
     .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
     pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
            background: color-mix(in srgb, CanvasText 7%, Canvas); }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -30,7 +32,9 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">theorem</div>
   <h1>ValuationSpectrum.isSheafyFor_congr</h1>
-  <div class="doc"><div class="lean-doc"><p><strong>Genuine <code>A⁺</code>-independence of pair-level sheafiness</strong> (Kedlaya Remark 1.6.9),<br><strong>unconditional</strong> in complete Tate scope: any two valid rings of integral elements<br>give equivalent pair-level sheafiness. No inclusion/equality/common pair, no<br><code>CompatiblePlusSubring</code>, no noetherianity.</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>Any two rings of integral elements in the same complete Tate ring give equivalent pair-level sheafiness conditions.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>Genuine <code>A⁺</code>-independence of pair-level sheafiness</strong> (Kedlaya Remark 1.6.9),<br><strong>unconditional</strong> in complete Tate scope: any two valid rings of integral elements<br>give equivalent pair-level sheafiness. No inclusion/equality/common pair, no<br><code>CompatiblePlusSubring</code>, no noetherianity.</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Appendix: independence of the plus ring</p>
   <pre><code>theorem isSheafyFor_congr (Aplus Bplus : RingOfIntegralElements A) :
     IsSheafyFor A Aplus ↔ IsSheafyFor A Bplus</code></pre>

@@ -15,6 +15,8 @@
     .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
              letter-spacing: .06em; }
     .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
     pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
            background: color-mix(in srgb, CanvasText 7%, Canvas); }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -30,7 +32,9 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">theorem</div>
   <h1>FiniteJetOver.StrictLoc.isClosed_IA</h1>
-  <div class="doc"><div class="lean-doc"><p><code>I_𝓐</code> is closed in <code>P_𝓐</code> ([FJP] Lemma 4.3: &quot;Consequently <code>I_R</code> is closed in <code>P_R</code>&quot;).</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>The relation ideal <code>I_A = (gT_i-f_i)_i</code> is closed in <code>T_A</code>.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><code>I_𝓐</code> is closed in <code>P_𝓐</code> ([FJP] Lemma 4.3: &quot;Consequently <code>I_R</code> is closed in <code>P_R</code>&quot;).</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Lemma 5.2 (closed defining ideal)</p>
   <pre><code>theorem isClosed_IA (ϖ : Uniformizer K) (hK₀ : IsNoetherianRing (unitBall K))
     (hspan : Ideal.span ({g} ∪ Set.range f) = ⊤) :

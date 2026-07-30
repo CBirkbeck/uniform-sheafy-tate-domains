@@ -15,6 +15,8 @@
     .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
              letter-spacing: .06em; }
     .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
     pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
            background: color-mix(in srgb, CanvasText 7%, Canvas); }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -30,7 +32,9 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">theorem</div>
   <h1>FiniteJetOver.finiteJet_isSheafyTateRing</h1>
-  <div class="doc"><div class="lean-doc"><p><strong>The pinching algebra is sheafy in the ring-level Tate sense</strong> (Wedhorn Definition<br>8.26 at Tate scope; layer 1): every ring of integral elements of every completion model of<br><code>𝓐 = JetA K</code> gives a sheafy pair. Formal consequence of the all-pairs complete-ring<br>sheafiness through <code>isSheafyTateRing_iff_isSheafyComplete</code>. No noetherian or strongly<br>noetherian hypotheses are available or used.</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>Choose a uniformizer of <code>K</code> and suppose that the unit ball of <code>K</code> is noetherian. Then every completion model of <code>𝓐</code> is sheafy for every ring of integral elements.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>The pinching algebra is sheafy in the ring-level Tate sense</strong> (Wedhorn Definition<br>8.26 at Tate scope; layer 1): every ring of integral elements of every completion model of<br><code>𝓐 = JetA K</code> gives a sheafy pair. Formal consequence of the all-pairs complete-ring<br>sheafiness through <code>isSheafyTateRing_iff_isSheafyComplete</code>. No noetherian or strongly<br>noetherian hypotheses are available or used.</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Appendix: Tate-ring endpoint</p>
   <pre><code>theorem finiteJet_isSheafyTateRing (ϖ : Uniformizer K)
     (hK₀ : IsNoetherianRing (unitBall K)) :
