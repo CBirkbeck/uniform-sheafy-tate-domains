@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ValuationSpectrum.presheafValue · Lean source</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font: 16px/1.55 system-ui, sans-serif; }
+    main { max-width: 72rem; margin: 0 auto; padding: 2rem 1.2rem 4rem; }
+    nav { margin-bottom: 1.5rem; }
+    a { color: #176b43; }
+    @media (prefers-color-scheme: dark) { a { color: #84d8aa; } }
+    h1 { overflow-wrap: anywhere; font: 650 1.45rem/1.25 ui-monospace, monospace; }
+    .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
+             letter-spacing: .06em; }
+    .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
+    pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
+           background: color-mix(in srgb, CanvasText 7%, Canvas); }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .meta, .used-for { color: color-mix(in srgb, CanvasText 70%, Canvas);
+                        font-size: .9rem; }
+    .provenance { margin-top: 2rem; padding-top: 1rem;
+                   border-top: 1px solid color-mix(in srgb, CanvasText 18%, Canvas);
+                   font-size: .9rem; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../../../paper.html">← Return to the paper</a></nav>
+  <div class="kind">def</div>
+  <h1>ValuationSpectrum.presheafValue</h1>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For a rational datum <code>D = (T/s)</code>, <code>presheafValue D</code> is <code>𝒪_X(R(T/s)) = A⟨T/s⟩</code>: the completion of <code>A[1/s]</code> for the rational-localisation topology determined by the fractions <code>t/s</code>, with <code>t ∈ T</code>. It is the section ring assigned to that rational subset.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>The presheaf value <code>𝒪_X(R(T/s)) := A⟨T/s⟩</code>, the completion of<br><code>Localization.Away s</code> with the localization topology<br>(§8.1, eq. 8.1.1 of Wedhorn).</p></div></details>
+  <p class="used-for"><strong>Used in the paper for:</strong> Appendix: sections on a rational domain</p>
+  <pre><code>noncomputable def presheafValue (D : RationalLocData A) : Type _ :=
+  @UniformSpace.Completion (Localization.Away D.s) D.uniformSpace</code></pre>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/Presheaf.lean:296–297</code><br>
+  AINTLIB commit <code>b007a4f3d4226f00a684b402715aa542e2f0bcdc</code>.</p>
+  <p class="meta">This is the archival declaration extracted from the pinned
+  source tree.  The corresponding AINTLIB commit was not publicly reachable
+  when this page was built, so no external upstream link is offered here.</p>
+  <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
+  The finite-jet development uses restricted power-series code adapted from
+  <a href="https://github.com/WilliamCoram/PhD">William Coram's PhD repository</a>;
+  the vendored source headers also credit Bingyu Xia for power-series equivalence
+  lemmas.  This is infrastructure provenance, not an attribution of this
+  paper-specific declaration.</aside>
+</main>
+</body>
+</html>

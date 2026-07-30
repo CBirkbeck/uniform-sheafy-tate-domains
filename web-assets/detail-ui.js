@@ -518,6 +518,30 @@
     document.documentElement.setAttribute(
       "data-paperforge-lean-knowls-wired", "");
     var REG = window.PAPERFORGE_LEAN_KNOWLS || {};
+    // The theorem crosswalk already emits Lean badges.  The appendix instead
+    // contains ordinary links to declaration pages.  Upgrade those links when
+    // the declaration is in the local registry, so a click opens the same
+    // inline knowl while modified clicks still open the standalone page.
+    document.querySelectorAll(
+      'a[href*="/lean/AdicSpaces/declarations/"]'
+    ).forEach(function (a) {
+      if (a.classList.contains("lean-link")) return;
+      var href = a.getAttribute("href") || "";
+      var match = /\/lean\/AdicSpaces\/declarations\/([^/?#]+)\.html(?:[?#].*)?$/
+        .exec(href);
+      if (!match) return;
+      var decl;
+      try {
+        decl = decodeURIComponent(match[1]);
+      } catch (_err) {
+        return;
+      }
+      if (!REG[decl]) return;
+      a.classList.add("lean-link", "lean-inline-link", "lean-proj-AdicSpaces");
+      a.setAttribute("data-lean-ref", decl);
+      a.setAttribute("data-lean-project", "AdicSpaces");
+      a.title = "Lean declaration " + decl;
+    });
     // The registry is generated FROM the built docs, so when it is present
     // a badge it lacks has no doc page (private decl, doc-gen4 gap): its
     // find-resolver link would 404. Degrade those to inert pills. Without

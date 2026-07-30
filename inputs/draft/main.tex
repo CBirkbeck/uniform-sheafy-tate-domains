@@ -54,7 +54,7 @@
 \newcommand{\onto}{\twoheadrightarrow}
 
 \title{Uniform sheafy Tate domains that are not stably uniform}
-\author{Anonymous}
+\author{Christopher Birkbeck}
 \date{}
 
 \begin{document}
@@ -1364,6 +1364,16 @@ The finite-jet proof first establishes a condition on finite rational covers.
 Its historical internal class is \texttt{IsSheafy}, in the
 \texttt{ValuationSpectrum} namespace and defined in
 \href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.IsSheafy.html}{\texttt{StructureSheaf.lean}}.
+Here
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.RationalCoveringData.html}{\texttt{RationalCoveringData A}}
+consists of a rational datum for the base and finitely many data whose rational
+subsets cover it.  The separate condition
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.RationalCoveringData.IsRational.html}{\texttt{C.IsRational}}
+says that the numerator set in the base and in each member of the cover
+generates an open ideal.  For a Tate ring this is equivalent to generating the
+unit ideal.  Finally,
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.presheafValue.html}{\texttt{presheafValue D}}
+is the completed rational localisation $A\langle T/s\rangle$ attached to $D$.
 
 \begin{lstlisting}
 class IsSheafy (A : Type u) [CommRing A] [TopologicalSpace A]
@@ -1394,10 +1404,22 @@ identifies this with the usual compatibility on pairwise intersections.  Thus
 \texttt{IsSheafy A} is the topological sheaf condition on the rational basis.
 
 For an arbitrary open subset $V\subseteq\Spa(A,A^+)$,
-\texttt{limitSections V} is the projective limit of the sections over the
-rational subdomains contained in $V$.  The corresponding all-open condition is
-\texttt{IsLimitSheaf}, from
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.limitSections.html}{\texttt{limitSections V}}
+is the ring of compatible sections over the rational subdomains contained in
+$V$, or equivalently their projective limit.  If $W\subseteq V$, then
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.limitRestrict.html}{\texttt{limitRestrict}}
+is the map $\mathcal O_X(V)\to\mathcal O_X(W)$ obtained by reindexing this
+family.  The corresponding all-open condition is \texttt{IsLimitSheaf}, from
 \href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.IsLimitSheaf.html}{\texttt{SheafyPair.lean}}.
+
+The class
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.HasLocLiftPowerBounded.html}{\texttt{HasLocLiftPowerBounded}}
+is used internally to construct the restriction maps between completed
+rational localisations.  For an inclusion $R(D')\subseteq R(D)$, it says that
+the denominator of $D$ becomes a unit on $R(D')$ and that the fractions
+$t/s$, for $t$ in the numerator set of $D$, are power-bounded there.  This
+class is supplied automatically for the complete Huber rings considered here;
+it is not an additional hypothesis in our results.
 
 \begin{lstlisting}
 structure IsLimitSheaf (A : Type u) [CommRing A] [TopologicalSpace A]
@@ -1445,8 +1467,11 @@ converse is restriction to rational covers.  The
 \href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.isSheafOfTopologicalRings_iff_isLimitSheaf.html}{structure-presheaf equivalence}
 identifies \texttt{IsLimitSheaf A} with
 Wedhorn's topological-ring formulation \cite[Remark~8.20]{Wedhorn}.
-Mathlib's ordinary categorical sheaf predicate is weaker because it does not
-record the topology.
+The development also proves Mathlib's categorical sheaf predicate for its
+\texttt{CompleteTopCommRingCat}-valued presheaf.  This predicate does record
+the topology, since its morphisms are continuous; Wedhorn's formulation
+instead tests against all topological rings, rather than only complete
+separated ones.
 
 For a complete Tate ring the following definitions fix a ring of integral
 elements and then remove the choices of plus ring and completion.  They are in

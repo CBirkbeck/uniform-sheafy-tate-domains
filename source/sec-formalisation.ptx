@@ -26,6 +26,16 @@ records the Lean and mathlib versions, the build, and the axiom checks.
 Its historical internal class is <c>IsSheafy</c>, in the
 <c>ValuationSpectrum</c> namespace and defined in
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.IsSheafy.html"><c>StructureSheaf.lean</c></url>.
+Here
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.RationalCoveringData.html"><c>RationalCoveringData A</c></url>
+consists of a rational datum for the base and finitely many data whose rational
+subsets cover it.  The separate condition
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.RationalCoveringData.IsRational.html"><c>C.IsRational</c></url>
+says that the numerator set in the base and in each member of the cover
+generates an open ideal.  For a Tate ring this is equivalent to generating the
+unit ideal.  Finally,
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.presheafValue.html"><c>presheafValue D</c></url>
+is the completed rational localisation <m>A\langle T/s\rangle</m> attached to <m>D</m>.
     </p>
     <pre>
     class IsSheafy (A : Type u) [CommRing A] [TopologicalSpace A]
@@ -57,10 +67,23 @@ identifies this with the usual compatibility on pairwise intersections.  Thus
     </p>
     <p>
       For an arbitrary open subset <m>V\subseteq\Spa(A,A^+)</m>,
-<c>limitSections V</c> is the projective limit of the sections over the
-rational subdomains contained in <m>V</m>.  The corresponding all-open condition is
-<c>IsLimitSheaf</c>, from
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.limitSections.html"><c>limitSections V</c></url>
+is the ring of compatible sections over the rational subdomains contained in
+<m>V</m>, or equivalently their projective limit.  If <m>W\subseteq V</m>, then
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.limitRestrict.html"><c>limitRestrict</c></url>
+is the map <m>\mathcal O_X(V)\to\mathcal O_X(W)</m> obtained by reindexing this
+family.  The corresponding all-open condition is <c>IsLimitSheaf</c>, from
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.IsLimitSheaf.html"><c>SheafyPair.lean</c></url>.
+    </p>
+    <p>
+      The class
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.HasLocLiftPowerBounded.html"><c>HasLocLiftPowerBounded</c></url>
+is used internally to construct the restriction maps between completed
+rational localisations.  For an inclusion <m>R(D')\subseteq R(D)</m>, it says that
+the denominator of <m>D</m> becomes a unit on <m>R(D')</m> and that the fractions
+<m>t/s</m>, for <m>t</m> in the numerator set of <m>D</m>, are power-bounded there.  This
+class is supplied automatically for the complete Huber rings considered here;
+it is not an additional hypothesis in our results.
     </p>
     <pre>
     structure IsLimitSheaf (A : Type u) [CommRing A] [TopologicalSpace A]
@@ -109,8 +132,11 @@ converse is restriction to rational covers.  The
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.isSheafOfTopologicalRings_iff_isLimitSheaf.html">structure-presheaf equivalence</url>
 identifies <c>IsLimitSheaf A</c> with
 Wedhorn's topological-ring formulation <xref ref="bib-Wedhorn" detail="Remark 8.20"/>.
-Mathlib's ordinary categorical sheaf predicate is weaker because it does not
-record the topology.
+The development also proves Mathlib's categorical sheaf predicate for its
+<c>CompleteTopCommRingCat</c>-valued presheaf.  This predicate does record
+the topology, since its morphisms are continuous; Wedhorn's formulation
+instead tests against all topological rings, rather than only complete
+separated ones.
     </p>
     <p>
       For a complete Tate ring the following definitions fix a ring of integral

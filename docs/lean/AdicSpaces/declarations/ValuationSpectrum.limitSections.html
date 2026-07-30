@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ValuationSpectrum.limitSections · Lean source</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font: 16px/1.55 system-ui, sans-serif; }
+    main { max-width: 72rem; margin: 0 auto; padding: 2rem 1.2rem 4rem; }
+    nav { margin-bottom: 1.5rem; }
+    a { color: #176b43; }
+    @media (prefers-color-scheme: dark) { a { color: #84d8aa; } }
+    h1 { overflow-wrap: anywhere; font: 650 1.45rem/1.25 ui-monospace, monospace; }
+    .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
+             letter-spacing: .06em; }
+    .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
+    pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
+           background: color-mix(in srgb, CanvasText 7%, Canvas); }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .meta, .used-for { color: color-mix(in srgb, CanvasText 70%, Canvas);
+                        font-size: .9rem; }
+    .provenance { margin-top: 2rem; padding-top: 1rem;
+                   border-top: 1px solid color-mix(in srgb, CanvasText 18%, Canvas);
+                   font-size: .9rem; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../../../paper.html">← Return to the paper</a></nav>
+  <div class="kind">def</div>
+  <h1>ValuationSpectrum.limitSections</h1>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For an open <code>V ⊆ Spa(A,A⁺)</code>, <code>limitSections V</code> is the ring of compatible families <code>(x_D)</code>, with <code>x_D ∈ A⟨T_D/s_D⟩</code>, indexed by all rational subdomains <code>R(D) ⊆ V</code>. Compatibility is imposed along every rational containment. It is therefore the concrete projective limit defining <code>𝒪_X(V)</code>, equipped with the projective-limit topology.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>The <strong>compatible families</strong>: elements of the product of the completed rational<br>localizations over <code>RationalIndex V</code> whose coordinates are intertwined by the canonical<br>restriction maps. This is Wedhorn&#x27;s projective limit<br><code>𝒪_X(V) = lim_{R(T/s) ⊆ V} A⟨T/s⟩</code> in its concrete model.</p></div></details>
+  <p class="used-for"><strong>Used in the paper for:</strong> Appendix: sections on an arbitrary open</p>
+  <pre><code>def limitSections (V : TopologicalSpace.Opens ↥(Spa A A⁺)) :
+    Subring (∀ i : RationalIndex V, presheafValue i.D) where
+  carrier := {x | ∀ (i j : RationalIndex V)
+    (h : rationalOpen j.D.T j.D.s ⊆ rationalOpen i.D.T i.D.s),
+    restrictionMap i.D j.D h (x i) = x j}
+  one_mem&#x27; := fun i j h =&gt; by
+    show restrictionMapHom i.D j.D h 1 = 1
+    exact map_one _
+  mul_mem&#x27; := fun {x y} hx hy i j h =&gt; by
+    show restrictionMapHom i.D j.D h (x i * y i) = x j * y j
+    rw [map_mul]
+    exact congrArg₂ (· * ·) (hx i j h) (hy i j h)
+  zero_mem&#x27; := fun i j h =&gt; by
+    show restrictionMapHom i.D j.D h 0 = 0
+    exact map_zero _
+  add_mem&#x27; := fun {x y} hx hy i j h =&gt; by
+    show restrictionMapHom i.D j.D h (x i + y i) = x j + y j
+    rw [map_add]
+    exact congrArg₂ (· + ·) (hx i j h) (hy i j h)
+  neg_mem&#x27; := fun {x} hx i j h =&gt; by
+    show restrictionMapHom i.D j.D h (-x i) = -x j
+    rw [map_neg]
+    exact congrArg Neg.neg (hx i j h)</code></pre>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/StructurePresheafLimit.lean:132–154</code><br>
+  AINTLIB commit <code>b007a4f3d4226f00a684b402715aa542e2f0bcdc</code>.</p>
+  <p class="meta">This is the archival declaration extracted from the pinned
+  source tree.  The corresponding AINTLIB commit was not publicly reachable
+  when this page was built, so no external upstream link is offered here.</p>
+  <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
+  The finite-jet development uses restricted power-series code adapted from
+  <a href="https://github.com/WilliamCoram/PhD">William Coram's PhD repository</a>;
+  the vendored source headers also credit Bingyu Xia for power-series equivalence
+  lemmas.  This is infrastructure provenance, not an attribution of this
+  paper-specific declaration.</aside>
+</main>
+</body>
+</html>

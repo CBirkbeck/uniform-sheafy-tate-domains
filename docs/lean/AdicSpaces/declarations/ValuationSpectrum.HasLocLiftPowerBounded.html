@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ValuationSpectrum.HasLocLiftPowerBounded · Lean source</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font: 16px/1.55 system-ui, sans-serif; }
+    main { max-width: 72rem; margin: 0 auto; padding: 2rem 1.2rem 4rem; }
+    nav { margin-bottom: 1.5rem; }
+    a { color: #176b43; }
+    @media (prefers-color-scheme: dark) { a { color: #84d8aa; } }
+    h1 { overflow-wrap: anywhere; font: 650 1.45rem/1.25 ui-monospace, monospace; }
+    .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
+             letter-spacing: .06em; }
+    .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
+    pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
+           background: color-mix(in srgb, CanvasText 7%, Canvas); }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .meta, .used-for { color: color-mix(in srgb, CanvasText 70%, Canvas);
+                        font-size: .9rem; }
+    .provenance { margin-top: 2rem; padding-top: 1rem;
+                   border-top: 1px solid color-mix(in srgb, CanvasText 18%, Canvas);
+                   font-size: .9rem; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../../../paper.html">← Return to the paper</a></nav>
+  <div class="kind">class</div>
+  <h1>ValuationSpectrum.HasLocLiftPowerBounded</h1>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p><code>HasLocLiftPowerBounded A</code> is an internal interface used to construct restriction maps between completed rational localisations. For <code>R(D′) ⊆ R(D)</code>, it records that the denominator of <code>D</code> becomes a unit in <code>𝒪(R(D′))</code> and that each fraction <code>t/s</code>, for <code>t ∈ T</code>, is power-bounded there. These facts make the localisation map continuous and allow it to extend to the completions. In the complete Huber setting of the paper this class is supplied automatically, so it is not an additional mathematical hypothesis. The status note in the original docstring below is stale: this snapshot already contains the complete-Huber instance.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>The adic Nullstellensatz hypothesis for the presheaf restriction maps: for any<br>rational containment <code>R(D&#x27;.T/D&#x27;.s) ⊆ R(D.T/D.s)</code>, each generator <code>t/D.s</code><br>(for <code>t ∈ D.T</code>) maps to a power-bounded element in the D&#x27;-localization topology<br>under the canonical lift <code>Localization.Away D.s →+* Localization.Away D&#x27;.s</code>.</p><p>This is a consequence of Wedhorn Prop 5.30(4) + 7.14 (adic Nullstellensatz):<br>the rational containment gives <code>v(t) ≤ v(D.s)</code> for all relevant continuous<br>valuations, hence <code>t/D.s</code> is integral over the ring of definition, hence<br>power-bounded.</p><p><strong>Status:</strong> Will be proved as an instance for Tate rings (where the Nullstellensatz<br>is available). For now, carried as an explicit hypothesis via this class.</p></div></details>
+  <p class="used-for"><strong>Used in the paper for:</strong> Appendix: construction of rational restriction maps</p>
+  <pre><code>class HasLocLiftPowerBounded (A : Type*) [CommRing A] [TopologicalSpace A] [PlusSubring A]
+    [IsHuberRing A] : Prop where
+  /-- **(Wedhorn-faithful, blocker-2 refactor 2026-05-17)** `D.s` is a unit
+  **in the completion** `presheafValue D&#x27;`, where `D&#x27;.canonicalMap : A →+*
+  presheafValue D&#x27;` is the natural map.
+
+  This matches Wedhorn 7.52(2) (in a *complete* affinoid ring, `f` is a unit
+  iff `|f|(x) ≠ 0` for every `x ∈ Spa`) applied to the completion. The
+  previous algebraic-side field demanded unit-ness in `Localization.Away D&#x27;.s`,
+  which Wedhorn 7.52(2) cannot directly give (algebraic localizations are not
+  complete in general). -/
+  isUnit_canonicalMap_s : ∀ (D D&#x27; : RationalLocData A),
+    rationalOpen D&#x27;.T D&#x27;.s ⊆ rationalOpen D.T D.s →
+    IsUnit (D&#x27;.canonicalMap D.s)
+  /-- **(Wedhorn-faithful, blocker-2 refactor 2026-05-17)** Each
+  `IsLocalization.Away.lift D.s (...) (divByS t D.s)` (which lands in
+  `presheafValue D&#x27;`) is power-bounded in `presheafValue D&#x27;`.
+
+  Wedhorn-faithful: power-boundedness in the *completion*, derived from
+  Wedhorn 7.41 (analytic height-1 valuations + power-bounded continuity). -/
+  locLift_divByS_isPowerBounded : ∀ (D D&#x27; : RationalLocData A)
+    (h : rationalOpen D&#x27;.T D&#x27;.s ⊆ rationalOpen D.T D.s) (t : A), t ∈ D.T →
+    @TopologicalRing.IsPowerBounded (presheafValue D&#x27;) _ inferInstance
+      (IsLocalization.Away.lift D.s (isUnit_canonicalMap_s D D&#x27; h) (divByS t D.s))</code></pre>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/Presheaf.lean:1569–1592</code><br>
+  AINTLIB commit <code>b007a4f3d4226f00a684b402715aa542e2f0bcdc</code>.</p>
+  <p class="meta">This is the archival declaration extracted from the pinned
+  source tree.  The corresponding AINTLIB commit was not publicly reachable
+  when this page was built, so no external upstream link is offered here.</p>
+  <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
+  The finite-jet development uses restricted power-series code adapted from
+  <a href="https://github.com/WilliamCoram/PhD">William Coram's PhD repository</a>;
+  the vendored source headers also credit Bingyu Xia for power-series equivalence
+  lemmas.  This is infrastructure provenance, not an attribution of this
+  paper-specific declaration.</aside>
+</main>
+</body>
+</html>

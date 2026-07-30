@@ -3,731 +3,736 @@
  "spans": {
   "thm-main": {
    "statement": {
-    "start": 4174,
-    "end": 4481,
+    "start": 4185,
+    "end": 4492,
     "sha": "21c99774e3fc1005"
    },
    "envelope": {
-    "start": 4143,
-    "end": 4494,
+    "start": 4154,
+    "end": 4505,
     "sha": "9fd587eb86952ff9"
    }
   },
   "def-strict-milnor": {
    "statement": {
-    "start": 4825,
-    "end": 5259,
+    "start": 4836,
+    "end": 5270,
     "sha": "50ce81799e15ce98"
    },
    "envelope": {
-    "start": 4782,
-    "end": 5275,
+    "start": 4793,
+    "end": 5286,
     "sha": "1869ad244dd369c2"
    }
   },
   "rem-earlier-work": {
    "statement": {
-    "start": 5800,
-    "end": 7309,
+    "start": 5811,
+    "end": 7320,
     "sha": "ddc38ec5a085da62"
    },
    "envelope": {
-    "start": 5734,
-    "end": 7321,
+    "start": 5745,
+    "end": 7332,
     "sha": "878d6f55301f46c5"
    }
   },
   "prop-uniform-domain": {
    "statement": {
-    "start": 14324,
-    "end": 14447,
+    "start": 14335,
+    "end": 14458,
     "sha": "a594c1c061b1cf79"
    },
    "proof": {
-    "start": 14479,
-    "end": 15950,
+    "start": 14490,
+    "end": 15961,
     "sha": "d548d9dda4704173"
    },
    "proof_envelope": {
-    "start": 14466,
-    "end": 15961,
+    "start": 14477,
+    "end": 15972,
     "sha": "2f7412442a2e2664"
    },
    "envelope": {
-    "start": 14278,
-    "end": 15961,
+    "start": 14289,
+    "end": 15972,
     "sha": "79256de938cd6748"
    }
   },
   "prop-bad-chart": {
    "statement": {
-    "start": 16561,
-    "end": 16733,
+    "start": 16572,
+    "end": 16744,
     "sha": "f38c8531c4d49a82"
    },
    "proof": {
-    "start": 16765,
-    "end": 18684,
+    "start": 16776,
+    "end": 18695,
     "sha": "c397d6d9a949cedb"
    },
    "proof_envelope": {
-    "start": 16752,
-    "end": 18695,
+    "start": 16763,
+    "end": 18706,
     "sha": "c5ca4aa3d24c9816"
    },
    "envelope": {
-    "start": 16520,
-    "end": 18695,
+    "start": 16531,
+    "end": 18706,
     "sha": "41d4bceb561c95c9"
    }
   },
   "prop-not-stably-uniform": {
    "statement": {
-    "start": 18747,
-    "end": 18784,
+    "start": 18758,
+    "end": 18795,
     "sha": "24a78616eabe6054"
    },
    "proof": {
-    "start": 18816,
-    "end": 19197,
+    "start": 18827,
+    "end": 19208,
     "sha": "8f1660c858aee40c"
    },
    "proof_envelope": {
-    "start": 18803,
-    "end": 19208,
+    "start": 18814,
+    "end": 19219,
     "sha": "671eaee79df6a5af"
    },
    "envelope": {
-    "start": 18697,
-    "end": 19208,
+    "start": 18708,
+    "end": 19219,
     "sha": "7656c331a39ce7bc"
    }
   },
   "lem-koszul": {
    "statement": {
-    "start": 20653,
-    "end": 21501,
+    "start": 20664,
+    "end": 21512,
     "sha": "22e0346e2d387a1c"
    },
    "proof": {
-    "start": 21527,
-    "end": 22960,
+    "start": 21538,
+    "end": 22971,
     "sha": "f68cd2749e6fb6ed"
    },
    "proof_envelope": {
-    "start": 21514,
-    "end": 22971,
+    "start": 21525,
+    "end": 22982,
     "sha": "789993b57f8358e3"
    },
    "envelope": {
-    "start": 20622,
-    "end": 22971,
+    "start": 20633,
+    "end": 22982,
     "sha": "719177d0e0e80f8f"
    }
   },
   "lem-graph-pullback": {
    "statement": {
-    "start": 23924,
-    "end": 24219,
+    "start": 23935,
+    "end": 24230,
     "sha": "35c175a016cfe9f0"
    },
    "proof": {
-    "start": 24245,
-    "end": 26338,
+    "start": 24256,
+    "end": 26349,
     "sha": "3248ae45ceddac74"
    },
    "proof_envelope": {
-    "start": 24232,
-    "end": 26349,
+    "start": 24243,
+    "end": 26360,
     "sha": "1a846890d9cf36e0"
    },
    "envelope": {
-    "start": 23885,
-    "end": 26349,
+    "start": 23896,
+    "end": 26360,
     "sha": "e8d03a277cc4ff37"
    }
   },
   "prop-localized-milnor": {
    "statement": {
-    "start": 26399,
-    "end": 26857,
+    "start": 26410,
+    "end": 26868,
     "sha": "0e7691c983705458"
    },
    "proof": {
-    "start": 26889,
-    "end": 29374,
+    "start": 26900,
+    "end": 29385,
     "sha": "82de05fc1895aa59"
    },
    "proof_envelope": {
-    "start": 26876,
-    "end": 29385,
+    "start": 26887,
+    "end": 29396,
     "sha": "6aa909441da38802"
    },
    "envelope": {
-    "start": 26351,
-    "end": 29385,
+    "start": 26362,
+    "end": 29396,
     "sha": "a1065035291cb5a1"
    }
   },
   "thm-sheafy": {
    "statement": {
-    "start": 29442,
-    "end": 29483,
+    "start": 29453,
+    "end": 29494,
     "sha": "2294fac0c15da7e2"
    },
    "proof": {
-    "start": 29511,
-    "end": 31400,
+    "start": 29522,
+    "end": 31411,
     "sha": "d20406af218c2159"
    },
    "proof_envelope": {
-    "start": 29498,
-    "end": 31411,
+    "start": 29509,
+    "end": 31422,
     "sha": "40b4b68fa18a73c5"
    },
    "envelope": {
-    "start": 29409,
-    "end": 31411,
+    "start": 29420,
+    "end": 31422,
     "sha": "ec370c20442456dc"
    }
   },
   "thm-second-example": {
    "statement": {
-    "start": 32067,
-    "end": 32727,
+    "start": 32078,
+    "end": 32738,
     "sha": "5ed94acc3557108a"
    },
    "envelope": {
-    "start": 32026,
-    "end": 32740,
+    "start": 32037,
+    "end": 32751,
     "sha": "34075008874282b4"
    }
   },
   "lem-finite-variable-subrings": {
    "statement": {
-    "start": 34950,
-    "end": 35972,
+    "start": 34961,
+    "end": 35983,
     "sha": "5f234997514c2e57"
    },
    "proof": {
-    "start": 35998,
-    "end": 37064,
+    "start": 36009,
+    "end": 37075,
     "sha": "7bdd434c04ec1ae3"
    },
    "proof_envelope": {
-    "start": 35985,
-    "end": 37075,
+    "start": 35996,
+    "end": 37086,
     "sha": "0c472f8d0ef9e77e"
    },
    "envelope": {
-    "start": 34875,
-    "end": 37075,
+    "start": 34886,
+    "end": 37086,
     "sha": "a42de42f59c48562"
    }
   },
   "prop-parity-uniform-domain": {
    "statement": {
-    "start": 37130,
-    "end": 37260,
+    "start": 37141,
+    "end": 37271,
     "sha": "242e432d58f33dd2"
    },
    "proof": {
-    "start": 37292,
-    "end": 38491,
+    "start": 37303,
+    "end": 38502,
     "sha": "5dcbd7fe688d4082"
    },
    "proof_envelope": {
-    "start": 37279,
-    "end": 38502,
+    "start": 37290,
+    "end": 38513,
     "sha": "1df354dea554170e"
    },
    "envelope": {
-    "start": 37077,
-    "end": 38502,
+    "start": 37088,
+    "end": 38513,
     "sha": "c8ea105e48af2dce"
    }
   },
   "prop-parity-nonnoetherian": {
    "statement": {
-    "start": 38556,
-    "end": 38598,
+    "start": 38567,
+    "end": 38609,
     "sha": "c00c6788daadc13e"
    },
    "proof": {
-    "start": 38630,
-    "end": 39317,
+    "start": 38641,
+    "end": 39328,
     "sha": "2d2a7bdfcc418ea5"
    },
    "proof_envelope": {
-    "start": 38617,
-    "end": 39328,
+    "start": 38628,
+    "end": 39339,
     "sha": "3f947fcf9657f566"
    },
    "envelope": {
-    "start": 38504,
-    "end": 39328,
+    "start": 38515,
+    "end": 39339,
     "sha": "a17d31ea4cc3efad"
    }
   },
   "prop-weighted-chart-identification": {
    "statement": {
-    "start": 40163,
-    "end": 40398,
+    "start": 40174,
+    "end": 40409,
     "sha": "18cbfad0daebabb3"
    },
    "proof": {
-    "start": 40430,
-    "end": 41467,
+    "start": 40441,
+    "end": 41478,
     "sha": "4c8ba90d1650e715"
    },
    "proof_envelope": {
-    "start": 40417,
-    "end": 41478,
+    "start": 40428,
+    "end": 41489,
     "sha": "6bf0db46ad08913e"
    },
    "envelope": {
-    "start": 40102,
-    "end": 41478,
+    "start": 40113,
+    "end": 41489,
     "sha": "8c99342ea8dc901d"
    }
   },
   "prop-weighted-chart-domain-nonuniform": {
    "statement": {
-    "start": 41544,
-    "end": 41609,
+    "start": 41555,
+    "end": 41620,
     "sha": "a9d14ad8886cd851"
    },
    "proof": {
-    "start": 41641,
-    "end": 42717,
+    "start": 41652,
+    "end": 42728,
     "sha": "12f76efc88756cbe"
    },
    "proof_envelope": {
-    "start": 41628,
-    "end": 42728,
+    "start": 41639,
+    "end": 42739,
     "sha": "70010911df12f2f5"
    },
    "envelope": {
-    "start": 41480,
-    "end": 42728,
+    "start": 41491,
+    "end": 42739,
     "sha": "d74044fe077a3133"
    }
   },
   "lem-small-perturbation": {
    "statement": {
-    "start": 42850,
-    "end": 43301,
+    "start": 42861,
+    "end": 43312,
     "sha": "81b229e8fe5cb5be"
    },
    "proof": {
-    "start": 43327,
-    "end": 43561,
+    "start": 43338,
+    "end": 43572,
     "sha": "56837d9ffb14736b"
    },
    "proof_envelope": {
-    "start": 43314,
-    "end": 43572,
+    "start": 43325,
+    "end": 43583,
     "sha": "947e0c4555d06001"
    },
    "envelope": {
-    "start": 42781,
-    "end": 43572,
+    "start": 42792,
+    "end": 43583,
     "sha": "a8ec81b9405eabcc"
    }
   },
   "prop-coefficientwise-localization": {
    "statement": {
-    "start": 44698,
-    "end": 45529,
+    "start": 44709,
+    "end": 45540,
     "sha": "e7083138f1f9c33e"
    },
    "proof": {
-    "start": 45561,
-    "end": 47032,
+    "start": 45572,
+    "end": 47043,
     "sha": "3a06dbe257fcf8d4"
    },
    "proof_envelope": {
-    "start": 45548,
-    "end": 47043,
+    "start": 45559,
+    "end": 47054,
     "sha": "5674b444e0ede9c6"
    },
    "envelope": {
-    "start": 44608,
-    "end": 47043,
+    "start": 44619,
+    "end": 47054,
     "sha": "e34af87d4374a4f6"
    }
   },
   "cor-finite-variable-presentation": {
    "statement": {
-    "start": 47132,
-    "end": 47515,
+    "start": 47143,
+    "end": 47526,
     "sha": "346811dbbe5277bb"
    },
    "proof": {
-    "start": 47545,
-    "end": 48379,
+    "start": 47556,
+    "end": 48390,
     "sha": "7dcb5176c9533b67"
    },
    "proof_envelope": {
-    "start": 47532,
-    "end": 48390,
+    "start": 47543,
+    "end": 48401,
     "sha": "5a722d8866228727"
    },
    "envelope": {
-    "start": 47045,
-    "end": 48390,
+    "start": 47056,
+    "end": 48401,
     "sha": "bf9327bd0d0a288f"
    }
   },
   "thm-parity-sheafy": {
    "statement": {
-    "start": 48457,
-    "end": 48516,
+    "start": 48468,
+    "end": 48527,
     "sha": "f0d72c2fba77edfd"
    },
    "proof": {
-    "start": 48544,
-    "end": 50810,
+    "start": 48555,
+    "end": 50821,
     "sha": "7b164c63c351e9b4"
    },
    "proof_envelope": {
-    "start": 48531,
-    "end": 50821,
+    "start": 48542,
+    "end": 50832,
     "sha": "dd5208456065c409"
    },
    "envelope": {
-    "start": 48417,
-    "end": 50821,
+    "start": 48428,
+    "end": 50832,
     "sha": "069379749f878b3e"
    }
   },
   "rem-second-example-relation": {
    "statement": {
-    "start": 51308,
-    "end": 52211,
+    "start": 51319,
+    "end": 52222,
     "sha": "25ac081cc22d594a"
    },
    "envelope": {
-    "start": 51221,
-    "end": 52223,
+    "start": 51232,
+    "end": 52234,
     "sha": "7275f729f935522e"
    }
   }
  },
  "paras": [
   {
-   "start": 1669,
-   "end": 2244,
+   "start": 1680,
+   "end": 2255,
    "sha": "8fd462bdf2f1eda6"
   },
   {
-   "start": 2453,
-   "end": 2971,
+   "start": 2464,
+   "end": 2982,
    "sha": "67bd5068c12302d5"
   },
   {
-   "start": 2973,
-   "end": 3316,
+   "start": 2984,
+   "end": 3327,
    "sha": "8dca4cfd34f32514"
   },
   {
-   "start": 3318,
-   "end": 4106,
+   "start": 3329,
+   "end": 4117,
    "sha": "7a6ac2e483631f6a"
   },
   {
-   "start": 4108,
-   "end": 4141,
+   "start": 4119,
+   "end": 4152,
    "sha": "8b4e83a6d386765a"
   },
   {
-   "start": 4496,
-   "end": 4780,
+   "start": 4507,
+   "end": 4791,
    "sha": "758678b5ad60170b"
   },
   {
-   "start": 5277,
-   "end": 5732,
+   "start": 5288,
+   "end": 5743,
    "sha": "b01d2f622c6fdd4b"
   },
   {
-   "start": 7383,
-   "end": 7810,
+   "start": 7394,
+   "end": 7821,
    "sha": "e1c3ae9147f49383"
   },
   {
-   "start": 11491,
-   "end": 12184,
+   "start": 11502,
+   "end": 12195,
    "sha": "b058314b2be9a6f2"
   },
   {
-   "start": 12186,
-   "end": 12836,
+   "start": 12197,
+   "end": 12847,
    "sha": "c103f2bfe9f090d5"
   },
   {
-   "start": 12839,
-   "end": 13607,
+   "start": 12850,
+   "end": 13618,
    "sha": "83291a6d084bac6a"
   },
   {
-   "start": 13610,
-   "end": 14276,
+   "start": 13621,
+   "end": 14287,
    "sha": "4269f9c41ea73a0e"
   },
   {
-   "start": 16010,
-   "end": 16094,
+   "start": 16021,
+   "end": 16105,
    "sha": "9004d947ec6804c4"
   },
   {
-   "start": 16096,
-   "end": 16518,
+   "start": 16107,
+   "end": 16529,
    "sha": "f946428f6bead37f"
   },
   {
-   "start": 19256,
-   "end": 19405,
+   "start": 19267,
+   "end": 19416,
    "sha": "1a477dad0a6bf71c"
   },
   {
-   "start": 19465,
-   "end": 19748,
+   "start": 19476,
+   "end": 19759,
    "sha": "c0f32e92ced10043"
   },
   {
-   "start": 19750,
-   "end": 20205,
+   "start": 19761,
+   "end": 20216,
    "sha": "45d8092d90e69bc7"
   },
   {
-   "start": 20207,
-   "end": 20620,
+   "start": 20218,
+   "end": 20631,
    "sha": "aef2f2aea76bd42b"
   },
   {
-   "start": 23023,
-   "end": 23327,
+   "start": 23034,
+   "end": 23338,
    "sha": "f83b6b46bc081ebc"
   },
   {
-   "start": 23329,
-   "end": 23883,
+   "start": 23340,
+   "end": 23894,
    "sha": "8ba619ffef162dff"
   },
   {
-   "start": 31722,
-   "end": 32024,
+   "start": 31733,
+   "end": 32035,
    "sha": "ae15d0f7e4ae7c0a"
   },
   {
-   "start": 32784,
-   "end": 33489,
+   "start": 32795,
+   "end": 33500,
    "sha": "04b89a10d6826d82"
   },
   {
-   "start": 33491,
-   "end": 34539,
+   "start": 33502,
+   "end": 34550,
    "sha": "57d621f08431ff44"
   },
   {
-   "start": 34541,
-   "end": 34873,
+   "start": 34552,
+   "end": 34884,
    "sha": "f54aeca924a418b1"
   },
   {
-   "start": 39380,
-   "end": 40100,
+   "start": 39391,
+   "end": 40111,
    "sha": "97aff81fc754faa2"
   },
   {
-   "start": 43648,
-   "end": 44606,
+   "start": 43659,
+   "end": 44617,
    "sha": "a21e9020fb02e652"
   },
   {
-   "start": 52285,
-   "end": 52619,
+   "start": 52296,
+   "end": 52630,
    "sha": "e7a9c78bed5dcb0b"
   },
   {
-   "start": 52621,
-   "end": 53507,
+   "start": 52632,
+   "end": 53518,
    "sha": "a5fb922e4172102c"
   },
   {
-   "start": 53509,
-   "end": 53754,
+   "start": 53520,
+   "end": 53765,
    "sha": "07c984be69c3e09c"
   },
   {
-   "start": 53756,
-   "end": 53902,
+   "start": 53767,
+   "end": 53913,
    "sha": "b8a5c69a1705ee89"
   },
   {
-   "start": 53904,
-   "end": 53978,
+   "start": 53915,
+   "end": 53989,
    "sha": "01b3e19da5c183ff"
   },
   {
-   "start": 53980,
-   "end": 54359,
+   "start": 53991,
+   "end": 54370,
    "sha": "39c1155a9a8bbdf4"
   },
   {
-   "start": 54361,
-   "end": 54805,
+   "start": 54372,
+   "end": 54816,
    "sha": "19cd03f8dc2c0592"
   },
   {
-   "start": 54891,
-   "end": 55331,
+   "start": 54902,
+   "end": 55342,
    "sha": "e6d969719e4d9d73"
   },
   {
-   "start": 55333,
-   "end": 55736,
+   "start": 55344,
+   "end": 55747,
    "sha": "506762c640779287"
   },
   {
-   "start": 55763,
-   "end": 56106,
-   "sha": "6ca8154ec893b439"
+   "start": 55774,
+   "end": 56989,
+   "sha": "241602f7f10586f6"
   },
   {
-   "start": 57086,
-   "end": 57461,
+   "start": 57969,
+   "end": 58344,
    "sha": "3cee38ab1b640de5"
   },
   {
-   "start": 57463,
-   "end": 57852,
-   "sha": "fa72291d48025b73"
+   "start": 58346,
+   "end": 59161,
+   "sha": "436b75a109441f31"
   },
   {
-   "start": 58976,
-   "end": 59260,
+   "start": 59163,
+   "end": 59768,
+   "sha": "0c3ed3c55d351b7e"
+  },
+  {
+   "start": 60892,
+   "end": 61176,
    "sha": "e0e88cad702572b9"
   },
   {
-   "start": 59262,
-   "end": 59344,
+   "start": 61178,
+   "end": 61260,
    "sha": "908550e6dc46c61e"
   },
   {
-   "start": 59522,
-   "end": 60040,
-   "sha": "c64addaaec30cbdf"
+   "start": 61438,
+   "end": 62168,
+   "sha": "2da662a31d860768"
   },
   {
-   "start": 60042,
-   "end": 60348,
+   "start": 62170,
+   "end": 62476,
    "sha": "87d37a0de3e167df"
   },
   {
-   "start": 60883,
-   "end": 61631,
+   "start": 63011,
+   "end": 63759,
    "sha": "06958d73360e3989"
   },
   {
-   "start": 61668,
-   "end": 61854,
+   "start": 63796,
+   "end": 63982,
    "sha": "b500e2a6cbcf70eb"
   },
   {
-   "start": 62319,
-   "end": 62724,
+   "start": 64447,
+   "end": 64852,
    "sha": "4ebd613ccf8e41fb"
   },
   {
-   "start": 62763,
-   "end": 63202,
+   "start": 64891,
+   "end": 65330,
    "sha": "feb976638d824a5b"
   },
   {
-   "start": 64306,
-   "end": 64858,
+   "start": 66434,
+   "end": 66986,
    "sha": "8112d6c14c59b00d"
   },
   {
-   "start": 64860,
-   "end": 65201,
+   "start": 66988,
+   "end": 67329,
    "sha": "d41ef6a87a310910"
   },
   {
-   "start": 65479,
-   "end": 65965,
+   "start": 67607,
+   "end": 68093,
    "sha": "9377cdc820a0f09d"
   },
   {
-   "start": 66920,
-   "end": 67817,
+   "start": 69048,
+   "end": 69945,
    "sha": "86dd7a453c6a18c0"
   },
   {
-   "start": 67871,
-   "end": 68297,
+   "start": 69999,
+   "end": 70425,
    "sha": "a0c3df55822de7a9"
   },
   {
-   "start": 68299,
-   "end": 68608,
+   "start": 70427,
+   "end": 70736,
    "sha": "f10de744d0748550"
   },
   {
-   "start": 68610,
-   "end": 69206,
+   "start": 70738,
+   "end": 71334,
    "sha": "fdd0b02af36705ec"
   },
   {
-   "start": 69208,
-   "end": 69773,
+   "start": 71336,
+   "end": 71901,
    "sha": "0d5d5aca6be9e104"
   },
   {
-   "start": 69775,
-   "end": 70613,
+   "start": 71903,
+   "end": 72741,
    "sha": "3c76787dfdb8d340"
   },
   {
-   "start": 70657,
-   "end": 71395,
+   "start": 72785,
+   "end": 73523,
    "sha": "e239a6a293d952ae"
   },
   {
-   "start": 71730,
-   "end": 72648,
+   "start": 73858,
+   "end": 74776,
    "sha": "1a49a36604dd4e2b"
   },
   {
-   "start": 72650,
-   "end": 72777,
+   "start": 74778,
+   "end": 74905,
    "sha": "f5ede1b063793176"
   },
   {
-   "start": 74171,
-   "end": 75105,
+   "start": 76299,
+   "end": 77233,
    "sha": "fa71bf1d398b107d"
   },
   {
-   "start": 75107,
-   "end": 76304,
+   "start": 77235,
+   "end": 78432,
    "sha": "8e1d521ed94c897c"
   },
   {
-   "start": 76306,
-   "end": 76653,
+   "start": 78434,
+   "end": 78781,
    "sha": "25a2c9710c649b90"
   },
   {
-   "start": 76702,
-   "end": 77910,
+   "start": 78830,
+   "end": 80038,
    "sha": "c2c4c4f42251fe7c"
   },
   {
-   "start": 77912,
-   "end": 78535,
+   "start": 80040,
+   "end": 80663,
    "sha": "1dccaf1c97ca9540"
   }
  ]

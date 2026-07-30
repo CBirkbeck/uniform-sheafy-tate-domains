@@ -2,6 +2,54 @@
   "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc",
   "declarations": [
     {
+      "decl": "ValuationSpectrum.presheafValue",
+      "file": "Adic spaces/Presheaf.lean",
+      "line": 296,
+      "kind": "def",
+      "include_body": true,
+      "cited": "Appendix: sections on a rational domain"
+    },
+    {
+      "decl": "ValuationSpectrum.HasLocLiftPowerBounded",
+      "file": "Adic spaces/Presheaf.lean",
+      "line": 1569,
+      "kind": "class",
+      "include_body": true,
+      "cited": "Appendix: construction of rational restriction maps"
+    },
+    {
+      "decl": "ValuationSpectrum.RationalCoveringData",
+      "file": "Adic spaces/Presheaf.lean",
+      "line": 1895,
+      "kind": "structure",
+      "include_body": true,
+      "cited": "Appendix: finite rational covering data"
+    },
+    {
+      "decl": "ValuationSpectrum.RationalCoveringData.IsRational",
+      "file": "Adic spaces/Presheaf.lean",
+      "line": 1912,
+      "kind": "def",
+      "include_body": true,
+      "cited": "Appendix: rationality of a finite covering"
+    },
+    {
+      "decl": "ValuationSpectrum.limitSections",
+      "file": "Adic spaces/StructurePresheafLimit.lean",
+      "line": 132,
+      "kind": "def",
+      "include_body": true,
+      "cited": "Appendix: sections on an arbitrary open"
+    },
+    {
+      "decl": "ValuationSpectrum.limitRestrict",
+      "file": "Adic spaces/StructurePresheafLimit.lean",
+      "line": 218,
+      "kind": "def",
+      "include_body": true,
+      "cited": "Appendix: restriction between arbitrary opens"
+    },
+    {
       "decl": "ValuationSpectrum.IsSheafy",
       "file": "Adic spaces/StructureSheaf.lean",
       "line": 371,
