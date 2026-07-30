@@ -45,6 +45,9 @@ the coauthored formalisation papers chiefly as models for presenting Lean.
 - Do not paraphrase a display immediately after it unless the paraphrase adds
   mathematical content.  In particular, avoid retrospective glosses such as
   “this is what we mean by…”.  Define a term before using it, or omit the term.
+- Do not write that an undefined “support description” gives a conclusion.
+  Refer to the displayed coefficient expansion and state the required
+  coefficient condition explicitly.
 - Let notation advertise its role: for example, use \(T_E\) for a Tate algebra.
   Give notation to recurring objects, but do not coin a name for a one-use
   ideal or map.

@@ -106,10 +106,16 @@ is a pushout in the full subcategory of affinoid adic spaces.
 The map <m>X_B\to X_A</m> factors through <m>U_1</m>, because <m>Q^2=0</m> in <m>B</m>, while <m>X_C\to X_A</m> factors through <m>U_2</m>, because both <m>W</m> and <m>W^{-1}</m> are power-bounded in <m>C</m> and hence <m>|W|=1</m> on <m>X_C</m>.
       </p>
       <p>
-        The open subset <m>U</m> is proper.  Use additive valuations with values in <m>\Gamma=\mathbf Z^3_{\mathrm{lex}}</m> and, for a nonzero restricted series in the support description <xref ref="eq-monomial-support"/>, put
+        The open subset <m>U</m> is proper.  Use additive valuations with values in
+<m>\Gamma=\mathbf Z^3_{\mathrm{lex}}</m> and, for a nonzero restricted series
+written as in <xref ref="eq-monomial-support"/>, put
 <me>v\left(\sum c_{a,b}W^aQ^b\right)
  =\min_{\mathrm{lex}}\{(v_k(c_{a,b}),b,a):c_{a,b}\neq0\}.</me>
-Restrictedness makes the minimum exist, and the initial-term argument for the lexicographic monomial order makes <m>v</m> multiplicative.  The support condition makes it nonnegative on <m>A_0=A^\circ</m>, while <m>v(\varpi)>0</m>, so it is continuous and defines a point <m>x\in X_A</m>.  Since
+Restrictedness makes the minimum exist, and the initial-term argument for the
+lexicographic monomial order makes <m>v</m> multiplicative.  The condition
+<m>b\leq1\Rightarrow a\geq0</m> defining <m>S</m> makes it nonnegative on
+<m>A_0=A^\circ</m>, while <m>v(\varpi)>0</m>, so it is continuous and defines a point
+<m>x\in X_A</m>.  Since
 <me>v(Q^2)=(0,2,0)&lt;(1,0,0)=v(\varpi),\qquad v(W)=(0,0,1)>0,</me>
 one has <m>|Q^2(x)|>|\varpi(x)|</m> and <m>|W(x)|&lt;1</m>; hence <m>x\notin U</m>.
       </p>

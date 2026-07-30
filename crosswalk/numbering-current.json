@@ -62,9 +62,9 @@
    "number": "(4)",
    "section": "3"
   },
-  "eq-support-A0": {
+  "eq-coefficient-A0": {
    "kind": "equation",
-   "label": "eq:support-A0",
+   "label": "eq:coefficient-A0",
    "number": "(5)",
    "section": "3"
   },

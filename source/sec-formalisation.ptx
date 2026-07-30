@@ -227,14 +227,14 @@ unrestricted.  Thus <c>JetA K</c> is
 <me>\left\{f_0(W)+Qf_1(W)+Q^2h(W,W^{-1},Q)\ \middle|\
     \substack{f_0,f_1\in K\langle W\rangle\\
               h\in L\langle Q\rangle}\right\},</me>
-which is the support description of <m>A</m> used in <xref ref="eq-support-A0"/> after
-inverting <m>\varpi</m>.
+which is the coefficient description of <m>A</m> in
+<xref ref="eq-coefficient-A0"/> after inverting <m>\varpi</m>.
     </p>
     <p>
       The file also constructs the four maps in the Milnor square and proves
 <c>milnorRow_exact</c>: every compatible pair in
 <c>JetB K</c> and <c>JetC K</c> comes from a unique element of
-<c>JetA K</c>.  This identifies the support subring with
+<c>JetA K</c>.  This identifies <c>JetA K</c> with
 <m>B\times_D C</m>.  The sheaf argument produces the finite-rational-cover
 condition displayed above:
     </p>
