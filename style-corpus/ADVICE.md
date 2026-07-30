@@ -21,6 +21,9 @@ the coauthored formalisation papers chiefly as models for presenting Lean.
 
 - Open a section by saying what it does: “In this section we prove…”.  Then
   indicate the first step: “We begin by…”.
+- When a later section starts proving results about objects introduced in the
+  introduction, repeat their definitions rather than merely referring the
+  reader back to the earlier notation.
 - Present a conventions section as a short list of conceptual groups, rather
   than as a run of undifferentiated paragraphs.
 - Motivate a definition before displaying it.  Afterward, record conventions,
