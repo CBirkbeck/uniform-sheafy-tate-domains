@@ -10,9 +10,9 @@ We first record the strict Koszul estimate needed for the proof.
   <subsection xml:id="sec-localisation-of-the-milnor-square-koszul-complexes-for-rational-localisations">
     <title>Koszul complexes for rational localisations</title>
     <p>
-      Let <m>E</m> be an affinoid <m>k</m>-algebra, choose a noetherian
-<m>\varpi</m>-adically complete ring of definition <m>E_0\subset E</m>, and let
-<m>f_1,\dots,f_m,g\in E_0</m> generate the unit ideal in <m>E</m>.  Put
+      Let <m>E</m> be one of <m>B,C,D</m>, with its coefficientwise Gauss norm and the
+displayed unit ball <m>E_0</m>.  Let <m>f_1,\dots,f_m,g\in E_0</m> generate the unit
+ideal in <m>E</m>.  Put
 <me>T_E=E\langle T_1,\dots,T_m\rangle,
   \qquad
   T_{E,0}=E_0\langle T_1,\dots,T_m\rangle,</me>
@@ -28,11 +28,17 @@ differential is strict when it is open onto its image, or equivalently when its
 coimage is homeomorphic to its image.
     </p>
     <p>
-      The following strict Koszul result is known
-<xref ref="bib-BBK" detail="Definition 5.7 and Lemmas 5.13--5.14"/>
-<xref ref="bib-BK" detail="Definitions 4.5--4.6, Proposition 4.9, Lemma 4.11, and
-Corollary 4.13"/>.  We state the two bounded-denominator consequences which
-will be used in the pullback argument.
+      Ben-Bassat<ndash/>Kremnizer prove the one-variable strict two-term resolutions and
+then factor a general rational localisation into Laurent and Weierstrass
+localisations <xref ref="bib-BBK" detail="Lemmas 5.13--5.14"/>; they do not state the
+multivariable Koszul assertion.  Applied to <m>E\in\{B,C,D\}</m>, the strict
+Koszul regularity theorem of
+Bambozzi<ndash/>Kremnizer
+<xref ref="bib-BK" detail="Notation 4.3, Definitions 4.5--4.6, Proposition 4.9,
+Lemma 4.11, and Corollary 4.13"/> gives the exactness, strictness, and
+closed-image assertions below.  We include the direct proof followed in the
+formalisation because the two estimates relative to the displayed lattices
+are not stated there and are needed below.
     </p>
     <lemma xml:id="lem-koszul">
       <statement>
@@ -63,16 +69,34 @@ then <m>I_E</m> is closed.  Moreover, there exists
       <lean project="AdicSpaces" ref="FiniteJet.GraphKoszul.pow_smul_ker_d1_inter_subset">Lean (pow_smul_ker_d1_inter_subset)</lean>
       <proof>
         <p>
-          Positive-degree exactness follows from the strict Koszul regularity result
-cited above.  Since <m>T_E</m> is a complete Tate ring with noetherian ring of
-definition <m>T_{E,0}</m>, Huber's finite-module lemmas show that the differentials
-are continuous and strict and that their images are closed
-<xref ref="bib-Huber94" detail="Lemmas 2.3 and 2.4"/>.  Apply <xref ref="eq-strictness"/> to
-<m>d_{1,E}:T_E^m\to I_E</m>, using the target lattice
-<m>I_E\cap T_{E,0}</m>.  Exactness identifies
-<m>\im(d_{2,E})=\ker(d_{1,E})</m>; applying the same criterion to <m>d_{2,E}</m> with
-target lattice <m>\ker(d_{1,E})\cap T_{E,0}^m</m> gives
-<xref ref="eq-ideal-denominators"/> and <xref ref="eq-syzygy-denominators"/>.
+          Over the polynomial ring <m>E[T_1,\ldots,T_m]</m>, the sequence
+<m>gT_i-f_i</m> has Koszul complex exact in positive degrees.  The map
+<me>E[T_1,\ldots,T_m]\longrightarrow T_E</me>
+is flat: this is the usual identification of <m>T_E</m> with the
+<m>\varpi</m>-adic completion of <m>E_0[T_1,\ldots,T_m]</m>, followed by inverting
+<m>\varpi</m>.  Tensoring the polynomial Koszul complex with <m>T_E</m>, and using the
+standard base-change identification of its finite free terms, proves
+positive-degree exactness.  Notice that this does not assert exactness in
+degree zero.
+        </p>
+        <p>
+          Each differential is continuous because its coordinates are finite sums of
+multiplication maps.  The image of <m>d_{1,E}</m> is closed by the noetherian
+closed-ideal theorem.  In higher degree, exactness identifies an image with
+the kernel of the next continuous differential, and hence that image is
+closed.  The nonarchimedean open mapping theorem, applied to each
+differential with its closed image, now gives a constant <m>C_q</m> such that every
+element of the image has a preimage of norm at most <m>C_q</m> times its norm.
+This proves strictness.
+        </p>
+        <p>
+          For <m>d_{1,E}</m> choose <m>h_E</m> so that
+<m>|\varpi|^{h_E}C\leq1</m>, where <m>C</m> is a controlled-lift constant for
+<m>d_{1,E}</m>.  Scaling a controlled lift of an element of
+<m>I_E\cap T_{E,0}</m> gives <xref ref="eq-ideal-denominators"/>.  Applying the same
+argument to <m>d_{2,E}</m>, with its own constant and using
+<m>\im(d_{2,E})=\ker(d_{1,E})</m>, gives
+<xref ref="eq-syzygy-denominators"/>.
         </p>
       </proof>
     </lemma>
@@ -114,48 +138,48 @@ is an isomorphism.  Moreover,
       <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.isClosed_IA">Lean (isClosed_IA)</lean>
       <proof>
         <p>
-          We first prove the algebraic statement.  Let
-<m>(x_B,x_C)\in I_B\times_{I_D}I_C</m>.  Choose <m>u_B\in T_B^m</m> and
-<m>u_C\in T_C^m</m> with
-<m>d_{1,B}(u_B)=x_B</m> and <m>d_{1,C}(u_C)=x_C</m>.  Their difference in <m>T_D^m</m> lies in
-<m>\ker(d_{1,D})</m>.  By <xref ref="lem-koszul"/>, it is <m>d_{2,D}(v_D)</m> for some
-<m>v_D\in\bigwedge^2T_D^m</m>.  Lift <m>v_D</m> to
-<m>v_C\in\bigwedge^2T_C^m</m> and replace <m>u_C</m> by <m>u_C+d_{2,C}(v_C)</m>.  The new pair of coefficient vectors has the same image in <m>T_D^m</m>, hence comes from
-<m>u_A\in T_A^m</m> by <xref ref="eq-tate-ambient"/>.  Then <m>d_{1,A}(u_A)</m> maps to
-<m>(x_B,x_C)</m>.  This proves the asserted algebraic isomorphism.
+          We use the controlled lifts supplied in the proof of
+<xref ref="lem-koszul"/>.  Let
+<m>(x_B,x_C)\in I_B\times_{I_D}I_C</m>, and choose lifts
+<m>u_B\in T_B^m</m> and <m>u_C\in T_C^m</m> of <m>x_B</m> and <m>x_C</m> whose norms are bounded
+by fixed multiples of <m>\lVert x_B\rVert</m> and <m>\lVert x_C\rVert</m>.  In <m>T_D^m</m>
+the difference
+<me>w=(u_B)_D-(u_C)_D</me>
+belongs to <m>\ker(d_{1,D})</m>.  Choose a controlled lift
+<m>v_D\in\bigwedge^2T_D^m</m> with <m>d_{2,D}(v_D)=w</m>, and lift <m>v_D</m>
+coefficientwise to <m>v_C\in\bigwedge^2T_C^m</m>.  The coefficientwise section
+<m>T_C\to T_D</m> preserves the norm.  Replacing <m>u_C</m> by
+<me>u_C'=u_C+d_{2,C}(v_C)</me>
+does not change <m>d_{1,C}(u_C)</m>, and the images of <m>u_B</m> and <m>u_C'</m> in
+<m>T_D^m</m> now agree.  Exactness of <xref ref="eq-tate-ambient"/>, applied
+coefficientwise, gives <m>u_A\in T_A^m</m> mapping to this pair.  Then
+<m>d_{1,A}(u_A)</m> maps to <m>(x_B,x_C)</m>.
         </p>
         <p>
-          We now make this correction with bounded denominators.  The exponents <m>h_B</m>
-and <m>h_C</m> make the coefficient lifts integral, whilst <m>z_D</m> makes the
-syzygy correction integral.  Put <m>h=\max\{h_B,h_C\}</m>, and suppose that
-<m>(x_B,x_C)</m> belongs to the pullback and lies in
-<m>T_{B,0}\oplus T_{C,0}</m>.  Choose
-<m>u_B\in T_{B,0}^m</m> and <m>u_C\in T_{C,0}^m</m> such that
-<me>d_{1,B}(u_B)=\varpi^h x_B,
-  \qquad
-  d_{1,C}(u_C)=\varpi^h x_C.</me>
-The difference <m>s=(u_B)_D-(u_C)_D</m> belongs to
-<m>\ker(d_{1,D})\cap T_{D,0}^m</m>.  By <xref ref="eq-syzygy-denominators"/>, choose
-<m>v_D\in\bigwedge^2T_{D,0}^m</m> with
-<m>d_{2,D}(v_D)=\varpi^{z_D}s</m>.  Lift <m>v_D</m> to
-<m>v_C\in\bigwedge^2T_{C,0}^m</m> and set
-<me>u_C'=\varpi^{z_D}u_C+d_{2,C}(v_C).</me>
-Then <m>(u_C')_D=\varpi^{z_D}(u_B)_D</m> and
-<m>d_{1,C}(u_C')=\varpi^{h+z_D}x_C</m>.  By <xref ref="eq-tate-ambient"/>, the compatible integral pair
-<m>(\varpi^{z_D}u_B,u_C')</m> comes from <m>u_A\in T_{A,0}^m</m>.  Thus
-          <men xml:id="eq-JA-strict">\varpi^{h+z_D}\bigl((I_B\times_{I_D}I_C)
-  \cap(T_{B,0}\oplus T_{C,0})\bigr)
-  \subset d_{1,A}(T_{A,0}^m).</men>
-          This proves strictness of the pullback identification.  The fibre product
-<m>I_B\times_{I_D}I_C</m> is closed in <m>T_B\oplus T_C</m>, and
-<xref ref="eq-tate-ambient"/> identifies <m>T_A</m> strictly with the kernel of
-<m>T_B\oplus T_C\to T_D</m>.  It follows from <xref ref="eq-JA-strict"/> that <m>I_A</m> is
-closed in <m>T_A</m>.
+          The same construction keeps track of the norms.  The controlled lifts for
+<m>d_{1,B}</m>, <m>d_{1,C}</m> and <m>d_{2,D}</m>, continuity of <m>d_{2,C}</m>, and the
+norm-one coefficientwise section give a constant <m>C</m>, independent of
+<m>(x_B,x_C)</m>, for which the lift <m>x_A=d_{1,A}(u_A)</m> may be chosen with
+<me>\lVert x_A\rVert\leq
+  C\max\{\lVert x_B\rVert,\lVert x_C\rVert\}.</me>
+The map <m>T_A\to T_B\oplus T_C</m> is injective, so this proves both the
+algebraic pullback assertion and the boundedness of its inverse.
         </p>
         <p>
-          Finally, the map <m>I_B\oplus I_C\to I_D</m> is surjective: lift a coefficient vector in
-<m>T_D^m</m> to <m>T_C^m</m> and apply <m>d_1</m>.  If the element of <m>I_D</m> is integral, then
-<xref ref="eq-ideal-denominators"/> for <m>E=D</m> shows that a fixed power of <m>\varpi</m> has an integral coefficient vector, which can be lifted to <m>T_{C,0}^m</m>.  Thus this surjection is strict.  Together with <xref ref="eq-JA-strict"/>, this proves strict exactness of <xref ref="eq-ideal-row"/>.
+          It remains to see that <m>I_A</m> is closed.  The ideals <m>I_B</m> and <m>I_C</m> are
+closed by <xref ref="lem-koszul"/>.  If <m>x</m> lies in the closure of <m>I_A</m>, its images
+lie in <m>I_B</m> and <m>I_C</m>.  The controlled pullback just proved gives
+<m>x_A\in I_A</m> with the same two images as <m>x</m>.  Injectivity of
+<m>T_A\to T_B\oplus T_C</m> gives <m>x=x_A</m>, as required.
+        </p>
+        <p>
+          Finally, let <m>y\in I_D</m>.  A controlled lift of <m>y</m> through <m>d_{1,D}</m>,
+followed by the coefficientwise section <m>T_D^m\to T_C^m</m>, produces
+<m>x_C\in I_C</m> mapping to <m>y</m>, with norm bounded by a fixed multiple of
+<m>\lVert y\rVert</m>.  Thus <m>I_B\oplus I_C\to I_D</m> is a strict surjection.
+Its kernel is <m>I_A</m> by the pullback assertion, and the preceding norm estimate
+makes the inclusion on the left strict.  This proves
+<xref ref="eq-ideal-row"/>.
         </p>
       </proof>
     </lemma>
@@ -180,33 +204,45 @@ restriction.
       <lean project="AdicSpaces" ref="FiniteJetOver.presheafValueMapB_restriction">Lean (presheafValueMapB_restriction)</lean>
       <proof>
         <p>
-          By <xref ref="lem-graph-pullback"/>, all four ideals are closed.  Hence
-<xref ref="eq-graph-model"/> gives
+          The ideals <m>I_B,I_C,I_D</m> are closed by <xref ref="lem-koszul"/>, and <m>I_A</m> is
+closed by <xref ref="lem-graph-pullback"/>.  Hence <xref ref="eq-graph-model"/> gives
 <me>E_\alpha=T_E/I_E
   \qquad(E=A,B,C,D).</me>
-The two exact rows <xref ref="eq-tate-ambient"/> and <xref ref="eq-ideal-row"/> give algebraic exactness of <xref ref="eq-localized-row"/>.
         </p>
         <p>
-          Let <m>E_{\alpha,0}</m> be the image of <m>T_{E,0}</m> in <m>E_\alpha</m>; this is a ring of definition.  Since <m>T_{C,0}\to T_{D,0}</m> is surjective, so is
-<m>C_{\alpha,0}\to D_{\alpha,0}</m>.  Thus <m>C_\alpha\to D_\alpha</m> is a strict surjection.
+          We first prove algebraic exactness.  If a representative <m>p\in T_A</m> maps
+into both <m>I_B</m> and <m>I_C</m>, the controlled pullback in
+<xref ref="lem-graph-pullback"/> gives an element of <m>I_A</m> with the same two images.
+Injectivity of <m>T_A\to T_B\oplus T_C</m> then shows that <m>p\in I_A</m>.  This gives
+injectivity on the left.  Conversely, take compatible classes in
+<m>T_B/I_B</m> and <m>T_C/I_C</m> and choose representatives <m>b</m> and <m>c</m>.  Their
+defect in <m>T_D</m> belongs to <m>I_D</m>.  Lift this defect to an element of <m>I_C</m>
+using the strict surjection in <xref ref="eq-ideal-row"/>, and add it to <m>c</m>.
+The corrected representatives agree in <m>T_D</m>, so
+<xref ref="eq-tate-ambient"/> lifts them to <m>T_A</m>.  This proves
+<xref ref="eq-localized-row"/>.
         </p>
         <p>
-          It remains to check strictness at the left.  Let <m>x\in A_\alpha</m> have images in
-<m>B_{\alpha,0}</m> and <m>C_{\alpha,0}</m>.  Choose representatives
-<m>b_0\in T_{B,0}</m> and <m>c_0\in T_{C,0}</m>.  Their difference
-<me>\delta=(b_0)_D-(c_0)_D</me>
-belongs to <m>I_D\cap T_{D,0}</m>.  Choose <m>h_D</m> as in
-<xref ref="eq-ideal-denominators"/>.  There is <m>u_D\in T_{D,0}^m</m> with
-<m>d_{1,D}(u_D)=\varpi^{h_D}\delta</m>.  Lift <m>u_D</m> to
-<m>u_C\in T_{C,0}^m</m>.  Then
-<me>\left(\varpi^{h_D}b_0,
-  \varpi^{h_D}c_0+d_{1,C}(u_C)\right)</me>
-is a compatible pair in <m>T_{B,0}\oplus T_{C,0}</m>, so it comes from
-<m>T_{A,0}</m>.  Its class in <m>A_\alpha</m> is <m>\varpi^{h_D}x</m>.  Therefore
-<me>\varpi^{h_D}\Bigl(A_\alpha\cap
-  (B_{\alpha,0}\oplus C_{\alpha,0})\Bigr)
-  \subset A_{\alpha,0},</me>
-which is the bounded-denominator criterion for strictness.
+          For the topology on the left, let <m>x\in A_\alpha</m> and put
+<me>M=\max\{\lVert x_B\rVert,\lVert x_C\rVert\}.</me>
+Choose representatives <m>b\in T_B</m> and <m>c\in T_C</m> whose norms are
+arbitrarily close to the quotient norms of <m>x_B</m> and <m>x_C</m>.  Their defect
+lies in <m>I_D</m>.  The controlled surjection <m>I_C\to I_D</m> gives a correction
+<m>y\in I_C</m> whose norm is bounded by a fixed multiple of the norm of this
+defect.  Thus <m>b</m> and <m>c+y</m> agree in <m>T_D</m> and lift to
+<m>p\in T_A</m>.  The max-norm identity for the ambient pullback gives, after
+letting the error in the representatives tend to zero,
+<me>\lVert x\rVert\leq C M</me>
+for a constant <m>C</m> depending only on the datum.  The two quotient maps are
+norm-nonincreasing, so this estimate says precisely that
+<m>A_\alpha\to B_\alpha\oplus C_\alpha</m> is a topological embedding.
+        </p>
+        <p>
+          The coefficientwise section <m>T_D\to T_C</m> shows directly that
+<m>C_\alpha\to D_\alpha</m> is surjective.  It also shows that
+<m>T_C\to T_D</m> is open; passing to quotient seminorms proves that the induced
+map is open.  Together with continuity, this makes
+<m>C_\alpha\to D_\alpha</m> a strict surjection.
         </p>
         <p>
           All maps used above come from the coefficient maps

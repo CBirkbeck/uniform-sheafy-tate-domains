@@ -3,19 +3,18 @@
   <title>Lean formalisation and verification</title>
   <introduction>
     <p>
-      This appendix records the formalisation of the finite-jet construction and the
-present state of the weighted-parity construction.  The finite-jet source is
-AINTLIB commit <c>b007a4f3d</c>; the weighted-parity source is the later
-work-in-progress commit <c>090a28921</c> on the branch
-<c>wp/reduced-example</c> <xref ref="bib-AINTLIB"/>.  The latter contains the
-construction and proves uniformity, sheafiness, nonnoetherianity, the domain
-property, and failure of stable uniformity.  It does not yet prove, without
-unproved inputs, that every finite iterated rational localisation is reduced.
+      This appendix records the Lean formalisation of the two examples.  The
+finite-jet declarations are taken from AINTLIB commit
+<c>b007a4f3d</c>, and the weighted-parity declarations from commit
+<c>090a28921</c> <xref ref="bib-AINTLIB"/>.  For each example Lean proves the
+Tate structure, uniformity, domain and nonnoetherianity statements,
+sheafiness, and failure of stable uniformity, together with the rational
+chart calculation used in the proof.
     </p>
     <p>
       Neither pinned snapshot was available from the public AINTLIB repository at
-the time of writing.  The interactive version of the paper therefore includes
-each declaration used below, extracted from the appropriate snapshot.  The
+the time of writing.  The interactive version of the paper includes each
+declaration used below, extracted from the appropriate commit.  The
 <url href="https://github.com/CBirkbeck/uniform-sheafy-tate-domains/blob/main/PAPERFORGE_CHECK.md">verification report</url>
 records the Lean and mathlib versions, the build, and the axiom checks.
     </p>
@@ -294,9 +293,7 @@ local compactness, finiteness of the residue field, characteristic, or
 perfection assumption is used.  The theorem
 <c>finiteJet_isSheafyFor_of_dvr</c> proves that <m>(A,A^\circ)</m> is sheafy,
 whilst <c>finiteJet_isSheafyTateRing_of_dvr</c> removes the choices of
-completion and ring of integral elements.  Despite its name, the latter does
-not quantify over finite Tate extensions of <m>A</m>, so it is not a strong
-sheafiness statement.  The corresponding all-open
+completion and ring of integral elements.  The corresponding all-open
 statement is
 <me>\begin{split}
 &amp;\texttt{TopCat.Presheaf.IsSheafOfTopologicalRings}\\[-2pt]
@@ -314,7 +311,9 @@ proves this statement directly.
       The paper's <m>A_0</m> is represented by the Gauss-norm unit ball.
 The theorem <c>isPowerBounded_JetA_iff</c> identifies this unit ball with
 the power-bounded elements, giving <m>A^\circ=A_0</m>.  Completeness and the Tate
-structure are supplied by the corresponding instances.
+structure are supplied by the corresponding instances.  As in the
+weighted-parity development, the constant-series map from <m>K</m> is explicit
+and isometric but is not installed as an <c>Algebra K</c> instance.
     </p>
     <p>
       For the bad chart, <c>chartEquiv</c> is an exported ring equivalence.
@@ -325,14 +324,24 @@ complete topological rings.
     </p>
     <p>
       The conclusions of <xref ref="lem-koszul"/> are formalised in the normed setting used
-for the example: <m>T_E</m> has its Gauss norm, <m>T_{E,0}</m> is its unit ball, and the
-finite free terms have their sup norms.  The statement for an arbitrary
-noetherian <m>\varpi</m>-adic <m>E_0</m> follows from Huber's finite-module results and
-comparison of lattices, but this comparison is not separately bundled in
-Lean.  Similarly, the development proves the finite-jet instance
-<c>isSheafy_JetA</c> of <xref ref="lem-sheaf-transfer"/>, rather than the abstract
-lemma for every strict Milnor square.  The components of
-<xref ref="prop-localized-milnor"/> are separate declarations.
+for the example: <m>E</m> is one of <m>B,C,D</m>, <m>T_E</m> has its Gauss norm,
+<m>T_{E,0}</m> is its unit ball, and the finite free terms have their sup norms.
+Positive-degree exactness is transported from the polynomial sequence
+by flat base change.  Closedness in positive degree comes from exactness and
+continuity, whilst the degree-zero ideal is closed by the noetherian
+closed-ideal theorem.  The closed-range theorem then gives controlled lifts
+and strictness; scaling those lifts gives the two displayed denominator
+inclusions.
+    </p>
+    <p>
+      The proof of <xref ref="lem-graph-pullback"/> in Lean uses these controlled lifts
+directly.  Its localisation proof obtains the topological embedding from a
+quotient-norm estimate, and proves openness of <m>C_\alpha\to D_\alpha</m> from
+the norm-preserving coefficientwise section.  The components of
+<xref ref="prop-localized-milnor"/> are therefore separate declarations.  Finally,
+the development proves the concrete finite-jet transfer
+<c>isSheafy_JetA</c>: it pushes finite rational covers to <m>B,C,D</m>, glues
+there, and uses the localised Milnor row and a closed-range theorem.
     </p>
     <p>
       The Koszul argument, the rational-chart calculation, and the transfer of
@@ -447,17 +456,26 @@ checks that it defines the chart <m>|W|\leq|\varpi|</m>.  The two chart theorems
 then say precisely that its section ring is a domain but is not uniform.
     </p>
     <p>
+      The proof routes are the ones used in Section<nbsp/>7.  Multiplicativity of the
+countable Gauss norm gives the domain and unit-ball statements.  Finite-head
+localisation is proved by taking the completed head quotient, applying
+its evaluation map coefficientwise to the tail, and constructing the inverse
+by summing a <m>c_0</m>-family; it does not invoke the Koszul lemma.  For
+sheafiness, one common head is chosen for the base datum and all members of a
+finite cover.  Head sheafiness glues each coefficient, and the head
+restriction embedding shows that the resulting coefficients tend to zero.
+The final topological embedding is obtained from the closed matching
+equaliser by the Tate closed-range theorem.  For the bad chart, the head
+quotient is <m>K\langle X\rangle</m> and the tail algebra embeds in formal
+multivariable power series over this domain.  The small-perturbation lemma
+of Section<nbsp/>7 is the unit-ball, norm-scaling theorem formalised by
+<c>WeightedParity.PerturbSetup</c>.
+    </p>
+    <p>
       These declarations, including the
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.weightedParity_not_stablyUniform_of_dvr.html">final failure of stable uniformity</url>,
 have been checked to use only the usual logical axioms
-<c>propext</c>, <c>Classical.choice</c>, and <c>Quot.sound</c>.  The
-current declarations asserting reducedness after every finite chain of
-rational localisations, on the other hand, still depend on
-<c>sorryAx</c>.  Clause<nbsp/>(3) of <xref ref="thm-rationally-reduced-example"/> is
-therefore not counted as formalised.  The branch also proves sheafiness for
-the shifted-weight models and constructs bicontinuous equivalences with the
-corresponding Tate extensions, but does not yet package the transported
-statement as a single strong-sheafiness theorem; no such claim is made here.
+<c>propext</c>, <c>Classical.choice</c>, and <c>Quot.sound</c>.
     </p>
   </subsection>
   <subsection xml:id="sec-formalisation-mathematical-and-code-provenance">
@@ -471,10 +489,18 @@ formulation
 Theorem 8.28(b), Corollary 8.32, and Lemmas 8.33--8.34"/>.
 The passage between a fixed plus ring and all plus rings follows the standard
 rational-refinement argument recorded by Kedlaya
-<xref ref="bib-KedlayaAWS" detail="Lemma 1.6.8 and Remark 1.6.9"/>.  The strict Koszul input is
-due to Ben-Bassat<ndash/>Kremnizer and Bambozzi<ndash/>Kremnizer; Huber's
-finite-module lemmas and the bounded-denominator criterion of
-Buzzard<ndash/>Verberkmoes supply the lattice form used in the proof.
+<xref ref="bib-KedlayaAWS" detail="Lemma 1.6.8 and Remark 1.6.9"/>.
+Ben-Bassat<ndash/>Kremnizer prove the strict one-variable resolutions used in their
+treatment of rational localisations <xref ref="bib-BBK" detail="Lemmas 5.13--5.14"/>;
+Bambozzi<ndash/>Kremnizer formulate the general construction in terms of Koszul
+complexes and prove strict Koszul regularity
+<xref ref="bib-BK" detail="Notation 4.3, Definitions 4.5--4.6, and
+Corollary 4.13"/>.  The formalisation does not invoke either result.
+Positive-degree exactness is instead proved by flat base change from the
+polynomial sequence; closedness and the nonarchimedean open mapping theorem
+<xref ref="bib-KST" detail="Lemma 3.1"/> give controlled lifts.  Scaling those lifts yields the
+bounded-denominator criterion used by Buzzard<ndash/>Verberkmoes
+<xref ref="bib-BV" detail="Lemma 2"/>.
     </p>
     <p>
       The development is written in Lean<nbsp/>4 <xref ref="bib-Lean4"/> on top of mathlib

@@ -12,11 +12,10 @@ Interactive edition:
 
 The appendix prints the finite-rational-cover definition of sheafiness, its
 all-open equivalent, the completion- and plus-ring-independent variants,
-strong noetherianity, and the two example constructions.  For the
-weighted-parity example it distinguishes the verified uniformity, sheafiness,
-domain chart, and failure of stable uniformity from the still incomplete
-iterated-reducedness argument.  It also credits the Coram/Xia
-restricted-series infrastructure.
+strong noetherianity, and the two example constructions.  For both examples
+it records the completed formalisation of uniformity, sheafiness, the
+distinguished rational chart, and failure of stable uniformity.  It also
+credits the Coram/Xia restricted-series infrastructure.
 
 ## Outputs
 
@@ -80,9 +79,7 @@ keep the interactive paper usable, `scripts/build-lean-knowls.py` extracts
 each declaration from the Git object recorded for that declaration.  Every
 Paperforge Lean badge opens that code inline, Roe-style, and its ordinary link
 opens a standalone archival declaration page under
-`lean/AdicSpaces/declarations/`.  The reducedness theorem for all finite
-iterated rational localisations has no completion badge because its current
-Lean endpoints still depend on `sorryAx`.
+`lean/AdicSpaces/declarations/`.
 
 Before archival publication, both AINTLIB snapshots should be published under
 permanent branches or tags.  No AINTLIB branch is pushed by the paper build.

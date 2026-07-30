@@ -42,6 +42,7 @@ so <m>A</m> is not stably uniform.
       </p>
     </statement>
     <lean project="AdicSpaces" ref="FiniteJetOver.jetSupport">Lean (definition of JetA)</lean>
+    <lean project="AdicSpaces" ref="FiniteJetOver.isClosed_jetSupport">Lean (isClosed_jetSupport)</lean>
     <lean project="AdicSpaces" ref="FiniteJetOver.isTateRing_JetA">Lean (isTateRing_JetA)</lean>
     <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_isUniform_of_dvr">Lean (finiteJet_isUniform_of_dvr)</lean>
     <lean project="AdicSpaces" ref="FiniteJetOver.isPowerBounded_JetA_iff">Lean (isPowerBounded_JetA_iff)</lean>
@@ -74,18 +75,18 @@ is strict exact, and <m>C\to D</m> is a strict surjection.
   </definition>
   <p>
     After rotating the square if necessary, the initial Milnor square is strict by the
-nonarchimedean open mapping theorem <xref ref="bib-KST" detail="Lemma 3.1"/>.  Our main input is that
-strictness persists after completed rational localisation and is compatible with
-refinement.  This allows sheafiness to be transferred from <m>B,C,D</m> to <m>R</m>.  The
-associated square of affinoid adic spaces is a pushout among affinoid spaces, but not
-among all adic spaces; see <xref ref="rem-pushout-diagram"/>.  The second example shows that
-the failure of stable uniformity need not come from a nonreduced localisation.
+nonarchimedean open mapping theorem <xref ref="bib-KST" detail="Lemma 3.1"/>.  Our main input is that,
+for this finite-jet square, the strict exact row persists after completed rational
+localisation and is compatible with refinement.  This transfers sheafiness from
+<m>B,C,D</m> to <m>A</m>.  The second example shows that the failure of stable uniformity
+need not come from a nonreduced localisation.
   </p>
   <p>
-    Both examples were found in collaboration with ChatGPT 5.6 Sol.  The first has been
-formalised in Lean, and substantial parts of the second have also been checked.
-<xref ref="sec-formalisation"/> gives the precise scope of the two developments and relates
-their statements to the definitions used here.
+    Both examples were found in collaboration with ChatGPT 5.6 Sol.  Their
+construction, uniformity, sheafiness, and failure of stable uniformity
+have been formalised in Lean<nbsp/>4.  The formalisation also includes the
+rational-chart calculations used above.  <xref ref="sec-formalisation"/>
+records the relevant definitions and theorem statements.
   </p>
   <remark xml:id="rem-earlier-work">
     <title>Relation with earlier work</title>
@@ -98,16 +99,20 @@ phenomena <xref ref="bib-Mihara"/>.  These examples do not give a uniform sheafy
 stably uniform.
       </p>
       <p>
-        The strict Koszul result used in <xref ref="lem-koszul"/> is due to
-Ben-Bassat<ndash/>Kremnizer and Bambozzi<ndash/>Kremnizer
-<xref ref="bib-BBK" detail="Definition 5.7 and Lemmas 5.13--5.14"/>
-<xref ref="bib-BK" detail="Definitions 4.5--4.6, Proposition 4.9, Lemma 4.11, and
-Corollary 4.13"/>.  We use its lattice form to prove that rational localisation
-preserves the finite-jet Milnor square.  The resulting uniform sheafy domain which is
-not stably uniform appears to be new.
+        Ben-Bassat<ndash/>Kremnizer prove the corresponding one-variable strict resolutions
+for Weierstrass and Laurent localisations, and reduce a general rational
+localisation to these cases <xref ref="bib-BBK" detail="Lemmas 5.13--5.14"/>.  They do not
+formulate a multivariable Koszul theorem.  That formulation, and the strict
+Koszul regularity of rational localisations, is given by
+Bambozzi<ndash/>Kremnizer
+<xref ref="bib-BK" detail="Notation 4.3, Definitions 4.5--4.6, Proposition 4.9,
+Lemma 4.11, and Corollary 4.13"/>.  The lattice estimates in
+<xref ref="lem-koszul"/> are the form needed to show that rational localisation
+preserves the finite-jet Milnor square.  The resulting uniform sheafy domain
+which is not stably uniform appears to be new.
       </p>
       <p>
-        The weighted-parity construction of <xref ref="sec-rationally-reduced"/> is closer to the
+        The weighted-parity construction of <xref ref="sec-second-example"/> is closer to the
 infinite monomial-support examples of Buzzard<ndash/>Verberkmoes and Mihara.  Its additional
 feature is that rational localisation can be calculated in a noetherian finite head.
       </p>

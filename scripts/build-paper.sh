@@ -20,6 +20,14 @@ python3 "$paper_root/scripts/build-lean-knowls.py" "$paper_root"
 
 cd "$paper_root"
 "$paperforge_bin" doctor
+
+# PreTeXt updates the knowls needed by the current source but does not remove
+# obsolete xref knowls from an earlier build.  Clear only this generated
+# directory so withdrawn statements cannot survive into the Pages snapshot.
+if [[ -d "$paper_root/output/web/knowl/xref" ]]; then
+  find "$paper_root/output/web/knowl/xref" -type f -name '*.html' -delete
+fi
+
 "$paperforge_bin" build web
 
 # GitHub Pages may cache detail-ui.js across deployments.  This file also

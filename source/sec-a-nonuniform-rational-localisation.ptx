@@ -18,7 +18,7 @@ be the corresponding rational localisation on <m>|W|\leq |\varpi|</m>, and write
       <p>
         There is a canonical isomorphism of complete topological rings
 <me>A_{\mathrm{in}}\cong k\langle X,Q\rangle/(Q^2),
-  \qquad W\longmapsto\varpi X.</me>
+  \qquad W\longmapsto\varpi X,\quad Q\longmapsto Q.</me>
       </p>
     </statement>
     <lean project="AdicSpaces" ref="FiniteJetOver.chartDatum_isRational">Lean (chartDatum_isRational)</lean>
@@ -28,37 +28,45 @@ be the corresponding rational localisation on <m>|W|\leq |\varpi|</m>, and write
     <lean project="AdicSpaces" ref="FiniteJetOver.chartEquiv_canonicalMap_W">Lean (chartEquiv_canonicalMap_W)</lean>
     <proof>
       <p>
-        Let
-<me>q\colon A_0[X]\longrightarrow A[X]/(\varpi X-W)</me>
-be the composite of the inclusion <m>A_0[X]\hookrightarrow A[X]</m> with the
-quotient map, and set
-<me>G_0:=q(A_0[X]).</me>
-Since <m>\varpi</m> is a unit in <m>A</m>, evaluation at <m>X=W/\varpi</m> gives a
-canonical isomorphism
-<me>A[X]/(\varpi X-W)\xrightarrow{\ \sim\ }A.</me>
-Under this identification,
-<me>G_0=A_0[W/\varpi]\subset A;</me>
-it is the ring of definition whose separated <m>\varpi</m>-adic completion
-defines <m>A_{\mathrm{in}}</m>.  If <m>y\in Q^2C_0</m>, its constant and linear
-<m>Q</m>-coefficients vanish, so <m>W^{-n}y\in A_0</m> for every <m>n\geq0</m>.  In <m>G_0</m>
-one has
-        <men xml:id="eq-infinitely-divisible">y=W^n(W^{-n}y)=\varpi^nX^n(W^{-n}y)\in\varpi^nG_0.</men>
-        Thus <m>Q^2C_0</m> maps to zero in the separated completion.  After multiplying by a suitable power of <m>\varpi</m>, the same conclusion holds for every element of <m>Q^2C</m>.
-      </p>
-      <p>
         Put
-<me>T_0=k^\circ\langle X,Q\rangle/(Q^2),
-  \qquad T=T_0[1/\varpi].</me>
-Using the unique expression in <xref ref="eq-coefficient-A0"/>, define
-<me>f_0(W)+Qf_1(W)+Q^2h
-  \longmapsto
+<me>T=k\langle X,Q\rangle/(Q^2).</me>
+Take the two-jet map <m>A\to B</m> and then rescale its disc variable by
+<m>W\mapsto\varpi X</m>.  This gives a continuous map
+<me>\theta:A\longrightarrow T,\qquad
+  f_0(W)+Qf_1(W)+Q^2h\longmapsto
   f_0(\varpi X)+Qf_1(\varpi X).</me>
-This sends <m>A_0</m> into <m>T_0</m>, and it sends <m>W/\varpi</m> to <m>X</m>.  Hence it extends to a continuous homomorphism
-<m>A_{\mathrm{in}}\to T</m>.
+The element <m>\theta(\varpi)</m> is a unit and
+<m>\theta(W)/\theta(\varpi)=X</m> is power-bounded.  The universal property first
+extends <m>\theta</m> to the algebraic rational localisation and then, by
+continuity, to a map
+<me>\Phi:A_{\mathrm{in}}\longrightarrow T.</me>
       </p>
       <p>
-        Conversely, <m>X</m> and <m>Q</m> belong to the ring of definition of <m>A_{\mathrm{in}}</m>, and
-<xref ref="eq-infinitely-divisible"/> gives <m>Q^2=0</m> there.  They therefore define a continuous homomorphism <m>T\to A_{\mathrm{in}}</m>.  The two composites fix <m>X</m> and <m>Q</m>.  On the dense image of <m>G_0</m>, the second composite differs from the identity only by an element of <m>Q^2C_0</m>, which is zero by <xref ref="eq-infinitely-divisible"/>.  The two maps are therefore inverse.
+        We next record why the two-jet map loses no information other than the
+<m>Q^2</m>-tail after completion.  If the constant and linear <m>Q</m>-coefficients of
+<m>y\in A</m> vanish, then <m>y_n=W^{-n}y</m> still belongs to <m>A</m>, and the <m>y_n</m> have
+bounded norm.  In <m>A_{\mathrm{in}}</m> one has
+<me>\overline y=\varpi^nX^n\overline{y_n}\qquad(n\geq0).</me>
+The powers of <m>X</m> are bounded and <m>\varpi^n\to0</m>, so <m>\overline y=0</m>.
+In particular, the image <m>\overline Q</m> of <m>Q</m> satisfies
+<m>\overline Q^{\,2}=0</m>.
+      </p>
+      <p>
+        Let <m>\overline X=\overline W/\varpi</m>.  Since <m>\overline X</m> is power-bounded,
+evaluation at <m>\overline X</m> gives a continuous map
+<m>k\langle X\rangle\to A_{\mathrm{in}}</m>.  We may therefore define
+<me>\Psi:T\longrightarrow A_{\mathrm{in}},\qquad
+  f+Qg\longmapsto f(\overline X)+g(\overline X)\overline Q.</me>
+To check the first composite, decompose
+<m>a\in A</m> as <m>a=f_0(W)+Qf_1(W)+y</m>, where the first two coefficients lie in
+<m>k\langle W\rangle</m> and the first two <m>Q</m>-coefficients of <m>y</m> vanish.  The
+preceding paragraph kills <m>y</m>, and hence
+<m>\Psi(\theta(a))=\overline a</m>.  This proves
+<m>\Psi\Phi=1</m> on the dense algebraic rational localisation, and therefore on
+<m>A_{\mathrm{in}}</m>.  In the other direction, <m>\Phi\Psi</m> fixes constants, <m>X</m>
+and <m>Q</m>.  It is consequently the identity first on polynomials, then on
+<m>k\langle X\rangle</m> by density, and finally on <m>T</m>.  Thus <m>\Phi</m> and <m>\Psi</m>
+are inverse continuous homomorphisms.
       </p>
     </proof>
   </proposition>

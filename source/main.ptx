@@ -19,7 +19,14 @@
       </titlepage>
       <abstract>
 <p>
-  Work of Buzzard<ndash/>Verberkmoes and, independently, Mihara shows that stable uniformity is a sufficient criterion for a Tate Huber ring to be sheafy, meaning that the structure presheaf of topological rings on its associated adic space is a sheaf. In this paper we construct examples of uniform sheafy rings which are not stably uniform, answering Question<nbsp/>7 of Kedlaya's <em>Nonarchimedean Scottish Book</em>. The examples were found in collaboration with ChatGPT 5.6 Sol. The first has been fully formalised in Lean<nbsp/>4; its proof rests on showing that a particular strict pullback of complete Tate rings is preserved by rational localisation. Formalisation of the second is ongoing: the construction, uniformity, sheafiness, and the nonuniform domain chart have been checked, but reducedness of every finite iterated rational localisation has not.
+  Buzzard<ndash/>Verberkmoes and Mihara show that a stably uniform Tate Huber
+ring is sheafy.  We construct two uniform sheafy Tate domains which are
+not stably uniform, answering Question<nbsp/>7 of Kedlaya's
+<em>Nonarchimedean Scottish Book</em>.  In the first example a rational
+localisation is nonreduced, whilst in the second the nonuniform rational
+localisation is an integral domain.  Both constructions, including their
+sheafiness and the rational localisations witnessing failure of stable
+uniformity, have been formalised in Lean<nbsp/>4.
 </p>
       </abstract>
     </frontmatter>
@@ -29,22 +36,19 @@
     <xi:include href="./sec-a-nonuniform-rational-localisation.ptx"/>
     <xi:include href="./sec-localisation-of-the-milnor-square.ptx"/>
     <xi:include href="./sec-sheafiness.ptx"/>
-    <xi:include href="./sec-rationally-reduced.ptx"/>
+    <xi:include href="./sec-second-example.ptx"/>
     <backmatter xml:id="backmatter">
       <xi:include href="./sec-formalisation.ptx"/>
       <references xml:id="references">
       <title>References</title>
       <biblio type="raw" xml:id="bib-AINTLIB">
-      C.<nbsp/>Birkbeck and contributors, <em>AINTLIB: AdicSpaces formalisation</em>, Lean<nbsp/>4 source code, finite-jet snapshot <c>b007a4f3d4226f00a684b402715aa542e2f0bcdc</c> and weighted-parity work-in-progress snapshot <c>090a289211deb69117413e329325fe819aa7dbc2</c>, 2026, <url href="https://github.com/CBirkbeck/AINTLIB"><c>https://github.com/CBirkbeck/AINTLIB</c></url>.
+      C.<nbsp/>Birkbeck and contributors, <em>AINTLIB: AdicSpaces formalisation</em>, Lean<nbsp/>4 source code, finite-jet snapshot <c>b007a4f3d4226f00a684b402715aa542e2f0bcdc</c> and weighted-parity snapshot <c>090a289211deb69117413e329325fe819aa7dbc2</c>, 2026, <url href="https://github.com/CBirkbeck/AINTLIB"><c>https://github.com/CBirkbeck/AINTLIB</c></url>.
       </biblio>
       <biblio type="raw" xml:id="bib-BBK">
       O.<nbsp/>Ben-Bassat and K.<nbsp/>Kremnizer, <em>Non-Archimedean analytic geometry as relative algebraic geometry</em>, Ann. Fac. Sci. Toulouse Math. (6) <alert>26</alert> (2017), no.<nbsp/>1, 49<ndash/>126, <url href="https://doi.org/10.5802/afst.1526">doi:10.5802/afst.1526</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-BK">
       F.<nbsp/>Bambozzi and K.<nbsp/>Kremnizer, <em>On the sheafyness property of spectra of Banach rings</em>, J. Lond. Math. Soc. (2) <alert>109</alert> (2024), no.<nbsp/>1, e12855, <url href="https://doi.org/10.1112/jlms.12855">doi:10.1112/jlms.12855</url>.
-      </biblio>
-      <biblio type="raw" xml:id="bib-BGR">
-      S.<nbsp/>Bosch, U.<nbsp/>Güntzer, and R.<nbsp/>Remmert, <em>Non-Archimedean Analysis</em>, Grundlehren der mathematischen Wissenschaften, vol.<nbsp/>261, Springer-Verlag, Berlin, 1984.
       </biblio>
       <biblio type="raw" xml:id="bib-BV">
       K.<nbsp/>Buzzard and A.<nbsp/>Verberkmoes, <em>Stably uniform affinoids are sheafy</em>, J. Reine Angew. Math. <alert>740</alert> (2018), 25<ndash/>39.
@@ -60,9 +64,6 @@
       </biblio>
       <biblio type="raw" xml:id="bib-KedlayaAWS">
       K.<nbsp/>S. Kedlaya, <em>Sheaves, stacks, and shtukas</em>, Arizona Winter School notes, 2017, <url href="https://swc-math.github.io/aws/2017/2017KedlayaNotes.pdf"><c>https://swc-math.github.io/aws/2017/2017KedlayaNotes.pdf</c></url>.
-      </biblio>
-      <biblio type="raw" xml:id="bib-ConradL15">
-      B.<nbsp/>Conrad, <em>Points and lft maps</em>, Perfectoid Spaces Seminar, Lecture<nbsp/>15, <url href="https://virtualmath1.stanford.edu/~conrad/Perfseminar/Notes/L15.pdf"><c>https://virtualmath1.stanford.edu/~conrad/Perfseminar/Notes/L15.pdf</c></url>.
       </biblio>
       <biblio type="raw" xml:id="bib-KST">
       M.<nbsp/>Kerz, S.<nbsp/>Saito, and G.<nbsp/>Tamme, <em><m>K</m>-theory of non-archimedean rings II</em>, Nagoya Math. J. <alert>251</alert> (2023), 669<ndash/>685.

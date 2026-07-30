@@ -86,12 +86,6 @@
    "number": "3.1",
    "section": "3"
   },
-  "eq-additive-order": {
-   "kind": "equation",
-   "label": "eq:additive-order",
-   "number": "(8)",
-   "section": "3"
-  },
   "sec-a-nonuniform-rational-localisation": {
    "kind": "section",
    "label": null,
@@ -102,12 +96,6 @@
    "kind": "proposition",
    "label": "prop:bad-chart",
    "number": "4.1",
-   "section": "4"
-  },
-  "eq-infinitely-divisible": {
-   "kind": "equation",
-   "label": "eq:infinitely-divisible",
-   "number": "(9)",
    "section": "4"
   },
   "prop-not-stably-uniform": {
@@ -137,13 +125,13 @@
   "eq-ideal-denominators": {
    "kind": "equation",
    "label": "eq:ideal-denominators",
-   "number": "(10)",
+   "number": "(8)",
    "section": "5"
   },
   "eq-syzygy-denominators": {
    "kind": "equation",
    "label": "eq:syzygy-denominators",
-   "number": "(11)",
+   "number": "(9)",
    "section": "5"
   },
   "sec-localisation-of-the-milnor-square-the-defining-ideals-under-pullback": {
@@ -155,7 +143,7 @@
   "eq-tate-ambient": {
    "kind": "equation",
    "label": "eq:tate-ambient",
-   "number": "(12)",
+   "number": "(10)",
    "section": "5"
   },
   "lem-graph-pullback": {
@@ -167,13 +155,7 @@
   "eq-ideal-row": {
    "kind": "equation",
    "label": "eq:ideal-row",
-   "number": "(13)",
-   "section": "5"
-  },
-  "eq-JA-strict": {
-   "kind": "equation",
-   "label": "eq:JA-strict",
-   "number": "(14)",
+   "number": "(11)",
    "section": "5"
   },
   "prop-localized-milnor": {
@@ -185,7 +167,7 @@
   "eq-localized-row": {
    "kind": "equation",
    "label": "eq:localized-row",
-   "number": "(15)",
+   "number": "(12)",
    "section": "5"
   },
   "sec-sheafiness": {
@@ -194,43 +176,25 @@
    "number": "6",
    "section": "6"
   },
-  "lem-sheaf-transfer": {
-   "kind": "lemma",
-   "label": "lem:sheaf-transfer",
-   "number": "6.1",
-   "section": "6"
-  },
-  "eq-sheaf-transfer-row": {
-   "kind": "equation",
-   "label": "eq:sheaf-transfer-row",
-   "number": "(16)",
-   "section": "6"
-  },
   "thm-sheafy": {
    "kind": "theorem",
    "label": "thm:sheafy",
-   "number": "6.2",
+   "number": "6.1",
    "section": "6"
   },
-  "rem-pushout-diagram": {
-   "kind": "remark",
-   "label": "rem:pushout-diagram",
-   "number": "6.3",
-   "section": "6"
-  },
-  "sec-rationally-reduced": {
+  "sec-second-example": {
    "kind": "section",
-   "label": "sec:rationally-reduced",
+   "label": "sec:second-example",
    "number": "7",
    "section": "7"
   },
-  "thm-rationally-reduced-example": {
+  "thm-second-example": {
    "kind": "theorem",
-   "label": "thm:rationally-reduced-example",
+   "label": "thm:second-example",
    "number": "7.1",
    "section": "7"
   },
-  "sec-rationally-reduced-the-weighted-parity-algebra": {
+  "sec-second-example-the-weighted-parity-algebra": {
    "kind": "subsection",
    "label": null,
    "number": "7.1",
@@ -239,43 +203,37 @@
   "eq-parity-weight": {
    "kind": "equation",
    "label": "eq:parity-weight",
-   "number": "(17)",
+   "number": "(13)",
    "section": "7"
   },
   "eq-parity-monoid": {
    "kind": "equation",
    "label": "eq:parity-monoid",
-   "number": "(18)",
+   "number": "(14)",
    "section": "7"
   },
   "eq-omega-subadditive": {
    "kind": "equation",
    "label": "eq:omega-subadditive",
-   "number": "(19)",
+   "number": "(15)",
    "section": "7"
   },
   "eq-parity-gauss-norm": {
    "kind": "equation",
    "label": "eq:parity-gauss-norm",
-   "number": "(20)",
+   "number": "(16)",
    "section": "7"
   },
   "eq-parity-algebra": {
    "kind": "equation",
    "label": "eq:parity-algebra",
-   "number": "(21)",
+   "number": "(17)",
    "section": "7"
   },
   "eq-parity-ring-of-definition": {
    "kind": "equation",
    "label": "eq:parity-ring-of-definition",
-   "number": "(22)",
-   "section": "7"
-  },
-  "eq-finite-head-presentation": {
-   "kind": "equation",
-   "label": "eq:finite-head-presentation",
-   "number": "(23)",
+   "number": "(18)",
    "section": "7"
   },
   "lem-finite-stage-normal-form": {
@@ -287,25 +245,13 @@
   "eq-finite-stage-normal-form": {
    "kind": "equation",
    "label": "eq:finite-stage-normal-form",
-   "number": "(24)",
-   "section": "7"
-  },
-  "eq-finite-stage-substitution": {
-   "kind": "equation",
-   "label": "eq:finite-stage-substitution",
-   "number": "(25)",
+   "number": "(19)",
    "section": "7"
   },
   "eq-A-completion-of-heads": {
    "kind": "equation",
    "label": "eq:A-completion-of-heads",
-   "number": "(26)",
-   "section": "7"
-  },
-  "eq-parity-factorization": {
-   "kind": "equation",
-   "label": "eq:parity-factorization",
-   "number": "(27)",
+   "number": "(20)",
    "section": "7"
   },
   "prop-parity-uniform-domain": {
@@ -320,7 +266,7 @@
    "number": "7.4",
    "section": "7"
   },
-  "sec-rationally-reduced-a-reduced-nonuniform-rational-chart": {
+  "sec-second-example-a-reduced-nonuniform-rational-chart": {
    "kind": "subsection",
    "label": null,
    "number": "7.2",
@@ -329,13 +275,13 @@
   "eq-weighted-chart-lattice": {
    "kind": "equation",
    "label": "eq:weighted-chart-lattice",
-   "number": "(28)",
+   "number": "(21)",
    "section": "7"
   },
   "eq-weighted-chart-norm": {
    "kind": "equation",
    "label": "eq:weighted-chart-norm",
-   "number": "(29)",
+   "number": "(22)",
    "section": "7"
   },
   "prop-weighted-chart-identification": {
@@ -347,25 +293,7 @@
   "eq-weighted-chart-identification": {
    "kind": "equation",
    "label": "eq:weighted-chart-identification",
-   "number": "(30)",
-   "section": "7"
-  },
-  "eq-weighted-section": {
-   "kind": "equation",
-   "label": "eq:weighted-section",
-   "number": "(31)",
-   "section": "7"
-  },
-  "eq-weighted-division-identity": {
-   "kind": "equation",
-   "label": "eq:weighted-division-identity",
-   "number": "(32)",
-   "section": "7"
-  },
-  "eq-weighted-kernel": {
-   "kind": "equation",
-   "label": "eq:weighted-kernel",
-   "number": "(33)",
+   "number": "(23)",
    "section": "7"
   },
   "prop-weighted-chart-domain-nonuniform": {
@@ -374,13 +302,7 @@
    "number": "7.6",
    "section": "7"
   },
-  "eq-Tn-power-norms": {
-   "kind": "equation",
-   "label": "eq:Tn-power-norms",
-   "number": "(34)",
-   "section": "7"
-  },
-  "sec-rationally-reduced-small-perturbations-of-rational-data": {
+  "sec-second-example-small-perturbations-of-rational-data": {
    "kind": "subsection",
    "label": null,
    "number": "7.3",
@@ -395,16 +317,16 @@
   "eq-integral-bezout": {
    "kind": "equation",
    "label": "eq:integral-bezout",
-   "number": "(35)",
+   "number": "(24)",
    "section": "7"
   },
   "eq-small-perturbation-bound": {
    "kind": "equation",
    "label": "eq:small-perturbation-bound",
-   "number": "(36)",
+   "number": "(25)",
    "section": "7"
   },
-  "sec-rationally-reduced-finite-head-rational-localisation": {
+  "sec-second-example-finite-head-rational-localisation": {
    "kind": "subsection",
    "label": null,
    "number": "7.4",
@@ -413,25 +335,25 @@
   "eq-tail-basis": {
    "kind": "equation",
    "label": "eq:tail-basis",
-   "number": "(37)",
+   "number": "(26)",
    "section": "7"
   },
   "eq-tail-decomposition": {
    "kind": "equation",
    "label": "eq:tail-decomposition",
-   "number": "(38)",
+   "number": "(27)",
    "section": "7"
   },
   "eq-tail-multiplication": {
    "kind": "equation",
    "label": "eq:tail-multiplication",
-   "number": "(39)",
+   "number": "(28)",
    "section": "7"
   },
   "eq-head-retraction": {
    "kind": "equation",
    "label": "eq:head-retraction",
-   "number": "(40)",
+   "number": "(29)",
    "section": "7"
   },
   "prop-coefficientwise-localization": {
@@ -443,19 +365,13 @@
   "eq-coefficientwise-localization": {
    "kind": "equation",
    "label": "eq:coefficientwise-localization",
-   "number": "(41)",
+   "number": "(30)",
    "section": "7"
   },
   "eq-coefficientwise-restriction": {
    "kind": "equation",
    "label": "eq:coefficientwise-restriction",
-   "number": "(42)",
-   "section": "7"
-  },
-  "eq-c0-quotient": {
-   "kind": "equation",
-   "label": "eq:c0-quotient",
-   "number": "(43)",
+   "number": "(31)",
    "section": "7"
   },
   "cor-finite-head-presentation": {
@@ -467,10 +383,10 @@
   "eq-arbitrary-finite-head-presentation": {
    "kind": "equation",
    "label": "eq:arbitrary-finite-head-presentation",
-   "number": "(44)",
+   "number": "(32)",
    "section": "7"
   },
-  "sec-rationally-reduced-sheafiness": {
+  "sec-second-example-sheafiness": {
    "kind": "subsection",
    "label": null,
    "number": "7.5",
@@ -482,70 +398,10 @@
    "number": "7.10",
    "section": "7"
   },
-  "eq-split-spectrum-map": {
-   "kind": "equation",
-   "label": "eq:split-spectrum-map",
-   "number": "(45)",
-   "section": "7"
-  },
-  "eq-cover-coefficientwise": {
-   "kind": "equation",
-   "label": "eq:cover-coefficientwise",
-   "number": "(46)",
-   "section": "7"
-  },
-  "eq-head-cech": {
-   "kind": "equation",
-   "label": "eq:head-cech",
-   "number": "(47)",
-   "section": "7"
-  },
-  "eq-coefficientwise-gluing-bound": {
-   "kind": "equation",
-   "label": "eq:coefficientwise-gluing-bound",
-   "number": "(48)",
-   "section": "7"
-  },
-  "sec-rationally-reduced-reducedness-of-all-rational-localisations": {
-   "kind": "subsection",
-   "label": null,
-   "number": "7.6",
-   "section": "7"
-  },
-  "lem-formal-series-reduced": {
-   "kind": "lemma",
-   "label": "lem:formal-series-reduced",
-   "number": "7.11",
-   "section": "7"
-  },
-  "eq-formal-series-ring": {
-   "kind": "equation",
-   "label": "eq:formal-series-ring",
-   "number": "(49)",
-   "section": "7"
-  },
-  "thm-parity-rationally-reduced": {
-   "kind": "theorem",
-   "label": "thm:parity-rationally-reduced",
-   "number": "7.12",
-   "section": "7"
-  },
-  "eq-reduced-localization-decomposition": {
-   "kind": "equation",
-   "label": "eq:reduced-localization-decomposition",
-   "number": "(50)",
-   "section": "7"
-  },
-  "eq-formal-embedding": {
-   "kind": "equation",
-   "label": "eq:formal-embedding",
-   "number": "(51)",
-   "section": "7"
-  },
   "rem-second-example-relation": {
    "kind": "remark",
    "label": "rem:second-example-relation",
-   "number": "7.13",
+   "number": "7.11",
    "section": "7"
   },
   "sec-formalisation": {
