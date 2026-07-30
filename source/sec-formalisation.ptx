@@ -292,7 +292,9 @@ local compactness, finiteness of the residue field, characteristic, or
 perfection assumption is used.  The theorem
 <c>finiteJet_isSheafyFor_of_dvr</c> proves that <m>(A,A^\circ)</m> is sheafy,
 whilst <c>finiteJet_isSheafyTateRing_of_dvr</c> removes the choices of
-completion and ring of integral elements.  The corresponding all-open
+completion and ring of integral elements.  Despite its name, the latter does
+not quantify over finite Tate extensions of <m>A</m>, so it is not a strong
+sheafiness statement.  The corresponding all-open
 statement is
 <me>\begin{split}
 &amp;\texttt{TopCat.Presheaf.IsSheafOfTopologicalRings}\\[-2pt]

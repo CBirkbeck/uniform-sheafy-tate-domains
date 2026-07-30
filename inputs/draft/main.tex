@@ -200,9 +200,7 @@ A \emph{ring of integral elements} is an open subring
 $E^+\subseteq E^\circ$ which is integrally closed in $E$.  We call the Huber pair
 $(E,E^+)$ \emph{sheafy} when its structure presheaf is a sheaf of complete
 topological rings; in particular, the map to the matching-family equaliser for a
-finite rational cover is a homeomorphism.  We call $E$ \emph{strongly sheafy} if
-every $E\langle Z_1,\ldots,Z_s\rangle$, with its maximal ring of integral elements,
-is sheafy.
+finite rational cover is a homeomorphism.
 
 \item \emph{Strictness.}
 We use the following bounded-denominator form of strictness.  Let $u:M\to N$ be a continuous $k$-linear map and choose lattices $M_0\subset M$ and $N_0\subset N$.  Then $u$ is strict if and only if there exists $a\geq0$ such that
@@ -835,7 +833,7 @@ There is a complete Tate $k$-algebra $\mathcal A$ with the following properties.
 \begin{enumerate}
 \item $\mathcal A$ is a uniform, nonnoetherian integral domain and
       $\mathcal A^\circ=\mathcal A_0$ for the ring of definition displayed below.
-\item The Huber pair $(\mathcal A,\mathcal A^\circ)$ is strongly sheafy.
+\item The Huber pair $(\mathcal A,\mathcal A^\circ)$ is sheafy.
 \item Every finite iterated rational localisation of $\mathcal A$ is reduced.
 \item The rational localisation
       \[
@@ -1294,8 +1292,8 @@ that $\bigcup_MP_M$ is dense.
 
 \subsection{Sheafiness}
 
-\begin{theorem}\label{thm:parity-strongly-sheafy}
-The Huber pair $(\mathcal A,\mathcal A^\circ)$ is strongly sheafy.
+\begin{theorem}\label{thm:parity-sheafy}
+The Huber pair $(\mathcal A,\mathcal A^\circ)$ is sheafy.
 \end{theorem}
 
 \begin{proof}
@@ -1391,15 +1389,6 @@ under rational restriction.  The defining projective-limit topology on arbitrary
 then makes the inverse gluing map continuous.  Thus the public all-open structure presheaf is a
 sheaf of complete topological rings.
 
-Finally, for auxiliary Tate variables $V_1,\ldots,V_s$ one has, isometrically,
-\begin{equation}\label{eq:strong-sheafy-decomposition}
-  \mathcal A\langle V_1,\ldots,V_s\rangle
-  \cong
-  \widehat{\bigoplus}_{\mu}^{c_0}
-  \mathcal A_N\langle V_1,\ldots,V_s\rangle e_\mu.
-\end{equation}
-The finite heads remain affinoid, the retractions and perturbation lemma are unchanged, and
-the preceding proof applies verbatim.  Therefore every finite Tate extension is sheafy.
 \end{proof}
 
 \subsection{Reducedness of all rational localisations}
@@ -1464,8 +1453,8 @@ $x_\mu=0$ for every $\mu$, so $\Phi$ is injective.  By
 
 \begin{proof}[Proof of \cref{thm:rationally-reduced-example}]
 The uniform domain assertion is \cref{prop:parity-uniform-domain}, and nonnoetherianity is
-\cref{prop:parity-nonnoetherian}.  Strong sheafiness is
-\cref{thm:parity-strongly-sheafy}.  Reducedness of all finite iterated rational
+\cref{prop:parity-nonnoetherian}.  Sheafiness is
+\cref{thm:parity-sheafy}.  Reducedness of all finite iterated rational
 localisations is \cref{thm:parity-rationally-reduced}.  Finally,
 \cref{prop:weighted-chart-identification,prop:weighted-chart-domain-nonuniform} identify the
 rational chart $|W|\leq|\varpi|$ as a nonuniform integral domain.
@@ -1768,7 +1757,9 @@ local compactness, finiteness of the residue field, characteristic, or
 perfection assumption is used.  The theorem
 \texttt{finiteJet\_isSheafyFor\_of\_dvr} proves that $(A,A^\circ)$ is sheafy,
 whilst \texttt{finiteJet\_isSheafyTateRing\_of\_dvr} removes the choices of
-completion and ring of integral elements.  The corresponding all-open
+completion and ring of integral elements.  Despite its name, the latter does
+not quantify over finite Tate extensions of $A$, so it is not a strong
+sheafiness statement.  The corresponding all-open
 statement is
 \[
 \begin{split}
