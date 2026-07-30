@@ -25,11 +25,10 @@ directly for each one, in the hope that a pattern, and eventually a proof,
 would emerge.
   </p>
   <p>
-    It was through this process that ChatGPT 5.2 Pro found
-<xref ref="lem-small-perturbation"/>.  After a couple of weeks it claimed to have a
-complete proof.  The author then began the slow process of understanding
-this proof, only to discover, with the help of ChatGPT 5.3, that one of its
-arguments used the following assertion:
+    After a couple of weeks ChatGPT 5.2 Pro claimed to have a complete proof.
+The author then began the slow process of understanding this proof, only to
+discover, with the help of ChatGPT 5.3, that one of its arguments used the
+following assertion:
   </p>
   <p>
     <em>If <m>\phi:A\to B</m> is a continuous homomorphism of Hausdorff
