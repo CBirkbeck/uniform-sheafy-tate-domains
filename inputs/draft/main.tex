@@ -1057,77 +1057,24 @@ $\mathcal B^\circ$ is unbounded and $\mathcal B$ is not uniform.
 
 \subsection{Small perturbations of rational data}
 
-The fact that a rational subset is unchanged by sufficiently small
-perturbations of its defining functions is standard; see
-\cite[Lemma~3.10]{Huber93} and \cite[Remark~2.4.7]{KL}.  We record the
-following quantitative form because the explicit bound is needed below.
-The identification of the completed localisations uses the universal
-property of rational localisation \cite[Proposition~1.3]{Huber94}.
-
 \begin{lemma}[Small perturbation lemma]\label{lem:small-perturbation}
-Let $E$ be a complete nonarchimedean normed commutative ring, let
-$E^+\subset E$ be a plus ring containing the closed unit ball
-$E_0=\{x:\lVert x\rVert\leq1\}$, and let $t\in E^\times$ satisfy
+Let $(E,E^+)$ be a complete Tate Huber pair and let
+$\alpha=(f_1,\ldots,f_m;g)$ be a rational datum in $E$.  There is a
+neighbourhood $V$ of zero in $E$ such that, whenever
 \[
-  0<\lVert t\rVert<1,\qquad
-  \lVert tx\rVert=\lVert t\rVert\lVert x\rVert\quad(x\in E).
+  g'-g,\ f_1'-f_1,\ldots,f_m'-f_m\in V,
 \]
-Let $\alpha=(f_1,\ldots,f_m;g)$ be a rational datum with entries in
-$E_0$.  Suppose that for some $\ell\geq0$ there are
-$a_0,\ldots,a_m\in E_0$ with
-\begin{equation}\label{eq:integral-bezout}
-  t^\ell=a_0g+\sum_{i=1}^m a_if_i.
-\end{equation}
-Let $g',f_1',\ldots,f_m'\in E_0$ satisfy
-\begin{equation}\label{eq:small-perturbation-bound}
-  \lVert g'-g\rVert\leq\lVert t\rVert^{\ell+1},
-  \qquad
-  \lVert f_i'-f_i\rVert\leq\lVert t\rVert^{\ell+1}
-  \quad(1\leq i\leq m),
-\end{equation}
-and put $\alpha'=(f_1',\ldots,f_m';g')$.  Then $\alpha'$ is a rational
-datum, $\alpha$ and $\alpha'$ define the same rational subset of
-$\Spa(E,E^+)$, and their completed rational localisations are
-bicontinuously isomorphic by an isomorphism commuting with the canonical
-maps from $E$.
+the tuple $\alpha'=(f_1',\ldots,f_m';g')$ is a rational datum and
+$\alpha$ and $\alpha'$ define the same rational subset of
+$\Spa(E,E^+)$.  Their completed rational localisations are canonically
+bicontinuously isomorphic over $E$.
 \end{lemma}
 
 \begin{proof}
-The scaling hypothesis and the fact that $t$ is a unit give
-$g'-g=t^{\ell+1}h_0$ and
-$f_i'-f_i=t^{\ell+1}h_i$, with
-$h_0,h_1,\ldots,h_m\in E_0$.  Hence
-\[
-  a_0g'+\sum_{i=1}^m a_if_i'
-  =t^\ell(1+tH),
-  \qquad
-  H=a_0h_0+\sum_{i=1}^m a_ih_i\in E_0.
-\]
-Since $\lVert tH\rVert<1$, the element $1+tH$ is a unit with inverse in
-$E_0$.  The displayed identity therefore shows that the primed entries
-generate the unit ideal; in particular, $\alpha'$ is rational.
-
-Let $x$ lie in the rational subset defined by $\alpha$.  Since
-$a_0,a_1,\ldots,a_m\in E_0\subseteq E^+$,
-relation \eqref{eq:integral-bezout} gives
-\[
-  |t(x)|^\ell\leq |g(x)|.
-\]
-The perturbations have value at most $|t(x)|^{\ell+1}<|g(x)|$, so
-$|g'(x)|=|g(x)|$ and
-$|f_i'(x)|\leq|g'(x)|$.  This proves one inclusion of rational subsets.  Applying the same
-argument to
-\[
-  a_0g'+\sum_i a_if_i'=t^\ell(1+tH)
-\]
-proves the reverse inclusion, since $|1+tH|=1$ at every point.
-
-Rational localisation is independent of the datum used to present a rational
-subset.  The equality of the two subsets therefore gives restriction maps in
-both directions between $E_\alpha$ and $E_{\alpha'}$.  Transitivity of
-rational restriction shows that their composites are the identity.  The two
-restriction maps are continuous and commute with the canonical maps from
-$E$, as required.
+Apply \cite[Lemma~3.10]{Huber93} after including $g$ among the
+numerators; see also \cite[Remark~2.4.7]{KL}.
+The assertion about completed rational localisations follows from their
+universal property \cite[Proposition~1.3]{Huber94}.
 \end{proof}
 
 \subsection{Rational localisations defined over finitely many variables}
@@ -1251,27 +1198,18 @@ rings $\mathcal A^{(N)}$.
 Start with a rational datum
 $\alpha=(f_1,\ldots,f_m;g)$ in $\mathcal A$.  Multiplying all entries by
 one power of $\varpi$ does not change the rational subset or localisation,
-so assume that $g,f_1,\ldots,f_m$ lie in $\mathcal A_0$.  Choose an
-integral Bezout relation
-\[
-  \varpi^\ell=a_0g+\sum_{i=1}^m a_if_i,
-  \qquad a_0,a_1,\ldots,a_m\in\mathcal A_0.
-\]
-By \eqref{eq:A-completion-finite-variables}, for some $N$ there are
+so assume that $g,f_1,\ldots,f_m$ lie in $\mathcal A_0$.  Choose a
+neighbourhood $V$ as in \cref{lem:small-perturbation}.  By
+\eqref{eq:A-completion-finite-variables}, for some $N$ there are
 $g',f_1',\ldots,f_m'\in\mathcal A^{(N)}\cap\mathcal A_0$ such that
 \[
-  \lVert g'-g\rVert\leq|\varpi|^{\ell+1},
-  \qquad
-  \lVert f_i'-f_i\rVert\leq|\varpi|^{\ell+1}.
+  g'-g,\ f_1'-f_1,\ldots,f_m'-f_m\in V.
 \]
 By \cref{lem:small-perturbation}, the datum
 $\alpha'=(f_1',\ldots,f_m';g')$ gives the same rational subset and the same
-completed localisation.  Apply $\rho_N$ to the identity
-\[
-  a_0g'+\sum_i a_if_i'=\varpi^\ell(1+\varpi H)
-\]
-from the proof of that lemma.  Its right-hand side remains a unit, so
-$\alpha'$ is already a rational datum in $\mathcal A^{(N)}$.  Now apply
+completed localisation.  It is rational in $\mathcal A$, so applying
+$\rho_N$ to a Bezout identity for its entries shows that it is already a
+rational datum in $\mathcal A^{(N)}$.  Now apply
 \cref{prop:coefficientwise-localization}.
 \end{proof}
 
@@ -1376,11 +1314,10 @@ write down many explicit rational covers and check the required exactness
 directly for each one, in the hope that a pattern, and eventually a proof,
 would emerge.
 
-It was through this process that ChatGPT 5.2 Pro found
-\cref{lem:small-perturbation}.  After a couple of weeks it claimed to have a
-complete proof.  The author then began the slow process of understanding
-this proof, only to discover, with the help of ChatGPT 5.3, that one of its
-arguments used the following assertion:
+After a couple of weeks ChatGPT 5.2 Pro claimed to have a complete proof.
+The author then began the slow process of understanding this proof, only to
+discover, with the help of ChatGPT 5.3, that one of its arguments used the
+following assertion:
 
 \emph{If $\phi:A\to B$ is a continuous homomorphism of Hausdorff
 topological abelian groups and $A$ is complete, then $\phi(A)$ is closed in
@@ -1857,9 +1794,10 @@ The final topological embedding is obtained from the closed matching
 equaliser by the Tate closed-range theorem.  For the bad chart, the quotient
 formed from $\mathcal A^{(0)}=K\langle W\rangle$ is
 $K\langle X\rangle$, and the coefficientwise ring embeds in formal
-multivariable power series over this domain.  The small-perturbation lemma
-of Section~7 is the unit-ball, norm-scaling theorem formalised by
-\texttt{WeightedParity.PerturbSetup}.
+multivariable power series over this domain.  The formalisation also
+contains, under \texttt{WeightedParity.PerturbSetup}, a quantitative
+norm-unit-ball version of the standard perturbation result cited in
+\cref{lem:small-perturbation}.
 
 These declarations, including the
 \href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.weightedParity_not_stablyUniform_of_dvr.html}{final failure of stable uniformity},

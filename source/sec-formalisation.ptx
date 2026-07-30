@@ -470,9 +470,10 @@ The final topological embedding is obtained from the closed matching
 equaliser by the Tate closed-range theorem.  For the bad chart, the quotient
 formed from <m>\mathcal A^{(0)}=K\langle W\rangle</m> is
 <m>K\langle X\rangle</m>, and the coefficientwise ring embeds in formal
-multivariable power series over this domain.  The small-perturbation lemma
-of Section<nbsp/>7 is the unit-ball, norm-scaling theorem formalised by
-<c>WeightedParity.PerturbSetup</c>.
+multivariable power series over this domain.  The formalisation also
+contains, under <c>WeightedParity.PerturbSetup</c>, a quantitative
+norm-unit-ball version of the standard perturbation result cited in
+<xref ref="lem-small-perturbation"/>.
     </p>
     <p>
       These declarations, including the

@@ -28,9 +28,9 @@ The following claims were also read in context:
 | Hansen--Kedlaya, Remark 3.16 | It asks whether a uniform sheafy Huber ring must be stably uniform. |
 | Kerz--Saito--Tamme, Lemma 3.1 | It constructs compatible rings of definition for a Milnor square using the nonarchimedean open mapping theorem. |
 | Buzzard--Verberkmoes, Lemmas 2--3, Corollary 4, Theorem 7, Lemma 8, and Propositions 17--18 | Lemma 2 gives the strictness criterion; Lemma 3 and Corollary 4 relate bounded power-bounded elements to the structure presheaf; Lemma 8 and Theorem 7 show that stable uniformity is sufficient for sheafiness; Propositions 17--18 give the two standard uniformity/sheafiness pathologies described in the introduction. |
-| Huber, Proposition 1.3 and Lemma 1.5 | These support the universal property and presentation-independence statements for rational localisations. |
+| Huber, Proposition 1.3 and Lemma 1.5 | These support the universal property and presentation-independence statements for rational localisations, including the final assertion of Lemma 7.7. |
 | Huber, Theorem 2.2 and Lemmas 2.3--2.4 | These support sheafiness for strongly noetherian Tate rings and the strictness/closed-image input for finite modules. |
-| Huber, Lemma 3.10; Kedlaya--Liu, Remark 2.4.7 | These give the small-perturbation result used in Lemma 7.7: sufficiently small changes to rational data define the same rational subset and induce the same completed rational localisation. |
+| Huber, Lemma 3.10; Kedlaya--Liu, Remark 2.4.7 | These give the first two assertions of Lemma 7.7: sufficiently small changes still give rational data and define the same rational subset. The canonical identification of completed rational localisations then follows from Huber, Proposition 1.3. |
 | Wedhorn, Proposition and Definition 6.36; Remark 8.20; Definition 8.26; Theorem 8.28(b); Lemmas 8.31--8.34 | These support the definitions of strong noetherianity and sheafiness, the representable topological-ring formulation, and the strongly-noetherian proof route used by the formalisation. |
 | Stacks Project, Tag 009O | This supports checking a sheaf on a basis. |
 | Ben-Bassat--Kremnizer, Definition 5.7, Remark 5.8, and Lemmas 5.13--5.14 | These define rational localisations, prove the strict two-term resolutions for the Weierstrass and Laurent cases, and factor a general rational localisation into those cases. The paper does not use Koszul terminology or state the simultaneous multivariable result. |
@@ -52,7 +52,7 @@ statements.  The resulting proof crosswalk is:
 | Theorem 6.2 | A rational cover and matching family are pushed to `B,C,D`; sheafiness there and the localised Milnor row give separation and gluing over `A`. The matching-family equaliser is closed, and the closed-range theorem gives the required topological embedding. Lean proves this concrete argument. |
 | Propositions 7.3--7.6 | The weighted-parity development proves multiplicativity of the countable Gauss norm by choosing lexicographically maximal norm-attaining exponents, proves nonnoetherianity by direct coefficient extraction, and handles the distinguished chart by a completed quotient over \(K\langle W\rangle\) and an embedding into formal power series. The paper now uses these arguments. |
 | Proposition 7.8 and Theorem 7.10 | For data in the finite-variable subring \(\mathcal A^{(N)}\), localisation is constructed by applying its quotient map to every coefficient indexed by the remaining variables and summing coefficientwise for the inverse; it does not use the Koszul complex. Sheafiness glues these coefficients over a strongly noetherian \(\mathcal A^{(N)}\) and uses its restriction embedding to prove that the glued coefficients tend to zero, followed by the closed-range theorem. |
-| Lemma 7.7 | Lean proves the norm-unit-ball specialisation of the small-perturbation lemma used to move the rational data for a finite cover into one finite-variable strongly noetherian subring. |
+| Lemma 7.7 | The paper now cites Huber, Lemma 3.10, and Kedlaya--Liu, Remark 2.4.7, for this standard result. Lean independently proves the quantitative norm-unit-ball specialisation used to move the rational data for a finite cover into one finite-variable strongly noetherian subring. |
 
 ## Lean crosswalk
 
@@ -92,8 +92,8 @@ The claim audit confirms the precise Lean statements used in the paper.  Lean
 proves the unit-ball/Gauss-norm specialisation of Lemma 5.1, exports the chart
 as a bicontinuous `RingEquiv`, supplies the explicit constant-series map, and
 proves sheafiness by the concrete finite-jet transfer.  For the second
-example, it proves the norm-unit-ball small-perturbation statement used in the
-finite-variable argument.
+example, it also proves a quantitative norm-unit-ball version of the standard
+small-perturbation statement cited in the paper.
 
 For the weighted-parity example, Lean proves uniformity, the domain and
 nonnoetherianity statements, sheafiness for every ring of integral elements,

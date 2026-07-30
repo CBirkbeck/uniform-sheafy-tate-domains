@@ -314,18 +314,6 @@
    "number": "7.7",
    "section": "7"
   },
-  "eq-integral-bezout": {
-   "kind": "equation",
-   "label": "eq:integral-bezout",
-   "number": "(24)",
-   "section": "7"
-  },
-  "eq-small-perturbation-bound": {
-   "kind": "equation",
-   "label": "eq:small-perturbation-bound",
-   "number": "(25)",
-   "section": "7"
-  },
   "sec-second-example-rational-localisations-defined-over-finitely": {
    "kind": "subsection",
    "label": null,
@@ -335,25 +323,25 @@
   "eq-coefficient-monomial": {
    "kind": "equation",
    "label": "eq:coefficient-monomial",
-   "number": "(26)",
+   "number": "(24)",
    "section": "7"
   },
   "eq-coefficient-decomposition": {
    "kind": "equation",
    "label": "eq:coefficient-decomposition",
-   "number": "(27)",
+   "number": "(25)",
    "section": "7"
   },
   "eq-coefficient-multiplication": {
    "kind": "equation",
    "label": "eq:coefficient-multiplication",
-   "number": "(28)",
+   "number": "(26)",
    "section": "7"
   },
   "eq-finite-variable-retraction": {
    "kind": "equation",
    "label": "eq:finite-variable-retraction",
-   "number": "(29)",
+   "number": "(27)",
    "section": "7"
   },
   "prop-coefficientwise-localization": {
@@ -365,13 +353,13 @@
   "eq-coefficientwise-localization": {
    "kind": "equation",
    "label": "eq:coefficientwise-localization",
-   "number": "(30)",
+   "number": "(28)",
    "section": "7"
   },
   "eq-coefficientwise-restriction": {
    "kind": "equation",
    "label": "eq:coefficientwise-restriction",
-   "number": "(31)",
+   "number": "(29)",
    "section": "7"
   },
   "cor-finite-variable-presentation": {
@@ -383,7 +371,7 @@
   "eq-arbitrary-finite-variable-presentation": {
    "kind": "equation",
    "label": "eq:arbitrary-finite-variable-presentation",
-   "number": "(32)",
+   "number": "(30)",
    "section": "7"
   },
   "sec-second-example-sheafiness": {
