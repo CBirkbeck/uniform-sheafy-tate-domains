@@ -251,15 +251,34 @@ standard quotient presentation of rational localisation; see
 \section{The global ring}
 
 In this section we identify the finite-jet algebra with a concrete support
-subring and prove that it is a complete uniform domain.
-
-Set
+subring and prove that it is a complete uniform domain.  Recall that
 \[
+  L_0=k^\circ\langle W,W^{-1}\rangle,
+  \qquad
+  B_0=k^\circ\langle W,Q\rangle/(Q^2),
+\]
+\[
+  C_0=L_0\langle Q\rangle,
+  \qquad
+  D_0=L_0\langle Q\rangle/(Q^2),
+\]
+where $k^\circ\langle W,W^{-1}\rangle$ denotes
+$k^\circ\langle W,V\rangle/(WV-1)$.  The natural maps
+$B_0\to D_0$ and $C_0\onto D_0$ define
+\[
+  A_0=B_0\times_{D_0}C_0.
+\]
+We write
+\[
+  A=A_0[1/\varpi],\quad
   L=L_0[1/\varpi],\quad
   B=B_0[1/\varpi],\quad
   C=C_0[1/\varpi],\quad
   D=D_0[1/\varpi].
 \]
+Each of these Tate rings carries the topology defined by its subscript-zero
+ring.
+
 The map $C_0\to D_0$ has a continuous $k^\circ$-linear section given by truncation in the $Q$-variable:
 \[
   f_0+Qf_1\longmapsto f_0+Qf_1.

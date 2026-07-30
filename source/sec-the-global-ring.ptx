@@ -3,15 +3,28 @@
   <title>The global ring</title>
   <p>
     In this section we identify the finite-jet algebra with a concrete support
-subring and prove that it is a complete uniform domain.
-  </p>
-  <p>
-    Set
-<me>L=L_0[1/\varpi],\quad
+subring and prove that it is a complete uniform domain.  Recall that
+<me>L_0=k^\circ\langle W,W^{-1}\rangle,
+  \qquad
+  B_0=k^\circ\langle W,Q\rangle/(Q^2),</me>
+<me>C_0=L_0\langle Q\rangle,
+  \qquad
+  D_0=L_0\langle Q\rangle/(Q^2),</me>
+where <m>k^\circ\langle W,W^{-1}\rangle</m> denotes
+<m>k^\circ\langle W,V\rangle/(WV-1)</m>.  The natural maps
+<m>B_0\to D_0</m> and <m>C_0\onto D_0</m> define
+<me>A_0=B_0\times_{D_0}C_0.</me>
+We write
+<me>A=A_0[1/\varpi],\quad
+  L=L_0[1/\varpi],\quad
   B=B_0[1/\varpi],\quad
   C=C_0[1/\varpi],\quad
   D=D_0[1/\varpi].</me>
-The map <m>C_0\to D_0</m> has a continuous <m>k^\circ</m>-linear section given by truncation in the <m>Q</m>-variable:
+Each of these Tate rings carries the topology defined by its subscript-zero
+ring.
+  </p>
+  <p>
+    The map <m>C_0\to D_0</m> has a continuous <m>k^\circ</m>-linear section given by truncation in the <m>Q</m>-variable:
 <me>f_0+Qf_1\longmapsto f_0+Qf_1.</me>
 Consequently
     <men xml:id="eq-integral-milnor">0\longrightarrow A_0\longrightarrow B_0\oplus C_0
