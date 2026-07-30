@@ -21,6 +21,22 @@ python3 "$paper_root/scripts/build-lean-knowls.py" "$paper_root"
 cd "$paper_root"
 "$paperforge_bin" doctor
 "$paperforge_bin" build web
+
+# GitHub Pages may cache detail-ui.js across deployments.  This file also
+# contains the generated Lean-knowl registry, so stale copies leave new Lean
+# badges visible but inert.  Give the built copy a content-addressed filename.
+detail_ui_hash="$(
+  shasum -a 256 "$paper_root/output/web/detail-ui.js" | cut -c1-12
+)"
+detail_ui_filename="detail-ui.$detail_ui_hash.js"
+find "$paper_root/output/web" -maxdepth 1 -type f \
+  -name 'detail-ui.*.js' -delete
+cp "$paper_root/output/web/detail-ui.js" \
+  "$paper_root/output/web/$detail_ui_filename"
+DETAIL_UI_FILENAME="$detail_ui_filename" perl -0pi -e \
+  's/src="detail-ui(?:\.[0-9a-f]{12})?\.js(?:\?v=[^"]*)?"/src="$ENV{DETAIL_UI_FILENAME}"/g' \
+  "$paper_root/output/web/paper.html"
+
 mkdir -p "$paper_root/output/web/lean"
 rsync -a --delete "$paper_root/web-assets/lean/" "$paper_root/output/web/lean/"
 "$paperforge_bin" check
