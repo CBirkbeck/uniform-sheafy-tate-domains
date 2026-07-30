@@ -12,6 +12,11 @@ doc-gen4 pages, so this script extracts the declaration source directly with
 
 The generated pages are a fixed source snapshot: they do not depend on the
 AINTLIB commit being reachable on GitHub at run time.
+
+Reader-facing mathematical summaries may be supplied in
+``crosswalk/lean-knowl-doc-overrides.json``.  The inline knowl uses the curated
+summary, while the standalone archival page keeps the original Lean docstring
+in a collapsed disclosure.
 """
 
 from __future__ import annotations
@@ -138,6 +143,57 @@ def collect_declarations(root: Path, declmap_path: Path, extra_path: Path) -> li
     for decl, entry in merged.items():
         entry["uses"] = uses.get(decl, [])
     return [merged[name] for name in sorted(merged)]
+
+
+def load_doc_overrides(root: Path, override_path: Path) -> dict[str, str]:
+    path = root / override_path
+    if not path.is_file():
+        return {}
+    data = json.loads(path.read_text())
+    if data.get("commit") not in (None, PINNED_COMMIT):
+        raise RuntimeError(
+            f"{override_path} pins {data['commit']}, expected {PINNED_COMMIT}"
+        )
+    if data.get("schema") not in (None, 1):
+        raise RuntimeError(f"{override_path}: unsupported schema {data['schema']}")
+    overrides = data.get("overrides", {})
+    if not isinstance(overrides, dict):
+        raise RuntimeError(f"{override_path}: overrides must be a JSON object")
+    for decl, doc in overrides.items():
+        if not isinstance(decl, str) or not isinstance(doc, str) or not doc.strip():
+            raise RuntimeError(
+                f"{override_path}: every override needs a declaration name "
+                "and nonempty text"
+            )
+        word_count = len(doc.split())
+        if word_count > 120:
+            raise RuntimeError(
+                f"{override_path}: {decl} has {word_count} words; "
+                "reader-facing summaries are limited to 120"
+            )
+        if re.search(r"</?[A-Za-z][^>]*>", doc):
+            raise RuntimeError(f"{override_path}: {decl} contains raw HTML")
+        internal_markers = (
+            "campaign",
+            "ticket",
+            "WO3",
+            "P0.4",
+            "K8b",
+            "layer 1",
+            "layer 2",
+            "public endpoint",
+            "handover",
+            "maxHeartbeats",
+            "docs/plans",
+            "kept as-is",
+        )
+        found = [marker for marker in internal_markers if marker.lower() in doc.lower()]
+        if found:
+            raise RuntimeError(
+                f"{override_path}: {decl} contains internal marker(s): "
+                + ", ".join(found)
+            )
+    return overrides
 
 
 def line_offsets(source: str) -> tuple[list[str], list[int]]:
@@ -283,7 +339,7 @@ def body_marker(block: str, name: str) -> int | None:
     return None
 
 
-def doc_html(doc: str) -> str:
+def doc_html(doc: str, *, curated: bool = False) -> str:
     if not doc:
         return ""
 
@@ -301,7 +357,13 @@ def doc_html(doc: str) -> str:
             r"\*\*(.+?)\*\*", r"<strong>\1</strong>", inline, flags=re.S
         )
         rendered.append("<p>" + inline.replace("\n", "<br>") + "</p>")
-    return '<div class="lean-doc">' + "".join(rendered) + "</div>"
+    classes = "lean-doc lean-doc-curated" if curated else "lean-doc"
+    label = (
+        '<p class="lean-doc-label"><strong>Mathematical summary.</strong></p>'
+        if curated
+        else ""
+    )
+    return f'<div class="{classes}">' + label + "".join(rendered) + "</div>"
 
 
 def slug_for(decl: str) -> str:
@@ -316,12 +378,13 @@ def inline_html(
     repo_path: str,
     line_start: int,
     line_end: int,
+    curated_doc: bool,
 ) -> str:
     return (
         '<div class="lean-knowl-head">'
         f'<span class="lean-decl-kind">{html.escape(kind)}</span> '
         f"<code>{html.escape(decl)}</code></div>"
-        + doc_html(doc)
+        + doc_html(doc, curated=curated_doc)
         + '<pre class="lean-source"><code class="language-lean">'
         + html.escape(code)
         + "</code></pre>"
@@ -341,6 +404,8 @@ def standalone_html(
     line_start: int,
     line_end: int,
     uses: list[str],
+    curated_doc: bool,
+    source_doc: str,
 ) -> str:
     uses_html = ""
     if uses:
@@ -348,6 +413,20 @@ def standalone_html(
             '<p class="used-for"><strong>Used in the paper for:</strong> '
             + "; ".join(html.escape(item) for item in uses)
             + "</p>"
+        )
+    summary_note = ""
+    if curated_doc:
+        summary_note = (
+            '<p class="meta">The mathematical summary is editorial text for '
+            "this paper. The declaration below is extracted verbatim from the "
+            "pinned source.</p>\n  "
+        )
+    source_doc_details = ""
+    if curated_doc and source_doc:
+        source_doc_details = (
+            '<details class="source-doc"><summary>Original Lean docstring</summary>'
+            + doc_html(source_doc)
+            + "</details>\n  "
         )
     return f"""<!doctype html>
 <html lang="en">
@@ -366,6 +445,8 @@ def standalone_html(
     .kind {{ color: #176b43; font-size: .82rem; text-transform: uppercase;
              letter-spacing: .06em; }}
     .doc {{ max-width: 62rem; }}
+    details.source-doc {{ max-width: 62rem; margin: 1rem 0; }}
+    details.source-doc summary {{ cursor: pointer; }}
     pre {{ padding: 1rem; overflow-x: auto; border-radius: .45rem;
            background: color-mix(in srgb, CanvasText 7%, Canvas); }}
     code {{ font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }}
@@ -381,8 +462,8 @@ def standalone_html(
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">{html.escape(kind)}</div>
   <h1>{html.escape(decl)}</h1>
-  <div class="doc">{doc_html(doc)}</div>
-  {uses_html}
+  <div class="doc">{doc_html(doc, curated=curated_doc)}</div>
+  {summary_note}{source_doc_details}{uses_html}
   <pre><code>{html.escape(code)}</code></pre>
   <p class="meta">Pinned source: <code>{html.escape(repo_path)}:{line_start}–{line_end}</code><br>
   AINTLIB commit <code>{PINNED_COMMIT}</code>.</p>
@@ -413,6 +494,11 @@ def main() -> int:
     parser.add_argument(
         "--extra", type=Path, default=Path("crosswalk/lean-knowl-extra.json")
     )
+    parser.add_argument(
+        "--doc-overrides",
+        type=Path,
+        default=Path("crosswalk/lean-knowl-doc-overrides.json"),
+    )
     args = parser.parse_args()
 
     root = args.instance.resolve()
@@ -421,6 +507,14 @@ def main() -> int:
     run_git(repo, "cat-file", "-e", PINNED_COMMIT + "^{commit}")
     project_prefix = lean_root.relative_to(repo).as_posix()
     declarations = collect_declarations(root, args.declmap, args.extra)
+    doc_overrides = load_doc_overrides(root, args.doc_overrides)
+    declaration_names = {entry["decl"] for entry in declarations}
+    unknown_overrides = sorted(set(doc_overrides) - declaration_names)
+    if unknown_overrides:
+        raise RuntimeError(
+            f"{args.doc_overrides}: overrides unknown declarations: "
+            + ", ".join(unknown_overrides)
+        )
 
     pages = root / "web-assets" / "lean" / PROJECT / "declarations"
     pages.mkdir(parents=True, exist_ok=True)
@@ -438,7 +532,13 @@ def main() -> int:
             marker = body_marker(block, written_name)
             if marker is not None:
                 block = block[:marker].rstrip()
-        doc = preceding_doc_comment(source, start)
+        source_doc = preceding_doc_comment(source, start)
+        curated_doc = entry["decl"] in doc_overrides
+        doc = doc_overrides.get(entry["decl"], source_doc)
+        if not doc:
+            raise RuntimeError(
+                f"{entry['decl']} has no Lean docstring and no curated summary"
+            )
         line_start = source.count("\n", 0, start) + 1
         line_end = line_start + block.count("\n")
         slug = slug_for(entry["decl"])
@@ -452,6 +552,7 @@ def main() -> int:
                 repo_path,
                 line_start,
                 line_end,
+                curated_doc,
             ),
             "href": href,
         }
@@ -465,6 +566,8 @@ def main() -> int:
                 line_start,
                 line_end,
                 entry["uses"],
+                curated_doc,
+                source_doc,
             )
         )
         expected_pages.add(slug)
@@ -485,6 +588,10 @@ def main() -> int:
     print(
         f"lean-knowls: {len(registry)} declarations from {PINNED_COMMIT[:12]} "
         f"-> {registry_path.relative_to(root)}"
+    )
+    print(
+        f"lean-doc-overrides: {len(doc_overrides)} curated summaries from "
+        f"{args.doc_overrides}"
     )
     print(f"lean-pages: {len(expected_pages)} -> {pages.relative_to(root)}")
     return 0

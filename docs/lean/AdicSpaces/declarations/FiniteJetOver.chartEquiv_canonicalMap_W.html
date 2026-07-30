@@ -15,6 +15,8 @@
     .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
              letter-spacing: .06em; }
     .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
     pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
            background: color-mix(in srgb, CanvasText 7%, Canvas); }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -30,7 +32,9 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">theorem</div>
   <h1>FiniteJetOver.chartEquiv_canonicalMap_W</h1>
-  <div class="doc"><div class="lean-doc"><p>The chart equivalence is the canonical one of [FJP] Prop 3.1 (&quot;<code>W ↦ ϖX</code>, <code>Q ↦ Q</code>&quot;):<br>it sends <code>ρ(W)</code> to <code>ϖ·jB(W)</code> (the <code>ϖ</code>-scaled disc variable) and <code>ρ(Q)</code> to the square-zero<br>generator <code>ε</code>.</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>Under the chart equivalence, the canonical generators satisfy <code>W ↦ ϖX</code> and <code>Q ↦ Q</code>, as in Proposition 4.1.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>The chart equivalence is the canonical one of [FJP] Prop 3.1 (&quot;<code>W ↦ ϖX</code>, <code>Q ↦ Q</code>&quot;):<br>it sends <code>ρ(W)</code> to <code>ϖ·jB(W)</code> (the <code>ϖ</code>-scaled disc variable) and <code>ρ(Q)</code> to the square-zero<br>generator <code>ε</code>.</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Proposition 4.1 (canonical generators)</p>
   <pre><code>theorem chartEquiv_canonicalMap_W (ϖ : Uniformizer K) :
     chartEquiv K ϖ ((chartDatum K ϖ).canonicalMap (Wa K)) = piB ϖ * jB K (Wa K) ∧

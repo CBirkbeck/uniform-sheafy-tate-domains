@@ -15,6 +15,8 @@
     .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
              letter-spacing: .06em; }
     .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
     pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
            background: color-mix(in srgb, CanvasText 7%, Canvas); }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -30,7 +32,9 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">theorem</div>
   <h1>FiniteJetOver.finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr</h1>
-  <div class="doc"><div class="lean-doc"><p><strong><code>𝓐</code>&#x27;s structure presheaf is a sheaf of topological rings at EVERY valid ring of<br>integral elements, public endpoint</strong> (layer 2) — the genuine projective-limit-topology<br><code>structurePresheaf</code> on all opens, for every <code>A⁺</code>.</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>If the valuation ring of <code>K</code> is a discrete valuation ring and <code>A⁺</code> is any ring of integral elements of <code>𝓐</code>, then the all-open structure presheaf on <code>Spa(𝓐,A⁺)</code> is a sheaf of topological rings.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong><code>𝓐</code>&#x27;s structure presheaf is a sheaf of topological rings at EVERY valid ring of<br>integral elements, public endpoint</strong> (layer 2) — the genuine projective-limit-topology<br><code>structurePresheaf</code> on all opens, for every <code>A⁺</code>.</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Theorem 6.2 (all-open structure presheaf)</p>
   <pre><code>theorem finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr
     [IsDiscreteValuationRing 𝒪[K]] (Bplus : RingOfIntegralElements (JetA K)) :

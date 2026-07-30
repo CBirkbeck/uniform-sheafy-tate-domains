@@ -15,6 +15,8 @@
     .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
              letter-spacing: .06em; }
     .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
     pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
            background: color-mix(in srgb, CanvasText 7%, Canvas); }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -30,7 +32,9 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">structure</div>
   <h1>ValuationSpectrum.IsLimitSheaf</h1>
-  <div class="doc"><div class="lean-doc"><p><strong>The genuine all-open structure presheaf is a sheaf of topological rings</strong><br>(bundled; Wedhorn Remark 8.20 for the projective-limit presheaf): separation and<br>gluing of the underlying ring presheaf for <strong>every</strong> open cover of <strong>every</strong> open, and<br>the topological-embedding condition for every open cover. The cover index lives in the<br>ring&#x27;s universe (covers in use are (sub)types of <code>RationalLocData A</code>-data; larger<br>index types factor through their ranges).</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For every open <code>V ⊆ Spa(A,A⁺)</code> and every open cover <code>V = ⋃ᵢ Uᵢ</code>, sections are separated, compatible families glue, and the restriction map <code>𝒪(V) → ∏ᵢ 𝒪(Uᵢ)</code> is a topological embedding. This is the all-open topological sheaf condition used in the paper.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>The genuine all-open structure presheaf is a sheaf of topological rings</strong><br>(bundled; Wedhorn Remark 8.20 for the projective-limit presheaf): separation and<br>gluing of the underlying ring presheaf for <strong>every</strong> open cover of <strong>every</strong> open, and<br>the topological-embedding condition for every open cover. The cover index lives in the<br>ring&#x27;s universe (covers in use are (sub)types of <code>RationalLocData A</code>-data; larger<br>index types factor through their ranges).</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Appendix: all-open sheaf condition</p>
   <pre><code>structure IsLimitSheaf (A : Type u) [CommRing A] [TopologicalSpace A]
     [IsTopologicalRing A] [PlusSubring A] [IsHuberRing A]

@@ -15,6 +15,8 @@
     .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
              letter-spacing: .06em; }
     .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
     pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
            background: color-mix(in srgb, CanvasText 7%, Canvas); }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -30,7 +32,9 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">def</div>
   <h1>MvPowerSeries.IsRestricted</h1>
-  <div class="doc"><div class="lean-doc"><p>An element <code>f</code> of the multivariate power series ring <code>A⦃X₁, …, Xₖ⦄</code> is <strong>restricted</strong><br>if its coefficients converge to <code>0</code> along the cofinite filter on multi-indices. That is,<br>for every open neighborhood <code>U</code> of <code>0</code> in <code>A</code>, all but finitely many coefficients of <code>f</code><br>lie in <code>U</code>. This is the defining property of elements of <code>A⟨T₁, …, Tₖ⟩</code>.</p><p>See Wedhorn, (5.6.1) and §6.7.</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>A formal power series is restricted if its coefficients tend to zero: every neighbourhood of zero contains all but finitely many coefficients. These are the elements of <code>A⟨T₁,…,Tₖ⟩</code>.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>An element <code>f</code> of the multivariate power series ring <code>A⦃X₁, …, Xₖ⦄</code> is <strong>restricted</strong><br>if its coefficients converge to <code>0</code> along the cofinite filter on multi-indices. That is,<br>for every open neighborhood <code>U</code> of <code>0</code> in <code>A</code>, all but finitely many coefficients of <code>f</code><br>lie in <code>U</code>. This is the defining property of elements of <code>A⟨T₁, …, Tₖ⟩</code>.</p><p>See Wedhorn, (5.6.1) and §6.7.</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Appendix: restricted power series</p>
   <pre><code>def MvPowerSeries.IsRestricted {k : ℕ} {A : Type*} [CommRing A] [TopologicalSpace A]
     (f : MvPowerSeries (Fin k) A) : Prop :=

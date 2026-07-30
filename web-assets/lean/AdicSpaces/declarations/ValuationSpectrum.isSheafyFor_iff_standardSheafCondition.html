@@ -15,6 +15,8 @@
     .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
              letter-spacing: .06em; }
     .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
     pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
            background: color-mix(in srgb, CanvasText 7%, Canvas); }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -30,7 +32,9 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">theorem</div>
   <h1>ValuationSpectrum.isSheafyFor_iff_standardSheafCondition</h1>
-  <div class="doc"><div class="lean-doc"><p><strong>The standard-cover criterion, unconditional</strong>: pair-level sheafiness is<br>equivalent to the <code>A⁺</code>-free standard-cover condition.</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For a complete Tate ring, pair-level sheafiness for any ring of integral elements is equivalent to the plus-ring-independent standard rational-cover condition.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>The standard-cover criterion, unconditional</strong>: pair-level sheafiness is<br>equivalent to the <code>A⁺</code>-free standard-cover condition.</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Appendix: standard-cover equivalence</p>
   <pre><code>theorem isSheafyFor_iff_standardSheafCondition (Aplus : RingOfIntegralElements A) :
     IsSheafyFor A Aplus ↔ StandardSheafCondition A</code></pre>

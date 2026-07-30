@@ -65,6 +65,10 @@ the coauthored formalisation papers chiefly as models for presenting Lean.
 - Explain typeclass or implementation choices only when they correspond to a
   genuine mathematical hypothesis or a deliberate difference from the printed
   statement.
+- Write interactive Lean blurbs in the notation of the paper.  Begin with the
+  mathematical statement, then use at most one short sentence to explain the
+  formal proof or a genuine difference in hypotheses.  Omit ticket names,
+  campaign history, implementation routes, and lists of helper declarations.
 - Use immutable source links pinned to a full commit.
 
 This advice is distilled from the publication list on the author's website,

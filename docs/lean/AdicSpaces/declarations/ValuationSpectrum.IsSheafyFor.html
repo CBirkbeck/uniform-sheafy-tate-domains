@@ -15,6 +15,8 @@
     .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
              letter-spacing: .06em; }
     .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
     pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
            background: color-mix(in srgb, CanvasText 7%, Canvas); }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -30,7 +32,9 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">def</div>
   <h1>ValuationSpectrum.IsSheafyFor</h1>
-  <div class="doc"><div class="lean-doc"><p><strong>Pair-level sheafiness</strong> (Wedhorn Definition 8.26 for one affinoid pair, in the<br>genuine all-open vocabulary): the pair <code>(A, Aplus)</code> — with <code>Aplus</code> a <strong>bundled ring of<br>integral elements</strong>, so invalid bare subrings cannot be supplied — is sheafy when the<br>genuine projective-limit structure presheaf on all opens of <code>Spa (A, Aplus)</code> is a<br>sheaf of topological rings (<code>IsLimitSheaf</code>: separation + gluing + the arbitrary-cover<br>topological-embedding condition of Wedhorn Remark 8.20).</p><p>Defined at the complete analytic scope, which is where the canonical restriction maps<br>exist (Wedhorn Prop 8.2 via 7.52(2)); their existence-and-continuity package is<br><strong>derived</strong> here (<code>hasLocLiftPowerBounded_faithful</code> — a theorem, not an assumption),<br>so no <code>HasLocLiftPowerBounded</code> appears in this definition or anywhere downstream.</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>Let <code>A⁺</code> be a ring of integral elements of the complete Tate ring <code>A</code>. Then <code>IsSheafyFor A A⁺</code> means that the all-open structure presheaf on <code>Spa(A,A⁺)</code> satisfies <code>IsLimitSheaf</code>.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>Pair-level sheafiness</strong> (Wedhorn Definition 8.26 for one affinoid pair, in the<br>genuine all-open vocabulary): the pair <code>(A, Aplus)</code> — with <code>Aplus</code> a <strong>bundled ring of<br>integral elements</strong>, so invalid bare subrings cannot be supplied — is sheafy when the<br>genuine projective-limit structure presheaf on all opens of <code>Spa (A, Aplus)</code> is a<br>sheaf of topological rings (<code>IsLimitSheaf</code>: separation + gluing + the arbitrary-cover<br>topological-embedding condition of Wedhorn Remark 8.20).</p><p>Defined at the complete analytic scope, which is where the canonical restriction maps<br>exist (Wedhorn Prop 8.2 via 7.52(2)); their existence-and-continuity package is<br><strong>derived</strong> here (<code>hasLocLiftPowerBounded_faithful</code> — a theorem, not an assumption),<br>so no <code>HasLocLiftPowerBounded</code> appears in this definition or anywhere downstream.</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Appendix: sheafiness for a chosen ring of integral elements</p>
   <pre><code>def IsSheafyFor (Aplus : RingOfIntegralElements A) : Prop :=
   letI := Aplus.toPlusSubring

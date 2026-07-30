@@ -15,6 +15,8 @@
     .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
              letter-spacing: .06em; }
     .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
     pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
            background: color-mix(in srgb, CanvasText 7%, Canvas); }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
@@ -30,7 +32,9 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">def</div>
   <h1>ValuationSpectrum.IsSheafOfTopologicalRings</h1>
-  <div class="doc"><div class="lean-doc"><p><strong>&quot;<code>𝒪_X</code> is a sheaf of topological rings&quot;</strong> in Wedhorn&#x27;s sense (Remark 8.20,<br>first form): for <strong>every</strong> topological commutative ring <code>T</code> — with no completeness,<br>separation, or discreteness restriction — the presheaf <code>V ↦ Hom_cont(T, 𝒪_X(V))</code> of<br>continuous ring homomorphisms is a sheaf of sets: every family of continuous ring<br>homomorphisms into the members of an open cover that is compatible on pairwise<br>intersections arises from a <strong>unique</strong> continuous ring homomorphism into <code>𝒪_X(V)</code>.</p><p><strong>DEPRECATION NOTE (P0.4, 2026-07-20)</strong>: this Spa-specific formulation is<br>superseded by the generic <code>TopCat.Presheaf.IsSheafOfTopologicalRings</code> at<br><code>structurePresheaf A</code> — the two are equivalent by<br><code>structurePresheaf_isSheafOfTopologicalRings_iff</code> +<br><code>isSheafOfTopologicalRings_iff_isLimitSheaf</code>. New statements should use the<br>generic predicate; this one remains for the equivalence theorems and existing<br>consumers.</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For every topological commutative ring <code>T</code>, the presheaf <code>V ↦ Hom_cont(T,𝒪(V))</code> is a sheaf of sets. This is Wedhorn’s representable formulation of a sheaf of topological rings.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>&quot;<code>𝒪_X</code> is a sheaf of topological rings&quot;</strong> in Wedhorn&#x27;s sense (Remark 8.20,<br>first form): for <strong>every</strong> topological commutative ring <code>T</code> — with no completeness,<br>separation, or discreteness restriction — the presheaf <code>V ↦ Hom_cont(T, 𝒪_X(V))</code> of<br>continuous ring homomorphisms is a sheaf of sets: every family of continuous ring<br>homomorphisms into the members of an open cover that is compatible on pairwise<br>intersections arises from a <strong>unique</strong> continuous ring homomorphism into <code>𝒪_X(V)</code>.</p><p><strong>DEPRECATION NOTE (P0.4, 2026-07-20)</strong>: this Spa-specific formulation is<br>superseded by the generic <code>TopCat.Presheaf.IsSheafOfTopologicalRings</code> at<br><code>structurePresheaf A</code> — the two are equivalent by<br><code>structurePresheaf_isSheafOfTopologicalRings_iff</code> +<br><code>isSheafOfTopologicalRings_iff_isLimitSheaf</code>. New statements should use the<br>generic predicate; this one remains for the equivalence theorems and existing<br>consumers.</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Appendix: Wedhorn&#x27;s representable formulation</p>
   <pre><code>def IsSheafOfTopologicalRings : Prop :=
   ∀ (T : Type u) [CommRing T] [TopologicalSpace T] [IsTopologicalRing T],
