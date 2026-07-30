@@ -476,9 +476,9 @@
    "number": "7.5",
    "section": "7"
   },
-  "thm-parity-strongly-sheafy": {
+  "thm-parity-sheafy": {
    "kind": "theorem",
-   "label": "thm:parity-strongly-sheafy",
+   "label": "thm:parity-sheafy",
    "number": "7.10",
    "section": "7"
   },
@@ -506,12 +506,6 @@
    "number": "(48)",
    "section": "7"
   },
-  "eq-strong-sheafy-decomposition": {
-   "kind": "equation",
-   "label": "eq:strong-sheafy-decomposition",
-   "number": "(49)",
-   "section": "7"
-  },
   "sec-rationally-reduced-reducedness-of-all-rational-localisations": {
    "kind": "subsection",
    "label": null,
@@ -527,7 +521,7 @@
   "eq-formal-series-ring": {
    "kind": "equation",
    "label": "eq:formal-series-ring",
-   "number": "(50)",
+   "number": "(49)",
    "section": "7"
   },
   "thm-parity-rationally-reduced": {
@@ -539,13 +533,13 @@
   "eq-reduced-localization-decomposition": {
    "kind": "equation",
    "label": "eq:reduced-localization-decomposition",
-   "number": "(51)",
+   "number": "(50)",
    "section": "7"
   },
   "eq-formal-embedding": {
    "kind": "equation",
    "label": "eq:formal-embedding",
-   "number": "(52)",
+   "number": "(51)",
    "section": "7"
   },
   "rem-second-example-relation": {

@@ -37,9 +37,7 @@ A <em>ring of integral elements</em> is an open subring
 <m>E^+\subseteq E^\circ</m> which is integrally closed in <m>E</m>.  We call the Huber pair
 <m>(E,E^+)</m> <em>sheafy</em> when its structure presheaf is a sheaf of complete
 topological rings; in particular, the map to the matching-family equaliser for a
-finite rational cover is a homeomorphism.  We call <m>E</m> <em>strongly sheafy</em> if
-every <m>E\langle Z_1,\ldots,Z_s\rangle</m>, with its maximal ring of integral elements,
-is sheafy.
+finite rational cover is a homeomorphism.
       </p>
     </li>
     <li>

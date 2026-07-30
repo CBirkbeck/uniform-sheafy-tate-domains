@@ -22,7 +22,7 @@ nonnilpotent power-bounded elements.
           </li>
           <li>
             <p>
-              The Huber pair <m>(\mathcal A,\mathcal A^\circ)</m> is strongly sheafy.
+              The Huber pair <m>(\mathcal A,\mathcal A^\circ)</m> is sheafy.
             </p>
           </li>
           <li>
@@ -453,10 +453,10 @@ that <m>\bigcup_MP_M</m> is dense.
   </subsection>
   <subsection xml:id="sec-rationally-reduced-sheafiness">
     <title>Sheafiness</title>
-    <theorem xml:id="thm-parity-strongly-sheafy">
+    <theorem xml:id="thm-parity-sheafy">
       <statement>
         <p>
-          The Huber pair <m>(\mathcal A,\mathcal A^\circ)</m> is strongly sheafy.
+          The Huber pair <m>(\mathcal A,\mathcal A^\circ)</m> is sheafy.
         </p>
       </statement>
       <proof>
@@ -542,15 +542,6 @@ under rational restriction.  The defining projective-limit topology on arbitrary
 then makes the inverse gluing map continuous.  Thus the public all-open structure presheaf is a
 sheaf of complete topological rings.
         </p>
-        <p>
-          Finally, for auxiliary Tate variables <m>V_1,\ldots,V_s</m> one has, isometrically,
-          <men xml:id="eq-strong-sheafy-decomposition">\mathcal A\langle V_1,\ldots,V_s\rangle
-  \cong
-  \widehat{\bigoplus}_{\mu}^{c_0}
-  \mathcal A_N\langle V_1,\ldots,V_s\rangle e_\mu.</men>
-          The finite heads remain affinoid, the retractions and perturbation lemma are unchanged, and
-the preceding proof applies verbatim.  Therefore every finite Tate extension is sheafy.
-        </p>
       </proof>
     </theorem>
   </subsection>
@@ -620,8 +611,8 @@ by <m>W</m> is injective on <m>P</m>.  If <m>P=0</m>, the conclusion is immediat
       <title>Proof of <xref ref="thm-rationally-reduced-example"/></title>
       <p>
         The uniform domain assertion is <xref ref="prop-parity-uniform-domain"/>, and nonnoetherianity is
-<xref ref="prop-parity-nonnoetherian"/>.  Strong sheafiness is
-<xref ref="thm-parity-strongly-sheafy"/>.  Reducedness of all finite iterated rational
+<xref ref="prop-parity-nonnoetherian"/>.  Sheafiness is
+<xref ref="thm-parity-sheafy"/>.  Reducedness of all finite iterated rational
 localisations is <xref ref="thm-parity-rationally-reduced"/>.  Finally,
 <xref ref="prop-weighted-chart-identification"/>, <xref ref="prop-weighted-chart-domain-nonuniform"/> identify the
 rational chart <m>|W|\leq|\varpi|</m> as a nonuniform integral domain.
