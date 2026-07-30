@@ -30,6 +30,9 @@ the coauthored formalisation papers chiefly as models for presenting Lean.
   lemma, section, or page locators whenever possible.
 - In an introduction, move from background and known work to the precise gap,
   then state the goal and any limitation of the result.
+- Do not repeat the abstract at the start of the introduction.  Let the
+  abstract state the result compactly, and reopen the introduction from the
+  mechanism, question, or gap which motivates it.
 - Use the older solo number-theory papers as the main model for density.  A
   standard fact should normally receive a citation, a one-line reduction, or
   “the result follows”; reserve detailed calculations for the mechanism which
