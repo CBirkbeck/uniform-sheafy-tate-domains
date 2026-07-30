@@ -513,6 +513,10 @@
   // by the registry's self-contained page, so modified clicks and browser
   // "open in new tab" commands have a useful destination.
   function wireLeanKnowls() {
+    if (document.documentElement.hasAttribute(
+          "data-paperforge-lean-knowls-wired")) return;
+    document.documentElement.setAttribute(
+      "data-paperforge-lean-knowls-wired", "");
     var REG = window.PAPERFORGE_LEAN_KNOWLS || {};
     // The registry is generated FROM the built docs, so when it is present
     // a badge it lacks has no doc page (private decl, doc-gen4 gap): its
@@ -538,6 +542,7 @@
       if (!entry) return;
       if (e.metaKey || e.ctrlKey || e.shiftKey) return;   // allow new-tab
       e.preventDefault();
+      e.stopPropagation();
       if (a._leanKnowl) {
         a._leanKnowl.remove();
         a._leanKnowl = null;
@@ -558,7 +563,7 @@
       if (window.MathJax && MathJax.typesetPromise) {
         MathJax.typesetPromise([panel]).catch(function () {});
       }
-    });
+    }, true);      // capture: beat PreTeXt's ordinary link/knowl handlers
   }
 
   // Cross-references to divisions (Section 5, Subsection A.4, ...) open the
