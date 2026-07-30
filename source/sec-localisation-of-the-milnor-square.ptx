@@ -28,11 +28,17 @@ differential is strict when it is open onto its image, or equivalently when its
 coimage is homeomorphic to its image.
     </p>
     <p>
-      The following result is a special case of the strict Koszul statements in
-<xref ref="bib-BBK" detail="Definition 5.7 and Lemmas 5.13--5.14"/>
-<xref ref="bib-BK" detail="Definitions 4.5--4.6, Proposition 4.9, Lemma 4.11, and
-Corollary 4.13"/>.  We include the argument used below, since the topology
-and the two losses of denominators are important.
+      Ben-Bassat<ndash/>Kremnizer prove the one-variable strict two-term resolutions and
+then factor a general rational localisation into Laurent and Weierstrass
+localisations <xref ref="bib-BBK" detail="Lemmas 5.13--5.14"/>; they do not state the
+multivariable Koszul assertion.  Applied to <m>E\in\{B,C,D\}</m>, the strict
+Koszul regularity theorem of
+Bambozzi<ndash/>Kremnizer
+<xref ref="bib-BK" detail="Notation 4.3, Definitions 4.5--4.6, Proposition 4.9,
+Lemma 4.11, and Corollary 4.13"/> gives the exactness, strictness, and
+closed-image assertions below.  We include the direct proof followed in the
+formalisation because the two estimates relative to the displayed lattices
+are not stated there and are needed below.
     </p>
     <lemma xml:id="lem-koszul">
       <statement>

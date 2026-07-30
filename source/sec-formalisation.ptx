@@ -505,13 +505,18 @@ formulation
 Theorem 8.28(b), Corollary 8.32, and Lemmas 8.33--8.34"/>.
 The passage between a fixed plus ring and all plus rings follows the standard
 rational-refinement argument recorded by Kedlaya
-<xref ref="bib-KedlayaAWS" detail="Lemma 1.6.8 and Remark 1.6.9"/>.  Related strict Koszul
-statements appear in the work of Ben-Bassat<ndash/>Kremnizer and
-Bambozzi<ndash/>Kremnizer.  In the formalisation, positive-degree exactness is
-proved by flat base change from the polynomial sequence; closedness and
-the nonarchimedean open mapping theorem <xref ref="bib-KST" detail="Lemma 3.1"/> give controlled
-lifts.  Scaling those lifts yields the bounded-denominator criterion used by
-Buzzard<ndash/>Verberkmoes <xref ref="bib-BV" detail="Lemma 2"/>.
+<xref ref="bib-KedlayaAWS" detail="Lemma 1.6.8 and Remark 1.6.9"/>.
+Ben-Bassat<ndash/>Kremnizer prove the strict one-variable resolutions used in their
+treatment of rational localisations <xref ref="bib-BBK" detail="Lemmas 5.13--5.14"/>;
+Bambozzi<ndash/>Kremnizer formulate the general construction in terms of Koszul
+complexes and prove strict Koszul regularity
+<xref ref="bib-BK" detail="Notation 4.3, Definitions 4.5--4.6, and
+Corollary 4.13"/>.  The formalisation does not invoke either result.
+Positive-degree exactness is instead proved by flat base change from the
+polynomial sequence; closedness and the nonarchimedean open mapping theorem
+<xref ref="bib-KST" detail="Lemma 3.1"/> give controlled lifts.  Scaling those lifts yields the
+bounded-denominator criterion used by Buzzard<ndash/>Verberkmoes
+<xref ref="bib-BV" detail="Lemma 2"/>.
     </p>
     <p>
       The development is written in Lean<nbsp/>4 <xref ref="bib-Lean4"/> on top of mathlib

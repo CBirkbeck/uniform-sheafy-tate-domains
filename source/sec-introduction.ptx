@@ -99,13 +99,17 @@ phenomena <xref ref="bib-Mihara"/>.  These examples do not give a uniform sheafy
 stably uniform.
       </p>
       <p>
-        The strict Koszul result used in <xref ref="lem-koszul"/> is due to
-Ben-Bassat<ndash/>Kremnizer and Bambozzi<ndash/>Kremnizer
-<xref ref="bib-BBK" detail="Definition 5.7 and Lemmas 5.13--5.14"/>
-<xref ref="bib-BK" detail="Definitions 4.5--4.6, Proposition 4.9, Lemma 4.11, and
-Corollary 4.13"/>.  We use its lattice form to prove that rational localisation
-preserves the finite-jet Milnor square.  The resulting uniform sheafy domain which is
-not stably uniform appears to be new.
+        Ben-Bassat<ndash/>Kremnizer prove the corresponding one-variable strict resolutions
+for Weierstrass and Laurent localisations, and reduce a general rational
+localisation to these cases <xref ref="bib-BBK" detail="Lemmas 5.13--5.14"/>.  They do not
+formulate a multivariable Koszul theorem.  That formulation, and the strict
+Koszul regularity of rational localisations, is given by
+Bambozzi<ndash/>Kremnizer
+<xref ref="bib-BK" detail="Notation 4.3, Definitions 4.5--4.6, Proposition 4.9,
+Lemma 4.11, and Corollary 4.13"/>.  The lattice estimates in
+<xref ref="lem-koszul"/> are the form needed to show that rational localisation
+preserves the finite-jet Milnor square.  The resulting uniform sheafy domain
+which is not stably uniform appears to be new.
       </p>
       <p>
         The weighted-parity construction of <xref ref="sec-rationally-reduced"/> is closer to the

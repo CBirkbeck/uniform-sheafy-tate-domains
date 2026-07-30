@@ -4,17 +4,17 @@ Audit date: 30 July 2026.
 
 ## Result
 
-The final Paperforge run completes with **0 errors and 7 warnings**.  The
+The final Paperforge run completes with **0 errors and 6 warnings**.  The
 warnings are all accounted for:
 
 1. Milnor, Section 2 cannot be checked mechanically because no local copy of
    the commercial book is included.
 2. BGR, Corollaries 7.3.2/10 and 7.3.2/6 cannot be checked mechanically for the
    same reason.
-3. The plagiarism scan reports four inherited matches involving three generic
-   phrases: a proof-direction phrase, a statement that a construction is
-   independent of a choice, and the definition of a sheaf of complete
-   topological rings.  None is new text introduced in this pass.
+3. The plagiarism scan reports three inherited matches involving two generic
+   phrases: a statement that a construction is independent of a choice, and
+   the definition of a sheaf of complete topological rings.  None is new text
+   introduced in this pass.
 
 All locators for which an open or author-provided PDF is available pass
 Paperforge's token check.  The files and download sources are recorded in
@@ -36,8 +36,8 @@ The following claims were also read in context:
 | Stacks Project, Tag 009O | This supports checking a sheaf on a basis. |
 | Kedlaya, AWS Remark 1.2.16 | This is the reduced-affinoid rational-localisation statement used in the second example. |
 | Conrad, Proposition 15.1.1 | Its proof invokes the two BGR corollaries cited in the paper. |
-| Ben-Bassat--Kremnizer, Definition 5.7, Remark 5.8, and Lemmas 5.13--5.14 | These give the earlier strict graph-complex framework. |
-| Bambozzi--Kremnizer, Definitions 4.5--4.6, Proposition 4.9, Lemma 4.11, and Corollary 4.13 | These prove strict Koszul regularity for rational localisations. Consequently Lemma 5.1 is presented as a lattice-sensitive restatement, not as a new result. |
+| Ben-Bassat--Kremnizer, Definition 5.7, Remark 5.8, and Lemmas 5.13--5.14 | These define rational localisations, prove the strict two-term resolutions for the Weierstrass and Laurent cases, and factor a general rational localisation into those cases. The paper does not use Koszul terminology or state the simultaneous multivariable result. |
+| Bambozzi--Kremnizer, Notation 4.3, Definitions 4.5--4.6, Proposition 4.9, Lemma 4.11, and Corollary 4.13 | These define the relevant Koszul complex and prove strict Koszul regularity for rational localisations. This supports the exactness and strictness assertions in Lemma 5.1; the two displayed lattice estimates are derived separately by open mapping and scaling. |
 
 ## Lean proof-route audit
 

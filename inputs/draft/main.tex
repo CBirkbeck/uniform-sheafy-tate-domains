@@ -156,13 +156,17 @@ sheaf \cite[Propositions 17 and 18]{BV}.  Mihara gives further examples of both
 phenomena \cite{Mihara}.  These examples do not give a uniform sheafy ring which is not
 stably uniform.
 
-The strict Koszul result used in \cref{lem:koszul} is due to
-Ben-Bassat--Kremnizer and Bambozzi--Kremnizer
-\cite[Definition~5.7 and Lemmas~5.13--5.14]{BBK}
-\cite[Definitions~4.5--4.6, Proposition~4.9, Lemma~4.11, and
-Corollary~4.13]{BK}.  We use its lattice form to prove that rational localisation
-preserves the finite-jet Milnor square.  The resulting uniform sheafy domain which is
-not stably uniform appears to be new.
+Ben-Bassat--Kremnizer prove the corresponding one-variable strict resolutions
+for Weierstrass and Laurent localisations, and reduce a general rational
+localisation to these cases \cite[Lemmas~5.13--5.14]{BBK}.  They do not
+formulate a multivariable Koszul theorem.  That formulation, and the strict
+Koszul regularity of rational localisations, is given by
+Bambozzi--Kremnizer
+\cite[Notation~4.3, Definitions~4.5--4.6, Proposition~4.9,
+Lemma~4.11, and Corollary~4.13]{BK}.  The lattice estimates in
+\cref{lem:koszul} are the form needed to show that rational localisation
+preserves the finite-jet Milnor square.  The resulting uniform sheafy domain
+which is not stably uniform appears to be new.
 
 The weighted-parity construction of \cref{sec:rationally-reduced} is closer to the
 infinite monomial-support examples of Buzzard--Verberkmoes and Mihara.  Its additional
@@ -488,11 +492,17 @@ finite product topology.  Images have the subspace topology.  Thus a
 differential is strict when it is open onto its image, or equivalently when its
 coimage is homeomorphic to its image.
 
-The following result is a special case of the strict Koszul statements in
-\cite[Definition~5.7 and Lemmas~5.13--5.14]{BBK}
-\cite[Definitions~4.5--4.6, Proposition~4.9, Lemma~4.11, and
-Corollary~4.13]{BK}.  We include the argument used below, since the topology
-and the two losses of denominators are important.
+Ben-Bassat--Kremnizer prove the one-variable strict two-term resolutions and
+then factor a general rational localisation into Laurent and Weierstrass
+localisations \cite[Lemmas~5.13--5.14]{BBK}; they do not state the
+multivariable Koszul assertion.  Applied to $E\in\{B,C,D\}$, the strict
+Koszul regularity theorem of
+Bambozzi--Kremnizer
+\cite[Notation~4.3, Definitions~4.5--4.6, Proposition~4.9,
+Lemma~4.11, and Corollary~4.13]{BK} gives the exactness, strictness, and
+closed-image assertions below.  We include the direct proof followed in the
+formalisation because the two estimates relative to the displayed lattices
+are not stated there and are needed below.
 
 \begin{lemma}\label{lem:koszul}
 The Koszul complex
@@ -1930,13 +1940,18 @@ formulation
 Theorem~8.28(b), Corollary~8.32, and Lemmas~8.33--8.34]{Wedhorn}.
 The passage between a fixed plus ring and all plus rings follows the standard
 rational-refinement argument recorded by Kedlaya
-\cite[Lemma~1.6.8 and Remark~1.6.9]{KedlayaAWS}.  Related strict Koszul
-statements appear in the work of Ben-Bassat--Kremnizer and
-Bambozzi--Kremnizer.  In the formalisation, positive-degree exactness is
-proved by flat base change from the polynomial sequence; closedness and
-the nonarchimedean open mapping theorem \cite[Lemma~3.1]{KST} give controlled
-lifts.  Scaling those lifts yields the bounded-denominator criterion used by
-Buzzard--Verberkmoes \cite[Lemma~2]{BV}.
+\cite[Lemma~1.6.8 and Remark~1.6.9]{KedlayaAWS}.
+Ben-Bassat--Kremnizer prove the strict one-variable resolutions used in their
+treatment of rational localisations \cite[Lemmas~5.13--5.14]{BBK};
+Bambozzi--Kremnizer formulate the general construction in terms of Koszul
+complexes and prove strict Koszul regularity
+\cite[Notation~4.3, Definitions~4.5--4.6, and
+Corollary~4.13]{BK}.  The formalisation does not invoke either result.
+Positive-degree exactness is instead proved by flat base change from the
+polynomial sequence; closedness and the nonarchimedean open mapping theorem
+\cite[Lemma~3.1]{KST} give controlled lifts.  Scaling those lifts yields the
+bounded-denominator criterion used by Buzzard--Verberkmoes
+\cite[Lemma~2]{BV}.
 
 The development is written in Lean~4 \cite{Lean4} on top of mathlib
 \cite{mathlib}.  The formalisation-specific files live in AINTLIB
