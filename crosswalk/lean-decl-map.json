@@ -378,6 +378,96 @@
       "flagged": true
     }
   ],
+  "thm-second-example": [
+    {
+      "decl": "WeightedParity.isTateRing_WPA",
+      "via": "manual",
+      "file": "Adic spaces/WP/Algebra.lean",
+      "line": 236,
+      "cited": "Theorem 7.1 (Tate structure)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.weightedParity_isUniform_of_dvr",
+      "via": "manual",
+      "file": "Adic spaces/WP/Main.lean",
+      "line": 132,
+      "cited": "Theorem 7.1 (uniformity)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.weightedParity_isDomain",
+      "via": "manual",
+      "file": "Adic spaces/WP/Main.lean",
+      "line": 58,
+      "cited": "Theorem 7.1 (domain)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.weightedParity_powerBounded_eq_unitBall",
+      "via": "manual",
+      "file": "Adic spaces/WP/Main.lean",
+      "line": 66,
+      "cited": "Theorem 7.1 (power-bounded elements are the unit ball)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.weightedParity_not_noetherian",
+      "via": "manual",
+      "file": "Adic spaces/WP/Main.lean",
+      "line": 61,
+      "cited": "Theorem 7.1 (nonnoetherianity)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.weightedParity_isSheafyComplete_of_dvr",
+      "via": "manual",
+      "file": "Adic spaces/WP/Main.lean",
+      "line": 135,
+      "cited": "Theorem 7.1 (sheafiness)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.weightedParity_chart_isDomain",
+      "via": "manual",
+      "file": "Adic spaces/WP/Main.lean",
+      "line": 105,
+      "cited": "Theorem 7.1 (the displayed rational chart is a domain)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.weightedParity_chart_not_isUniform",
+      "via": "manual",
+      "file": "Adic spaces/WP/Main.lean",
+      "line": 112,
+      "cited": "Theorem 7.1 (the displayed rational chart is not uniform)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.weightedParity_not_stablyUniform_of_dvr",
+      "via": "manual",
+      "file": "Adic spaces/WP/Main.lean",
+      "line": 154,
+      "cited": "Theorem 7.1 (failure of stable uniformity)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    }
+  ],
   "prop-parity-uniform-domain": [
     {
       "decl": "WeightedParity.isTateRing_WPA",
@@ -461,6 +551,62 @@
       "cited": "Weighted-parity chart proposition (nonuniformity)",
       "kind": "theorem",
       "flagged": true,
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    }
+  ],
+  "lem-small-perturbation": [
+    {
+      "decl": "WeightedParity.PerturbSetup.datum_isRational",
+      "via": "manual",
+      "file": "Adic spaces/WP/Perturbation.lean",
+      "line": 468,
+      "cited": "Small perturbation lemma (the perturbed datum is rational)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.PerturbSetup.rationalOpen_datum",
+      "via": "manual",
+      "file": "Adic spaces/WP/Perturbation.lean",
+      "line": 495,
+      "cited": "Small perturbation lemma (equality of rational subsets)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.PerturbSetup.equiv",
+      "via": "manual",
+      "file": "Adic spaces/WP/Perturbation.lean",
+      "line": 645,
+      "cited": "Small perturbation lemma (canonical completed-localization isomorphism)",
+      "kind": "def",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.PerturbSetup.equiv_continuous",
+      "via": "manual",
+      "file": "Adic spaces/WP/Perturbation.lean",
+      "line": 672,
+      "cited": "Small perturbation lemma (continuity)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.PerturbSetup.equiv_symm_continuous",
+      "via": "manual",
+      "file": "Adic spaces/WP/Perturbation.lean",
+      "line": 682,
+      "cited": "Small perturbation lemma (continuity of the inverse)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.PerturbSetup.equiv_canonicalMap",
+      "via": "manual",
+      "file": "Adic spaces/WP/Perturbation.lean",
+      "line": 694,
+      "cited": "Small perturbation lemma (compatibility with canonical maps)",
+      "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     }
   ]

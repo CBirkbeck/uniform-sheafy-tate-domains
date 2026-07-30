@@ -22,51 +22,59 @@
 <span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Small perturbation lemma.</span>
 </h2>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\((E,E^+)\)</span> be a complete Tate Huber pair and choose a closed ring of definition <span class="process-math">\(E_0\subseteq E^+\text{.}\)</span>  Let <span class="process-math">\(\alpha=(f_1,\ldots,f_m;g)\)</span> be a rational datum whose entries lie in <span class="process-math">\(E_0\text{.}\)</span>  Write <span class="process-math">\(d_0=g\)</span> and <span class="process-math">\(d_i=f_i\)</span> for <span class="process-math">\(i\geq1\text{.}\)</span>  Suppose that for some <span class="process-math">\(\ell\geq0\)</span> there are <span class="process-math">\(a_0,\ldots,a_m\in E_0\)</span> with</div>
+<div class="para">Let <span class="process-math">\(E\)</span> be a complete nonarchimedean normed commutative ring, let <span class="process-math">\(E^+\subset E\)</span> be a plus ring containing the closed unit ball <span class="process-math">\(E_0=\{x:\lVert x\rVert\leq1\}\text{,}\)</span> and let <span class="process-math">\(t\in E^\times\)</span> satisfy</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0&lt;\lVert t\rVert&lt;1,\qquad
+\lVert tx\rVert=\lVert t\rVert\lVert x\rVert\quad(x\in E).
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(\alpha=(f_1,\ldots,f_m;g)\)</span> be a rational datum with entries in <span class="process-math">\(E_0\text{.}\)</span>  Write <span class="process-math">\(d_0=g\)</span> and <span class="process-math">\(d_i=f_i\)</span> for <span class="process-math">\(i\geq1\text{.}\)</span>  Suppose that for some <span class="process-math">\(\ell\geq0\)</span> there are <span class="process-math">\(a_0,\ldots,a_m\in E_0\)</span> with</div>
 <div class="displaymath process-math">
 \begin{equation}
-\varpi^\ell=\sum_{j=0}^m a_jd_j.\tag{7.15}
+t^\ell=\sum_{j=0}^m a_jd_j.\tag{7.12}
 \end{equation}
 </div>
 <div class="para">Let <span class="process-math">\(d_j'\in E_0\)</span> satisfy</div>
 <div class="displaymath process-math">
 \begin{equation}
-d_j'-d_j\in\varpi^{\ell+1}E_0
-\qquad(0\leq j\leq m),\tag{7.16}
+\lVert d_j'-d_j\rVert\leq\lVert t\rVert^{\ell+1}
+\qquad(0\leq j\leq m),\tag{7.13}
 \end{equation}
 </div>
-<div class="para">and write <span class="process-math">\(\alpha'=(f_1',\ldots,f_m';g')\text{.}\)</span>  Then <span class="process-math">\(\alpha'\)</span> is a rational datum, <span class="process-math">\(\alpha\)</span> and <span class="process-math">\(\alpha'\)</span> define the same rational subset of <span class="process-math">\(\Spa(E,E^+)\text{,}\)</span> and their completed rational localisations are canonically isomorphic.</div>
+<div class="para">and write <span class="process-math">\(\alpha'=(f_1',\ldots,f_m';g')\text{.}\)</span>  Then <span class="process-math">\(\alpha'\)</span> is a rational datum, <span class="process-math">\(\alpha\)</span> and <span class="process-math">\(\alpha'\)</span> define the same rational subset of <span class="process-math">\(\Spa(E,E^+)\text{,}\)</span> and their completed rational localisations are bicontinuously isomorphic by an isomorphism commuting with the canonical maps from <span class="process-math">\(E\text{.}\)</span>
+</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-small-perturbation-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Lemma 7.7: Small perturbation lemma"><a tabindex="-1" href="#lem-small-perturbation" title="Copy heading and permalink for Lemma 7.7: Small perturbation lemma" aria-label="Copy heading and permalink for Lemma 7.7: Small perturbation lemma">🔗</a></div>
+<a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=WeightedParity.PerturbSetup.datum_isRational#doc" data-lean-ref="WeightedParity.PerturbSetup.datum_isRational" data-lean-project="AdicSpaces" title="Formalized as WeightedParity.PerturbSetup.datum_isRational in AdicSpaces">Lean (datum_isRational)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=WeightedParity.PerturbSetup.rationalOpen_datum#doc" data-lean-ref="WeightedParity.PerturbSetup.rationalOpen_datum" data-lean-project="AdicSpaces" title="Formalized as WeightedParity.PerturbSetup.rationalOpen_datum in AdicSpaces">Lean (rationalOpen_datum)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=WeightedParity.PerturbSetup.equiv#doc" data-lean-ref="WeightedParity.PerturbSetup.equiv" data-lean-project="AdicSpaces" title="Formalized as WeightedParity.PerturbSetup.equiv in AdicSpaces">Lean (equiv)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=WeightedParity.PerturbSetup.equiv_continuous#doc" data-lean-ref="WeightedParity.PerturbSetup.equiv_continuous" data-lean-project="AdicSpaces" title="Formalized as WeightedParity.PerturbSetup.equiv_continuous in AdicSpaces">Lean (equiv_continuous)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=WeightedParity.PerturbSetup.equiv_symm_continuous#doc" data-lean-ref="WeightedParity.PerturbSetup.equiv_symm_continuous" data-lean-project="AdicSpaces" title="Formalized as WeightedParity.PerturbSetup.equiv_symm_continuous in AdicSpaces">Lean (equiv_symm_continuous)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=WeightedParity.PerturbSetup.equiv_canonicalMap#doc" data-lean-ref="WeightedParity.PerturbSetup.equiv_canonicalMap" data-lean-project="AdicSpaces" title="Formalized as WeightedParity.PerturbSetup.equiv_canonicalMap in AdicSpaces">Lean (equiv_canonicalMap)</a><div class="autopermalink" aria-hidden="true" data-description="Lemma 7.7: Small perturbation lemma"><a tabindex="-1" href="#lem-small-perturbation" title="Copy heading and permalink for Lemma 7.7: Small perturbation lemma" aria-label="Copy heading and permalink for Lemma 7.7: Small perturbation lemma">🔗</a></div>
 </article>
 <details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
 <article class="hiddenproof knowl__content">
 <div class="para logical">
-<div class="para">Write <span class="process-math">\(d_j'-d_j=\varpi^{\ell+1}h_j\)</span> with <span class="process-math">\(h_j\in E_0\text{.}\)</span>  Then</div>
+<div class="para">The scaling hypothesis and the fact that <span class="process-math">\(t\)</span> is a unit give <span class="process-math">\(d_j'-d_j=t^{\ell+1}h_j\)</span> with <span class="process-math">\(\lVert h_j\rVert\leq1\text{.}\)</span>  Hence</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \sum_j a_jd_j'
-=\varpi^\ell(1+\varpi H),
-\qquad H=\sum_j a_jh_j\in E_0.
+=t^\ell(1+tH),
+\qquad H=\sum_j a_jh_j,\quad \lVert H\rVert\leq1.
 \end{equation*}
 </div>
-<div class="para">The element <span class="process-math">\(1+\varpi H\)</span> is a unit of <span class="process-math">\(E_0\text{,}\)</span> with inverse given by its convergent geometric series.  Multiplying the <span class="process-math">\(a_j\)</span> by this inverse gives an integral Bezout relation for the primed datum; in particular, <span class="process-math">\(\alpha'\)</span> is open.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-small-perturbation-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">Since <span class="process-math">\(\lVert tH\rVert&lt;1\text{,}\)</span> the element <span class="process-math">\(1+tH\)</span> is a unit with inverse in <span class="process-math">\(E_0\text{.}\)</span>  Multiplying the <span class="process-math">\(a_j\)</span> by this inverse gives a unit-ball Bezout relation for the primed datum; in particular, <span class="process-math">\(\alpha'\)</span> is rational.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-small-perturbation-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\(x\)</span> lie in the rational subset defined by <span class="process-math">\(\alpha\text{.}\)</span>  Since <span class="process-math">\(a_j\in E_0\subseteq E^+\text{,}\)</span> relation <a href="#eq-integral-bezout" class="xref" data-knowl="./knowl/xref/eq-integral-bezout.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.15">(7.15)</a> gives</div>
+<div class="para">Let <span class="process-math">\(x\)</span> lie in the rational subset defined by <span class="process-math">\(\alpha\text{.}\)</span>  Since <span class="process-math">\(a_j\in E_0\subseteq E^+\text{,}\)</span> relation <a href="#eq-integral-bezout" class="xref" data-knowl="./knowl/xref/eq-integral-bezout.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.12">(7.12)</a> gives</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-integral-bezout.html">
 \begin{equation*}
-|\varpi|^\ell\leq |g(x)|.
+|t(x)|^\ell\leq |g(x)|.
 \end{equation*}
 </div>
-<div class="para">The perturbations have value at most <span class="process-math">\(|\varpi|^{\ell+1}&lt;|g(x)|\text{,}\)</span> so <span class="process-math">\(|g'(x)|=|g(x)|\)</span> and <span class="process-math">\(|f_i'(x)|\leq|g'(x)|\text{.}\)</span>  This proves one inclusion of rational subsets.  Applying the same argument to the primed Bezout relation proves the reverse inclusion.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-small-perturbation-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">The perturbations have value at most <span class="process-math">\(|t(x)|^{\ell+1}&lt;|g(x)|\text{,}\)</span> so <span class="process-math">\(|g'(x)|=|g(x)|\)</span> and <span class="process-math">\(|f_i'(x)|\leq|g'(x)|\text{.}\)</span>  This proves one inclusion of rational subsets.  Applying the same argument to the primed Bezout relation proves the reverse inclusion.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-small-perturbation-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para">Rational localisation is independent of the datum used to present a rational subset.  The equality of the two subsets therefore gives restriction maps in both directions between <span class="process-math">\(E_\alpha\)</span> and <span class="process-math">\(E_{\alpha'}\text{.}\)</span>  Transitivity of rational restriction shows that their composites are the identity.  This is the required canonical isomorphism.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-small-perturbation-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">Rational localisation is independent of the datum used to present a rational subset.  The equality of the two subsets therefore gives restriction maps in both directions between <span class="process-math">\(E_\alpha\)</span> and <span class="process-math">\(E_{\alpha'}\text{.}\)</span>  Transitivity of rational restriction shows that their composites are the identity.  The two restriction maps are continuous and commute with the canonical maps from <span class="process-math">\(E\text{,}\)</span> as required.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-small-perturbation-9-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Proof 7.7.1"><a tabindex="-1" href="#lem-small-perturbation-3" title="Copy heading and permalink for Proof 7.7.1" aria-label="Copy heading and permalink for Proof 7.7.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.7.1"><a tabindex="-1" href="#lem-small-perturbation-9" title="Copy heading and permalink for Proof 7.7.1" aria-label="Copy heading and permalink for Proof 7.7.1">🔗</a></div>
 </article></details><span class="incontext"><a class="internal" href="#lem-small-perturbation">In Context</a></span>
 </body>
 </html>

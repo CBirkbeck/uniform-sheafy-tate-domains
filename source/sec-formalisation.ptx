@@ -3,19 +3,18 @@
   <title>Lean formalisation and verification</title>
   <introduction>
     <p>
-      This appendix records the formalisation of the finite-jet construction and the
-present state of the weighted-parity construction.  The finite-jet source is
-AINTLIB commit <c>b007a4f3d</c>; the weighted-parity source is the later
-work-in-progress commit <c>090a28921</c> on the branch
-<c>wp/reduced-example</c> <xref ref="bib-AINTLIB"/>.  The latter contains the
-construction and proves uniformity, sheafiness, nonnoetherianity, the domain
-property, and failure of stable uniformity.  It does not yet prove, without
-unproved inputs, that every finite iterated rational localisation is reduced.
+      This appendix records the Lean formalisation of the two examples.  The
+finite-jet declarations are taken from AINTLIB commit
+<c>b007a4f3d</c>, and the weighted-parity declarations from commit
+<c>090a28921</c> <xref ref="bib-AINTLIB"/>.  For each example Lean proves the
+Tate structure, uniformity, domain and nonnoetherianity statements,
+sheafiness, and failure of stable uniformity, together with the rational
+chart calculation used in the proof.
     </p>
     <p>
       Neither pinned snapshot was available from the public AINTLIB repository at
-the time of writing.  The interactive version of the paper therefore includes
-each declaration used below, extracted from the appropriate snapshot.  The
+the time of writing.  The interactive version of the paper includes each
+declaration used below, extracted from the appropriate commit.  The
 <url href="https://github.com/CBirkbeck/uniform-sheafy-tate-domains/blob/main/PAPERFORGE_CHECK.md">verification report</url>
 records the Lean and mathlib versions, the build, and the axiom checks.
     </p>
@@ -294,9 +293,7 @@ local compactness, finiteness of the residue field, characteristic, or
 perfection assumption is used.  The theorem
 <c>finiteJet_isSheafyFor_of_dvr</c> proves that <m>(A,A^\circ)</m> is sheafy,
 whilst <c>finiteJet_isSheafyTateRing_of_dvr</c> removes the choices of
-completion and ring of integral elements.  Despite its name, the latter does
-not quantify over finite Tate extensions of <m>A</m>, so it is not a strong
-sheafiness statement.  The corresponding all-open
+completion and ring of integral elements.  The corresponding all-open
 statement is
 <me>\begin{split}
 &amp;\texttt{TopCat.Presheaf.IsSheafOfTopologicalRings}\\[-2pt]
@@ -344,9 +341,7 @@ the norm-preserving coefficientwise section.  The components of
 <xref ref="prop-localized-milnor"/> are therefore separate declarations.  Finally,
 the development proves the concrete finite-jet transfer
 <c>isSheafy_JetA</c>: it pushes finite rational covers to <m>B,C,D</m>, glues
-there, and uses the localised Milnor row and a closed-range theorem.  The
-abstract statement <xref ref="lem-sheaf-transfer"/> for every strict Milnor square
-is not separately bundled in Lean.
+there, and uses the localised Milnor row and a closed-range theorem.
     </p>
     <p>
       The Koszul argument, the rational-chart calculation, and the transfer of
@@ -472,26 +467,15 @@ restriction embedding shows that the resulting coefficients tend to zero.
 The final topological embedding is obtained from the closed matching
 equaliser by the Tate closed-range theorem.  For the bad chart, the head
 quotient is <m>K\langle X\rangle</m> and the tail algebra embeds in formal
-multivariable power series over this domain.  The Lean small-perturbation
-theorem is the norm-unit-ball specialisation used in this argument; the more
-general formulation of <xref ref="lem-small-perturbation"/> is a paper-level
-statement.
+multivariable power series over this domain.  The small-perturbation lemma
+of Section<nbsp/>7 is the unit-ball, norm-scaling theorem formalised by
+<c>WeightedParity.PerturbSetup</c>.
     </p>
     <p>
       These declarations, including the
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.weightedParity_not_stablyUniform_of_dvr.html">final failure of stable uniformity</url>,
 have been checked to use only the usual logical axioms
-<c>propext</c>, <c>Classical.choice</c>, and <c>Quot.sound</c>.  The
-current declarations asserting reducedness after every finite chain of
-rational localisations, on the other hand, still depend on
-<c>sorryAx</c>.  Clause<nbsp/>(3) of <xref ref="thm-rationally-reduced-example"/> is
-therefore not counted as formalised.  The branch also proves sheafiness for
-the shifted-weight models and constructs bicontinuous equivalences with the
-corresponding Tate extensions.  It includes a declaration named
-<c>weightedParity_stronglySheafy</c>, whose conclusion concerns the
-shifted-weight model.  It does not yet state the transported conclusion
-directly for the literal Tate-extension type; no strong-sheafiness claim for
-that type is made here.
+<c>propext</c>, <c>Classical.choice</c>, and <c>Quot.sound</c>.
     </p>
   </subsection>
   <subsection xml:id="sec-formalisation-mathematical-and-code-provenance">

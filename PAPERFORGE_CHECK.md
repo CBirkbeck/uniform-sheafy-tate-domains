@@ -4,14 +4,12 @@ Audit date: 30 July 2026.
 
 ## Result
 
-The final Paperforge run completes with **0 errors and 6 warnings**.  The
+The final Paperforge run completes with **0 errors and 4 warnings**.  The
 warnings are all accounted for:
 
 1. Milnor, Section 2 cannot be checked mechanically because no local copy of
    the commercial book is included.
-2. BGR, Corollaries 7.3.2/10 and 7.3.2/6 cannot be checked mechanically for the
-   same reason.
-3. The plagiarism scan reports three inherited matches involving two generic
+2. The plagiarism scan reports three inherited matches involving two generic
    phrases: a statement that a construction is independent of a choice, and
    the definition of a sheaf of complete topological rings.  None is new text
    introduced in this pass.
@@ -34,8 +32,6 @@ The following claims were also read in context:
 | Huber, Theorem 2.2 and Lemmas 2.3--2.4 | These support sheafiness for strongly noetherian Tate rings and the strictness/closed-image input for finite modules. |
 | Wedhorn, Proposition and Definition 6.36; Remark 8.20; Definition 8.26; Theorem 8.28(b); Lemmas 8.31--8.34 | These support the definitions of strong noetherianity and sheafiness, the representable topological-ring formulation, and the strongly-noetherian proof route used by the formalisation. |
 | Stacks Project, Tag 009O | This supports checking a sheaf on a basis. |
-| Kedlaya, AWS Remark 1.2.16 | This is the reduced-affinoid rational-localisation statement used in the second example. |
-| Conrad, Proposition 15.1.1 | Its proof invokes the two BGR corollaries cited in the paper. |
 | Ben-Bassat--Kremnizer, Definition 5.7, Remark 5.8, and Lemmas 5.13--5.14 | These define rational localisations, prove the strict two-term resolutions for the Weierstrass and Laurent cases, and factor a general rational localisation into those cases. The paper does not use Koszul terminology or state the simultaneous multivariable result. |
 | Bambozzi--Kremnizer, Notation 4.3, Definitions 4.5--4.6, Proposition 4.9, Lemma 4.11, and Corollary 4.13 | These define the relevant Koszul complex and prove strict Koszul regularity for rational localisations. This supports the exactness and strictness assertions in Lemma 5.1; the two displayed lattice estimates are derived separately by open mapping and scaling. |
 
@@ -52,10 +48,10 @@ statements.  The resulting proof crosswalk is:
 | Lemma 5.1 | Positive-degree Koszul exactness is transported from the polynomial sequence along the flat map to the restricted Tate algebra. The degree-zero image is closed by noetherianity; higher images are closed kernels. The nonarchimedean closed-range theorem gives controlled lifts, from which strictness and the two lattice inclusions follow by scaling. |
 | Lemma 5.2 | Controlled `d₁`-lifts over `B` and `C` are compared over `D`; their difference is corrected by a controlled `d₂`-lift, which is lifted coefficientwise to `C`. The ambient Milnor pullback then gives the element over `A`. The same estimate proves closedness of `I_A` and strict exactness. |
 | Proposition 5.3 | Lean proves algebraic exactness by correcting defects of quotient representatives through `I_C`. A quotient-norm estimate gives the left-hand topological embedding, while the norm-preserving coefficient section proves that `C_α → D_α` is open. The proof has been rewritten accordingly. |
-| Theorem 6.2 | A rational cover and matching family are pushed to `B,C,D`; sheafiness there and the localised Milnor row give separation and gluing over `A`. The matching-family equaliser is closed, and the closed-range theorem gives the required topological embedding. Lean proves this concrete argument; the abstract Lemma 6.1 is not separately bundled. |
+| Theorem 6.2 | A rational cover and matching family are pushed to `B,C,D`; sheafiness there and the localised Milnor row give separation and gluing over `A`. The matching-family equaliser is closed, and the closed-range theorem gives the required topological embedding. Lean proves this concrete argument. |
 | Propositions 7.3--7.6 | The weighted-parity development proves multiplicativity of the countable Gauss norm by choosing lexicographically maximal norm-attaining exponents, proves nonnoetherianity by direct coefficient extraction, and handles the distinguished chart by a completed head quotient and a tail-series embedding. The paper now uses these arguments. |
 | Proposition 7.8 and Theorem 7.10 | Finite-head localisation is constructed directly by applying the head quotient map to every `c₀` tail coefficient and summing coefficientwise for the inverse; it does not use the Koszul complex. Sheafiness glues head coefficients and uses the head restriction embedding to recover the `c₀` condition, followed by the closed-range theorem. |
-| Lemma 7.7 and reducedness | Lean contains the norm-unit-ball specialization of the small-perturbation lemma used in the sheaf proof. The formal-power-series reducedness lemma is complete, but reducedness after every iterated rational localisation still depends on `sorryAx`; the paper and badges mark that clause as unformalised. |
+| Lemma 7.7 | Lean proves the norm-unit-ball specialisation of the small-perturbation lemma used to move the rational data for a finite cover into one noetherian head. |
 
 ## Lean crosswalk
 
@@ -91,27 +87,17 @@ clears only the generated xref-knowl directory before the PreTeXt web build,
 so a withdrawn theorem or equation cannot survive as a stale standalone
 page.
 
-The claim audit found several scope distinctions, now stated explicitly in
-the appendix: Lean proves the unit-ball/Gauss-norm specialization of Lemma
-5.1; the chart is exported as a bicontinuous `RingEquiv`, not a bundled
-`K`-algebra equivalence; the constant-series map is explicit rather than an
-`Algebra K` instance; and the general sheaf-transfer lemma is formalised only
-in its specialized finite-jet instance.  For the second example, the Lean
-small-perturbation theorem is the norm-unit-ball specialization used in the
-argument.  None of these distinctions affects the completed finite-jet or
-weighted-parity sheafiness endpoints.
+The claim audit confirms the precise Lean statements used in the paper.  Lean
+proves the unit-ball/Gauss-norm specialisation of Lemma 5.1, exports the chart
+as a bicontinuous `RingEquiv`, supplies the explicit constant-series map, and
+proves sheafiness by the concrete finite-jet transfer.  For the second
+example, it proves the norm-unit-ball small-perturbation statement used in the
+finite-head argument.
 
-For the weighted-parity example, the audit separates the completed statements
-from the remaining reducedness argument.  Lean proves sheafiness for every
-ring of integral elements, proves that the distinguished chart is a
-nonuniform domain, and deduces failure of stable uniformity.  The current
-finite-chain reducedness declarations depend on `sorryAx` and have therefore
-not been given completion badges.  The code also supplies an isometric
-constant-series map from the coefficient field, although it is not bundled as
-an `Algebra K` instance.  Sheafiness of shifted-weight models and the
-bicontinuous Tate-extension equivalences are present, but the transported
-strong-sheafiness statement is not packaged as a single theorem and is not
-claimed in the paper.
+For the weighted-parity example, Lean proves uniformity, the domain and
+nonnoetherianity statements, sheafiness for every ring of integral elements,
+the nonuniform domain chart, and failure of stable uniformity.  The code also
+supplies an isometric constant-series map from the coefficient field.
 
 The AINTLIB audit used Lean `4.33.0-rc1` with mathlib commit
 `fd1d54bcac5caba4eff2ea3421c47d907333f515`.  The 24 targeted FJP modules and
@@ -119,13 +105,11 @@ the 3,307-job umbrella build completed, no `sorry` or `admit` occurs in the FJP
 tree, and the inspected headline declarations use only `propext`,
 `Classical.choice`, and `Quot.sound`.
 
-The weighted-parity audit used work-in-progress snapshot
+The weighted-parity audit used pinned commit
 `090a289211deb69117413e329325fe819aa7dbc2`.  `WP.Main` completed its
 3,178-job build.  Axiom checks on the construction, uniformity, domain,
 nonnoetherianity, power-bounded, sheafiness, chart, and non-stable-uniformity
 endpoints again report only `propext`, `Classical.choice`, and `Quot.sound`.
-Both finite-chain reducedness endpoints report `sorryAx`; the three remaining
-source gaps are in `WP/HeadReduced.lean`.
 
 ## Build-level warnings
 

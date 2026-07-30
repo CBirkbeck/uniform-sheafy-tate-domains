@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xml:id="sec-rationally-reduced">
+<section xml:id="sec-second-example">
   <title>A second example</title>
   <introduction>
     <p>
@@ -8,7 +8,7 @@ nilpotent.  We now give a second construction in which the bad rational localisa
 integral domain.  The loss of uniformity is instead caused by an unbounded family of
 nonnilpotent power-bounded elements.
     </p>
-    <theorem xml:id="thm-rationally-reduced-example">
+    <theorem xml:id="thm-second-example">
       <statement>
         <p>
           There is a complete Tate <m>k</m>-algebra <m>\mathcal A</m> with the following properties.
@@ -27,11 +27,6 @@ nonnilpotent power-bounded elements.
           </li>
           <li>
             <p>
-              Every finite iterated rational localisation of <m>\mathcal A</m> is reduced.
-            </p>
-          </li>
-          <li>
-            <p>
               The rational localisation
       <me>\mathcal B=\mathcal A\left\langle\frac{W}{\varpi}\right\rangle</me>
       is an integral domain but is not uniform.
@@ -39,13 +34,23 @@ nonnilpotent power-bounded elements.
           </li>
         </ol>
         <p>
-          In particular, failure of stable uniformity need not be caused by a nilpotent in the bad
-rational localisation.
+          Consequently <m>\mathcal A</m> is not stably uniform.  In particular, failure of
+stable uniformity need not be caused by a nilpotent in the bad rational
+localisation.
         </p>
       </statement>
+      <lean project="AdicSpaces" ref="WeightedParity.isTateRing_WPA">Lean (Tate structure)</lean>
+      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_isUniform_of_dvr">Lean (uniformity)</lean>
+      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_isDomain">Lean (domain)</lean>
+      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_powerBounded_eq_unitBall">Lean (power-bounded elements)</lean>
+      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_not_noetherian">Lean (nonnoetherianity)</lean>
+      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_isSheafyComplete_of_dvr">Lean (sheafiness)</lean>
+      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_chart_isDomain">Lean (chart is a domain)</lean>
+      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_chart_not_isUniform">Lean (chart is nonuniform)</lean>
+      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_not_stablyUniform_of_dvr">Lean (weightedParity_not_stablyUniform_of_dvr)</lean>
     </theorem>
   </introduction>
-  <subsection xml:id="sec-rationally-reduced-the-weighted-parity-algebra">
+  <subsection xml:id="sec-second-example-the-weighted-parity-algebra">
     <title>The weighted-parity algebra</title>
     <p>
       Let <m>I=\mathbf N_{>0}</m>.  For a finite-support multi-index
@@ -83,57 +88,44 @@ extends multiplication continuously to <m>\mathcal A</m>.  Put
 <m>\mathcal A=\mathcal A_0[1/\varpi]</m>.
     </p>
     <p>
-      The finite stages admit a useful affinoid presentation.  For <m>N\geq1</m>, put
-      <men xml:id="eq-finite-head-presentation">\mathcal A_N=
-  \frac{k\langle W,Y_1,Z_1,\ldots,Y_N,Z_N\rangle}
-       {(Y_n^2-W^{2n}Z_n)_{1\leq n\leq N}}.</men>
+      For <m>N\geq1</m>, let <m>\mathcal A_N\subset\mathcal A</m> be the closed subring
+supported on monomials involving only <m>W,U_1,\ldots,U_N</m>.  Put
+<me>Y_n=W^nU_n,\qquad Z_n=U_n^2,</me>
+and let <m>\mathcal T_N\subset\mathcal A_N</m> be the subring supported on even
+<m>U_n</m>-exponents.
     </p>
     <lemma xml:id="lem-finite-stage-normal-form">
-      <title>Isometric finite-stage normal form</title>
+      <title>Finite heads</title>
       <statement>
         <p>
-          There is an isometric decomposition
-          <men xml:id="eq-finite-stage-normal-form">\mathcal A_N\cong
-  \bigoplus_{\epsilon\in\{0,1\}^N}^{\max}
-  k\langle W,Z_1,\ldots,Z_N\rangle Y^\epsilon.</men>
-          Under the substitution
-          <men xml:id="eq-finite-stage-substitution">Y_n\longmapsto W^nU_n,
-  \qquad
-  Z_n\longmapsto U_n^2,</men>
-          this identifies <m>\mathcal A_N</m> isometrically with the closed subalgebra of
-<m>k\langle W,U_1,\ldots,U_N\rangle</m> supported on the monomials in
-<xref ref="eq-parity-monoid"/> involving only <m>U_1,\ldots,U_N</m>.  The transition maps
-<m>\mathcal A_N\to\mathcal A_{N+1}</m> are isometric, and
+          The substitution <m>Z_n\mapsto U_n^2</m> gives a norm-preserving ring
+isomorphism
+<me>k\langle W,Z_1,\ldots,Z_N\rangle\xrightarrow{\ \sim\ }\mathcal T_N.</me>
+Every <m>f\in\mathcal A_N</m> has a parity-slice expansion
+          <men xml:id="eq-finite-stage-normal-form">f=\sum_{\epsilon\in\{0,1\}^N} f_\epsilon Y^\epsilon,
+  \qquad f_\epsilon\in\mathcal T_N.</men>
+          Consequently <m>\mathcal A_N</m> is finite over <m>\mathcal T_N</m> and is a strongly
+noetherian Tate ring.  The inclusions between the heads and into
+<m>\mathcal A</m> preserve the norm.  Moreover, for every <m>f\in\mathcal A</m> and
+<m>\ell\geq0</m> there are <m>N</m> and <m>f_N\in\mathcal A_N</m> such that
+<me>\lVert f-f_N\rVert_G\leq |\varpi|^\ell\lVert f\rVert_G.</me>
+In particular,
           <men xml:id="eq-A-completion-of-heads">\mathcal A=\widehat{\bigcup_{N\geq1}\mathcal A_N}.</men>
         </p>
       </statement>
       <proof>
         <p>
-          Writing <m>\nu_n=2q_n+\epsilon_n</m> gives the unique factorization
-          <men xml:id="eq-parity-factorization">W^aU^\nu
-  =W^{a-\omega(\nu)}
-   \prod_{n=1}^NY_n^{\epsilon_n}Z_n^{q_n}</men>
-          whenever <m>a\geq\omega(\nu)</m> and <m>\nu</m> is supported in <m>\{1,\ldots,N\}</m>.  Thus the
-finite-head support algebra is the sum of the subspaces
-<me>k\langle W,Z_1,\ldots,Z_N\rangle Y^\epsilon,
-  \qquad \epsilon\in\{0,1\}^N.</me>
-The summands have disjoint monomial supports, distinguished by the parities
-of the <m>U_n</m>-exponents.  The sum is therefore direct and its Gauss norm is
-the maximum of the norms of its components.
-        </p>
-        <p>
-          The substitution <xref ref="eq-finite-stage-substitution"/> kills
-<m>Y_n^2-W^{2n}Z_n</m> and hence gives a norm-nonincreasing map from the quotient
-<xref ref="eq-finite-head-presentation"/> to this support algebra.  In the other
-direction, send a parity decomposition
-<m>\sum_\epsilon f_\epsilon Y^\epsilon</m> to the class represented by the same
-sum.  This map is also norm-nonincreasing, and
-<xref ref="eq-parity-factorization"/> shows that the two maps are inverse.
-This proves the isometric normal form.  The same support description makes
-the transition maps isometric.  Finally, every finite set of allowed
-monomials lies in one head, and finite-support series are dense in
-<xref ref="eq-parity-algebra"/>; hence
-<xref ref="eq-A-completion-of-heads"/> follows.
+          On even exponents, halving the <m>U_n</m>-coordinates identifies the support
+monoid with that of the Tate algebra
+<m>k\langle W,Z_1,\ldots,Z_N\rangle</m>; the coefficient map and its inverse
+preserve the Gauss norm.  Splitting each <m>U_n</m>-exponent according to its
+parity gives <xref ref="eq-finite-stage-normal-form"/>.  The finitely many
+<m>Y^\epsilon</m> therefore generate <m>\mathcal A_N</m> over <m>\mathcal T_N</m>.
+The same argument after adjoining any finite number of Tate variables gives
+strong noetherianity.  The inclusions are coefficientwise and hence
+isometric.  Finally, truncating a restricted series to a sufficiently large
+head gives the stated estimate and hence
+<xref ref="eq-A-completion-of-heads"/>.
         </p>
       </proof>
     </lemma>
@@ -199,7 +191,7 @@ so <m>\mathcal A</m> is not noetherian.
       </proof>
     </proposition>
   </subsection>
-  <subsection xml:id="sec-rationally-reduced-a-reduced-nonuniform-rational-chart">
+  <subsection xml:id="sec-second-example-a-reduced-nonuniform-rational-chart">
     <title>A reduced nonuniform rational chart</title>
     <p>
       The ideal <m>(W,\varpi)</m> is open because <m>\varpi</m> is a unit of <m>\mathcal A</m>.
@@ -221,7 +213,7 @@ Define the complete <m>k^\circ</m>-algebra
     <proposition xml:id="prop-weighted-chart-identification">
       <statement>
         <p>
-          There is a canonical isometric isomorphism
+          There is a bicontinuous ring isomorphism
           <men xml:id="eq-weighted-chart-identification">\mathcal A\left\langle\frac{W}{\varpi}\right\rangle
   \xrightarrow{\ \sim\ }\mathcal B,
   \qquad W\longmapsto\varpi X.</men>
@@ -244,13 +236,12 @@ isometric.
         <p>
           Apply the coefficientwise-localisation construction of
 <xref ref="prop-coefficientwise-localization"/> to this zeroth head.  It identifies
-the rational chart with the <m>c_0</m> tail algebra over <m>Q</m>.  After replacing
-<m>Q</m> by <m>k\langle X\rangle</m>, its elements and norm are exactly those in
-<xref ref="eq-weighted-chart-lattice"/> and
-<xref ref="eq-weighted-chart-norm"/>: the tail basis element of parity <m>\nu</m>
-contributes the factor <m>\varpi^{\omega(\nu)}</m>.  This gives
-<xref ref="eq-weighted-chart-identification"/>, and the head evaluation sends
-<m>W</m> to <m>\varpi X</m>.
+the rational chart bicontinuously with the <m>c_0</m> tail algebra over <m>Q</m>.
+After replacing <m>Q</m> by <m>k\langle X\rangle</m>, this is the model
+<xref ref="eq-weighted-chart-lattice"/>; its sup norm is
+<xref ref="eq-weighted-chart-norm"/>, since the tail basis element of parity
+<m>\nu</m> contributes the factor <m>\varpi^{\omega(\nu)}</m>.  The head evaluation
+sends <m>W</m> to <m>\varpi X</m>.
         </p>
       </proof>
     </proposition>
@@ -275,8 +266,7 @@ finite-head formalisation below, this is the embedding of the corresponding
 element is <m>\varpi X</m>, which is a non-zero-divisor.
         </p>
         <p>
-          Inside <m>\mathcal A</m> write <m>Y_n=W^nU_n</m>, as in
-<xref ref="eq-finite-stage-substitution"/>, and put
+          Inside <m>\mathcal A</m> write <m>Y_n=W^nU_n</m> and put
 <me>T_n=\varpi^{-n}Y_n=X^nU_n\in\mathcal B.</me>
 Formula <xref ref="eq-weighted-chart-norm"/> gives
 <me>\lVert T_n\rVert_{\mathrm{in}}=|\varpi|^{-n},
@@ -291,7 +281,7 @@ It follows by separating even and odd powers that the powers of each fixed
       </proof>
     </proposition>
   </subsection>
-  <subsection xml:id="sec-rationally-reduced-small-perturbations-of-rational-data">
+  <subsection xml:id="sec-second-example-small-perturbations-of-rational-data">
     <title>Small perturbations of rational data</title>
     <p>
       The finite-head argument rests on the following elementary stability result.
@@ -300,35 +290,47 @@ It follows by separating even and odd powers that the powers of each fixed
       <title>Small perturbation lemma</title>
       <statement>
         <p>
-          Let <m>(E,E^+)</m> be a complete Tate Huber pair and choose a closed ring of definition
-<m>E_0\subseteq E^+</m>.  Let
-<m>\alpha=(f_1,\ldots,f_m;g)</m> be a rational datum whose entries lie in <m>E_0</m>.  Write
-<m>d_0=g</m> and <m>d_i=f_i</m> for <m>i\geq1</m>.  Suppose that for some <m>\ell\geq0</m> there are
-<m>a_0,\ldots,a_m\in E_0</m> with
-          <men xml:id="eq-integral-bezout">\varpi^\ell=\sum_{j=0}^m a_jd_j.</men>
+          Let <m>E</m> be a complete nonarchimedean normed commutative ring, let
+<m>E^+\subset E</m> be a plus ring containing the closed unit ball
+<m>E_0=\{x:\lVert x\rVert\leq1\}</m>, and let <m>t\in E^\times</m> satisfy
+<me>0&lt;\lVert t\rVert&lt;1,\qquad
+  \lVert tx\rVert=\lVert t\rVert\lVert x\rVert\quad(x\in E).</me>
+Let <m>\alpha=(f_1,\ldots,f_m;g)</m> be a rational datum with entries in
+<m>E_0</m>.  Write <m>d_0=g</m> and <m>d_i=f_i</m> for <m>i\geq1</m>.  Suppose that for some
+<m>\ell\geq0</m> there are <m>a_0,\ldots,a_m\in E_0</m> with
+          <men xml:id="eq-integral-bezout">t^\ell=\sum_{j=0}^m a_jd_j.</men>
           Let <m>d_j'\in E_0</m> satisfy
-          <men xml:id="eq-small-perturbation-bound">d_j'-d_j\in\varpi^{\ell+1}E_0
+          <men xml:id="eq-small-perturbation-bound">\lVert d_j'-d_j\rVert\leq\lVert t\rVert^{\ell+1}
   \qquad(0\leq j\leq m),</men>
-          and write <m>\alpha'=(f_1',\ldots,f_m';g')</m>.  Then <m>\alpha'</m> is a rational datum,
-<m>\alpha</m> and <m>\alpha'</m> define the same rational subset of <m>\Spa(E,E^+)</m>, and their completed
-rational localisations are canonically isomorphic.
+          and write <m>\alpha'=(f_1',\ldots,f_m';g')</m>.  Then <m>\alpha'</m> is a rational
+datum, <m>\alpha</m> and <m>\alpha'</m> define the same rational subset of
+<m>\Spa(E,E^+)</m>, and their completed rational localisations are
+bicontinuously isomorphic by an isomorphism commuting with the canonical
+maps from <m>E</m>.
         </p>
       </statement>
+      <lean project="AdicSpaces" ref="WeightedParity.PerturbSetup.datum_isRational">Lean (datum_isRational)</lean>
+      <lean project="AdicSpaces" ref="WeightedParity.PerturbSetup.rationalOpen_datum">Lean (rationalOpen_datum)</lean>
+      <lean project="AdicSpaces" ref="WeightedParity.PerturbSetup.equiv">Lean (equiv)</lean>
+      <lean project="AdicSpaces" ref="WeightedParity.PerturbSetup.equiv_continuous">Lean (equiv_continuous)</lean>
+      <lean project="AdicSpaces" ref="WeightedParity.PerturbSetup.equiv_symm_continuous">Lean (equiv_symm_continuous)</lean>
+      <lean project="AdicSpaces" ref="WeightedParity.PerturbSetup.equiv_canonicalMap">Lean (equiv_canonicalMap)</lean>
       <proof>
         <p>
-          Write <m>d_j'-d_j=\varpi^{\ell+1}h_j</m> with <m>h_j\in E_0</m>.  Then
+          The scaling hypothesis and the fact that <m>t</m> is a unit give
+<m>d_j'-d_j=t^{\ell+1}h_j</m> with <m>\lVert h_j\rVert\leq1</m>.  Hence
 <me>\sum_j a_jd_j'
-  =\varpi^\ell(1+\varpi H),
-  \qquad H=\sum_j a_jh_j\in E_0.</me>
-The element <m>1+\varpi H</m> is a unit of <m>E_0</m>, with inverse given by its convergent geometric
-series.  Multiplying the <m>a_j</m> by this inverse gives an integral Bezout relation for the primed
-datum; in particular, <m>\alpha'</m> is open.
+  =t^\ell(1+tH),
+  \qquad H=\sum_j a_jh_j,\quad \lVert H\rVert\leq1.</me>
+Since <m>\lVert tH\rVert&lt;1</m>, the element <m>1+tH</m> is a unit with inverse in
+<m>E_0</m>.  Multiplying the <m>a_j</m> by this inverse gives a unit-ball Bezout
+relation for the primed datum; in particular, <m>\alpha'</m> is rational.
         </p>
         <p>
           Let <m>x</m> lie in the rational subset defined by <m>\alpha</m>.  Since <m>a_j\in E_0\subseteq E^+</m>,
 relation <xref ref="eq-integral-bezout"/> gives
-<me>|\varpi|^\ell\leq |g(x)|.</me>
-The perturbations have value at most <m>|\varpi|^{\ell+1}&lt;|g(x)|</m>, so
+<me>|t(x)|^\ell\leq |g(x)|.</me>
+The perturbations have value at most <m>|t(x)|^{\ell+1}&lt;|g(x)|</m>, so
 <m>|g'(x)|=|g(x)|</m> and
 <m>|f_i'(x)|\leq|g'(x)|</m>.  This proves one inclusion of rational subsets.  Applying the same
 argument to the primed Bezout relation proves the reverse inclusion.
@@ -337,13 +339,14 @@ argument to the primed Bezout relation proves the reverse inclusion.
           Rational localisation is independent of the datum used to present a rational
 subset.  The equality of the two subsets therefore gives restriction maps in
 both directions between <m>E_\alpha</m> and <m>E_{\alpha'}</m>.  Transitivity of
-rational restriction shows that their composites are the identity.  This is
-the required canonical isomorphism.
+rational restriction shows that their composites are the identity.  The two
+restriction maps are continuous and commute with the canonical maps from
+<m>E</m>, as required.
         </p>
       </proof>
     </lemma>
   </subsection>
-  <subsection xml:id="sec-rationally-reduced-finite-head-rational-localisation">
+  <subsection xml:id="sec-second-example-finite-head-rational-localisation">
     <title>Finite-head rational localisation</title>
     <p>
       Fix <m>N\geq1</m>.  For a tail multi-index
@@ -365,7 +368,7 @@ the required canonical isomorphism.
       <statement>
         <p>
           Let <m>\alpha</m> be a rational datum in <m>\mathcal A_N</m>, and put
-<m>P=(\mathcal A_N)_\alpha</m>.  There is a canonical topological algebra isomorphism
+<m>P=(\mathcal A_N)_\alpha</m>.  There is a bicontinuous ring isomorphism
           <men xml:id="eq-coefficientwise-localization">\mathcal A_\alpha
   \xrightarrow{\ \sim\ }
   \widehat{\bigoplus}_{\mu}^{\,c_0}Pe_\mu.</men>
@@ -399,7 +402,7 @@ to every coefficient.  For a null family
 <me>\sum_\mu q_\mu e_\mu</me>
 converges in <m>\mathcal A_\alpha</m>, and defines a continuous homomorphism
 <m>\Psi</m> in the other direction.  The multiplication rule
-<xref ref="eq-tail-multiplication"/> shows that both maps are algebra
+<xref ref="eq-tail-multiplication"/> shows that both maps are ring
 homomorphisms.
         </p>
         <p>
@@ -421,11 +424,10 @@ enlarging the head.
       <title>Finite-head presentation</title>
       <statement>
         <p>
-          Every rational localisation of <m>\mathcal A</m> is canonically isomorphic to a ring of the form
+          Every rational localisation of <m>\mathcal A</m> is bicontinuously isomorphic to a ring of the form
           <men xml:id="eq-arbitrary-finite-head-presentation">\widehat{\bigoplus}_{\mu}^{\,c_0}Pe_\mu,</men>
-          where <m>P</m> is a rational localisation of some affinoid head <m>\mathcal A_N</m>.  Under this
-identification the inclusions obtained by enlarging the head have norm-nonincreasing algebra
-retractions, and their union is dense.
+          where <m>P</m> is a rational localisation of some strongly noetherian Tate head
+<m>\mathcal A_N</m>.
         </p>
       </statement>
       <proof>
@@ -437,22 +439,16 @@ retractions, and their union is dense.
   \qquad a_j\in\mathcal A_0.</me>
 By <xref ref="eq-A-completion-of-heads"/>, for some <m>N</m> the entries <m>d_j</m> admit approximations
 <m>d_j'\in\mathcal A_N\cap\mathcal A_0</m> satisfying
-<m>d_j'-d_j\in\varpi^{\ell+1}\mathcal A_0</m>.  By
+<m>\lVert d_j'-d_j\rVert\leq|\varpi|^{\ell+1}</m>.  By
 <xref ref="lem-small-perturbation"/>, the primed datum gives the same rational subset and the same
 completed localisation.  The primed integral Bezout relation produced in that lemma remains
 valid after applying the retraction <m>\rho_N</m>; hence the primed datum is a rational datum already
 in <m>\mathcal A_N</m>.  Now apply <xref ref="prop-coefficientwise-localization"/>.
         </p>
-        <p>
-          For <m>M\geq N</m>, put <m>P_M=(\mathcal A_M)_\alpha</m>.  The same proposition, with head <m>M</m>,
-identifies the localisation with the <m>c_0</m>-sum over the variables of index <m>>M</m>.  Coefficient
-projection gives a norm-nonincreasing retraction to <m>P_M</m>, and finite tail truncation proves
-that <m>\bigcup_MP_M</m> is dense.
-        </p>
       </proof>
     </corollary>
   </subsection>
-  <subsection xml:id="sec-rationally-reduced-sheafiness">
+  <subsection xml:id="sec-second-example-sheafiness">
     <title>Sheafiness</title>
     <theorem xml:id="thm-parity-sheafy">
       <statement>
@@ -474,14 +470,15 @@ identifications
   \mathcal O_X(U_i)\cong
   \widehat{\bigoplus}_{\mu}^{c_0}P_ie_\mu,</me>
 with coefficientwise restriction maps.  Here <m>P</m> is a rational localisation
-of one affinoid head and the <m>P_i</m> are rational localisations of <m>P</m>.  The
+of one strongly noetherian Tate head and the <m>P_i</m> are rational localisations
+of <m>P</m>.  The
 domains defined by the <m>P_i</m> cover <m>\Spa(P,P^\circ)</m>: pull a point back along
 the split coefficient retraction to the tail algebra, use the original cover,
 and then apply the retraction again.
         </p>
         <p>
           Let <m>(x_i)_i</m> be a matching family and write
-<m>x_i=\sum_\mu x_{i,\mu}e_\mu</m>.  Since the head <m>P</m> is affinoid and sheafy,
+<m>x_i=\sum_\mu x_{i,\mu}e_\mu</m>.  Since <m>P</m> is sheafy,
 the matching family <m>(x_{i,\mu})_i</m> glues to a unique <m>q_\mu\in P</m> for every
 <m>\mu</m>.  It remains to check that <m>(q_\mu)_\mu</m> is a null family.  Its
 restrictions to every <m>P_i</m> tend to zero because each <m>x_i</m> belongs to a
@@ -504,79 +501,12 @@ is sheafy.
         </p>
       </proof>
     </theorem>
-  </subsection>
-  <subsection xml:id="sec-rationally-reduced-reducedness-of-all-rational-localisations">
-    <title>Reducedness of all rational localisations</title>
-    <lemma xml:id="lem-formal-series-reduced">
-      <statement>
-        <p>
-          Let <m>P</m> be a reduced ring and let <m>J</m> be any index set.  Define
-          <men xml:id="eq-formal-series-ring">\mathcal F_J(P)=
-  \prod_{\mu\in\mathbf N^{(J)}}P\,U^\mu,</men>
-          with multiplication by coefficientwise finite convolution.  Then <m>\mathcal F_J(P)</m> is reduced.
-        </p>
-      </statement>
-      <proof>
-        <p>
-          Since <m>P</m> is reduced, the diagonal map
-<me>P\longrightarrow
-  \prod_{\mathfrak p\in\operatorname{Spec}(P)}P/\mathfrak p</me>
-is injective.  Applying formal power series coefficientwise, and then
-commuting formal power series with this product, gives an injection
-<me>\mathcal F_J(P)\longrightarrow
-  \prod_{\mathfrak p\in\operatorname{Spec}(P)}
-  \mathcal F_J(P/\mathfrak p).</me>
-Each factor on the right is a domain, since its coefficient ring is a
-domain.  The product is therefore reduced, and so is
-<m>\mathcal F_J(P)</m>.
-        </p>
-      </proof>
-    </lemma>
-    <theorem xml:id="thm-parity-rationally-reduced">
-      <statement>
-        <p>
-          Every finite iterated rational localisation of <m>\mathcal A</m> is reduced.
-        </p>
-      </statement>
-      <proof>
-        <p>
-          By transitivity of rational localisation, it is enough to treat one rational localisation.  Use
-<xref ref="cor-finite-head-presentation"/> to write it as
-          <men xml:id="eq-reduced-localization-decomposition">E\cong\widehat{\bigoplus}_{\mu}^{c_0}Pe_\mu,
-  \qquad P=(\mathcal A_N)_\alpha.</men>
-          The affinoid algebra <m>\mathcal A_N</m> is a domain by
-<xref ref="lem-finite-stage-normal-form"/>.  A rational localisation of a reduced affinoid algebra is
-reduced <xref ref="bib-BGR" detail="Corollary 7.3.2/10"/>; see also
-<xref ref="bib-KedlayaAWS" detail="Remark 1.2.16"/>.  Thus <m>P</m> is reduced.
-        </p>
-        <p>
-          The element <m>W</m> is a non-zero-divisor in <m>\mathcal A_N</m>.  Affinoid rational localisation is
-algebraically flat <xref ref="bib-BGR" detail="Corollary 7.3.2/6"/>; see also
-<xref ref="bib-ConradL15" detail="Proposition 15.1.1, proof"/>.  Tensoring
-<m>0\to\mathcal A_N\xrightarrow{W}\mathcal A_N</m> with <m>P</m> therefore shows that multiplication
-by <m>W</m> is injective on <m>P</m>.  If <m>P=0</m>, the conclusion is immediate, so assume otherwise.
-        </p>
-        <p>
-          Let <m>J=\{n>N\}</m>.  Define
-          <men xml:id="eq-formal-embedding">\Phi:E\longrightarrow\mathcal F_J(P),
-  \qquad
-  \Phi\left(\sum_\mu x_\mu e_\mu\right)
-  =\sum_\mu W^{\omega(\mu)}x_\mu U^\mu.</men>
-          The multiplication rule <xref ref="eq-tail-multiplication"/> makes <m>\Phi</m> multiplicative.  If
-<m>\Phi(\sum x_\mu e_\mu)=0</m>, coefficient comparison gives
-<m>W^{\omega(\mu)}x_\mu=0</m> for every <m>\mu</m>.  The <m>W</m>-regularity of <m>P</m> then gives
-<m>x_\mu=0</m> for every <m>\mu</m>, so <m>\Phi</m> is injective.  By
-<xref ref="lem-formal-series-reduced"/>, the target is reduced; hence <m>E</m> is reduced.
-        </p>
-      </proof>
-    </theorem>
     <proof>
-      <title>Proof of <xref ref="thm-rationally-reduced-example"/></title>
+      <title>Proof of <xref ref="thm-second-example"/></title>
       <p>
         The uniform domain assertion is <xref ref="prop-parity-uniform-domain"/>, and nonnoetherianity is
 <xref ref="prop-parity-nonnoetherian"/>.  Sheafiness is
-<xref ref="thm-parity-sheafy"/>.  Reducedness of all finite iterated rational
-localisations is <xref ref="thm-parity-rationally-reduced"/>.  Finally,
+<xref ref="thm-parity-sheafy"/>.  Finally,
 <xref ref="prop-weighted-chart-identification"/>, <xref ref="prop-weighted-chart-domain-nonuniform"/> identify the
 rational chart <m>|W|\leq|\varpi|</m> as a nonuniform integral domain.
       </p>
@@ -593,7 +523,7 @@ nonuniformity is witnessed by the unbounded family <m>(T_n)_{n\geq1}</m> of nonn
 power-bounded elements.  The use of an infinite monomial support and of unbounded
 power-bounded directions is in the tradition of the examples of Buzzard<ndash/>Verberkmoes and
 Mihara; the finite-head coefficientwise descent is the additional feature that makes sheafiness
-and reducedness after iterated rational localisation accessible here.
+accessible here.
         </p>
       </statement>
     </remark>
