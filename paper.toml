@@ -73,6 +73,7 @@ exempt = [
   "sec-the-global-ring",
   "sec-a-nonuniform-rational-localisation",
   "sec-sheafiness",
+  "sec-discovery",
 ]
 
 [build]

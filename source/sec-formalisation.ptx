@@ -457,16 +457,19 @@ then say precisely that its section ring is a domain but is not uniform.
     </p>
     <p>
       The proof routes are the ones used in Section<nbsp/>7.  Multiplicativity of the
-countable Gauss norm gives the domain and unit-ball statements.  Finite-head
-localisation is proved by taking the completed head quotient, applying
-its evaluation map coefficientwise to the tail, and constructing the inverse
-by summing a <m>c_0</m>-family; it does not invoke the Koszul lemma.  For
-sheafiness, one common head is chosen for the base datum and all members of a
-finite cover.  Head sheafiness glues each coefficient, and the head
-restriction embedding shows that the resulting coefficients tend to zero.
+countable Gauss norm gives the domain and unit-ball statements.  For rational
+data in <m>\mathcal A^{(N)}</m>, localisation is proved by taking the completed
+quotient of <m>\mathcal A^{(N)}</m>, applying its evaluation map to each
+coefficient in <xref ref="eq-coefficient-decomposition"/>, and constructing the
+inverse by summing coefficients that tend to zero; it does not invoke the
+Koszul lemma.  For sheafiness, one <m>N</m> is chosen for the base datum and all
+members of a finite cover.  Strong noetherianity of
+<m>\mathcal A^{(N)}</m> glues each coefficient, and the restriction embedding
+shows that the resulting coefficients tend to zero.
 The final topological embedding is obtained from the closed matching
-equaliser by the Tate closed-range theorem.  For the bad chart, the head
-quotient is <m>K\langle X\rangle</m> and the tail algebra embeds in formal
+equaliser by the Tate closed-range theorem.  For the bad chart, the quotient
+formed from <m>\mathcal A^{(0)}=K\langle W\rangle</m> is
+<m>K\langle X\rangle</m>, and the coefficientwise ring embeds in formal
 multivariable power series over this domain.  The small-perturbation lemma
 of Section<nbsp/>7 is the unit-ball, norm-scaling theorem formalised by
 <c>WeightedParity.PerturbSetup</c>.

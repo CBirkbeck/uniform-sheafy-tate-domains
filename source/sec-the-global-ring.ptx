@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <section xml:id="sec-the-global-ring">
-  <title>The global ring</title>
+  <title>The finite-jet ring</title>
   <p>
     In this section we identify the finite-jet algebra with a concrete subring of
 <m>C</m> and prove that it is a complete uniform domain.  Recall that
@@ -48,7 +48,7 @@ In fact, the chosen rings of definition already make the integral row exact, so 
     Equivalently, <m>A_0</m> consists of the restricted series
     <men xml:id="eq-monomial-support">\sum_{(a,b)\in S}c_{a,b}W^aQ^b,
   \qquad
-  S=\{(a,b)\in\mathbf Z\times\mathbf N: b\leq 1\Rightarrow a\geq 0\},</men>
+  S=\{(a,b)\in\mathbb Z\times\mathbb N: b\leq 1\Rightarrow a\geq 0\},</men>
     with <m>c_{a,b}\in k^\circ</m>.  Here restricted means that, for every <m>n</m>, only finitely many coefficients are nonzero modulo <m>\varpi^n</m>.  The set <m>S</m> is closed under addition, so this is a subring of <m>C_0</m>.  The same description with coefficients in <m>k</m> gives <m>A\subset C</m>.
   </p>
   <p>

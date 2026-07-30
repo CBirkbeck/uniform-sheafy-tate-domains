@@ -52,7 +52,7 @@
   },
   "sec-the-global-ring": {
    "kind": "section",
-   "label": null,
+   "label": "sec:the-global-ring",
    "number": "3",
    "section": "3"
   },
@@ -236,21 +236,21 @@
    "number": "(18)",
    "section": "7"
   },
-  "lem-finite-stage-normal-form": {
+  "lem-finite-variable-subrings": {
    "kind": "lemma",
-   "label": "lem:finite-stage-normal-form",
+   "label": "lem:finite-variable-subrings",
    "number": "7.2",
    "section": "7"
   },
-  "eq-finite-stage-normal-form": {
+  "eq-finite-variable-decomposition": {
    "kind": "equation",
-   "label": "eq:finite-stage-normal-form",
+   "label": "eq:finite-variable-decomposition",
    "number": "(19)",
    "section": "7"
   },
-  "eq-A-completion-of-heads": {
+  "eq-A-completion-finite-variables": {
    "kind": "equation",
-   "label": "eq:A-completion-of-heads",
+   "label": "eq:A-completion-finite-variables",
    "number": "(20)",
    "section": "7"
   },
@@ -326,33 +326,33 @@
    "number": "(25)",
    "section": "7"
   },
-  "sec-second-example-finite-head-rational-localisation": {
+  "sec-second-example-rational-localisations-defined-over-finitely": {
    "kind": "subsection",
    "label": null,
    "number": "7.4",
    "section": "7"
   },
-  "eq-tail-basis": {
+  "eq-coefficient-monomial": {
    "kind": "equation",
-   "label": "eq:tail-basis",
+   "label": "eq:coefficient-monomial",
    "number": "(26)",
    "section": "7"
   },
-  "eq-tail-decomposition": {
+  "eq-coefficient-decomposition": {
    "kind": "equation",
-   "label": "eq:tail-decomposition",
+   "label": "eq:coefficient-decomposition",
    "number": "(27)",
    "section": "7"
   },
-  "eq-tail-multiplication": {
+  "eq-coefficient-multiplication": {
    "kind": "equation",
-   "label": "eq:tail-multiplication",
+   "label": "eq:coefficient-multiplication",
    "number": "(28)",
    "section": "7"
   },
-  "eq-head-retraction": {
+  "eq-finite-variable-retraction": {
    "kind": "equation",
-   "label": "eq:head-retraction",
+   "label": "eq:finite-variable-retraction",
    "number": "(29)",
    "section": "7"
   },
@@ -374,15 +374,15 @@
    "number": "(31)",
    "section": "7"
   },
-  "cor-finite-head-presentation": {
+  "cor-finite-variable-presentation": {
    "kind": "corollary",
-   "label": "cor:finite-head-presentation",
+   "label": "cor:finite-variable-presentation",
    "number": "7.9",
    "section": "7"
   },
-  "eq-arbitrary-finite-head-presentation": {
+  "eq-arbitrary-finite-variable-presentation": {
    "kind": "equation",
-   "label": "eq:arbitrary-finite-head-presentation",
+   "label": "eq:arbitrary-finite-variable-presentation",
    "number": "(32)",
    "section": "7"
   },
@@ -403,6 +403,12 @@
    "label": "rem:second-example-relation",
    "number": "7.11",
    "section": "7"
+  },
+  "sec-discovery": {
+   "kind": "section",
+   "label": "sec:discovery",
+   "number": "8",
+   "section": "8"
   },
   "sec-formalisation": {
    "kind": "appendix",
