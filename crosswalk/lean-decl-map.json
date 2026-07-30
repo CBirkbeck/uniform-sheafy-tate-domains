@@ -1,6 +1,14 @@
 {
   "thm-main": [
     {
+      "decl": "FiniteJetOver.jetSupport",
+      "via": "manual",
+      "file": "Adic spaces/FJP/Over/JetRings.lean",
+      "line": 269,
+      "cited": "Theorem 1.1 (definition of the finite-jet algebra)",
+      "kind": "def"
+    },
+    {
       "decl": "FiniteJetOver.isTateRing_JetA",
       "via": "manual",
       "file": "Adic spaces/FJP/Over/JetRings.lean",
