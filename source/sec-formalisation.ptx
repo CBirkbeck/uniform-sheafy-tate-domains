@@ -6,13 +6,14 @@
       This appendix records the Lean formalisation of the two examples.  The
 finite-jet declarations are taken from AINTLIB commit
 <c>b007a4f3d</c>, and the weighted-parity declarations from commit
-<c>090a28921</c> <xref ref="bib-AINTLIB"/>.  For each example Lean proves the
+<c>090a28921</c>.  The comparison with Mathlib's sheaf predicate is taken
+from commit <c>d92f96504</c> <xref ref="bib-AINTLIB"/>.  For each example Lean proves the
 Tate structure, uniformity, domain and nonnoetherianity statements,
 sheafiness, and failure of stable uniformity, together with the rational
 chart calculation used in the proof.
     </p>
     <p>
-      Neither pinned snapshot was available from the public AINTLIB repository at
+      Neither example snapshot was available from the public AINTLIB repository at
 the time of writing.  The interactive version of the paper includes each
 declaration used below, extracted from the appropriate commit.  The
 <url href="https://github.com/CBirkbeck/uniform-sheafy-tate-domains/blob/main/PAPERFORGE_CHECK.md">verification report</url>
@@ -22,9 +23,12 @@ records the Lean and mathlib versions, the build, and the axiom checks.
   <subsection xml:id="sec-formalisation-sheafiness">
     <title>Sheafiness</title>
     <p>
-      The finite-jet proof first establishes a condition on finite rational covers.
-Its historical internal class is <c>IsSheafy</c>, in the
-<c>ValuationSpectrum</c> namespace and defined in
+      The proofs are carried out on finite rational covers, so the formalisation
+uses the class <c>IsSheafy</c>.  This is the form which is easiest to work
+with in the calculations: it speaks directly about the completed rational
+localisations which occur in the proofs.  The equivalences below show that,
+for complete Tate pairs, it is the usual sheaf condition.  The class is in the
+<c>ValuationSpectrum</c> namespace and is defined in
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.IsSheafy.html"><c>StructureSheaf.lean</c></url>.
 Here
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.RationalCoveringData.html"><c>RationalCoveringData A</c></url>
@@ -113,8 +117,9 @@ it is not an additional hypothesis in our results.
     <p>
       The fields <c>injective</c> and <c>glue</c> are the usual sheaf axioms on
 arbitrary opens.  The final field says that the resulting map to the
-matching-family equaliser is also a topological embedding.  This is the extra
-condition needed for a sheaf of complete topological rings.
+matching-family equaliser is also a topological embedding.  Together these
+conditions give the concrete form of Wedhorn's sheaf condition for
+topological rings.
     </p>
     <p>
       For complete Tate pairs the rational-basis and all-open predicates are
@@ -132,11 +137,45 @@ converse is restriction to rational covers.  The
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.isSheafOfTopologicalRings_iff_isLimitSheaf.html">structure-presheaf equivalence</url>
 identifies <c>IsLimitSheaf A</c> with
 Wedhorn's topological-ring formulation <xref ref="bib-Wedhorn" detail="Remark 8.20"/>.
-The development also proves Mathlib's categorical sheaf predicate for its
-<c>CompleteTopCommRingCat</c>-valued presheaf.  This predicate does record
-the topology, since its morphisms are continuous; Wedhorn's formulation
-instead tests against all topological rings, rather than only complete
-separated ones.
+    </p>
+    <p>
+      There is also a direct comparison with Mathlib's categorical definition.
+For an arbitrary presheaf <m>F</m> of complete separated topological
+commutative rings, the
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/TopCat.Presheaf.isSheafOfTopologicalRings_iff_forgetToTopCommRingCat_isSheaf.html">general comparison theorem</url>
+is
+    </p>
+    <pre>
+    theorem isSheafOfTopologicalRings_iff_forgetToTopCommRingCat_isSheaf :
+    F.IsSheafOfTopologicalRings ↔
+      TopCat.Presheaf.IsSheaf
+        (F ⋙ CompleteTopCommRingCat.forgetToTopCommRingCat)
+    </pre>
+    <p>
+      The functor in this statement forgets completeness and separatedness, but not
+the topology.  The objects of <c>TopCommRingCat</c> are all topological
+commutative rings, so Mathlib's categorical condition tests exactly the
+presheaves <m>U\mapsto\operatorname{Hom}_{\mathrm{cont}}(T,F(U))</m> appearing
+in Wedhorn's definition.  By contrast, the categorical condition with values
+left in <c>CompleteTopCommRingCat</c> tests only complete separated rings
+and is only a consequence of Wedhorn's condition.
+    </p>
+    <p>
+      Specialising the comparison to the structure presheaf gives the
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.structurePresheaf_forgetToTopCommRingCat_isSheaf_iff.html">all-open equivalence</url>.
+Combining it with the rational-basis theorem above gives the
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf.html">final comparison</url>:
+    </p>
+    <pre>
+    theorem isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf :
+    IsSheafy A ↔
+      TopCat.Presheaf.IsSheaf
+        (structurePresheaf A ⋙
+          CompleteTopCommRingCat.forgetToTopCommRingCat)
+    </pre>
+    <p>
+      Thus <c>IsSheafy</c> is retained because it is the convenient form for the
+proofs, not because it defines a different notion of sheafiness.
     </p>
     <p>
       For a complete Tate ring the following definitions fix a ring of integral
@@ -387,7 +426,8 @@ and
     <p>
       The second development uses the same restricted-series infrastructure.  Its
 ambient ring is the countable restricted Tate algebra
-<m>K\langle W,U_1,U_2,\ldots\rangle</m>.  The definitions
+<me>K\langle W,U_1,U_2,\ldots\rangle.</me>
+The definitions
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.wpWeight.html"><c>wpWeight</c></url>,
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.WPMem.html"><c>WPMem</c></url>, and
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.wpSupport.html"><c>wpSupport</c></url>

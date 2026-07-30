@@ -64,22 +64,26 @@ first author-voice pass.
 
 ## Lean source and publication note
 
-The interactive code is extracted from two audited local AINTLIB snapshots:
+The interactive code is extracted from three audited AINTLIB snapshots:
 
 ```text
 finite-jet branch: fjp/cdvf-lemma51
 finite-jet commit: b007a4f3d4226f00a684b402715aa542e2f0bcdc
 weighted-parity branch: wp/reduced-example
 weighted-parity commit: 090a289211deb69117413e329325fe819aa7dbc2
+sheaf-comparison branch: dev/adic-spaces
+sheaf-comparison commit: d92f96504f949ca43a27a817cb8d2f70b6486744
 project: projects/AdicSpaces
 ```
 
-At the time of this build, GitHub did not serve either pinned snapshot.  To
-keep the interactive paper usable, `scripts/build-lean-knowls.py` extracts
-each declaration from the Git object recorded for that declaration.  Every
-Paperforge Lean badge opens that code inline, Roe-style, and its ordinary link
-opens a standalone archival declaration page under
+At the time of this build, GitHub did not serve either example snapshot; the
+sheaf-comparison snapshot is on the public `dev/adic-spaces` branch.  To keep
+the interactive paper independent of branch movement,
+`scripts/build-lean-knowls.py` extracts each declaration from the Git object
+recorded for that declaration.  Every Paperforge Lean badge opens that code
+inline, Roe-style, and its ordinary link opens a standalone archival page under
 `lean/AdicSpaces/declarations/`.
 
-Before archival publication, both AINTLIB snapshots should be published under
-permanent branches or tags.  No AINTLIB branch is pushed by the paper build.
+Before archival publication, the two example snapshots should be published
+under permanent branches or tags.  No AINTLIB branch is pushed by the paper
+build.

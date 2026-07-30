@@ -57,6 +57,7 @@
     <xsl:text>\DeclareUnicodeCharacter{2260}{\ensuremath{\neq}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{2286}{\ensuremath{\subseteq}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{22C3}{\ensuremath{\bigcup}}&#xa;</xsl:text>
+    <xsl:text>\DeclareUnicodeCharacter{22D9}{\ensuremath{\mathbin{\gg}}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{27E8}{\ensuremath{\langle}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{27E9}{\ensuremath{\rangle}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{1D4AA}{\ensuremath{\mathcal O}}</xsl:text>

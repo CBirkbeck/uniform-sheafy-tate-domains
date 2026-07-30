@@ -88,6 +88,30 @@
       "cited": "Appendix: equivalence with Wedhorn's formulation"
     },
     {
+      "decl": "TopCat.Presheaf.isSheafOfTopologicalRings_iff_forgetToTopCommRingCat_isSheaf",
+      "file": "Adic spaces/HomSheafPredicate.lean",
+      "line": 100,
+      "kind": "theorem",
+      "cited": "Appendix: equivalence of Wedhorn's condition with Mathlib's TopCommRingCat sheaf predicate",
+      "commit": "d92f96504f949ca43a27a817cb8d2f70b6486744"
+    },
+    {
+      "decl": "ValuationSpectrum.structurePresheaf_forgetToTopCommRingCat_isSheaf_iff",
+      "file": "Adic spaces/StructurePresheafBundled.lean",
+      "line": 685,
+      "kind": "theorem",
+      "cited": "Appendix: all-open structure-presheaf comparison with Mathlib",
+      "commit": "d92f96504f949ca43a27a817cb8d2f70b6486744"
+    },
+    {
+      "decl": "ValuationSpectrum.isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf",
+      "file": "Adic spaces/StructurePresheafBundled.lean",
+      "line": 700,
+      "kind": "theorem",
+      "cited": "Appendix: rational-cover criterion compared with Mathlib's sheaf predicate",
+      "commit": "d92f96504f949ca43a27a817cb8d2f70b6486744"
+    },
+    {
       "decl": "ValuationSpectrum.IsSheafyFor",
       "file": "Adic spaces/SheafyRing.lean",
       "line": 100,

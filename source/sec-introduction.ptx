@@ -5,9 +5,9 @@
     The point at issue is the behaviour of rational localisations.  The examples
 of Buzzard<ndash/>Verberkmoes and Mihara show that a uniform Tate Huber ring can lose
 uniformity on a rational chart and, separately, that uniformity alone does not
-imply sheafiness <xref ref="bib-BV"/>, <xref ref="bib-Mihara"/>.  They leave open whether sheafiness itself
-prevents this loss of uniformity.  Hansen and Kedlaya ask this explicitly
-<xref ref="bib-HK" detail="Remark 3.16"/>; it is also Question<nbsp/>7 of Kedlaya's
+imply sheafiness <xref ref="bib-BV"/>, <xref ref="bib-Mihara"/>.  They leave open the possibility of a
+uniform sheafy ring which is not stably uniform.  Hansen and Kedlaya ask this
+explicitly <xref ref="bib-HK" detail="Remark 3.16"/>; it is also Question<nbsp/>7 of Kedlaya's
 <em>Nonarchimedean Scottish Book</em> <xref ref="bib-Scottish"/>.  The answer is no.
   </p>
   <p>

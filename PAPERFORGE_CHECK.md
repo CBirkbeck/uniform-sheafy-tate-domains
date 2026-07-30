@@ -39,8 +39,9 @@ The following claims were also read in context:
 ## Lean proof-route audit
 
 The prose proofs were compared with the bodies and direct dependencies of the
-declarations at the two pinned snapshots, rather than only with their theorem
-statements.  The resulting proof crosswalk is:
+declarations at the two example snapshots, rather than only with their theorem
+statements.  The sheaf-predicate comparison was checked separately at
+`d92f96504f949ca43a27a817cb8d2f70b6486744`.  The resulting proof crosswalk is:
 
 | Paper result | Formal proof route and disposition |
 |---|---|
@@ -69,14 +70,15 @@ Witt-vector declaration.  The accepted map now covers, clause by clause:
 - the ideal pullback and every topological clause of the localised Milnor row,
   including restriction compatibility; and
 - the finite-rational-cover, chosen-pair all-open, completion-independent, and
-  public structure-presheaf sheafiness endpoints;
+  public structure-presheaf sheafiness endpoints, together with the exact
+  equivalence with Mathlib's `TopCommRingCat`-valued sheaf predicate;
 - the weighted-parity support definition, Tate structure, uniformity, domain,
   nonnoetherianity, and identification of the power-bounded elements;
 - the weighted-parity all-pairs sheaf theorem, nonuniform domain chart, and
   failure of stable uniformity.
 
-No doc-gen4 site exists for either audited snapshot, and neither AINTLIB
-commit is currently public.  The web build therefore extracts each exact
+No doc-gen4 site exists for the audited snapshots, and the two example commits
+are not currently public.  The web build therefore extracts each exact
 declaration from its pinned local Git object.  Every automatic theorem badge
 opens a Roe-style inline knowl and has a working standalone archival page as
 its ordinary link.  The generator also covers the appendix definitions and
@@ -105,6 +107,13 @@ The AINTLIB audit used Lean `4.33.0-rc1` with mathlib commit
 the 3,307-job umbrella build completed, no `sorry` or `admit` occurs in the FJP
 tree, and the inspected headline declarations use only `propext`,
 `Classical.choice`, and `Quot.sound`.
+
+The sheaf-comparison snapshot
+`d92f96504f949ca43a27a817cb8d2f70b6486744` completed its 3,006-job build.
+`#print axioms` for the three comparison theorems reported only `propext`,
+`Classical.choice`, and `Quot.sound`, with no `sorryAx`.  The
+`overlappingInstances` warnings were the pre-existing warnings on the
+neighbouring structure-sheaf declarations.
 
 The weighted-parity audit used pinned commit
 `090a289211deb69117413e329325fe819aa7dbc2`.  `WP.Main` completed its
