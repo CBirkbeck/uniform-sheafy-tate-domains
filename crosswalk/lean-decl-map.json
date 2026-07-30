@@ -361,5 +361,91 @@
       "kind": "theorem",
       "flagged": true
     }
+  ],
+  "prop-parity-uniform-domain": [
+    {
+      "decl": "WeightedParity.isTateRing_WPA",
+      "via": "manual",
+      "file": "Adic spaces/WP/Algebra.lean",
+      "line": 236,
+      "cited": "Weighted-parity uniform-domain proposition (Tate structure)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.weightedParity_isUniform_of_dvr",
+      "via": "manual",
+      "file": "Adic spaces/WP/Main.lean",
+      "line": 132,
+      "cited": "Weighted-parity uniform-domain proposition (uniformity)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.weightedParity_isDomain",
+      "via": "manual",
+      "file": "Adic spaces/WP/Main.lean",
+      "line": 58,
+      "cited": "Weighted-parity uniform-domain proposition (domain)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.weightedParity_powerBounded_eq_unitBall",
+      "via": "manual",
+      "file": "Adic spaces/WP/Main.lean",
+      "line": 66,
+      "cited": "Weighted-parity uniform-domain proposition (power-bounded elements)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    }
+  ],
+  "prop-parity-nonnoetherian": [
+    {
+      "decl": "WeightedParity.weightedParity_not_noetherian",
+      "via": "manual",
+      "file": "Adic spaces/WP/Main.lean",
+      "line": 61,
+      "cited": "Weighted-parity nonnoetherianity proposition",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    }
+  ],
+  "thm-parity-sheafy": [
+    {
+      "decl": "WeightedParity.weightedParity_isSheafyComplete_of_dvr",
+      "via": "manual",
+      "file": "Adic spaces/WP/Main.lean",
+      "line": 135,
+      "cited": "Weighted-parity sheafiness theorem (every ring of integral elements)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    }
+  ],
+  "prop-weighted-chart-domain-nonuniform": [
+    {
+      "decl": "WeightedParity.weightedParity_chart_isDomain",
+      "via": "manual",
+      "file": "Adic spaces/WP/Main.lean",
+      "line": 105,
+      "cited": "Weighted-parity chart proposition (domain)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.weightedParity_chart_not_isUniform",
+      "via": "manual",
+      "file": "Adic spaces/WP/Main.lean",
+      "line": 112,
+      "cited": "Weighted-parity chart proposition (nonuniformity)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    }
   ]
 }

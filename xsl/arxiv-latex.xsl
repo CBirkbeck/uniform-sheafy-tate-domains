@@ -32,8 +32,10 @@
     <xsl:text>\DeclareUnicodeCharacter{2200}{\ensuremath{\forall}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{2203}{\ensuremath{\exists}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{2208}{\ensuremath{\in}}&#xa;</xsl:text>
+    <xsl:text>\DeclareUnicodeCharacter{2211}{\ensuremath{\sum}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{2227}{\ensuremath{\wedge}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}&#xa;</xsl:text>
+    <xsl:text>\DeclareUnicodeCharacter{2260}{\ensuremath{\neq}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{2286}{\ensuremath{\subseteq}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{22C3}{\ensuremath{\bigcup}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{27E8}{\ensuremath{\langle}}&#xa;</xsl:text>

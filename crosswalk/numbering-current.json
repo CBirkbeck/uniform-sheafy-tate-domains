@@ -572,16 +572,22 @@
    "number": "A.3",
    "section": "A"
   },
-  "sec-formalisation-scope-of-the-formalisation": {
+  "sec-formalisation-scope-of-the-finite-jet": {
    "kind": "subsection",
    "label": null,
    "number": "A.4",
    "section": "A"
   },
-  "sec-formalisation-mathematical-and-code-provenance": {
+  "sec-formalisation-the-weighted-parity-example": {
    "kind": "subsection",
    "label": null,
    "number": "A.5",
+   "section": "A"
+  },
+  "sec-formalisation-mathematical-and-code-provenance": {
+   "kind": "subsection",
+   "label": null,
+   "number": "A.6",
    "section": "A"
   }
  }

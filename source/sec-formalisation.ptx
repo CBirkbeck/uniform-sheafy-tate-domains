@@ -3,17 +3,19 @@
   <title>Lean formalisation and verification</title>
   <introduction>
     <p>
-      This appendix concerns the finite-jet construction of <xref ref="thm-main"/>; the
-second example has not yet been formalised.  We give the definitions of
-sheafiness and strong noetherianity used in the development, explain their
-relation with the usual definitions, and record the definition and main
-theorems for the example.  The source is AINTLIB commit
-<c>b007a4f3d</c> <xref ref="bib-AINTLIB"/>.
+      This appendix records the formalisation of the finite-jet construction and the
+present state of the weighted-parity construction.  The finite-jet source is
+AINTLIB commit <c>b007a4f3d</c>; the weighted-parity source is the later
+work-in-progress commit <c>090a28921</c> on the branch
+<c>wp/reduced-example</c> <xref ref="bib-AINTLIB"/>.  The latter contains the
+construction and proves uniformity, sheafiness, nonnoetherianity, the domain
+property, and failure of stable uniformity.  It does not yet prove, without
+unproved inputs, that every finite iterated rational localisation is reduced.
     </p>
     <p>
-      At the time of writing this commit is not available from the public AINTLIB
-repository.  The interactive version of the paper therefore includes the
-statement of each declaration, extracted from the pinned commit.  The
+      Neither pinned snapshot was available from the public AINTLIB repository at
+the time of writing.  The interactive version of the paper therefore includes
+each declaration used below, extracted from the appropriate snapshot.  The
 <url href="https://github.com/CBirkbeck/uniform-sheafy-tate-domains/blob/main/PAPERFORGE_CHECK.md">verification report</url>
 records the Lean and mathlib versions, the build, and the axiom checks.
     </p>
@@ -306,8 +308,8 @@ The
 proves this statement directly.
     </p>
   </subsection>
-  <subsection xml:id="sec-formalisation-scope-of-the-formalisation">
-    <title>Scope of the formalisation</title>
+  <subsection xml:id="sec-formalisation-scope-of-the-finite-jet">
+    <title>Scope of the finite-jet formalisation</title>
     <p>
       The paper's <m>A_0</m> is represented by the Gauss-norm unit ball.
 The theorem <c>isPowerBounded_JetA_iff</c> identifies this unit ball with
@@ -345,6 +347,119 @@ and
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.isSheafy_JetA.html"><c>FJP/Over/SheafTransfer.lean</c></url>.
     </p>
   </subsection>
+  <subsection xml:id="sec-formalisation-the-weighted-parity-example">
+    <title>The weighted-parity example</title>
+    <p>
+      The second development uses the same restricted-series infrastructure.  Its
+ambient ring is the countable restricted Tate algebra
+<m>K\langle W,U_1,U_2,\ldots\rangle</m>.  The definitions
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.wpWeight.html"><c>wpWeight</c></url>,
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.WPMem.html"><c>WPMem</c></url>, and
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.wpSupport.html"><c>wpSupport</c></url>
+are the direct translation of <xref ref="eq-parity-weight"/><ndash/><xref ref="eq-parity-algebra"/>.
+The relevant part of the definition is as follows.
+    </p>
+    <pre>
+    def wpWeight (w : ℕ → ℕ) (t : ℕ →₀ ℕ) : ℕ :=
+  ∑ n ∈ t.support,
+    if (t n).mod 2 = 1 ∧ n ≠ 0 then w n else 0
+
+def WPMem (w : ℕ → ℕ) (t : ℕ →₀ ℕ) : Prop :=
+  wpWeight w t ≤ t 0
+
+abbrev WPA : Type _ := ↥(wpSupport K w)
+
+def idWeight : ℕ → ℕ := fun n => n
+
+abbrev WPAid : Type _ := WPA K idWeight
+    </pre>
+    <p>
+      The coordinate <m>t(0)</m> is the exponent of <m>W</m>; the other coordinates are the
+exponents of the <m>U_n</m>.  Thus <c>WPMem idWeight t</c> says exactly that
+<m>a\geq\omega(\nu)</m>, and <c>wpSupport</c> requires the coefficients outside
+this monoid to vanish.  It follows that
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.WPAid.html"><c>WPAid K</c></url>
+is the ring <m>\mathcal A</m> of <xref ref="eq-parity-algebra"/>.  The maps
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.constA.html"><c>constA</c></url> and
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.norm_constA.html"><c>norm_constA</c></url>
+give the isometric embedding of <m>K</m> as the constant series.  This map is
+explicit in the development, although it is not bundled as an
+<c>Algebra K</c> instance.
+    </p>
+    <p>
+      Suppose that <m>K</m> is complete and nontrivially normed and that
+<m>\mathcal O[K]</m> is a DVR.  The principal exported statements are:
+    </p>
+    <pre>
+    theorem weightedParity_isUniform_of_dvr :
+    IsUniform (WPAid K) :=
+  weightedParity_isUniform (Uniformizer.ofDVR K)
+
+theorem weightedParity_isDomain :
+    IsDomain (WPAid K) :=
+  inferInstance
+
+theorem weightedParity_not_noetherian :
+    ¬ IsNoetherianRing (WPAid K) :=
+  not_isNoetherianRing_WPA K idWeight idWeight_pos
+
+theorem weightedParity_powerBounded_eq_unitBall
+    (ϖ : Uniformizer K) :
+    powerBoundedSubring (WPAid K) =
+      (FiniteJet.unitBall (WPAid K) : Set (WPAid K)) :=
+  powerBoundedSubring_eq_unitBall ϖ
+
+theorem weightedParity_isSheafyComplete_of_dvr :
+    IsSheafyComplete (WPAid K) :=
+  weightedParity_isSheafyComplete (Uniformizer.ofDVR K)
+    (FiniteJetOver.isNoetherianRing_unitBall K)
+
+theorem weightedParity_chart_isDomain
+    (ϖ : Uniformizer K)
+    (hK₀ : IsNoetherianRing (FiniteJet.unitBall K)) :
+    IsDomain (presheafValue
+      (chartDatum (w := idWeight) ϖ)) :=
+  isDomain_chart ϖ hK₀
+
+theorem weightedParity_chart_not_isUniform
+    (ϖ : Uniformizer K)
+    (hK₀ : IsNoetherianRing (FiniteJet.unitBall K)) :
+    ¬ IsUniform (presheafValue
+      (chartDatum (w := idWeight) ϖ)) :=
+  not_isUniform_chart idWeight_unbounded ϖ hK₀
+
+theorem weightedParity_not_stablyUniform_of_dvr :
+    ¬ IsStablyUniform (WPAid K) :=
+  weightedParity_not_stablyUniform (Uniformizer.ofDVR K)
+    (FiniteJetOver.isNoetherianRing_unitBall K)
+    </pre>
+    <p>
+      Here <c>IsSheafyComplete</c> is the predicate defined above: it quantifies
+over every ring of integral elements.  In particular it proves the sheaf
+condition for <m>(\mathcal A,\mathcal A^\circ)</m>.  The
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.wp_structurePresheaf_isSheaf_all.html">all-open theorem</url>
+also records the corresponding statement directly for the structure
+presheaf.  The datum
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.chartDatum.html"><c>chartDatum</c></url>
+is <m>(W;\varpi)</m>, and
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.chartDatum_isRational.html"><c>chartDatum_isRational</c></url>
+checks that it defines the chart <m>|W|\leq|\varpi|</m>.  The two chart theorems
+then say precisely that its section ring is a domain but is not uniform.
+    </p>
+    <p>
+      These declarations, including the
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.weightedParity_not_stablyUniform_of_dvr.html">final failure of stable uniformity</url>,
+have been checked to use only the usual logical axioms
+<c>propext</c>, <c>Classical.choice</c>, and <c>Quot.sound</c>.  The
+current declarations asserting reducedness after every finite chain of
+rational localisations, on the other hand, still depend on
+<c>sorryAx</c>.  Clause<nbsp/>(3) of <xref ref="thm-rationally-reduced-example"/> is
+therefore not counted as formalised.  The branch also proves sheafiness for
+the shifted-weight models and constructs bicontinuous equivalences with the
+corresponding Tate extensions, but does not yet package the transported
+statement as a single strong-sheafiness theorem; no such claim is made here.
+    </p>
+  </subsection>
   <subsection xml:id="sec-formalisation-mathematical-and-code-provenance">
     <title>Mathematical and code provenance</title>
     <p>
@@ -368,9 +483,9 @@ Buzzard<ndash/>Verberkmoes supply the lattice form used in the proof.
 infrastructure includes Apache-2.0-licensed code adapted from William Coram's
 <c>PhD</c> repository, with equivalence code attributed there to Bingyu
 Xia <xref ref="bib-CoramXia"/>.  The vendored source headers and commit history retain
-those attributions.  The finite-jet definitions, localisation proofs, and
-sheaf-transfer endpoints discussed in this appendix are the AINTLIB-specific
-part of the development.
+those attributions.  The finite-jet and weighted-parity definitions,
+localisation proofs, and sheaf endpoints discussed in this appendix are the
+AINTLIB-specific part of the development.
     </p>
   </subsection>
 </appendix>

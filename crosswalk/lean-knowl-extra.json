@@ -217,6 +217,109 @@
       "line": 319,
       "kind": "theorem",
       "cited": "Appendix: public DVR all-plus-rings endpoint"
+    },
+    {
+      "decl": "WeightedParity.wpWeight",
+      "file": "Adic spaces/WP/Weight.lean",
+      "line": 41,
+      "kind": "def",
+      "include_body": true,
+      "cited": "Appendix: weighted-parity weight",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.WPMem",
+      "file": "Adic spaces/WP/Weight.lean",
+      "line": 138,
+      "kind": "def",
+      "include_body": true,
+      "cited": "Appendix: weighted-parity support monoid",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.wpSupport",
+      "file": "Adic spaces/WP/Algebra.lean",
+      "line": 47,
+      "kind": "def",
+      "include_body": true,
+      "cited": "Appendix: weighted-parity support subring",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.WPA",
+      "file": "Adic spaces/WP/Algebra.lean",
+      "line": 80,
+      "kind": "abbrev",
+      "include_body": true,
+      "cited": "Appendix: generalized weighted-parity algebra",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.constA",
+      "file": "Adic spaces/WP/Algebra.lean",
+      "line": 158,
+      "kind": "def",
+      "include_body": true,
+      "cited": "Appendix: coefficient-field map",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.norm_constA",
+      "file": "Adic spaces/WP/Algebra.lean",
+      "line": 170,
+      "kind": "theorem",
+      "cited": "Appendix: isometry of the coefficient-field map",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.idWeight",
+      "file": "Adic spaces/WP/Main.lean",
+      "line": 38,
+      "kind": "def",
+      "include_body": true,
+      "cited": "Appendix: the paper's weight",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.WPAid",
+      "file": "Adic spaces/WP/Main.lean",
+      "line": 48,
+      "kind": "abbrev",
+      "include_body": true,
+      "cited": "Appendix: the paper's weighted-parity algebra",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.chartDatum",
+      "file": "Adic spaces/WP/Chart.lean",
+      "line": 83,
+      "kind": "def",
+      "cited": "Appendix: the distinguished rational chart",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.chartDatum_isRational",
+      "file": "Adic spaces/WP/Chart.lean",
+      "line": 87,
+      "kind": "theorem",
+      "cited": "Appendix: rationality of the distinguished chart",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.wp_structurePresheaf_isSheaf_all",
+      "file": "Adic spaces/WP/Sheafy.lean",
+      "line": 1787,
+      "kind": "theorem",
+      "cited": "Appendix: all-open weighted-parity sheaf endpoint",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.weightedParity_not_stablyUniform_of_dvr",
+      "file": "Adic spaces/WP/Main.lean",
+      "line": 154,
+      "kind": "theorem",
+      "cited": "Appendix: failure of stable uniformity",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     }
   ]
 }

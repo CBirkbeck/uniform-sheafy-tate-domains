@@ -141,6 +141,10 @@ in one finite stage, while finite-support series are dense in the restricted ser
 <me>\mathcal A^\circ=\mathcal A_0.</me>
         </p>
       </statement>
+      <lean project="AdicSpaces" ref="WeightedParity.isTateRing_WPA">Lean (Tate structure)</lean>
+      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_isUniform_of_dvr">Lean (uniformity)</lean>
+      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_isDomain">Lean (domain)</lean>
+      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_powerBounded_eq_unitBall">Lean (power-bounded elements)</lean>
       <proof>
         <p>
           The Gauss norm on the countable restricted Tate algebra
@@ -167,6 +171,7 @@ domain.
           The ring <m>\mathcal A</m> is not noetherian.
         </p>
       </statement>
+      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_not_noetherian">Lean</lean>
       <proof>
         <p>
           For <m>m\geq1</m>, let
@@ -254,6 +259,8 @@ inequality, and the isometric section gives the reverse inequality.  Inverting <
           The ring <m>\mathcal B</m> is an integral domain but is not uniform.
         </p>
       </statement>
+      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_chart_isDomain">Lean (chart is a domain)</lean>
+      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_chart_not_isUniform">Lean (chart is nonuniform)</lean>
       <proof>
         <p>
           The weighted convergence condition in <xref ref="eq-weighted-chart-lattice"/> implies ordinary
@@ -459,6 +466,7 @@ that <m>\bigcup_MP_M</m> is dense.
           The Huber pair <m>(\mathcal A,\mathcal A^\circ)</m> is sheafy.
         </p>
       </statement>
+      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_isSheafyComplete_of_dvr">Lean</lean>
       <proof>
         <p>
           We first prove the topological sheaf condition on the rational basis of
