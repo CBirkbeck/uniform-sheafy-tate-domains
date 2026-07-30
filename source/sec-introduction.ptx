@@ -11,12 +11,13 @@ prevents this loss of uniformity.  Hansen and Kedlaya ask this explicitly
 <em>Nonarchimedean Scottish Book</em> <xref ref="bib-Scottish"/>.  The answer is no.
   </p>
   <p>
-    All the results in this paper are due to ChatGPT 5.6 Sol.  We have aimed to
-include references to related work that may have been used by ChatGPT in
-finding the examples; see <xref ref="rem-earlier-work"/>.
+    ChatGPT 5.6 Sol found both examples, supplied the proofs, and produced their
+Lean formalisation.  We have aimed to cite related work that may have informed
+this process; see <xref ref="rem-earlier-work"/>.  <xref ref="sec-formalisation"/> records
+the formal definitions and theorem statements.
   </p>
   <p>
-    We begin with what ChatGPT called the <q>finite-jet pullback</q>.  This is a
+    We begin with the <q>finite-jet pullback</q>.  This is a
 nonnoetherian uniform integral domain for which a distinguished rational
 localisation is nonreduced, and hence is no longer uniform.  Let <m>k</m> be a
 complete discretely valued nonarchimedean field, with valuation ring
@@ -89,13 +90,6 @@ for this finite-jet square, the strict exact row persists after completed ration
 localisation and is compatible with refinement.  This transfers sheafiness from
 <m>B,C,D</m> to <m>A</m>.  The second example shows that the failure of stable uniformity
 need not come from a nonreduced localisation.
-  </p>
-  <p>
-    The construction, uniformity, sheafiness, and failure of stable uniformity
-for both examples have been formalised in Lean<nbsp/>4.  The formalisation also
-includes the rational-chart calculations used above.
-<xref ref="sec-formalisation"/> records the relevant definitions and theorem
-statements.
   </p>
   <remark xml:id="rem-earlier-work">
     <title>Relation with earlier work</title>
