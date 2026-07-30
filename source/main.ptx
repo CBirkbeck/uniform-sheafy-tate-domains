@@ -24,7 +24,8 @@ ring is sheafy.  We construct two uniform sheafy Tate domains which are
 not stably uniform, answering Question<nbsp/>7 of Kedlaya's
 <em>Nonarchimedean Scottish Book</em>.  In the first example a rational
 localisation is nonreduced, whilst in the second the nonuniform rational
-localisation is an integral domain.  These results are due to ChatGPT 5.6 Sol.
+localisation is an integral domain.  The two main results are due to
+ChatGPT 5.6 Sol.
 Both constructions, including their sheafiness and the rational localisations
 witnessing failure of stable uniformity, have been formalised in Lean<nbsp/>4.
 </p>
@@ -37,6 +38,7 @@ witnessing failure of stable uniformity, have been formalised in Lean<nbsp/>4.
     <xi:include href="./sec-localisation-of-the-milnor-square.ptx"/>
     <xi:include href="./sec-sheafiness.ptx"/>
     <xi:include href="./sec-second-example.ptx"/>
+    <xi:include href="./sec-discovery.ptx"/>
     <backmatter xml:id="backmatter">
       <xi:include href="./sec-formalisation.ptx"/>
       <references xml:id="references">
@@ -59,11 +61,17 @@ witnessing failure of stable uniformity, have been formalised in Lean<nbsp/>4.
       <biblio type="raw" xml:id="bib-HK">
       D.<nbsp/>Hansen and K.<nbsp/>S. Kedlaya, <em>Sheafiness criteria for Huber rings</em>, preprint, version of 23 April 2025, <url href="https://kskedlaya.org/papers/criteria.pdf"><c>https://kskedlaya.org/papers/criteria.pdf</c></url>.
       </biblio>
+      <biblio type="raw" xml:id="bib-Huber93">
+      R.<nbsp/>Huber, <em>Continuous valuations</em>, Math. Z. <alert>212</alert> (1993), no.<nbsp/>3, 455<ndash/>477, <url href="https://doi.org/10.1007/BF02571668">doi:10.1007/BF02571668</url>.
+      </biblio>
       <biblio type="raw" xml:id="bib-Huber94">
       R.<nbsp/>Huber, <em>A generalization of formal schemes and rigid analytic varieties</em>, Math. Z. <alert>217</alert> (1994), 513<ndash/>551, <url href="https://doi.org/10.1007/BF02571959">doi:10.1007/BF02571959</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-KedlayaAWS">
       K.<nbsp/>S. Kedlaya, <em>Sheaves, stacks, and shtukas</em>, Arizona Winter School notes, 2017, <url href="https://swc-math.github.io/aws/2017/2017KedlayaNotes.pdf"><c>https://swc-math.github.io/aws/2017/2017KedlayaNotes.pdf</c></url>.
+      </biblio>
+      <biblio type="raw" xml:id="bib-KL">
+      K.<nbsp/>S. Kedlaya and R.<nbsp/>Liu, <em>Relative <m>p</m>-adic Hodge theory: Foundations</em>, Astérisque <alert>371</alert> (2015), <url href="https://arxiv.org/abs/1301.0792">arXiv:1301.0792</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-KST">
       M.<nbsp/>Kerz, S.<nbsp/>Saito, and G.<nbsp/>Tamme, <em><m>K</m>-theory of non-archimedean rings II</em>, Nagoya Math. J. <alert>251</alert> (2023), 669<ndash/>685.

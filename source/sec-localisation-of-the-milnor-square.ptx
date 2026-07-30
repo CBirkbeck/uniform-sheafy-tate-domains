@@ -28,11 +28,7 @@ differential is strict when it is open onto its image, or equivalently when its
 coimage is homeomorphic to its image.
     </p>
     <p>
-      Ben-Bassat<ndash/>Kremnizer prove the one-variable strict two-term resolutions and
-then factor a general rational localisation into Laurent and Weierstrass
-localisations <xref ref="bib-BBK" detail="Lemmas 5.13--5.14"/>; they do not state the
-multivariable Koszul assertion.  Applied to <m>E\in\{B,C,D\}</m>, the strict
-Koszul regularity theorem of
+      Applied to <m>E\in\{B,C,D\}</m>, the strict Koszul regularity theorem of
 Bambozzi<ndash/>Kremnizer
 <xref ref="bib-BK" detail="Notation 4.3, Definitions 4.5--4.6, Proposition 4.9,
 Lemma 4.11, and Corollary 4.13"/> gives the exactness, strictness, and
@@ -53,10 +49,10 @@ its image, and every image is closed.  In particular, if
   \qquad
   d_{1,E}(u_1,\ldots,u_m)=\sum_i u_ir_i,</me>
 then <m>I_E</m> is closed.  Moreover, there exists
-<m>h_E\in\mathbf Z_{\geq0}</m> such that
+<m>h_E\in\mathbb Z_{\geq0}</m> such that
           <men xml:id="eq-ideal-denominators">\varpi^{h_E}(I_E\cap T_{E,0})
   \subset d_{1,E}(T_{E,0}^m).</men>
-          There also exists <m>z_E\in\mathbf Z_{\geq0}</m> such that
+          There also exists <m>z_E\in\mathbb Z_{\geq0}</m> such that
           <men xml:id="eq-syzygy-denominators">\varpi^{z_E}\bigl(\ker(d_{1,E})\cap T_{E,0}^m\bigr)
   \subset d_{2,E}\bigl(\textstyle\bigwedge^2 T_{E,0}^m\bigr).</men>
         </p>

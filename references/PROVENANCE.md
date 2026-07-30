@@ -10,8 +10,10 @@ or author-provided sources.
 | `Ben-Bassat-Kremnizer-Non-Archimedean-Relative-Algebraic-Geometry.pdf` | <https://www.numdam.org/item/10.5802/afst.1526.pdf> | Publisher archive (Numdam/CEDRAM), CC BY 4.0 |
 | `Buzzard-Verberkmoes-Stably-Uniform-Affinoids-Sheafy.pdf` | <https://arxiv.org/pdf/1404.7020> | arXiv author manuscript |
 | `Hansen-Kedlaya-Sheafiness-Criteria-Huber-Rings.pdf` | <https://kskedlaya.org/papers/criteria.pdf> | author manuscript |
+| `Huber-Continuous-Valuations.pdf` | <https://math.mit.edu/~poonen/STAGE-f13/Huber1993.pdf> | seminar reference copy of the published paper |
 | `Huber-Generalization-Formal-Schemes-Rigid-Analytic-Varieties.pdf` | <https://math.stanford.edu/~conrad/Perfseminar/refs/Huberformalrigid.pdf> | seminar reference copy |
 | `Kedlaya-Sheaves-Stacks-Shtukas-AWS.pdf` | <https://swc-math.github.io/aws/2017/2017KedlayaNotes.pdf> | official AWS notes |
+| `Kedlaya-Liu-Relative-p-adic-Hodge-Theory-Foundations.pdf` | <https://arxiv.org/pdf/1301.0792> | arXiv author manuscript |
 | `Kerz-Saito-Tamme-K-Theory-Non-Archimedean-Rings-II.pdf` | <https://arxiv.org/pdf/2103.06711> | arXiv author manuscript |
 | `de-Moura-Ullrich-Lean-4.pdf` | <https://lean-lang.org/papers/lean4.pdf> | Official Lean project copy of the CADE-28 paper |
 | `Mathlib-Community-Lean-Mathematical-Library.pdf` | <https://arxiv.org/pdf/1910.09336> | arXiv author manuscript of the CPP 2020 paper |
@@ -28,7 +30,9 @@ than merely places where the cited numerals happen to occur.
 | Source | Relevant locators |
 |---|---|
 | Wedhorn, *Adic Spaces* | Proposition and Definition 6.36 (strongly noetherian Tate rings, p. 54); Remark 8.20 (the topological-ring sheaf condition, p. 80); Definition 8.26 (sheafy and stably sheafy f-adic rings, p. 81); Theorem 8.28(b) (strongly noetherian Tate rings, p. 81); Lemma 8.31, Corollary 8.32, Lemma 8.33, and Lemma 8.34 (the proof route through flatness and rational-cover acyclicity, pp. 82--84). |
+| Huber, *Continuous valuations* | Lemma 3.10 (sufficiently small perturbations of the functions defining a rational subset leave the rational subset unchanged, pp. 470--471). |
 | Huber, *A generalization of formal schemes and rigid analytic varieties* | Theorem 2.2 (the structure presheaf is a sheaf of complete topological rings, with rational acyclicity); Lemma 2.3 (finite-module maps are strict, and submodules are closed in the complete case); Lemma 2.4 (open mapping and strictness over a complete noetherian Tate ring). |
+| Kedlaya--Liu, *Relative \(p\)-adic Hodge theory: Foundations* | Remark 2.4.7 (small perturbations still generate the unit ideal and define the same rational subspace, p. 39 of the author manuscript). |
 | Ben-Bassat--Kremnizer, *Non-Archimedean analytic geometry as relative algebraic geometry* | Definition 5.7 and Remark 5.8 (rational localizations, printed pp. 80--81); Lemmas 5.13 and 5.14 (strict two-term resolutions for the one-variable Weierstrass and Laurent cases, followed by factorization of a general rational localization, printed pp. 82--84). The paper does not use Koszul terminology or state strictness for the simultaneous multivariable complex. |
 | Bambozzi--Kremnizer, *On the sheafyness property of spectra of Banach rings* | Definitions 4.5--4.6 and Proposition 4.9 (Koszul regularity and the Weierstrass/Laurent cases); in the final journal version, Lemma 4.11 and Corollary 4.13 (factorization and strict Koszul regularity of rational localizations). The local arXiv manuscript numbers the last two results Lemma 4.10 and Corollary 4.11. |
 

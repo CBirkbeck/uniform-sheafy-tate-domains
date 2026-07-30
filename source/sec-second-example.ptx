@@ -53,11 +53,12 @@ localisation.
   <subsection xml:id="sec-second-example-the-weighted-parity-algebra">
     <title>The weighted-parity algebra</title>
     <p>
-      Let <m>I=\mathbf N_{>0}</m>.  For a finite-support multi-index
-<m>\nu=(\nu_n)_{n\in I}\in\mathbf N^{(I)}</m>, put
+      We write <m>\mathbb N=\{0,1,2,\ldots\}</m> and put
+<m>I=\mathbb N_{>0}</m>.  For a finite-support multi-index
+<m>\nu=(\nu_n)_{n\in I}\in\mathbb N^{(I)}</m>, put
       <men xml:id="eq-parity-weight">\omega(\nu)=\sum_{\substack{n\geq1\\ \nu_n\text{ odd}}} n.</men>
       Consider the submonoid
-      <men xml:id="eq-parity-monoid">S=\left\{(a,\nu)\in\mathbf N\times\mathbf N^{(I)}:
+      <men xml:id="eq-parity-monoid">S=\left\{(a,\nu)\in\mathbb N\times\mathbb N^{(I)}:
        a\geq\omega(\nu)\right\}.</men>
       The inequality
       <men xml:id="eq-omega-subadditive">\omega(\nu+\mu)\leq\omega(\nu)+\omega(\mu)</men>
@@ -88,29 +89,36 @@ extends multiplication continuously to <m>\mathcal A</m>.  Put
 <m>\mathcal A=\mathcal A_0[1/\varpi]</m>.
     </p>
     <p>
-      For <m>N\geq1</m>, let <m>\mathcal A_N\subset\mathcal A</m> be the closed subring
-supported on monomials involving only <m>W,U_1,\ldots,U_N</m>.  Put
+      Put
 <me>Y_n=W^nU_n,\qquad Z_n=U_n^2,</me>
-and let <m>\mathcal T_N\subset\mathcal A_N</m> be the subring supported on even
-<m>U_n</m>-exponents.
+and, for <m>N\in\mathbb N</m>, let <m>\mathcal A^{(N)}\subset\mathcal A</m> be the
+closed subring supported on monomials involving only
+<m>W,U_1,\ldots,U_N</m>.  Thus
+<m>\mathcal A^{(0)}=k\langle W\rangle</m>.  Let
+<m>\mathcal T^{(N)}\subset\mathcal A^{(N)}</m> be the subring in which every
+<m>U_n</m> has even exponent.
     </p>
-    <lemma xml:id="lem-finite-stage-normal-form">
-      <title>Finite heads</title>
+    <lemma xml:id="lem-finite-variable-subrings">
+      <title>Finite-variable subrings</title>
       <statement>
         <p>
-          The substitution <m>Z_n\mapsto U_n^2</m> gives a norm-preserving ring
-isomorphism
-<me>k\langle W,Z_1,\ldots,Z_N\rangle\xrightarrow{\ \sim\ }\mathcal T_N.</me>
-Every <m>f\in\mathcal A_N</m> has a parity-slice expansion
-          <men xml:id="eq-finite-stage-normal-form">f=\sum_{\epsilon\in\{0,1\}^N} f_\epsilon Y^\epsilon,
-  \qquad f_\epsilon\in\mathcal T_N.</men>
-          Consequently <m>\mathcal A_N</m> is finite over <m>\mathcal T_N</m> and is a strongly
-noetherian Tate ring.  The inclusions between the heads and into
-<m>\mathcal A</m> preserve the norm.  Moreover, for every <m>f\in\mathcal A</m> and
-<m>\ell\geq0</m> there are <m>N</m> and <m>f_N\in\mathcal A_N</m> such that
+          For every <m>N\in\mathbb N</m>, substitution <m>Z_n\mapsto U_n^2</m> gives a
+norm-preserving ring isomorphism
+<me>k\langle W,Z_1,\ldots,Z_N\rangle
+  \xrightarrow{\ \sim\ }\mathcal T^{(N)}.</me>
+For <m>N=0</m> this is the identity on <m>k\langle W\rangle</m>.
+Every <m>f\in\mathcal A^{(N)}</m> can be written
+          <men xml:id="eq-finite-variable-decomposition">f=\sum_{\epsilon\in\{0,1\}^N} f_\epsilon Y^\epsilon,
+  \qquad f_\epsilon\in\mathcal T^{(N)},
+  \qquad Y^\epsilon=\prod_{n=1}^NY_n^{\epsilon_n}.</men>
+          Consequently <m>\mathcal A^{(N)}</m> is finite over <m>\mathcal T^{(N)}</m> and is
+a strongly noetherian Tate ring.  The inclusions
+<m>\mathcal A^{(N)}\to\mathcal A^{(M)}\to\mathcal A</m> for <m>N\leq M</m>
+preserve the norm.  Moreover, for every <m>f\in\mathcal A</m> and <m>\ell\geq0</m>
+there are <m>N</m> and <m>f_N\in\mathcal A^{(N)}</m> such that
 <me>\lVert f-f_N\rVert_G\leq |\varpi|^\ell\lVert f\rVert_G.</me>
 In particular,
-          <men xml:id="eq-A-completion-of-heads">\mathcal A=\widehat{\bigcup_{N\geq1}\mathcal A_N}.</men>
+          <men xml:id="eq-A-completion-finite-variables">\mathcal A=\widehat{\bigcup_{N\geq0}\mathcal A^{(N)}}.</men>
         </p>
       </statement>
       <proof>
@@ -118,14 +126,24 @@ In particular,
           On even exponents, halving the <m>U_n</m>-coordinates identifies the support
 monoid with that of the Tate algebra
 <m>k\langle W,Z_1,\ldots,Z_N\rangle</m>; the coefficient map and its inverse
-preserve the Gauss norm.  Splitting each <m>U_n</m>-exponent according to its
-parity gives <xref ref="eq-finite-stage-normal-form"/>.  The finitely many
-<m>Y^\epsilon</m> therefore generate <m>\mathcal A_N</m> over <m>\mathcal T_N</m>.
+preserve the Gauss norm.  Write each exponent uniquely as
+<m>\nu_n=2q_n+\epsilon_n</m>, with <m>\epsilon_n\in\{0,1\}</m>.  Since
+<m>\omega(\nu)=\sum_{\epsilon_n=1}n</m>, every allowed monomial factors as
+<me>W^aU^\nu
+  =W^{a-\omega(\nu)}
+   \prod_{n=1}^NZ_n^{q_n}
+   \prod_{n=1}^NY_n^{\epsilon_n}.</me>
+Grouping the monomials with the same tuple
+<m>(\epsilon_1,\ldots,\epsilon_N)</m> gives
+<xref ref="eq-finite-variable-decomposition"/>.  The finitely many
+<m>Y^\epsilon</m> therefore generate <m>\mathcal A^{(N)}</m> over
+<m>\mathcal T^{(N)}</m>.
 The same argument after adjoining any finite number of Tate variables gives
 strong noetherianity.  The inclusions are coefficientwise and hence
-isometric.  Finally, truncating a restricted series to a sufficiently large
-head gives the stated estimate and hence
-<xref ref="eq-A-completion-of-heads"/>.
+isometric.  Finally, approximate <m>f</m> to the required precision by a finite
+sum of monomials and choose <m>N</m> so that only
+<m>U_1,\ldots,U_N</m> occur in that sum.  This gives the stated estimate and
+<xref ref="eq-A-completion-finite-variables"/>.
         </p>
       </proof>
     </lemma>
@@ -198,7 +216,7 @@ so <m>\mathcal A</m> is not noetherian.
 Define the complete <m>k^\circ</m>-algebra
       <men xml:id="eq-weighted-chart-lattice">\mathcal B_0=
   \left\{
-    \sum_{\substack{\nu\in\mathbf N^{(I)},\ d\geq\omega(\nu)}}
+    \sum_{\substack{\nu\in\mathbb N^{(I)},\ d\geq\omega(\nu)}}
       b_{d,\nu}X^dU^\nu:
     b_{d,\nu}\in\varpi^{\omega(\nu)}k^\circ,
     \quad
@@ -221,10 +239,10 @@ Define the complete <m>k^\circ</m>-algebra
       </statement>
       <proof>
         <p>
-          The datum <m>(W;\varpi)</m> already lies in the zeroth head
-<m>H_0=k\langle W\rangle</m>.  Let
+          The datum <m>(W;\varpi)</m> lies in
+<m>\mathcal A^{(0)}=k\langle W\rangle</m>.  Let
 <me>Q=
-  H_0\langle T\rangle/
+  \mathcal A^{(0)}\langle T\rangle/
   \overline{(\varpi T-W)}</me>
 be its separated completed quotient.  Evaluation at <m>W=\varpi X</m> and <m>T=X</m>
 gives a continuous map <m>Q\to k\langle X\rangle</m>.  Conversely, evaluation of
@@ -235,13 +253,14 @@ isometric.
         </p>
         <p>
           Apply the coefficientwise-localisation construction of
-<xref ref="prop-coefficientwise-localization"/> to this zeroth head.  It identifies
-the rational chart bicontinuously with the <m>c_0</m> tail algebra over <m>Q</m>.
-After replacing <m>Q</m> by <m>k\langle X\rangle</m>, this is the model
-<xref ref="eq-weighted-chart-lattice"/>; its sup norm is
-<xref ref="eq-weighted-chart-norm"/>, since the tail basis element of parity
-<m>\nu</m> contributes the factor <m>\varpi^{\omega(\nu)}</m>.  The head evaluation
-sends <m>W</m> to <m>\varpi X</m>.
+<xref ref="prop-coefficientwise-localization"/> with <m>N=0</m>.  It identifies the
+rational chart with the <m>c_0</m>-sum over <m>Q</m> obtained by grouping terms
+according to their <m>U</m>-multi-index.  After replacing <m>Q</m> by
+<m>k\langle X\rangle</m>, this is the model
+<xref ref="eq-weighted-chart-lattice"/>.  Its sup norm is
+<xref ref="eq-weighted-chart-norm"/>: the term indexed by <m>\nu</m> is multiplied by
+<m>\varpi^{\omega(\nu)}</m>.  Evaluation on
+<m>\mathcal A^{(0)}</m> sends <m>W</m> to <m>\varpi X</m>.
         </p>
       </proof>
     </proposition>
@@ -261,9 +280,10 @@ coefficientwise homomorphism
   k\langle X\rangle[[U_1,U_2,\ldots]].</me>
 It is injective, and the target is a domain because
 <m>k\langle X\rangle</m> is a domain.  Hence <m>\mathcal B</m> is a domain.  In the
-finite-head formalisation below, this is the embedding of the corresponding
-<m>c_0</m> tail algebra into formal multivariable power series; the twisting
-element is <m>\varpi X</m>, which is a non-zero-divisor.
+coefficientwise description below, this is the embedding of the
+corresponding ring of coefficient families that tend to zero into formal
+multivariable power series; the factor <m>\varpi X</m> appearing in the
+multiplication is a non-zero-divisor.
         </p>
         <p>
           Inside <m>\mathcal A</m> write <m>Y_n=W^nU_n</m> and put
@@ -284,7 +304,12 @@ It follows by separating even and odd powers that the powers of each fixed
   <subsection xml:id="sec-second-example-small-perturbations-of-rational-data">
     <title>Small perturbations of rational data</title>
     <p>
-      The finite-head argument rests on the following elementary stability result.
+      The fact that a rational subset is unchanged by sufficiently small
+perturbations of its defining functions is standard; see
+<xref ref="bib-Huber93" detail="Lemma 3.10"/> and <xref ref="bib-KL" detail="Remark 2.4.7"/>.  We record the
+following quantitative form because the explicit bound is needed below.
+The identification of the completed localisations uses the universal
+property of rational localisation <xref ref="bib-Huber94" detail="Proposition 1.3"/>.
     </p>
     <lemma xml:id="lem-small-perturbation">
       <title>Small perturbation lemma</title>
@@ -296,13 +321,15 @@ It follows by separating even and odd powers that the powers of each fixed
 <me>0&lt;\lVert t\rVert&lt;1,\qquad
   \lVert tx\rVert=\lVert t\rVert\lVert x\rVert\quad(x\in E).</me>
 Let <m>\alpha=(f_1,\ldots,f_m;g)</m> be a rational datum with entries in
-<m>E_0</m>.  Write <m>d_0=g</m> and <m>d_i=f_i</m> for <m>i\geq1</m>.  Suppose that for some
-<m>\ell\geq0</m> there are <m>a_0,\ldots,a_m\in E_0</m> with
-          <men xml:id="eq-integral-bezout">t^\ell=\sum_{j=0}^m a_jd_j.</men>
-          Let <m>d_j'\in E_0</m> satisfy
-          <men xml:id="eq-small-perturbation-bound">\lVert d_j'-d_j\rVert\leq\lVert t\rVert^{\ell+1}
-  \qquad(0\leq j\leq m),</men>
-          and write <m>\alpha'=(f_1',\ldots,f_m';g')</m>.  Then <m>\alpha'</m> is a rational
+<m>E_0</m>.  Suppose that for some <m>\ell\geq0</m> there are
+<m>a_0,\ldots,a_m\in E_0</m> with
+          <men xml:id="eq-integral-bezout">t^\ell=a_0g+\sum_{i=1}^m a_if_i.</men>
+          Let <m>g',f_1',\ldots,f_m'\in E_0</m> satisfy
+          <men xml:id="eq-small-perturbation-bound">\lVert g'-g\rVert\leq\lVert t\rVert^{\ell+1},
+  \qquad
+  \lVert f_i'-f_i\rVert\leq\lVert t\rVert^{\ell+1}
+  \quad(1\leq i\leq m),</men>
+          and put <m>\alpha'=(f_1',\ldots,f_m';g')</m>.  Then <m>\alpha'</m> is a rational
 datum, <m>\alpha</m> and <m>\alpha'</m> define the same rational subset of
 <m>\Spa(E,E^+)</m>, and their completed rational localisations are
 bicontinuously isomorphic by an isomorphism commuting with the canonical
@@ -318,22 +345,28 @@ maps from <m>E</m>.
       <proof>
         <p>
           The scaling hypothesis and the fact that <m>t</m> is a unit give
-<m>d_j'-d_j=t^{\ell+1}h_j</m> with <m>\lVert h_j\rVert\leq1</m>.  Hence
-<me>\sum_j a_jd_j'
+<m>g'-g=t^{\ell+1}h_0</m> and
+<m>f_i'-f_i=t^{\ell+1}h_i</m>, with
+<m>h_0,h_1,\ldots,h_m\in E_0</m>.  Hence
+<me>a_0g'+\sum_{i=1}^m a_if_i'
   =t^\ell(1+tH),
-  \qquad H=\sum_j a_jh_j,\quad \lVert H\rVert\leq1.</me>
+  \qquad
+  H=a_0h_0+\sum_{i=1}^m a_ih_i\in E_0.</me>
 Since <m>\lVert tH\rVert&lt;1</m>, the element <m>1+tH</m> is a unit with inverse in
-<m>E_0</m>.  Multiplying the <m>a_j</m> by this inverse gives a unit-ball Bezout
-relation for the primed datum; in particular, <m>\alpha'</m> is rational.
+<m>E_0</m>.  The displayed identity therefore shows that the primed entries
+generate the unit ideal; in particular, <m>\alpha'</m> is rational.
         </p>
         <p>
-          Let <m>x</m> lie in the rational subset defined by <m>\alpha</m>.  Since <m>a_j\in E_0\subseteq E^+</m>,
+          Let <m>x</m> lie in the rational subset defined by <m>\alpha</m>.  Since
+<m>a_0,a_1,\ldots,a_m\in E_0\subseteq E^+</m>,
 relation <xref ref="eq-integral-bezout"/> gives
 <me>|t(x)|^\ell\leq |g(x)|.</me>
 The perturbations have value at most <m>|t(x)|^{\ell+1}&lt;|g(x)|</m>, so
 <m>|g'(x)|=|g(x)|</m> and
 <m>|f_i'(x)|\leq|g'(x)|</m>.  This proves one inclusion of rational subsets.  Applying the same
-argument to the primed Bezout relation proves the reverse inclusion.
+argument to
+<me>a_0g'+\sum_i a_if_i'=t^\ell(1+tH)</me>
+proves the reverse inclusion, since <m>|1+tH|=1</m> at every point.
         </p>
         <p>
           Rational localisation is independent of the datum used to present a rational
@@ -346,104 +379,134 @@ restriction maps are continuous and commute with the canonical maps from
       </proof>
     </lemma>
   </subsection>
-  <subsection xml:id="sec-second-example-finite-head-rational-localisation">
-    <title>Finite-head rational localisation</title>
+  <subsection xml:id="sec-second-example-rational-localisations-defined-over-finitely">
+    <title>Rational localisations defined over finitely many variables</title>
     <p>
-      Fix <m>N\geq1</m>.  For a tail multi-index
-<m>\mu=(\mu_n)_{n>N}\in\mathbf N^{(\{n>N\})}</m>, write
-<m>\mu_n=2q_n+\epsilon_n</m> with <m>\epsilon_n\in\{0,1\}</m> and put
-      <men xml:id="eq-tail-basis">e_\mu=\prod_{n>N}Y_n^{\epsilon_n}Z_n^{q_n}.</men>
-      The finite-stage normal forms give an isometric Banach-module decomposition
-      <men xml:id="eq-tail-decomposition">\mathcal A\cong
-  \widehat{\bigoplus}_{\mu}^{\,c_0}\mathcal A_Ne_\mu.</men>
-      Multiplication is determined by
-      <men xml:id="eq-tail-multiplication">e_\mu e_\lambda
-  =W^{\omega(\mu)+\omega(\lambda)-\omega(\mu+\lambda)}e_{\mu+\lambda}.</men>
-      Here <m>\omega</m> is applied only to the tail coordinates.  Projection to the coefficient of
-<m>e_0</m> is a norm-nonincreasing algebra retraction
-      <men xml:id="eq-head-retraction">\rho_N:\mathcal A\longrightarrow\mathcal A_N.</men>
+      Fix <m>N\in\mathbb N</m>.  Let
+<m>\mu=(\mu_n)_{n>N}</m> be a finitely supported family of nonnegative integers
+and put
+      <men xml:id="eq-coefficient-monomial">e_\mu=W^{\omega(\mu)}U^\mu,</men>
+      where <m>\mu</m> is extended by zero for <m>n\leq N</m>.  Every
+<m>f\in\mathcal A</m> has a unique convergent expression
+      <men xml:id="eq-coefficient-decomposition">f=\sum_\mu f_\mu e_\mu,
+  \qquad
+  f_\mu\in\mathcal A^{(N)},
+  \qquad
+  \lVert f_\mu\rVert_G\longrightarrow0,</men>
+      and
+<me>\lVert f\rVert_G=\sup_\mu\lVert f_\mu\rVert_G.</me>
+Multiplication is determined by
+      <men xml:id="eq-coefficient-multiplication">e_\mu e_\lambda
+  =W^{\omega(\mu)+\omega(\lambda)-\omega(\mu+\lambda)}
+   e_{\mu+\lambda}.</men>
+      The map
+      <men xml:id="eq-finite-variable-retraction">\rho_N:\mathcal A\longrightarrow\mathcal A^{(N)},
+  \qquad
+  \sum_\mu f_\mu e_\mu\longmapsto f_0,</men>
+      is a norm-nonincreasing ring retraction.
     </p>
     <proposition xml:id="prop-coefficientwise-localization">
       <title>Coefficientwise localisation</title>
       <statement>
         <p>
-          Let <m>\alpha</m> be a rational datum in <m>\mathcal A_N</m>, and put
-<m>P=(\mathcal A_N)_\alpha</m>.  There is a bicontinuous ring isomorphism
+          Let <m>\alpha</m> be a rational datum whose entries lie in
+<m>\mathcal A^{(N)}</m>, and put
+<m>P=(\mathcal A^{(N)})_\alpha</m>.  There is a bicontinuous ring isomorphism
           <men xml:id="eq-coefficientwise-localization">\mathcal A_\alpha
   \xrightarrow{\ \sim\ }
-  \widehat{\bigoplus}_{\mu}^{\,c_0}Pe_\mu.</men>
-          It is natural for rational refinements represented in a finite head: if <m>P\to Q</m> is the
-corresponding head restriction map, the induced restriction sends
+  \left\{
+    \sum_\mu p_\mu e_\mu:
+    p_\mu\in P,\quad \lVert p_\mu\rVert\longrightarrow0
+  \right\}.</men>
+          The ring on the right has the supremum norm, and its multiplication is
+given by <xref ref="eq-coefficient-multiplication"/>, with <m>W</m> replaced by its
+image in <m>P</m>.  If a rational refinement is also represented by data in
+<m>\mathcal A^{(N)}</m> and <m>P\to Q</m> is the corresponding restriction map,
+then the induced restriction sends
           <men xml:id="eq-coefficientwise-restriction">\sum_\mu p_\mu e_\mu
   \longmapsto
   \sum_\mu (p_\mu|_Q)e_\mu.</men>
-          The same statement holds after increasing <m>N</m>.
         </p>
       </statement>
       <proof>
         <p>
           Let
-<me>R=\mathcal A_N\langle T_1,\ldots,T_m\rangle,
+<me>R=\mathcal A^{(N)}\langle T_1,\ldots,T_m\rangle,
   \qquad
   J=\overline{(gT_i-f_i)_i}\subset R,
-  \qquad Q=R/J.</me>
-Evaluation at <m>T_i=f_i/g</m> identifies <m>Q</m> with the head rational localisation
-<m>P</m>.
+  \qquad \widetilde P=R/J.</me>
+Evaluation at <m>T_i=f_i/g</m> identifies <m>\widetilde P</m> with <m>P</m>.
         </p>
         <p>
-          The tail decomposition applies after adjoining the variables <m>T_i</m>.  Apply
-the quotient map <m>R\to Q</m> to each tail coefficient.  Since the rational
-relations lie in the head, this gives a continuous homomorphism
+          The expression <xref ref="eq-coefficient-decomposition"/> continues to hold after
+adjoining the variables <m>T_i</m>.  Applying the quotient map
+<m>R\to\widetilde P</m> to
+each coefficient gives a continuous homomorphism
 <me>\Phi:\mathcal A_\alpha\longrightarrow
-  \widehat{\bigoplus}_{\mu}^{c_0}Qe_\mu.</me>
-Conversely, the canonical map from <m>Q</m> to <m>\mathcal A_\alpha</m> may be applied
-to every coefficient.  For a null family
-<m>(q_\mu)_\mu</m> the resulting series
+  \left\{
+    \sum_\mu q_\mu e_\mu:
+    q_\mu\in\widetilde P,\quad \lVert q_\mu\rVert\longrightarrow0
+  \right\}.</me>
+Conversely, the canonical map from <m>\widetilde P</m> to
+<m>\mathcal A_\alpha</m> may be applied
+to every coefficient.  If
+<m>\lVert q_\mu\rVert\to0</m>, the resulting series
 <me>\sum_\mu q_\mu e_\mu</me>
 converges in <m>\mathcal A_\alpha</m>, and defines a continuous homomorphism
 <m>\Psi</m> in the other direction.  The multiplication rule
-<xref ref="eq-tail-multiplication"/> shows that both maps are ring
+<xref ref="eq-coefficient-multiplication"/> shows that both maps are ring
 homomorphisms.
         </p>
         <p>
-          The two composites are the identity on finite tail sums with polynomial
-head coefficients.  These are dense on both sides, so continuity gives
-<m>\Psi\Phi=1</m> and <m>\Phi\Psi=1</m>.  Composing with <m>Q\cong P</m> proves
+          The two composites are the identity on sums with finitely many nonzero
+coefficients, each represented by a polynomial.  Such sums are dense on
+both sides, so continuity gives
+<m>\Psi\Phi=1</m> and <m>\Phi\Psi=1</m>.  Composing with
+<m>\widetilde P\cong P</m> proves
 <xref ref="eq-coefficientwise-localization"/>.
         </p>
         <p>
-          For a rational refinement in the head, the two evaluation maps commute with
-the head restriction map.  The preceding construction is therefore
-coefficientwise natural and gives <xref ref="eq-coefficientwise-restriction"/>.
-Presentation independence and transitivity give the same conclusion after
-enlarging the head.
+          For a rational refinement represented in <m>\mathcal A^{(N)}</m>, the two
+evaluation maps commute with the restriction map <m>P\to Q</m>.  The preceding
+construction therefore gives <xref ref="eq-coefficientwise-restriction"/>.
         </p>
       </proof>
     </proposition>
-    <corollary xml:id="cor-finite-head-presentation">
-      <title>Finite-head presentation</title>
+    <corollary xml:id="cor-finite-variable-presentation">
+      <title>Finite-variable presentation</title>
       <statement>
         <p>
-          Every rational localisation of <m>\mathcal A</m> is bicontinuously isomorphic to a ring of the form
-          <men xml:id="eq-arbitrary-finite-head-presentation">\widehat{\bigoplus}_{\mu}^{\,c_0}Pe_\mu,</men>
-          where <m>P</m> is a rational localisation of some strongly noetherian Tate head
-<m>\mathcal A_N</m>.
+          Every rational localisation of <m>\mathcal A</m> is bicontinuously isomorphic
+to a ring of the form
+          <men xml:id="eq-arbitrary-finite-variable-presentation">\left\{
+    \sum_\mu p_\mu e_\mu:
+    p_\mu\in P,\quad \lVert p_\mu\rVert\longrightarrow0
+  \right\},</men>
+          where <m>P</m> is a rational localisation of one of the strongly noetherian Tate
+rings <m>\mathcal A^{(N)}</m>.
         </p>
       </statement>
       <proof>
         <p>
-          Start with a rational datum in <m>\mathcal A</m>.  Multiplying all entries by one power of
-<m>\varpi</m> does not change the rational subset or localisation, so assume that the entries lie in
-<m>\mathcal A_0</m>.  Choose an integral Bezout relation
-<me>\varpi^\ell=\sum_j a_jd_j,
-  \qquad a_j\in\mathcal A_0.</me>
-By <xref ref="eq-A-completion-of-heads"/>, for some <m>N</m> the entries <m>d_j</m> admit approximations
-<m>d_j'\in\mathcal A_N\cap\mathcal A_0</m> satisfying
-<m>\lVert d_j'-d_j\rVert\leq|\varpi|^{\ell+1}</m>.  By
-<xref ref="lem-small-perturbation"/>, the primed datum gives the same rational subset and the same
-completed localisation.  The primed integral Bezout relation produced in that lemma remains
-valid after applying the retraction <m>\rho_N</m>; hence the primed datum is a rational datum already
-in <m>\mathcal A_N</m>.  Now apply <xref ref="prop-coefficientwise-localization"/>.
+          Start with a rational datum
+<m>\alpha=(f_1,\ldots,f_m;g)</m> in <m>\mathcal A</m>.  Multiplying all entries by
+one power of <m>\varpi</m> does not change the rational subset or localisation,
+so assume that <m>g,f_1,\ldots,f_m</m> lie in <m>\mathcal A_0</m>.  Choose an
+integral Bezout relation
+<me>\varpi^\ell=a_0g+\sum_{i=1}^m a_if_i,
+  \qquad a_0,a_1,\ldots,a_m\in\mathcal A_0.</me>
+By <xref ref="eq-A-completion-finite-variables"/>, for some <m>N</m> there are
+<m>g',f_1',\ldots,f_m'\in\mathcal A^{(N)}\cap\mathcal A_0</m> such that
+<me>\lVert g'-g\rVert\leq|\varpi|^{\ell+1},
+  \qquad
+  \lVert f_i'-f_i\rVert\leq|\varpi|^{\ell+1}.</me>
+By <xref ref="lem-small-perturbation"/>, the datum
+<m>\alpha'=(f_1',\ldots,f_m';g')</m> gives the same rational subset and the same
+completed localisation.  Apply <m>\rho_N</m> to the identity
+<me>a_0g'+\sum_i a_if_i'=\varpi^\ell(1+\varpi H)</me>
+from the proof of that lemma.  Its right-hand side remains a unit, so
+<m>\alpha'</m> is already a rational datum in <m>\mathcal A^{(N)}</m>.  Now apply
+<xref ref="prop-coefficientwise-localization"/>.
         </p>
       </proof>
     </corollary>
@@ -459,30 +522,32 @@ in <m>\mathcal A_N</m>.  Now apply <xref ref="prop-coefficientwise-localization"
       <lean project="AdicSpaces" ref="WeightedParity.weightedParity_isSheafyComplete_of_dvr">Lean</lean>
       <proof>
         <p>
-          We first work with a finite rational cover <m>U=\bigcup_iU_i</m>.  Approximate the
-datum for <m>U</m> and the data for all the <m>U_i</m> simultaneously in one sufficiently
-large finite head.  The small perturbation lemma does not change the rational
-domains, and <xref ref="prop-coefficientwise-localization"/> gives compatible
-identifications
+          We first work with a finite rational cover <m>U=\bigcup_iU_i</m>.  Choose one
+<m>N</m> large enough to approximate the datum for <m>U</m> and the data for all the
+<m>U_i</m> in <m>\mathcal A^{(N)}</m>.  The small perturbation lemma does not change
+the rational domains, and <xref ref="prop-coefficientwise-localization"/> gives
+compatible identifications
 <me>\mathcal O_X(U)\cong
-  \widehat{\bigoplus}_{\mu}^{c_0}Pe_\mu,
-  \qquad
-  \mathcal O_X(U_i)\cong
-  \widehat{\bigoplus}_{\mu}^{c_0}P_ie_\mu,</me>
+  \left\{\sum_\mu p_\mu e_\mu:
+    p_\mu\in P,\ \lVert p_\mu\rVert\to0\right\},</me>
+<me>\mathcal O_X(U_i)\cong
+  \left\{\sum_\mu p_{i,\mu}e_\mu:
+    p_{i,\mu}\in P_i,\ \lVert p_{i,\mu}\rVert\to0\right\},</me>
 with coefficientwise restriction maps.  Here <m>P</m> is a rational localisation
-of one strongly noetherian Tate head and the <m>P_i</m> are rational localisations
-of <m>P</m>.  The
-domains defined by the <m>P_i</m> cover <m>\Spa(P,P^\circ)</m>: pull a point back along
-the split coefficient retraction to the tail algebra, use the original cover,
-and then apply the retraction again.
+of the strongly noetherian Tate ring <m>\mathcal A^{(N)}</m>, and the <m>P_i</m> are
+rational localisations of <m>P</m>.  The domains defined by the <m>P_i</m> cover
+<m>\Spa(P,P^\circ)</m>.  Indeed, compose a point of <m>\Spa(P,P^\circ)</m> with the
+coefficient projection from the ring in the first display to <m>P</m>.  The
+resulting point lies in one of the original <m>U_i</m>, and restricting back to
+<m>P</m> gives the required point of the corresponding domain.
         </p>
         <p>
           Let <m>(x_i)_i</m> be a matching family and write
 <m>x_i=\sum_\mu x_{i,\mu}e_\mu</m>.  Since <m>P</m> is sheafy,
 the matching family <m>(x_{i,\mu})_i</m> glues to a unique <m>q_\mu\in P</m> for every
-<m>\mu</m>.  It remains to check that <m>(q_\mu)_\mu</m> is a null family.  Its
-restrictions to every <m>P_i</m> tend to zero because each <m>x_i</m> belongs to a
-<m>c_0</m>-sum.  The product restriction map
+<m>\mu</m>.  It remains to check that <m>\lVert q_\mu\rVert\to0</m>.  The restrictions
+of the <m>q_\mu</m> to every <m>P_i</m> tend to zero because the coefficients of each
+<m>x_i</m> do.  The product restriction map
 <me>P\longrightarrow\prod_iP_i</me>
 is a topological embedding, so it reflects convergence to zero.  Hence
 <m>q_\mu\to0</m>, and <m>\sum_\mu q_\mu e_\mu</m> is the required section over <m>U</m>.
@@ -516,13 +581,17 @@ rational chart <m>|W|\leq|\varpi|</m> as a nonuniform integral domain.
       <statement>
         <p>
           The finite-jet and weighted-parity examples use different mechanisms.  In the finite-jet ring,
-a whole tail becomes infinitely <m>\varpi</m>-divisible and the bad chart acquires a nilpotent.  In the
-weighted-parity ring, every rational calculation can be moved into a noetherian finite head and
-then carried coefficientwise through a <m>c_0</m>-tail.  Its bad chart remains a domain, and
+all terms of <m>Q</m>-degree at least two become infinitely
+<m>\varpi</m>-divisible, and the bad chart acquires a nilpotent.  In the
+weighted-parity ring, the data defining any finite rational calculation can
+be approximated inside some strongly noetherian
+<m>\mathcal A^{(N)}</m>, after which localisation and restriction are computed
+coefficient by coefficient in the remaining variables.  Its bad chart remains a domain, and
 nonuniformity is witnessed by the unbounded family <m>(T_n)_{n\geq1}</m> of nonnilpotent
 power-bounded elements.  The use of an infinite monomial support and of unbounded
 power-bounded directions is in the tradition of the examples of Buzzard<ndash/>Verberkmoes and
-Mihara; the finite-head coefficientwise descent is the additional feature that makes sheafiness
+Mihara; the coefficientwise calculation over the rings
+<m>\mathcal A^{(N)}</m> is the additional feature that makes sheafiness
 accessible here.
         </p>
       </statement>

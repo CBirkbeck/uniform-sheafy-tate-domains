@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-discovery">
+  <title>How the examples were found</title>
+  <p>
+    The author had for some time been interested in finding a counterexample to
+Problem<nbsp/>7 of the <em>Nonarchimedean Scottish Book</em>.  Our attempts had
+centred on the example of
+<xref ref="bib-BV" detail="Section 4.5, Proposition 17"/>, which is uniform but not stably
+uniform.  We believe that this example is in fact sheafy, but we have not
+found a proof.
+  </p>
+  <p>
+    In January 2026 we began to experiment with AI tools, initially ChatGPT 5.2
+Pro.  Buzzard<ndash/>Verberkmoes reduce exactness for a two-member Laurent cover to
+a boundedness condition on the relevant rings of definition
+<xref ref="bib-BV" detail="Lemma 2"/>.  For a uniform ring this follows from boundedness of the
+power-bounded elements <xref ref="bib-BV" detail="Lemma 3 and Corollary 4"/>.  Their reduction
+from general rational covers to Laurent covers is given in
+<xref ref="bib-BV" detail="Lemma 8 and the proof of Theorem 7"/>.  For sheafiness these checks
+must also be made after rational localisation.  Their Theorem<nbsp/>7 cannot be
+applied directly to Proposition<nbsp/>17, since one of the rational localisations
+in that example is not uniform.  Our plan was instead to ask ChatGPT to
+write down many explicit rational covers and check the required exactness
+directly for each one, in the hope that a pattern, and eventually a proof,
+would emerge.
+  </p>
+  <p>
+    It was through this process that ChatGPT 5.2 Pro found
+<xref ref="lem-small-perturbation"/>.  After a couple of weeks it claimed to have a
+complete proof.  The author then began the slow process of understanding
+this proof, only to discover, with the help of ChatGPT 5.3, that one of its
+arguments used the following assertion:
+  </p>
+  <p>
+    <em>If <m>\phi:A\to B</m> is a continuous homomorphism of Hausdorff
+topological abelian groups and <m>A</m> is complete, then <m>\phi(A)</m> is closed in
+<m>B</m>.</em>
+  </p>
+  <p>
+    This assertion is false, and its use completely broke the purported proof.
+  </p>
+  <p>
+    Motivated by this, we began in parallel an AI-assisted Lean formalisation of
+the parts of the theory of adic spaces needed here, including the theorem
+that strongly noetherian Tate rings are sheafy.  The aim was a practical
+one: future AI-generated proofs could be formalised before the human author
+had spent days understanding an argument containing a fatal error near its
+end.
+  </p>
+  <p>
+    We then returned to writing down covers and looking for a pattern.  This
+continued through ChatGPT 5.3 and subsequent versions.  When ChatGPT 5.6 Sol
+became available, we asked, almost in passing, whether it could prove the
+result we wanted or <em>find a new example</em>.  It produced the examples
+studied here.  By then the Lean development was far enough advanced that we
+could formalise the arguments quickly and check that they were correct.
+  </p>
+</section>

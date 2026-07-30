@@ -42,10 +42,10 @@ continuity, to a map
 <me>\Phi:A_{\mathrm{in}}\longrightarrow T.</me>
       </p>
       <p>
-        We next record why the two-jet map loses no information other than the
-<m>Q^2</m>-tail after completion.  If the constant and linear <m>Q</m>-coefficients of
-<m>y\in A</m> vanish, then <m>y_n=W^{-n}y</m> still belongs to <m>A</m>, and the <m>y_n</m> have
-bounded norm.  In <m>A_{\mathrm{in}}</m> one has
+        We next record why the two-jet map loses precisely the terms divisible by
+<m>Q^2</m> after completion.  If the constant and linear <m>Q</m>-coefficients of
+<m>y\in A</m> vanish, then <m>y_n=W^{-n}y</m> still belongs to <m>A</m>, and the <m>y_n</m>
+have bounded norm.  In <m>A_{\mathrm{in}}</m> one has
 <me>\overline y=\varpi^nX^n\overline{y_n}\qquad(n\geq0).</me>
 The powers of <m>X</m> are bounded and <m>\varpi^n\to0</m>, so <m>\overline y=0</m>.
 In particular, the image <m>\overline Q</m> of <m>Q</m> satisfies

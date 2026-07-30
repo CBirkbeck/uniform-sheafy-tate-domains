@@ -22,23 +22,24 @@
 <span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Coefficientwise localisation.</span>
 </h2>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\(\alpha\)</span> be a rational datum in <span class="process-math">\(\mathcal A_N\text{,}\)</span> and put <span class="process-math">\(P=(\mathcal A_N)_\alpha\text{.}\)</span>  There is a bicontinuous ring isomorphism</div>
-<div class="displaymath process-math">
+<div class="para">Let <span class="process-math">\(\alpha\)</span> be a rational datum whose entries lie in <span class="process-math">\(\mathcal A^{(N)}\text{,}\)</span> and put <span class="process-math">\(P=(\mathcal A^{(N)})_\alpha\text{.}\)</span>  There is a bicontinuous ring isomorphism</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-coefficient-multiplication.html">
 \begin{equation}
 \mathcal A_\alpha
 \xrightarrow{\ \sim\ }
-\widehat{\bigoplus}_{\mu}^{\,c_0}Pe_\mu.\tag{7.18}
+\left\{
+\sum_\mu p_\mu e_\mu:
+p_\mu\in P,\quad \lVert p_\mu\rVert\longrightarrow0
+\right\}.\tag{7.18}
 \end{equation}
 </div>
-<div class="para">It is natural for rational refinements represented in a finite head: if <span class="process-math">\(P\to Q\)</span> is the corresponding head restriction map, the induced restriction sends</div>
-<div class="displaymath process-math">
+<div class="para">The ring on the right has the supremum norm, and its multiplication is given by <a href="#eq-coefficient-multiplication" class="xref" data-knowl="./knowl/xref/eq-coefficient-multiplication.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.16">(7.16)</a>, with <span class="process-math">\(W\)</span> replaced by its image in <span class="process-math">\(P\text{.}\)</span>  If a rational refinement is also represented by data in <span class="process-math">\(\mathcal A^{(N)}\)</span> and <span class="process-math">\(P\to Q\)</span> is the corresponding restriction map, then the induced restriction sends</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-coefficient-multiplication.html">
 \begin{equation}
 \sum_\mu p_\mu e_\mu
 \longmapsto
 \sum_\mu (p_\mu|_Q)e_\mu.\tag{7.19}
 \end{equation}
-</div>
-<div class="para">The same statement holds after increasing <span class="process-math">\(N\text{.}\)</span>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -50,36 +51,39 @@
 <div class="para">Let</div>
 <div class="displaymath process-math">
 \begin{equation*}
-R=\mathcal A_N\langle T_1,\ldots,T_m\rangle,
+R=\mathcal A^{(N)}\langle T_1,\ldots,T_m\rangle,
 \qquad
 J=\overline{(gT_i-f_i)_i}\subset R,
-\qquad Q=R/J.
+\qquad \widetilde P=R/J.
 \end{equation*}
 </div>
-<div class="para">Evaluation at <span class="process-math">\(T_i=f_i/g\)</span> identifies <span class="process-math">\(Q\)</span> with the head rational localisation <span class="process-math">\(P\text{.}\)</span>
+<div class="para">Evaluation at <span class="process-math">\(T_i=f_i/g\)</span> identifies <span class="process-math">\(\widetilde P\)</span> with <span class="process-math">\(P\text{.}\)</span>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical">
-<div class="para">The tail decomposition applies after adjoining the variables <span class="process-math">\(T_i\text{.}\)</span>  Apply the quotient map <span class="process-math">\(R\to Q\)</span> to each tail coefficient.  Since the rational relations lie in the head, this gives a continuous homomorphism</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-tail-multiplication.html">
+<div class="para">The expression <a href="#eq-coefficient-decomposition" class="xref" data-knowl="./knowl/xref/eq-coefficient-decomposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.15">(7.15)</a> continues to hold after adjoining the variables <span class="process-math">\(T_i\text{.}\)</span>  Applying the quotient map <span class="process-math">\(R\to\widetilde P\)</span> to each coefficient gives a continuous homomorphism</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-coefficient-decomposition.html ./knowl/xref/eq-coefficient-multiplication.html">
 \begin{equation*}
 \Phi:\mathcal A_\alpha\longrightarrow
-\widehat{\bigoplus}_{\mu}^{c_0}Qe_\mu.
+\left\{
+\sum_\mu q_\mu e_\mu:
+q_\mu\in\widetilde P,\quad \lVert q_\mu\rVert\longrightarrow0
+\right\}.
 \end{equation*}
 </div>
-<div class="para">Conversely, the canonical map from <span class="process-math">\(Q\)</span> to <span class="process-math">\(\mathcal A_\alpha\)</span> may be applied to every coefficient.  For a null family <span class="process-math">\((q_\mu)_\mu\)</span> the resulting series</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-tail-multiplication.html">
+<div class="para">Conversely, the canonical map from <span class="process-math">\(\widetilde P\)</span> to <span class="process-math">\(\mathcal A_\alpha\)</span> may be applied to every coefficient.  If <span class="process-math">\(\lVert q_\mu\rVert\to0\text{,}\)</span> the resulting series</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-coefficient-decomposition.html ./knowl/xref/eq-coefficient-multiplication.html">
 \begin{equation*}
 \sum_\mu q_\mu e_\mu
 \end{equation*}
 </div>
-<div class="para">converges in <span class="process-math">\(\mathcal A_\alpha\text{,}\)</span> and defines a continuous homomorphism <span class="process-math">\(\Psi\)</span> in the other direction.  The multiplication rule <a href="#eq-tail-multiplication" class="xref" data-knowl="./knowl/xref/eq-tail-multiplication.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.16">(7.16)</a> shows that both maps are ring homomorphisms.</div>
+<div class="para">converges in <span class="process-math">\(\mathcal A_\alpha\text{,}\)</span> and defines a continuous homomorphism <span class="process-math">\(\Psi\)</span> in the other direction.  The multiplication rule <a href="#eq-coefficient-multiplication" class="xref" data-knowl="./knowl/xref/eq-coefficient-multiplication.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.16">(7.16)</a> shows that both maps are ring homomorphisms.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para">The two composites are the identity on finite tail sums with polynomial head coefficients.  These are dense on both sides, so continuity gives <span class="process-math">\(\Psi\Phi=1\)</span> and <span class="process-math">\(\Phi\Psi=1\text{.}\)</span>  Composing with <span class="process-math">\(Q\cong P\)</span> proves <a href="#eq-coefficientwise-localization" class="xref" data-knowl="./knowl/xref/eq-coefficientwise-localization.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.18">(7.18)</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">The two composites are the identity on sums with finitely many nonzero coefficients, each represented by a polynomial.  Such sums are dense on both sides, so continuity gives <span class="process-math">\(\Psi\Phi=1\)</span> and <span class="process-math">\(\Phi\Psi=1\text{.}\)</span>  Composing with <span class="process-math">\(\widetilde P\cong P\)</span> proves <a href="#eq-coefficientwise-localization" class="xref" data-knowl="./knowl/xref/eq-coefficientwise-localization.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.18">(7.18)</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para">For a rational refinement in the head, the two evaluation maps commute with the head restriction map.  The preceding construction is therefore coefficientwise natural and gives <a href="#eq-coefficientwise-restriction" class="xref" data-knowl="./knowl/xref/eq-coefficientwise-restriction.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.19">(7.19)</a>. Presentation independence and transitivity give the same conclusion after enlarging the head.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">For a rational refinement represented in <span class="process-math">\(\mathcal A^{(N)}\text{,}\)</span> the two evaluation maps commute with the restriction map <span class="process-math">\(P\to Q\text{.}\)</span>  The preceding construction therefore gives <a href="#eq-coefficientwise-restriction" class="xref" data-knowl="./knowl/xref/eq-coefficientwise-restriction.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.19">(7.19)</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-3-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Proof 7.8.1"><a tabindex="-1" href="#prop-coefficientwise-localization-3" title="Copy heading and permalink for Proof 7.8.1" aria-label="Copy heading and permalink for Proof 7.8.1">🔗</a></div>
 </article></details><span class="incontext"><a class="internal" href="#prop-coefficientwise-localization">In Context</a></span>

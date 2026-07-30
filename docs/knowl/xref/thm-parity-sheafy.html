@@ -28,21 +28,26 @@
 <details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
 <article class="hiddenproof knowl__content">
 <div class="para logical">
-<div class="para">We first work with a finite rational cover <span class="process-math">\(U=\bigcup_iU_i\text{.}\)</span>  Approximate the datum for <span class="process-math">\(U\)</span> and the data for all the <span class="process-math">\(U_i\)</span> simultaneously in one sufficiently large finite head.  The small perturbation lemma does not change the rational domains, and <a href="#prop-coefficientwise-localization" class="xref" data-knowl="./knowl/xref/prop-coefficientwise-localization.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 7.8: Coefficientwise localisation">Proposition 7.8</a> gives compatible identifications</div>
+<div class="para">We first work with a finite rational cover <span class="process-math">\(U=\bigcup_iU_i\text{.}\)</span>  Choose one <span class="process-math">\(N\)</span> large enough to approximate the datum for <span class="process-math">\(U\)</span> and the data for all the <span class="process-math">\(U_i\)</span> in <span class="process-math">\(\mathcal A^{(N)}\text{.}\)</span>  The small perturbation lemma does not change the rational domains, and <a href="#prop-coefficientwise-localization" class="xref" data-knowl="./knowl/xref/prop-coefficientwise-localization.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 7.8: Coefficientwise localisation">Proposition 7.8</a> gives compatible identifications</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-coefficientwise-localization.html">
 \begin{equation*}
 \mathcal O_X(U)\cong
-\widehat{\bigoplus}_{\mu}^{c_0}Pe_\mu,
-\qquad
-\mathcal O_X(U_i)\cong
-\widehat{\bigoplus}_{\mu}^{c_0}P_ie_\mu,
+\left\{\sum_\mu p_\mu e_\mu:
+p_\mu\in P,\ \lVert p_\mu\rVert\to0\right\},
 \end{equation*}
 </div>
-<div class="para">with coefficientwise restriction maps.  Here <span class="process-math">\(P\)</span> is a rational localisation of one strongly noetherian Tate head and the <span class="process-math">\(P_i\)</span> are rational localisations of <span class="process-math">\(P\text{.}\)</span>  The domains defined by the <span class="process-math">\(P_i\)</span> cover <span class="process-math">\(\Spa(P,P^\circ)\text{:}\)</span> pull a point back along the split coefficient retraction to the tail algebra, use the original cover, and then apply the retraction again.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-coefficientwise-localization.html">
+\begin{equation*}
+\mathcal O_X(U_i)\cong
+\left\{\sum_\mu p_{i,\mu}e_\mu:
+p_{i,\mu}\in P_i,\ \lVert p_{i,\mu}\rVert\to0\right\},
+\end{equation*}
+</div>
+<div class="para">with coefficientwise restriction maps.  Here <span class="process-math">\(P\)</span> is a rational localisation of the strongly noetherian Tate ring <span class="process-math">\(\mathcal A^{(N)}\text{,}\)</span> and the <span class="process-math">\(P_i\)</span> are rational localisations of <span class="process-math">\(P\text{.}\)</span>  The domains defined by the <span class="process-math">\(P_i\)</span> cover <span class="process-math">\(\Spa(P,P^\circ)\text{.}\)</span>  Indeed, compose a point of <span class="process-math">\(\Spa(P,P^\circ)\)</span> with the coefficient projection from the ring in the first display to <span class="process-math">\(P\text{.}\)</span>  The resulting point lies in one of the original <span class="process-math">\(U_i\text{,}\)</span> and restricting back to <span class="process-math">\(P\)</span> gives the required point of the corresponding domain.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-parity-sheafy-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\((x_i)_i\)</span> be a matching family and write <span class="process-math">\(x_i=\sum_\mu x_{i,\mu}e_\mu\text{.}\)</span>  Since <span class="process-math">\(P\)</span> is sheafy, the matching family <span class="process-math">\((x_{i,\mu})_i\)</span> glues to a unique <span class="process-math">\(q_\mu\in P\)</span> for every <span class="process-math">\(\mu\text{.}\)</span>  It remains to check that <span class="process-math">\((q_\mu)_\mu\)</span> is a null family.  Its restrictions to every <span class="process-math">\(P_i\)</span> tend to zero because each <span class="process-math">\(x_i\)</span> belongs to a <span class="process-math">\(c_0\)</span>-sum.  The product restriction map</div>
+<div class="para">Let <span class="process-math">\((x_i)_i\)</span> be a matching family and write <span class="process-math">\(x_i=\sum_\mu x_{i,\mu}e_\mu\text{.}\)</span>  Since <span class="process-math">\(P\)</span> is sheafy, the matching family <span class="process-math">\((x_{i,\mu})_i\)</span> glues to a unique <span class="process-math">\(q_\mu\in P\)</span> for every <span class="process-math">\(\mu\text{.}\)</span>  It remains to check that <span class="process-math">\(\lVert q_\mu\rVert\to0\text{.}\)</span>  The restrictions of the <span class="process-math">\(q_\mu\)</span> to every <span class="process-math">\(P_i\)</span> tend to zero because the coefficients of each <span class="process-math">\(x_i\)</span> do.  The product restriction map</div>
 <div class="displaymath process-math">
 \begin{equation*}
 P\longrightarrow\prod_iP_i
