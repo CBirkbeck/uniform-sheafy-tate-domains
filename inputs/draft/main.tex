@@ -65,10 +65,9 @@ ring is sheafy.  We construct two uniform sheafy Tate domains which are
 not stably uniform, answering Question~7 of Kedlaya's
 \emph{Nonarchimedean Scottish Book}.  In the first example a rational
 localisation is nonreduced, whilst in the second the nonuniform rational
-localisation is an integral domain.  All the results in this paper are due to
-ChatGPT 5.6 Sol.  Both constructions, including their sheafiness and the
-rational localisations witnessing failure of stable uniformity, have been
-formalised in Lean~4.
+localisation is an integral domain.  These results are due to ChatGPT 5.6 Sol.
+Both constructions, including their sheafiness and the rational localisations
+witnessing failure of stable uniformity, have been formalised in Lean~4.
 \end{abstract}
 
 \subjclass[2020]{Primary 14G22; Secondary 13J10}
@@ -86,11 +85,12 @@ prevents this loss of uniformity.  Hansen and Kedlaya ask this explicitly
 \cite[Remark~3.16]{HK}; it is also Question~7 of Kedlaya's
 \emph{Nonarchimedean Scottish Book} \cite{Scottish}.  The answer is no.
 
-All the results in this paper are due to ChatGPT 5.6 Sol.  We have aimed to
-include references to related work that may have been used by ChatGPT in
-finding the examples; see \cref{rem:earlier-work}.
+ChatGPT 5.6 Sol found both examples, supplied the proofs, and produced their
+Lean formalisation.  We have aimed to cite related work that may have informed
+this process; see \cref{rem:earlier-work}.  \Cref{sec:formalisation} records
+the formal definitions and theorem statements.
 
-We begin with what ChatGPT called the ``finite-jet pullback''.  This is a
+We begin with the ``finite-jet pullback''.  This is a
 nonnoetherian uniform integral domain for which a distinguished rational
 localisation is nonreduced, and hence is no longer uniform.  Let $k$ be a
 complete discretely valued nonarchimedean field, with valuation ring
@@ -157,13 +157,6 @@ for this finite-jet square, the strict exact row persists after completed ration
 localisation and is compatible with refinement.  This transfers sheafiness from
 $B,C,D$ to $A$.  The second example shows that the failure of stable uniformity
 need not come from a nonreduced localisation.
-
-The construction, uniformity, sheafiness, and failure of stable uniformity
-for both examples have been formalised in Lean~4.  The formalisation also
-includes the rational-chart calculations used above.
-\Cref{sec:formalisation} records the relevant definitions and theorem
-statements.
-
 
 \begin{remark}[Relation with earlier work]\label{rem:earlier-work}
 Buzzard--Verberkmoes construct a uniform affinoid ring with a nonuniform rational
