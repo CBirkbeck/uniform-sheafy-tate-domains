@@ -1,6 +1,15 @@
 {
   "thm-main": [
     {
+      "decl": "FiniteJetOver.JetA",
+      "via": "manual",
+      "file": "Adic spaces/FJP/Over/JetRings.lean",
+      "line": 294,
+      "cited": "Theorem 1.1 (the finite-jet ring A)",
+      "kind": "abbrev",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
       "decl": "FiniteJetOver.jetSupport",
       "via": "manual",
       "file": "Adic spaces/FJP/Over/JetRings.lean",
@@ -268,7 +277,7 @@
       "via": "manual",
       "file": "Adic spaces/FJP/Over/StrictLocalization.lean",
       "line": 513,
-      "cited": "Lemma 5.2 (controlled pullback)",
+      "cited": "Lemma 5.2 (norm estimate for the pullback)",
       "kind": "theorem",
       "flagged": true
     },
@@ -606,6 +615,436 @@
       "file": "Adic spaces/WP/Perturbation.lean",
       "line": 694,
       "cited": "Small perturbation lemma (compatibility with canonical maps)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    }
+  ],
+  "lem-finite-variable-subrings": [
+    {
+      "decl": "WeightedParity.evenSupportEquiv",
+      "via": "manual",
+      "file": "Adic spaces/WP/Heads.lean",
+      "line": 566,
+      "cited": "Lemma 7.2 (even-exponent Tate algebra)",
+      "kind": "def",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.norm_evenSupportEquiv",
+      "via": "manual",
+      "file": "Adic spaces/WP/Heads.lean",
+      "line": 570,
+      "cited": "Lemma 7.2 (norm preservation)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.sum_slice_mul_Ypat",
+      "via": "manual",
+      "file": "Adic spaces/WP/Heads.lean",
+      "line": 876,
+      "cited": "Lemma 7.2 (finite decomposition)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.moduleFinite_head_over_even",
+      "via": "manual",
+      "file": "Adic spaces/WP/Heads.lean",
+      "line": 927,
+      "cited": "Lemma 7.2 (finite module)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.isTateRing_WPHead",
+      "via": "manual",
+      "file": "Adic spaces/WP/Heads.lean",
+      "line": 157,
+      "cited": "Lemma 7.2 (Tate structure)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.isStronglyNoetherian_WPHead",
+      "via": "manual",
+      "file": "Adic spaces/WP/Heads.lean",
+      "line": 1306,
+      "cited": "Lemma 7.2 (strong noetherianity)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.wpHeadSupport_mono",
+      "via": "manual",
+      "file": "Adic spaces/WP/Heads.lean",
+      "line": 76,
+      "cited": "Lemma 7.2 (nested finite-variable rings)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.norm_headIncl",
+      "via": "manual",
+      "file": "Adic spaces/WP/Heads.lean",
+      "line": 84,
+      "cited": "Lemma 7.2 (isometric inclusion)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.exists_head_approx",
+      "via": "manual",
+      "file": "Adic spaces/WP/Heads.lean",
+      "line": 1364,
+      "cited": "Lemma 7.2 (approximation and density)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    }
+  ],
+  "def-lean-rational-sheafiness": [
+    {
+      "decl": "ValuationSpectrum.RationalCoveringData",
+      "via": "manual",
+      "file": "Adic spaces/Presheaf.lean",
+      "line": 1895,
+      "cited": "Appendix A (finite rational-cover data)",
+      "kind": "structure",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
+      "decl": "ValuationSpectrum.RationalCoveringData.IsRational",
+      "via": "manual",
+      "file": "Adic spaces/Presheaf.lean",
+      "line": 1912,
+      "cited": "Appendix A (rationality condition)",
+      "kind": "def",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
+      "decl": "ValuationSpectrum.presheafValue",
+      "via": "manual",
+      "file": "Adic spaces/Presheaf.lean",
+      "line": 296,
+      "cited": "Appendix A (completed rational localisation)",
+      "kind": "def",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
+      "decl": "ValuationSpectrum.IsSheafy",
+      "via": "manual",
+      "file": "Adic spaces/StructureSheaf.lean",
+      "line": 371,
+      "cited": "Appendix A (rational-cover sheaf condition)",
+      "kind": "class",
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    }
+  ],
+  "def-lean-open-sections": [
+    {
+      "decl": "ValuationSpectrum.limitSections",
+      "via": "manual",
+      "file": "Adic spaces/StructurePresheafLimit.lean",
+      "line": 132,
+      "cited": "Appendix A (sections on an arbitrary open)",
+      "kind": "def",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
+      "decl": "ValuationSpectrum.limitRestrict",
+      "via": "manual",
+      "file": "Adic spaces/StructurePresheafLimit.lean",
+      "line": 218,
+      "cited": "Appendix A (restriction on arbitrary opens)",
+      "kind": "def",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
+      "decl": "ValuationSpectrum.HasLocLiftPowerBounded",
+      "via": "manual",
+      "file": "Adic spaces/Presheaf.lean",
+      "line": 1569,
+      "cited": "Appendix A (restriction-map hypothesis)",
+      "kind": "class",
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
+      "decl": "ValuationSpectrum.IsLimitSheaf",
+      "via": "manual",
+      "file": "Adic spaces/SheafyPair.lean",
+      "line": 525,
+      "cited": "Appendix A (all-open sheaf condition)",
+      "kind": "structure",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    }
+  ],
+  "rem-lean-sheaf-comparison": [
+    {
+      "decl": "ValuationSpectrum.isSheafy_iff_isLimitSheaf",
+      "via": "manual",
+      "file": "Adic spaces/SheafyPair.lean",
+      "line": 727,
+      "cited": "Appendix A (rational covers versus all opens)",
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
+      "decl": "TopCat.Presheaf.IsSheafOfTopologicalRings",
+      "via": "manual",
+      "file": "Adic spaces/HomSheafPredicate.lean",
+      "line": 64,
+      "cited": "Appendix A (Wedhorn's representable predicate)",
+      "kind": "def",
+      "commit": "d92f96504f949ca43a27a817cb8d2f70b6486744"
+    },
+    {
+      "decl": "ValuationSpectrum.structurePresheaf_isSheafOfTopologicalRings_iff",
+      "via": "manual",
+      "file": "Adic spaces/StructurePresheafBundled.lean",
+      "line": 629,
+      "cited": "Appendix A (all opens versus Wedhorn's predicate)",
+      "kind": "theorem",
+      "commit": "d92f96504f949ca43a27a817cb8d2f70b6486744"
+    },
+    {
+      "decl": "TopCat.Presheaf.isSheafOfTopologicalRings_iff_forgetToTopCommRingCat_isSheaf",
+      "via": "manual",
+      "file": "Adic spaces/HomSheafPredicate.lean",
+      "line": 100,
+      "cited": "Appendix A (Wedhorn versus Mathlib)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "d92f96504f949ca43a27a817cb8d2f70b6486744"
+    },
+    {
+      "decl": "ValuationSpectrum.structurePresheaf_forgetToTopCommRingCat_isSheaf_iff",
+      "via": "manual",
+      "file": "Adic spaces/StructurePresheafBundled.lean",
+      "line": 685,
+      "cited": "Appendix A (Mathlib versus all opens)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "d92f96504f949ca43a27a817cb8d2f70b6486744"
+    },
+    {
+      "decl": "ValuationSpectrum.isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf",
+      "via": "manual",
+      "file": "Adic spaces/StructurePresheafBundled.lean",
+      "line": 700,
+      "cited": "Appendix A (IsSheafy versus Mathlib IsSheaf)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "d92f96504f949ca43a27a817cb8d2f70b6486744"
+    }
+  ],
+  "def-lean-strong-noetherianity": [
+    {
+      "decl": "MvPowerSeries.IsRestricted",
+      "via": "manual",
+      "file": "Adic spaces/RestrictedPowerSeries.lean",
+      "line": 68,
+      "cited": "Appendix A (restricted power series)",
+      "kind": "def",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
+      "decl": "restrictedMvPowerSeriesSubring",
+      "via": "manual",
+      "file": "Adic spaces/RestrictedPowerSeries.lean",
+      "line": 78,
+      "cited": "Appendix A (restricted Tate algebra)",
+      "kind": "def",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
+      "decl": "IsStronglyNoetherian",
+      "via": "manual",
+      "file": "Adic spaces/RestrictedPowerSeries.lean",
+      "line": 243,
+      "cited": "Appendix A (strong noetherianity)",
+      "kind": "class",
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    }
+  ],
+  "def-lean-finite-jet-ring": [
+    {
+      "decl": "FiniteJetOver.L",
+      "via": "manual",
+      "file": "Adic spaces/FJP/Over/JetRings.lean",
+      "line": 60,
+      "cited": "Appendix A (the Laurent algebra)",
+      "kind": "abbrev",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
+      "decl": "FiniteJetOver.JetC",
+      "via": "manual",
+      "file": "Adic spaces/FJP/Over/JetRings.lean",
+      "line": 63,
+      "cited": "Appendix A (the vertex C)",
+      "kind": "abbrev",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
+      "decl": "FiniteJetOver.JetB",
+      "via": "manual",
+      "file": "Adic spaces/FJP/Over/JetRings.lean",
+      "line": 67,
+      "cited": "Appendix A (the vertex B)",
+      "kind": "abbrev",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
+      "decl": "FiniteJetOver.JetD",
+      "via": "manual",
+      "file": "Adic spaces/FJP/Over/JetRings.lean",
+      "line": 71,
+      "cited": "Appendix A (the vertex D)",
+      "kind": "abbrev",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
+      "decl": "FiniteJetOver.jetSupport",
+      "via": "manual",
+      "file": "Adic spaces/FJP/Over/JetRings.lean",
+      "line": 269,
+      "cited": "Appendix A (support subring)",
+      "kind": "def",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
+      "decl": "FiniteJetOver.JetA",
+      "via": "manual",
+      "file": "Adic spaces/FJP/Over/JetRings.lean",
+      "line": 294,
+      "cited": "Appendix A (the finite-jet ring A)",
+      "kind": "abbrev",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    }
+  ],
+  "prop-coefficientwise-localization": [
+    {
+      "decl": "WeightedParity.coeffLocEquiv",
+      "via": "manual",
+      "file": "Adic spaces/WP/CoeffLocalization.lean",
+      "line": 1982,
+      "cited": "Proposition 7.6 (ring equivalence)",
+      "kind": "def",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.coeffLocEquiv_continuous",
+      "via": "manual",
+      "file": "Adic spaces/WP/CoeffLocalization.lean",
+      "line": 1994,
+      "cited": "Proposition 7.6 (continuity)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.coeffLocEquiv_symm_continuous",
+      "via": "manual",
+      "file": "Adic spaces/WP/CoeffLocalization.lean",
+      "line": 2001,
+      "cited": "Proposition 7.6 (continuity of the inverse)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.coeffLoc_restriction_squareP",
+      "via": "manual",
+      "file": "Adic spaces/WP/Sheafy.lean",
+      "line": 1011,
+      "cited": "Proposition 7.6 (restriction acts coefficientwise)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    }
+  ],
+  "cor-finite-variable-presentation": [
+    {
+      "decl": "WeightedParity.HeadModelData",
+      "via": "manual",
+      "file": "Adic spaces/WP/CoeffLocalization.lean",
+      "line": 2037,
+      "cited": "Corollary 7.7 (finite-variable model and bicontinuous equivalence)",
+      "kind": "structure",
+      "include_body": true,
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.nonempty_headModelData",
+      "via": "manual",
+      "file": "Adic spaces/WP/CoeffLocalization.lean",
+      "line": 2295,
+      "cited": "Corollary 7.7 (existence of a finite-variable model)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    }
+  ],
+  "prop-weighted-chart-identification": [
+    {
+      "decl": "WeightedParity.chartDatum",
+      "via": "manual",
+      "file": "Adic spaces/WP/Chart.lean",
+      "line": 83,
+      "cited": "Proposition 7.8 (the datum (W; ϖ))",
+      "kind": "def",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.coeffLocEquiv",
+      "via": "manual",
+      "file": "Adic spaces/WP/CoeffLocalization.lean",
+      "line": 1982,
+      "cited": "Proposition 7.8 (the chart as a coefficient-family ring)",
+      "kind": "def",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.coeffLocEquiv_continuous",
+      "via": "manual",
+      "file": "Adic spaces/WP/CoeffLocalization.lean",
+      "line": 1994,
+      "cited": "Proposition 7.8 (continuity of the coefficient model)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.coeffLocEquiv_symm_continuous",
+      "via": "manual",
+      "file": "Adic spaces/WP/CoeffLocalization.lean",
+      "line": 2001,
+      "cited": "Proposition 7.8 (continuity of the inverse coefficient model)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.chartQHeadEquiv",
+      "via": "manual",
+      "file": "Adic spaces/WP/Chart.lean",
+      "line": 712,
+      "cited": "Proposition 7.8 (the finite-variable quotient is k⟨X⟩)",
+      "kind": "def",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.chartQHeadEquiv_norm",
+      "via": "manual",
+      "file": "Adic spaces/WP/Chart.lean",
+      "line": 815,
+      "cited": "Proposition 7.8 (the finite-variable identification is isometric)",
+      "kind": "theorem",
+      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.chartCoeff_WaHead",
+      "via": "manual",
+      "file": "Adic spaces/WP/Chart.lean",
+      "line": 304,
+      "cited": "Proposition 7.8 (W maps to ϖX)",
       "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     }

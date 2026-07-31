@@ -32,7 +32,7 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">theorem</div>
   <h1>FiniteJet.GraphKoszul.pow_smul_graphIdeal_inter_unitBall_subset</h1>
-  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>There is an integer <code>h_E ≥ 0</code> such that <code>ϖ^{h_E}(I_E ∩ T_{E,0}) ⊆ d_{1,E}(T_{E,0}^m)</code>.</p><p>Lean interprets the two lattices as the Gauss-norm and sup-norm unit balls. The result is proved for any finite sequence <code>r_i</code> by scaling a norm-controlled lift for <code>d_{1,E}</code>.</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>There is an integer <code>h_E ≥ 0</code> such that <code>ϖ^{h_E}(I_E ∩ T_{E,0}) ⊆ d_{1,E}(T_{E,0}^m)</code>.</p><p>Lean interprets the two lattices as the Gauss-norm and sup-norm unit balls. Choose <code>C</code> such that every <code>y∈I_E</code> has a preimage <code>x</code> with <code>‖x‖≤C‖y‖</code>, and then choose <code>h_E</code> with <code>|ϖ|^{h_E}C≤1</code>.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>Equation (9), lattice-inclusion form</strong> ([FJP] Lemma 5.1): literally<br><code>ϖ^h (J_E ∩ P_{E,0}) ⊆ d_{1,E}(P_{E,0}^m)</code>.  Here <code>P_{E,0} = {x | ‖x‖ ≤ 1}</code> is the unit<br>ball of <code>P_E</code> (via <code>mem_unitBall_iff</code>), <code>P_{E,0}^m = {u | ‖u‖ ≤ 1}</code> is the sup-norm unit<br>ball of <code>P_E^m</code>, <code>J_E = Ideal.span (Set.range r)</code>, and <code>ϖ = tP = polyToP (C t)</code>.</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Lemma 5.1 (unit-ball specialization: ideal denominators)</p>
@@ -51,10 +51,13 @@
   when this page was built, so no external upstream link is offered here.</p>
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
   The finite-jet development uses restricted power-series code adapted from
-  <a href="https://github.com/WilliamCoram/PhD">William Coram's PhD repository</a>;
-  the vendored source headers also credit Bingyu Xia for power-series equivalence
-  lemmas.  This is infrastructure provenance, not an attribution of this
-  paper-specific declaration.</aside>
+  <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,
+  whose univariate Gauss-norm layer builds on
+  <a href="https://github.com/leanprover-community/mathlib4/blob/fd1d54bcac5caba4eff2ea3421c47d907333f515/Mathlib/RingTheory/PowerSeries/GaussNorm.lean">Fabrizio Barroero's mathlib code</a>.
+  It separately uses
+  <a href="https://github.com/leanprover-community/mathlib4/pull/36507">Bingyu Xia's multivariable power-series equivalences</a>.
+  This is infrastructure provenance, not an attribution of this paper-specific
+  declaration.</aside>
 </main>
 </body>
 </html>

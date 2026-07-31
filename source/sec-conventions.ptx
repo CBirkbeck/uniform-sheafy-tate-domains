@@ -35,9 +35,11 @@ is <em>stably uniform</em> if every rational localisation is uniform.
         <em>Huber pairs and sheafiness.</em>
 A <em>ring of integral elements</em> is an open subring
 <m>E^+\subseteq E^\circ</m> which is integrally closed in <m>E</m>.  We call the Huber pair
-<m>(E,E^+)</m> <em>sheafy</em> when its structure presheaf is a sheaf of complete
-topological rings; in particular, the map to the matching-family equaliser for a
-finite rational cover is a homeomorphism.
+<m>(E,E^+)</m> <em>sheafy</em> when its structure presheaf, valued in complete
+topological rings, satisfies the sheaf condition.  Thus, for a finite rational cover
+<m>U=\bigcup_iU_i</m>, restriction identifies <m>\mathcal O(U)</m> homeomorphically
+with the subspace of <m>\prod_i\mathcal O(U_i)</m> consisting of tuples whose
+restrictions to every <m>U_i\cap U_j</m> agree.
       </p>
     </li>
     <li>

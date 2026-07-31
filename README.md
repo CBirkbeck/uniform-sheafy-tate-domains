@@ -15,7 +15,8 @@ all-open equivalent, the completion- and plus-ring-independent variants,
 strong noetherianity, and the two example constructions.  For both examples
 it records the completed formalisation of uniformity, sheafiness, the
 distinguished rational chart, and failure of stable uniformity.  It also
-credits the Coram/Xia restricted-series infrastructure.
+credits William Coram's restricted-series code, Fabrizio Barroero's
+univariate Gauss-norm code, and Bingyu Xia's power-series equivalences.
 
 ## Outputs
 
@@ -55,9 +56,12 @@ scripts/sync-pages.sh
 
 The external Paperforge checkout used for this pass is at commit
 `726cc7d679441e28f39cfd52d3e2dd0251c79a6d`.  Its LaTeX ingester did not
-preserve `\href` or `\url`, so the small tested compatibility patch is kept at
-`patches/paperforge-href-support.patch`.  All 15 upstream tests pass with the
-patch applied.
+preserve `\href` or `\url` and read only the first `\author` command.  Its
+Lean-link checker also compared every badge with the current formalisation
+branch, even when the declaration map pinned another commit.  The tested
+compatibility changes are kept at `patches/paperforge-compatibility.patch`.
+They preserve links and all draft authors, and validate Lean declarations at
+their exact commits.  The focused suite passes with 17 tests and one skip.
 
 See `PAPERFORGE_CHECK.md` for the reference audit and `STYLE_REVIEW.md` for the
 first author-voice pass.

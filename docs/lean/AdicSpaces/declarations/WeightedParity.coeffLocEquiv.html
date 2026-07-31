@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WeightedParity.coeffLocEquiv · Lean source</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font: 16px/1.55 system-ui, sans-serif; }
+    main { max-width: 72rem; margin: 0 auto; padding: 2rem 1.2rem 4rem; }
+    nav { margin-bottom: 1.5rem; }
+    a { color: #176b43; }
+    @media (prefers-color-scheme: dark) { a { color: #84d8aa; } }
+    h1 { overflow-wrap: anywhere; font: 650 1.45rem/1.25 ui-monospace, monospace; }
+    .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
+             letter-spacing: .06em; }
+    .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
+    pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
+           background: color-mix(in srgb, CanvasText 7%, Canvas); }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .meta, .used-for { color: color-mix(in srgb, CanvasText 70%, Canvas);
+                        font-size: .9rem; }
+    .provenance { margin-top: 2rem; padding-top: 1rem;
+                   border-top: 1px solid color-mix(in srgb, CanvasText 18%, Canvas);
+                   font-size: .9rem; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../../../paper.html">← Return to the paper</a></nav>
+  <div class="kind">def</div>
+  <h1>WeightedParity.coeffLocEquiv</h1>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>Suppose a rational datum for <code>𝒜</code> has all its entries in the finite-variable subring <code>𝒜⁽ᴺ⁾</code>, and let <code>P</code> be the corresponding rational localisation of <code>𝒜⁽ᴺ⁾</code>. Then the rational localisation of <code>𝒜</code> is ring-equivalent to the families <code>∑_μ p_μe_μ</code>, with <code>p_μ∈P</code> and <code>‖p_μ‖→0</code>, using the multiplication rule displayed in Proposition 7.6. Lean constructs the forward map by the universal property of rational localisation and the inverse by summing the localised coefficients.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>Coefficientwise localization</strong> ([WP] prop:coefficientwise-localization:<br>&quot;There is a canonical topological algebra isomorphism <code>𝒜_α ≅ ⊕̂^{c₀}_μ P e_μ</code>&quot;).<br>The proof route: the graph ideal over <code>𝒜</code> is closed and computed coefficientwise via<br>the norm-bounded head lifts (<code>exists_d1_lift_pow</code>); the quotient is <code>TailC0</code>;<br>forward/backward maps by <code>IsLocalization.Away.lift</code> + <code>restrictedEval</code>.</p></div></details>
+  <p class="used-for"><strong>Used in the paper for:</strong> Proposition 7.6 (ring equivalence); Proposition 7.8 (the chart as a coefficient-family ring)</p>
+  <pre><code>noncomputable def coeffLocEquiv (ϖ : Uniformizer K)
+    (hK₀ : IsNoetherianRing (FiniteJet.unitBall K))
+    (DH : RationalLocData (WPHead K w N)) (hDH : DH.IsRational) :
+    presheafValue (liftDatum DH hDH) ≃+* TailC0 w N (QHead DH) (rhoQ DH)</code></pre>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/WP/CoeffLocalization.lean:1982–1985</code><br>
+  AINTLIB commit <code>090a289211deb69117413e329325fe819aa7dbc2</code>.</p>
+  <p class="meta">This is the archival declaration extracted from the pinned
+  source tree.  The corresponding AINTLIB commit was not publicly reachable
+  when this page was built, so no external upstream link is offered here.</p>
+  <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
+  The weighted-parity development uses restricted power-series code adapted from
+  <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,
+  whose univariate Gauss-norm layer builds on
+  <a href="https://github.com/leanprover-community/mathlib4/blob/fd1d54bcac5caba4eff2ea3421c47d907333f515/Mathlib/RingTheory/PowerSeries/GaussNorm.lean">Fabrizio Barroero's mathlib code</a>.
+  It separately uses
+  <a href="https://github.com/leanprover-community/mathlib4/pull/36507">Bingyu Xia's multivariable power-series equivalences</a>.
+  This is infrastructure provenance, not an attribution of this paper-specific
+  declaration.</aside>
+</main>
+</body>
+</html>

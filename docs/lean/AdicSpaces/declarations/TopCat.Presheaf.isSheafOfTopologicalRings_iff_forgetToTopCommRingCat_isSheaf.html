@@ -35,7 +35,7 @@
   <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For any presheaf <code>F</code> of complete separated topological commutative rings, Wedhorn’s condition that <code>U ↦ Hom_cont(T,F(U))</code> be a sheaf for every topological ring <code>T</code> is equivalent to Mathlib’s categorical <code>IsSheaf</code> predicate after viewing the values of <code>F</code> in <code>TopCommRingCat</code>. The functor forgets completeness and separatedness, not topology.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>Wedhorn Remark 8.20 is exactly mathlib&#x27;s sheaf condition over<br><code>TopCommRingCat</code></strong>: the Hom-sheaf condition holds iff the composition with the<br>forgetful functor to plain topological commutative rings satisfies mathlib&#x27;s<br>categorical <code>IsSheaf</code>. Mathlib&#x27;s condition tests <code>Hom(E, −)</code>-gluing along the<br>objects <code>E</code> of the value category ([Stacks 00VR]); the objects of <code>TopCommRingCat</code><br>are <strong>exactly</strong> Wedhorn&#x27;s arbitrary topological commutative test rings, so — unlike<br>the <code>CompleteTopCommRingCat</code>-valued condition (<code>IsSheafOfTopologicalRings.isSheaf</code>,<br>one-way, test class restricted to complete separated rings) — the two conditions<br>coincide.</p></div></details>
-  <p class="used-for"><strong>Used in the paper for:</strong> Appendix: equivalence of Wedhorn&#x27;s condition with Mathlib&#x27;s TopCommRingCat sheaf predicate</p>
+  <p class="used-for"><strong>Used in the paper for:</strong> Appendix A (Wedhorn versus Mathlib); Appendix: equivalence of Wedhorn&#x27;s condition with Mathlib&#x27;s TopCommRingCat sheaf predicate</p>
   <pre><code>theorem isSheafOfTopologicalRings_iff_forgetToTopCommRingCat_isSheaf :
     F.IsSheafOfTopologicalRings ↔
       TopCat.Presheaf.IsSheaf
@@ -47,10 +47,13 @@
   when this page was built, so no external upstream link is offered here.</p>
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
   The finite-jet development uses restricted power-series code adapted from
-  <a href="https://github.com/WilliamCoram/PhD">William Coram's PhD repository</a>;
-  the vendored source headers also credit Bingyu Xia for power-series equivalence
-  lemmas.  This is infrastructure provenance, not an attribution of this
-  paper-specific declaration.</aside>
+  <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,
+  whose univariate Gauss-norm layer builds on
+  <a href="https://github.com/leanprover-community/mathlib4/blob/fd1d54bcac5caba4eff2ea3421c47d907333f515/Mathlib/RingTheory/PowerSeries/GaussNorm.lean">Fabrizio Barroero's mathlib code</a>.
+  It separately uses
+  <a href="https://github.com/leanprover-community/mathlib4/pull/36507">Bingyu Xia's multivariable power-series equivalences</a>.
+  This is infrastructure provenance, not an attribution of this paper-specific
+  declaration.</aside>
 </main>
 </body>
 </html>

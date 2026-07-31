@@ -88,6 +88,23 @@
       "cited": "Appendix: equivalence with Wedhorn's formulation"
     },
     {
+      "decl": "TopCat.Presheaf.IsSheafOfTopologicalRings",
+      "file": "Adic spaces/HomSheafPredicate.lean",
+      "line": 64,
+      "kind": "def",
+      "include_body": true,
+      "cited": "Appendix: generic bundled form of Wedhorn's sheaf condition",
+      "commit": "d92f96504f949ca43a27a817cb8d2f70b6486744"
+    },
+    {
+      "decl": "ValuationSpectrum.structurePresheaf_isSheafOfTopologicalRings_iff",
+      "file": "Adic spaces/StructurePresheafBundled.lean",
+      "line": 629,
+      "kind": "theorem",
+      "cited": "Appendix: equivalence of IsSheafy with the bundled Hom-sheaf formulation",
+      "commit": "d92f96504f949ca43a27a817cb8d2f70b6486744"
+    },
+    {
       "decl": "TopCat.Presheaf.isSheafOfTopologicalRings_iff_forgetToTopCommRingCat_isSheaf",
       "file": "Adic spaces/HomSheafPredicate.lean",
       "line": 100,

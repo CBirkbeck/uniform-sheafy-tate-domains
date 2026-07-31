@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TopCat.Presheaf.IsSheafOfTopologicalRings · Lean source</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font: 16px/1.55 system-ui, sans-serif; }
+    main { max-width: 72rem; margin: 0 auto; padding: 2rem 1.2rem 4rem; }
+    nav { margin-bottom: 1.5rem; }
+    a { color: #176b43; }
+    @media (prefers-color-scheme: dark) { a { color: #84d8aa; } }
+    h1 { overflow-wrap: anywhere; font: 650 1.45rem/1.25 ui-monospace, monospace; }
+    .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
+             letter-spacing: .06em; }
+    .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
+    pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
+           background: color-mix(in srgb, CanvasText 7%, Canvas); }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .meta, .used-for { color: color-mix(in srgb, CanvasText 70%, Canvas);
+                        font-size: .9rem; }
+    .provenance { margin-top: 2rem; padding-top: 1rem;
+                   border-top: 1px solid color-mix(in srgb, CanvasText 18%, Canvas);
+                   font-size: .9rem; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../../../paper.html">← Return to the paper</a></nav>
+  <div class="kind">def</div>
+  <h1>TopCat.Presheaf.IsSheafOfTopologicalRings</h1>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For a bundled presheaf <code>F</code> of complete separated topological commutative rings, <code>F.IsSheafOfTopologicalRings</code> requires that, for every topological commutative ring <code>T</code>, compatible families of continuous homomorphisms <code>T → F(Uᵢ)</code> glue uniquely over every open cover. This is the generic bundled form of Wedhorn’s representable sheaf condition.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>Wedhorn Remark 8.20 for an arbitrary bundled presheaf</strong>: for every<br>topological commutative test ring <code>T</code> (in the working universe — no completeness,<br>separation, or discreteness assumed) and every open cover, compatible families of<br>continuous ring homomorphisms into the members glue uniquely.</p></div></details>
+  <p class="used-for"><strong>Used in the paper for:</strong> Appendix A (Wedhorn&#x27;s representable predicate); Appendix: generic bundled form of Wedhorn&#x27;s sheaf condition</p>
+  <pre><code>def IsSheafOfTopologicalRings : Prop :=
+  ∀ (T : Type u) (_ : CommRing T) (_ : TopologicalSpace T) (_ : IsTopologicalRing T),
+    ∀ {ι : Type u} (U : ι → Opens X)
+      (f : ∀ i, {g : T →+* (F.obj (op (U i)) : Type u) // Continuous g}),
+      (∀ i j : ι,
+        (F.map (homOfLE (inf_le_left (a := U i) (b := U j))).op).1.comp (f i).1 =
+        (F.map (homOfLE (inf_le_right (a := U i) (b := U j))).op).1.comp (f j).1) →
+      ∃! g : {g : T →+* (F.obj (op (iSup U)) : Type u) // Continuous g},
+        ∀ i, (F.map (homOfLE (le_iSup U i)).op).1.comp g.1 = (f i).1</code></pre>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/HomSheafPredicate.lean:64–72</code><br>
+  AINTLIB commit <code>d92f96504f949ca43a27a817cb8d2f70b6486744</code>.</p>
+  <p class="meta">This is the archival declaration extracted from the pinned
+  source tree.  The corresponding AINTLIB commit was not publicly reachable
+  when this page was built, so no external upstream link is offered here.</p>
+  <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
+  The finite-jet development uses restricted power-series code adapted from
+  <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,
+  whose univariate Gauss-norm layer builds on
+  <a href="https://github.com/leanprover-community/mathlib4/blob/fd1d54bcac5caba4eff2ea3421c47d907333f515/Mathlib/RingTheory/PowerSeries/GaussNorm.lean">Fabrizio Barroero's mathlib code</a>.
+  It separately uses
+  <a href="https://github.com/leanprover-community/mathlib4/pull/36507">Bingyu Xia's multivariable power-series equivalences</a>.
+  This is infrastructure provenance, not an attribution of this paper-specific
+  declaration.</aside>
+</main>
+</body>
+</html>

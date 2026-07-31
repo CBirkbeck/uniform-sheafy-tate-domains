@@ -39,15 +39,15 @@ stable uniformity need not be caused by a nilpotent in the bad rational
 localisation.
         </p>
       </statement>
-      <lean project="AdicSpaces" ref="WeightedParity.isTateRing_WPA">Lean (Tate structure)</lean>
-      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_isUniform_of_dvr">Lean (uniformity)</lean>
-      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_isDomain">Lean (domain)</lean>
-      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_powerBounded_eq_unitBall">Lean (power-bounded elements)</lean>
-      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_not_noetherian">Lean (nonnoetherianity)</lean>
-      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_isSheafyComplete_of_dvr">Lean (sheafiness)</lean>
-      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_chart_isDomain">Lean (chart is a domain)</lean>
-      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_chart_not_isUniform">Lean (chart is nonuniform)</lean>
-      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_not_stablyUniform_of_dvr">Lean (weightedParity_not_stablyUniform_of_dvr)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.isTateRing_WPA">Lean (Tate structure)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isUniform_of_dvr">Lean (uniformity)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isDomain">Lean (domain)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_powerBounded_eq_unitBall">Lean (power-bounded elements)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_not_noetherian">Lean (nonnoetherianity)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isSheafyComplete_of_dvr">Lean (sheafiness)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_chart_isDomain">Lean (chart is a domain)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_chart_not_isUniform">Lean (chart is nonuniform)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_not_stablyUniform_of_dvr">Lean (weightedParity_not_stablyUniform_of_dvr)</lean>
     </theorem>
   </introduction>
   <subsection xml:id="sec-second-example-the-weighted-parity-algebra">
@@ -106,7 +106,8 @@ closed subring supported on monomials involving only
 norm-preserving ring isomorphism
 <me>k\langle W,Z_1,\ldots,Z_N\rangle
   \xrightarrow{\ \sim\ }\mathcal T^{(N)}.</me>
-For <m>N=0</m> this is the identity on <m>k\langle W\rangle</m>.
+For <m>N=0</m> this is the evident identification of both sides with
+<m>k\langle W\rangle</m>.
 Every <m>f\in\mathcal A^{(N)}</m> can be written
           <men xml:id="eq-finite-variable-decomposition">f=\sum_{\epsilon\in\{0,1\}^N} f_\epsilon Y^\epsilon,
   \qquad f_\epsilon\in\mathcal T^{(N)},
@@ -121,6 +122,15 @@ In particular,
           <men xml:id="eq-A-completion-finite-variables">\mathcal A=\widehat{\bigcup_{N\geq0}\mathcal A^{(N)}}.</men>
         </p>
       </statement>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.evenSupportEquiv">Lean (even Tate algebra)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.norm_evenSupportEquiv">Lean (norm preservation)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.sum_slice_mul_Ypat">Lean (finite decomposition)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.moduleFinite_head_over_even">Lean (finite module)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.isTateRing_WPHead">Lean (Tate structure)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.isStronglyNoetherian_WPHead">Lean (strong noetherianity)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.wpHeadSupport_mono">Lean (nested finite-variable rings)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.norm_headIncl">Lean (isometric inclusion)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.exists_head_approx">Lean (approximation and density)</lean>
       <proof>
         <p>
           On even exponents, halving the <m>U_n</m>-coordinates identifies the support
@@ -154,10 +164,10 @@ sum of monomials and choose <m>N</m> so that only
 <me>\mathcal A^\circ=\mathcal A_0.</me>
         </p>
       </statement>
-      <lean project="AdicSpaces" ref="WeightedParity.isTateRing_WPA">Lean (Tate structure)</lean>
-      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_isUniform_of_dvr">Lean (uniformity)</lean>
-      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_isDomain">Lean (domain)</lean>
-      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_powerBounded_eq_unitBall">Lean (power-bounded elements)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.isTateRing_WPA">Lean (Tate structure)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isUniform_of_dvr">Lean (uniformity)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isDomain">Lean (domain)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_powerBounded_eq_unitBall">Lean (power-bounded elements)</lean>
       <proof>
         <p>
           The Gauss norm on the countable restricted Tate algebra
@@ -169,8 +179,8 @@ exponents, the product of the chosen coefficients strictly dominates every
 other convolution term.  The ultrametric inequality therefore gives
 <me>\lVert fg\rVert_G=\lVert f\rVert_G\lVert g\rVert_G.</me>
 This is the countable restricted-series argument used in the formalisation,
-whose underlying Lean implementation is adapted from work of William Coram
-<xref ref="bib-CoramXia"/>.  The support algebra <m>\mathcal A</m> is a closed isometric
+whose Lean implementation uses William Coram's restricted-power-series code
+<xref ref="bib-CoramCode"/>.  The support algebra <m>\mathcal A</m> is a closed isometric
 subring of this Tate algebra, so its Gauss norm is multiplicative and it is a
 domain.
         </p>
@@ -189,7 +199,7 @@ domain.
           The ring <m>\mathcal A</m> is not noetherian.
         </p>
       </statement>
-      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_not_noetherian">Lean</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_not_noetherian">Lean</lean>
       <proof>
         <p>
           For <m>m\geq1</m>, let
@@ -205,98 +215,6 @@ and sends every other <m>Z_j</m> to zero.  It kills <m>I_m</m> but not <m>Z_{m+1
 Therefore
 <me>I_1\subsetneq I_2\subsetneq I_3\subsetneq\cdots,</me>
 so <m>\mathcal A</m> is not noetherian.
-        </p>
-      </proof>
-    </proposition>
-  </subsection>
-  <subsection xml:id="sec-second-example-a-reduced-nonuniform-rational-chart">
-    <title>A reduced nonuniform rational chart</title>
-    <p>
-      The ideal <m>(W,\varpi)</m> is open because <m>\varpi</m> is a unit of <m>\mathcal A</m>.
-Define the complete <m>k^\circ</m>-algebra
-      <men xml:id="eq-weighted-chart-lattice">\mathcal B_0=
-  \left\{
-    \sum_{\substack{\nu\in\mathbb N^{(I)},\ d\geq\omega(\nu)}}
-      b_{d,\nu}X^dU^\nu:
-    b_{d,\nu}\in\varpi^{\omega(\nu)}k^\circ,
-    \quad
-    \varpi^{-\omega(\nu)}b_{d,\nu}\longrightarrow0
-  \right\},</men>
-      with norm
-      <men xml:id="eq-weighted-chart-norm">\left\lVert\sum b_{d,\nu}X^dU^\nu\right\rVert_{\mathrm{in}}
-  =\sup_{d,\nu}|\varpi|^{-\omega(\nu)}|b_{d,\nu}|.</men>
-      The subadditivity <xref ref="eq-omega-subadditive"/> shows that <m>\mathcal B_0</m> is a ring.  Put
-<m>\mathcal B=\mathcal B_0[1/\varpi]</m>.
-    </p>
-    <proposition xml:id="prop-weighted-chart-identification">
-      <statement>
-        <p>
-          There is a bicontinuous ring isomorphism
-          <men xml:id="eq-weighted-chart-identification">\mathcal A\left\langle\frac{W}{\varpi}\right\rangle
-  \xrightarrow{\ \sim\ }\mathcal B,
-  \qquad W\longmapsto\varpi X.</men>
-        </p>
-      </statement>
-      <proof>
-        <p>
-          The datum <m>(W;\varpi)</m> lies in
-<m>\mathcal A^{(0)}=k\langle W\rangle</m>.  Let
-<me>Q=
-  \mathcal A^{(0)}\langle T\rangle/
-  \overline{(\varpi T-W)}</me>
-be its separated completed quotient.  Evaluation at <m>W=\varpi X</m> and <m>T=X</m>
-gives a continuous map <m>Q\to k\langle X\rangle</m>.  Conversely, evaluation of
-<m>k\langle X\rangle</m> at the image of <m>T</m> gives a continuous map in the other
-direction.  The two maps are inverse by polynomial density, and the norm
-estimates in the two universal properties show that the isomorphism is
-isometric.
-        </p>
-        <p>
-          Apply the coefficientwise-localisation construction of
-<xref ref="prop-coefficientwise-localization"/> with <m>N=0</m>.  It identifies the
-rational chart with the <m>c_0</m>-sum over <m>Q</m> obtained by grouping terms
-according to their <m>U</m>-multi-index.  After replacing <m>Q</m> by
-<m>k\langle X\rangle</m>, this is the model
-<xref ref="eq-weighted-chart-lattice"/>.  Its sup norm is
-<xref ref="eq-weighted-chart-norm"/>: the term indexed by <m>\nu</m> is multiplied by
-<m>\varpi^{\omega(\nu)}</m>.  Evaluation on
-<m>\mathcal A^{(0)}</m> sends <m>W</m> to <m>\varpi X</m>.
-        </p>
-      </proof>
-    </proposition>
-    <proposition xml:id="prop-weighted-chart-domain-nonuniform">
-      <statement>
-        <p>
-          The ring <m>\mathcal B</m> is an integral domain but is not uniform.
-        </p>
-      </statement>
-      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_chart_isDomain">Lean (chart is a domain)</lean>
-      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_chart_not_isUniform">Lean (chart is nonuniform)</lean>
-      <proof>
-        <p>
-          Group a series in <m>\mathcal B</m> by its <m>U</m>-multi-index.  This gives a
-coefficientwise homomorphism
-<me>\mathcal B\longrightarrow
-  k\langle X\rangle[[U_1,U_2,\ldots]].</me>
-It is injective, and the target is a domain because
-<m>k\langle X\rangle</m> is a domain.  Hence <m>\mathcal B</m> is a domain.  In the
-coefficientwise description below, this is the embedding of the
-corresponding ring of coefficient families that tend to zero into formal
-multivariable power series; the factor <m>\varpi X</m> appearing in the
-multiplication is a non-zero-divisor.
-        </p>
-        <p>
-          Inside <m>\mathcal A</m> write <m>Y_n=W^nU_n</m> and put
-<me>T_n=\varpi^{-n}Y_n=X^nU_n\in\mathcal B.</me>
-Formula <xref ref="eq-weighted-chart-norm"/> gives
-<me>\lVert T_n\rVert_{\mathrm{in}}=|\varpi|^{-n},
-  \qquad
-  \lVert T_n^2\rVert_{\mathrm{in}}=1.</me>
-It follows by separating even and odd powers that the powers of each fixed
-<m>T_n</m> are bounded.  Thus every <m>T_n</m> is power-bounded.  The family
-<m>(T_n)_{n\geq1}</m> is not bounded, since its norms
-<m>|\varpi|^{-n}</m> are unbounded.  Hence
-<m>\mathcal B^\circ</m> is unbounded and <m>\mathcal B</m> is not uniform.
         </p>
       </proof>
     </proposition>
@@ -317,12 +235,12 @@ the tuple <m>\alpha'=(f_1',\ldots,f_m';g')</m> is a rational datum and
 bicontinuously isomorphic over <m>E</m>.
         </p>
       </statement>
-      <lean project="AdicSpaces" ref="WeightedParity.PerturbSetup.datum_isRational">Lean (datum_isRational)</lean>
-      <lean project="AdicSpaces" ref="WeightedParity.PerturbSetup.rationalOpen_datum">Lean (rationalOpen_datum)</lean>
-      <lean project="AdicSpaces" ref="WeightedParity.PerturbSetup.equiv">Lean (equiv)</lean>
-      <lean project="AdicSpaces" ref="WeightedParity.PerturbSetup.equiv_continuous">Lean (equiv_continuous)</lean>
-      <lean project="AdicSpaces" ref="WeightedParity.PerturbSetup.equiv_symm_continuous">Lean (equiv_symm_continuous)</lean>
-      <lean project="AdicSpaces" ref="WeightedParity.PerturbSetup.equiv_canonicalMap">Lean (equiv_canonicalMap)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.PerturbSetup.datum_isRational">Lean (datum_isRational)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.PerturbSetup.rationalOpen_datum">Lean (rationalOpen_datum)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.PerturbSetup.equiv">Lean (equiv)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.PerturbSetup.equiv_continuous">Lean (equiv_continuous)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.PerturbSetup.equiv_symm_continuous">Lean (equiv_symm_continuous)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.PerturbSetup.equiv_canonicalMap">Lean (equiv_canonicalMap)</lean>
       <proof>
         <p>
           Apply <xref ref="bib-Huber93" detail="Lemma 3.10"/> after including <m>g</m> among the
@@ -375,54 +293,58 @@ Multiplication is determined by
           The ring on the right has the supremum norm, and its multiplication is
 given by <xref ref="eq-coefficient-multiplication"/>, with <m>W</m> replaced by its
 image in <m>P</m>.  If a rational refinement is also represented by data in
-<m>\mathcal A^{(N)}</m> and <m>P\to Q</m> is the corresponding restriction map,
+<m>\mathcal A^{(N)}</m> and <m>P\to P'</m> is the corresponding restriction map,
 then the induced restriction sends
           <men xml:id="eq-coefficientwise-restriction">\sum_\mu p_\mu e_\mu
   \longmapsto
-  \sum_\mu (p_\mu|_Q)e_\mu.</men>
+  \sum_\mu (p_\mu|_{P'})e_\mu.</men>
         </p>
       </statement>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.coeffLocEquiv">Lean (coefficientwise equivalence)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.coeffLocEquiv_continuous">Lean (continuity)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.coeffLocEquiv_symm_continuous">Lean (continuous inverse)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.coeffLoc_restriction_squareP">Lean (restriction is coefficientwise)</lean>
       <proof>
         <p>
-          Let
-<me>R=\mathcal A^{(N)}\langle T_1,\ldots,T_m\rangle,
-  \qquad
-  J=\overline{(gT_i-f_i)_i}\subset R,
-  \qquad \widetilde P=R/J.</me>
-Evaluation at <m>T_i=f_i/g</m> identifies <m>\widetilde P</m> with <m>P</m>.
-        </p>
-        <p>
-          The expression <xref ref="eq-coefficient-decomposition"/> continues to hold after
-adjoining the variables <m>T_i</m>.  Applying the quotient map
-<m>R\to\widetilde P</m> to
-each coefficient gives a continuous homomorphism
+          Apply the canonical map <m>\mathcal A^{(N)}\to P</m> to every coefficient in
+<xref ref="eq-coefficient-decomposition"/>.  This gives a continuous homomorphism
+<me>\Phi_0:\mathcal A\longrightarrow
+  \left\{
+    \sum_\mu p_\mu e_\mu:
+    p_\mu\in P,\quad \lVert p_\mu\rVert\longrightarrow0
+  \right\}.</me>
+In the target, the image of <m>g</m> is a unit and each <m>f_i/g</m> is
+of norm at most <m>1</m>, by the defining property of <m>P</m>.  Thus <m>\Phi_0</m>
+extends continuously to <m>\mathcal A[1/g]</m> for the rational-localisation
+topology, and then to the completion:
 <me>\Phi:\mathcal A_\alpha\longrightarrow
   \left\{
-    \sum_\mu q_\mu e_\mu:
-    q_\mu\in\widetilde P,\quad \lVert q_\mu\rVert\longrightarrow0
+    \sum_\mu p_\mu e_\mu:
+    p_\mu\in P,\quad \lVert p_\mu\rVert\longrightarrow0
   \right\}.</me>
-Conversely, the canonical map from <m>\widetilde P</m> to
-<m>\mathcal A_\alpha</m> may be applied
-to every coefficient.  If
-<m>\lVert q_\mu\rVert\to0</m>, the resulting series
-<me>\sum_\mu q_\mu e_\mu</me>
-converges in <m>\mathcal A_\alpha</m>, and defines a continuous homomorphism
-<m>\Psi</m> in the other direction.  The multiplication rule
-<xref ref="eq-coefficient-multiplication"/> shows that both maps are ring
-homomorphisms.
         </p>
         <p>
-          The two composites are the identity on sums with finitely many nonzero
-coefficients, each represented by a polynomial.  Such sums are dense on
-both sides, so continuity gives
-<m>\Psi\Phi=1</m> and <m>\Phi\Psi=1</m>.  Composing with
-<m>\widetilde P\cong P</m> proves
+          In the other direction, the inclusion
+<m>\mathcal A^{(N)}\to\mathcal A</m> gives a continuous homomorphism
+<m>P\to\mathcal A_\alpha</m>.  The family <m>(e_\mu)_\mu</m> is bounded in
+<m>\mathcal A_\alpha</m>.  Apply the homomorphism to every coefficient.  If
+<m>\lVert p_\mu\rVert\to0</m>, the series
+<me>\sum_\mu p_\mu e_\mu</me>
+converges in <m>\mathcal A_\alpha</m>.  The resulting map <m>\Psi</m> is continuous,
+and <xref ref="eq-coefficient-multiplication"/> shows that it is multiplicative.
+        </p>
+        <p>
+          The composite <m>\Phi\Psi</m> fixes every term <m>p e_\mu</m>, and hence every
+finite sum of such terms.  These finite sums are dense.  The other composite
+fixes the dense image of <m>\mathcal A[1/g]</m>.  Continuity therefore gives
+<m>\Phi\Psi=1</m> and <m>\Psi\Phi=1</m>, proving
 <xref ref="eq-coefficientwise-localization"/>.
         </p>
         <p>
-          For a rational refinement represented in <m>\mathcal A^{(N)}</m>, the two
-evaluation maps commute with the restriction map <m>P\to Q</m>.  The preceding
-construction therefore gives <xref ref="eq-coefficientwise-restriction"/>.
+          If <m>P\to P'</m> comes from a rational refinement, all the maps just used
+commute with this restriction map.  On a finite sum, restriction simply
+applies <m>P\to P'</m> to each coefficient; continuity gives
+<xref ref="eq-coefficientwise-restriction"/> for every convergent sum.
         </p>
       </proof>
     </proposition>
@@ -440,12 +362,16 @@ to a ring of the form
 rings <m>\mathcal A^{(N)}</m>.
         </p>
       </statement>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.HeadModelData">Lean (finite-variable model)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.nonempty_headModelData">Lean (existence of the model)</lean>
       <proof>
         <p>
           Start with a rational datum
-<m>\alpha=(f_1,\ldots,f_m;g)</m> in <m>\mathcal A</m>.  Multiplying all entries by
-one power of <m>\varpi</m> does not change the rational subset or localisation,
-so assume that <m>g,f_1,\ldots,f_m</m> lie in <m>\mathcal A_0</m>.  Choose a
+<m>\alpha=(f_1,\ldots,f_m;g)</m> in <m>\mathcal A</m>.  Choose a scalar
+<m>t\in k^\times</m> with <m>0&lt;|t|&lt;1</m> and small enough that
+<m>tg,tf_1,\ldots,tf_m</m> lie in <m>\mathcal A_0</m>.  Multiplying the datum by
+<m>t</m> does not change the rational subset or its localisation, so we may
+assume that <m>g,f_1,\ldots,f_m</m> lie in <m>\mathcal A_0</m>.  Choose a
 neighbourhood <m>V</m> as in <xref ref="lem-small-perturbation"/>.  By
 <xref ref="eq-A-completion-finite-variables"/>, for some <m>N</m> there are
 <m>g',f_1',\ldots,f_m'\in\mathcal A^{(N)}\cap\mathcal A_0</m> such that
@@ -460,6 +386,107 @@ rational datum in <m>\mathcal A^{(N)}</m>.  Now apply
       </proof>
     </corollary>
   </subsection>
+  <subsection xml:id="sec-second-example-a-reduced-nonuniform-rational-chart">
+    <title>A reduced nonuniform rational chart</title>
+    <p>
+      The ideal <m>(W,\varpi)</m> is open because <m>\varpi</m> is a unit of <m>\mathcal A</m>.
+Define the complete <m>k^\circ</m>-algebra
+      <men xml:id="eq-weighted-chart-lattice">\mathcal B_0=
+  \left\{
+    \sum_{\substack{\nu\in\mathbb N^{(I)},\ d\geq\omega(\nu)}}
+      b_{d,\nu}X^dU^\nu:
+    b_{d,\nu}\in\varpi^{\omega(\nu)}k^\circ,
+    \quad
+    \varpi^{-\omega(\nu)}b_{d,\nu}\longrightarrow0
+  \right\},</men>
+      with norm
+      <men xml:id="eq-weighted-chart-norm">\left\lVert\sum b_{d,\nu}X^dU^\nu\right\rVert_{\mathrm{in}}
+  =\sup_{d,\nu}|\varpi|^{-\omega(\nu)}|b_{d,\nu}|.</men>
+      The subadditivity <xref ref="eq-omega-subadditive"/> shows that <m>\mathcal B_0</m> is a ring.  Put
+<m>\mathcal B=\mathcal B_0[1/\varpi]</m>.
+    </p>
+    <proposition xml:id="prop-weighted-chart-identification">
+      <statement>
+        <p>
+          There is a bicontinuous ring isomorphism
+          <men xml:id="eq-weighted-chart-identification">\mathcal A\left\langle\frac{W}{\varpi}\right\rangle
+  \xrightarrow{\ \sim\ }\mathcal B,
+  \qquad W\longmapsto\varpi X.</men>
+        </p>
+      </statement>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.chartDatum">Lean (chartDatum)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.coeffLocEquiv">Lean (coefficientwise equivalence)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.coeffLocEquiv_continuous">Lean (continuity)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.coeffLocEquiv_symm_continuous">Lean (continuous inverse)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.chartQHeadEquiv">Lean (finite-variable chart ≃ k⟨X⟩)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.chartQHeadEquiv_norm">Lean (isometric identification)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.chartCoeff_WaHead">Lean (W ↦ ϖX)</lean>
+      <proof>
+        <p>
+          The datum <m>(W;\varpi)</m> lies in
+<m>\mathcal A^{(0)}=k\langle W\rangle</m>.  Let
+<me>P=
+  \mathcal A^{(0)}\langle T\rangle/
+  \overline{(\varpi T-W)}</me>
+be its separated completed quotient.  Evaluation at <m>W=\varpi X</m> and <m>T=X</m>
+gives a continuous map <m>P\to k\langle X\rangle</m>.  Conversely, evaluation of
+<m>k\langle X\rangle</m> at the image of <m>T</m> gives a continuous map in the other
+direction.  The two maps are inverse by polynomial density, and the norm
+estimates in the two universal properties show that the isomorphism is
+isometric.
+        </p>
+        <p>
+          Apply <xref ref="prop-coefficientwise-localization"/> with <m>N=0</m>.  It describes the
+rational chart as the ring of sums
+<me>\sum_\nu p_\nu e_\nu,
+  \qquad p_\nu\in P,\qquad \lVert p_\nu\rVert\longrightarrow0.</me>
+Under <m>P\cong k\langle X\rangle</m>, this is precisely the model
+<xref ref="eq-weighted-chart-lattice"/>.  Its sup norm is
+<xref ref="eq-weighted-chart-norm"/>, because the term indexed by <m>\nu</m> is
+multiplied by <m>\varpi^{\omega(\nu)}</m>.  The map from
+<m>\mathcal A^{(0)}</m> sends <m>W</m> to <m>\varpi X</m>.
+        </p>
+      </proof>
+    </proposition>
+    <proposition xml:id="prop-weighted-chart-domain-nonuniform">
+      <statement>
+        <p>
+          The ring <m>\mathcal B</m> is an integral domain but is not uniform.
+        </p>
+      </statement>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_chart_isDomain">Lean (chart is a domain)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_chart_not_isUniform">Lean (chart is nonuniform)</lean>
+      <proof>
+        <p>
+          The coefficient description gives a homomorphism
+<me>\mathcal B\longrightarrow
+  k\langle X\rangle[[U_1,U_2,\ldots]],
+  \qquad
+  \sum_\nu p_\nu e_\nu\longmapsto
+  \sum_\nu(\varpi X)^{\omega(\nu)}p_\nu(X)U^\nu.</me>
+It is a homomorphism by <xref ref="eq-coefficient-multiplication"/>.  If its image
+is zero, then
+<me>(\varpi X)^{\omega(\nu)}p_\nu(X)=0</me>
+for every <m>\nu</m>.  Since <m>k\langle X\rangle</m> is a domain, every
+<m>p_\nu</m> is zero.  The map is therefore injective.  Its target is a domain,
+and hence so is <m>\mathcal B</m>.
+        </p>
+        <p>
+          Inside <m>\mathcal A</m> write <m>Y_n=W^nU_n</m> and put
+<me>T_n=\varpi^{-n}Y_n=X^nU_n\in\mathcal B.</me>
+Formula <xref ref="eq-weighted-chart-norm"/> gives
+<me>\lVert T_n\rVert_{\mathrm{in}}=|\varpi|^{-n},
+  \qquad
+  \lVert T_n^2\rVert_{\mathrm{in}}=1.</me>
+The even powers of <m>T_n</m> have norm at most <m>1</m>, and the odd powers have
+norm at most <m>\lVert T_n\rVert_{\mathrm{in}}</m>.  Thus every <m>T_n</m> is
+power-bounded.  The family <m>(T_n)_{n\geq1}</m> is not bounded, since its norms
+<m>|\varpi|^{-n}</m> are unbounded.  Hence
+<m>\mathcal B^\circ</m> is unbounded and <m>\mathcal B</m> is not uniform.
+        </p>
+      </proof>
+    </proposition>
+  </subsection>
   <subsection xml:id="sec-second-example-sheafiness">
     <title>Sheafiness</title>
     <theorem xml:id="thm-parity-sheafy">
@@ -468,7 +495,7 @@ rational datum in <m>\mathcal A^{(N)}</m>.  Now apply
           The Huber pair <m>(\mathcal A,\mathcal A^\circ)</m> is sheafy.
         </p>
       </statement>
-      <lean project="AdicSpaces" ref="WeightedParity.weightedParity_isSheafyComplete_of_dvr">Lean</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isSheafyComplete_of_dvr">Lean</lean>
       <proof>
         <p>
           We first work with a finite rational cover <m>U=\bigcup_iU_i</m>.  Choose one
@@ -484,15 +511,22 @@ compatible identifications
     p_{i,\mu}\in P_i,\ \lVert p_{i,\mu}\rVert\to0\right\},</me>
 with coefficientwise restriction maps.  Here <m>P</m> is a rational localisation
 of the strongly noetherian Tate ring <m>\mathcal A^{(N)}</m>, and the <m>P_i</m> are
-rational localisations of <m>P</m>.  The domains defined by the <m>P_i</m> cover
-<m>\Spa(P,P^\circ)</m>.  Indeed, compose a point of <m>\Spa(P,P^\circ)</m> with the
-coefficient projection from the ring in the first display to <m>P</m>.  The
-resulting point lies in one of the original <m>U_i</m>, and restricting back to
-<m>P</m> gives the required point of the corresponding domain.
+rational localisations corresponding to the <m>U_i</m>.  Let <m>V</m> and <m>V_i</m> be
+the rational subsets of
+<me>\Spa\bigl(\mathcal A^{(N)},(\mathcal A^{(N)})^\circ\bigr)</me>
+defined by the data giving <m>P</m> and <m>P_i</m>.  Then <m>V=\bigcup_iV_i</m>.  Indeed,
+if <m>v\in V</m>, the composite <m>v\circ\rho_N</m> is a point of
+<m>\Spa(\mathcal A,\mathcal A^\circ)</m>, since <m>\rho_N</m> sends power-bounded
+elements to power-bounded elements.  For data in <m>\mathcal A^{(N)}</m>,
+membership in the corresponding rational subset is unchanged by this
+pullback because <m>\rho_N</m> is a retraction.  Thus <m>v\circ\rho_N</m> belongs to
+<m>U</m>, and hence to some <m>U_i</m>, which gives <m>v\in V_i</m>.  We may therefore
+apply sheafiness of the strongly noetherian ring <m>\mathcal A^{(N)}</m> to the
+cover <m>V=\bigcup_iV_i</m>.
         </p>
         <p>
           Let <m>(x_i)_i</m> be a matching family and write
-<m>x_i=\sum_\mu x_{i,\mu}e_\mu</m>.  Since <m>P</m> is sheafy,
+<m>x_i=\sum_\mu x_{i,\mu}e_\mu</m>.  Since <m>\mathcal A^{(N)}</m> is sheafy,
 the matching family <m>(x_{i,\mu})_i</m> glues to a unique <m>q_\mu\in P</m> for every
 <m>\mu</m>.  It remains to check that <m>\lVert q_\mu\rVert\to0</m>.  The restrictions
 of the <m>q_\mu</m> to every <m>P_i</m> tend to zero because the coefficients of each
@@ -504,10 +538,13 @@ The same coefficientwise argument proves separation.
         </p>
         <p>
           The image of the product restriction map for <m>\mathcal A</m> is therefore the
-matching-family equaliser.  This equaliser is closed, and the restriction map
-is continuous and injective.  The nonarchimedean closed-range theorem over
-the Tate ring <m>\mathcal A</m> now makes it a topological embedding.  We have
-proved the topological sheaf condition on finite rational covers.  The
+subspace of tuples whose restrictions to every pairwise intersection agree.
+This subspace is closed: it is the common zero locus of the continuous
+difference maps.  The restriction map is continuous and injective.  The
+nonarchimedean closed-range theorem over the Tate ring <m>\mathcal A</m> shows
+that its inverse on this image is continuous, so restriction is a
+topological embedding.  We have proved the topological sheaf condition on
+finite rational covers.  The
 general rational-basis theorem upgrades this to the all-open structure
 presheaf, and its plus-ring independence gives the same conclusion for every
 ring of integral elements.  In particular, <m>(\mathcal A,\mathcal A^\circ)</m>

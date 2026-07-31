@@ -80,18 +80,29 @@ degree zero.
 multiplication maps.  The image of <m>d_{1,E}</m> is closed by the noetherian
 closed-ideal theorem.  In higher degree, exactness identifies an image with
 the kernel of the next continuous differential, and hence that image is
-closed.  The nonarchimedean open mapping theorem, applied to each
-differential with its closed image, now gives a constant <m>C_q</m> such that every
-element of the image has a preimage of norm at most <m>C_q</m> times its norm.
-This proves strictness.
+closed.  The nonarchimedean open mapping theorem therefore shows that, for
+each differential <m>d_{q,E}</m>, there is a constant <m>C_{q,E}\geq1</m> such that
+every <m>y\in\im(d_{q,E})</m> has a preimage <m>x</m> satisfying
+<me>d_{q,E}(x)=y,
+  \qquad
+  \lVert x\rVert\leq C_{q,E}\lVert y\rVert.</me>
+This also proves that each differential is strict onto its image.
         </p>
         <p>
-          For <m>d_{1,E}</m> choose <m>h_E</m> so that
-<m>|\varpi|^{h_E}C\leq1</m>, where <m>C</m> is a controlled-lift constant for
-<m>d_{1,E}</m>.  Scaling a controlled lift of an element of
-<m>I_E\cap T_{E,0}</m> gives <xref ref="eq-ideal-denominators"/>.  Applying the same
-argument to <m>d_{2,E}</m>, with its own constant and using
-<m>\im(d_{2,E})=\ker(d_{1,E})</m>, gives
+          Choose <m>h_E\geq0</m> such that
+<m>|\varpi|^{h_E}C_{1,E}\leq1</m>.  If
+<m>x\in I_E\cap T_{E,0}</m>, choose <m>u\in T_E^m</m> with
+<me>d_{1,E}(u)=x,
+  \qquad
+  \lVert u\rVert\leq C_{1,E}\lVert x\rVert\leq C_{1,E}.</me>
+Then <m>\varpi^{h_E}u\in T_{E,0}^m</m> and
+<m>d_{1,E}(\varpi^{h_E}u)=\varpi^{h_E}x</m>, which proves
+<xref ref="eq-ideal-denominators"/>.  Similarly, choose <m>z_E\geq0</m> such that
+<m>|\varpi|^{z_E}C_{2,E}\leq1</m>.  If
+<m>u\in\ker(d_{1,E})\cap T_{E,0}^m</m>, choose <m>v</m> with
+<m>d_{2,E}(v)=u</m> and
+<m>\lVert v\rVert\leq C_{2,E}\lVert u\rVert</m>.  Then
+<m>\varpi^{z_E}v\in\bigwedge^2T_{E,0}^m</m>, proving
 <xref ref="eq-syzygy-denominators"/>.
         </p>
       </proof>
@@ -103,9 +114,11 @@ argument to <m>d_{2,E}</m>, with its own constant and using
       Fix a rational datum
 <me>\alpha=(f_1,\dots,f_m;g)</me>
 in <m>A</m>.  Multiplying all entries by a common power of <m>\varpi</m>, we assume
-<m>f_1,\dots,f_m,g\in A_0</m>.  For <m>E\in\{A,B,C,D\}</m> use the notation
-<m>T_E</m>, <m>T_{E,0}</m>, and <m>d_{1,E}</m> introduced above, and write
-<me>I_E=(gT_1-f_1,\ldots,gT_m-f_m)\subset T_E.</me>
+<m>f_1,\dots,f_m,g\in A_0</m>.  Put
+<me>r_i=gT_i-f_i\in T_A,</me>
+and use the same notation for its image in <m>T_B,T_C</m>, and <m>T_D</m>.  For
+<m>E\in\{A,B,C,D\}</m> put
+<me>I_E=(r_1,\ldots,r_m)=\im(d_{1,E})\subset T_E.</me>
     </p>
     <p>
       The exact integral row <xref ref="eq-integral-milnor"/> and the coefficientwise section of
@@ -122,10 +135,15 @@ coefficients still tend to zero <m>\varpi</m>-adically.
         <p>
           The ideal <m>I_A</m> is closed in <m>T_A</m>, and the canonical map
 <me>I_A\longrightarrow I_B\times_{I_D}I_C</me>
-is an isomorphism.  Moreover,
+is an isomorphism.  Give each <m>I_E</m> the subspace topology inherited from
+<m>T_E</m>, and give <m>I_B\oplus I_C</m> the max norm.  Then the sequence of
+topological <m>k</m>-vector spaces
           <men xml:id="eq-ideal-row">0\longrightarrow I_A\longrightarrow I_B\oplus I_C
-  \longrightarrow I_D\longrightarrow 0</men>
-          is strict exact.
+  \longrightarrow I_D\longrightarrow0</men>
+          is strict exact.  Here the maps are
+<me>x\longmapsto(x_B,x_C),
+  \qquad
+  (x_B,x_C)\longmapsto (x_B)_D-(x_C)_D.</me>
         </p>
       </statement>
       <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.ext_pair_injective">Lean (ext_pair_injective)</lean>
@@ -134,17 +152,25 @@ is an isomorphism.  Moreover,
       <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.isClosed_IA">Lean (isClosed_IA)</lean>
       <proof>
         <p>
-          We use the controlled lifts supplied in the proof of
-<xref ref="lem-koszul"/>.  Let
-<m>(x_B,x_C)\in I_B\times_{I_D}I_C</m>, and choose lifts
-<m>u_B\in T_B^m</m> and <m>u_C\in T_C^m</m> of <m>x_B</m> and <m>x_C</m> whose norms are bounded
-by fixed multiples of <m>\lVert x_B\rVert</m> and <m>\lVert x_C\rVert</m>.  In <m>T_D^m</m>
+          For <m>E=B,C,D</m>, let <m>C_{1,E}</m> be as in the proof of
+<xref ref="lem-koszul"/>, and let <m>C_{2,D}</m> be the corresponding constant for
+<m>d_{2,D}</m>.  Take
+<m>(x_B,x_C)\in I_B\times_{I_D}I_C</m>, and choose
+<m>u_B\in T_B^m</m> and <m>u_C\in T_C^m</m> such that
+<me>d_{1,B}(u_B)=x_B,\qquad
+  \lVert u_B\rVert\leq C_{1,B}\lVert x_B\rVert,</me>
+<me>d_{1,C}(u_C)=x_C,\qquad
+  \lVert u_C\rVert\leq C_{1,C}\lVert x_C\rVert.</me>
+In <m>T_D^m</m>
 the difference
 <me>w=(u_B)_D-(u_C)_D</me>
-belongs to <m>\ker(d_{1,D})</m>.  Choose a controlled lift
-<m>v_D\in\bigwedge^2T_D^m</m> with <m>d_{2,D}(v_D)=w</m>, and lift <m>v_D</m>
-coefficientwise to <m>v_C\in\bigwedge^2T_C^m</m>.  The coefficientwise section
-<m>T_C\to T_D</m> preserves the norm.  Replacing <m>u_C</m> by
+belongs to <m>\ker(d_{1,D})</m>.  Choose
+<m>v_D\in\bigwedge^2T_D^m</m> such that
+<me>d_{2,D}(v_D)=w,\qquad
+  \lVert v_D\rVert\leq C_{2,D}\lVert w\rVert.</me>
+The norm-preserving coefficientwise section <m>T_D\to T_C</m> induces a
+norm-preserving section on second exterior powers; use it to obtain
+<m>v_C\in\bigwedge^2T_C^m</m> mapping to <m>v_D</m>.  Replacing <m>u_C</m> by
 <me>u_C'=u_C+d_{2,C}(v_C)</me>
 does not change <m>d_{1,C}(u_C)</m>, and the images of <m>u_B</m> and <m>u_C'</m> in
 <m>T_D^m</m> now agree.  Exactness of <xref ref="eq-tate-ambient"/>, applied
@@ -152,10 +178,9 @@ coefficientwise, gives <m>u_A\in T_A^m</m> mapping to this pair.  Then
 <m>d_{1,A}(u_A)</m> maps to <m>(x_B,x_C)</m>.
         </p>
         <p>
-          The same construction keeps track of the norms.  The controlled lifts for
-<m>d_{1,B}</m>, <m>d_{1,C}</m> and <m>d_{2,D}</m>, continuity of <m>d_{2,C}</m>, and the
-norm-one coefficientwise section give a constant <m>C</m>, independent of
-<m>(x_B,x_C)</m>, for which the lift <m>x_A=d_{1,A}(u_A)</m> may be chosen with
+          The three displayed inequalities, continuity of <m>d_{2,C}</m>, and the
+norm-preserving coefficientwise section give a constant <m>C</m>, independent
+of <m>(x_B,x_C)</m>, for which <m>x_A=d_{1,A}(u_A)</m> satisfies
 <me>\lVert x_A\rVert\leq
   C\max\{\lVert x_B\rVert,\lVert x_C\rVert\}.</me>
 The map <m>T_A\to T_B\oplus T_C</m> is injective, so this proves both the
@@ -164,18 +189,21 @@ algebraic pullback assertion and the boundedness of its inverse.
         <p>
           It remains to see that <m>I_A</m> is closed.  The ideals <m>I_B</m> and <m>I_C</m> are
 closed by <xref ref="lem-koszul"/>.  If <m>x</m> lies in the closure of <m>I_A</m>, its images
-lie in <m>I_B</m> and <m>I_C</m>.  The controlled pullback just proved gives
+lie in <m>I_B</m> and <m>I_C</m>.  The pullback isomorphism just proved gives
 <m>x_A\in I_A</m> with the same two images as <m>x</m>.  Injectivity of
 <m>T_A\to T_B\oplus T_C</m> gives <m>x=x_A</m>, as required.
         </p>
         <p>
-          Finally, let <m>y\in I_D</m>.  A controlled lift of <m>y</m> through <m>d_{1,D}</m>,
-followed by the coefficientwise section <m>T_D^m\to T_C^m</m>, produces
-<m>x_C\in I_C</m> mapping to <m>y</m>, with norm bounded by a fixed multiple of
-<m>\lVert y\rVert</m>.  Thus <m>I_B\oplus I_C\to I_D</m> is a strict surjection.
-Its kernel is <m>I_A</m> by the pullback assertion, and the preceding norm estimate
-makes the inclusion on the left strict.  This proves
-<xref ref="eq-ideal-row"/>.
+          Finally, for <m>y\in I_D</m> choose <m>u_D\in T_D^m</m> such that
+<me>d_{1,D}(u_D)=y,\qquad
+  \lVert u_D\rVert\leq C_{1,D}\lVert y\rVert.</me>
+Apply the norm-preserving section <m>T_D^m\to T_C^m</m> and then <m>d_{1,C}</m>.
+This gives <m>x_C\in I_C</m> mapping to <m>y</m>, with <m>\lVert x_C\rVert</m> bounded
+by a fixed multiple of <m>\lVert y\rVert</m>.  Thus
+<m>I_B\oplus I_C\to I_D</m> is a strict surjection.  Its kernel is <m>I_A</m> by
+the pullback assertion, and the preceding bound for the inverse
+<m>I_B\times_{I_D}I_C\to I_A</m> makes the inclusion on the left strict.
+This proves <xref ref="eq-ideal-row"/>.
         </p>
       </proof>
     </lemma>
@@ -207,7 +235,7 @@ closed by <xref ref="lem-graph-pullback"/>.  Hence <xref ref="eq-graph-model"/> 
         </p>
         <p>
           We first prove algebraic exactness.  If a representative <m>p\in T_A</m> maps
-into both <m>I_B</m> and <m>I_C</m>, the controlled pullback in
+into both <m>I_B</m> and <m>I_C</m>, the pullback assertion in
 <xref ref="lem-graph-pullback"/> gives an element of <m>I_A</m> with the same two images.
 Injectivity of <m>T_A\to T_B\oplus T_C</m> then shows that <m>p\in I_A</m>.  This gives
 injectivity on the left.  Conversely, take compatible classes in
@@ -223,9 +251,11 @@ The corrected representatives agree in <m>T_D</m>, so
 <me>M=\max\{\lVert x_B\rVert,\lVert x_C\rVert\}.</me>
 Choose representatives <m>b\in T_B</m> and <m>c\in T_C</m> whose norms are
 arbitrarily close to the quotient norms of <m>x_B</m> and <m>x_C</m>.  Their defect
-lies in <m>I_D</m>.  The controlled surjection <m>I_C\to I_D</m> gives a correction
-<m>y\in I_C</m> whose norm is bounded by a fixed multiple of the norm of this
-defect.  Thus <m>b</m> and <m>c+y</m> agree in <m>T_D</m> and lift to
+lies in <m>I_D</m>.  The norm estimate for <m>I_C\to I_D</m> proved in
+<xref ref="lem-graph-pullback"/> gives a constant <m>C_0</m> and a correction
+<m>y\in I_C</m> mapping to this defect such that
+<me>\lVert y\rVert\leq C_0\lVert b_D-c_D\rVert.</me>
+Thus <m>b</m> and <m>c+y</m> agree in <m>T_D</m> and lift to
 <m>p\in T_A</m>.  The max-norm identity for the ambient pullback gives, after
 letting the error in the representatives tend to zero,
 <me>\lVert x\rVert\leq C M</me>
@@ -235,10 +265,11 @@ norm-nonincreasing, so this estimate says precisely that
         </p>
         <p>
           The coefficientwise section <m>T_D\to T_C</m> shows directly that
-<m>C_\alpha\to D_\alpha</m> is surjective.  It also shows that
-<m>T_C\to T_D</m> is open; passing to quotient seminorms proves that the induced
-map is open.  Together with continuity, this makes
-<m>C_\alpha\to D_\alpha</m> a strict surjection.
+<m>C_\alpha\to D_\alpha</m> is surjective.  More precisely, choose a
+representative in <m>T_D</m> whose norm is arbitrarily close to the quotient norm
+of a given class in <m>D_\alpha</m>, and apply the norm-preserving section.  Its
+class in <m>C_\alpha</m> has no larger norm.  Thus the surjection is open;
+together with continuity, this says that it is strict.
         </p>
         <p>
           All maps used above come from the coefficient maps

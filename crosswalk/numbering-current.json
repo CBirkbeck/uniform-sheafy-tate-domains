@@ -98,6 +98,12 @@
    "number": "4.1",
    "section": "4"
   },
+  "eq-q2-killed-on-chart": {
+   "kind": "equation",
+   "label": "eq:q2-killed-on-chart",
+   "number": "(8)",
+   "section": "4"
+  },
   "prop-not-stably-uniform": {
    "kind": "proposition",
    "label": "prop:not-stably-uniform",
@@ -125,13 +131,13 @@
   "eq-ideal-denominators": {
    "kind": "equation",
    "label": "eq:ideal-denominators",
-   "number": "(8)",
+   "number": "(9)",
    "section": "5"
   },
   "eq-syzygy-denominators": {
    "kind": "equation",
    "label": "eq:syzygy-denominators",
-   "number": "(9)",
+   "number": "(10)",
    "section": "5"
   },
   "sec-localisation-of-the-milnor-square-the-defining-ideals-under-pullback": {
@@ -143,7 +149,7 @@
   "eq-tate-ambient": {
    "kind": "equation",
    "label": "eq:tate-ambient",
-   "number": "(10)",
+   "number": "(11)",
    "section": "5"
   },
   "lem-graph-pullback": {
@@ -155,7 +161,7 @@
   "eq-ideal-row": {
    "kind": "equation",
    "label": "eq:ideal-row",
-   "number": "(11)",
+   "number": "(12)",
    "section": "5"
   },
   "prop-localized-milnor": {
@@ -167,7 +173,7 @@
   "eq-localized-row": {
    "kind": "equation",
    "label": "eq:localized-row",
-   "number": "(12)",
+   "number": "(13)",
    "section": "5"
   },
   "sec-sheafiness": {
@@ -203,37 +209,37 @@
   "eq-parity-weight": {
    "kind": "equation",
    "label": "eq:parity-weight",
-   "number": "(13)",
+   "number": "(14)",
    "section": "7"
   },
   "eq-parity-monoid": {
    "kind": "equation",
    "label": "eq:parity-monoid",
-   "number": "(14)",
+   "number": "(15)",
    "section": "7"
   },
   "eq-omega-subadditive": {
    "kind": "equation",
    "label": "eq:omega-subadditive",
-   "number": "(15)",
+   "number": "(16)",
    "section": "7"
   },
   "eq-parity-gauss-norm": {
    "kind": "equation",
    "label": "eq:parity-gauss-norm",
-   "number": "(16)",
+   "number": "(17)",
    "section": "7"
   },
   "eq-parity-algebra": {
    "kind": "equation",
    "label": "eq:parity-algebra",
-   "number": "(17)",
+   "number": "(18)",
    "section": "7"
   },
   "eq-parity-ring-of-definition": {
    "kind": "equation",
    "label": "eq:parity-ring-of-definition",
-   "number": "(18)",
+   "number": "(19)",
    "section": "7"
   },
   "lem-finite-variable-subrings": {
@@ -245,13 +251,13 @@
   "eq-finite-variable-decomposition": {
    "kind": "equation",
    "label": "eq:finite-variable-decomposition",
-   "number": "(19)",
+   "number": "(20)",
    "section": "7"
   },
   "eq-A-completion-finite-variables": {
    "kind": "equation",
    "label": "eq:A-completion-finite-variables",
-   "number": "(20)",
+   "number": "(21)",
    "section": "7"
   },
   "prop-parity-uniform-domain": {
@@ -266,112 +272,112 @@
    "number": "7.4",
    "section": "7"
   },
-  "sec-second-example-a-reduced-nonuniform-rational-chart": {
+  "sec-second-example-small-perturbations-of-rational-data": {
    "kind": "subsection",
    "label": null,
    "number": "7.2",
    "section": "7"
   },
-  "eq-weighted-chart-lattice": {
-   "kind": "equation",
-   "label": "eq:weighted-chart-lattice",
-   "number": "(21)",
-   "section": "7"
-  },
-  "eq-weighted-chart-norm": {
-   "kind": "equation",
-   "label": "eq:weighted-chart-norm",
-   "number": "(22)",
-   "section": "7"
-  },
-  "prop-weighted-chart-identification": {
-   "kind": "proposition",
-   "label": "prop:weighted-chart-identification",
-   "number": "7.5",
-   "section": "7"
-  },
-  "eq-weighted-chart-identification": {
-   "kind": "equation",
-   "label": "eq:weighted-chart-identification",
-   "number": "(23)",
-   "section": "7"
-  },
-  "prop-weighted-chart-domain-nonuniform": {
-   "kind": "proposition",
-   "label": "prop:weighted-chart-domain-nonuniform",
-   "number": "7.6",
-   "section": "7"
-  },
-  "sec-second-example-small-perturbations-of-rational-data": {
-   "kind": "subsection",
-   "label": null,
-   "number": "7.3",
-   "section": "7"
-  },
   "lem-small-perturbation": {
    "kind": "lemma",
    "label": "lem:small-perturbation",
-   "number": "7.7",
+   "number": "7.5",
    "section": "7"
   },
   "sec-second-example-rational-localisations-defined-over-finitely": {
    "kind": "subsection",
    "label": null,
-   "number": "7.4",
+   "number": "7.3",
    "section": "7"
   },
   "eq-coefficient-monomial": {
    "kind": "equation",
    "label": "eq:coefficient-monomial",
-   "number": "(24)",
+   "number": "(22)",
    "section": "7"
   },
   "eq-coefficient-decomposition": {
    "kind": "equation",
    "label": "eq:coefficient-decomposition",
-   "number": "(25)",
+   "number": "(23)",
    "section": "7"
   },
   "eq-coefficient-multiplication": {
    "kind": "equation",
    "label": "eq:coefficient-multiplication",
-   "number": "(26)",
+   "number": "(24)",
    "section": "7"
   },
   "eq-finite-variable-retraction": {
    "kind": "equation",
    "label": "eq:finite-variable-retraction",
-   "number": "(27)",
+   "number": "(25)",
    "section": "7"
   },
   "prop-coefficientwise-localization": {
    "kind": "proposition",
    "label": "prop:coefficientwise-localization",
-   "number": "7.8",
+   "number": "7.6",
    "section": "7"
   },
   "eq-coefficientwise-localization": {
    "kind": "equation",
    "label": "eq:coefficientwise-localization",
-   "number": "(28)",
+   "number": "(26)",
    "section": "7"
   },
   "eq-coefficientwise-restriction": {
    "kind": "equation",
    "label": "eq:coefficientwise-restriction",
-   "number": "(29)",
+   "number": "(27)",
    "section": "7"
   },
   "cor-finite-variable-presentation": {
    "kind": "corollary",
    "label": "cor:finite-variable-presentation",
-   "number": "7.9",
+   "number": "7.7",
    "section": "7"
   },
   "eq-arbitrary-finite-variable-presentation": {
    "kind": "equation",
    "label": "eq:arbitrary-finite-variable-presentation",
+   "number": "(28)",
+   "section": "7"
+  },
+  "sec-second-example-a-reduced-nonuniform-rational-chart": {
+   "kind": "subsection",
+   "label": null,
+   "number": "7.4",
+   "section": "7"
+  },
+  "eq-weighted-chart-lattice": {
+   "kind": "equation",
+   "label": "eq:weighted-chart-lattice",
+   "number": "(29)",
+   "section": "7"
+  },
+  "eq-weighted-chart-norm": {
+   "kind": "equation",
+   "label": "eq:weighted-chart-norm",
    "number": "(30)",
+   "section": "7"
+  },
+  "prop-weighted-chart-identification": {
+   "kind": "proposition",
+   "label": "prop:weighted-chart-identification",
+   "number": "7.8",
+   "section": "7"
+  },
+  "eq-weighted-chart-identification": {
+   "kind": "equation",
+   "label": "eq:weighted-chart-identification",
+   "number": "(31)",
+   "section": "7"
+  },
+  "prop-weighted-chart-domain-nonuniform": {
+   "kind": "proposition",
+   "label": "prop:weighted-chart-domain-nonuniform",
+   "number": "7.9",
    "section": "7"
   },
   "sec-second-example-sheafiness": {
@@ -410,16 +416,46 @@
    "number": "A.1",
    "section": "A"
   },
+  "def-lean-rational-sheafiness": {
+   "kind": "definition",
+   "label": "def:lean-rational-sheafiness",
+   "number": "A.1",
+   "section": "A"
+  },
+  "def-lean-open-sections": {
+   "kind": "definition",
+   "label": "def:lean-open-sections",
+   "number": "A.2",
+   "section": "A"
+  },
+  "rem-lean-sheaf-comparison": {
+   "kind": "remark",
+   "label": "rem:lean-sheaf-comparison",
+   "number": "A.3",
+   "section": "A"
+  },
   "sec-formalisation-strong-noetherianity": {
    "kind": "subsection",
    "label": null,
    "number": "A.2",
    "section": "A"
   },
+  "def-lean-strong-noetherianity": {
+   "kind": "definition",
+   "label": "def:lean-strong-noetherianity",
+   "number": "A.4",
+   "section": "A"
+  },
   "sec-formalisation-the-finite-jet-example": {
    "kind": "subsection",
    "label": null,
    "number": "A.3",
+   "section": "A"
+  },
+  "def-lean-finite-jet-ring": {
+   "kind": "definition",
+   "label": "def:lean-finite-jet-ring",
+   "number": "A.5",
    "section": "A"
   },
   "sec-formalisation-scope-of-the-finite-jet": {

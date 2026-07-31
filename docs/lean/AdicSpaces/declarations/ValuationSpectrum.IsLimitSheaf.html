@@ -35,7 +35,7 @@
   <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For every open <code>V ⊆ Spa(A,A⁺)</code> and every open cover <code>V = ⋃ᵢ Uᵢ</code>, sections are separated, compatible families glue, and the restriction map <code>𝒪(V) → ∏ᵢ 𝒪(Uᵢ)</code> is a topological embedding. This is the all-open topological sheaf condition used in the paper.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>The genuine all-open structure presheaf is a sheaf of topological rings</strong><br>(bundled; Wedhorn Remark 8.20 for the projective-limit presheaf): separation and<br>gluing of the underlying ring presheaf for <strong>every</strong> open cover of <strong>every</strong> open, and<br>the topological-embedding condition for every open cover. The cover index lives in the<br>ring&#x27;s universe (covers in use are (sub)types of <code>RationalLocData A</code>-data; larger<br>index types factor through their ranges).</p></div></details>
-  <p class="used-for"><strong>Used in the paper for:</strong> Appendix: all-open sheaf condition</p>
+  <p class="used-for"><strong>Used in the paper for:</strong> Appendix A (all-open sheaf condition); Appendix: all-open sheaf condition</p>
   <pre><code>structure IsLimitSheaf (A : Type u) [CommRing A] [TopologicalSpace A]
     [IsTopologicalRing A] [PlusSubring A] [IsHuberRing A]
     [HasLocLiftPowerBounded A] : Prop where
@@ -67,10 +67,13 @@
   when this page was built, so no external upstream link is offered here.</p>
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
   The finite-jet development uses restricted power-series code adapted from
-  <a href="https://github.com/WilliamCoram/PhD">William Coram's PhD repository</a>;
-  the vendored source headers also credit Bingyu Xia for power-series equivalence
-  lemmas.  This is infrastructure provenance, not an attribution of this
-  paper-specific declaration.</aside>
+  <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,
+  whose univariate Gauss-norm layer builds on
+  <a href="https://github.com/leanprover-community/mathlib4/blob/fd1d54bcac5caba4eff2ea3421c47d907333f515/Mathlib/RingTheory/PowerSeries/GaussNorm.lean">Fabrizio Barroero's mathlib code</a>.
+  It separately uses
+  <a href="https://github.com/leanprover-community/mathlib4/pull/36507">Bingyu Xia's multivariable power-series equivalences</a>.
+  This is infrastructure provenance, not an attribution of this paper-specific
+  declaration.</aside>
 </main>
 </body>
 </html>

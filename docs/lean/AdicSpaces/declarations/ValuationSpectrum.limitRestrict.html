@@ -35,7 +35,7 @@
   <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For an inclusion <code>W ⊆ V</code>, <code>limitRestrict</code> is the restriction homomorphism <code>𝒪_X(V) → 𝒪_X(W)</code>. A rational subdomain contained in <code>W</code> is also contained in <code>V</code>, so the map simply reindexes the compatible family and forgets the other coordinates.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>Restriction <code>𝒪_X(V) → 𝒪_X(W)</code> for <code>W ≤ V</code>: reindex the compatible family along<br><code>RationalIndex.mono</code>.</p></div></details>
-  <p class="used-for"><strong>Used in the paper for:</strong> Appendix: restriction between arbitrary opens</p>
+  <p class="used-for"><strong>Used in the paper for:</strong> Appendix A (restriction on arbitrary opens); Appendix: restriction between arbitrary opens</p>
   <pre><code>def limitRestrict {V W : TopologicalSpace.Opens ↥(Spa A A⁺)} (h : W ≤ V) :
     ↥(limitSections V) →+* ↥(limitSections W) where
   toFun x := ⟨fun i =&gt; (x : ∀ j : RationalIndex V, presheafValue j.D) (i.mono h),
@@ -51,10 +51,13 @@
   when this page was built, so no external upstream link is offered here.</p>
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
   The finite-jet development uses restricted power-series code adapted from
-  <a href="https://github.com/WilliamCoram/PhD">William Coram's PhD repository</a>;
-  the vendored source headers also credit Bingyu Xia for power-series equivalence
-  lemmas.  This is infrastructure provenance, not an attribution of this
-  paper-specific declaration.</aside>
+  <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,
+  whose univariate Gauss-norm layer builds on
+  <a href="https://github.com/leanprover-community/mathlib4/blob/fd1d54bcac5caba4eff2ea3421c47d907333f515/Mathlib/RingTheory/PowerSeries/GaussNorm.lean">Fabrizio Barroero's mathlib code</a>.
+  It separately uses
+  <a href="https://github.com/leanprover-community/mathlib4/pull/36507">Bingyu Xia's multivariable power-series equivalences</a>.
+  This is infrastructure provenance, not an attribution of this paper-specific
+  declaration.</aside>
 </main>
 </body>
 </html>

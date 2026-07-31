@@ -16,6 +16,7 @@
     <frontmatter>
       <titlepage>
         <author><personname>Christopher Birkbeck</personname></author>
+        <author><personname>Alex Torzewski</personname></author>
       </titlepage>
       <abstract>
 <p>
@@ -55,11 +56,17 @@ witnessing failure of stable uniformity, have been formalised in Lean<nbsp/>4.
       <biblio type="raw" xml:id="bib-BV">
       K.<nbsp/>Buzzard and A.<nbsp/>Verberkmoes, <em>Stably uniform affinoids are sheafy</em>, J. Reine Angew. Math. <alert>740</alert> (2018), 25<ndash/>39.
       </biblio>
-      <biblio type="raw" xml:id="bib-CoramXia">
-      W.<nbsp/>Coram and B.<nbsp/>Xia, <em>Restricted power-series and power-series equivalence code</em>, Lean source files in the <c>WilliamCoram/PhD</c> repository, commit <c>e8fcf8fbff848a95475ab62ae2568cbb73961de8</c>, 2026, <url href="https://github.com/WilliamCoram/PhD"><c>https://github.com/WilliamCoram/PhD</c></url>.
+      <biblio type="raw" xml:id="bib-BarroeroCode">
+      F.<nbsp/>Barroero, Lean source code, <url href="https://github.com/leanprover-community/mathlib4/blob/fd1d54bcac5caba4eff2ea3421c47d907333f515/Mathlib/RingTheory/PowerSeries/GaussNorm.lean">mathlib source file</url>.
+      </biblio>
+      <biblio type="raw" xml:id="bib-CoramCode">
+      W.<nbsp/>Coram, Lean source code, <url href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">GitHub repository</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-HK">
       D.<nbsp/>Hansen and K.<nbsp/>S. Kedlaya, <em>Sheafiness criteria for Huber rings</em>, preprint, version of 23 April 2025, <url href="https://kskedlaya.org/papers/criteria.pdf"><c>https://kskedlaya.org/papers/criteria.pdf</c></url>.
+      </biblio>
+      <biblio type="raw" xml:id="bib-XiaCode">
+      B.<nbsp/>Xia, Lean source code, <url href="https://github.com/leanprover-community/mathlib4/pull/36507">mathlib pull request #36507</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-Huber93">
       R.<nbsp/>Huber, <em>Continuous valuations</em>, Math. Z. <alert>212</alert> (1993), no.<nbsp/>3, 455<ndash/>477, <url href="https://doi.org/10.1007/BF02571668">doi:10.1007/BF02571668</url>.

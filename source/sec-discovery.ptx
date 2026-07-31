@@ -2,7 +2,7 @@
 <section xml:id="sec-discovery">
   <title>How the examples were found</title>
   <p>
-    The author had for some time been interested in finding a counterexample to
+    The authors had for some time been interested in finding a counterexample to
 Problem<nbsp/>7 of the <em>Nonarchimedean Scottish Book</em>.  Our attempts had
 centred on the example of
 <xref ref="bib-BV" detail="Section 4.5, Proposition 17"/>, which is uniform but not stably
@@ -26,7 +26,7 @@ would emerge.
   </p>
   <p>
     After a couple of weeks ChatGPT 5.2 Pro claimed to have a complete proof.
-The author then began the slow process of understanding this proof, only to
+The authors then began the slow process of understanding this proof, only to
 discover, with the help of ChatGPT 5.3, that one of its arguments used the
 following assertion:
   </p>
@@ -39,12 +39,11 @@ topological abelian groups and <m>A</m> is complete, then <m>\phi(A)</m> is clos
     This assertion is false, and its use completely broke the purported proof.
   </p>
   <p>
-    Motivated by this, we began in parallel an AI-assisted Lean formalisation of
-the parts of the theory of adic spaces needed here, including the theorem
-that strongly noetherian Tate rings are sheafy.  The aim was a practical
-one: future AI-generated proofs could be formalised before the human author
-had spent days understanding an argument containing a fatal error near its
-end.
+    Motivated by this, we began in parallel to use Claude Code to formalise the
+parts of the theory of adic spaces needed here, including the theorem that
+strongly noetherian Tate rings are sheafy.  The aim was a practical one:
+future AI-generated proofs could be formalised before the human authors had
+spent days understanding an argument containing a fatal error near its end.
   </p>
   <p>
     We then returned to writing down covers and looking for a pattern.  This
@@ -52,6 +51,7 @@ continued through ChatGPT 5.3 and subsequent versions.  When ChatGPT 5.6 Sol
 became available, we asked, almost in passing, whether it could prove the
 result we wanted or <em>find a new example</em>.  It produced the examples
 studied here.  By then the Lean development was far enough advanced that we
-could formalise the arguments quickly and check that they were correct.
+could use Claude Code to formalise the arguments quickly in Lean and check
+that they were correct.
   </p>
 </section>

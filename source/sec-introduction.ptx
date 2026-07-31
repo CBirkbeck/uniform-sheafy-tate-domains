@@ -12,8 +12,8 @@ explicitly <xref ref="bib-HK" detail="Remark 3.16"/>; it is also Question<nbsp/>
   </p>
   <p>
     ChatGPT 5.6 Sol found both examples and supplied the proofs.  The Lean
-formalisation was developed with ChatGPT.  We have aimed to cite related work
-that may have informed this process; see <xref ref="rem-earlier-work"/>.
+formalisation was carried out by Claude Code.  We have aimed to cite related
+work that may have informed this process; see <xref ref="rem-earlier-work"/>.
 <xref ref="sec-discovery"/> gives a fuller account, and <xref ref="sec-formalisation"/>
 records the formal definitions and theorem statements.
   </p>
@@ -52,7 +52,8 @@ However,
 so <m>A</m> is not stably uniform.
       </p>
     </statement>
-    <lean project="AdicSpaces" ref="FiniteJetOver.jetSupport">Lean (definition of JetA)</lean>
+    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.JetA">Lean (finite-jet ring A)</lean>
+    <lean project="AdicSpaces" ref="FiniteJetOver.jetSupport">Lean (coefficient condition defining A)</lean>
     <lean project="AdicSpaces" ref="FiniteJetOver.isClosed_jetSupport">Lean (isClosed_jetSupport)</lean>
     <lean project="AdicSpaces" ref="FiniteJetOver.isTateRing_JetA">Lean (isTateRing_JetA)</lean>
     <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_isUniform_of_dvr">Lean (finiteJet_isUniform_of_dvr)</lean>

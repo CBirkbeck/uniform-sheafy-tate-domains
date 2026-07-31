@@ -154,7 +154,7 @@
       "via": "manual",
       "file": "Adic spaces/FJP/Over/StrictLocalization.lean",
       "line": 513,
-      "cited": "Lemma 5.2 (controlled pullback)",
+      "cited": "Lemma 5.2 (norm estimate for the pullback)",
       "kind": "theorem",
       "flagged": true
     },

@@ -35,7 +35,7 @@
   <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For a rational datum <code>D = (T/s)</code>, <code>presheafValue D</code> is <code>𝒪_X(R(T/s)) = A⟨T/s⟩</code>: the completion of <code>A[1/s]</code> for the rational-localisation topology determined by the fractions <code>t/s</code>, with <code>t ∈ T</code>. It is the section ring assigned to that rational subset.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>The presheaf value <code>𝒪_X(R(T/s)) := A⟨T/s⟩</code>, the completion of<br><code>Localization.Away s</code> with the localization topology<br>(§8.1, eq. 8.1.1 of Wedhorn).</p></div></details>
-  <p class="used-for"><strong>Used in the paper for:</strong> Appendix: sections on a rational domain</p>
+  <p class="used-for"><strong>Used in the paper for:</strong> Appendix A (completed rational localisation); Appendix: sections on a rational domain</p>
   <pre><code>noncomputable def presheafValue (D : RationalLocData A) : Type _ :=
   @UniformSpace.Completion (Localization.Away D.s) D.uniformSpace</code></pre>
   <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/Presheaf.lean:296–297</code><br>
@@ -45,10 +45,13 @@
   when this page was built, so no external upstream link is offered here.</p>
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
   The finite-jet development uses restricted power-series code adapted from
-  <a href="https://github.com/WilliamCoram/PhD">William Coram's PhD repository</a>;
-  the vendored source headers also credit Bingyu Xia for power-series equivalence
-  lemmas.  This is infrastructure provenance, not an attribution of this
-  paper-specific declaration.</aside>
+  <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,
+  whose univariate Gauss-norm layer builds on
+  <a href="https://github.com/leanprover-community/mathlib4/blob/fd1d54bcac5caba4eff2ea3421c47d907333f515/Mathlib/RingTheory/PowerSeries/GaussNorm.lean">Fabrizio Barroero's mathlib code</a>.
+  It separately uses
+  <a href="https://github.com/leanprover-community/mathlib4/pull/36507">Bingyu Xia's multivariable power-series equivalences</a>.
+  This is infrastructure provenance, not an attribution of this paper-specific
+  declaration.</aside>
 </main>
 </body>
 </html>

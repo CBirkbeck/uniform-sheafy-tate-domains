@@ -35,7 +35,7 @@
   <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>Let <code>(A,A⁺)</code> be a complete nonarchimedean Huber pair. For every finite rational cover of a rational domain, restriction to the covering pieces is required to be a topological embedding, and every compatible family is required to glue. This proof-friendly rational-basis criterion speaks directly about completed rational localisations; for complete Tate pairs it is equivalent to the usual sheaf condition.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>Internal finite rational-cover criterion</strong> for a fixed pair <code>(A, A⁺)</code> — the<br>proof-engine class of the 8.28(b) campaign. <strong>Naming note (WO3, 2026-07-20): this is<br>NOT the literature&#x27;s ring-level &quot;sheafy&quot; (Wedhorn Definition 8.26)</strong> — that is<br><code>IsSheafyTateRing</code> (<code>SheafyRing.lean</code>), which quantifies over the rings of integral<br>elements of the completion; the pair-level public notion is <code>IsSheafyFor</code> (bundled<br>valid pair, genuine all-open presheaf), equivalent to this class at complete Tate<br>scope by <code>isSheafy_iff_isLimitSheaf</code>. New code should state results through those;<br>this class remains as the internal criterion the existing proof corpus is written<br>against.</p><p>An affinoid ring <code>(A, A⁺)</code> satisfies this criterion if the rational-localization<br>presheaf satisfies, on every rational cover, the conditions that Remark 8.20 makes<br>equivalent to the sheaf-of-topological-rings property — two conditions on every<br>rational cover <code>C</code> —<br>quantified over coverings of rational subsets by rational subsets in Wedhorn<br>Definition 7.29&#x27;s sense (<code>RationalCoveringData.IsRational</code>: base and pieces have <code>T·A</code><br>open in <code>A</code>, wedhorn.txt:3100, 4143):<br>1. <strong><code>embedding</code></strong>: the product restriction <code>O_X(base) → ∏ O_X(cover_i)</code> is a<br><strong>topological embedding</strong> (injective + the source topology equals the<br>subspace topology induced from the product topology on the target).<br>2. <strong><code>gluing</code></strong>: compatible families on the cover have a global pre-image<br>(necessarily unique by <code>embedding.injective</code>).</p><p>The <code>embedding</code> field subsumes the sheaf-of-sets injectivity (<code>Topology.IsEmbedding</code><br>implies <code>Function.Injective</code>); together with <code>gluing</code> it gives the full sheaf<br>condition in the category of (complete) topological rings.</p><p><strong>Proof route for strongly noetherian Tate rings</strong> (Wedhorn Thm 8.28(b)):<br>1. <strong>Example 6.38</strong> gives <code>presheafValue D ≃_top A⟨X⟩/(closed ideal)</code> as a<br>*topological* ring iso (universal property + Wedhorn Prop 6.17).<br>2. <strong>Lemma 8.31</strong> (flatness) + <strong>Cor 8.32</strong> (faithful flatness of the product<br>restriction) give the <strong>algebraic</strong> sheaf-of-sets injectivity.<br>3. <strong>Lemma 8.33</strong> (3×3 diagram chase) + <strong>Lemma 8.34</strong> (refinement transfer)<br>transport the topological structure from the Tate-algebra-quotient side.<br>Quotient maps of Tate algebras are continuous and open, so the diagram chase<br>preserves the topological embedding through the refinement.</p><p>See <code>docs/plans/2026-04-08-wedhorn-vs-zavyalov.md</code>.</p></div></details>
-  <p class="used-for"><strong>Used in the paper for:</strong> Appendix: finite-rational-cover sheafiness</p>
+  <p class="used-for"><strong>Used in the paper for:</strong> Appendix A (rational-cover sheaf condition); Appendix: finite-rational-cover sheafiness</p>
   <pre><code>class IsSheafy (A : Type u) [CommRing A] [TopologicalSpace A]
     [IsTopologicalRing A] [inst₁ : PlusSubring A] [inst₂ : IsHuberRing A]
     [T2Space A] [NonarchimedeanRing A]
@@ -60,10 +60,13 @@
   when this page was built, so no external upstream link is offered here.</p>
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
   The finite-jet development uses restricted power-series code adapted from
-  <a href="https://github.com/WilliamCoram/PhD">William Coram's PhD repository</a>;
-  the vendored source headers also credit Bingyu Xia for power-series equivalence
-  lemmas.  This is infrastructure provenance, not an attribution of this
-  paper-specific declaration.</aside>
+  <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,
+  whose univariate Gauss-norm layer builds on
+  <a href="https://github.com/leanprover-community/mathlib4/blob/fd1d54bcac5caba4eff2ea3421c47d907333f515/Mathlib/RingTheory/PowerSeries/GaussNorm.lean">Fabrizio Barroero's mathlib code</a>.
+  It separately uses
+  <a href="https://github.com/leanprover-community/mathlib4/pull/36507">Bingyu Xia's multivariable power-series equivalences</a>.
+  This is infrastructure provenance, not an attribution of this paper-specific
+  declaration.</aside>
 </main>
 </body>
 </html>

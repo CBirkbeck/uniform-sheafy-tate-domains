@@ -37,12 +37,43 @@ A_{\mathrm{in}}\cong k\langle X,Q\rangle/(Q^2),
 <article class="hiddenproof knowl__content">
 <div class="para logical">
 <div class="para">Put</div>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-q2-killed-on-chart.html">
 \begin{equation*}
-T=k\langle X,Q\rangle/(Q^2).
+T_0=k^\circ\langle X,Q\rangle/(Q^2),
+\qquad T=T_0[1/\varpi].
 \end{equation*}
 </div>
-<div class="para">Take the two-jet map <span class="process-math">\(A\to B\)</span> and then rescale its disc variable by <span class="process-math">\(W\mapsto\varpi X\text{.}\)</span>  This gives a continuous map</div>
+<div class="para">Let <span class="process-math">\(\rho:A\to A_{\mathrm{in}}\)</span> be the canonical map.  We first show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-q2-killed-on-chart.html">
+\begin{equation}
+Q^2C\subseteq\ker(\rho).\tag{4.1}
+\end{equation}
+</div>
+<div class="para">Take <span class="process-math">\(y\in Q^2C\text{,}\)</span> and choose <span class="process-math">\(r\geq0\)</span> such that <span class="process-math">\(\varpi^r y\in Q^2C_0\text{.}\)</span>  For every <span class="process-math">\(n\geq0\text{,}\)</span> the coefficient description of <span class="process-math">\(A_0\)</span> gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-q2-killed-on-chart.html">
+\begin{equation*}
+W^{-n}\varpi^r y\in A_0:
+\end{equation*}
+</div>
+<div class="para">multiplication by <span class="process-math">\(W^{-n}\)</span> only introduces negative powers of <span class="process-math">\(W\)</span> in terms of <span class="process-math">\(Q\)</span>-degree at least two.  In <span class="process-math">\(A_0[X]\text{,}\)</span> where <span class="process-math">\(W=\varpi X\text{,}\)</span> we therefore have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-q2-killed-on-chart.html">
+\begin{equation*}
+\varpi^r y
+=W^n(W^{-n}\varpi^r y)
+=\varpi^nX^n(W^{-n}\varpi^r y)\in\varpi^nA_0[X]
+\end{equation*}
+</div>
+<div class="para">for every <span class="process-math">\(n\text{.}\)</span>  Hence <span class="process-math">\(\varpi^r y\)</span> maps to zero in the separated <span class="process-math">\(\varpi\)</span>-adic completion of <span class="process-math">\(A_0[X]\text{.}\)</span>  Since <span class="process-math">\(\varpi\)</span> is invertible in <span class="process-math">\(A_{\mathrm{in}}\text{,}\)</span> this proves <a href="#eq-q2-killed-on-chart" class="xref" data-knowl="./knowl/xref/eq-q2-killed-on-chart.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.1">(4.1)</a>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-bad-chart-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">We now construct the isomorphism.  Recall that the map <span class="process-math">\(\iota_B:A\to B\)</span> from the defining pullback is given by</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f_0(W)+Qf_1(W)+Q^2h\longmapsto f_0(W)+Qf_1(W);
+\end{equation*}
+</div>
+<div class="para">it simply discards the terms divisible by <span class="process-math">\(Q^2\text{.}\)</span>  The substitution <span class="process-math">\(W\mapsto\varpi X\text{,}\)</span> <span class="process-math">\(Q\mapsto Q\)</span> defines a continuous homomorphism <span class="process-math">\(B\to T\text{.}\)</span>  Their composite is</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \theta:A\longrightarrow T,\qquad
@@ -50,35 +81,42 @@ f_0(W)+Qf_1(W)+Q^2h\longmapsto
 f_0(\varpi X)+Qf_1(\varpi X).
 \end{equation*}
 </div>
-<div class="para">The element <span class="process-math">\(\theta(\varpi)\)</span> is a unit and <span class="process-math">\(\theta(W)/\theta(\varpi)=X\)</span> is power-bounded.  The universal property first extends <span class="process-math">\(\theta\)</span> to the algebraic rational localisation and then, by continuity, to a map</div>
+<div class="para">It sends <span class="process-math">\(A_0\)</span> into <span class="process-math">\(T_0\)</span> and sends <span class="process-math">\(W/\varpi\)</span> to <span class="process-math">\(X\text{.}\)</span>  It therefore sends <span class="process-math">\(A_0[X]\)</span> into <span class="process-math">\(T_0\)</span> and extends, first to the separated completions and then after inverting <span class="process-math">\(\varpi\text{,}\)</span> to a continuous homomorphism</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \Phi:A_{\mathrm{in}}\longrightarrow T.
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-bad-chart-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical">
-<div class="para">We next record why the two-jet map loses precisely the terms divisible by <span class="process-math">\(Q^2\)</span> after completion.  If the constant and linear <span class="process-math">\(Q\)</span>-coefficients of <span class="process-math">\(y\in A\)</span> vanish, then <span class="process-math">\(y_n=W^{-n}y\)</span> still belongs to <span class="process-math">\(A\text{,}\)</span> and the <span class="process-math">\(y_n\)</span> have bounded norm.  In <span class="process-math">\(A_{\mathrm{in}}\)</span> one has</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\overline y=\varpi^nX^n\overline{y_n}\qquad(n\geq0).
-\end{equation*}
-</div>
-<div class="para">The powers of <span class="process-math">\(X\)</span> are bounded and <span class="process-math">\(\varpi^n\to0\text{,}\)</span> so <span class="process-math">\(\overline y=0\text{.}\)</span> In particular, the image <span class="process-math">\(\overline Q\)</span> of <span class="process-math">\(Q\)</span> satisfies <span class="process-math">\(\overline Q^{\,2}=0\text{.}\)</span>
-</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-bad-chart-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\(\overline X=\overline W/\varpi\text{.}\)</span>  Since <span class="process-math">\(\overline X\)</span> is power-bounded, evaluation at <span class="process-math">\(\overline X\)</span> gives a continuous map <span class="process-math">\(k\langle X\rangle\to A_{\mathrm{in}}\text{.}\)</span>  We may therefore define</div>
-<div class="displaymath process-math">
+<div class="para">Set</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-q2-killed-on-chart.html">
+\begin{equation*}
+\overline X=\rho(W)/\varpi,\qquad \overline Q=\rho(Q).
+\end{equation*}
+</div>
+<div class="para">Both elements are power-bounded: they belong to the completed ring of definition coming from <span class="process-math">\(A_0[X]\text{.}\)</span>  Moreover, <span class="process-math">\(\overline Q^{\,2}=0\)</span> by <a href="#eq-q2-killed-on-chart" class="xref" data-knowl="./knowl/xref/eq-q2-killed-on-chart.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.1">(4.1)</a>.  Evaluation at <span class="process-math">\(\overline X\)</span> therefore gives a continuous homomorphism</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-q2-killed-on-chart.html">
 \begin{equation*}
 \Psi:T\longrightarrow A_{\mathrm{in}},\qquad
 f+Qg\longmapsto f(\overline X)+g(\overline X)\overline Q.
 \end{equation*}
 </div>
-<div class="para">To check the first composite, decompose <span class="process-math">\(a\in A\)</span> as <span class="process-math">\(a=f_0(W)+Qf_1(W)+y\text{,}\)</span> where the first two coefficients lie in <span class="process-math">\(k\langle W\rangle\)</span> and the first two <span class="process-math">\(Q\)</span>-coefficients of <span class="process-math">\(y\)</span> vanish.  The preceding paragraph kills <span class="process-math">\(y\text{,}\)</span> and hence <span class="process-math">\(\Psi(\theta(a))=\overline a\text{.}\)</span>  This proves <span class="process-math">\(\Psi\Phi=1\)</span> on the dense algebraic rational localisation, and therefore on <span class="process-math">\(A_{\mathrm{in}}\text{.}\)</span>  In the other direction, <span class="process-math">\(\Phi\Psi\)</span> fixes constants, <span class="process-math">\(X\)</span> and <span class="process-math">\(Q\text{.}\)</span>  It is consequently the identity first on polynomials, then on <span class="process-math">\(k\langle X\rangle\)</span> by density, and finally on <span class="process-math">\(T\text{.}\)</span>  Thus <span class="process-math">\(\Phi\)</span> and <span class="process-math">\(\Psi\)</span> are inverse continuous homomorphisms.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-bad-chart-7-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">It remains to check the two composites.  Write <span class="process-math">\(a=f_0(W)+Qf_1(W)+y\in A\text{,}\)</span> with <span class="process-math">\(y\in Q^2C\text{.}\)</span>  Then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-q2-killed-on-chart.html">
+\begin{equation*}
+\Psi\Phi(\rho(a))
+=f_0(\varpi\overline X)+\overline Qf_1(\varpi\overline X)
+=\rho\bigl(f_0(W)+Qf_1(W)\bigr)
+=\rho(a),
+\end{equation*}
+</div>
+<div class="para">where the last equality uses <a href="#eq-q2-killed-on-chart" class="xref" data-knowl="./knowl/xref/eq-q2-killed-on-chart.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.1">(4.1)</a>.  The image of <span class="process-math">\(A\)</span> is dense in <span class="process-math">\(A_{\mathrm{in}}\text{,}\)</span> so continuity gives <span class="process-math">\(\Psi\Phi=1\text{.}\)</span>  Conversely, <span class="process-math">\(\Phi\Psi\)</span> fixes <span class="process-math">\(k\text{,}\)</span> <span class="process-math">\(X\)</span> and <span class="process-math">\(Q\text{,}\)</span> and hence is the identity on the dense subring <span class="process-math">\(k[X,Q]/(Q^2)\)</span> of <span class="process-math">\(T\text{.}\)</span>  It follows by continuity that <span class="process-math">\(\Phi\Psi=1\text{.}\)</span>  Thus <span class="process-math">\(\Phi\)</span> and <span class="process-math">\(\Psi\)</span> are inverse continuous homomorphisms.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-bad-chart-7-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Proof 4.1.1"><a tabindex="-1" href="#prop-bad-chart-7" title="Copy heading and permalink for Proof 4.1.1" aria-label="Copy heading and permalink for Proof 4.1.1">🔗</a></div>
 </article></details><span class="incontext"><a class="internal" href="#prop-bad-chart">In Context</a></span>

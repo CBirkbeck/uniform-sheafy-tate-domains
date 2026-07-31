@@ -35,7 +35,7 @@
   <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>The structure presheaf, viewed as taking values in <code>TopCommRingCat</code>, satisfies Mathlib’s categorical <code>IsSheaf</code> predicate if and only if it satisfies the concrete all-open condition <code>IsLimitSheaf</code>.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>The standard formulation, over <code>TopCommRingCat</code></strong>: the public structure<br>presheaf, pushed along the forgetful functor into the category of plain topological<br>commutative rings, satisfies mathlib&#x27;s categorical sheaf condition <strong>iff</strong> the pair<br>is sheafy. The categorical condition tests <code>Hom(E, −)</code>-gluing along the objects of<br>the value category; over <code>TopCommRingCat</code> those are exactly Wedhorn&#x27;s arbitrary<br>topological test rings (Remark 8.20), so — unlike the <code>CompleteTopCommRingCat</code>-valued<br>condition, where only the forward implication <code>structurePresheaf_isSheaf</code> is<br>available — this is an equivalence.</p></div></details>
-  <p class="used-for"><strong>Used in the paper for:</strong> Appendix: all-open structure-presheaf comparison with Mathlib</p>
+  <p class="used-for"><strong>Used in the paper for:</strong> Appendix A (Mathlib versus all opens); Appendix: all-open structure-presheaf comparison with Mathlib</p>
   <pre><code>theorem structurePresheaf_forgetToTopCommRingCat_isSheaf_iff :
     TopCat.Presheaf.IsSheaf
         (structurePresheaf A ⋙ CompleteTopCommRingCat.forgetToTopCommRingCat) ↔
@@ -47,10 +47,13 @@
   when this page was built, so no external upstream link is offered here.</p>
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
   The finite-jet development uses restricted power-series code adapted from
-  <a href="https://github.com/WilliamCoram/PhD">William Coram's PhD repository</a>;
-  the vendored source headers also credit Bingyu Xia for power-series equivalence
-  lemmas.  This is infrastructure provenance, not an attribution of this
-  paper-specific declaration.</aside>
+  <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,
+  whose univariate Gauss-norm layer builds on
+  <a href="https://github.com/leanprover-community/mathlib4/blob/fd1d54bcac5caba4eff2ea3421c47d907333f515/Mathlib/RingTheory/PowerSeries/GaussNorm.lean">Fabrizio Barroero's mathlib code</a>.
+  It separately uses
+  <a href="https://github.com/leanprover-community/mathlib4/pull/36507">Bingyu Xia's multivariable power-series equivalences</a>.
+  This is infrastructure provenance, not an attribution of this paper-specific
+  declaration.</aside>
 </main>
 </body>
 </html>

@@ -32,10 +32,10 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">class</div>
   <h1>ValuationSpectrum.HasLocLiftPowerBounded</h1>
-  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p><code>HasLocLiftPowerBounded A</code> is an internal interface used to construct restriction maps between completed rational localisations. For <code>R(D′) ⊆ R(D)</code>, it records that the denominator of <code>D</code> becomes a unit in <code>𝒪(R(D′))</code> and that each fraction <code>t/s</code>, for <code>t ∈ T</code>, is power-bounded there. These facts make the localisation map continuous and allow it to extend to the completions. In the complete Huber setting of the paper this class is supplied automatically, so it is not an additional mathematical hypothesis. The status note in the original docstring below is stale: this snapshot already contains the complete-Huber instance.</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p><code>HasLocLiftPowerBounded A</code> is an internal interface used to construct restriction maps between completed rational localisations. For <code>R(D′) ⊆ R(D)</code>, it records that the denominator of <code>D</code> becomes a unit in <code>𝒪(R(D′))</code> and that each fraction <code>t/s</code>, for <code>t ∈ T</code>, is power-bounded there. These facts make the localisation map continuous and allow it to extend to the completions. In the complete Tate setting of the paper this class is supplied automatically, so it is not an additional mathematical hypothesis. The status note in the original docstring below is stale: this snapshot already contains the instance used for complete Tate pairs.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>The adic Nullstellensatz hypothesis for the presheaf restriction maps: for any<br>rational containment <code>R(D&#x27;.T/D&#x27;.s) ⊆ R(D.T/D.s)</code>, each generator <code>t/D.s</code><br>(for <code>t ∈ D.T</code>) maps to a power-bounded element in the D&#x27;-localization topology<br>under the canonical lift <code>Localization.Away D.s →+* Localization.Away D&#x27;.s</code>.</p><p>This is a consequence of Wedhorn Prop 5.30(4) + 7.14 (adic Nullstellensatz):<br>the rational containment gives <code>v(t) ≤ v(D.s)</code> for all relevant continuous<br>valuations, hence <code>t/D.s</code> is integral over the ring of definition, hence<br>power-bounded.</p><p><strong>Status:</strong> Will be proved as an instance for Tate rings (where the Nullstellensatz<br>is available). For now, carried as an explicit hypothesis via this class.</p></div></details>
-  <p class="used-for"><strong>Used in the paper for:</strong> Appendix: construction of rational restriction maps</p>
+  <p class="used-for"><strong>Used in the paper for:</strong> Appendix A (restriction-map hypothesis); Appendix: construction of rational restriction maps</p>
   <pre><code>class HasLocLiftPowerBounded (A : Type*) [CommRing A] [TopologicalSpace A] [PlusSubring A]
     [IsHuberRing A] : Prop where
   /-- **(Wedhorn-faithful, blocker-2 refactor 2026-05-17)** `D.s` is a unit
@@ -67,10 +67,13 @@
   when this page was built, so no external upstream link is offered here.</p>
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
   The finite-jet development uses restricted power-series code adapted from
-  <a href="https://github.com/WilliamCoram/PhD">William Coram's PhD repository</a>;
-  the vendored source headers also credit Bingyu Xia for power-series equivalence
-  lemmas.  This is infrastructure provenance, not an attribution of this
-  paper-specific declaration.</aside>
+  <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,
+  whose univariate Gauss-norm layer builds on
+  <a href="https://github.com/leanprover-community/mathlib4/blob/fd1d54bcac5caba4eff2ea3421c47d907333f515/Mathlib/RingTheory/PowerSeries/GaussNorm.lean">Fabrizio Barroero's mathlib code</a>.
+  It separately uses
+  <a href="https://github.com/leanprover-community/mathlib4/pull/36507">Bingyu Xia's multivariable power-series equivalences</a>.
+  This is infrastructure provenance, not an attribution of this paper-specific
+  declaration.</aside>
 </main>
 </body>
 </html>

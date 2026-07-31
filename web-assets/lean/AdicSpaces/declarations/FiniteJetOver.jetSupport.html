@@ -35,7 +35,7 @@
   <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>Inside <code>𝓒 = K⟨W,W⁻¹⟩⟨Q⟩</code>, this is the subring of series <code>∑ₙ aₙQⁿ</code> for which <code>a₀,a₁ ∈ K⟨W⟩</code>; no condition is imposed on <code>aₙ</code> for <code>n ≥ 2</code>. Equivalently, its elements have the form <code>a₀ + Qa₁ + Q²h</code> with <code>h ∈ K⟨W,W⁻¹⟩⟨Q⟩</code>.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>The support subring: elements of <code>𝒞</code> whose <code>Q⁰</code>- and <code>Q¹</code>-coefficients lie in the<br>nonnegative-support subring <code>K⟨W⟩ ⊂ L</code> — [FJP] (1.7):<br><code>𝒜 = {f₀(W) + Qf₁(W) + Q²h : f₀, f₁ ∈ k⟨W⟩, h ∈ L⟨Q⟩}</code>.</p></div></details>
-  <p class="used-for"><strong>Used in the paper for:</strong> Theorem 1.1 (definition of the finite-jet algebra); Appendix: support definition of the FJP algebra</p>
+  <p class="used-for"><strong>Used in the paper for:</strong> Theorem 1.1 (definition of the finite-jet algebra); Appendix A (support subring); Appendix: support definition of the FJP algebra</p>
   <pre><code>noncomputable def jetSupport : Subring (JetC K) where
   carrier := {f | qCoeff K 0 f ∈ nonnegSubring K ∧ qCoeff K 1 f ∈ nonnegSubring K}
   zero_mem&#x27; := by
@@ -65,10 +65,13 @@
   when this page was built, so no external upstream link is offered here.</p>
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
   The finite-jet development uses restricted power-series code adapted from
-  <a href="https://github.com/WilliamCoram/PhD">William Coram's PhD repository</a>;
-  the vendored source headers also credit Bingyu Xia for power-series equivalence
-  lemmas.  This is infrastructure provenance, not an attribution of this
-  paper-specific declaration.</aside>
+  <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,
+  whose univariate Gauss-norm layer builds on
+  <a href="https://github.com/leanprover-community/mathlib4/blob/fd1d54bcac5caba4eff2ea3421c47d907333f515/Mathlib/RingTheory/PowerSeries/GaussNorm.lean">Fabrizio Barroero's mathlib code</a>.
+  It separately uses
+  <a href="https://github.com/leanprover-community/mathlib4/pull/36507">Bingyu Xia's multivariable power-series equivalences</a>.
+  This is infrastructure provenance, not an attribution of this paper-specific
+  declaration.</aside>
 </main>
 </body>
 </html>
