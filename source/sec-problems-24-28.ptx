@@ -8,8 +8,7 @@ Problem<nbsp/>28 asks whether a non-zero-divisor which generates a closed ideal 
 restrict to zero on a rational subspace <xref ref="bib-Scottish" detail="Problems 24 and 28"/>.
 The same rational datum, together with multiplicativity of the Gauss norm,
 answers both questions.  We give the argument over the field <m>k</m> fixed in the
-introduction.  The Lean formalisation treats the special case <m>k=F((t))</m>,
-which is enough for the two existence questions.
+introduction.
   </p>
   <proposition xml:id="prop-problems-24-28">
     <statement>
@@ -68,13 +67,4 @@ the nonzero ring <m>\mathcal O(U)</m>, a contradiction.
       </p>
     </proof>
   </proposition>
-  <p>
-    In Lean, <c>presheafValue (chartDatum F)</c> is the completed rational
-localisation, not the ordinary algebraic localisation.  The formalised witness
-checks that the datum is rational, that <m>U</m> is nonempty, that its section ring
-is nonzero, and that multiplication by <m>Q^2</m> is continuous, injective, strict,
-and has closed image before proving that <m>Q^2</m> restricts to zero.  Taking
-<m>F=\mathbb Q</m> gives the required examples.  This does not address the
-perfectoid part of Problem<nbsp/>28.
-  </p>
 </section>

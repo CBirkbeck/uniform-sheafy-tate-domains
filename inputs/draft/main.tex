@@ -882,8 +882,7 @@ Problem~28 asks whether a non-zero-divisor which generates a closed ideal can
 restrict to zero on a rational subspace \cite[Problems~24 and 28]{Scottish}.
 The same rational datum, together with multiplicativity of the Gauss norm,
 answers both questions.  We give the argument over the field $k$ fixed in the
-introduction.  The Lean formalisation treats the special case $k=F((t))$,
-which is enough for the two existence questions.
+introduction.
 
 \begin{proposition}\label{prop:problems-24-28}
 Let
@@ -940,15 +939,6 @@ with $\mathcal O(U)$ would make multiplication by the image of $Q^2$
 injective.  Its image is zero, however, so this multiplication map is zero on
 the nonzero ring $\mathcal O(U)$, a contradiction.
 \end{proof}
-
-In Lean, \texttt{presheafValue (chartDatum F)} is the completed rational
-localisation, not the ordinary algebraic localisation.  The formalised witness
-checks that the datum is rational, that $U$ is nonempty, that its section ring
-is nonzero, and that multiplication by $Q^2$ is continuous, injective, strict,
-and has closed image before proving that $Q^2$ restricts to zero.  Taking
-$F=\mathbb Q$ gives the required examples.  This does not address the
-perfectoid part of Problem~28.
-
 
 \section{A second example}\label{sec:second-example}
 
