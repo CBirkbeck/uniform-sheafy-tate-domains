@@ -7,8 +7,9 @@ rings underlying a rational localisation of Tate Huber pairs must be flat.
 Problem<nbsp/>28 asks whether a non-zero-divisor which generates a closed ideal can
 restrict to zero on a rational subspace <xref ref="bib-Scottish" detail="Problems 24 and 28"/>.
 The same rational datum, together with multiplicativity of the Gauss norm,
-answers both questions.  We give the argument over the field <m>k</m> fixed in the
-introduction.
+answers both questions.  We keep the notation of the introduction.  In fact,
+the argument only uses that <m>k</m> is complete and ultrametric and that
+<m>0&lt;|\varpi|&lt;1</m>; neither conclusion uses sheafiness.
   </p>
   <proposition xml:id="prop-problems-24-28">
     <statement>
@@ -22,13 +23,14 @@ is not flat, and multiplication by <m>Q^2</m> is a strict inclusion on <m>A</m> 
 though <m>Q^2</m> maps to zero in <m>\mathcal O(U)</m>.
       </p>
     </statement>
-    <lean project="AdicSpaces" commit="d5e626ccc43eb3ffded27bb90831bde6c00bb1f9" ref="FiniteJet.finiteJet_witnessRing_quality">Lean (the ambient Tate domain)</lean>
-    <lean project="AdicSpaces" commit="d5e626ccc43eb3ffded27bb90831bde6c00bb1f9" ref="FiniteJet.ev00">Lean (evaluation at W=Q=0)</lean>
-    <lean project="AdicSpaces" commit="d5e626ccc43eb3ffded27bb90831bde6c00bb1f9" ref="FiniteJet.innerPoint_mem_rationalOpen">Lean (the point lies in the chart)</lean>
-    <lean project="AdicSpaces" commit="d5e626ccc43eb3ffded27bb90831bde6c00bb1f9" ref="FiniteJet.scottishWitness_mul_isometry">Lean (multiplication by Q² is an isometry)</lean>
-    <lean project="AdicSpaces" commit="d5e626ccc43eb3ffded27bb90831bde6c00bb1f9" ref="FiniteJet.canonicalMap_scottishWitness">Lean (Q² restricts to zero)</lean>
-    <lean project="AdicSpaces" commit="d5e626ccc43eb3ffded27bb90831bde6c00bb1f9" ref="FiniteJet.finiteJet_problem28">Lean (Problem 28 witness)</lean>
-    <lean project="AdicSpaces" commit="d5e626ccc43eb3ffded27bb90831bde6c00bb1f9" ref="FiniteJet.finiteJet_not_flat_canonicalMap">Lean (nonflat completed chart)</lean>
+    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.IsFJPBase">Lean (hypothesis on the base field)</lean>
+    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_padic_quality">Lean (the p-adic finite-jet ring)</lean>
+    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.ev00">Lean (evaluation at W=Q=0)</lean>
+    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.innerPoint_mem_rationalOpen">Lean (the point lies in the chart)</lean>
+    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.scottishWitness_mul_isometry">Lean (multiplication by Q² is an isometry)</lean>
+    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.canonicalMap_scottishWitness">Lean (Q² restricts to zero)</lean>
+    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_problem28">Lean (Problem 28 witness)</lean>
+    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_not_flat_canonicalMap">Lean (nonflat completed chart)</lean>
     <proof>
       <p>
         The composite

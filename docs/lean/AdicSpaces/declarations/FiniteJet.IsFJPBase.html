@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FiniteJet.ev00 · Lean source</title>
+  <title>FiniteJet.IsFJPBase · Lean source</title>
   <style>
     :root { color-scheme: light dark; }
     body { margin: 0; font: 16px/1.55 system-ui, sans-serif; }
@@ -30,17 +30,22 @@
 <body>
 <main>
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
-  <div class="kind">def</div>
-  <h1>FiniteJet.ev00</h1>
-  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For the finite-jet algebra over a complete ultrametric field satisfying <code>IsFJPBase K</code>, <code>ev00 : 𝒜 → K</code> sends <code>f₀(W)+Qf₁(W)+Q²h</code> to <code>f₀(0)</code>. It is the composite of the map to the square-zero disc algebra, projection to its degree-zero part, and evaluation at <code>W=0</code>. The norm estimate shows that it carries the norm unit ball into the valuation ring; pulling back the norm valuation produces the point used in Proposition 7.1.</p></div></div>
+  <div class="kind">class</div>
+  <h1>FiniteJet.IsFJPBase</h1>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>An <code>IsFJPBase K</code> is a complete ultrametric normed field together with a chosen element <code>ϖ</code> such that <code>ϖ ≠ 0</code> and <code>‖ϖ‖ &lt; 1</code>. These are the only base-field hypotheses used by the finite-jet ring theory, the bad chart, and the Scottish Book Problem 24 and 28 arguments; no discreteness assumption is imposed.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
-  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>The origin evaluation</strong> <code>ev₀₀ : 𝓐 → K</code>, <code>f₀(W) + Qf₁(W) + Q²h ↦ f₀(0)</code>: discard the<br>terms of <code>Q</code>-degree <code>≥ 1</code> (the map to <code>𝓑</code>), then evaluate the disc component at <code>W = 0</code>.</p></div></details>
-  <p class="used-for"><strong>Used in the paper for:</strong> Proposition 7.1 (point of the rational subset)</p>
-  <pre><code>def ev00 : JetA F →+* K :=
-  (constCoeffKW F).comp ((jetBFst F).comp (jB F))</code></pre>
-  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/FiniteJetScottishBook.lean:197–198</code><br>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>The base of the finite-jet construction</strong>: a complete ultrametric nonarchimedean<br>field together with a pseudouniformizer <code>ϖ</code> (<code>ϖ ≠ 0</code>, <code>‖ϖ‖ &lt; 1</code>). No discreteness is<br>required.</p></div></details>
+  <p class="used-for"><strong>Used in the paper for:</strong> Proposition 7.1 and Appendix A (hypothesis on the abstract base field)</p>
+  <pre><code>class IsFJPBase (K : Type u) [NormedField K] [IsUltrametricDist K] [CompleteSpace K] where
+  /-- The chosen pseudouniformizer. -/
+  pseudoUniformizer : K
+  /-- The pseudouniformizer is nonzero (hence a unit, `K` being a field). -/
+  pseudoUniformizer_ne_zero : pseudoUniformizer ≠ 0
+  /-- The pseudouniformizer is topologically nilpotent. -/
+  norm_pseudoUniformizer_lt_one : ‖pseudoUniformizer‖ &lt; 1</code></pre>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/FJPBase.lean:45–51</code><br>
   AINTLIB commit <code>01116aca6070283726008536cba16d165a01b505</code>.</p>
-  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/01116aca6070283726008536cba16d165a01b505/projects/AdicSpaces/Adic%20spaces/FJP/FiniteJetScottishBook.lean#L197-L198">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
+  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/01116aca6070283726008536cba16d165a01b505/projects/AdicSpaces/Adic%20spaces/FJP/FJPBase.lean#L45-L51">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
   The finite-jet development uses restricted power-series code adapted from
   <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,

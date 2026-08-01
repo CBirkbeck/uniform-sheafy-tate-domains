@@ -32,7 +32,7 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">theorem</div>
   <h1>FiniteJet.canonicalMap_scottishWitness</h1>
-  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For the rational datum <code>(W;ϖ)</code>, the canonical map from the finite-jet algebra to the completed rational localisation sends <code>Q²</code> to zero. This is the completion phenomenon calculated in Proposition 4.1: the corresponding identity <code>ρ(Q)²=0</code> was proved before identifying the completed chart with <code>K⟨X,Q⟩/(Q²)</code>.</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For a base satisfying <code>IsFJPBase K</code> and the rational datum <code>(W;ϖ)</code>, the canonical map from the finite-jet algebra to the completed rational localisation sends <code>Q²</code> to zero. This is the completion phenomenon calculated in Proposition 4.1: the corresponding identity <code>ρ(Q)²=0</code> was proved before identifying the completed chart with <code>K⟨X,Q⟩/(Q²)</code>.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong><code>Q²</code> dies in the completed rational localization</strong> — [FJP] (3.3), through the<br>already-proved <code>canonicalMap_Qa_sq</code>. This is a completion phenomenon: <code>ϖ</code> is a unit of<br><code>𝓐</code>, so the *algebraic* localization at <code>ϖ</code> is <code>𝓐</code> itself, where <code>Q² ≠ 0</code>; the element<br>becomes zero only after imposing that <code>W/ϖ</code> be power-bounded and completing.</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Proposition 7.1 (Q² restricts to zero)</p>
@@ -40,9 +40,9 @@
     (chartDatum F).canonicalMap (scottishWitness F) = 0 := by
   rw [scottishWitness, sq, map_mul]
   exact canonicalMap_Qa_sq F</code></pre>
-  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/FiniteJetScottishBook.lean:151–154</code><br>
-  AINTLIB commit <code>d5e626ccc43eb3ffded27bb90831bde6c00bb1f9</code>.</p>
-  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/d5e626ccc43eb3ffded27bb90831bde6c00bb1f9/projects/AdicSpaces/Adic%20spaces/FJP/FiniteJetScottishBook.lean#L151-L154">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/FiniteJetScottishBook.lean:152–155</code><br>
+  AINTLIB commit <code>01116aca6070283726008536cba16d165a01b505</code>.</p>
+  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/01116aca6070283726008536cba16d165a01b505/projects/AdicSpaces/Adic%20spaces/FJP/FiniteJetScottishBook.lean#L152-L155">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
   The finite-jet development uses restricted power-series code adapted from
   <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,

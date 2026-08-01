@@ -68,7 +68,10 @@ so <m>A</m> is not stably uniform.
     The same rational chart gives a negative answer to Problem<nbsp/>24 of the
 <em>Nonarchimedean Scottish Book</em> and an affirmative answer to the Tate
 case of Problem<nbsp/>28; see <xref ref="sec-problems-24-28"/>.  These two consequences
-have also been formalised in Lean after specialising to <m>k=\mathbb Q((t))</m>.
+have also been formalised in Lean under the weaker assumption that <m>k</m> is a
+complete ultrametric normed field equipped with a nonzero element <m>\varpi</m>
+satisfying <m>|\varpi|&lt;1</m>.  In particular, the formalisation applies over
+<m>\mathbb Q_p</m> as well as over <m>F((t))</m>.
   </p>
   <p>
     The proof uses Milnor squares of complete Tate rings.  Recall that a cartesian square of

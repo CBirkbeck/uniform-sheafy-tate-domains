@@ -32,10 +32,10 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">theorem</div>
   <h1>FiniteJet.finiteJet_problem28</h1>
-  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For the finite-jet algebra over <code>K=F((t))</code>, take <code>f=Q²</code> and the datum <code>(W;ϖ)</code>. Lean proves that the datum is rational, its rational subset is nonempty, and its section ring is nonzero. Multiplication by <code>f</code> is injective, continuous and strict, with closed image, but the canonical map to the completed rational localisation sends <code>f</code> to zero. This is the concrete Tate-ring witness for Problem 28; it makes no claim about the perfectoid case.</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For the finite-jet algebra over any complete ultrametric field satisfying <code>IsFJPBase K</code>, take <code>f=Q²</code> and the datum <code>(W;ϖ)</code>. Lean proves that the datum is rational, its rational subset is nonempty, and its section ring is nonzero. Multiplication by <code>f</code> is injective, continuous and strict, with closed image, but the canonical map to the completed rational localisation sends <code>f</code> to zero. This is the Tate-ring witness for Problem 28; it makes no claim about the perfectoid case.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>Nonarchimedean Scottish Book, Problem 28 — affirmative answer for the finite-jet<br>algebra.</strong> For the complete uniform nonnoetherian sheafy Tate domain <code>𝓐</code>, the element<br><code>f = Q²</code> and the rational datum <code>α = (W; ϖ)</code>:</p><p>1. <code>α</code> is a genuine rational datum, the subset <code>U = R(W/ϖ)</code> is nonempty, and its chart<br><code>𝒪_X(U)</code> is a nonzero ring — none of the degenerate loopholes;<br>2. multiplication by <code>f</code> is injective, continuous, strict, and has closed image — a<br>strict inclusion in both senses;<br>3. <code>f</code> restricts to <code>0</code> on the rational subset.</p></div></details>
-  <p class="used-for"><strong>Used in the paper for:</strong> Proposition 7.1 (Problem 28 witness over F((t)))</p>
+  <p class="used-for"><strong>Used in the paper for:</strong> Proposition 7.1 (Problem 28 witness over an IsFJPBase)</p>
   <pre><code>theorem finiteJet_problem28 :
     (chartDatum F).IsRational ∧
     (rationalOpen (chartDatum F).T (chartDatum F).s).Nonempty ∧
@@ -49,9 +49,9 @@
     scottishWitness_mul_injective F, scottishWitness_mul_continuous F,
     scottishWitness_mul_isStrictMap F, scottishWitness_mul_range_isClosed F,
     canonicalMap_scottishWitness F⟩</code></pre>
-  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/FiniteJetScottishBook.lean:301–313</code><br>
-  AINTLIB commit <code>d5e626ccc43eb3ffded27bb90831bde6c00bb1f9</code>.</p>
-  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/d5e626ccc43eb3ffded27bb90831bde6c00bb1f9/projects/AdicSpaces/Adic%20spaces/FJP/FiniteJetScottishBook.lean#L301-L313">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/FiniteJetScottishBook.lean:302–314</code><br>
+  AINTLIB commit <code>01116aca6070283726008536cba16d165a01b505</code>.</p>
+  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/01116aca6070283726008536cba16d165a01b505/projects/AdicSpaces/Adic%20spaces/FJP/FiniteJetScottishBook.lean#L302-L314">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
   The finite-jet development uses restricted power-series code adapted from
   <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,

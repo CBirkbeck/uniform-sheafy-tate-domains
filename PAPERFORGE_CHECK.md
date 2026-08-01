@@ -46,7 +46,7 @@ The prose proofs were compared with the bodies and direct dependencies of the
 declarations at the two example snapshots, rather than only with their theorem
 statements.  The sheaf-predicate comparison was checked separately at
 `d92f96504f949ca43a27a817cb8d2f70b6486744`, and the Scottish Book
-consequences at `d5e626ccc43eb3ffded27bb90831bde6c00bb1f9`.  The resulting
+consequences at `01116aca6070283726008536cba16d165a01b505`.  The resulting
 proof crosswalk is:
 
 | Paper result | Formal proof route and disposition |
@@ -57,7 +57,7 @@ proof crosswalk is:
 | Lemma 5.2 | Choose preimages under `d₁` over `B` and `C` satisfying the norm bounds of Lemma 5.1. Their difference over `D` lies in `ker(d₁)`; choose a preimage under `d₂` with the corresponding norm bound and lift it coefficientwise to `C`. The ambient Milnor pullback then gives the element over `A`. The same inequalities prove closedness of `I_A` and strict exactness. |
 | Proposition 5.3 | Lean proves algebraic exactness by correcting defects of quotient representatives through `I_C`. A quotient-norm estimate gives the left-hand topological embedding, while the norm-preserving coefficient section proves that `C_α → D_α` is open. The proof has been rewritten accordingly. |
 | Theorem 6.1 | A rational cover and compatible family are pushed to `B,C,D`; sheafiness there and the localised Milnor row give separation and gluing over `A`. The subspace of tuples agreeing on pairwise intersections is closed, and the closed-range theorem gives the required topological embedding. Lean proves this concrete argument. |
-| Proposition 7.1 | For `K=F((t))`, Lean defines `ev00(f₀(W)+Qf₁(W)+Q²h)=f₀(0)` and pulls the norm valuation back along it to obtain a point of the chart. Multiplicativity of the Gauss norm gives `‖Q²a‖=‖a‖`; the resulting range factorisation is a homeomorphism, and completeness makes the range closed. The previously proved identity `canonicalMap_Qa_sq` gives `ρ(Q²)=0`. For nonflatness, Lean applies `Module.Flat.isSMulRegular_of_nonZeroDivisors`: flatness would make the image of the non-zero-divisor `Q²` act injectively on the nonzero chart, whereas that image is zero. The paper now follows this route. |
+| Proposition 7.1 | Over any complete ultrametric normed field `K` with an `IsFJPBase K` instance, Lean defines `ev00(f₀(W)+Qf₁(W)+Q²h)=f₀(0)` and pulls the norm valuation back along it to obtain a point of the chart. Multiplicativity of the Gauss norm gives `‖Q²a‖=‖a‖`; the resulting range factorisation is a homeomorphism, and completeness makes the range closed. The previously proved identity `canonicalMap_Qa_sq` gives `ρ(Q²)=0`. For nonflatness, Lean applies `Module.Flat.isSMulRegular_of_nonZeroDivisors`: flatness would make the image of the non-zero-divisor `Q²` act injectively on the nonzero chart, whereas that image is zero. The paper now follows this route. |
 | Lemma 8.2 | Lean decomposes each finite-variable ring into the finitely many exponent-parity classes, identifies the even-exponent subring isometrically with an ordinary Tate algebra, and proves module-finiteness over it. The inclusions are the subtype inclusions in the common countable Tate algebra, hence isometric, and `exists_head_approx` gives the quantitative approximation used for density. |
 | Propositions 8.3--8.4 and 8.8--8.9 | The weighted-parity development proves multiplicativity of the countable Gauss norm by choosing lexicographically maximal norm-attaining exponents, proves nonnoetherianity by direct coefficient extraction, and handles the distinguished chart by a completed quotient over \(K\langle W\rangle\) and an embedding into formal power series. The paper now uses these arguments. |
 | Proposition 8.6 and Theorem 8.10 | For data in the finite-variable subring \(\mathcal A^{(N)}\), localisation is constructed by applying its quotient map to every coefficient indexed by the remaining variables and summing coefficientwise for the inverse; it does not use the Koszul complex. In the sheaf proof, the retraction \(\rho_N:\mathcal A\to\mathcal A^{(N)}\) pulls any point outside the proposed finite-variable cover back to a point outside the original cover, so the finite-variable rational subsets really do cover. Strong noetherian sheafiness then glues the coefficients, and the restriction embedding proves that they tend to zero; the closed-range theorem supplies the final topological statement. |
@@ -133,15 +133,27 @@ The sheaf-comparison snapshot
 `overlappingInstances` warnings were the pre-existing warnings on the
 neighbouring structure-sheaf declarations.
 
-The Scottish Book audit used commit
-`d5e626ccc43eb3ffded27bb90831bde6c00bb1f9`.  The three affected modules
-completed a 3,132-job targeted build.  `#print axioms` for
+The abstract-base Scottish Book audit uses commit
+`01116aca6070283726008536cba16d165a01b505`.  Its class `IsFJPBase K` consists
+of a chosen element `ϖ : K`, proofs that `ϖ ≠ 0` and `‖ϖ‖ < 1`, and the ambient
+complete ultrametric normed-field structure.  The Problem 24 and 28
+declarations require no discreteness or noetherian-base hypothesis.  The
+source files relevant here are unchanged at the current public head; the
+three entry modules and the p-adic specialization compiled there.  `#print
+axioms` for
+`FiniteJet.finiteJet_padic_quality`,
 `FiniteJet.finiteJet_problem28`,
 `FiniteJet.finiteJet_not_flat_canonicalMap`,
 `FiniteJet.chart_rationalOpen_nonempty`,
 `FiniteJet.scottishWitness_mul_isometry`,
 `ScottishBook.problem28`, and the two Problem 24 endpoints again reported only
 `propext`, `Classical.choice`, and `Quot.sound`, with no `sorryAx`.
+
+There are explicit `IsFJPBase` instances for `F((t))` and for `ℚ_p`.  The
+separate sheafy quality package `finiteJet_witnessRing_quality` assumes the
+stronger class `IsFJPNoetherianBase K`; a sorry-free instance of this stronger
+class is currently supplied for `F((t))`, but not for `ℚ_p`.  Neither Scottish
+Book argument uses that additional assumption.
 
 The paper deliberately links the concrete `FiniteJet.*` declarations, rather
 than the generic `ScottishBook.*` wrappers.  The concrete declarations prove
@@ -151,9 +163,10 @@ record that the chosen plus ring is a ring of integral elements, and the two
 Problem 24 wrappers do not include `D.IsRational` (and likewise quantify over a
 bare plus subring).  Their proofs instantiate valid concrete data, so these are
 packaging omissions rather than gaps in the mathematics, but the wrappers are
-not used as evidence for the paper's formalisation claim.  The formalised
-Scottish Book witness is over `F((t))`; the paper's argument is stated for an
-arbitrary complete discretely valued base field.
+not used as evidence for the paper's formalisation claim.  The concrete
+Problem 24 and 28 declarations are parametrised by `IsFJPBase K`, and hence
+apply in particular to `F((t))` and to the explicit mixed-characteristic base
+`ℚ_p`.
 
 The weighted-parity audit used pinned commit
 `090a289211deb69117413e329325fe819aa7dbc2`.  `WP.Main` completed its

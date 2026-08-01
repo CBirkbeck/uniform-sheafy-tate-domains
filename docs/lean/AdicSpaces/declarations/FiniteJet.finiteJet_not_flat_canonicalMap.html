@@ -32,7 +32,7 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">theorem</div>
   <h1>FiniteJet.finiteJet_not_flat_canonicalMap</h1>
-  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>The canonical map from the finite-jet algebra over <code>K=F((t))</code> to the completed chart for <code>(W;ϖ)</code> is not flat. The element <code>Q²</code> is a non-zero-divisor in the source. If the map were flat, its image would act injectively on the target. That image is zero, while the chart is a nonzero ring, giving a contradiction. This concerns the completed rational localisation <code>presheafValue</code>; the ordinary algebraic localisation is flat.</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For any base satisfying <code>IsFJPBase K</code>, the canonical map from the finite-jet algebra to the completed chart for <code>(W;ϖ)</code> is not flat. The element <code>Q²</code> is a non-zero-divisor in the source. If the map were flat, its image would act injectively on the target. That image is zero, while the chart is a nonzero ring, giving a contradiction. This concerns the completed rational localisation <code>presheafValue</code>; the ordinary algebraic localisation is flat.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>Nonarchimedean Scottish Book, Problem 24 — negative answer for the finite-jet<br>algebra.</strong> The completed rational localization <code>𝓐 → 𝓐⟨W/ϖ⟩</code> of the Tate pair<br><code>(𝓐, 𝓐°)</code> at the rational datum <code>(W; ϖ)</code> is <strong>not flat</strong>.</p><p>Flatness would force the nonzerodivisor <code>Q²</code> to act injectively on <code>𝓐⟨W/ϖ⟩</code><br>(<code>Module.Flat.isSMulRegular_of_nonZeroDivisors</code>); but <code>Q²</code> acts as multiplication by<br><code>ρ(Q²) = 0</code> on a *nonzero* ring, so it annihilates a nonzero element.</p><p>Note the hypotheses are not vacuous: <code>𝓐</code> is a <strong>complete uniform sheafy</strong> Tate ring<br>(<code>finiteJet_isUniform</code>, <code>finiteJet_isSheafy</code>) — merely not strongly noetherian, which is<br>exactly the case Problem 24 leaves open.</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Proposition 7.1 (nonflat completed rational localisation)</p>
@@ -52,9 +52,9 @@
     (chartDatum F).canonicalMap (scottishWitness F) *
       (1 : presheafValue (chartDatum F))
   rw [canonicalMap_scottishWitness, zero_mul, zero_mul]</code></pre>
-  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/FiniteJetScottishBook.lean:328–343</code><br>
-  AINTLIB commit <code>d5e626ccc43eb3ffded27bb90831bde6c00bb1f9</code>.</p>
-  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/d5e626ccc43eb3ffded27bb90831bde6c00bb1f9/projects/AdicSpaces/Adic%20spaces/FJP/FiniteJetScottishBook.lean#L328-L343">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/FiniteJetScottishBook.lean:329–344</code><br>
+  AINTLIB commit <code>01116aca6070283726008536cba16d165a01b505</code>.</p>
+  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/01116aca6070283726008536cba16d165a01b505/projects/AdicSpaces/Adic%20spaces/FJP/FiniteJetScottishBook.lean#L329-L344">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
   The finite-jet development uses restricted power-series code adapted from
   <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,

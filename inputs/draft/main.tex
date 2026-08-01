@@ -136,7 +136,10 @@ so $A$ is not stably uniform.
 The same rational chart gives a negative answer to Problem~24 of the
 \emph{Nonarchimedean Scottish Book} and an affirmative answer to the Tate
 case of Problem~28; see \cref{sec:problems-24-28}.  These two consequences
-have also been formalised in Lean after specialising to $k=\mathbb Q((t))$.
+have also been formalised in Lean under the weaker assumption that $k$ is a
+complete ultrametric normed field equipped with a nonzero element $\varpi$
+satisfying $|\varpi|<1$.  In particular, the formalisation applies over
+$\mathbb Q_p$ as well as over $F((t))$.
 
 The proof uses Milnor squares of complete Tate rings.  Recall that a cartesian square of
 rings with a surjective leg is called a Milnor square \cite[Section~2]{Milnor}; the
@@ -881,8 +884,9 @@ rings underlying a rational localisation of Tate Huber pairs must be flat.
 Problem~28 asks whether a non-zero-divisor which generates a closed ideal can
 restrict to zero on a rational subspace \cite[Problems~24 and 28]{Scottish}.
 The same rational datum, together with multiplicativity of the Gauss norm,
-answers both questions.  We give the argument over the field $k$ fixed in the
-introduction.
+answers both questions.  We keep the notation of the introduction.  In fact,
+the argument only uses that $k$ is complete and ultrametric and that
+$0<|\varpi|<1$; neither conclusion uses sheafiness.
 
 \begin{proposition}\label{prop:problems-24-28}
 Let
@@ -1541,7 +1545,7 @@ finite-jet declarations are taken from AINTLIB commit
 \texttt{b007a4f3d}, and the weighted-parity declarations from commit
 \texttt{090a28921}.  The comparison with Mathlib's sheaf predicate is taken
 from commit \texttt{d92f96504}, and the consequences for Scottish Book
-Problems~24 and 28 from commit \texttt{d5e626ccc} \cite{AINTLIB}.  For each
+Problems~24 and 28 from commit \texttt{01116aca6} \cite{AINTLIB}.  For each
 example Lean proves the
 Tate structure, uniformity, domain and nonnoetherianity statements,
 sheafiness, and failure of stable uniformity, together with the rational
@@ -1946,13 +1950,37 @@ theorem identifies $W$ and $Q$.  It is not bundled as a
 \texttt{K}-\texttt{AlgEquiv}, which is why \cref{prop:bad-chart} is stated for
 complete topological rings.
 
-The consequences in \cref{sec:problems-24-28} are formalised over
-$K=F((t))$.  This is less general than the arbitrary complete discretely
-valued field used in the paper, but taking $F=\mathbb Q$ is enough to answer
-the two existence questions.  The declaration
-\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_witnessRing_quality.html}{\texttt{finiteJet\_witnessRing\_quality}}
-records that this concrete ring is a uniform sheafy Tate domain and is not
-noetherian.  The theorem
+The consequences in \cref{sec:problems-24-28} are not restricted to
+Laurent-series fields.  They are formalised for any complete ultrametric
+normed field $K$ equipped with a nonzero element $\varpi$ satisfying
+$\lVert\varpi\rVert<1$; this is the class
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.IsFJPBase.html}{\texttt{IsFJPBase K}}.
+The source happens to call the base parameter \texttt{F}, but it denotes $K$
+itself, not the coefficient field of a Laurent-series field.  Sorry-free
+instances are provided for $F((t))$ and for $\mathbb Q_p$; the latter also
+gives the explicit
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_padic_quality.html}{$p$-adic finite-jet ring}.
+
+\begin{lstlisting}
+class IsFJPBase (K : Type u) [NormedField K]
+    [IsUltrametricDist K] [CompleteSpace K] where
+  pseudoUniformizer : K
+  pseudoUniformizer_ne_zero : pseudoUniformizer ≠ 0
+  norm_pseudoUniformizer_lt_one :
+    ‖pseudoUniformizer‖ < 1
+\end{lstlisting}
+
+Sheafiness is a separate assertion in this newer interface.  The
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_witnessRing_quality.html}{corresponding Lean theorem}
+assumes the additional class \texttt{IsFJPNoetherianBase K}, which supplies the
+noetherian Gauss-unit-ball input used in the sheaf proof.  A sorry-free
+instance of this additional class is currently supplied for $F((t))$, but
+not for $\mathbb Q_p$.  Neither of the Scottish Book conclusions uses it.
+The independent \texttt{FiniteJetOver} development used for the main theorem
+proves sheafiness under the complete discretely valued hypothesis of the
+paper.
+
+Under the weaker \texttt{IsFJPBase} hypothesis, the theorem
 \href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_problem28.html}{\texttt{finiteJet\_problem28}}
 records in one statement that $(W;\varpi)$ is rational, its rational subset
 and section ring are nonempty and nonzero, multiplication by $Q^2$ is a
@@ -1969,6 +1997,9 @@ and that
 are the inputs used below.
 
 \begin{lstlisting}
+variable (F : Type*) [NormedField F] [IsUltrametricDist F]
+  [CompleteSpace F] [IsFJPBase F]
+
 theorem finiteJet_problem28 :
     (chartDatum F).IsRational ∧
     (rationalOpen (chartDatum F).T (chartDatum F).s).Nonempty ∧
@@ -2192,8 +2223,8 @@ Lean~4 source code, finite-jet snapshot
 snapshot
 \texttt{090a289211deb69117413e329325fe819aa7dbc2}, together with the
 sheaf-comparison snapshot
-\texttt{d92f96504f949ca43a27a817cb8d2f70b6486744} and Scottish Book
-snapshot \texttt{d5e626ccc43eb3ffded27bb90831bde6c00bb1f9}, 2026,
+\texttt{d92f96504f949ca43a27a817cb8d2f70b6486744} and abstract-base Scottish
+Book snapshot \texttt{01116aca6070283726008536cba16d165a01b505}, 2026,
 \url{https://github.com/CBirkbeck/AINTLIB}.
 
 \bibitem{BBK}

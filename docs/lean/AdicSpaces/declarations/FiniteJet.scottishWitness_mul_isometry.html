@@ -32,7 +32,7 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">theorem</div>
   <h1>FiniteJet.scottishWitness_mul_isometry</h1>
-  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>Let <code>f=Q²</code> in the finite-jet algebra over <code>K=F((t))</code>. Multiplication by <code>f</code> preserves distances, because the multiplicative Gauss norm gives <code>‖Q²a‖=‖a‖</code>. It is consequently injective and identifies the algebra homeomorphically with its range. Since the source is complete, that range is closed. These are the strictness and closed-image assertions required in Problem 28.</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>Let <code>f=Q²</code> in the finite-jet algebra over a base satisfying <code>IsFJPBase K</code>. Multiplication by <code>f</code> preserves distances, because the multiplicative Gauss norm gives <code>‖Q²a‖=‖a‖</code>. It is consequently injective and identifies the algebra homeomorphically with its range. Since the source is complete, that range is closed. These are the strictness and closed-image assertions required in Problem 28.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>Multiplication by <code>Q²</code> is an <strong>isometry</strong> of <code>𝓐</code>. This single fact gives injectivity,<br>strictness and closedness of the image at once, with no appeal to a nonarchimedean open<br>mapping theorem.</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Proposition 7.1 (strict multiplication by Q²)</p>
@@ -40,9 +40,9 @@
     Isometry (fun a : JetA F =&gt; scottishWitness F * a) := by
   refine Isometry.of_dist_eq fun a b =&gt; ?_
   rw [dist_eq_norm, dist_eq_norm, ← mul_sub, norm_scottishWitness_mul]</code></pre>
-  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/FiniteJetScottishBook.lean:109–112</code><br>
-  AINTLIB commit <code>d5e626ccc43eb3ffded27bb90831bde6c00bb1f9</code>.</p>
-  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/d5e626ccc43eb3ffded27bb90831bde6c00bb1f9/projects/AdicSpaces/Adic%20spaces/FJP/FiniteJetScottishBook.lean#L109-L112">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/FiniteJetScottishBook.lean:110–113</code><br>
+  AINTLIB commit <code>01116aca6070283726008536cba16d165a01b505</code>.</p>
+  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/01116aca6070283726008536cba16d165a01b505/projects/AdicSpaces/Adic%20spaces/FJP/FiniteJetScottishBook.lean#L110-L113">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
   The finite-jet development uses restricted power-series code adapted from
   <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,

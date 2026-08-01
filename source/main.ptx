@@ -46,7 +46,7 @@ witnessing failure of stable uniformity, have been formalised in Lean<nbsp/>4.
       <references xml:id="references">
       <title>References</title>
       <biblio type="raw" xml:id="bib-AINTLIB">
-      C.<nbsp/>Birkbeck and contributors, <em>AINTLIB: AdicSpaces formalisation</em>, Lean<nbsp/>4 source code, finite-jet snapshot <c>b007a4f3d4226f00a684b402715aa542e2f0bcdc</c> and weighted-parity snapshot <c>090a289211deb69117413e329325fe819aa7dbc2</c>, together with the sheaf-comparison snapshot <c>d92f96504f949ca43a27a817cb8d2f70b6486744</c> and Scottish Book snapshot <c>d5e626ccc43eb3ffded27bb90831bde6c00bb1f9</c>, 2026, <url href="https://github.com/CBirkbeck/AINTLIB"><c>https://github.com/CBirkbeck/AINTLIB</c></url>.
+      C.<nbsp/>Birkbeck and contributors, <em>AINTLIB: AdicSpaces formalisation</em>, Lean<nbsp/>4 source code, finite-jet snapshot <c>b007a4f3d4226f00a684b402715aa542e2f0bcdc</c> and weighted-parity snapshot <c>090a289211deb69117413e329325fe819aa7dbc2</c>, together with the sheaf-comparison snapshot <c>d92f96504f949ca43a27a817cb8d2f70b6486744</c> and abstract-base Scottish Book snapshot <c>01116aca6070283726008536cba16d165a01b505</c>, 2026, <url href="https://github.com/CBirkbeck/AINTLIB"><c>https://github.com/CBirkbeck/AINTLIB</c></url>.
       </biblio>
       <biblio type="raw" xml:id="bib-BBK">
       O.<nbsp/>Ben-Bassat and K.<nbsp/>Kremnizer, <em>Non-Archimedean analytic geometry as relative algebraic geometry</em>, Ann. Fac. Sci. Toulouse Math. (6) <alert>26</alert> (2017), no.<nbsp/>1, 49<ndash/>126, <url href="https://doi.org/10.5802/afst.1526">doi:10.5802/afst.1526</url>.

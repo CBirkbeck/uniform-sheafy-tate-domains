@@ -32,7 +32,7 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">theorem</div>
   <h1>FiniteJet.innerPoint_mem_rationalOpen</h1>
-  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>Pull back the norm valuation on <code>K=F((t))</code> along <code>ev00</code>. The resulting continuous valuation belongs to <code>Spa(𝒜,𝒜°)</code>: the norm estimate sends power-bounded elements to the valuation ring. It satisfies <code>|W|=0</code> and <code>|ϖ|≠0</code>, and hence lies in the rational subset <code>{|W|≤|ϖ|}</code>. This proves that the chart used for Problems 24 and 28 is nonempty.</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>Pull back the norm valuation on the abstract base field <code>K</code> along <code>ev00</code>. The resulting continuous valuation belongs to <code>Spa(𝒜,𝒜°)</code>: the norm estimate sends power-bounded elements to the valuation ring. It satisfies <code>|W|=0</code> and <code>|ϖ|≠0</code>, and hence lies in the rational subset <code>{|W|≤|ϖ|}</code>. This proves that the chart used for Problems 24 and 28 is nonempty.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>The chart is nonempty</strong>: the origin <code>x₀₀</code> satisfies <code>|W| = 0 ≤ |ϖ| ≠ 0</code>, so it lies<br>in the rational subset <code>U = R(W/ϖ)</code>.</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Proposition 7.1 (the point lies in the rational subset)</p>
@@ -55,9 +55,9 @@
     show ¬ ev00Val F (tA F) ≤ ev00Val F 0
     rw [map_zero, le_zero_iff]
     exact hϖ</code></pre>
-  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/FiniteJetScottishBook.lean:266–284</code><br>
-  AINTLIB commit <code>d5e626ccc43eb3ffded27bb90831bde6c00bb1f9</code>.</p>
-  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/d5e626ccc43eb3ffded27bb90831bde6c00bb1f9/projects/AdicSpaces/Adic%20spaces/FJP/FiniteJetScottishBook.lean#L266-L284">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/FiniteJetScottishBook.lean:267–285</code><br>
+  AINTLIB commit <code>01116aca6070283726008536cba16d165a01b505</code>.</p>
+  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/01116aca6070283726008536cba16d165a01b505/projects/AdicSpaces/Adic%20spaces/FJP/FiniteJetScottishBook.lean#L267-L285">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
   The finite-jet development uses restricted power-series code adapted from
   <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,

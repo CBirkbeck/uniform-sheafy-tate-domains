@@ -409,6 +409,15 @@
       "kind": "theorem",
       "cited": "Appendix: failure of stable uniformity",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "FiniteJet.finiteJet_witnessRing_quality",
+      "file": "Adic spaces/FJP/FiniteJetScottishBook.lean",
+      "line": 67,
+      "kind": "theorem",
+      "include_body": true,
+      "cited": "Appendix: the sheafy quality package under IsFJPNoetherianBase",
+      "commit": "01116aca6070283726008536cba16d165a01b505"
     }
   ]
 }

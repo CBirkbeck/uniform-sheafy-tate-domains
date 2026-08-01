@@ -16,7 +16,11 @@ strong noetherianity, and the two example constructions.  For both examples
 it records the completed formalisation of uniformity, sheafiness, the
 distinguished rational chart, and failure of stable uniformity.  It also
 records the formalised finite-jet witnesses for Scottish Book Problems 24
-and 28, and credits William Coram's restricted-series code, Fabrizio Barroero's
+and 28.  These declarations use an abstract complete ultrametric base with a
+chosen pseudouniformizer, with both Laurent-series and p-adic instances.  The
+appendix keeps this separate from the additional noetherian-base hypothesis
+used by the newer sheafiness interface.  It also credits William Coram's
+restricted-series code, Fabrizio Barroero's
 univariate Gauss-norm code, and Bingyu Xia's power-series equivalences.
 
 ## Outputs
@@ -69,7 +73,7 @@ first author-voice pass.
 
 ## Lean source and publication note
 
-The interactive code is extracted from three audited AINTLIB snapshots:
+The interactive code is extracted from four audited AINTLIB snapshots:
 
 ```text
 finite-jet branch: fjp/cdvf-lemma51
@@ -79,7 +83,7 @@ weighted-parity commit: 090a289211deb69117413e329325fe819aa7dbc2
 sheaf-comparison branch: dev/adic-spaces
 sheaf-comparison commit: d92f96504f949ca43a27a817cb8d2f70b6486744
 Scottish Book branch: dev/adic-spaces
-Scottish Book commit: d5e626ccc43eb3ffded27bb90831bde6c00bb1f9
+abstract-base Scottish Book commit: 01116aca6070283726008536cba16d165a01b505
 project: projects/AdicSpaces
 ```
 
