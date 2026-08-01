@@ -15,7 +15,8 @@ all-open equivalent, the completion- and plus-ring-independent variants,
 strong noetherianity, and the two example constructions.  For both examples
 it records the completed formalisation of uniformity, sheafiness, the
 distinguished rational chart, and failure of stable uniformity.  It also
-credits William Coram's restricted-series code, Fabrizio Barroero's
+records the formalised finite-jet witnesses for Scottish Book Problems 24
+and 28, and credits William Coram's restricted-series code, Fabrizio Barroero's
 univariate Gauss-norm code, and Bingyu Xia's power-series equivalences.
 
 ## Outputs
@@ -77,11 +78,14 @@ weighted-parity branch: wp/reduced-example
 weighted-parity commit: 090a289211deb69117413e329325fe819aa7dbc2
 sheaf-comparison branch: dev/adic-spaces
 sheaf-comparison commit: d92f96504f949ca43a27a817cb8d2f70b6486744
+Scottish Book branch: dev/adic-spaces
+Scottish Book commit: d5e626ccc43eb3ffded27bb90831bde6c00bb1f9
 project: projects/AdicSpaces
 ```
 
-At the time of this build, GitHub did not serve either example snapshot; the
-sheaf-comparison snapshot is on the public `dev/adic-spaces` branch.  To keep
+At the time of this build, GitHub did not serve either original example
+snapshot; the sheaf-comparison and Scottish Book snapshots are on the public
+`dev/adic-spaces` branch.  To keep
 the interactive paper independent of branch movement,
 `scripts/build-lean-knowls.py` extracts each declaration from the Git object
 recorded for that declaration.  Every Paperforge Lean badge opens that code

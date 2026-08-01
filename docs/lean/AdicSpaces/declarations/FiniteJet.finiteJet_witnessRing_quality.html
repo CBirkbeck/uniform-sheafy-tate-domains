@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ValuationSpectrum.structurePresheaf_forgetToTopCommRingCat_isSheaf_iff · Lean source</title>
+  <title>FiniteJet.finiteJet_witnessRing_quality · Lean source</title>
   <style>
     :root { color-scheme: light dark; }
     body { margin: 0; font: 16px/1.55 system-ui, sans-serif; }
@@ -31,18 +31,22 @@
 <main>
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">theorem</div>
-  <h1>ValuationSpectrum.structurePresheaf_forgetToTopCommRingCat_isSheaf_iff</h1>
-  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>The structure presheaf, viewed as taking values in <code>TopCommRingCat</code>, satisfies Mathlib’s categorical <code>IsSheaf</code> predicate if and only if it satisfies the concrete all-open condition <code>IsLimitSheaf</code>.</p></div></div>
+  <h1>FiniteJet.finiteJet_witnessRing_quality</h1>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For <code>K=F((t))</code>, the finite-jet algebra is a Tate ring, is sheafy and uniform, is an integral domain, and is not noetherian. This packages the previously proved properties of the concrete ring used for Problems 24 and 28.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
-  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>The standard formulation, over <code>TopCommRingCat</code></strong>: the public structure<br>presheaf, pushed along the forgetful functor into the category of plain topological<br>commutative rings, satisfies mathlib&#x27;s categorical sheaf condition <strong>iff</strong> the pair<br>is sheafy. The categorical condition tests <code>Hom(E, −)</code>-gluing along the objects of<br>the value category; over <code>TopCommRingCat</code> those are exactly Wedhorn&#x27;s arbitrary<br>topological test rings (Remark 8.20), so — unlike the <code>CompleteTopCommRingCat</code>-valued<br>condition, where only the forward implication <code>structurePresheaf_isSheaf</code> is<br>available — this is an equivalence.</p></div></details>
-  <p class="used-for"><strong>Used in the paper for:</strong> Appendix A (Mathlib versus all opens); Appendix: all-open structure-presheaf comparison with Mathlib</p>
-  <pre><code>theorem structurePresheaf_forgetToTopCommRingCat_isSheaf_iff :
-    TopCat.Presheaf.IsSheaf
-        (structurePresheaf A ⋙ CompleteTopCommRingCat.forgetToTopCommRingCat) ↔
-      IsLimitSheaf A</code></pre>
-  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/StructurePresheafBundled.lean:685–688</code><br>
-  AINTLIB commit <code>d92f96504f949ca43a27a817cb8d2f70b6486744</code>.</p>
-  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/d92f96504f949ca43a27a817cb8d2f70b6486744/projects/AdicSpaces/Adic%20spaces/StructurePresheafBundled.lean#L685-L688">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>The witness ring is as good as it can be</strong> ([FJP] Theorem 1.3): <code>𝓐</code> is a Tate ring,<br>sheafy, uniform, a domain, and <strong>not</strong> noetherian — precisely the regime that Problems 24<br>and 28 leave open.</p></div></details>
+  <p class="used-for"><strong>Used in the paper for:</strong> Proposition 7.1 (the ambient complete uniform sheafy Tate domain)</p>
+  <pre><code>theorem finiteJet_witnessRing_quality :
+    IsTateRing (JetA F) ∧
+    ValuationSpectrum.IsSheafy (JetA F) ∧
+    TopologicalRing.IsUniform (JetA F) ∧
+    IsDomain (JetA F) ∧
+    ¬ IsNoetherianRing (JetA F) :=
+  ⟨inferInstance, finiteJet_isSheafy F, finiteJet_isUniform F, finiteJet_isDomain F,
+    finiteJet_not_noetherian F⟩</code></pre>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/FiniteJetScottishBook.lean:66–73</code><br>
+  AINTLIB commit <code>d5e626ccc43eb3ffded27bb90831bde6c00bb1f9</code>.</p>
+  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/d5e626ccc43eb3ffded27bb90831bde6c00bb1f9/projects/AdicSpaces/Adic%20spaces/FJP/FiniteJetScottishBook.lean#L66-L73">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
   The finite-jet development uses restricted power-series code adapted from
   <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,

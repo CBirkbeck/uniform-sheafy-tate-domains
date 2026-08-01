@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FiniteJet.innerPoint_mem_rationalOpen · Lean source</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font: 16px/1.55 system-ui, sans-serif; }
+    main { max-width: 72rem; margin: 0 auto; padding: 2rem 1.2rem 4rem; }
+    nav { margin-bottom: 1.5rem; }
+    a { color: #176b43; }
+    @media (prefers-color-scheme: dark) { a { color: #84d8aa; } }
+    h1 { overflow-wrap: anywhere; font: 650 1.45rem/1.25 ui-monospace, monospace; }
+    .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
+             letter-spacing: .06em; }
+    .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
+    pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
+           background: color-mix(in srgb, CanvasText 7%, Canvas); }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .meta, .used-for { color: color-mix(in srgb, CanvasText 70%, Canvas);
+                        font-size: .9rem; }
+    .provenance { margin-top: 2rem; padding-top: 1rem;
+                   border-top: 1px solid color-mix(in srgb, CanvasText 18%, Canvas);
+                   font-size: .9rem; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../../../paper.html">← Return to the paper</a></nav>
+  <div class="kind">theorem</div>
+  <h1>FiniteJet.innerPoint_mem_rationalOpen</h1>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>Pull back the norm valuation on <code>K=F((t))</code> along <code>ev00</code>. The resulting continuous valuation belongs to <code>Spa(𝒜,𝒜°)</code>: the norm estimate sends power-bounded elements to the valuation ring. It satisfies <code>|W|=0</code> and <code>|ϖ|≠0</code>, and hence lies in the rational subset <code>{|W|≤|ϖ|}</code>. This proves that the chart used for Problems 24 and 28 is nonempty.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>The chart is nonempty</strong>: the origin <code>x₀₀</code> satisfies <code>|W| = 0 ≤ |ϖ| ≠ 0</code>, so it lies<br>in the rational subset <code>U = R(W/ϖ)</code>.</p></div></details>
+  <p class="used-for"><strong>Used in the paper for:</strong> Proposition 7.1 (the point lies in the rational subset)</p>
+  <pre><code>theorem innerPoint_mem_rationalOpen :
+    innerPoint F ∈ rationalOpen (chartDatum F).T (chartDatum F).s := by
+  classical
+  have hϖ : ev00Val F (tA F) ≠ 0 := by
+    simp only [ev00Val_apply, ne_eq, nnnorm_eq_zero, ev00_tA]
+    exact norm_pos_iff.mp (norm_t_pos F)
+  refine ⟨innerPoint_mem_spa F, fun t ht =&gt; ?_, ?_⟩
+  · -- every generator of `T = {W, ϖ}` is bounded by `s = ϖ`
+    show ev00Val F t ≤ ev00Val F (tA F)
+    have ht&#x27; : t = Wa F ∨ t = tA F := by
+      simpa [chartDatum] using ht
+    rcases ht&#x27; with rfl | rfl
+    · rw [ev00Val_apply, ev00_Wa, nnnorm_zero]
+      exact zero_le
+    · exact le_refl _
+  · -- `ϖ` is not in the support
+    show ¬ ev00Val F (tA F) ≤ ev00Val F 0
+    rw [map_zero, le_zero_iff]
+    exact hϖ</code></pre>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/FiniteJetScottishBook.lean:266–284</code><br>
+  AINTLIB commit <code>d5e626ccc43eb3ffded27bb90831bde6c00bb1f9</code>.</p>
+  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/d5e626ccc43eb3ffded27bb90831bde6c00bb1f9/projects/AdicSpaces/Adic%20spaces/FJP/FiniteJetScottishBook.lean#L266-L284">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
+  <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
+  The finite-jet development uses restricted power-series code adapted from
+  <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,
+  whose univariate Gauss-norm layer builds on
+  <a href="https://github.com/leanprover-community/mathlib4/blob/fd1d54bcac5caba4eff2ea3421c47d907333f515/Mathlib/RingTheory/PowerSeries/GaussNorm.lean">Fabrizio Barroero's mathlib code</a>.
+  It separately uses
+  <a href="https://github.com/leanprover-community/mathlib4/pull/36507">Bingyu Xia's multivariable power-series equivalences</a>.
+  This is infrastructure provenance, not an attribution of this paper-specific
+  declaration.</aside>
+</main>
+</body>
+</html>

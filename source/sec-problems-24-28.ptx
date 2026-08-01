@@ -6,8 +6,10 @@
 rings underlying a rational localisation of Tate Huber pairs must be flat.
 Problem<nbsp/>28 asks whether a non-zero-divisor which generates a closed ideal can
 restrict to zero on a rational subspace <xref ref="bib-Scottish" detail="Problems 24 and 28"/>.
-Both questions can be read off from the chart computed in
-<xref ref="prop-bad-chart"/>.
+The same rational datum, together with multiplicativity of the Gauss norm,
+answers both questions.  We give the argument over the field <m>k</m> fixed in the
+introduction.  The Lean formalisation treats the special case <m>k=F((t))</m>,
+which is enough for the two existence questions.
   </p>
   <proposition xml:id="prop-problems-24-28">
     <statement>
@@ -21,6 +23,13 @@ is not flat, and multiplication by <m>Q^2</m> is a strict inclusion on <m>A</m> 
 though <m>Q^2</m> maps to zero in <m>\mathcal O(U)</m>.
       </p>
     </statement>
+    <lean project="AdicSpaces" commit="d5e626ccc43eb3ffded27bb90831bde6c00bb1f9" ref="FiniteJet.finiteJet_witnessRing_quality">Lean (the ambient Tate domain)</lean>
+    <lean project="AdicSpaces" commit="d5e626ccc43eb3ffded27bb90831bde6c00bb1f9" ref="FiniteJet.ev00">Lean (evaluation at W=Q=0)</lean>
+    <lean project="AdicSpaces" commit="d5e626ccc43eb3ffded27bb90831bde6c00bb1f9" ref="FiniteJet.innerPoint_mem_rationalOpen">Lean (the point lies in the chart)</lean>
+    <lean project="AdicSpaces" commit="d5e626ccc43eb3ffded27bb90831bde6c00bb1f9" ref="FiniteJet.scottishWitness_mul_isometry">Lean (multiplication by Q² is an isometry)</lean>
+    <lean project="AdicSpaces" commit="d5e626ccc43eb3ffded27bb90831bde6c00bb1f9" ref="FiniteJet.canonicalMap_scottishWitness">Lean (Q² restricts to zero)</lean>
+    <lean project="AdicSpaces" commit="d5e626ccc43eb3ffded27bb90831bde6c00bb1f9" ref="FiniteJet.finiteJet_problem28">Lean (Problem 28 witness)</lean>
+    <lean project="AdicSpaces" commit="d5e626ccc43eb3ffded27bb90831bde6c00bb1f9" ref="FiniteJet.finiteJet_not_flat_canonicalMap">Lean (nonflat completed chart)</lean>
     <proof>
       <p>
         The composite
@@ -28,29 +37,44 @@ though <m>Q^2</m> maps to zero in <m>\mathcal O(U)</m>.
     \longrightarrow k,
   \qquad
   f_0(W)+Qf_1(W)+Q^2h\longmapsto f_0(0),</me>
-is norm-nonincreasing and sends <m>A^\circ</m> into <m>k^\circ</m>.  Pulling back the
-valuation on <m>k</m> therefore gives a point of <m>\Spa(A,A^\circ)</m>.  At this point
-<m>W</m> has value zero and <m>\varpi</m> has nonzero value, so the point lies in <m>U</m>.
+is norm-nonincreasing.  It therefore sends <m>A^\circ</m> into <m>k^\circ</m>, and
+pulling back the norm valuation on <m>k</m> gives a continuous valuation belonging
+to <m>\Spa(A,A^\circ)</m>.  At this point <m>W</m> has value zero and <m>\varpi</m> has
+nonzero value, so the point lies in <m>U</m>.
       </p>
       <p>
-        Under the inclusion <m>A\subset C</m>, the element <m>Q^2</m> is the usual nonzero
-monomial.  Since the restricted Gauss norm on <m>A</m> is multiplicative and
+        Since the restricted Gauss norm on <m>A</m> is multiplicative and
 <m>\lVert Q\rVert=1</m>, for every <m>a\in A</m> we have
 <me>\lVert Q^2a\rVert=\lVert a\rVert.</me>
-Thus multiplication by <m>Q^2</m> is an isometry.  In particular it is injective,
-and its image is closed because <m>A</m> is complete.  It is therefore a strict
-inclusion in the sense of Problem<nbsp/>28.
+Thus multiplication by <m>Q^2</m> is an isometry.  Its map onto its image, with the
+subspace topology, is consequently a homeomorphism, so the inclusion is
+strict.  Moreover, an isometric image of the complete space <m>A</m> is closed in
+<m>A</m>.  Since <m>\lVert Q^2\rVert=1</m>, the element <m>Q^2</m> is nonzero; multiplication
+by it is therefore injective because <m>A</m> is a domain.
       </p>
       <p>
-        On the other hand, <xref ref="prop-bad-chart"/> identifies the restriction map with
+        On the other hand, the calculation <xref ref="eq-q2-killed-on-chart"/> says directly
+that the canonical map to the completed rational localisation kills <m>Q^2</m>.
+The isomorphism of <xref ref="prop-bad-chart"/> identifies this localisation with the
+nonzero ring
 <me>A\longrightarrow k\langle X,Q\rangle/(Q^2),
   \qquad W\longmapsto\varpi X,\quad Q\longmapsto Q.</me>
-It follows that <m>Q^2</m> maps to zero.  The target is nonzero.  If the rational
-localisation were flat, tensoring the injection
+If the canonical map were flat, the non-zero-divisor <m>Q^2</m> would still act
+injectively on <m>\mathcal O(U)</m>; equivalently, tensoring the injection
 <me>0\longrightarrow A\xrightarrow{\,\cdot Q^2\,}A</me>
 with <m>\mathcal O(U)</m> would make multiplication by the image of <m>Q^2</m>
-injective on <m>\mathcal O(U)</m>.  This map is zero, which is a contradiction.
+injective.  Its image is zero, however, so this multiplication map is zero on
+the nonzero ring <m>\mathcal O(U)</m>, a contradiction.
       </p>
     </proof>
   </proposition>
+  <p>
+    In Lean, <c>presheafValue (chartDatum F)</c> is the completed rational
+localisation, not the ordinary algebraic localisation.  The formalised witness
+checks that the datum is rational, that <m>U</m> is nonempty, that its section ring
+is nonzero, and that multiplication by <m>Q^2</m> is continuous, injective, strict,
+and has closed image before proving that <m>Q^2</m> restricts to zero.  Taking
+<m>F=\mathbb Q</m> gives the required examples.  This does not address the
+perfectoid part of Problem<nbsp/>28.
+  </p>
 </section>

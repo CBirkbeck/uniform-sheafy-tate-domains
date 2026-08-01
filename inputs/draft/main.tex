@@ -134,7 +134,8 @@ so $A$ is not stably uniform.
 
 The same rational chart gives a negative answer to Problem~24 of the
 \emph{Nonarchimedean Scottish Book} and an affirmative answer to the Tate
-case of Problem~28; see \cref{sec:problems-24-28}.
+case of Problem~28; see \cref{sec:problems-24-28}.  These two consequences
+have also been formalised in Lean after specialising to $k=\mathbb Q((t))$.
 
 The proof uses Milnor squares of complete Tate rings.  Recall that a cartesian square of
 rings with a surjective leg is called a Milnor square \cite[Section~2]{Milnor}; the
@@ -878,8 +879,10 @@ Problem~24 of the \emph{Nonarchimedean Scottish Book} asks whether the map of
 rings underlying a rational localisation of Tate Huber pairs must be flat.
 Problem~28 asks whether a non-zero-divisor which generates a closed ideal can
 restrict to zero on a rational subspace \cite[Problems~24 and 28]{Scottish}.
-Both questions can be read off from the chart computed in
-\cref{prop:bad-chart}.
+The same rational datum, together with multiplicativity of the Gauss norm,
+answers both questions.  We give the argument over the field $k$ fixed in the
+introduction.  The Lean formalisation treats the special case $k=F((t))$,
+which is enough for the two existence questions.
 
 \begin{proposition}\label{prop:problems-24-28}
 Let
@@ -903,33 +906,47 @@ The composite
   \qquad
   f_0(W)+Qf_1(W)+Q^2h\longmapsto f_0(0),
 \]
-is norm-nonincreasing and sends $A^\circ$ into $k^\circ$.  Pulling back the
-valuation on $k$ therefore gives a point of $\Spa(A,A^\circ)$.  At this point
-$W$ has value zero and $\varpi$ has nonzero value, so the point lies in $U$.
+is norm-nonincreasing.  It therefore sends $A^\circ$ into $k^\circ$, and
+pulling back the norm valuation on $k$ gives a continuous valuation belonging
+to $\Spa(A,A^\circ)$.  At this point $W$ has value zero and $\varpi$ has
+nonzero value, so the point lies in $U$.
 
-Under the inclusion $A\subset C$, the element $Q^2$ is the usual nonzero
-monomial.  Since the restricted Gauss norm on $A$ is multiplicative and
+Since the restricted Gauss norm on $A$ is multiplicative and
 $\lVert Q\rVert=1$, for every $a\in A$ we have
 \[
   \lVert Q^2a\rVert=\lVert a\rVert.
 \]
-Thus multiplication by $Q^2$ is an isometry.  In particular it is injective,
-and its image is closed because $A$ is complete.  It is therefore a strict
-inclusion in the sense of Problem~28.
+Thus multiplication by $Q^2$ is an isometry.  Its map onto its image, with the
+subspace topology, is consequently a homeomorphism, so the inclusion is
+strict.  Moreover, an isometric image of the complete space $A$ is closed in
+$A$.  Since $\lVert Q^2\rVert=1$, the element $Q^2$ is nonzero; multiplication
+by it is therefore injective because $A$ is a domain.
 
-On the other hand, \cref{prop:bad-chart} identifies the restriction map with
+On the other hand, the calculation \eqref{eq:q2-killed-on-chart} says directly
+that the canonical map to the completed rational localisation kills $Q^2$.
+The isomorphism of \cref{prop:bad-chart} identifies this localisation with the
+nonzero ring
 \[
   A\longrightarrow k\langle X,Q\rangle/(Q^2),
   \qquad W\longmapsto\varpi X,\quad Q\longmapsto Q.
 \]
-It follows that $Q^2$ maps to zero.  The target is nonzero.  If the rational
-localisation were flat, tensoring the injection
+If the canonical map were flat, the non-zero-divisor $Q^2$ would still act
+injectively on $\mathcal O(U)$; equivalently, tensoring the injection
 \[
   0\longrightarrow A\xrightarrow{\,\cdot Q^2\,}A
 \]
 with $\mathcal O(U)$ would make multiplication by the image of $Q^2$
-injective on $\mathcal O(U)$.  This map is zero, which is a contradiction.
+injective.  Its image is zero, however, so this multiplication map is zero on
+the nonzero ring $\mathcal O(U)$, a contradiction.
 \end{proof}
+
+In Lean, \texttt{presheafValue (chartDatum F)} is the completed rational
+localisation, not the ordinary algebraic localisation.  The formalised witness
+checks that the datum is rational, that $U$ is nonempty, that its section ring
+is nonzero, and that multiplication by $Q^2$ is continuous, injective, strict,
+and has closed image before proving that $Q^2$ restricts to zero.  Taking
+$F=\mathbb Q$ gives the required examples.  This does not address the
+perfectoid part of Problem~28.
 
 
 \section{A second example}\label{sec:second-example}
@@ -1532,14 +1549,18 @@ This appendix records the Lean formalisation of the two examples.  The
 finite-jet declarations are taken from AINTLIB commit
 \texttt{b007a4f3d}, and the weighted-parity declarations from commit
 \texttt{090a28921}.  The comparison with Mathlib's sheaf predicate is taken
-from commit \texttt{d92f96504} \cite{AINTLIB}.  For each example Lean proves the
+from commit \texttt{d92f96504}, and the consequences for Scottish Book
+Problems~24 and 28 from commit \texttt{d5e626ccc} \cite{AINTLIB}.  For each
+example Lean proves the
 Tate structure, uniformity, domain and nonnoetherianity statements,
 sheafiness, and failure of stable uniformity, together with the rational
 chart calculation used in the proof.
 
 Neither example snapshot was available from the public AINTLIB repository at
 the time of writing.  The interactive version of the paper includes each
-declaration used below, extracted from the appropriate commit.  The
+declaration used below, extracted from the appropriate commit.  The later
+sheaf-comparison and Scottish Book commits are public, and their archival
+pages also link to the pinned source on GitHub.  The
 \href{https://github.com/CBirkbeck/uniform-sheafy-tate-domains/blob/main/PAPERFORGE_CHECK.md}{verification report}
 records the Lean and mathlib versions, the build, and the axiom checks.
 
@@ -1934,6 +1955,51 @@ theorem identifies $W$ and $Q$.  It is not bundled as a
 \texttt{K}-\texttt{AlgEquiv}, which is why \cref{prop:bad-chart} is stated for
 complete topological rings.
 
+The consequences in \cref{sec:problems-24-28} are formalised over
+$K=F((t))$.  This is less general than the arbitrary complete discretely
+valued field used in the paper, but taking $F=\mathbb Q$ is enough to answer
+the two existence questions.  The declaration
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_witnessRing_quality.html}{\texttt{finiteJet\_witnessRing\_quality}}
+records that this concrete ring is a uniform sheafy Tate domain and is not
+noetherian.  The theorem
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_problem28.html}{\texttt{finiteJet\_problem28}}
+records in one statement that $(W;\varpi)$ is rational, its rational subset
+and section ring are nonempty and nonzero, multiplication by $Q^2$ is a
+continuous strict injection with closed image, and $Q^2$ restricts to zero.
+The nonempty point is constructed from the norm valuation pulled back along
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.ev00.html}{\texttt{ev00}}, the map
+\[
+  f_0(W)+Qf_1(W)+Q^2h\longmapsto f_0(0).
+\]
+The separate declarations saying that
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.scottishWitness_mul_isometry.html}{multiplication by $Q^2$ is an isometry}
+and that
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.canonicalMap_scottishWitness.html}{$Q^2$ restricts to zero}
+are the inputs used below.
+
+\begin{lstlisting}
+theorem finiteJet_problem28 :
+    (chartDatum F).IsRational ∧
+    (rationalOpen (chartDatum F).T (chartDatum F).s).Nonempty ∧
+    Nontrivial (presheafValue (chartDatum F)) ∧
+    Function.Injective
+      (fun a : JetA F => scottishWitness F * a) ∧
+    Continuous (fun a : JetA F => scottishWitness F * a) ∧
+    IsStrictMap (fun a : JetA F => scottishWitness F * a) ∧
+    IsClosed (Set.range
+      fun a : JetA F => scottishWitness F * a) ∧
+    (chartDatum F).canonicalMap (scottishWitness F) = 0
+\end{lstlisting}
+
+For Problem~24, Lean uses the module structure induced by the canonical map
+to the completed localisation and proves
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_not_flat_canonicalMap.html}{\texttt{finiteJet\_not\_flat\_canonicalMap}}.
+The proof is the one given in \cref{prop:problems-24-28}: $Q^2$ is a
+non-zero-divisor of $A$, so flatness would make its image act injectively on
+the chart; that image is zero and the chart is nonzero.  The ordinary ring
+localisation \texttt{Localization.Away} is always flat.  The failure is a
+property of the completion defining \texttt{presheafValue}.
+
 The conclusions of \cref{lem:koszul} are formalised in the normed setting used
 for the example: $E$ is one of $B,C,D$, $T_E$ has its Gauss norm,
 $T_{E,0}$ is its unit ball, and the finite free terms have their sup norms.
@@ -2135,7 +2201,8 @@ Lean~4 source code, finite-jet snapshot
 snapshot
 \texttt{090a289211deb69117413e329325fe819aa7dbc2}, together with the
 sheaf-comparison snapshot
-\texttt{d92f96504f949ca43a27a817cb8d2f70b6486744}, 2026,
+\texttt{d92f96504f949ca43a27a817cb8d2f70b6486744} and Scottish Book
+snapshot \texttt{d5e626ccc43eb3ffded27bb90831bde6c00bb1f9}, 2026,
 \url{https://github.com/CBirkbeck/AINTLIB}.
 
 \bibitem{BBK}

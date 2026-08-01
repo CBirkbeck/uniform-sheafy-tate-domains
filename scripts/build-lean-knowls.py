@@ -30,6 +30,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+from urllib.parse import quote
 
 try:
     import tomllib
@@ -39,6 +40,10 @@ except ModuleNotFoundError as exc:  # pragma: no cover - Python < 3.11
 
 PRIMARY_COMMIT = "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
 PROJECT = "AdicSpaces"
+PUBLIC_COMMITS = {
+    "d92f96504f949ca43a27a817cb8d2f70b6486744",
+    "d5e626ccc43eb3ffded27bb90831bde6c00bb1f9",
+}
 
 DECL_LINE_RE = re.compile(
     r"^(?P<indent>[ \t]*)"
@@ -439,6 +444,28 @@ def standalone_html(
             + doc_html(source_doc)
             + "</details>\n  "
         )
+    if commit in PUBLIC_COMMITS:
+        github_url = (
+            "https://github.com/CBirkbeck/AINTLIB/blob/"
+            + commit
+            + "/"
+            + quote(repo_path, safe="/")
+            + f"#L{line_start}-L{line_end}"
+        )
+        source_access = (
+            '<p class="meta"><a href="'
+            + html.escape(github_url, quote=True)
+            + '">View this pinned source on GitHub</a>. The declaration above '
+            "is also embedded here so that the paper remains independent of "
+            "branch movement.</p>"
+        )
+    else:
+        source_access = (
+            '<p class="meta">This is the archival declaration extracted from '
+            "the pinned\n  source tree.  The corresponding AINTLIB commit was "
+            "not publicly reachable\n  when this page was built, so no external "
+            "upstream link is offered here.</p>"
+        )
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -478,9 +505,7 @@ def standalone_html(
   <pre><code>{html.escape(code)}</code></pre>
   <p class="meta">Pinned source: <code>{html.escape(repo_path)}:{line_start}–{line_end}</code><br>
   AINTLIB commit <code>{commit}</code>.</p>
-  <p class="meta">This is the archival declaration extracted from the pinned
-  source tree.  The corresponding AINTLIB commit was not publicly reachable
-  when this page was built, so no external upstream link is offered here.</p>
+  {source_access}
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
   {development} uses restricted power-series code adapted from
   <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,

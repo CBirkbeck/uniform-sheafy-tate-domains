@@ -48,6 +48,13 @@
     "WeightedParity.nonempty_headModelData": "existence of the model",
     "WeightedParity.chartQHeadEquiv": "finite-variable chart ≃ k⟨X⟩",
     "WeightedParity.chartQHeadEquiv_norm": "isometric identification",
-    "WeightedParity.chartCoeff_WaHead": "W ↦ ϖX"
+    "WeightedParity.chartCoeff_WaHead": "W ↦ ϖX",
+    "FiniteJet.ev00": "evaluation at W=Q=0",
+    "FiniteJet.finiteJet_witnessRing_quality": "the ambient Tate domain",
+    "FiniteJet.innerPoint_mem_rationalOpen": "the point lies in the chart",
+    "FiniteJet.scottishWitness_mul_isometry": "multiplication by Q² is an isometry",
+    "FiniteJet.canonicalMap_scottishWitness": "Q² restricts to zero",
+    "FiniteJet.finiteJet_problem28": "Problem 28 witness",
+    "FiniteJet.finiteJet_not_flat_canonicalMap": "nonflat completed chart"
   }
 }

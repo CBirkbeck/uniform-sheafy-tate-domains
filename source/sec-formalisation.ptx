@@ -7,7 +7,9 @@
 finite-jet declarations are taken from AINTLIB commit
 <c>b007a4f3d</c>, and the weighted-parity declarations from commit
 <c>090a28921</c>.  The comparison with Mathlib's sheaf predicate is taken
-from commit <c>d92f96504</c> <xref ref="bib-AINTLIB"/>.  For each example Lean proves the
+from commit <c>d92f96504</c>, and the consequences for Scottish Book
+Problems<nbsp/>24 and 28 from commit <c>d5e626ccc</c> <xref ref="bib-AINTLIB"/>.  For each
+example Lean proves the
 Tate structure, uniformity, domain and nonnoetherianity statements,
 sheafiness, and failure of stable uniformity, together with the rational
 chart calculation used in the proof.
@@ -15,7 +17,9 @@ chart calculation used in the proof.
     <p>
       Neither example snapshot was available from the public AINTLIB repository at
 the time of writing.  The interactive version of the paper includes each
-declaration used below, extracted from the appropriate commit.  The
+declaration used below, extracted from the appropriate commit.  The later
+sheaf-comparison and Scottish Book commits are public, and their archival
+pages also link to the pinned source on GitHub.  The
 <url href="https://github.com/CBirkbeck/uniform-sheafy-tate-domains/blob/main/PAPERFORGE_CHECK.md">verification report</url>
 records the Lean and mathlib versions, the build, and the axiom checks.
     </p>
@@ -458,6 +462,50 @@ The two continuity theorems make it a homeomorphism, and the canonical-map
 theorem identifies <m>W</m> and <m>Q</m>.  It is not bundled as a
 <c>K</c>-<c>AlgEquiv</c>, which is why <xref ref="prop-bad-chart"/> is stated for
 complete topological rings.
+    </p>
+    <p>
+      The consequences in <xref ref="sec-problems-24-28"/> are formalised over
+<m>K=F((t))</m>.  This is less general than the arbitrary complete discretely
+valued field used in the paper, but taking <m>F=\mathbb Q</m> is enough to answer
+the two existence questions.  The declaration
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_witnessRing_quality.html"><c>finiteJet_witnessRing_quality</c></url>
+records that this concrete ring is a uniform sheafy Tate domain and is not
+noetherian.  The theorem
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_problem28.html"><c>finiteJet_problem28</c></url>
+records in one statement that <m>(W;\varpi)</m> is rational, its rational subset
+and section ring are nonempty and nonzero, multiplication by <m>Q^2</m> is a
+continuous strict injection with closed image, and <m>Q^2</m> restricts to zero.
+The nonempty point is constructed from the norm valuation pulled back along
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.ev00.html"><c>ev00</c></url>, the map
+<me>f_0(W)+Qf_1(W)+Q^2h\longmapsto f_0(0).</me>
+The separate declarations saying that
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.scottishWitness_mul_isometry.html">multiplication by <m>Q^2</m> is an isometry</url>
+and that
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.canonicalMap_scottishWitness.html"><m>Q^2</m> restricts to zero</url>
+are the inputs used below.
+    </p>
+    <pre>
+    theorem finiteJet_problem28 :
+    (chartDatum F).IsRational ∧
+    (rationalOpen (chartDatum F).T (chartDatum F).s).Nonempty ∧
+    Nontrivial (presheafValue (chartDatum F)) ∧
+    Function.Injective
+      (fun a : JetA F => scottishWitness F * a) ∧
+    Continuous (fun a : JetA F => scottishWitness F * a) ∧
+    IsStrictMap (fun a : JetA F => scottishWitness F * a) ∧
+    IsClosed (Set.range
+      fun a : JetA F => scottishWitness F * a) ∧
+    (chartDatum F).canonicalMap (scottishWitness F) = 0
+    </pre>
+    <p>
+      For Problem<nbsp/>24, Lean uses the module structure induced by the canonical map
+to the completed localisation and proves
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_not_flat_canonicalMap.html"><c>finiteJet_not_flat_canonicalMap</c></url>.
+The proof is the one given in <xref ref="prop-problems-24-28"/>: <m>Q^2</m> is a
+non-zero-divisor of <m>A</m>, so flatness would make its image act injectively on
+the chart; that image is zero and the chart is nonzero.  The ordinary ring
+localisation <c>Localization.Away</c> is always flat.  The failure is a
+property of the completion defining <c>presheafValue</c>.
     </p>
     <p>
       The conclusions of <xref ref="lem-koszul"/> are formalised in the normed setting used
