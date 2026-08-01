@@ -35,7 +35,7 @@
   <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>The finitely many elements <code>Y^ε</code>, for <code>ε∈{0,1}^N</code>, generate <code>𝒜⁽ᴺ⁾</code> as a module over its even-exponent subring <code>𝒯⁽ᴺ⁾</code>.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>The head is a finite module over its even Tate subalgebra — the formal content of<br>the rank-<code>2^N</code> free normal form [WP] eq:finite-stage-normal-form.</p></div></details>
-  <p class="used-for"><strong>Used in the paper for:</strong> Lemma 7.2 (finite module)</p>
+  <p class="used-for"><strong>Used in the paper for:</strong> Lemma 8.2 (finite module)</p>
   <pre><code>theorem moduleFinite_head_over_even :
     letI : Algebra ↥(wpEvenSupport K w N) (WPHead K w N) :=
       (Subring.inclusion (wpEvenSupport_le_wpHeadSupport K w N)).toAlgebra

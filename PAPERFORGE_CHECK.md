@@ -1,14 +1,17 @@
 # Paperforge and reference audit
 
-Audit date: 31 July 2026.
+Audit date: 1 August 2026.
 
 ## Result
 
-The final Paperforge run completes with **0 errors and 1 warning**.  The
-warning is accounted for:
+The final Paperforge run completes with **0 errors and 2 warnings**.  Both
+warnings are accounted for:
 
 1. Milnor, Section 2 cannot be checked mechanically because no local copy of
    the commercial book is included.
+2. The citations to Problems 24 and 28 of the online Scottish Book cannot be
+   checked by Paperforge's local-PDF matcher; their statements were checked
+   directly on the official page.
 
 The plagiarism check reports no overlaps at its configured seven-word
 threshold.
@@ -24,12 +27,14 @@ The following claims were also read in context:
 
 | Citation | What was checked |
 |---|---|
+| Nonarchimedean Scottish Book, Problems 24 and 28 | Problem 24 asks whether the ring map underlying a rational localisation of Tate Huber pairs is flat. Problem 28 asks for a strict regular element which becomes zero on a rational subspace. Thus the paper correctly gives a negative answer to Problem 24 and an affirmative answer to the Tate case of Problem 28. |
+| Kedlaya, *Sheaves, stacks, and shtukas*, published 2019 version, Definition 1.4.5, Theorem 1.4.14, and Remark 1.4.6 | The exact base-change theorem applies to stably pseudocoherent modules. It therefore does not imply that a closed principal ideal remains injective after rational localisation. The contrary Corollary 1.4.14 in the preliminary 2017 notes was removed from the published version. |
 | Hansen--Kedlaya, Remark 3.16 | It asks whether a uniform sheafy Huber ring must be stably uniform. |
 | Kerz--Saito--Tamme, Lemma 3.1 | It constructs compatible rings of definition for a Milnor square using the nonarchimedean open mapping theorem. |
 | Buzzard--Verberkmoes, Lemmas 2--3, Corollary 4, Theorem 7, Lemma 8, and Propositions 17--18 | Lemma 2 gives the strictness criterion; Lemma 3 and Corollary 4 relate bounded power-bounded elements to the structure presheaf; Lemma 8 and Theorem 7 show that stable uniformity is sufficient for sheafiness; Propositions 17--18 give the two standard uniformity/sheafiness pathologies described in the introduction. |
-| Huber, Proposition 1.3 and Lemma 1.5 | These support the universal property and presentation-independence statements for rational localisations, including the final assertion of Lemma 7.5. |
+| Huber, Proposition 1.3 and Lemma 1.5 | These support the universal property and presentation-independence statements for rational localisations, including the final assertion of Lemma 8.5. |
 | Huber, Theorem 2.2 and Lemmas 2.3--2.4 | These support sheafiness for strongly noetherian Tate rings and the strictness/closed-image input for finite modules. |
-| Huber, Lemma 3.10; Kedlaya--Liu, Remark 2.4.7 | These give the first two assertions of Lemma 7.5: sufficiently small changes still give rational data and define the same rational subset. The canonical identification of completed rational localisations then follows from Huber, Proposition 1.3. |
+| Huber, Lemma 3.10; Kedlaya--Liu, Remark 2.4.7 | These give the first two assertions of Lemma 8.5: sufficiently small changes still give rational data and define the same rational subset. The canonical identification of completed rational localisations then follows from Huber, Proposition 1.3. |
 | Wedhorn, Proposition and Definition 6.36; Remark 8.20; Definition 8.26; Theorem 8.28(b); Lemmas 8.31--8.34 | These support the definitions of strong noetherianity and sheafiness, the representable topological-ring formulation, and the strongly-noetherian proof route used by the formalisation. |
 | Stacks Project, Tag 009O | This supports checking a sheaf on a basis. |
 | Ben-Bassat--Kremnizer, Definition 5.7, Remark 5.8, and Lemmas 5.13--5.14 | These define rational localisations, prove the strict two-term resolutions for the Weierstrass and Laurent cases, and factor a general rational localisation into those cases. The paper does not use Koszul terminology or state the simultaneous multivariable result. |
@@ -49,11 +54,11 @@ statements.  The sheaf-predicate comparison was checked separately at
 | Lemma 5.1 | Positive-degree Koszul exactness is transported from the polynomial sequence along the flat map to the restricted Tate algebra. The degree-zero image is closed by noetherianity; higher images are closed kernels. The nonarchimedean closed-range theorem bounds the norm of a preimage by a fixed multiple of the norm of its image; this gives strictness and, after multiplication by a power of `ϖ`, the two lattice inclusions. |
 | Lemma 5.2 | Choose preimages under `d₁` over `B` and `C` satisfying the norm bounds of Lemma 5.1. Their difference over `D` lies in `ker(d₁)`; choose a preimage under `d₂` with the corresponding norm bound and lift it coefficientwise to `C`. The ambient Milnor pullback then gives the element over `A`. The same inequalities prove closedness of `I_A` and strict exactness. |
 | Proposition 5.3 | Lean proves algebraic exactness by correcting defects of quotient representatives through `I_C`. A quotient-norm estimate gives the left-hand topological embedding, while the norm-preserving coefficient section proves that `C_α → D_α` is open. The proof has been rewritten accordingly. |
-| Theorem 6.2 | A rational cover and compatible family are pushed to `B,C,D`; sheafiness there and the localised Milnor row give separation and gluing over `A`. The subspace of tuples agreeing on pairwise intersections is closed, and the closed-range theorem gives the required topological embedding. Lean proves this concrete argument. |
-| Lemma 7.2 | Lean decomposes each finite-variable ring into the finitely many exponent-parity classes, identifies the even-exponent subring isometrically with an ordinary Tate algebra, and proves module-finiteness over it. The inclusions are the subtype inclusions in the common countable Tate algebra, hence isometric, and `exists_head_approx` gives the quantitative approximation used for density. |
-| Propositions 7.3--7.4 and 7.8--7.9 | The weighted-parity development proves multiplicativity of the countable Gauss norm by choosing lexicographically maximal norm-attaining exponents, proves nonnoetherianity by direct coefficient extraction, and handles the distinguished chart by a completed quotient over \(K\langle W\rangle\) and an embedding into formal power series. The paper now uses these arguments. |
-| Proposition 7.6 and Theorem 7.10 | For data in the finite-variable subring \(\mathcal A^{(N)}\), localisation is constructed by applying its quotient map to every coefficient indexed by the remaining variables and summing coefficientwise for the inverse; it does not use the Koszul complex. In the sheaf proof, the retraction \(\rho_N:\mathcal A\to\mathcal A^{(N)}\) pulls any point outside the proposed finite-variable cover back to a point outside the original cover, so the finite-variable rational subsets really do cover. Strong noetherian sheafiness then glues the coefficients, and the restriction embedding proves that they tend to zero; the closed-range theorem supplies the final topological statement. |
-| Lemma 7.5 | The paper cites Huber, Lemma 3.10, and Kedlaya--Liu, Remark 2.4.7, for this standard result. Lean independently proves the quantitative norm-unit-ball specialisation used to move the rational data for a finite cover into one finite-variable strongly noetherian subring. |
+| Theorem 6.1 | A rational cover and compatible family are pushed to `B,C,D`; sheafiness there and the localised Milnor row give separation and gluing over `A`. The subspace of tuples agreeing on pairwise intersections is closed, and the closed-range theorem gives the required topological embedding. Lean proves this concrete argument. |
+| Lemma 8.2 | Lean decomposes each finite-variable ring into the finitely many exponent-parity classes, identifies the even-exponent subring isometrically with an ordinary Tate algebra, and proves module-finiteness over it. The inclusions are the subtype inclusions in the common countable Tate algebra, hence isometric, and `exists_head_approx` gives the quantitative approximation used for density. |
+| Propositions 8.3--8.4 and 8.8--8.9 | The weighted-parity development proves multiplicativity of the countable Gauss norm by choosing lexicographically maximal norm-attaining exponents, proves nonnoetherianity by direct coefficient extraction, and handles the distinguished chart by a completed quotient over \(K\langle W\rangle\) and an embedding into formal power series. The paper now uses these arguments. |
+| Proposition 8.6 and Theorem 8.10 | For data in the finite-variable subring \(\mathcal A^{(N)}\), localisation is constructed by applying its quotient map to every coefficient indexed by the remaining variables and summing coefficientwise for the inverse; it does not use the Koszul complex. In the sheaf proof, the retraction \(\rho_N:\mathcal A\to\mathcal A^{(N)}\) pulls any point outside the proposed finite-variable cover back to a point outside the original cover, so the finite-variable rational subsets really do cover. Strong noetherian sheafiness then glues the coefficients, and the restriction embedding proves that they tend to zero; the closed-range theorem supplies the final topological statement. |
+| Lemma 8.5 | The paper cites Huber, Lemma 3.10, and Kedlaya--Liu, Remark 2.4.7, for this standard result. Lean independently proves the quantitative norm-unit-ball specialisation used to move the rational data for a finite cover into one finite-variable strongly noetherian subring. |
 
 ## Lean crosswalk
 

@@ -62,7 +62,7 @@ ngram = 7
 error_run = 12
 sources = ["references/pdfs/"]
 
-# These five short sections already open with purpose-setting prose in the
+# These short sections already open with purpose-setting prose in the
 # LaTeX draft. Paperforge cannot currently distinguish that case from a
 # missing PreTeXt <introduction> when the section has no subsections, so the
 # decision is recorded explicitly rather than duplicating the opening text.
@@ -73,6 +73,7 @@ exempt = [
   "sec-the-global-ring",
   "sec-a-nonuniform-rational-localisation",
   "sec-sheafiness",
+  "sec-problems-24-28",
   "sec-discovery",
 ]
 

@@ -35,7 +35,7 @@
   <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For every <code>f∈𝒜</code> and <code>ℓ≥0</code>, some finite-variable element <code>f_N∈𝒜⁽ᴺ⁾</code> satisfies <code>‖f-f_N‖≤|ϖ|^ℓ‖f‖</code>. This is the approximation statement used to move finitely many rational data into one strongly noetherian subring.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>Truncation to a head: every element of <code>𝒜</code> is approximated to any <code>ϖ</code>-power<br>precision by an element of some head ([WP] eq:A-completion-of-heads:<br>&quot;<code>𝒜 = closure(⋃_N 𝒜_N)</code>&quot;).</p></div></details>
-  <p class="used-for"><strong>Used in the paper for:</strong> Lemma 7.2 (approximation and density)</p>
+  <p class="used-for"><strong>Used in the paper for:</strong> Lemma 8.2 (approximation and density)</p>
   <pre><code>theorem exists_head_approx (ϖ : Uniformizer K) (f : WPA K w) (ℓ : ℕ) :
     ∃ (N : ℕ) (g : WPHead K w N),
       ‖f - headIncl K w N g‖ ≤ ‖ϖ.val‖ ^ ℓ * ‖f‖</code></pre>

@@ -35,7 +35,7 @@
   <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>The section ring on <code>{|W| ≤ |ϖ|}</code> is an integral domain. Lean identifies the quotient formed from <code>K⟨W⟩</code> with <code>K⟨X⟩</code>, observes that the factor <code>ϖX</code> appearing in multiplication is regular, embeds the resulting ring of coefficient families into formal multivariable power series, and transports the domain property through the coefficientwise localisation equivalence.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>[WP] thm 6.2 (4): the chart <code>ℬ = 𝒜⟨W/ϖ⟩</code> is an integral domain.</p></div></details>
-  <p class="used-for"><strong>Used in the paper for:</strong> Theorem 7.1 (the displayed rational chart is a domain); Weighted-parity chart proposition (domain)</p>
+  <p class="used-for"><strong>Used in the paper for:</strong> Theorem 8.1 (the displayed rational chart is a domain); Weighted-parity chart proposition (domain)</p>
   <pre><code>theorem weightedParity_chart_isDomain (ϖ : Uniformizer K)
     (hK₀ : IsNoetherianRing (FiniteJet.unitBall K)) :
     IsDomain (presheafValue (chartDatum (w := idWeight) ϖ))</code></pre>

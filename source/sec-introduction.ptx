@@ -64,6 +64,11 @@ so <m>A</m> is not stably uniform.
     <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_isSheafyFor_of_dvr">Lean (finiteJet_isSheafyFor_of_dvr)</lean>
   </theorem>
   <p>
+    The same rational chart gives a negative answer to Problem<nbsp/>24 of the
+<em>Nonarchimedean Scottish Book</em> and an affirmative answer to the Tate
+case of Problem<nbsp/>28; see <xref ref="sec-problems-24-28"/>.
+  </p>
+  <p>
     The proof uses Milnor squares of complete Tate rings.  Recall that a cartesian square of
 rings with a surjective leg is called a Milnor square <xref ref="bib-Milnor" detail="Section 2"/>; the
 complete Tate setting is used by Kerz<ndash/>Saito<ndash/>Tamme in their work on analytic

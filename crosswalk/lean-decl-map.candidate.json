@@ -200,7 +200,7 @@
       "via": "manual",
       "file": "Adic spaces/FJP/Over/SheafyEndpoints.lean",
       "line": 330,
-      "cited": "Theorem 6.2",
+      "cited": "Theorem 6.1",
       "kind": "theorem",
       "flagged": true
     },
@@ -209,7 +209,7 @@
       "via": "manual",
       "file": "Adic spaces/FJP/Over/SheafyEndpoints.lean",
       "line": 337,
-      "cited": "Theorem 6.2 (all-open structure presheaf)",
+      "cited": "Theorem 6.1 (all-open structure presheaf)",
       "kind": "theorem",
       "flagged": true
     }

@@ -355,7 +355,7 @@
       "via": "manual",
       "file": "Adic spaces/FJP/Over/SheafTransfer.lean",
       "line": 737,
-      "cited": "Theorem 6.2 (finite rational-cover criterion constructed by Milnor transfer)",
+      "cited": "Theorem 6.1 (finite rational-cover criterion constructed by Milnor transfer)",
       "kind": "theorem",
       "flagged": true
     },
@@ -364,7 +364,7 @@
       "via": "manual",
       "file": "Adic spaces/FJP/Over/SheafyEndpoints.lean",
       "line": 274,
-      "cited": "Theorem 6.2 (the pair (A,A\u00b0))",
+      "cited": "Theorem 6.1 (the pair (A,A\u00b0))",
       "kind": "theorem",
       "flagged": true
     },
@@ -373,7 +373,7 @@
       "via": "manual",
       "file": "Adic spaces/FJP/Over/SheafyEndpoints.lean",
       "line": 330,
-      "cited": "Theorem 6.2 (completion- and plus-ring-independent strengthening)",
+      "cited": "Theorem 6.1 (completion- and plus-ring-independent strengthening)",
       "kind": "theorem",
       "flagged": true
     },
@@ -382,7 +382,7 @@
       "via": "manual",
       "file": "Adic spaces/FJP/Over/SheafyEndpoints.lean",
       "line": 337,
-      "cited": "Theorem 6.2 (all-open structure presheaf)",
+      "cited": "Theorem 6.1 (all-open structure presheaf)",
       "kind": "theorem",
       "flagged": true
     }
@@ -393,7 +393,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Algebra.lean",
       "line": 236,
-      "cited": "Theorem 7.1 (Tate structure)",
+      "cited": "Theorem 8.1 (Tate structure)",
       "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
@@ -402,7 +402,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Main.lean",
       "line": 132,
-      "cited": "Theorem 7.1 (uniformity)",
+      "cited": "Theorem 8.1 (uniformity)",
       "kind": "theorem",
       "flagged": true,
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
@@ -412,7 +412,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Main.lean",
       "line": 58,
-      "cited": "Theorem 7.1 (domain)",
+      "cited": "Theorem 8.1 (domain)",
       "kind": "theorem",
       "flagged": true,
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
@@ -422,7 +422,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Main.lean",
       "line": 66,
-      "cited": "Theorem 7.1 (power-bounded elements are the unit ball)",
+      "cited": "Theorem 8.1 (power-bounded elements are the unit ball)",
       "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
@@ -431,7 +431,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Main.lean",
       "line": 61,
-      "cited": "Theorem 7.1 (nonnoetherianity)",
+      "cited": "Theorem 8.1 (nonnoetherianity)",
       "kind": "theorem",
       "flagged": true,
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
@@ -441,7 +441,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Main.lean",
       "line": 135,
-      "cited": "Theorem 7.1 (sheafiness)",
+      "cited": "Theorem 8.1 (sheafiness)",
       "kind": "theorem",
       "flagged": true,
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
@@ -451,7 +451,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Main.lean",
       "line": 105,
-      "cited": "Theorem 7.1 (the displayed rational chart is a domain)",
+      "cited": "Theorem 8.1 (the displayed rational chart is a domain)",
       "kind": "theorem",
       "flagged": true,
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
@@ -461,7 +461,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Main.lean",
       "line": 112,
-      "cited": "Theorem 7.1 (the displayed rational chart is not uniform)",
+      "cited": "Theorem 8.1 (the displayed rational chart is not uniform)",
       "kind": "theorem",
       "flagged": true,
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
@@ -471,7 +471,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Main.lean",
       "line": 154,
-      "cited": "Theorem 7.1 (failure of stable uniformity)",
+      "cited": "Theorem 8.1 (failure of stable uniformity)",
       "kind": "theorem",
       "flagged": true,
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
@@ -625,7 +625,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Heads.lean",
       "line": 566,
-      "cited": "Lemma 7.2 (even-exponent Tate algebra)",
+      "cited": "Lemma 8.2 (even-exponent Tate algebra)",
       "kind": "def",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
@@ -634,7 +634,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Heads.lean",
       "line": 570,
-      "cited": "Lemma 7.2 (norm preservation)",
+      "cited": "Lemma 8.2 (norm preservation)",
       "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
@@ -643,7 +643,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Heads.lean",
       "line": 876,
-      "cited": "Lemma 7.2 (finite decomposition)",
+      "cited": "Lemma 8.2 (finite decomposition)",
       "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
@@ -652,7 +652,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Heads.lean",
       "line": 927,
-      "cited": "Lemma 7.2 (finite module)",
+      "cited": "Lemma 8.2 (finite module)",
       "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
@@ -661,7 +661,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Heads.lean",
       "line": 157,
-      "cited": "Lemma 7.2 (Tate structure)",
+      "cited": "Lemma 8.2 (Tate structure)",
       "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
@@ -670,7 +670,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Heads.lean",
       "line": 1306,
-      "cited": "Lemma 7.2 (strong noetherianity)",
+      "cited": "Lemma 8.2 (strong noetherianity)",
       "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
@@ -679,7 +679,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Heads.lean",
       "line": 76,
-      "cited": "Lemma 7.2 (nested finite-variable rings)",
+      "cited": "Lemma 8.2 (nested finite-variable rings)",
       "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
@@ -688,7 +688,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Heads.lean",
       "line": 84,
-      "cited": "Lemma 7.2 (isometric inclusion)",
+      "cited": "Lemma 8.2 (isometric inclusion)",
       "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
@@ -697,7 +697,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Heads.lean",
       "line": 1364,
-      "cited": "Lemma 7.2 (approximation and density)",
+      "cited": "Lemma 8.2 (approximation and density)",
       "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     }
@@ -931,7 +931,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/CoeffLocalization.lean",
       "line": 1982,
-      "cited": "Proposition 7.6 (ring equivalence)",
+      "cited": "Proposition 8.6 (ring equivalence)",
       "kind": "def",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
@@ -940,7 +940,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/CoeffLocalization.lean",
       "line": 1994,
-      "cited": "Proposition 7.6 (continuity)",
+      "cited": "Proposition 8.6 (continuity)",
       "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
@@ -949,7 +949,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/CoeffLocalization.lean",
       "line": 2001,
-      "cited": "Proposition 7.6 (continuity of the inverse)",
+      "cited": "Proposition 8.6 (continuity of the inverse)",
       "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
@@ -958,7 +958,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Sheafy.lean",
       "line": 1011,
-      "cited": "Proposition 7.6 (restriction acts coefficientwise)",
+      "cited": "Proposition 8.6 (restriction acts coefficientwise)",
       "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     }
@@ -969,7 +969,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/CoeffLocalization.lean",
       "line": 2037,
-      "cited": "Corollary 7.7 (finite-variable model and bicontinuous equivalence)",
+      "cited": "Corollary 8.7 (finite-variable model and bicontinuous equivalence)",
       "kind": "structure",
       "include_body": true,
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
@@ -979,7 +979,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/CoeffLocalization.lean",
       "line": 2295,
-      "cited": "Corollary 7.7 (existence of a finite-variable model)",
+      "cited": "Corollary 8.7 (existence of a finite-variable model)",
       "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     }
@@ -990,7 +990,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Chart.lean",
       "line": 83,
-      "cited": "Proposition 7.8 (the datum (W; ϖ))",
+      "cited": "Proposition 8.8 (the datum (W; ϖ))",
       "kind": "def",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
@@ -999,7 +999,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/CoeffLocalization.lean",
       "line": 1982,
-      "cited": "Proposition 7.8 (the chart as a coefficient-family ring)",
+      "cited": "Proposition 8.8 (the chart as a coefficient-family ring)",
       "kind": "def",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
@@ -1008,7 +1008,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/CoeffLocalization.lean",
       "line": 1994,
-      "cited": "Proposition 7.8 (continuity of the coefficient model)",
+      "cited": "Proposition 8.8 (continuity of the coefficient model)",
       "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
@@ -1017,7 +1017,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/CoeffLocalization.lean",
       "line": 2001,
-      "cited": "Proposition 7.8 (continuity of the inverse coefficient model)",
+      "cited": "Proposition 8.8 (continuity of the inverse coefficient model)",
       "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
@@ -1026,7 +1026,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Chart.lean",
       "line": 712,
-      "cited": "Proposition 7.8 (the finite-variable quotient is k⟨X⟩)",
+      "cited": "Proposition 8.8 (the finite-variable quotient is k⟨X⟩)",
       "kind": "def",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
@@ -1035,7 +1035,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Chart.lean",
       "line": 815,
-      "cited": "Proposition 7.8 (the finite-variable identification is isometric)",
+      "cited": "Proposition 8.8 (the finite-variable identification is isometric)",
       "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
@@ -1044,7 +1044,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Chart.lean",
       "line": 304,
-      "cited": "Proposition 7.8 (W maps to ϖX)",
+      "cited": "Proposition 8.8 (W maps to ϖX)",
       "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     }

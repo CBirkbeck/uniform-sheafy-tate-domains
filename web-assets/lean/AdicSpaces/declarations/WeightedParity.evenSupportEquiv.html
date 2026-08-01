@@ -32,10 +32,10 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">def</div>
   <h1>WeightedParity.evenSupportEquiv</h1>
-  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>Let <code>𝒜⁽ᴺ⁾</code> be the subring using only <code>W,U₁,…,U_N</code>, and let <code>𝒯⁽ᴺ⁾</code> be its subring in which every <code>U_i</code> has even exponent. Halving those exponents gives a ring equivalence <code>𝒯⁽ᴺ⁾ ≃ K⟨W,Z₁,…,Z_N⟩</code>; its inverse is the substitution <code>Z_i ↦ U_i²</code> used in Lemma 7.2.</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>Let <code>𝒜⁽ᴺ⁾</code> be the subring using only <code>W,U₁,…,U_N</code>, and let <code>𝒯⁽ᴺ⁾</code> be its subring in which every <code>U_i</code> has even exponent. Halving those exponents gives a ring equivalence <code>𝒯⁽ᴺ⁾ ≃ K⟨W,Z₁,…,Z_N⟩</code>; its inverse is the substitution <code>Z_i ↦ U_i²</code> used in Lemma 8.2.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><code>T_N</code> is isometrically isomorphic to the Tate algebra <code>K⟨T_0,…,T_N⟩ = P K (N+1)</code><br>(the exponent-halving reindexing <code>(a, 2ν) ↦ (a, ν)</code>; [WP]<br>eq:finite-stage-normal-form).</p></div></details>
-  <p class="used-for"><strong>Used in the paper for:</strong> Lemma 7.2 (even-exponent Tate algebra)</p>
+  <p class="used-for"><strong>Used in the paper for:</strong> Lemma 8.2 (even-exponent Tate algebra)</p>
   <pre><code>noncomputable def evenSupportEquiv :
     ↥(wpEvenSupport K w N) ≃+* FiniteJet.GraphKoszul.P K (N + 1)</code></pre>
   <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/WP/Heads.lean:566–567</code><br>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-problems-24-28">
+  <title>Problems 24 and 28</title>
+  <p>
+    Problem<nbsp/>24 of the <em>Nonarchimedean Scottish Book</em> asks whether the map of
+rings underlying a rational localisation of Tate Huber pairs must be flat.
+Problem<nbsp/>28 asks whether a non-zero-divisor which generates a closed ideal can
+restrict to zero on a rational subspace <xref ref="bib-Scottish" detail="Problems 24 and 28"/>.
+Both questions can be read off from the chart computed in
+<xref ref="prop-bad-chart"/>.
+  </p>
+  <proposition xml:id="prop-problems-24-28">
+    <statement>
+      <p>
+        Let
+<me>U=\{x\in\Spa(A,A^\circ):|W(x)|\leq|\varpi(x)|\}.</me>
+Then <m>U</m> is nonempty, the rational localisation
+<me>A\longrightarrow \mathcal O(U)
+    =A\left\langle\frac{W}{\varpi}\right\rangle</me>
+is not flat, and multiplication by <m>Q^2</m> is a strict inclusion on <m>A</m> even
+though <m>Q^2</m> maps to zero in <m>\mathcal O(U)</m>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        The composite
+<me>A\longrightarrow B=k\langle W,Q\rangle/(Q^2)
+    \longrightarrow k,
+  \qquad
+  f_0(W)+Qf_1(W)+Q^2h\longmapsto f_0(0),</me>
+is norm-nonincreasing and sends <m>A^\circ</m> into <m>k^\circ</m>.  Pulling back the
+valuation on <m>k</m> therefore gives a point of <m>\Spa(A,A^\circ)</m>.  At this point
+<m>W</m> has value zero and <m>\varpi</m> has nonzero value, so the point lies in <m>U</m>.
+      </p>
+      <p>
+        Under the inclusion <m>A\subset C</m>, the element <m>Q^2</m> is the usual nonzero
+monomial.  Since the restricted Gauss norm on <m>A</m> is multiplicative and
+<m>\lVert Q\rVert=1</m>, for every <m>a\in A</m> we have
+<me>\lVert Q^2a\rVert=\lVert a\rVert.</me>
+Thus multiplication by <m>Q^2</m> is an isometry.  In particular it is injective,
+and its image is closed because <m>A</m> is complete.  It is therefore a strict
+inclusion in the sense of Problem<nbsp/>28.
+      </p>
+      <p>
+        On the other hand, <xref ref="prop-bad-chart"/> identifies the restriction map with
+<me>A\longrightarrow k\langle X,Q\rangle/(Q^2),
+  \qquad W\longmapsto\varpi X,\quad Q\longmapsto Q.</me>
+It follows that <m>Q^2</m> maps to zero.  The target is nonzero.  If the rational
+localisation were flat, tensoring the injection
+<me>0\longrightarrow A\xrightarrow{\,\cdot Q^2\,}A</me>
+with <m>\mathcal O(U)</m> would make multiplication by the image of <m>Q^2</m>
+injective on <m>\mathcal O(U)</m>.  This map is zero, which is a contradiction.
+      </p>
+    </proof>
+  </proposition>
+</section>

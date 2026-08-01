@@ -132,6 +132,10 @@ However,
 so $A$ is not stably uniform.
 \end{theorem}
 
+The same rational chart gives a negative answer to Problem~24 of the
+\emph{Nonarchimedean Scottish Book} and an affirmative answer to the Tate
+case of Problem~28; see \cref{sec:problems-24-28}.
+
 The proof uses Milnor squares of complete Tate rings.  Recall that a cartesian square of
 rings with a surjective leg is called a Milnor square \cite[Section~2]{Milnor}; the
 complete Tate setting is used by Kerz--Saito--Tamme in their work on analytic
@@ -865,6 +869,66 @@ Completeness, uniformity, nonnoetherianity, and the domain property are
 \cref{prop:uniform-domain}; sheafiness is
 \cref{thm:sheafy}; and failure of stable uniformity is
 \cref{prop:not-stably-uniform}.
+\end{proof}
+
+
+\section{Problems 24 and 28}\label{sec:problems-24-28}
+
+Problem~24 of the \emph{Nonarchimedean Scottish Book} asks whether the map of
+rings underlying a rational localisation of Tate Huber pairs must be flat.
+Problem~28 asks whether a non-zero-divisor which generates a closed ideal can
+restrict to zero on a rational subspace \cite[Problems~24 and 28]{Scottish}.
+Both questions can be read off from the chart computed in
+\cref{prop:bad-chart}.
+
+\begin{proposition}\label{prop:problems-24-28}
+Let
+\[
+  U=\{x\in\Spa(A,A^\circ):|W(x)|\leq|\varpi(x)|\}.
+\]
+Then $U$ is nonempty, the rational localisation
+\[
+  A\longrightarrow \mathcal O(U)
+    =A\left\langle\frac{W}{\varpi}\right\rangle
+\]
+is not flat, and multiplication by $Q^2$ is a strict inclusion on $A$ even
+though $Q^2$ maps to zero in $\mathcal O(U)$.
+\end{proposition}
+
+\begin{proof}
+The composite
+\[
+  A\longrightarrow B=k\langle W,Q\rangle/(Q^2)
+    \longrightarrow k,
+  \qquad
+  f_0(W)+Qf_1(W)+Q^2h\longmapsto f_0(0),
+\]
+is norm-nonincreasing and sends $A^\circ$ into $k^\circ$.  Pulling back the
+valuation on $k$ therefore gives a point of $\Spa(A,A^\circ)$.  At this point
+$W$ has value zero and $\varpi$ has nonzero value, so the point lies in $U$.
+
+Under the inclusion $A\subset C$, the element $Q^2$ is the usual nonzero
+monomial.  Since the restricted Gauss norm on $A$ is multiplicative and
+$\lVert Q\rVert=1$, for every $a\in A$ we have
+\[
+  \lVert Q^2a\rVert=\lVert a\rVert.
+\]
+Thus multiplication by $Q^2$ is an isometry.  In particular it is injective,
+and its image is closed because $A$ is complete.  It is therefore a strict
+inclusion in the sense of Problem~28.
+
+On the other hand, \cref{prop:bad-chart} identifies the restriction map with
+\[
+  A\longrightarrow k\langle X,Q\rangle/(Q^2),
+  \qquad W\longmapsto\varpi X,\quad Q\longmapsto Q.
+\]
+It follows that $Q^2$ maps to zero.  The target is nonzero.  If the rational
+localisation were flat, tensoring the injection
+\[
+  0\longrightarrow A\xrightarrow{\,\cdot Q^2\,}A
+\]
+with $\mathcal O(U)$ would make multiplication by the image of $Q^2$
+injective on $\mathcal O(U)$.  This map is zero, which is a contradiction.
 \end{proof}
 
 
@@ -2002,7 +2066,8 @@ is $(W;\varpi)$, and
 checks that it defines the chart $|W|\leq|\varpi|$.  The two chart theorems
 then say precisely that its section ring is a domain but is not uniform.
 
-The proof routes are the ones used in Section~7.  Multiplicativity of the
+The proof routes are the ones used in \cref{sec:second-example}.
+Multiplicativity of the
 countable Gauss norm gives the domain and unit-ball statements.  For rational
 data in $\mathcal A^{(N)}$, localisation is proved by taking the completed
 quotient of $\mathcal A^{(N)}$, applying its evaluation map to each
@@ -2168,7 +2233,7 @@ Israel J. Math. \textbf{216} (2016), no.~1, 61--105.
 
 \bibitem{Scottish}
 K.~S. Kedlaya,
-\emph{The Nonarchimedean Scottish Book}, Problem~7,
+\emph{The Nonarchimedean Scottish Book}, Problems~7, 24, and 28,
 \href{https://scripts.mit.edu/~kedlaya/wiki/index.php?title=The_Nonarchimedean_Scottish_Book}{available online}.
 
 \bibitem{Stacks}
