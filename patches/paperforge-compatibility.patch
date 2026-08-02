@@ -21,10 +21,10 @@ index 7833b4e..4db5d4c 100644
      for f in sorted(lean_root.rglob("*.lean")):
          if ".lake" in f.parts:
 diff --git a/ingest/tex2ptx.py b/ingest/tex2ptx.py
-index 03f93fc..6ad0bb9 100644
+index 7cfd9be..9fe03e6 100644
 --- a/ingest/tex2ptx.py
 +++ b/ingest/tex2ptx.py
-@@ -64,6 +64,31 @@ def xml_escape(s: str) -> str:
+@@ -66,6 +66,31 @@ def xml_escape(s: str) -> str:
      return s.replace("&", "&amp;").replace("<", "&lt;")
  
  
@@ -38,7 +38,7 @@ index 03f93fc..6ad0bb9 100644
 +def lean_commit_attr(rec: dict) -> str:
 +    """Return a safe ``commit`` attribute for a Lean declaration record.
 +
-+    Commit-aware validators need an unambiguous object name.  Refuse short or
++    Commit-aware validators need an unambiguous object name. Refuse short or
 +    otherwise malformed hashes here instead of emitting a badge that appears
 +    pinned but is actually validated against the working tree.
 +    """
@@ -56,7 +56,7 @@ index 03f93fc..6ad0bb9 100644
  def find_env_end(text: str, start: int, env: str) -> int:
      """Index just past \\end{env}, honoring nesting of the same env."""
      depth = 1
-@@ -413,6 +438,37 @@ def convert_inline(s: str, refs: "RefMap") -> str:
+@@ -415,6 +440,37 @@ def convert_inline(s: str, refs: "RefMap") -> str:
              out.append("<c>" + convert_inline(inner, refs) + "</c>")
              i = j + 1
              continue
@@ -94,7 +94,7 @@ index 03f93fc..6ad0bb9 100644
          m = re.match(r"\\texorpdfstring\{", s[i:])
          if m:
              j = match_brace(s, i + m.end() - 1)
-@@ -687,7 +743,9 @@ def convert_theoremlike(env: str, body: str, ctx: Ctx) -> None:
+@@ -689,7 +745,9 @@ def convert_theoremlike(env: str, body: str, ctx: Ctx) -> None:
                  ann = (ctx.lean_ann.get(rec["decl"])
                         or rec["decl"].rsplit(".", 1)[-1])
                  text = f"Lean ({ann})"
@@ -105,7 +105,7 @@ index 03f93fc..6ad0bb9 100644
      ctx.indent -= 1
      ctx.emit(f"</{PTX_THM[env]}>")
      set_block(_CURRENT_DIVISION[0])     # back to division grain
-@@ -1137,16 +1195,16 @@ def extract_macros(preamble: str) -> str:
+@@ -1139,16 +1197,16 @@ def extract_macros(preamble: str) -> str:
      return "\n".join(macros)
  
  
@@ -126,7 +126,7 @@ index 03f93fc..6ad0bb9 100644
  
  
  def main() -> int:
-@@ -1277,7 +1335,7 @@ def main() -> int:
+@@ -1279,7 +1337,7 @@ def main() -> int:
                  else {})
  
      preamble = tex.split(r"\begin{document}")[0]
@@ -135,7 +135,7 @@ index 03f93fc..6ad0bb9 100644
      macros = extract_macros(preamble)
      pre_chunk, units = parse_document(tex)
  
-@@ -1378,8 +1436,8 @@ def main() -> int:
+@@ -1380,8 +1438,8 @@ def main() -> int:
  
      if args.out:
          title = convert_inline(title, refs)
@@ -146,7 +146,7 @@ index 03f93fc..6ad0bb9 100644
                     out_lines_per_sec, extra_authors=args.authors,
                     document_id=args.document_id or args.texfile.stem)
      if args.numbering:
-@@ -1679,7 +1737,7 @@ def apply_insertions(secs) -> int:
+@@ -1681,7 +1739,7 @@ def apply_insertions(secs) -> int:
      return n
  
  
@@ -155,7 +155,7 @@ index 03f93fc..6ad0bb9 100644
                 abstract: str, secs, extra_authors: list[str] = (),
                 document_id: str = "paper") -> None:
      outdir.mkdir(parents=True, exist_ok=True)
-@@ -1709,13 +1767,17 @@ def write_tree(outdir: Path, title: str, author: str, macros: str,
+@@ -1711,13 +1769,17 @@ def write_tree(outdir: Path, title: str, author: str, macros: str,
      def _xml_escape(s: str) -> str:
          return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
  
@@ -178,7 +178,7 @@ index 03f93fc..6ad0bb9 100644
              continue
          name, *aff = [p.strip() for p in spec.split("|")]
          if len(aff) == 1:
-@@ -1726,11 +1788,12 @@ def write_tree(outdir: Path, title: str, author: str, macros: str,
+@@ -1728,11 +1790,12 @@ def write_tree(outdir: Path, title: str, author: str, macros: str,
                      + "</institution>")
          else:
              inst = ""
@@ -197,7 +197,7 @@ index 03f93fc..6ad0bb9 100644
      main = f"""{HEADER}<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
    <docinfo>
 diff --git a/tests/test_units.py b/tests/test_units.py
-index 3a542c6..edcdc2d 100644
+index 2b89623..81d0266 100644
 --- a/tests/test_units.py
 +++ b/tests/test_units.py
 @@ -186,6 +186,77 @@ def test_tex2ptx_rewrites_and_profile(tmp_path):
@@ -279,10 +279,21 @@ index 3a542c6..edcdc2d 100644
      draft = tmp_path / "d.tex"
      draft.write_text(
 diff --git a/validators/paperforge_validators/lean_links.py b/validators/paperforge_validators/lean_links.py
-index afd3e66..be1cfd6 100644
+index f60d249..1b9052c 100644
 --- a/validators/paperforge_validators/lean_links.py
 +++ b/validators/paperforge_validators/lean_links.py
-@@ -18,7 +18,11 @@ misses as errors.
+@@ -10,6 +10,10 @@ deprecated ``[inputs] lean_project`` / ``[inputs.formalizations.*]`` shape is
+ understood too). Badges without a project, or with an unlisted one, validate
+ against the primary. An instance with no formalization skips.
+ 
++Version-aware: a badge carrying a full commit hash is validated against that
++exact Git object, extracted without changing the formalization checkout. An
++unpinned badge is validated against the current working tree.
++
+ Approximation: declaration names are collected by scanning ``*.lean`` source with a
+ namespace stack, rather than from the compiled environment. That is enough to catch
+ the common failure (a decl renamed/removed by a refactor) but can miss names
+@@ -19,7 +23,11 @@ misses as errors.
  """
  from __future__ import annotations
  
@@ -293,8 +304,8 @@ index afd3e66..be1cfd6 100644
 +import tempfile
  from pathlib import Path
  
- from . import Finding, ptx_files, instance_root
-@@ -26,6 +30,7 @@ from . import Finding, ptx_files, instance_root
+ from . import Finding, formalization_roots, ptx_files
+@@ -27,6 +35,7 @@ from . import Finding, formalization_roots, ptx_files
  _LEAN_TAG = re.compile(r"<lean\b[^>]*ref=\"[^\"]+\"[^>]*>")
  _REF = re.compile(r"\bref=\"([^\"]+)\"")
  _PROJ = re.compile(r"\bproject=\"([^\"]+)\"")
@@ -302,32 +313,67 @@ index afd3e66..be1cfd6 100644
  
  
  def _load_scanner():
-@@ -44,13 +49,60 @@ def _lean_decls(project: Path) -> set[str]:
+@@ -45,13 +54,94 @@ def _lean_decls(project: Path) -> set[str]:
      return {full for full, _doc, _f, _ln, _private, _kind in iter_decls(project)}
  
  
 -def _refs(config: dict) -> list[tuple[str, str, Path]]:
 -    out: list[tuple[str, str, Path]] = []
-+def _run_git(cwd: Path, *args: str, text: bool = True) -> subprocess.CompletedProcess:
++def _run_git(cwd: Path, *args: str,
++             text: bool = True) -> subprocess.CompletedProcess:
 +    try:
 +        return subprocess.run(
 +            ["git", "-C", str(cwd), *args], check=False,
 +            text=text, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 +    except FileNotFoundError as exc:
-+        raise RuntimeError("git is required to validate commit-pinned Lean links") from exc
++        raise RuntimeError(
++            "git is required to validate commit-pinned Lean links") from exc
++
++
++def _extract_git_archive(archive: tarfile.TarFile, destination: Path) -> None:
++    """Extract a local Git archive safely across supported Python versions.
++
++    ``tarfile`` extraction filters were added in Python 3.11.4, while
++    Paperforge supports Python 3.11 generally.  On an older patch release we
++    therefore perform the path check ourselves and allow only directories and
++    regular files before using the legacy extraction API.  Newer Pythons use
++    the standard ``data`` filter, which also permits safe links.
++    """
++    members = archive.getmembers()
++    for member in members:
++        target = (destination / member.name).resolve()
++        if not target.is_relative_to(destination):
++            raise RuntimeError("unsafe path in git archive")
++
++    if hasattr(tarfile, "data_filter"):
++        archive.extractall(destination, members=members, filter="data")
++        return
++
++    unsupported = [
++        member.name for member in members
++        if not (member.isdir() or member.isfile())
++    ]
++    if unsupported:
++        raise RuntimeError(
++            "git archive contains links or special files that cannot be "
++            "extracted safely by this Python 3.11 release: "
++            + ", ".join(unsupported))
++    archive.extractall(destination, members=members)
 +
 +
 +def _lean_decls_at_commit(project: Path, commit: str) -> set[str]:
-+    """Collect declarations from ``project`` at an exact local Git commit."""
++    """Collect declarations from the project at an exact local Git commit."""
 +    top_proc = _run_git(project, "rev-parse", "--show-toplevel")
 +    if top_proc.returncode:
 +        detail = top_proc.stderr.strip() or top_proc.stdout.strip()
-+        raise RuntimeError(f"cannot locate Git repository for {project}: {detail}")
++        raise RuntimeError(
++            f"cannot locate Git repository for {project}: {detail}")
 +    repo = Path(top_proc.stdout.strip()).resolve()
 +    try:
 +        relative_project = project.resolve().relative_to(repo)
 +    except ValueError as exc:
-+        raise RuntimeError(f"Lean project {project} is outside its Git repository {repo}") from exc
++        raise RuntimeError(
++            f"Lean project {project} is outside its Git repository {repo}") from exc
 +
 +    args = ["archive", "--format=tar", commit]
 +    if relative_project != Path("."):
@@ -336,20 +382,19 @@ index afd3e66..be1cfd6 100644
 +    if archive_proc.returncode:
 +        stderr = archive_proc.stderr.decode(errors="replace").strip()
 +        raise RuntimeError(
-+            f"cannot read Lean project at commit {commit}: {stderr or 'git archive failed'}")
++            f"cannot read Lean project at commit {commit}: "
++            f"{stderr or 'git archive failed'}")
 +
 +    with tempfile.TemporaryDirectory(prefix="paperforge-lean-") as td:
 +        snapshot = Path(td).resolve()
-+        with tarfile.open(fileobj=io.BytesIO(archive_proc.stdout), mode="r:") as archive:
-+            for member in archive.getmembers():
-+                target = (snapshot / member.name).resolve()
-+                if not target.is_relative_to(snapshot):
-+                    raise RuntimeError("unsafe path in git archive")
-+            archive.extractall(snapshot, filter="data")
++        with tarfile.open(fileobj=io.BytesIO(archive_proc.stdout),
++                          mode="r:") as archive:
++            _extract_git_archive(archive, snapshot)
 +        snapshot_project = snapshot / relative_project
 +        if not snapshot_project.is_dir():
 +            raise RuntimeError(
-+                f"Lean project {relative_project} does not exist at commit {commit}")
++                f"Lean project {relative_project} does not exist at "
++                f"commit {commit}")
 +        return _lean_decls(snapshot_project)
 +
 +
@@ -366,10 +411,19 @@ index afd3e66..be1cfd6 100644
      return out
  
  
-@@ -65,8 +117,8 @@ def check(config: dict) -> list[Finding]:
-         roots[name] = base / rec["root"]
- 
+@@ -64,7 +154,7 @@ def check(config: dict) -> list[Finding]:
      findings: list[Finding] = []
+     if not roots:
+         # no formalization configured: badges, if any, cannot be checked
+-        stray = {ref for ref, _proj, _f in _refs(config)}
++        stray = {ref for ref, _proj, _commit, _f in _refs(config)}
+         if stray:
+             findings.append(Finding(
+                 "lean_links", "warning",
+@@ -73,8 +163,8 @@ def check(config: dict) -> list[Finding]:
+                 f"validate them against"))
+         return findings
+ 
 -    decls: dict[str, set[str]] = {}
 -    basenames: dict[str, set[str]] = {}
 +    decls: dict[tuple[str, str], set[str]] = {}
@@ -377,7 +431,7 @@ index afd3e66..be1cfd6 100644
      for name, root in roots.items():
          if not root.exists():
              findings.append(Finding(
-@@ -74,24 +126,38 @@ def check(config: dict) -> list[Finding]:
+@@ -82,24 +172,40 @@ def check(config: dict) -> list[Finding]:
                  f"formalization root does not exist: {root}"
                  + (f" (project {name})" if name else "")))
              continue
@@ -399,8 +453,10 @@ index afd3e66..be1cfd6 100644
 +        key = (project_name, commit)
 +        if key not in decls:
 +            try:
-+                decls[key] = _lean_decls_at_commit(roots[project_name], commit)
-+                basenames[key] = {n.rsplit(".", 1)[-1] for n in decls[key]}
++                decls[key] = _lean_decls_at_commit(
++                    roots[project_name], commit)
++                basenames[key] = {
++                    n.rsplit(".", 1)[-1] for n in decls[key]}
 +            except RuntimeError as exc:
 +                findings.append(Finding(
 +                    "lean_links", "error", str(exc), f.name))
@@ -427,16 +483,21 @@ index afd3e66..be1cfd6 100644
      return findings
 diff --git a/validators/tests/test_lean_links.py b/validators/tests/test_lean_links.py
 new file mode 100644
-index 0000000..256ba84
+index 0000000..abcc516
 --- /dev/null
 +++ b/validators/tests/test_lean_links.py
-@@ -0,0 +1,57 @@
+@@ -0,0 +1,106 @@
 +"""Tests for commit-pinned Lean declaration validation."""
 +from __future__ import annotations
 +
++import io
 +import subprocess
 +import sys
++import tarfile
++import warnings
 +from pathlib import Path
++
++import pytest
 +
 +sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 +from paperforge_validators import lean_links  # noqa: E402
@@ -449,6 +510,43 @@ index 0000000..256ba84
 +    return proc.stdout.strip()
 +
 +
++def test_extract_git_archive_supports_early_python_311(tmp_path, monkeypatch):
++    archive_path = tmp_path / "snapshot.tar"
++    payload = b"namespace Demo\ntheorem historical : True := by trivial\n"
++    with tarfile.open(archive_path, "w") as archive:
++        directory = tarfile.TarInfo("project")
++        directory.type = tarfile.DIRTYPE
++        directory.mode = 0o755
++        archive.addfile(directory)
++        source = tarfile.TarInfo("project/Defs.lean")
++        source.size = len(payload)
++        source.mode = 0o644
++        archive.addfile(source, io.BytesIO(payload))
++
++    # Python 3.11.0--3.11.3 has no extraction-filter API.  Exercise that
++    # branch even when the test suite itself runs on a newer interpreter.
++    monkeypatch.delattr(tarfile, "data_filter", raising=False)
++    destination = tmp_path / "unpacked"
++    destination.mkdir()
++    with tarfile.open(archive_path, "r:") as archive:
++        with warnings.catch_warnings():
++            # Newer interpreters warn about the legacy call which this test
++            # deliberately exercises on behalf of Python 3.11.0--3.11.3.
++            warnings.simplefilter("ignore", DeprecationWarning)
++            lean_links._extract_git_archive(archive, destination)
++    assert (destination / "project/Defs.lean").read_bytes() == payload
++
++    unsafe_path = tmp_path / "linked.tar"
++    with tarfile.open(unsafe_path, "w") as archive:
++        link = tarfile.TarInfo("project/link")
++        link.type = tarfile.SYMTYPE
++        link.linkname = "Defs.lean"
++        archive.addfile(link)
++    with tarfile.open(unsafe_path, "r:") as archive:
++        with pytest.raises(RuntimeError, match="links or special files"):
++            lean_links._extract_git_archive(archive, destination)
++
++
 +def test_lean_links_checks_exact_commit_and_recognises_classes(tmp_path):
 +    repo = tmp_path / "formalization"
 +    project = repo / "projects" / "Demo"
@@ -457,28 +555,30 @@ index 0000000..256ba84
 +    _git(repo, "config", "user.name", "Paperforge Test")
 +    _git(repo, "config", "user.email", "paperforge@example.invalid")
 +    source = project / "Defs.lean"
-+    source.write_text("namespace Demo\nclass Historical : Prop where\nend Demo\n")
++    source.write_text(
++        "namespace Demo\nclass Historical : Prop where\nend Demo\n")
 +    _git(repo, "add", ".")
 +    _git(repo, "commit", "-m", "historical declaration")
 +    historical = _git(repo, "rev-parse", "HEAD")
 +
-+    source.write_text("namespace Demo\nclass Current : Prop where\nend Demo\n")
++    source.write_text(
++        "namespace Demo\nclass Current : Prop where\nend Demo\n")
 +    _git(repo, "add", ".")
 +    _git(repo, "commit", "-m", "replace declaration")
 +
 +    instance = tmp_path / "paper"
 +    ptx = instance / "source" / "main.ptx"
 +    ptx.parent.mkdir(parents=True)
++    config = {
++        "_root": str(instance),
++        "formalizations": {
++            "primary": {"name": "Demo", "root": str(project)},
++        },
++    }
++
 +    ptx.write_text(
 +        f'<pretext><lean project="Demo" commit="{historical}" '
 +        'ref="Demo.Historical">Lean</lean></pretext>')
-+    config = {
-+        "_root": str(instance),
-+        "inputs": {
-+            "lean_project": str(project),
-+            "formalizations": {"Demo": {"root": str(project)}},
-+        },
-+    }
 +    assert lean_links.check(config) == []
 +
 +    ptx.write_text(
@@ -488,3 +588,8 @@ index 0000000..256ba84
 +    assert len(findings) == 1
 +    assert findings[0].severity == "error"
 +    assert "matches no declaration" in findings[0].message
++
++    ptx.write_text(
++        '<pretext><lean project="Demo" '
++        'ref="Demo.Current">Lean</lean></pretext>')
++    assert lean_links.check(config) == []

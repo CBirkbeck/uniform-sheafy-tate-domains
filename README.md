@@ -41,7 +41,7 @@ root, the complete build is:
 scripts/build-paper.sh
 ```
 
-The equivalent individual commands are:
+The core Paperforge steps are:
 
 ```sh
 (cd inputs/draft && latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex)
@@ -53,20 +53,62 @@ paperforge check
 paperforge build arxiv --pdf
 ```
 
+The wrapper also regenerates the Lean knowls, removes obsolete generated
+knowl files, gives the interactive JavaScript a content-addressed name, copies
+the archival Lean pages, and installs the primary PDF in `output/pdf/`.
+
 To refresh the GitHub Pages snapshot after a successful build:
 
 ```sh
 scripts/sync-pages.sh
 ```
 
-The external Paperforge checkout used for this pass is at commit
-`726cc7d679441e28f39cfd52d3e2dd0251c79a6d`.  Its LaTeX ingester did not
-preserve `\href` or `\url` and read only the first `\author` command.  Its
-Lean-link checker also compared every badge with the current formalisation
-branch, even when the declaration map pinned another commit.  The tested
-compatibility changes are kept at `patches/paperforge-compatibility.patch`.
-They preserve links and all draft authors, and validate Lean declarations at
-their exact commits.  The focused suite passes with 17 tests and one skip.
+The Paperforge checkout used for this paper is based on upstream commit
+`e6affebffbcc5eb05f17cc3ba57cdf3ff5c618ad`.  Paperforge is installed
+editable, so the exact base commit and the local compatibility patch together
+define the tool version.  The patch at
+`patches/paperforge-compatibility.patch` preserves `\href` and `\url`, reads
+all `\author` commands, recognises Lean `class` declarations, emits the pinned
+commit on each Lean badge, and validates declarations against those exact Git
+objects.
+
+For a fresh local setup, start from a clean Paperforge checkout and run:
+
+```sh
+paper_root="$PWD"
+paperforge_checkout=/path/to/paperforge
+git -C "$paperforge_checkout" checkout e6affebffbcc5eb05f17cc3ba57cdf3ff5c618ad
+git -C "$paperforge_checkout" apply --check \
+  "$paper_root/patches/paperforge-compatibility.patch"
+git -C "$paperforge_checkout" apply \
+  "$paper_root/patches/paperforge-compatibility.patch"
+python3 -m venv .paperforge-venv
+.paperforge-venv/bin/python -m pip install -r requirements.txt
+.paperforge-venv/bin/python -m pip install -e "$paperforge_checkout" \
+  -e "$paperforge_checkout/validators"
+PATH="$paper_root/.paperforge-venv/bin:$PATH" paperforge selftest
+PATH="$paper_root/.paperforge-venv/bin:$PATH" paperforge doctor
+.paperforge-venv/bin/python -m pip install -r requirements-dev.txt
+.paperforge-venv/bin/python -m pytest "$paperforge_checkout/tests" \
+  "$paperforge_checkout/validators/tests" -q
+```
+
+`requirements.txt` pins the exercised PreTeXt CLI.  The Paperforge package
+itself still reports version `0.1.0`, so the Git commit is the meaningful pin.
+The setup requires Python 3.11 or later.
+
+The untracked `.paperforge.local.toml` must point to the local formalisation
+checkout, for example:
+
+```toml
+[formalizations.primary]
+root = "/absolute/path/to/aintlib/projects/AdicSpaces"
+```
+
+That AINTLIB checkout must contain all four Git objects listed below.  A
+shallow clone is therefore insufficient.  The two original example snapshots
+are not yet available under permanent public refs, as noted below; publishing
+them remains necessary for a build from a fresh public clone.
 
 See `PAPERFORGE_CHECK.md` for the reference audit and `STYLE_REVIEW.md` for the
 first author-voice pass.

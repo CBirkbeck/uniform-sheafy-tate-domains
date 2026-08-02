@@ -15,7 +15,8 @@
       "file": "Adic spaces/FJP/Over/JetRings.lean",
       "line": 269,
       "cited": "Theorem 1.1 (definition of the finite-jet algebra)",
-      "kind": "def"
+      "kind": "def",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.isClosed_jetSupport",
@@ -23,7 +24,8 @@
       "file": "Adic spaces/FJP/Over/JetRings.lean",
       "line": 298,
       "cited": "Theorem 1.1 (closedness, hence completeness)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.isTateRing_JetA",
@@ -31,7 +33,8 @@
       "file": "Adic spaces/FJP/Over/JetRings.lean",
       "line": 679,
       "cited": "Theorem 1.1 (Tate structure)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.finiteJet_isUniform_of_dvr",
@@ -40,7 +43,8 @@
       "line": 264,
       "cited": "Theorem 1.1 (uniformity)",
       "kind": "theorem",
-      "flagged": true
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.isPowerBounded_JetA_iff",
@@ -48,7 +52,8 @@
       "file": "Adic spaces/FJP/Over/UniformDomain.lean",
       "line": 127,
       "cited": "Theorem 1.1 (power-bounded elements are the unit ball)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.finiteJet_isDomain",
@@ -57,7 +62,8 @@
       "line": 69,
       "cited": "Theorem 1.1 (domain)",
       "kind": "theorem",
-      "flagged": true
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.finiteJet_not_noetherian",
@@ -66,7 +72,8 @@
       "line": 73,
       "cited": "Theorem 1.1 (nonnoetherianity)",
       "kind": "theorem",
-      "flagged": true
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.finiteJet_not_stablyUniform_of_dvr",
@@ -75,7 +82,8 @@
       "line": 269,
       "cited": "Theorem 1.1 (failure of stable uniformity)",
       "kind": "theorem",
-      "flagged": true
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.finiteJet_isSheafyFor_of_dvr",
@@ -84,7 +92,8 @@
       "line": 274,
       "cited": "Theorem 1.1 (sheafiness of the pair (A,A\u00b0))",
       "kind": "theorem",
-      "flagged": true
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     }
   ],
   "prop-uniform-domain": [
@@ -94,7 +103,8 @@
       "file": "Adic spaces/FJP/Over/JetRings.lean",
       "line": 298,
       "cited": "Proposition 3.1 (closedness, hence completeness)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.isTateRing_JetA",
@@ -102,7 +112,8 @@
       "file": "Adic spaces/FJP/Over/JetRings.lean",
       "line": 679,
       "cited": "Proposition 3.1 (Tate structure)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.finiteJet_isUniform_of_dvr",
@@ -111,7 +122,8 @@
       "line": 264,
       "cited": "Proposition 3.1 (uniformity)",
       "kind": "theorem",
-      "flagged": true
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.isPowerBounded_JetA_iff",
@@ -119,7 +131,8 @@
       "file": "Adic spaces/FJP/Over/UniformDomain.lean",
       "line": 127,
       "cited": "Proposition 3.1 (A\u00b0 is the Gauss-norm unit ball)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.finiteJet_isDomain",
@@ -128,7 +141,8 @@
       "line": 69,
       "cited": "Proposition 3.1 (domain)",
       "kind": "theorem",
-      "flagged": true
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.finiteJet_not_noetherian",
@@ -137,7 +151,8 @@
       "line": 73,
       "cited": "Proposition 3.1 (nonnoetherianity)",
       "kind": "theorem",
-      "flagged": true
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     }
   ],
   "prop-bad-chart": [
@@ -147,7 +162,8 @@
       "file": "Adic spaces/FJP/Over/Chart.lean",
       "line": 93,
       "cited": "Proposition 4.1 (rational datum)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.chartEquiv",
@@ -156,7 +172,8 @@
       "line": 1431,
       "cited": "Proposition 4.1 (chart identification)",
       "kind": "def",
-      "flagged": true
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.chartEquiv_continuous",
@@ -164,7 +181,8 @@
       "file": "Adic spaces/FJP/Over/Chart.lean",
       "line": 1436,
       "cited": "Proposition 4.1 (continuity)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.chartEquiv_symm_continuous",
@@ -172,7 +190,8 @@
       "file": "Adic spaces/FJP/Over/Chart.lean",
       "line": 1439,
       "cited": "Proposition 4.1 (continuity of the inverse)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.chartEquiv_canonicalMap_W",
@@ -181,7 +200,8 @@
       "line": 1446,
       "cited": "Proposition 4.1 (canonical generators)",
       "kind": "theorem",
-      "flagged": true
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     }
   ],
   "prop-problems-24-28": [
@@ -274,7 +294,8 @@
       "line": 1459,
       "cited": "Proposition 4.2 (nonuniform rational chart)",
       "kind": "theorem",
-      "flagged": true
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.finiteJet_not_stablyUniform_of_dvr",
@@ -283,7 +304,8 @@
       "line": 269,
       "cited": "Proposition 4.2",
       "kind": "theorem",
-      "flagged": true
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     }
   ],
   "lem-koszul": [
@@ -294,7 +316,8 @@
       "line": 154,
       "cited": "Lemma 5.1 (unit-ball specialization: positive-degree exactness)",
       "kind": "theorem",
-      "flagged": true
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJet.KoszulFree.koszulDifferential_continuous",
@@ -302,7 +325,8 @@
       "file": "Adic spaces/FJP/KoszulFiniteFree.lean",
       "line": 330,
       "cited": "Lemma 5.1 (continuity)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJet.GraphKoszul.koszulDifferential_isStrict",
@@ -310,7 +334,8 @@
       "file": "Adic spaces/FJP/KoszulStrictClosed.lean",
       "line": 208,
       "cited": "Lemma 5.1 (unit-ball specialization: strictness)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJet.GraphKoszul.isClosed_range_koszulDifferential",
@@ -318,7 +343,8 @@
       "file": "Adic spaces/FJP/KoszulStrictClosed.lean",
       "line": 122,
       "cited": "Lemma 5.1 (unit-ball specialization: closed image)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJet.GraphKoszul.pow_smul_graphIdeal_inter_unitBall_subset",
@@ -326,7 +352,8 @@
       "file": "Adic spaces/FJP/KoszulStrictClosed.lean",
       "line": 288,
       "cited": "Lemma 5.1 (unit-ball specialization: ideal denominators)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJet.GraphKoszul.pow_smul_ker_d1_inter_subset",
@@ -334,7 +361,8 @@
       "file": "Adic spaces/FJP/KoszulStrictClosed.lean",
       "line": 361,
       "cited": "Lemma 5.1 (unit-ball specialization: syzygy denominators)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     }
   ],
   "lem-graph-pullback": [
@@ -344,7 +372,8 @@
       "file": "Adic spaces/FJP/Over/StrictLocalization.lean",
       "line": 187,
       "cited": "Lemma 5.2 (injectivity of the ideal pullback map)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.StrictLoc.ideal_row_surjective",
@@ -352,7 +381,8 @@
       "file": "Adic spaces/FJP/Over/StrictLocalization.lean",
       "line": 455,
       "cited": "Lemma 5.2 (surjectivity of the ideal row)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.StrictLoc.ideal_pullback_controlled",
@@ -361,7 +391,8 @@
       "line": 513,
       "cited": "Lemma 5.2 (norm estimate for the pullback)",
       "kind": "theorem",
-      "flagged": true
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.StrictLoc.isClosed_IA",
@@ -369,7 +400,8 @@
       "file": "Adic spaces/FJP/Over/StrictLocalization.lean",
       "line": 751,
       "cited": "Lemma 5.2 (closed defining ideal)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     }
   ],
   "prop-localized-milnor": [
@@ -380,7 +412,8 @@
       "line": 942,
       "cited": "Proposition 5.3 (exact row)",
       "kind": "theorem",
-      "flagged": true
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.StrictLoc.loc_pair_isEmbedding",
@@ -388,7 +421,8 @@
       "file": "Adic spaces/FJP/Over/StrictLocalization.lean",
       "line": 1094,
       "cited": "Proposition 5.3 (topological embedding)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.StrictLoc.locRhoC_surjective",
@@ -396,7 +430,8 @@
       "file": "Adic spaces/FJP/Over/StrictLocalization.lean",
       "line": 1122,
       "cited": "Proposition 5.3 (surjective leg)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.locRhoC_continuous",
@@ -404,7 +439,8 @@
       "file": "Adic spaces/FJP/Over/Functoriality.lean",
       "line": 1833,
       "cited": "Proposition 5.3 (continuous surjective leg)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.StrictLoc.locRhoC_isOpenMap",
@@ -412,7 +448,8 @@
       "file": "Adic spaces/FJP/Over/StrictLocalization.lean",
       "line": 1144,
       "cited": "Proposition 5.3 (open, hence strict, surjective leg)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.presheafValueMapC_restriction",
@@ -420,7 +457,8 @@
       "file": "Adic spaces/FJP/Over/Functoriality.lean",
       "line": 2081,
       "cited": "Proposition 5.3 (C-map commutes with rational restriction)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.presheafValueMapB_restriction",
@@ -428,7 +466,8 @@
       "file": "Adic spaces/FJP/Over/Functoriality.lean",
       "line": 2119,
       "cited": "Proposition 5.3 (B-map commutes with rational restriction)",
-      "kind": "theorem"
+      "kind": "theorem",
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     }
   ],
   "thm-sheafy": [
@@ -439,7 +478,8 @@
       "line": 737,
       "cited": "Theorem 6.1 (finite rational-cover criterion constructed by Milnor transfer)",
       "kind": "theorem",
-      "flagged": true
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.finiteJet_isSheafyFor_of_dvr",
@@ -448,7 +488,8 @@
       "line": 274,
       "cited": "Theorem 6.1 (the pair (A,A\u00b0))",
       "kind": "theorem",
-      "flagged": true
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.finiteJet_isSheafyTateRing_of_dvr",
@@ -457,7 +498,8 @@
       "line": 330,
       "cited": "Theorem 6.1 (completion- and plus-ring-independent strengthening)",
       "kind": "theorem",
-      "flagged": true
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     },
     {
       "decl": "FiniteJetOver.finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr",
@@ -466,7 +508,8 @@
       "line": 337,
       "cited": "Theorem 6.1 (all-open structure presheaf)",
       "kind": "theorem",
-      "flagged": true
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     }
   ],
   "thm-second-example": [

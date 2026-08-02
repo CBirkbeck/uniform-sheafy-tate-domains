@@ -1,6 +1,6 @@
 # Paperforge and reference audit
 
-Audit date: 1 August 2026.
+Audit date: 2 August 2026.
 
 ## Result
 
@@ -15,6 +15,15 @@ warnings are accounted for:
 
 The plagiarism check reports no overlaps at its configured seven-word
 threshold.
+
+The build uses Paperforge commit
+`e6affebffbcc5eb05f17cc3ba57cdf3ff5c618ad`, together with the compatibility
+patch recorded in `patches/paperforge-compatibility.patch`, and PreTeXt
+`2.45.0`.  Paperforge's installation self-test passes in full.  Its unit and
+validator suites pass with 20 tests and one skipped test.  All 120 Lean badges
+now name an immutable formalisation commit explicitly; commit-aware validation
+therefore checks the same source that is displayed in the corresponding
+knowl.
 
 All locators for which an open or author-provided PDF is available pass
 Paperforge's token check.  The files and download sources are recorded in

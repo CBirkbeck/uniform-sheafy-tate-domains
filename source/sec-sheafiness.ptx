@@ -7,10 +7,10 @@
         The Huber pair <m>(A,A^\circ)</m> is sheafy.
       </p>
     </statement>
-    <lean project="AdicSpaces" ref="FiniteJetOver.isSheafy_JetA_of_dvr">Lean (isSheafy_JetA_of_dvr)</lean>
-    <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_isSheafyFor_of_dvr">Lean (finiteJet_isSheafyFor_of_dvr)</lean>
-    <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_isSheafyTateRing_of_dvr">Lean (finiteJet_isSheafyTateRing_of_dvr)</lean>
-    <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr">Lean (finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr)</lean>
+    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.isSheafy_JetA_of_dvr">Lean (isSheafy_JetA_of_dvr)</lean>
+    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_isSheafyFor_of_dvr">Lean (finiteJet_isSheafyFor_of_dvr)</lean>
+    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_isSheafyTateRing_of_dvr">Lean (finiteJet_isSheafyTateRing_of_dvr)</lean>
+    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr">Lean (finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr)</lean>
     <proof>
       <p>
         Give <m>B,C,D</m> their maximal rings of integral elements.  The max/Gauss estimates <xref ref="eq-structural-map-bounds"/> show that every structural map is norm-nonincreasing.  Consequently it sends bounded subsets to bounded subsets; in particular, if <m>x</m> is power-bounded, then the set of powers of its image is the image of the bounded set <m>\{x^n:n\geq0\}</m>.  The structural maps therefore send power-bounded elements to power-bounded elements and define morphisms of Huber pairs.

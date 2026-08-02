@@ -24,11 +24,11 @@ completion of <m>A_0[X]\subset A</m> and then inverting <m>\varpi</m>.
   \qquad W\longmapsto\varpi X,\quad Q\longmapsto Q.</me>
       </p>
     </statement>
-    <lean project="AdicSpaces" ref="FiniteJetOver.chartDatum_isRational">Lean (chartDatum_isRational)</lean>
-    <lean project="AdicSpaces" ref="FiniteJetOver.chartEquiv">Lean (chartEquiv)</lean>
-    <lean project="AdicSpaces" ref="FiniteJetOver.chartEquiv_continuous">Lean (chartEquiv_continuous)</lean>
-    <lean project="AdicSpaces" ref="FiniteJetOver.chartEquiv_symm_continuous">Lean (chartEquiv_symm_continuous)</lean>
-    <lean project="AdicSpaces" ref="FiniteJetOver.chartEquiv_canonicalMap_W">Lean (chartEquiv_canonicalMap_W)</lean>
+    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.chartDatum_isRational">Lean (chartDatum_isRational)</lean>
+    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.chartEquiv">Lean (chartEquiv)</lean>
+    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.chartEquiv_continuous">Lean (chartEquiv_continuous)</lean>
+    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.chartEquiv_symm_continuous">Lean (chartEquiv_symm_continuous)</lean>
+    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.chartEquiv_canonicalMap_W">Lean (chartEquiv_canonicalMap_W)</lean>
     <proof>
       <p>
         Put
@@ -97,8 +97,8 @@ homomorphisms.
         The ring <m>A</m> is not stably uniform.
       </p>
     </statement>
-    <lean project="AdicSpaces" ref="FiniteJetOver.not_isUniform_chart">Lean (not_isUniform_chart)</lean>
-    <lean project="AdicSpaces" ref="FiniteJetOver.finiteJet_not_stablyUniform_of_dvr">Lean (finiteJet_not_stablyUniform_of_dvr)</lean>
+    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.not_isUniform_chart">Lean (not_isUniform_chart)</lean>
+    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_not_stablyUniform_of_dvr">Lean (finiteJet_not_stablyUniform_of_dvr)</lean>
     <proof>
       <p>
         In <m>T=k\langle X,Q\rangle/(Q^2)</m>, every element of the line <m>kQ</m> is nilpotent and hence power-bounded.  This line is not bounded with respect to the ring of definition <m>T_0</m>: for every <m>r\geq 0</m>,

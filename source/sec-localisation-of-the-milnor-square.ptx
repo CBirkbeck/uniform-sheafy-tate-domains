@@ -57,12 +57,12 @@ then <m>I_E</m> is closed.  Moreover, there exists
   \subset d_{2,E}\bigl(\textstyle\bigwedge^2 T_{E,0}^m\bigr).</men>
         </p>
       </statement>
-      <lean project="AdicSpaces" ref="FiniteJet.GraphKoszul.koszulGraph_restricted_exact">Lean (koszulGraph_restricted_exact)</lean>
-      <lean project="AdicSpaces" ref="FiniteJet.KoszulFree.koszulDifferential_continuous">Lean (koszulDifferential_continuous)</lean>
-      <lean project="AdicSpaces" ref="FiniteJet.GraphKoszul.koszulDifferential_isStrict">Lean (koszulDifferential_isStrict)</lean>
-      <lean project="AdicSpaces" ref="FiniteJet.GraphKoszul.isClosed_range_koszulDifferential">Lean (isClosed_range_koszulDifferential)</lean>
-      <lean project="AdicSpaces" ref="FiniteJet.GraphKoszul.pow_smul_graphIdeal_inter_unitBall_subset">Lean (pow_smul_graphIdeal_inter_unitBall_subset)</lean>
-      <lean project="AdicSpaces" ref="FiniteJet.GraphKoszul.pow_smul_ker_d1_inter_subset">Lean (pow_smul_ker_d1_inter_subset)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJet.GraphKoszul.koszulGraph_restricted_exact">Lean (koszulGraph_restricted_exact)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJet.KoszulFree.koszulDifferential_continuous">Lean (koszulDifferential_continuous)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJet.GraphKoszul.koszulDifferential_isStrict">Lean (koszulDifferential_isStrict)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJet.GraphKoszul.isClosed_range_koszulDifferential">Lean (isClosed_range_koszulDifferential)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJet.GraphKoszul.pow_smul_graphIdeal_inter_unitBall_subset">Lean (pow_smul_graphIdeal_inter_unitBall_subset)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJet.GraphKoszul.pow_smul_ker_d1_inter_subset">Lean (pow_smul_ker_d1_inter_subset)</lean>
       <proof>
         <p>
           Over the polynomial ring <m>E[T_1,\ldots,T_m]</m>, the sequence
@@ -146,10 +146,10 @@ topological <m>k</m>-vector spaces
   (x_B,x_C)\longmapsto (x_B)_D-(x_C)_D.</me>
         </p>
       </statement>
-      <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.ext_pair_injective">Lean (ext_pair_injective)</lean>
-      <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.ideal_row_surjective">Lean (ideal_row_surjective)</lean>
-      <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.ideal_pullback_controlled">Lean (ideal_pullback_controlled)</lean>
-      <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.isClosed_IA">Lean (isClosed_IA)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.ext_pair_injective">Lean (ext_pair_injective)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.ideal_row_surjective">Lean (ideal_row_surjective)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.ideal_pullback_controlled">Lean (ideal_pullback_controlled)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.isClosed_IA">Lean (isClosed_IA)</lean>
       <proof>
         <p>
           For <m>E=B,C,D</m>, let <m>C_{1,E}</m> be as in the proof of
@@ -219,13 +219,13 @@ The coefficient maps used in these identifications commute with rational
 restriction.
         </p>
       </statement>
-      <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.loc_row_exact">Lean (loc_row_exact)</lean>
-      <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.loc_pair_isEmbedding">Lean (loc_pair_isEmbedding)</lean>
-      <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.locRhoC_surjective">Lean (locRhoC_surjective)</lean>
-      <lean project="AdicSpaces" ref="FiniteJetOver.locRhoC_continuous">Lean (locRhoC_continuous)</lean>
-      <lean project="AdicSpaces" ref="FiniteJetOver.StrictLoc.locRhoC_isOpenMap">Lean (locRhoC_isOpenMap)</lean>
-      <lean project="AdicSpaces" ref="FiniteJetOver.presheafValueMapC_restriction">Lean (presheafValueMapC_restriction)</lean>
-      <lean project="AdicSpaces" ref="FiniteJetOver.presheafValueMapB_restriction">Lean (presheafValueMapB_restriction)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.loc_row_exact">Lean (loc_row_exact)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.loc_pair_isEmbedding">Lean (loc_pair_isEmbedding)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.locRhoC_surjective">Lean (locRhoC_surjective)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.locRhoC_continuous">Lean (locRhoC_continuous)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.locRhoC_isOpenMap">Lean (locRhoC_isOpenMap)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.presheafValueMapC_restriction">Lean (presheafValueMapC_restriction)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.presheafValueMapB_restriction">Lean (presheafValueMapB_restriction)</lean>
       <proof>
         <p>
           The ideals <m>I_B,I_C,I_D</m> are closed by <xref ref="lem-koszul"/>, and <m>I_A</m> is

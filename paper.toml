@@ -13,10 +13,6 @@ document_id = "uniform-sheafy-tate-domains"
 
 [inputs]
 ai_draft = "inputs/draft/main.tex"
-# Compatibility key for Paperforge's current lean-links validator.  The
-# normalized formalization below is authoritative; remove this duplicate once
-# upstream validator issue #TODO accepts the normalized schema.
-lean_project = "../GitHub/aintlib-adic-fjp/projects/AdicSpaces"
 
 [formalizations.primary]
 name = "AdicSpaces"
