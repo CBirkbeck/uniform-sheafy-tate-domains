@@ -13,7 +13,7 @@ The ideal <m>(\varpi,W)</m> is open, since <m>\varpi</m> is a unit in <m>A</m>. 
 be the corresponding rational localisation on <m>|W|\leq |\varpi|</m>, and write
 <m>X=W/\varpi</m>.  Since <m>\varpi</m> is already invertible in <m>A</m>, the algebraic
 localisation does not change the ring.  More explicitly,
-<m>A_{\mathrm{in}}</m> is obtained by taking the separated <m>\varpi</m>-adic
+<m>A_{\mathrm{in}}</m> is obtained by taking the <m>\varpi</m>-adic
 completion of <m>A_0[X]\subset A</m> and then inverting <m>\varpi</m>.
   </p>
   <proposition xml:id="prop-bad-chart">
@@ -46,8 +46,8 @@ have
 <me>\varpi^r y
    =W^n(W^{-n}\varpi^r y)
    =\varpi^nX^n(W^{-n}\varpi^r y)\in\varpi^nA_0[X]</me>
-for every <m>n</m>.  Hence <m>\varpi^r y</m> maps to zero in the separated
-<m>\varpi</m>-adic completion of <m>A_0[X]</m>.  Since <m>\varpi</m> is invertible in
+for every <m>n</m>.  Hence <m>\varpi^r y</m> maps to zero in
+<m>\widehat{A_0[X]}</m>.  Since <m>\varpi</m> is invertible in
 <m>A_{\mathrm{in}}</m>, this proves <xref ref="eq-q2-killed-on-chart"/>.
       </p>
       <p>
@@ -61,7 +61,7 @@ it simply discards the terms divisible by <m>Q^2</m>.  The substitution
   f_0(W)+Qf_1(W)+Q^2h\longmapsto
   f_0(\varpi X)+Qf_1(\varpi X).</me>
 It sends <m>A_0</m> into <m>T_0</m> and sends <m>W/\varpi</m> to <m>X</m>.  It therefore sends
-<m>A_0[X]</m> into <m>T_0</m> and extends, first to the separated completions and then
+<m>A_0[X]</m> into <m>T_0</m> and extends, first to the completions and then
 after inverting <m>\varpi</m>, to a continuous homomorphism
 <me>\Phi:A_{\mathrm{in}}\longrightarrow T.</me>
       </p>
