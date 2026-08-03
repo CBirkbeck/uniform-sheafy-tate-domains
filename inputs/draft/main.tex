@@ -430,22 +430,22 @@ uniformity.
 
 Consider the datum
 \[
-  \alpha_{\mathrm{in}}=(W;\varpi).
+  \alpha=(W;\varpi).
 \]
 The ideal \((\varpi,W)\) is open, since \(\varpi\) is a unit in \(A\).  Let
 \[
-  A_{\mathrm{in}}=A\left\langle\frac{W}{\varpi}\right\rangle
+  A_\alpha=A\left\langle\frac{W}{\varpi}\right\rangle
 \]
 be the corresponding rational localisation on $|W|\leq |\varpi|$, and write
 $X=W/\varpi$.  Since $\varpi$ is already invertible in $A$, the algebraic
 localisation does not change the ring.  More explicitly,
-$A_{\mathrm{in}}$ is obtained by taking the $\varpi$-adic
+$A_\alpha$ is obtained by taking the $\varpi$-adic
 completion of $A_0[X]\subset A$ and then inverting $\varpi$.
 
 \begin{proposition}\label{prop:bad-chart}
 There is a canonical isomorphism of complete topological rings
 \[
-  A_{\mathrm{in}}\cong k\langle X,Q\rangle/(Q^2),
+  A_\alpha\cong k\langle X,Q\rangle/(Q^2),
   \qquad W\longmapsto\varpi X,\quad Q\longmapsto Q.
 \]
 \end{proposition}
@@ -456,7 +456,7 @@ Put
   T_0=k^\circ\langle X,Q\rangle/(Q^2),
   \qquad T=T_0[1/\varpi].
 \]
-Let $\rho:A\to A_{\mathrm{in}}$ be the canonical map.  We first show that
+Let $\rho:A\to A_\alpha$ be the canonical map.  We first show that
 \begin{equation}\label{eq:q2-killed-on-chart}
   Q^2C\subseteq\ker(\rho).
 \end{equation}
@@ -476,7 +476,7 @@ have
 \]
 for every $n$.  Hence $\varpi^r y$ maps to zero in
 $\widehat{A_0[X]}$.  Since $\varpi$ is invertible in
-$A_{\mathrm{in}}$, this proves \eqref{eq:q2-killed-on-chart}.
+$A_\alpha$, this proves \eqref{eq:q2-killed-on-chart}.
 
 We now construct the isomorphism.  Recall that the map
 $\iota_B:A\to B$ from the defining pullback is given by
@@ -495,7 +495,7 @@ It sends $A_0$ into $T_0$ and sends $W/\varpi$ to $X$.  It therefore sends
 $A_0[X]$ into $T_0$ and extends, first to the completions and then
 after inverting $\varpi$, to a continuous homomorphism
 \[
-  \Phi:A_{\mathrm{in}}\longrightarrow T.
+  \Phi:A_\alpha\longrightarrow T.
 \]
 
 Set
@@ -507,7 +507,7 @@ definition coming from $A_0[X]$.  Moreover,
 \(\overline Q^{\,2}=0\) by \eqref{eq:q2-killed-on-chart}.  Evaluation at
 $\overline X$ therefore gives a continuous homomorphism
 \[
-  \Psi:T\longrightarrow A_{\mathrm{in}},\qquad
+  \Psi:T\longrightarrow A_\alpha,\qquad
   f+Qg\longmapsto f(\overline X)+g(\overline X)\overline Q.
 \]
 
@@ -520,7 +520,7 @@ $a=f_0(W)+Qf_1(W)+y\in A$, with $y\in Q^2C$.  Then
   =\rho(a),
 \]
 where the last equality uses \eqref{eq:q2-killed-on-chart}.  The
-image of $A$ is dense in $A_{\mathrm{in}}$, so continuity gives
+image of $A$ is dense in $A_\alpha$, so continuity gives
 $\Psi\Phi=1$.  Conversely, $\Phi\Psi$ fixes $k$, $X$ and $Q$, and hence is
 the identity on the dense subring $k[X,Q]/(Q^2)$ of $T$.  It follows by
 continuity that $\Phi\Psi=1$.  Thus $\Phi$ and $\Psi$ are inverse continuous
@@ -1321,7 +1321,7 @@ Define the complete $k^\circ$-algebra
 \end{equation}
 with norm
 \begin{equation}\label{eq:weighted-chart-norm}
-  \left\lVert\sum b_{d,\nu}X^dU^\nu\right\rVert_{\mathrm{in}}
+  \left\lVert\sum b_{d,\nu}X^dU^\nu\right\rVert_{\mathcal B}
   =\sup_{d,\nu}|\varpi|^{-\omega(\nu)}|b_{d,\nu}|.
 \end{equation}
 The subadditivity \eqref{eq:omega-subadditive} shows that $\mathcal B_0$ is a ring.  Put
@@ -1392,12 +1392,12 @@ Inside $\mathcal A$ write $Y_n=W^nU_n$ and put
 \]
 Formula \eqref{eq:weighted-chart-norm} gives
 \[
-  \lVert T_n\rVert_{\mathrm{in}}=|\varpi|^{-n},
+  \lVert T_n\rVert_{\mathcal B}=|\varpi|^{-n},
   \qquad
-  \lVert T_n^2\rVert_{\mathrm{in}}=1.
+  \lVert T_n^2\rVert_{\mathcal B}=1.
 \]
 The even powers of $T_n$ have norm at most $1$, and the odd powers have
-norm at most $\lVert T_n\rVert_{\mathrm{in}}$.  Thus every $T_n$ is
+norm at most $\lVert T_n\rVert_{\mathcal B}$.  Thus every $T_n$ is
 power-bounded.  The family $(T_n)_{n\geq1}$ is not bounded, since its norms
 $|\varpi|^{-n}$ are unbounded.  Hence
 $\mathcal B^\circ$ is unbounded and $\mathcal B$ is not uniform.

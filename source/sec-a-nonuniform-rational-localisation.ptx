@@ -7,20 +7,20 @@ uniformity.
   </p>
   <p>
     Consider the datum
-<me>\alpha_{\mathrm{in}}=(W;\varpi).</me>
+<me>\alpha=(W;\varpi).</me>
 The ideal <m>(\varpi,W)</m> is open, since <m>\varpi</m> is a unit in <m>A</m>.  Let
-<me>A_{\mathrm{in}}=A\left\langle\frac{W}{\varpi}\right\rangle</me>
+<me>A_\alpha=A\left\langle\frac{W}{\varpi}\right\rangle</me>
 be the corresponding rational localisation on <m>|W|\leq |\varpi|</m>, and write
 <m>X=W/\varpi</m>.  Since <m>\varpi</m> is already invertible in <m>A</m>, the algebraic
 localisation does not change the ring.  More explicitly,
-<m>A_{\mathrm{in}}</m> is obtained by taking the <m>\varpi</m>-adic
+<m>A_\alpha</m> is obtained by taking the <m>\varpi</m>-adic
 completion of <m>A_0[X]\subset A</m> and then inverting <m>\varpi</m>.
   </p>
   <proposition xml:id="prop-bad-chart">
     <statement>
       <p>
         There is a canonical isomorphism of complete topological rings
-<me>A_{\mathrm{in}}\cong k\langle X,Q\rangle/(Q^2),
+<me>A_\alpha\cong k\langle X,Q\rangle/(Q^2),
   \qquad W\longmapsto\varpi X,\quad Q\longmapsto Q.</me>
       </p>
     </statement>
@@ -34,7 +34,7 @@ completion of <m>A_0[X]\subset A</m> and then inverting <m>\varpi</m>.
         Put
 <me>T_0=k^\circ\langle X,Q\rangle/(Q^2),
   \qquad T=T_0[1/\varpi].</me>
-Let <m>\rho:A\to A_{\mathrm{in}}</m> be the canonical map.  We first show that
+Let <m>\rho:A\to A_\alpha</m> be the canonical map.  We first show that
         <men xml:id="eq-q2-killed-on-chart">Q^2C\subseteq\ker(\rho).</men>
         Take <m>y\in Q^2C</m>, and choose <m>r\geq0</m> such that
 <m>\varpi^r y\in Q^2C_0</m>.  For every <m>n\geq0</m>, the coefficient description of
@@ -48,7 +48,7 @@ have
    =\varpi^nX^n(W^{-n}\varpi^r y)\in\varpi^nA_0[X]</me>
 for every <m>n</m>.  Hence <m>\varpi^r y</m> maps to zero in
 <m>\widehat{A_0[X]}</m>.  Since <m>\varpi</m> is invertible in
-<m>A_{\mathrm{in}}</m>, this proves <xref ref="eq-q2-killed-on-chart"/>.
+<m>A_\alpha</m>, this proves <xref ref="eq-q2-killed-on-chart"/>.
       </p>
       <p>
         We now construct the isomorphism.  Recall that the map
@@ -63,7 +63,7 @@ it simply discards the terms divisible by <m>Q^2</m>.  The substitution
 It sends <m>A_0</m> into <m>T_0</m> and sends <m>W/\varpi</m> to <m>X</m>.  It therefore sends
 <m>A_0[X]</m> into <m>T_0</m> and extends, first to the completions and then
 after inverting <m>\varpi</m>, to a continuous homomorphism
-<me>\Phi:A_{\mathrm{in}}\longrightarrow T.</me>
+<me>\Phi:A_\alpha\longrightarrow T.</me>
       </p>
       <p>
         Set
@@ -72,7 +72,7 @@ Both elements are power-bounded: they belong to the completed ring of
 definition coming from <m>A_0[X]</m>.  Moreover,
 <m>\overline Q^{\,2}=0</m> by <xref ref="eq-q2-killed-on-chart"/>.  Evaluation at
 <m>\overline X</m> therefore gives a continuous homomorphism
-<me>\Psi:T\longrightarrow A_{\mathrm{in}},\qquad
+<me>\Psi:T\longrightarrow A_\alpha,\qquad
   f+Qg\longmapsto f(\overline X)+g(\overline X)\overline Q.</me>
       </p>
       <p>
@@ -83,7 +83,7 @@ definition coming from <m>A_0[X]</m>.  Moreover,
   =\rho\bigl(f_0(W)+Qf_1(W)\bigr)
   =\rho(a),</me>
 where the last equality uses <xref ref="eq-q2-killed-on-chart"/>.  The
-image of <m>A</m> is dense in <m>A_{\mathrm{in}}</m>, so continuity gives
+image of <m>A</m> is dense in <m>A_\alpha</m>, so continuity gives
 <m>\Psi\Phi=1</m>.  Conversely, <m>\Phi\Psi</m> fixes <m>k</m>, <m>X</m> and <m>Q</m>, and hence is
 the identity on the dense subring <m>k[X,Q]/(Q^2)</m> of <m>T</m>.  It follows by
 continuity that <m>\Phi\Psi=1</m>.  Thus <m>\Phi</m> and <m>\Psi</m> are inverse continuous

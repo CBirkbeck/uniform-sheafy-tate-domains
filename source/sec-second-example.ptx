@@ -400,7 +400,7 @@ Define the complete <m>k^\circ</m>-algebra
     \varpi^{-\omega(\nu)}b_{d,\nu}\longrightarrow0
   \right\},</men>
       with norm
-      <men xml:id="eq-weighted-chart-norm">\left\lVert\sum b_{d,\nu}X^dU^\nu\right\rVert_{\mathrm{in}}
+      <men xml:id="eq-weighted-chart-norm">\left\lVert\sum b_{d,\nu}X^dU^\nu\right\rVert_{\mathcal B}
   =\sup_{d,\nu}|\varpi|^{-\omega(\nu)}|b_{d,\nu}|.</men>
       The subadditivity <xref ref="eq-omega-subadditive"/> shows that <m>\mathcal B_0</m> is a ring.  Put
 <m>\mathcal B=\mathcal B_0[1/\varpi]</m>.
@@ -475,11 +475,11 @@ and hence so is <m>\mathcal B</m>.
           Inside <m>\mathcal A</m> write <m>Y_n=W^nU_n</m> and put
 <me>T_n=\varpi^{-n}Y_n=X^nU_n\in\mathcal B.</me>
 Formula <xref ref="eq-weighted-chart-norm"/> gives
-<me>\lVert T_n\rVert_{\mathrm{in}}=|\varpi|^{-n},
+<me>\lVert T_n\rVert_{\mathcal B}=|\varpi|^{-n},
   \qquad
-  \lVert T_n^2\rVert_{\mathrm{in}}=1.</me>
+  \lVert T_n^2\rVert_{\mathcal B}=1.</me>
 The even powers of <m>T_n</m> have norm at most <m>1</m>, and the odd powers have
-norm at most <m>\lVert T_n\rVert_{\mathrm{in}}</m>.  Thus every <m>T_n</m> is
+norm at most <m>\lVert T_n\rVert_{\mathcal B}</m>.  Thus every <m>T_n</m> is
 power-bounded.  The family <m>(T_n)_{n\geq1}</m> is not bounded, since its norms
 <m>|\varpi|^{-n}</m> are unbounded.  Hence
 <m>\mathcal B^\circ</m> is unbounded and <m>\mathcal B</m> is not uniform.

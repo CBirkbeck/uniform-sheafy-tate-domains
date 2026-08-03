@@ -555,16 +555,16 @@ Q^2\ell=\sum_i x_i a_i,\qquad x_i\in A,
 <div class="para">Consider the datum</div>
 <div class="displaymath process-math" id="sec-a-nonuniform-rational-localisation-3-1">
 \begin{equation*}
-\alpha_{\mathrm{in}}=(W;\varpi).
+\alpha=(W;\varpi).
 \end{equation*}
 </div>
 <div class="para">The ideal <span class="process-math">\((\varpi,W)\)</span> is open, since <span class="process-math">\(\varpi\)</span> is a unit in <span class="process-math">\(A\text{.}\)</span>  Let</div>
 <div class="displaymath process-math" id="sec-a-nonuniform-rational-localisation-3-5">
 \begin{equation*}
-A_{\mathrm{in}}=A\left\langle\frac{W}{\varpi}\right\rangle
+A_\alpha=A\left\langle\frac{W}{\varpi}\right\rangle
 \end{equation*}
 </div>
-<div class="para">be the corresponding rational localisation on <span class="process-math">\(|W|\leq |\varpi|\text{,}\)</span> and write <span class="process-math">\(X=W/\varpi\text{.}\)</span>  Since <span class="process-math">\(\varpi\)</span> is already invertible in <span class="process-math">\(A\text{,}\)</span> the algebraic localisation does not change the ring.  More explicitly, <span class="process-math">\(A_{\mathrm{in}}\)</span> is obtained by taking the <span class="process-math">\(\varpi\)</span>-adic completion of <span class="process-math">\(A_0[X]\subset A\)</span> and then inverting <span class="process-math">\(\varpi\text{.}\)</span>
+<div class="para">be the corresponding rational localisation on <span class="process-math">\(|W|\leq |\varpi|\text{,}\)</span> and write <span class="process-math">\(X=W/\varpi\text{.}\)</span>  Since <span class="process-math">\(\varpi\)</span> is already invertible in <span class="process-math">\(A\text{,}\)</span> the algebraic localisation does not change the ring.  More explicitly, <span class="process-math">\(A_\alpha\)</span> is obtained by taking the <span class="process-math">\(\varpi\)</span>-adic completion of <span class="process-math">\(A_0[X]\subset A\)</span> and then inverting <span class="process-math">\(\varpi\text{.}\)</span>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-a-nonuniform-rational-localisation-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -575,7 +575,7 @@ A_{\mathrm{in}}=A\left\langle\frac{W}{\varpi}\right\rangle
 <div class="para">There is a canonical isomorphism of complete topological rings</div>
 <div class="displaymath process-math" id="prop-bad-chart-1-1-1">
 \begin{equation*}
-A_{\mathrm{in}}\cong k\langle X,Q\rangle/(Q^2),
+A_\alpha\cong k\langle X,Q\rangle/(Q^2),
 \qquad W\longmapsto\varpi X,\quad Q\longmapsto Q.
 \end{equation*}
 </div>
@@ -593,7 +593,7 @@ T_0=k^\circ\langle X,Q\rangle/(Q^2),
 \qquad T=T_0[1/\varpi].
 \end{equation*}
 </div>
-<div class="para">Let <span class="process-math">\(\rho:A\to A_{\mathrm{in}}\)</span> be the canonical map.  We first show that</div>
+<div class="para">Let <span class="process-math">\(\rho:A\to A_\alpha\)</span> be the canonical map.  We first show that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-q2-killed-on-chart.html" id="eq-q2-killed-on-chart">
 \begin{equation}
 Q^2C\subseteq\ker(\rho).\tag{4.1}
@@ -613,7 +613,7 @@ W^{-n}\varpi^r y\in A_0:
 =\varpi^nX^n(W^{-n}\varpi^r y)\in\varpi^nA_0[X]
 \end{equation*}
 </div>
-<div class="para">for every <span class="process-math">\(n\text{.}\)</span>  Hence <span class="process-math">\(\varpi^r y\)</span> maps to zero in <span class="process-math">\(\widehat{A_0[X]}\text{.}\)</span>  Since <span class="process-math">\(\varpi\)</span> is invertible in <span class="process-math">\(A_{\mathrm{in}}\text{,}\)</span> this proves <a href="#eq-q2-killed-on-chart" class="xref" data-knowl="./knowl/xref/eq-q2-killed-on-chart.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.1">(4.1)</a>.</div>
+<div class="para">for every <span class="process-math">\(n\text{.}\)</span>  Hence <span class="process-math">\(\varpi^r y\)</span> maps to zero in <span class="process-math">\(\widehat{A_0[X]}\text{.}\)</span>  Since <span class="process-math">\(\varpi\)</span> is invertible in <span class="process-math">\(A_\alpha\text{,}\)</span> this proves <a href="#eq-q2-killed-on-chart" class="xref" data-knowl="./knowl/xref/eq-q2-killed-on-chart.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.1">(4.1)</a>.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-bad-chart-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="prop-bad-chart-7-2">
@@ -634,7 +634,7 @@ f_0(\varpi X)+Qf_1(\varpi X).
 <div class="para">It sends <span class="process-math">\(A_0\)</span> into <span class="process-math">\(T_0\)</span> and sends <span class="process-math">\(W/\varpi\)</span> to <span class="process-math">\(X\text{.}\)</span>  It therefore sends <span class="process-math">\(A_0[X]\)</span> into <span class="process-math">\(T_0\)</span> and extends, first to the completions and then after inverting <span class="process-math">\(\varpi\text{,}\)</span> to a continuous homomorphism</div>
 <div class="displaymath process-math" id="prop-bad-chart-7-2-15">
 \begin{equation*}
-\Phi:A_{\mathrm{in}}\longrightarrow T.
+\Phi:A_\alpha\longrightarrow T.
 \end{equation*}
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-bad-chart-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -649,7 +649,7 @@ f_0(\varpi X)+Qf_1(\varpi X).
 <div class="para">Both elements are power-bounded: they belong to the completed ring of definition coming from <span class="process-math">\(A_0[X]\text{.}\)</span>  Moreover, <span class="process-math">\(\overline Q^{\,2}=0\)</span> by <a href="#eq-q2-killed-on-chart" class="xref" data-knowl="./knowl/xref/eq-q2-killed-on-chart.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.1">(4.1)</a>.  Evaluation at <span class="process-math">\(\overline X\)</span> therefore gives a continuous homomorphism</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-q2-killed-on-chart.html" id="prop-bad-chart-7-3-6">
 \begin{equation*}
-\Psi:T\longrightarrow A_{\mathrm{in}},\qquad
+\Psi:T\longrightarrow A_\alpha,\qquad
 f+Qg\longmapsto f(\overline X)+g(\overline X)\overline Q.
 \end{equation*}
 </div>
@@ -665,7 +665,7 @@ f+Qg\longmapsto f(\overline X)+g(\overline X)\overline Q.
 =\rho(a),
 \end{equation*}
 </div>
-<div class="para">where the last equality uses <a href="#eq-q2-killed-on-chart" class="xref" data-knowl="./knowl/xref/eq-q2-killed-on-chart.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.1">(4.1)</a>.  The image of <span class="process-math">\(A\)</span> is dense in <span class="process-math">\(A_{\mathrm{in}}\text{,}\)</span> so continuity gives <span class="process-math">\(\Psi\Phi=1\text{.}\)</span>  Conversely, <span class="process-math">\(\Phi\Psi\)</span> fixes <span class="process-math">\(k\text{,}\)</span> <span class="process-math">\(X\)</span> and <span class="process-math">\(Q\text{,}\)</span> and hence is the identity on the dense subring <span class="process-math">\(k[X,Q]/(Q^2)\)</span> of <span class="process-math">\(T\text{.}\)</span>  It follows by continuity that <span class="process-math">\(\Phi\Psi=1\text{.}\)</span>  Thus <span class="process-math">\(\Phi\)</span> and <span class="process-math">\(\Psi\)</span> are inverse continuous homomorphisms.</div>
+<div class="para">where the last equality uses <a href="#eq-q2-killed-on-chart" class="xref" data-knowl="./knowl/xref/eq-q2-killed-on-chart.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 4.1">(4.1)</a>.  The image of <span class="process-math">\(A\)</span> is dense in <span class="process-math">\(A_\alpha\text{,}\)</span> so continuity gives <span class="process-math">\(\Psi\Phi=1\text{.}\)</span>  Conversely, <span class="process-math">\(\Phi\Psi\)</span> fixes <span class="process-math">\(k\text{,}\)</span> <span class="process-math">\(X\)</span> and <span class="process-math">\(Q\text{,}\)</span> and hence is the identity on the dense subring <span class="process-math">\(k[X,Q]/(Q^2)\)</span> of <span class="process-math">\(T\text{.}\)</span>  It follows by continuity that <span class="process-math">\(\Phi\Psi=1\text{.}\)</span>  Thus <span class="process-math">\(\Phi\)</span> and <span class="process-math">\(\Psi\)</span> are inverse continuous homomorphisms.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-bad-chart-7-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Proof 4.1.1"><a tabindex="-1" href="#prop-bad-chart-7" title="Copy heading and permalink for Proof 4.1.1" aria-label="Copy heading and permalink for Proof 4.1.1">🔗</a></div>
@@ -1532,7 +1532,7 @@ b_{d,\nu}\in\varpi^{\omega(\nu)}k^\circ,
 <div class="para">with norm</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-omega-subadditive.html" id="eq-weighted-chart-norm">
 \begin{equation}
-\left\lVert\sum b_{d,\nu}X^dU^\nu\right\rVert_{\mathrm{in}}
+\left\lVert\sum b_{d,\nu}X^dU^\nu\right\rVert_{\mathcal B}
 =\sup_{d,\nu}|\varpi|^{-\omega(\nu)}|b_{d,\nu}|.\tag{8.17}
 \end{equation}
 </div>
@@ -1624,12 +1624,12 @@ T_n=\varpi^{-n}Y_n=X^nU_n\in\mathcal B.
 <div class="para">Formula <a href="#eq-weighted-chart-norm" class="xref" data-knowl="./knowl/xref/eq-weighted-chart-norm.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.17">(8.17)</a> gives</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-weighted-chart-norm.html" id="prop-weighted-chart-domain-nonuniform-4-2-5">
 \begin{equation*}
-\lVert T_n\rVert_{\mathrm{in}}=|\varpi|^{-n},
+\lVert T_n\rVert_{\mathcal B}=|\varpi|^{-n},
 \qquad
-\lVert T_n^2\rVert_{\mathrm{in}}=1.
+\lVert T_n^2\rVert_{\mathcal B}=1.
 \end{equation*}
 </div>
-<div class="para">The even powers of <span class="process-math">\(T_n\)</span> have norm at most <span class="process-math">\(1\text{,}\)</span> and the odd powers have norm at most <span class="process-math">\(\lVert T_n\rVert_{\mathrm{in}}\text{.}\)</span>  Thus every <span class="process-math">\(T_n\)</span> is power-bounded.  The family <span class="process-math">\((T_n)_{n\geq1}\)</span> is not bounded, since its norms <span class="process-math">\(|\varpi|^{-n}\)</span> are unbounded.  Hence <span class="process-math">\(\mathcal B^\circ\)</span> is unbounded and <span class="process-math">\(\mathcal B\)</span> is not uniform.</div>
+<div class="para">The even powers of <span class="process-math">\(T_n\)</span> have norm at most <span class="process-math">\(1\text{,}\)</span> and the odd powers have norm at most <span class="process-math">\(\lVert T_n\rVert_{\mathcal B}\text{.}\)</span>  Thus every <span class="process-math">\(T_n\)</span> is power-bounded.  The family <span class="process-math">\((T_n)_{n\geq1}\)</span> is not bounded, since its norms <span class="process-math">\(|\varpi|^{-n}\)</span> are unbounded.  Hence <span class="process-math">\(\mathcal B^\circ\)</span> is unbounded and <span class="process-math">\(\mathcal B\)</span> is not uniform.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-weighted-chart-domain-nonuniform-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Proof 8.9.1"><a tabindex="-1" href="#prop-weighted-chart-domain-nonuniform-4" title="Copy heading and permalink for Proof 8.9.1" aria-label="Copy heading and permalink for Proof 8.9.1">🔗</a></div>
@@ -2276,6 +2276,6 @@ theorem weightedParity_not_stablyUniform_of_dvr :
 <div id="ptx-page-footer" class="ptx-page-footer">
 <a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
-<script src="detail-ui.77de0403de2c.js"></script>
+<script src="detail-ui.3fcc762772cf.js"></script>
 </body>
 </html>
