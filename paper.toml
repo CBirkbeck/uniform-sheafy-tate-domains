@@ -7,7 +7,7 @@
 instance_schema = 1
 
 [paper]
-title = "Uniform sheafy Tate domains that are not stably uniform"
+title = "Uniform sheafy Tate rings that are not stably uniform"
 slug = "uniform-sheafy-tate-domains"
 document_id = "uniform-sheafy-tate-domains"
 

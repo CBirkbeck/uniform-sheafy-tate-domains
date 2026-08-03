@@ -1,7 +1,7 @@
-# Uniform sheafy Tate domains
+# Uniform sheafy Tate rings
 
 This directory is a Paperforge instance for the paper
-*Uniform sheafy Tate domains that are not stably uniform*.  The editable
+*Uniform sheafy Tate rings that are not stably uniform*.  The editable
 source of truth remains the LaTeX draft:
 
 - `inputs/draft/main.tex`
