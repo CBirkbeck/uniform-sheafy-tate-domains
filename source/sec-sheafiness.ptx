@@ -52,10 +52,9 @@ all-open topological sheaf condition for <m>(A,A^\circ)</m>.
   <proof>
     <title>Proof of <xref ref="thm-main"/></title>
     <p>
-      Completeness, uniformity, nonnoetherianity, and the domain property are
-<xref ref="prop-uniform-domain"/>; sheafiness is
-<xref ref="thm-sheafy"/>; and failure of stable uniformity is
-<xref ref="prop-not-stably-uniform"/>.
+      <xref ref="prop-uniform-domain"/> proves that <m>A</m> is complete, uniform,
+non-noetherian, and a domain.  Sheafiness is <xref ref="thm-sheafy"/>, and failure
+of stable uniformity is <xref ref="prop-not-stably-uniform"/>.
     </p>
   </proof>
 </section>

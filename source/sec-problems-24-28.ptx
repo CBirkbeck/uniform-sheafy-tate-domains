@@ -5,7 +5,7 @@
     Problem<nbsp/>24 of the <em>Nonarchimedean Scottish Book</em> asks whether the map of
 rings underlying a rational localisation of Tate Huber pairs must be flat.
 Problem<nbsp/>28 asks whether a non-zero-divisor which generates a closed ideal can
-restrict to zero on a rational subspace <xref ref="bib-Scottish" detail="Problems 24 and 28"/>.
+restrict to zero on a nonempty rational subspace <xref ref="bib-Scottish" detail="Problems 24 and 28"/>.
 The same rational datum, together with multiplicativity of the Gauss norm,
 answers both questions.  We keep the notation of the introduction.  In fact,
 the argument only uses that <m>k</m> is complete and ultrametric and that

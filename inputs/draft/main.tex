@@ -62,10 +62,10 @@
 
 \begin{abstract}
 Buzzard--Verberkmoes and Mihara show that a stably uniform Tate Huber
-ring is sheafy.  We construct two uniform sheafy Tate domains which are
-not stably uniform, answering Question~7 of Kedlaya's
+ring is sheafy.  We construct examples of uniform and sheafy Tate rings
+which are not stably uniform, answering Question~7 of Kedlaya's
 \emph{Nonarchimedean Scottish Book}.  In the first example a rational
-localisation is nonreduced, whilst in the second the nonuniform rational
+localisation is non-reduced, whilst in the second the nonuniform rational
 localisation is an integral domain.  The two main results are due to
 ChatGPT 5.6 Sol.
 Both constructions, including their sheafiness and the rational localisations
@@ -79,24 +79,23 @@ witnessing failure of stable uniformity, have been formalised in Lean~4.
 
 \section{Introduction}
 
-The point at issue is the behaviour of rational localisations.  The examples
-of Buzzard--Verberkmoes and Mihara show that a uniform Tate Huber ring can lose
-uniformity on a rational chart and, separately, that uniformity alone does not
-imply sheafiness \cite{BV,Mihara}.  They leave open the possibility of a
+The examples of Buzzard--Verberkmoes and Mihara show that uniformity can be
+lost on a rational chart and, separately, that a uniform Tate Huber ring need
+not be sheafy \cite{BV,Mihara}.  They leave open the possibility of a
 uniform sheafy ring which is not stably uniform.  Hansen and Kedlaya ask this
 explicitly \cite[Remark~3.16]{HK}; it is also Question~7 of Kedlaya's
 \emph{Nonarchimedean Scottish Book} \cite{Scottish}.  The answer is no.
 
 ChatGPT 5.6 Sol found both examples and supplied the proofs.  The Lean
 formalisation was carried out by Claude Code.  We have aimed to cite related
-work that may have informed this process; see \cref{rem:earlier-work}.
+work that may have informed this process; see \Cref{rem:earlier-work}.
 \Cref{sec:discovery} describes how we used ChatGPT in the search for these
 examples, and \cref{sec:formalisation} records the formal definitions and
 theorem statements.
 
-We begin with the ``finite-jet pullback''.  This is a
-nonnoetherian uniform integral domain for which a distinguished rational
-localisation is nonreduced, and hence is no longer uniform.  Let $k$ be a
+Our first example is the ``finite-jet pullback''.  This is a
+non-noetherian uniform integral domain for which a distinguished rational
+localisation is non-reduced, and hence is no longer uniform.  Let $k$ be a
 complete discretely valued nonarchimedean field, with valuation ring
 $k^\circ$, uniformizer $\varpi$, and residue field $\widetilde{k}$.  Put
 \[
@@ -122,7 +121,7 @@ and endow $A$ with the topology defined by the ring of definition $A_0$.
 The main result is the following.
 
 \begin{theorem}\label{thm:main}
-The ring $A$ is a complete uniform nonnoetherian Tate $k$-algebra and an
+The ring $A$ is a complete uniform non-noetherian Tate $k$-algebra and an
 integral domain, with $A^\circ=A_0$.  The Huber pair $(A,A^\circ)$ is sheafy.
 However,
 \[
@@ -133,13 +132,13 @@ However,
 so $A$ is not stably uniform.
 \end{theorem}
 
-The same rational chart gives a negative answer to Problem~24 of the
-\emph{Nonarchimedean Scottish Book} and an affirmative answer to the Tate
-case of Problem~28; see \cref{sec:problems-24-28}.  These two consequences
-have also been formalised in Lean under the weaker assumption that $k$ is a
-complete ultrametric normed field equipped with a nonzero element $\varpi$
-satisfying $|\varpi|<1$.  In particular, the formalisation applies over
-$\mathbb Q_p$ as well as over $F((t))$.
+Thus $Q$ remains nonzero on this rational chart, whereas $Q^2$ vanishes.
+This is why the chart is non-reduced although $A$ is a domain.
+
+This construction also gives a new example solving Problems~24 and 28 of the
+\emph{Nonarchimedean Scottish Book}.  We recall the two problems and give the
+argument in \cref{sec:problems-24-28}.  These results have also been formalised
+in Lean.
 
 The proof uses Milnor squares of complete Tate rings.  Recall that a cartesian square of
 rings with a surjective leg is called a Milnor square \cite[Section~2]{Milnor}; the
@@ -163,12 +162,15 @@ is a \emph{strict Milnor square} if it is cartesian, the sequence of underlying 
 is strict exact, and $C\to D$ is a strict surjection.
 \end{definition}
 
-After rotating the square if necessary, the initial Milnor square is strict by the
-nonarchimedean open mapping theorem \cite[Lemma~3.1]{KST}.  Our main input is that,
+The maps $C\to D$ and $B\oplus C\to D$ are continuous surjections between
+complete normed $k$-vector spaces, and $A$ has the subspace topology as the
+kernel of the second.  The nonarchimedean open mapping theorem
+\cite[Lemma~3.1]{KST} therefore shows that the square defining $A$ is strict.
+Our main input is that,
 for this finite-jet square, the strict exact row persists after completed rational
 localisation and is compatible with refinement.  This transfers sheafiness from
 $B,C,D$ to $A$.  The second example shows that the failure of stable uniformity
-need not come from a nonreduced localisation.
+need not come from a non-reduced localisation.
 
 \begin{remark}[Relation with earlier work]\label{rem:earlier-work}
 It is difficult to understand exactly what sources an AI agent such as
@@ -189,7 +191,7 @@ Bambozzi--Kremnizer formulate rational localisation in terms of Koszul
 complexes and prove strict Koszul regularity
 \cite[Notation~4.3, Definitions~4.5--4.6, Proposition~4.9,
 Lemma~4.11, and Corollary~4.13]{BK}.  The lattice estimates in
-\cref{lem:koszul} are the form needed to show that rational localisation
+\Cref{lem:koszul} are the form needed to show that rational localisation
 preserves the finite-jet Milnor square.  The resulting uniform sheafy domain
 which is not stably uniform appears to be new.
 
@@ -240,7 +242,7 @@ We use the following bounded-denominator form of strictness.  Let $u:M\to N$ be 
 \begin{equation}\label{eq:strictness}
   \varpi^a\bigl(u(M)\cap N_0\bigr)\subset u(M_0).
 \end{equation}
-For a surjection this becomes $\varpi^aN_0\subset u(M_0)$.  For an injection it says that the lattice induced from the target is bounded in the source.  This is the criterion used by Buzzard--Verberkmoes \cite[Lemma~2]{BV}.  We use the term \emph{strict Milnor square} in the sense of \cref{def:strict-milnor}; the underlying algebraic terminology is standard \cite{Milnor,KST}.
+For a surjection this becomes $\varpi^aN_0\subset u(M_0)$.  For an injection it says that the lattice induced from the target is bounded in the source.  This is the criterion used by Buzzard--Verberkmoes \cite[Lemma~2]{BV}.  We use the term \emph{strict Milnor square} in the sense of \Cref{def:strict-milnor}; the underlying algebraic terminology is standard \cite{Milnor,KST}.
 
 \item \emph{Rational localisation.}
 We take every rational datum to have at least one numerator; an empty list may be
@@ -377,7 +379,7 @@ for the structural maps, and give \(A\) the restricted Gauss norm from \(C\).  F
 Thus every structural map is norm-nonincreasing.
 
 \begin{proposition}\label{prop:uniform-domain}
-The ring $A$ is a complete uniform nonnoetherian Tate $k$-algebra and an
+The ring $A$ is a complete uniform non-noetherian Tate $k$-algebra and an
 integral domain.  Moreover,
 \[
   A^\circ=A_0.
@@ -400,7 +402,7 @@ for the restricted Gauss norm on $A$.  Since this norm is multiplicative,
 It follows that $a$ is power-bounded if and only if $\lVert a\rVert\leq1$.
 Thus $A^\circ=A_0$, and the unit ball is bounded, so $A$ is uniform.
 
-For nonnoetherianity, let $J=\ker(\iota_B)=Q^2C\subset A$.  If $J$ were
+To see that $A$ is not noetherian, let $J=\ker(\iota_B)=Q^2C\subset A$.  If $J$ were
 generated by $a_1,\ldots,a_r$, write $b_i\in L$ for the coefficient of $Q^2$
 in $a_i$.  For every $\ell\in L$ we could write
 \[
@@ -536,7 +538,7 @@ In $T=k\langle X,Q\rangle/(Q^2)$, every element of the line $kQ$ is nilpotent an
 \[
   \varpi^r\bigl(\varpi^{-(r+1)}Q\bigr)=\varpi^{-1}Q\notin T_0.
 \]
-Thus $T$ is not uniform.  By \cref{prop:bad-chart}, a rational localisation of the
+Thus $T$ is not uniform.  By \Cref{prop:bad-chart}, a rational localisation of the
 uniform ring $A$ is nonuniform.
 \end{proof}
 
@@ -698,7 +700,7 @@ is strict exact.  Here the maps are
 
 \begin{proof}
 For $E=B,C,D$, let $C_{1,E}$ be as in the proof of
-\cref{lem:koszul}, and let $C_{2,D}$ be the corresponding constant for
+\Cref{lem:koszul}, and let $C_{2,D}$ be the corresponding constant for
 $d_{2,D}$.  Take
 $(x_B,x_C)\in I_B\times_{I_D}I_C$, and choose
 $u_B\in T_B^m$ and $u_C\in T_C^m$ such that
@@ -743,7 +745,7 @@ The map $T_A\to T_B\oplus T_C$ is injective, so this proves both the
 algebraic pullback assertion and the boundedness of its inverse.
 
 It remains to see that $I_A$ is closed.  The ideals $I_B$ and $I_C$ are
-closed by \cref{lem:koszul}.  If $x$ lies in the closure of $I_A$, its images
+closed by \Cref{lem:koszul}.  If $x$ lies in the closure of $I_A$, its images
 lie in $I_B$ and $I_C$.  The pullback isomorphism just proved gives
 $x_A\in I_A$ with the same two images as $x$.  Injectivity of
 $T_A\to T_B\oplus T_C$ gives $x=x_A$, as required.
@@ -777,8 +779,8 @@ restriction.
 \end{proposition}
 
 \begin{proof}
-The ideals $I_B,I_C,I_D$ are closed by \cref{lem:koszul}, and $I_A$ is
-closed by \cref{lem:graph-pullback}.  Hence \eqref{eq:graph-model} gives
+The ideals $I_B,I_C,I_D$ are closed by \Cref{lem:koszul}, and $I_A$ is
+closed by \Cref{lem:graph-pullback}.  Hence \eqref{eq:graph-model} gives
 \[
   E_\alpha=T_E/I_E
   \qquad(E=A,B,C,D).
@@ -786,7 +788,7 @@ closed by \cref{lem:graph-pullback}.  Hence \eqref{eq:graph-model} gives
 
 We first prove algebraic exactness.  If a representative $p\in T_A$ maps
 into both $I_B$ and $I_C$, the pullback assertion in
-\cref{lem:graph-pullback} gives an element of $I_A$ with the same two images.
+\Cref{lem:graph-pullback} gives an element of $I_A$ with the same two images.
 Injectivity of $T_A\to T_B\oplus T_C$ then shows that $p\in I_A$.  This gives
 injectivity on the left.  Conversely, take compatible classes in
 $T_B/I_B$ and $T_C/I_C$ and choose representatives $b$ and $c$.  Their
@@ -803,7 +805,7 @@ For the topology on the left, let $x\in A_\alpha$ and put
 Choose representatives $b\in T_B$ and $c\in T_C$ whose norms are
 arbitrarily close to the quotient norms of $x_B$ and $x_C$.  Their defect
 lies in $I_D$.  The norm estimate for $I_C\to I_D$ proved in
-\cref{lem:graph-pullback} gives a constant $C_0$ and a correction
+\Cref{lem:graph-pullback} gives a constant $C_0$ and a correction
 $y\in I_C$ mapping to this defect such that
 \[
   \lVert y\rVert\leq C_0\lVert b_D-c_D\rVert.
@@ -849,7 +851,7 @@ $U=\bigcup_iU_i$ in $\Spa(A,A^\circ)$.  Push the datum for $U$ and the data
 for the $U_i$ to $B,C,D$.  If a section over $U$ restricts to zero on every
 $U_i$, its images over $B$ and $C$ vanish by separatedness there.
 Injectivity of the localised Milnor row from
-\cref{prop:localized-milnor} then shows that the original section is zero.
+\Cref{prop:localized-milnor} then shows that the original section is zero.
 
 Now take a matching family over the $U_i$.  Its images glue over $B$ and
 $C$.  The two glued sections have the same image over $D$, since their
@@ -875,11 +877,10 @@ sheaf-on-a-rational-basis theorem \cite[Tag 009O]{Stacks} then gives the
 all-open topological sheaf condition for $(A,A^\circ)$.
 \end{proof}
 
-\begin{proof}[Proof of \cref{thm:main}]
-Completeness, uniformity, nonnoetherianity, and the domain property are
-\cref{prop:uniform-domain}; sheafiness is
-\cref{thm:sheafy}; and failure of stable uniformity is
-\cref{prop:not-stably-uniform}.
+\begin{proof}[Proof of \Cref{thm:main}]
+\Cref{prop:uniform-domain} proves that $A$ is complete, uniform,
+non-noetherian, and a domain.  Sheafiness is \Cref{thm:sheafy}, and failure
+of stable uniformity is \Cref{prop:not-stably-uniform}.
 \end{proof}
 
 
@@ -888,7 +889,7 @@ Completeness, uniformity, nonnoetherianity, and the domain property are
 Problem~24 of the \emph{Nonarchimedean Scottish Book} asks whether the map of
 rings underlying a rational localisation of Tate Huber pairs must be flat.
 Problem~28 asks whether a non-zero-divisor which generates a closed ideal can
-restrict to zero on a rational subspace \cite[Problems~24 and 28]{Scottish}.
+restrict to zero on a nonempty rational subspace \cite[Problems~24 and 28]{Scottish}.
 The same rational datum, together with multiplicativity of the Gauss norm,
 answers both questions.  We keep the notation of the introduction.  In fact,
 the argument only uses that $k$ is complete and ultrametric and that
@@ -934,7 +935,7 @@ by it is therefore injective because $A$ is a domain.
 
 On the other hand, the calculation \eqref{eq:q2-killed-on-chart} says directly
 that the canonical map to the completed rational localisation kills $Q^2$.
-The isomorphism of \cref{prop:bad-chart} identifies this localisation with the
+The isomorphism of \Cref{prop:bad-chart} identifies this localisation with the
 nonzero ring
 \[
   A\longrightarrow k\langle X,Q\rangle/(Q^2),
@@ -952,15 +953,14 @@ the nonzero ring $\mathcal O(U)$, a contradiction.
 
 \section{A second example}\label{sec:second-example}
 
-In the finite-jet construction, the canonical map to the rational localisation
-kills $Q^2$ but not $Q$.  We now give a second construction in which the bad rational localisation is an
-integral domain.  The loss of uniformity is instead caused by an unbounded family of
-nonnilpotent power-bounded elements.
+In the finite-jet construction, the bad rational localisation is non-reduced.
+In our second example it is an integral domain; the loss of uniformity is
+instead caused by an unbounded family of nonnilpotent power-bounded elements.
 
 \begin{theorem}\label{thm:second-example}
 There is a complete Tate $k$-algebra $\mathcal A$ with the following properties.
 \begin{enumerate}
-\item $\mathcal A$ is a uniform, nonnoetherian integral domain and
+\item $\mathcal A$ is a uniform, non-noetherian integral domain and
       $\mathcal A^\circ=\mathcal A_0$ for the ring of definition displayed below.
 \item The Huber pair $(\mathcal A,\mathcal A^\circ)$ is sheafy.
 \item The rational localisation
@@ -1291,18 +1291,18 @@ $t\in k^\times$ with $0<|t|<1$ and small enough that
 $tg,tf_1,\ldots,tf_m$ lie in $\mathcal A_0$.  Multiplying the datum by
 $t$ does not change the rational subset or its localisation, so we may
 assume that $g,f_1,\ldots,f_m$ lie in $\mathcal A_0$.  Choose a
-neighbourhood $V$ as in \cref{lem:small-perturbation}.  By
+neighbourhood $V$ as in \Cref{lem:small-perturbation}.  By
 \eqref{eq:A-completion-finite-variables}, for some $N$ there are
 $g',f_1',\ldots,f_m'\in\mathcal A^{(N)}\cap\mathcal A_0$ such that
 \[
   g'-g,\ f_1'-f_1,\ldots,f_m'-f_m\in V.
 \]
-By \cref{lem:small-perturbation}, the datum
+By \Cref{lem:small-perturbation}, the datum
 $\alpha'=(f_1',\ldots,f_m';g')$ gives the same rational subset and the same
 completed localisation.  It is rational in $\mathcal A$, so applying
 $\rho_N$ to a Bezout identity for its entries shows that it is already a
 rational datum in $\mathcal A^{(N)}$.  Now apply
-\cref{prop:coefficientwise-localization}.
+\Cref{prop:coefficientwise-localization}.
 \end{proof}
 
 \subsection{A reduced nonuniform rational chart}
@@ -1351,7 +1351,7 @@ direction.  The two maps are inverse by polynomial density, and the norm
 estimates in the two universal properties show that the isomorphism is
 isometric.
 
-Apply \cref{prop:coefficientwise-localization} with $N=0$.  It describes the
+Apply \Cref{prop:coefficientwise-localization} with $N=0$.  It describes the
 rational chart as the ring of sums
 \[
   \sum_\nu p_\nu e_\nu,
@@ -1413,7 +1413,7 @@ The Huber pair $(\mathcal A,\mathcal A^\circ)$ is sheafy.
 We first work with a finite rational cover $U=\bigcup_iU_i$.  Choose one
 $N$ large enough to approximate the datum for $U$ and the data for all the
 $U_i$ in $\mathcal A^{(N)}$.  The small perturbation lemma does not change
-the rational domains, and \cref{prop:coefficientwise-localization} gives
+the rational domains, and \Cref{prop:coefficientwise-localization} gives
 compatible identifications
 \[
   \mathcal O_X(U)\cong
@@ -1469,11 +1469,12 @@ ring of integral elements.  In particular, $(\mathcal A,\mathcal A^\circ)$
 is sheafy.
 \end{proof}
 
-\begin{proof}[Proof of \cref{thm:second-example}]
-The uniform domain assertion is \cref{prop:parity-uniform-domain}, and nonnoetherianity is
-\cref{prop:parity-nonnoetherian}.  Sheafiness is
-\cref{thm:parity-sheafy}.  Finally,
-\cref{prop:weighted-chart-identification,prop:weighted-chart-domain-nonuniform} identify the
+\begin{proof}[Proof of \Cref{thm:second-example}]
+The fact that $\mathcal A$ is a uniform domain is
+\Cref{prop:parity-uniform-domain}, and its failure to be noetherian is
+\Cref{prop:parity-nonnoetherian}.  Sheafiness is
+\Cref{thm:parity-sheafy}.  Finally,
+\Cref{prop:weighted-chart-identification,prop:weighted-chart-domain-nonuniform} identify the
 rational chart $|W|\leq|\varpi|$ as a nonuniform integral domain.
 \end{proof}
 
@@ -1490,20 +1491,20 @@ Here $R_0[W/\varpi]$ means the subring of $R_0[1/\varpi]$ generated by
 $R_0$ and $W/\varpi$, and the hat denotes the $\varpi$-adic completion
 defined above.  After inverting $\varpi$, its coordinate ring is the completed
 rational localisation $R_0[1/\varpi]\langle W/\varpi\rangle$, corresponding
-to $|W|\leq|\varpi|$.  This description applies to our nonnoetherian formal
+to $|W|\leq|\varpi|$.  This description applies to our non-noetherian formal
 models because they are $\varpi$-adic and their ideal of definition
 $(\varpi)$ is principal; see
 \cite[Chapter~0, Section~7.1(c), and Chapter~II, Section~1.1(b)]{FK}.
 
 For $R_0=A_0$, the ring $A_0[W/\varpi]$ is a domain, but the calculation in
-the proof of \cref{prop:bad-chart} shows that
+the proof of \Cref{prop:bad-chart} shows that
 \[
   Q^2\in\bigcap_{n\geq1}\varpi^nA_0[W/\varpi].
 \]
 This intersection is the kernel of the completion map.  Thus $Q^2$ is killed,
-while $Q$ survives, so this rational chart is nonreduced.  The map from $A$ to
+while $Q$ survives, so this rational chart is non-reduced.  The map from $A$ to
 this completed rational localisation is also not flat by
-\cref{prop:problems-24-28}.  For $R_0=\mathcal A_0$, the completed
+\Cref{prop:problems-24-28}.  For $R_0=\mathcal A_0$, the completed
 chart remains a domain, but its generic fibre is nonuniform because the
 power-bounded elements $T_n=X^nU_n$ form an unbounded family.  Thus the two
 examples give different failures on the same kind of affine blow-up chart.
@@ -1574,12 +1575,11 @@ This appendix records the Lean formalisation of the two examples.  The
 finite-jet declarations are taken from AINTLIB commit
 \texttt{b007a4f3d}, and the weighted-parity declarations from commit
 \texttt{090a28921}.  The comparison with Mathlib's sheaf predicate is taken
-from commit \texttt{d92f96504}, and the consequences for Scottish Book
+from commit \texttt{d92f96504}, and the results on Scottish Book
 Problems~24 and 28 from commit \texttt{01116aca6} \cite{AINTLIB}.  For each
-example Lean proves the
-Tate structure, uniformity, domain and nonnoetherianity statements,
-sheafiness, and failure of stable uniformity, together with the rational
-chart calculation used in the proof.
+example Lean proves the Tate structure and uniformity, proves that the ring is
+a domain but not noetherian, proves sheafiness and failure of stable
+uniformity, and verifies the rational chart calculation used in the proof.
 
 Neither example snapshot was available from the public AINTLIB repository at
 the time of writing.  The interactive version of the paper includes each
@@ -1977,19 +1977,13 @@ and isometric but is not installed as an \texttt{Algebra K} instance.
 For the bad chart, \texttt{chartEquiv} is an exported ring equivalence.
 The two continuity theorems make it a homeomorphism, and the canonical-map
 theorem identifies $W$ and $Q$.  It is not bundled as a
-\texttt{K}-\texttt{AlgEquiv}, which is why \cref{prop:bad-chart} is stated for
+\texttt{K}-\texttt{AlgEquiv}, which is why \Cref{prop:bad-chart} is stated for
 complete topological rings.
 
-The consequences in \cref{sec:problems-24-28} are not restricted to
-Laurent-series fields.  They are formalised for any complete ultrametric
-normed field $K$ equipped with a nonzero element $\varpi$ satisfying
+The results in \cref{sec:problems-24-28} are formalised for any complete
+ultrametric normed field $K$ equipped with a nonzero element $\varpi$ satisfying
 $\lVert\varpi\rVert<1$; this is the class
 \href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.IsFJPBase.html}{\texttt{IsFJPBase K}}.
-The source happens to call the base parameter \texttt{F}, but it denotes $K$
-itself, not the coefficient field of a Laurent-series field.  Sorry-free
-instances are provided for $F((t))$ and for $\mathbb Q_p$; the latter also
-gives the explicit
-\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_padic_quality.html}{$p$-adic finite-jet ring}.
 
 \begin{lstlisting}
 class IsFJPBase (K : Type u) [NormedField K]
@@ -2003,12 +1997,9 @@ class IsFJPBase (K : Type u) [NormedField K]
 Sheafiness is a separate assertion in this newer interface.  The
 \href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_witnessRing_quality.html}{corresponding Lean theorem}
 assumes the additional class \texttt{IsFJPNoetherianBase K}, which supplies the
-noetherian Gauss-unit-ball input used in the sheaf proof.  A sorry-free
-instance of this additional class is currently supplied for $F((t))$, but
-not for $\mathbb Q_p$.  Neither of the Scottish Book conclusions uses it.
-The independent \texttt{FiniteJetOver} development used for the main theorem
-proves sheafiness under the complete discretely valued hypothesis of the
-paper.
+noetherian Gauss-unit-ball input used in the sheaf proof.  The independent
+\texttt{FiniteJetOver} development used for the main theorem proves
+sheafiness under the complete discretely valued hypothesis of the paper.
 
 Under the weaker \texttt{IsFJPBase} hypothesis, the theorem
 \href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_problem28.html}{\texttt{finiteJet\_problem28}}
@@ -2046,13 +2037,13 @@ theorem finiteJet_problem28 :
 For Problem~24, Lean uses the module structure induced by the canonical map
 to the completed localisation and proves
 \href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_not_flat_canonicalMap.html}{\texttt{finiteJet\_not\_flat\_canonicalMap}}.
-The proof is the one given in \cref{prop:problems-24-28}: $Q^2$ is a
+The proof is the one given in \Cref{prop:problems-24-28}: $Q^2$ is a
 non-zero-divisor of $A$, so flatness would make its image act injectively on
 the chart; that image is zero and the chart is nonzero.  The ordinary ring
 localisation \texttt{Localization.Away} is always flat.  The failure is a
 property of the completion defining \texttt{presheafValue}.
 
-The conclusions of \cref{lem:koszul} are formalised in the normed setting used
+The conclusions of \Cref{lem:koszul} are formalised in the normed setting used
 for the example: $E$ is one of $B,C,D$, $T_E$ has its Gauss norm,
 $T_{E,0}$ is its unit ball, and the finite free terms have their sup norms.
 Positive-degree exactness is transported from the polynomial sequence
@@ -2064,11 +2055,11 @@ $\lVert x\rVert\leq C_{q,E}\lVert y\rVert$.  This proves strictness, and
 multiplying such a preimage by a suitable power of $\varpi$ gives the two
 displayed denominator inclusions.
 
-The Lean proof of \cref{lem:graph-pullback} uses these inequalities directly.
+The Lean proof of \Cref{lem:graph-pullback} uses these inequalities directly.
 Its localisation proof obtains the topological embedding from a quotient-norm
 estimate, and proves openness of $C_\alpha\to D_\alpha$ from the
 norm-preserving coefficientwise section.  The components of
-\cref{prop:localized-milnor} are therefore separate declarations.  Finally,
+\Cref{prop:localized-milnor} are therefore separate declarations.  Finally,
 the development proves the concrete finite-jet transfer
 \texttt{isSheafy\_JetA}: it pushes finite rational covers to $B,C,D$, glues
 there, and uses the localised Milnor row and a closed-range theorem.
@@ -2202,7 +2193,7 @@ $K\langle X\rangle$, and the coefficientwise ring embeds in formal
 multivariable power series over this domain.  The formalisation also
 contains, under \texttt{WeightedParity.PerturbSetup}, a quantitative
 norm-unit-ball version of the standard perturbation result cited in
-\cref{lem:small-perturbation}.
+\Cref{lem:small-perturbation}.
 
 These declarations, including the
 \href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.weightedParity_not_stablyUniform_of_dvr.html}{final failure of stable uniformity},

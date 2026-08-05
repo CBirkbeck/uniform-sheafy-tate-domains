@@ -70,7 +70,7 @@
       "via": "manual",
       "file": "Adic spaces/FJP/Over/SheafyEndpoints.lean",
       "line": 73,
-      "cited": "Theorem 1.1 (nonnoetherianity)",
+      "cited": "Theorem 1.1 (non-noetherianity)",
       "kind": "theorem",
       "flagged": true,
       "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
@@ -149,7 +149,7 @@
       "via": "manual",
       "file": "Adic spaces/FJP/Over/SheafyEndpoints.lean",
       "line": 73,
-      "cited": "Proposition 3.1 (nonnoetherianity)",
+      "cited": "Proposition 3.1 (non-noetherianity)",
       "kind": "theorem",
       "flagged": true,
       "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
@@ -556,7 +556,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Main.lean",
       "line": 61,
-      "cited": "Theorem 8.1 (nonnoetherianity)",
+      "cited": "Theorem 8.1 (non-noetherianity)",
       "kind": "theorem",
       "flagged": true,
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
@@ -648,7 +648,7 @@
       "via": "manual",
       "file": "Adic spaces/WP/Main.lean",
       "line": 61,
-      "cited": "Weighted-parity nonnoetherianity proposition",
+      "cited": "Weighted-parity non-noetherianity proposition",
       "kind": "theorem",
       "flagged": true,
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"

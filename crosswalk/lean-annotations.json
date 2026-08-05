@@ -5,7 +5,7 @@
     "WeightedParity.weightedParity_isUniform_of_dvr": "uniformity",
     "WeightedParity.weightedParity_isDomain": "domain",
     "WeightedParity.weightedParity_powerBounded_eq_unitBall": "power-bounded elements",
-    "WeightedParity.weightedParity_not_noetherian": "nonnoetherianity",
+    "WeightedParity.weightedParity_not_noetherian": "non-noetherianity",
     "WeightedParity.weightedParity_isSheafyComplete_of_dvr": "sheafiness",
     "WeightedParity.weightedParity_chart_isDomain": "chart is a domain",
     "WeightedParity.weightedParity_chart_not_isUniform": "chart is nonuniform",

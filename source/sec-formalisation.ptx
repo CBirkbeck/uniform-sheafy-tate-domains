@@ -7,12 +7,11 @@
 finite-jet declarations are taken from AINTLIB commit
 <c>b007a4f3d</c>, and the weighted-parity declarations from commit
 <c>090a28921</c>.  The comparison with Mathlib's sheaf predicate is taken
-from commit <c>d92f96504</c>, and the consequences for Scottish Book
+from commit <c>d92f96504</c>, and the results on Scottish Book
 Problems<nbsp/>24 and 28 from commit <c>01116aca6</c> <xref ref="bib-AINTLIB"/>.  For each
-example Lean proves the
-Tate structure, uniformity, domain and nonnoetherianity statements,
-sheafiness, and failure of stable uniformity, together with the rational
-chart calculation used in the proof.
+example Lean proves the Tate structure and uniformity, proves that the ring is
+a domain but not noetherian, proves sheafiness and failure of stable
+uniformity, and verifies the rational chart calculation used in the proof.
     </p>
     <p>
       Neither example snapshot was available from the public AINTLIB repository at
@@ -464,16 +463,10 @@ theorem identifies <m>W</m> and <m>Q</m>.  It is not bundled as a
 complete topological rings.
     </p>
     <p>
-      The consequences in <xref ref="sec-problems-24-28"/> are not restricted to
-Laurent-series fields.  They are formalised for any complete ultrametric
-normed field <m>K</m> equipped with a nonzero element <m>\varpi</m> satisfying
+      The results in <xref ref="sec-problems-24-28"/> are formalised for any complete
+ultrametric normed field <m>K</m> equipped with a nonzero element <m>\varpi</m> satisfying
 <m>\lVert\varpi\rVert&lt;1</m>; this is the class
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.IsFJPBase.html"><c>IsFJPBase K</c></url>.
-The source happens to call the base parameter <c>F</c>, but it denotes <m>K</m>
-itself, not the coefficient field of a Laurent-series field.  Sorry-free
-instances are provided for <m>F((t))</m> and for <m>\mathbb Q_p</m>; the latter also
-gives the explicit
-<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_padic_quality.html"><m>p</m>-adic finite-jet ring</url>.
     </p>
     <pre>
     class IsFJPBase (K : Type u) [NormedField K]
@@ -487,12 +480,9 @@ gives the explicit
       Sheafiness is a separate assertion in this newer interface.  The
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_witnessRing_quality.html">corresponding Lean theorem</url>
 assumes the additional class <c>IsFJPNoetherianBase K</c>, which supplies the
-noetherian Gauss-unit-ball input used in the sheaf proof.  A sorry-free
-instance of this additional class is currently supplied for <m>F((t))</m>, but
-not for <m>\mathbb Q_p</m>.  Neither of the Scottish Book conclusions uses it.
-The independent <c>FiniteJetOver</c> development used for the main theorem
-proves sheafiness under the complete discretely valued hypothesis of the
-paper.
+noetherian Gauss-unit-ball input used in the sheaf proof.  The independent
+<c>FiniteJetOver</c> development used for the main theorem proves
+sheafiness under the complete discretely valued hypothesis of the paper.
     </p>
     <p>
       Under the weaker <c>IsFJPBase</c> hypothesis, the theorem
