@@ -24,6 +24,16 @@
   <xsl:param name="lean.docs.default.project" select="'AdicSpaces'"/>
   <xsl:param name="lean.docs.suffix" select="'#doc'"/>
 
+  <!-- PreTeXt includes a Runestone Academy logo in its standard footer even
+       when Runestone services are disabled.  This site is built with
+       PaperForge, so replace that unrelated attribution at the template level;
+       doing this here also prevents the external Runestone image being fetched. -->
+  <xsl:template name="runestone-link">
+    <a class="paperforge-link"
+       href="https://github.com/roed-math/paperforge"
+       title="PaperForge">Built with PaperForge</a>
+  </xsl:template>
+
   <!-- Employment status is an author footnote, not PreTeXt's funding
        <support>.  Standard author data remains in source/main.ptx; the
        sidecar (content/authors.xml) supplies only this format-specific

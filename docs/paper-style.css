@@ -76,6 +76,22 @@
 .ptx-main > .ptx-content { max-width: 58rem; }
 .ptx-content-footer { max-width: 58rem; }
 
+/* PreTeXt's default Runestone footer slot is replaced in custom-html.xsl by
+   a text credit for the tool actually used to build this paper. */
+.ptx-page-footer > .paperforge-link {
+  display: flex;
+  align-items: center;
+  min-height: 3em;
+  font-family: "Computer Modern Serif", "Latin Modern Roman", Georgia, serif;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+.ptx-page-footer > .paperforge-link:hover,
+.ptx-page-footer > .paperforge-link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 
 /* -- 6 cont.: prose in Computer Modern -- */
 .ptx-content, .ptx-content .para, .ptx-page, .ptx-masthead .title-container {
