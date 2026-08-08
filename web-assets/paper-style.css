@@ -164,6 +164,40 @@
   padding-left: 0;
 }
 
+/* Bibliography keys are longer than the modern theme's default 7% label
+   column, and unbroken commit hashes or URLs can otherwise run into the
+   entry text. Give the keys enough room and allow link/code text to wrap. */
+.ptx-content .references .bib {
+  display: grid;
+  grid-template-columns: 10rem minmax(0, 1fr);
+  column-gap: 0.75rem;
+  align-items: start;
+}
+.ptx-content .references .bib .bibitem,
+.ptx-content .references .bib .bibitem + .bibentry {
+  display: block;
+  width: auto;
+  min-width: 0;
+  margin: 0;
+}
+.ptx-content .references .bibitem,
+.ptx-content .references .bibentry,
+.ptx-content .references .bibentry a,
+.ptx-content .references .bibentry code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+@media screen and (max-width: 640px) {
+  .ptx-content .references .bib {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0.1rem;
+    margin-top: 0.7rem;
+  }
+  .ptx-content .references .bibitem {
+    font-size: 0.9em;
+  }
+}
+
 /* xref preview knowls (click-to-open cross references) — same quiet field */
 .ptx-content .knowl__content {
   background: var(--paper-field-xref);

@@ -46,13 +46,13 @@ witnessing failure of stable uniformity, have been formalised in Lean<nbsp/>4.
       <references xml:id="references">
       <title>References</title>
       <biblio type="raw" xml:id="bib-AINTLIB">
-      C.<nbsp/>Birkbeck and contributors, <em>AINTLIB: AdicSpaces formalisation</em>, Lean<nbsp/>4 source code, finite-jet snapshot <c>b007a4f3d4226f00a684b402715aa542e2f0bcdc</c> and weighted-parity snapshot <c>090a289211deb69117413e329325fe819aa7dbc2</c>, together with the sheaf-comparison snapshot <c>d92f96504f949ca43a27a817cb8d2f70b6486744</c> and abstract-base Scottish Book snapshot <c>01116aca6070283726008536cba16d165a01b505</c>, 2026, <url href="https://github.com/CBirkbeck/AINTLIB"><c>https://github.com/CBirkbeck/AINTLIB</c></url>.
+      C.<nbsp/>Birkbeck and contributors, <em>AINTLIB: AdicSpaces formalisation</em>, Lean<nbsp/>4 source code, finite-jet snapshot <url href="https://github.com/CBirkbeck/AINTLIB/commit/b007a4f3d4226f00a684b402715aa542e2f0bcdc"><c>b007a4f3d</c></url>, weighted-parity snapshot <url href="https://github.com/CBirkbeck/AINTLIB/commit/090a289211deb69117413e329325fe819aa7dbc2"><c>090a28921</c></url>, sheaf-comparison snapshot <url href="https://github.com/CBirkbeck/AINTLIB/commit/d92f96504f949ca43a27a817cb8d2f70b6486744"><c>d92f96504</c></url>, and abstract-base Scottish Book snapshot <url href="https://github.com/CBirkbeck/AINTLIB/commit/01116aca6070283726008536cba16d165a01b505"><c>01116aca6</c></url>, 2026, <url href="https://github.com/CBirkbeck/AINTLIB">GitHub repository</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-BBK">
-      O.<nbsp/>Ben-Bassat and K.<nbsp/>Kremnizer, <em>Non-Archimedean analytic geometry as relative algebraic geometry</em>, Ann. Fac. Sci. Toulouse Math. (6) <alert>26</alert> (2017), no.<nbsp/>1, 49<ndash/>126, <url href="https://doi.org/10.5802/afst.1526">doi:10.5802/afst.1526</url>.
+      O.<nbsp/>Ben-Bassat and K.<nbsp/>Kremnizer, <em>Non-Archimedean analytic geometry as relative algebraic geometry</em>, Ann. Fac. Sci. Toulouse Math. (6) <alert>26</alert> (2017), no.<nbsp/>1, 49<ndash/>126, <url href="https://doi.org/10.5802/afst.1526">DOI</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-BK">
-      F.<nbsp/>Bambozzi and K.<nbsp/>Kremnizer, <em>On the sheafyness property of spectra of Banach rings</em>, J. Lond. Math. Soc. (2) <alert>109</alert> (2024), no.<nbsp/>1, e12855, <url href="https://doi.org/10.1112/jlms.12855">doi:10.1112/jlms.12855</url>.
+      F.<nbsp/>Bambozzi and K.<nbsp/>Kremnizer, <em>On the sheafyness property of spectra of Banach rings</em>, J. Lond. Math. Soc. (2) <alert>109</alert> (2024), no.<nbsp/>1, e12855, <url href="https://doi.org/10.1112/jlms.12855">DOI</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-BV">
       K.<nbsp/>Buzzard and A.<nbsp/>Verberkmoes, <em>Stably uniform affinoids are sheafy</em>, J. Reine Angew. Math. <alert>740</alert> (2018), 25<ndash/>39.
@@ -64,22 +64,22 @@ witnessing failure of stable uniformity, have been formalised in Lean<nbsp/>4.
       W.<nbsp/>Coram, Lean source code, <url href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">GitHub repository</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-FK">
-      K.<nbsp/>Fujiwara and F.<nbsp/>Kato, <em>Foundations of Rigid Geometry I</em>, EMS Monographs in Mathematics, vol.<nbsp/>7, European Mathematical Society, 2018, <url href="https://doi.org/10.4171/135">doi:10.4171/135</url>.
+      K.<nbsp/>Fujiwara and F.<nbsp/>Kato, <em>Foundations of Rigid Geometry I</em>, EMS Monographs in Mathematics, vol.<nbsp/>7, European Mathematical Society, 2018, <url href="https://doi.org/10.4171/135">DOI</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-HK">
-      D.<nbsp/>Hansen and K.<nbsp/>S. Kedlaya, <em>Sheafiness criteria for Huber rings</em>, preprint, version of 23 April 2025, <url href="https://kskedlaya.org/papers/criteria.pdf"><c>https://kskedlaya.org/papers/criteria.pdf</c></url>.
+      D.<nbsp/>Hansen and K.<nbsp/>S. Kedlaya, <em>Sheafiness criteria for Huber rings</em>, preprint, version of 23 April 2025, <url href="https://kskedlaya.org/papers/criteria.pdf">preprint PDF</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-XiaCode">
       B.<nbsp/>Xia, Lean source code, <url href="https://github.com/leanprover-community/mathlib4/pull/36507">mathlib pull request #36507</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-Huber93">
-      R.<nbsp/>Huber, <em>Continuous valuations</em>, Math. Z. <alert>212</alert> (1993), no.<nbsp/>3, 455<ndash/>477, <url href="https://doi.org/10.1007/BF02571668">doi:10.1007/BF02571668</url>.
+      R.<nbsp/>Huber, <em>Continuous valuations</em>, Math. Z. <alert>212</alert> (1993), no.<nbsp/>3, 455<ndash/>477, <url href="https://doi.org/10.1007/BF02571668">DOI</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-Huber94">
-      R.<nbsp/>Huber, <em>A generalization of formal schemes and rigid analytic varieties</em>, Math. Z. <alert>217</alert> (1994), 513<ndash/>551, <url href="https://doi.org/10.1007/BF02571959">doi:10.1007/BF02571959</url>.
+      R.<nbsp/>Huber, <em>A generalization of formal schemes and rigid analytic varieties</em>, Math. Z. <alert>217</alert> (1994), 513<ndash/>551, <url href="https://doi.org/10.1007/BF02571959">DOI</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-KedlayaAWS">
-      K.<nbsp/>S. Kedlaya, <em>Sheaves, stacks, and shtukas</em>, Arizona Winter School notes, 2017, <url href="https://swc-math.github.io/aws/2017/2017KedlayaNotes.pdf"><c>https://swc-math.github.io/aws/2017/2017KedlayaNotes.pdf</c></url>.
+      K.<nbsp/>S. Kedlaya, <em>Sheaves, stacks, and shtukas</em>, Arizona Winter School notes, 2017, <url href="https://swc-math.github.io/aws/2017/2017KedlayaNotes.pdf">course notes</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-KL">
       K.<nbsp/>S. Kedlaya and R.<nbsp/>Liu, <em>Relative <m>p</m>-adic Hodge theory: Foundations</em>, Astérisque <alert>371</alert> (2015), <url href="https://arxiv.org/abs/1301.0792">arXiv:1301.0792</url>.
@@ -88,10 +88,10 @@ witnessing failure of stable uniformity, have been formalised in Lean<nbsp/>4.
       M.<nbsp/>Kerz, S.<nbsp/>Saito, and G.<nbsp/>Tamme, <em><m>K</m>-theory of non-archimedean rings II</em>, Nagoya Math. J. <alert>251</alert> (2023), 669<ndash/>685.
       </biblio>
       <biblio type="raw" xml:id="bib-Lean4">
-      L.<nbsp/>de Moura and S.<nbsp/>Ullrich, <em>The Lean 4 theorem prover and programming language</em>, in <em>Automated Deduction<mdash/>CADE 28</em>, Lecture Notes in Comput. Sci., vol.<nbsp/>12699, Springer, 2021, 625<ndash/>635, <url href="https://doi.org/10.1007/978-3-030-79876-5_37">doi:10.1007/978-3-030-79876-5\_37</url>.
+      L.<nbsp/>de Moura and S.<nbsp/>Ullrich, <em>The Lean 4 theorem prover and programming language</em>, in <em>Automated Deduction<mdash/>CADE 28</em>, Lecture Notes in Comput. Sci., vol.<nbsp/>12699, Springer, 2021, 625<ndash/>635, <url href="https://doi.org/10.1007/978-3-030-79876-5_37">DOI</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-mathlib">
-      The mathlib Community, <em>The Lean mathematical library</em>, in <em>Proceedings of the 9th ACM SIGPLAN International Conference on Certified Programs and Proofs</em>, ACM, 2020, 367<ndash/>381, <url href="https://doi.org/10.1145/3372885.3373824">doi:10.1145/3372885.3373824</url>.
+      The mathlib Community, <em>The Lean mathematical library</em>, in <em>Proceedings of the 9th ACM SIGPLAN International Conference on Certified Programs and Proofs</em>, ACM, 2020, 367<ndash/>381, <url href="https://doi.org/10.1145/3372885.3373824">DOI</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-Milnor">
       J.<nbsp/>Milnor, <em>Introduction to Algebraic <m>K</m>-Theory</em>, Annals of Mathematics Studies, vol.<nbsp/>72, Princeton University Press, Princeton, 1971.
@@ -103,7 +103,7 @@ witnessing failure of stable uniformity, have been formalised in Lean<nbsp/>4.
       K.<nbsp/>S. Kedlaya, <em>The Nonarchimedean Scottish Book</em>, Problems<nbsp/>7, 24, and 28, <url href="https://scripts.mit.edu/~kedlaya/wiki/index.php?title=The_Nonarchimedean_Scottish_Book">available online</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-Stacks">
-      The Stacks Project Authors, <em>The Stacks Project</em>, <url href="https://stacks.math.columbia.edu"><c>https://stacks.math.columbia.edu</c></url>.
+      The Stacks Project Authors, <em>The Stacks Project</em>, <url href="https://stacks.math.columbia.edu">project website</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-Wedhorn">
       T.<nbsp/>Wedhorn, <em>Adic spaces</em>, 2019, <url href="https://arxiv.org/abs/1910.05934">arXiv:1910.05934</url>.
