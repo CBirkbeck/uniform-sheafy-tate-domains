@@ -10,7 +10,7 @@ uniformity.
 <me>\alpha=(W;\varpi).</me>
 The ideal <m>(\varpi,W)</m> is open, since <m>\varpi</m> is a unit in <m>A</m>.  Let
 <me>A_\alpha=A\left\langle\frac{W}{\varpi}\right\rangle</me>
-be the corresponding rational localisation on <m>|W|\leq |\varpi|</m>, and write
+be the corresponding rational localisation on which <m>|W|\leq |\varpi|</m>, and write
 <m>X=W/\varpi</m>.  Since <m>\varpi</m> is already invertible in <m>A</m>, the algebraic
 localisation does not change the ring.  More explicitly,
 <m>A_\alpha</m> is obtained by taking the <m>\varpi</m>-adic
@@ -39,8 +39,8 @@ Let <m>\rho:A\to A_\alpha</m> be the canonical map.  We first show that
         Take <m>y\in Q^2C</m>, and choose <m>r\geq0</m> such that
 <m>\varpi^r y\in Q^2C_0</m>.  For every <m>n\geq0</m>, the coefficient description of
 <m>A_0</m> gives
-<me>W^{-n}\varpi^r y\in A_0:</me>
-multiplication by <m>W^{-n}</m> only introduces negative powers of <m>W</m> in terms
+<me>W^{-n}\varpi^r y\in A_0.</me>
+Multiplication by <m>W^{-n}</m> only introduces negative powers of <m>W</m> in terms
 of <m>Q</m>-degree at least two.  In <m>A_0[X]</m>, where <m>W=\varpi X</m>, we therefore
 have
 <me>\varpi^r y
@@ -78,15 +78,15 @@ definition coming from <m>A_0[X]</m>.  Moreover,
       <p>
         It remains to check the two composites.  Write
 <m>a=f_0(W)+Qf_1(W)+y\in A</m>, with <m>y\in Q^2C</m>.  Then
-<me>\Psi\Phi(\rho(a))
+<me>(\Psi \circ \Phi)(\rho(a))
   =f_0(\varpi\overline X)+\overline Qf_1(\varpi\overline X)
   =\rho\bigl(f_0(W)+Qf_1(W)\bigr)
   =\rho(a),</me>
 where the last equality uses <xref ref="eq-q2-killed-on-chart"/>.  The
 image of <m>A</m> is dense in <m>A_\alpha</m>, so continuity gives
-<m>\Psi\Phi=1</m>.  Conversely, <m>\Phi\Psi</m> fixes <m>k</m>, <m>X</m> and <m>Q</m>, and hence is
+<m>\Psi \circ \Phi=1</m>.  Conversely, <m>\Phi \circ \Psi</m> fixes <m>k</m>, <m>X</m> and <m>Q</m>, and hence is
 the identity on the dense subring <m>k[X,Q]/(Q^2)</m> of <m>T</m>.  It follows by
-continuity that <m>\Phi\Psi=1</m>.  Thus <m>\Phi</m> and <m>\Psi</m> are inverse continuous
+continuity that <m>\Phi\circ \Psi=1</m>.  Thus <m>\Phi</m> and <m>\Psi</m> are inverse continuous
 homomorphisms.
       </p>
     </proof>

@@ -356,7 +356,7 @@
    "number": "A",
    "section": "A"
   },
-  "sec-formalisation-sheafiness": {
+  "sec-formalisation-the-rational-cover-predicate-issheafy": {
    "kind": "subsection",
    "label": null,
    "number": "A.1",
@@ -366,6 +366,12 @@
    "kind": "definition",
    "label": "def:lean-rational-sheafiness",
    "number": "A.1",
+   "section": "A"
+  },
+  "sec-formalisation-comparison-with-mathlib-s-sheaf": {
+   "kind": "subsection",
+   "label": null,
+   "number": "A.2",
    "section": "A"
   },
   "def-lean-open-sections": {
@@ -380,10 +386,16 @@
    "number": "A.3",
    "section": "A"
   },
+  "sec-formalisation-choice-independent-sheafiness-for-tate": {
+   "kind": "subsection",
+   "label": null,
+   "number": "A.3",
+   "section": "A"
+  },
   "sec-formalisation-strong-noetherianity": {
    "kind": "subsection",
    "label": null,
-   "number": "A.2",
+   "number": "A.4",
    "section": "A"
   },
   "def-lean-strong-noetherianity": {
@@ -395,7 +407,7 @@
   "sec-formalisation-the-finite-jet-example": {
    "kind": "subsection",
    "label": null,
-   "number": "A.3",
+   "number": "A.5",
    "section": "A"
   },
   "def-lean-finite-jet-ring": {
@@ -407,19 +419,19 @@
   "sec-formalisation-scope-of-the-finite-jet": {
    "kind": "subsection",
    "label": null,
-   "number": "A.4",
+   "number": "A.6",
    "section": "A"
   },
   "sec-formalisation-the-weighted-parity-example": {
    "kind": "subsection",
    "label": null,
-   "number": "A.5",
+   "number": "A.7",
    "section": "A"
   },
   "sec-formalisation-mathematical-and-code-provenance": {
    "kind": "subsection",
    "label": null,
-   "number": "A.6",
+   "number": "A.8",
    "section": "A"
   }
  }

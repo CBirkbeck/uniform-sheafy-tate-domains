@@ -10,17 +10,16 @@ explicitly <xref ref="bib-HK" detail="Remark 3.16"/>; it is also Question<nbsp/>
 <em>Nonarchimedean Scottish Book</em> <xref ref="bib-Scottish"/>.  The answer is no.
   </p>
   <p>
-    This article was prepared with the help of AI from an initial human-written
-skeleton.  ChatGPT 5.6 Sol found both examples and supplied the proofs.  The
-Lean formalisation was carried out by Claude Code.  We have aimed to cite related
-work that may have informed this process; see <xref ref="rem-earlier-work"/>.
-<xref ref="sec-discovery"/> describes how we used ChatGPT in the search for these
-examples, and <xref ref="sec-formalisation"/> records the formal definitions and
-theorem statements.
+    The examples and proofs we will describe here were found with the help of
+ChatGPT 5.6 Sol.  In <xref ref="sec-discovery"/> we describe how we used ChatGPT in
+the search for these examples.  The Lean formalisation was carried out by
+Claude Code, and <xref ref="sec-formalisation"/> records the formal definitions and
+theorem statements.  This article was prepared with the help of AI from an
+initial human-written skeleton.
   </p>
   <p>
-    Our first example is the <q>finite-jet pullback</q>.  This is a
-non-noetherian uniform integral domain for which a distinguished rational
+    Our first example is what the AI calls the <q>finite-jet pullback</q> example.
+This is a non-noetherian uniform integral domain for which a certain rational
 localisation is non-reduced, and hence is no longer uniform.  Let <m>k</m> be a
 complete discretely valued nonarchimedean field, with valuation ring
 <m>k^\circ</m>, uniformizer <m>\varpi</m>, and residue field <m>\widetilde{k}</m>.  Put
@@ -65,9 +64,8 @@ so <m>A</m> is not stably uniform.
     <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_isSheafyFor_of_dvr">Lean (finiteJet_isSheafyFor_of_dvr)</lean>
   </theorem>
   <p>
-    After the rational localisation
+    The key element in this example is that after the rational localisation
 <m>A\to A\langle W/\varpi\rangle</m>, <m>Q^2</m> vanishes whereas <m>Q</m> does not.
-Thus the chart is non-reduced although <m>A</m> is a domain.
   </p>
   <p>
     This construction also gives a new example solving Problems<nbsp/>24 and 28 of the
@@ -86,12 +84,12 @@ complete Tate setting is used by Kerz<ndash/>Saito<ndash/>Tamme in their work on
       <p>
         A commutative square of complete Tate <m>k</m>-algebras
 <me>\begin{matrix}
-R&amp;\longrightarrow&amp;C\\
+A&amp;\longrightarrow&amp;C\\
 \downarrow&amp;&amp;\downarrow\\
 B&amp;\longrightarrow&amp;D
 \end{matrix}</me>
 is a <em>strict Milnor square</em> if it is cartesian, the sequence of underlying topological <m>k</m>-vector spaces
-<me>0\longrightarrow R\longrightarrow B\oplus C
+<me>0\longrightarrow A\longrightarrow B\oplus C
   \xrightarrow{\ (b,c)\mapsto \bar b-\bar c\ }D\longrightarrow 0</me>
 is strict exact, and <m>C\to D</m> is a strict surjection.
       </p>
@@ -105,7 +103,8 @@ kernel of the second.  The nonarchimedean open mapping theorem
 Our main input is that,
 for this finite-jet square, the strict exact row persists after completed rational
 localisation and is compatible with refinement.  This transfers sheafiness from
-<m>B,C,D</m> to <m>A</m>.  The second example shows that the failure of stable uniformity
+<m>B,C,D</m> to <m>A</m>, giving new ways for proving that these rings are sheafy.  The
+second example shows that the failure of stable uniformity
 need not come from a non-reduced localisation.
   </p>
   <remark xml:id="rem-earlier-work">

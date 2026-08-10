@@ -22,9 +22,15 @@ pages also link to the pinned source on GitHub.  The
 <url href="https://github.com/CBirkbeck/uniform-sheafy-tate-domains/blob/main/PAPERFORGE_CHECK.md">verification report</url>
 records the Lean and mathlib versions, the build, and the axiom checks.
     </p>
+    <p>
+      The code excerpts below retain the mathematically meaningful bodies of
+definitions.  Proof fields which only verify closure are omitted.  For
+theorems we display only the statement and replace the proof by <c>...</c>;
+the links give the complete Lean declarations and their checked proofs.
+    </p>
   </introduction>
-  <subsection xml:id="sec-formalisation-sheafiness">
-    <title>Sheafiness</title>
+  <subsection xml:id="sec-formalisation-the-rational-cover-predicate-issheafy">
+    <title>The rational-cover predicate <c>IsSheafy</c></title>
     <definition xml:id="def-lean-rational-sheafiness">
       <title>The rational-cover predicate</title>
       <statement>
@@ -81,6 +87,9 @@ identifies this with the usual compatibility on pairwise intersections.  Thus
       <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="ValuationSpectrum.presheafValue">Lean (completed rational localisation)</lean>
       <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="ValuationSpectrum.IsSheafy">Lean (rational-cover sheaf condition)</lean>
     </definition>
+  </subsection>
+  <subsection xml:id="sec-formalisation-comparison-with-mathlib-s-sheaf">
+    <title>Comparison with Mathlib's sheaf predicate</title>
     <definition xml:id="def-lean-open-sections">
       <title>Sections on arbitrary opens</title>
       <statement>
@@ -119,7 +128,7 @@ it is not an additional hypothesis in our results.
     (hle : ∀ i, U i ≤ V)
     (_ : (V : Set ↥(Spa A A⁺)) ⊆ ⋃ i, (U i : Set ↥(Spa A A⁺)))
     (s : ∀ i, ↥(limitSections (U i))),
-    (∀ i j,
+    (∀ i j : ι,
       limitRestrict (inf_le_left (a := U i) (b := U j)) (s i) =
       limitRestrict (inf_le_right (a := U i) (b := U j)) (s j)) →
     ∃ x : ↥(limitSections V), ∀ i, limitRestrict (hle i) x = s i
@@ -152,9 +161,8 @@ equivalent:
         </p>
         <pre>
         theorem isSheafy_iff_isLimitSheaf :
-    IsSheafy A ↔ IsLimitSheaf A :=
-  ⟨fun _ => isLimitSheaf_of_isSheafy,
-    isSheafy_of_isLimitSheaf⟩
+    IsSheafy A ↔ IsLimitSheaf A := by
+  ...
         </pre>
         <p>
           The forward implication is the sheaf-on-a-rational-basis theorem, and the
@@ -162,24 +170,41 @@ converse is restriction to rational covers.  For a bundled presheaf <m>F</m>,
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/TopCat.Presheaf.IsSheafOfTopologicalRings.html"><c>F.IsSheafOfTopologicalRings</c></url>
 means that, for every topological commutative ring <m>T</m>, the presheaf
 <m>U\mapsto\operatorname{Hom}_{\mathrm{cont}}(T,F(U))</m> is a sheaf of sets.
-This is Wedhorn's representable formulation <xref ref="bib-Wedhorn" detail="Remark 8.20"/>.  For
-the structure presheaf the formalisation proves:
+This is Wedhorn's representable formulation <xref ref="bib-Wedhorn" detail="Remark 8.20"/>:
+        </p>
+        <pre>
+        def IsSheafOfTopologicalRings : Prop :=
+  ∀ (T : Type u) (_ : CommRing T) (_ : TopologicalSpace T)
+    (_ : IsTopologicalRing T), ∀ {ι : Type u} (U : ι → Opens X)
+    (f : ∀ i, {g : T →+* (F.obj (op (U i)) : Type u) //
+      Continuous g}),
+    (∀ i j,
+      (F.map (homOfLE (inf_le_left (a := U i) (b := U j))).op).1.comp
+          (f i).1 =
+        (F.map (homOfLE (inf_le_right (a := U i) (b := U j))).op).1.comp
+          (f j).1) →
+    ∃! g : {g : T →+* (F.obj (op (iSup U)) : Type u) //
+      Continuous g},
+      ∀ i, (F.map (homOfLE (le_iSup U i)).op).1.comp g.1 = (f i).1
+        </pre>
+        <p>
+          For the structure presheaf the formalisation proves:
         </p>
         <pre>
         theorem structurePresheaf_isSheafOfTopologicalRings_iff :
     TopCat.Presheaf.IsSheafOfTopologicalRings
         (structurePresheaf A) ↔
-      IsLimitSheaf A
+      IsLimitSheaf A := by
+  ...
         </pre>
         <p>
           The
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.structurePresheaf_isSheafOfTopologicalRings_iff.html">preceding theorem</url>,
-together with <c>isSheafy_iff_isLimitSheaf</c>, gives explicitly
+together with <c>isSheafy_iff_isLimitSheaf</c>, gives
+<me>\texttt{IsSheafy A}
+  \quad\Longleftrightarrow\quad
+  \texttt{(structurePresheaf A).IsSheafOfTopologicalRings}.</me>
         </p>
-        <pre>
-        IsSheafy A ↔
-  (structurePresheaf A).IsSheafOfTopologicalRings
-        </pre>
         <p>
           Thus the bundled <c>IsSheafOfTopologicalRings</c> condition and the
 rational-cover condition used in the proofs are equivalent; neither is merely
@@ -196,7 +221,8 @@ is
         theorem isSheafOfTopologicalRings_iff_forgetToTopCommRingCat_isSheaf :
     F.IsSheafOfTopologicalRings ↔
       TopCat.Presheaf.IsSheaf
-        (F ⋙ CompleteTopCommRingCat.forgetToTopCommRingCat)
+        (F ⋙ CompleteTopCommRingCat.forgetToTopCommRingCat) := by
+  ...
         </pre>
         <p>
           The functor in this statement forgets completeness and separatedness, but not
@@ -210,20 +236,38 @@ and is only a consequence of Wedhorn's condition.
         <p>
           Specialising the comparison to the structure presheaf gives the
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.structurePresheaf_forgetToTopCommRingCat_isSheaf_iff.html">all-open equivalence</url>.
-Combining it with the rational-basis theorem above gives the
+Its statement is
+        </p>
+        <pre>
+        theorem structurePresheaf_forgetToTopCommRingCat_isSheaf_iff :
+    TopCat.Presheaf.IsSheaf
+        (structurePresheaf A ⋙
+          CompleteTopCommRingCat.forgetToTopCommRingCat) ↔
+      IsLimitSheaf A := by
+  ...
+        </pre>
+        <p>
+          Combining this with the rational-basis theorem above gives the
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf.html">final comparison</url>:
         </p>
         <pre>
-        theorem isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf :
+        theorem isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf
+    [DecidableEq A] [DecidableEq (RationalLocData A)] [IsTateRing A]
+    [IsRingOfIntegralElements (A⁺ : Subring A)] [T2Space A]
+    [NonarchimedeanRing A]
+    [letI : UniformSpace A :=
+      IsTopologicalAddGroup.rightUniformSpace A; CompleteSpace A] :
     IsSheafy A ↔
       TopCat.Presheaf.IsSheaf
         (structurePresheaf A ⋙
-          CompleteTopCommRingCat.forgetToTopCommRingCat)
+          CompleteTopCommRingCat.forgetToTopCommRingCat) := by
+  ...
         </pre>
         <p>
-          Thus all three predicates are equivalent.  We use <c>IsSheafy</c> because
-it is the convenient form for the arguments in this paper, not because it
-defines a weaker or stronger notion of sheafiness.
+          Thus the rational-cover predicate, the all-open predicate, Wedhorn's Hom-sheaf
+condition, and Mathlib's categorical predicate are equivalent.  We use
+<c>IsSheafy</c> because it is the convenient form for the arguments in this
+paper, not because it defines a weaker or stronger notion of sheafiness.
         </p>
       </statement>
       <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="ValuationSpectrum.isSheafy_iff_isLimitSheaf">Lean (rational covers ↔ all opens)</lean>
@@ -233,6 +277,9 @@ defines a weaker or stronger notion of sheafiness.
       <lean project="AdicSpaces" commit="d92f96504f949ca43a27a817cb8d2f70b6486744" ref="ValuationSpectrum.structurePresheaf_forgetToTopCommRingCat_isSheaf_iff">Lean (Mathlib ↔ all opens)</lean>
       <lean project="AdicSpaces" commit="d92f96504f949ca43a27a817cb8d2f70b6486744" ref="ValuationSpectrum.isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf">Lean (IsSheafy ↔ Mathlib IsSheaf)</lean>
     </remark>
+  </subsection>
+  <subsection xml:id="sec-formalisation-choice-independent-sheafiness-for-tate">
+    <title>Choice-independent sheafiness for Tate rings</title>
     <p>
       For a complete Tate ring the following definitions fix a ring of integral
 elements and then remove the choices of plus ring and completion.  They are in
@@ -329,25 +376,15 @@ noncomputable def jetSupport : Subring (JetC K) where
     qCoeff K 0 f ∈ nonnegSubring K ∧
     qCoeff K 1 f ∈ nonnegSubring K}
   zero_mem' := by
-    constructor &lt;;> rw [qCoeff_zero] &lt;;> exact zero_mem _
+    ...
   one_mem' := by
-    constructor &lt;;> rw [qCoeff_one]
-    · rw [if_pos rfl]; exact one_mem _
-    · rw [if_neg one_ne_zero]; exact zero_mem _
-  add_mem' := fun {f g} hf hg => by
-    constructor &lt;;> rw [qCoeff_add]
-    · exact add_mem hf.1 hg.1
-    · exact add_mem hf.2 hg.2
-  neg_mem' := fun {f} hf => by
-    constructor &lt;;> rw [qCoeff_neg]
-    · exact neg_mem hf.1
-    · exact neg_mem hf.2
-  mul_mem' := fun {f g} hf hg => by
-    constructor
-    · rw [qCoeff_zero_mul]
-      exact mul_mem hf.1 hg.1
-    · rw [qCoeff_one_mul]
-      exact add_mem (mul_mem hf.1 hg.2) (mul_mem hf.2 hg.1)
+    ...
+  add_mem' := by
+    ...
+  neg_mem' := by
+    ...
+  mul_mem' := by
+    ...
 
 abbrev JetA : Type u := ↥(jetSupport K)
         </pre>
@@ -382,11 +419,8 @@ condition in the following theorem:
     <pre>
     include ϖ hK₀ in
 theorem isSheafy_JetA :
-    ValuationSpectrum.IsSheafy (JetA K) where
-  embedding := fun C hC =>
-    productRestrictionSub_isEmbedding_JetA ϖ hK₀ C hC
-  gluing := fun C hC f hcompat =>
-    gluing_JetA ϖ hK₀ C hC f hcompat
+    ValuationSpectrum.IsSheafy (JetA K) := by
+  ...
     </pre>
     <p>
       Here <m>\varpi</m> is a <c>Uniformizer K</c>, and the remaining input is the
@@ -397,34 +431,32 @@ choice-independent statements.  The main theorems are collected in
 and include the following.
     </p>
     <pre>
-    theorem finiteJet_isDomain : IsDomain (JetA K) :=
-  inferInstance
+    theorem finiteJet_isDomain : IsDomain (JetA K) := by
+  ...
 
 theorem finiteJet_not_noetherian :
-    ¬ IsNoetherianRing (JetA K) :=
-  not_isNoetherianRing_JetA K
+    ¬ IsNoetherianRing (JetA K) := by
+  ...
 
 theorem finiteJet_isUniform_of_dvr
     [IsDiscreteValuationRing 𝒪[K]] :
-    TopologicalRing.IsUniform (JetA K) :=
-  finiteJet_isUniform K (Uniformizer.ofDVR K)
+    TopologicalRing.IsUniform (JetA K) := by
+  ...
 
 theorem finiteJet_not_stablyUniform_of_dvr
     [IsDiscreteValuationRing 𝒪[K]] :
-    ¬ TopologicalRing.IsStablyUniform (JetA K) :=
-  finiteJet_not_stablyUniform K (Uniformizer.ofDVR K)
+    ¬ TopologicalRing.IsStablyUniform (JetA K) := by
+  ...
 
 theorem finiteJet_isSheafyFor_of_dvr
     [IsDiscreteValuationRing 𝒪[K]] :
-    IsSheafyFor (JetA K) (finiteJetPlus K) :=
-  finiteJet_isSheafyFor K (Uniformizer.ofDVR K)
-    (isNoetherianRing_unitBall K)
+    IsSheafyFor (JetA K) (finiteJetPlus K) := by
+  ...
 
 theorem finiteJet_isSheafyTateRing_of_dvr
     [IsDiscreteValuationRing 𝒪[K]] :
-    IsSheafyTateRing (JetA K) :=
-  finiteJet_isSheafyTateRing K (Uniformizer.ofDVR K)
-    (isNoetherianRing_unitBall K)
+    IsSheafyTateRing (JetA K) := by
+  ...
     </pre>
     <p>
       Here <m>K</m> is any complete nontrivially normed ultrametric field for which
@@ -513,7 +545,8 @@ theorem finiteJet_problem28 :
     IsStrictMap (fun a : JetA F => scottishWitness F * a) ∧
     IsClosed (Set.range
       fun a : JetA F => scottishWitness F * a) ∧
-    (chartDatum F).canonicalMap (scottishWitness F) = 0
+    (chartDatum F).canonicalMap (scottishWitness F) = 0 := by
+  ...
     </pre>
     <p>
       For Problem<nbsp/>24, Lean uses the module structure induced by the canonical map
@@ -611,46 +644,44 @@ explicit in the development, although it is not bundled as an
     </p>
     <pre>
     theorem weightedParity_isUniform_of_dvr :
-    IsUniform (WPAid K) :=
-  weightedParity_isUniform (Uniformizer.ofDVR K)
+    IsUniform (WPAid K) := by
+  ...
 
 theorem weightedParity_isDomain :
-    IsDomain (WPAid K) :=
-  inferInstance
+    IsDomain (WPAid K) := by
+  ...
 
 theorem weightedParity_not_noetherian :
-    ¬ IsNoetherianRing (WPAid K) :=
-  not_isNoetherianRing_WPA K idWeight idWeight_pos
+    ¬ IsNoetherianRing (WPAid K) := by
+  ...
 
 theorem weightedParity_powerBounded_eq_unitBall
     (ϖ : Uniformizer K) :
     powerBoundedSubring (WPAid K) =
-      (FiniteJet.unitBall (WPAid K) : Set (WPAid K)) :=
-  powerBoundedSubring_eq_unitBall ϖ
+      (FiniteJet.unitBall (WPAid K) : Set (WPAid K)) := by
+  ...
 
 theorem weightedParity_isSheafyComplete_of_dvr :
-    IsSheafyComplete (WPAid K) :=
-  weightedParity_isSheafyComplete (Uniformizer.ofDVR K)
-    (FiniteJetOver.isNoetherianRing_unitBall K)
+    IsSheafyComplete (WPAid K) := by
+  ...
 
 theorem weightedParity_chart_isDomain
     (ϖ : Uniformizer K)
     (hK₀ : IsNoetherianRing (FiniteJet.unitBall K)) :
     IsDomain (presheafValue
-      (chartDatum (w := idWeight) ϖ)) :=
-  isDomain_chart ϖ hK₀
+      (chartDatum (w := idWeight) ϖ)) := by
+  ...
 
 theorem weightedParity_chart_not_isUniform
     (ϖ : Uniformizer K)
     (hK₀ : IsNoetherianRing (FiniteJet.unitBall K)) :
     ¬ IsUniform (presheafValue
-      (chartDatum (w := idWeight) ϖ)) :=
-  not_isUniform_chart idWeight_unbounded ϖ hK₀
+      (chartDatum (w := idWeight) ϖ)) := by
+  ...
 
 theorem weightedParity_not_stablyUniform_of_dvr :
-    ¬ IsStablyUniform (WPAid K) :=
-  weightedParity_not_stablyUniform (Uniformizer.ofDVR K)
-    (FiniteJetOver.isNoetherianRing_unitBall K)
+    ¬ IsStablyUniform (WPAid K) := by
+  ...
     </pre>
     <p>
       Here <c>IsSheafyComplete</c> is the predicate defined above: it quantifies
