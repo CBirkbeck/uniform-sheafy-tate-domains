@@ -10,8 +10,9 @@ explicitly <xref ref="bib-HK" detail="Remark 3.16"/>; it is also Question<nbsp/>
 <em>Nonarchimedean Scottish Book</em> <xref ref="bib-Scottish"/>.  The answer is no.
   </p>
   <p>
-    ChatGPT 5.6 Sol found both examples and supplied the proofs.  The Lean
-formalisation was carried out by Claude Code.  We have aimed to cite related
+    This article was prepared with the help of AI from an initial human-written
+skeleton.  ChatGPT 5.6 Sol found both examples and supplied the proofs.  The
+Lean formalisation was carried out by Claude Code.  We have aimed to cite related
 work that may have informed this process; see <xref ref="rem-earlier-work"/>.
 <xref ref="sec-discovery"/> describes how we used ChatGPT in the search for these
 examples, and <xref ref="sec-formalisation"/> records the formal definitions and
