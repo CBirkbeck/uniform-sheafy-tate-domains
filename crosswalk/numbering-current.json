@@ -32,22 +32,10 @@
    "number": "2",
    "section": "2"
   },
-  "eq-strictness": {
-   "kind": "equation",
-   "label": "eq:strictness",
-   "number": "(1)",
-   "section": "2"
-  },
-  "eq-graph-ideal-definition": {
-   "kind": "equation",
-   "label": "eq:graph-ideal-definition",
-   "number": "(2)",
-   "section": "2"
-  },
   "eq-graph-model": {
    "kind": "equation",
    "label": "eq:graph-model",
-   "number": "(3)",
+   "number": "(1)",
    "section": "2"
   },
   "sec-the-global-ring": {
@@ -59,25 +47,19 @@
   "eq-integral-milnor": {
    "kind": "equation",
    "label": "eq:integral-milnor",
-   "number": "(4)",
+   "number": "(2)",
    "section": "3"
   },
   "eq-coefficient-A0": {
    "kind": "equation",
    "label": "eq:coefficient-A0",
-   "number": "(5)",
-   "section": "3"
-  },
-  "eq-monomial-support": {
-   "kind": "equation",
-   "label": "eq:monomial-support",
-   "number": "(6)",
+   "number": "(3)",
    "section": "3"
   },
   "eq-structural-map-bounds": {
    "kind": "equation",
    "label": "eq:structural-map-bounds",
-   "number": "(7)",
+   "number": "(4)",
    "section": "3"
   },
   "prop-uniform-domain": {
@@ -101,7 +83,7 @@
   "eq-q2-killed-on-chart": {
    "kind": "equation",
    "label": "eq:q2-killed-on-chart",
-   "number": "(8)",
+   "number": "(5)",
    "section": "4"
   },
   "prop-not-stably-uniform": {
@@ -131,13 +113,13 @@
   "eq-ideal-denominators": {
    "kind": "equation",
    "label": "eq:ideal-denominators",
-   "number": "(9)",
+   "number": "(6)",
    "section": "5"
   },
   "eq-syzygy-denominators": {
    "kind": "equation",
    "label": "eq:syzygy-denominators",
-   "number": "(10)",
+   "number": "(7)",
    "section": "5"
   },
   "sec-localisation-of-the-milnor-square-the-defining-ideals-under-pullback": {
@@ -149,7 +131,7 @@
   "eq-tate-ambient": {
    "kind": "equation",
    "label": "eq:tate-ambient",
-   "number": "(11)",
+   "number": "(8)",
    "section": "5"
   },
   "lem-graph-pullback": {
@@ -161,19 +143,13 @@
   "eq-ideal-row": {
    "kind": "equation",
    "label": "eq:ideal-row",
-   "number": "(12)",
+   "number": "(9)",
    "section": "5"
   },
   "prop-localized-milnor": {
    "kind": "proposition",
    "label": "prop:localized-milnor",
    "number": "5.3",
-   "section": "5"
-  },
-  "eq-localized-row": {
-   "kind": "equation",
-   "label": "eq:localized-row",
-   "number": "(13)",
    "section": "5"
   },
   "sec-sheafiness": {
@@ -221,37 +197,31 @@
   "eq-parity-weight": {
    "kind": "equation",
    "label": "eq:parity-weight",
-   "number": "(14)",
+   "number": "(10)",
    "section": "8"
   },
   "eq-parity-monoid": {
    "kind": "equation",
    "label": "eq:parity-monoid",
-   "number": "(15)",
+   "number": "(11)",
    "section": "8"
   },
   "eq-omega-subadditive": {
    "kind": "equation",
    "label": "eq:omega-subadditive",
-   "number": "(16)",
+   "number": "(12)",
    "section": "8"
   },
   "eq-parity-gauss-norm": {
    "kind": "equation",
    "label": "eq:parity-gauss-norm",
-   "number": "(17)",
+   "number": "(13)",
    "section": "8"
   },
   "eq-parity-algebra": {
    "kind": "equation",
    "label": "eq:parity-algebra",
-   "number": "(18)",
-   "section": "8"
-  },
-  "eq-parity-ring-of-definition": {
-   "kind": "equation",
-   "label": "eq:parity-ring-of-definition",
-   "number": "(19)",
+   "number": "(14)",
    "section": "8"
   },
   "lem-finite-variable-subrings": {
@@ -263,13 +233,13 @@
   "eq-finite-variable-decomposition": {
    "kind": "equation",
    "label": "eq:finite-variable-decomposition",
-   "number": "(20)",
+   "number": "(15)",
    "section": "8"
   },
   "eq-A-completion-finite-variables": {
    "kind": "equation",
    "label": "eq:A-completion-finite-variables",
-   "number": "(21)",
+   "number": "(16)",
    "section": "8"
   },
   "prop-parity-uniform-domain": {
@@ -302,28 +272,16 @@
    "number": "8.3",
    "section": "8"
   },
-  "eq-coefficient-monomial": {
-   "kind": "equation",
-   "label": "eq:coefficient-monomial",
-   "number": "(22)",
-   "section": "8"
-  },
   "eq-coefficient-decomposition": {
    "kind": "equation",
    "label": "eq:coefficient-decomposition",
-   "number": "(23)",
+   "number": "(17)",
    "section": "8"
   },
   "eq-coefficient-multiplication": {
    "kind": "equation",
    "label": "eq:coefficient-multiplication",
-   "number": "(24)",
-   "section": "8"
-  },
-  "eq-finite-variable-retraction": {
-   "kind": "equation",
-   "label": "eq:finite-variable-retraction",
-   "number": "(25)",
+   "number": "(18)",
    "section": "8"
   },
   "prop-coefficientwise-localization": {
@@ -332,28 +290,10 @@
    "number": "8.6",
    "section": "8"
   },
-  "eq-coefficientwise-localization": {
-   "kind": "equation",
-   "label": "eq:coefficientwise-localization",
-   "number": "(26)",
-   "section": "8"
-  },
-  "eq-coefficientwise-restriction": {
-   "kind": "equation",
-   "label": "eq:coefficientwise-restriction",
-   "number": "(27)",
-   "section": "8"
-  },
   "cor-finite-variable-presentation": {
    "kind": "corollary",
    "label": "cor:finite-variable-presentation",
    "number": "8.7",
-   "section": "8"
-  },
-  "eq-arbitrary-finite-variable-presentation": {
-   "kind": "equation",
-   "label": "eq:arbitrary-finite-variable-presentation",
-   "number": "(28)",
    "section": "8"
   },
   "sec-second-example-a-reduced-nonuniform-rational-chart": {
@@ -362,28 +302,22 @@
    "number": "8.4",
    "section": "8"
   },
-  "eq-weighted-chart-lattice": {
+  "eq-weighted-chart-ring": {
    "kind": "equation",
-   "label": "eq:weighted-chart-lattice",
-   "number": "(29)",
+   "label": "eq:weighted-chart-ring",
+   "number": "(19)",
    "section": "8"
   },
   "eq-weighted-chart-norm": {
    "kind": "equation",
    "label": "eq:weighted-chart-norm",
-   "number": "(30)",
+   "number": "(20)",
    "section": "8"
   },
   "prop-weighted-chart-identification": {
    "kind": "proposition",
    "label": "prop:weighted-chart-identification",
    "number": "8.8",
-   "section": "8"
-  },
-  "eq-weighted-chart-identification": {
-   "kind": "equation",
-   "label": "eq:weighted-chart-identification",
-   "number": "(31)",
    "section": "8"
   },
   "prop-weighted-chart-domain-nonuniform": {

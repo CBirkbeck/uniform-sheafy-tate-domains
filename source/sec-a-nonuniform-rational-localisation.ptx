@@ -103,8 +103,7 @@ homomorphisms.
       <p>
         In <m>T=k\langle X,Q\rangle/(Q^2)</m>, every element of the line <m>kQ</m> is nilpotent and hence power-bounded.  This line is not bounded with respect to the ring of definition <m>T_0</m>: for every <m>r\geq 0</m>,
 <me>\varpi^r\bigl(\varpi^{-(r+1)}Q\bigr)=\varpi^{-1}Q\notin T_0.</me>
-Thus <m>T</m> is not uniform.  By <xref ref="prop-bad-chart"/>, a rational localisation of the
-uniform ring <m>A</m> is nonuniform.
+Thus <m>T</m> is not uniform.  By <xref ref="prop-bad-chart"/>, <m>A_\alpha</m> is not uniform.
       </p>
     </proof>
   </proposition>

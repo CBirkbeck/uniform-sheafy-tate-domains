@@ -10,9 +10,9 @@ We first record the strict Koszul estimate needed for the proof.
   <subsection xml:id="sec-localisation-of-the-milnor-square-koszul-complexes-for-rational-localisations">
     <title>Koszul complexes for rational localisations</title>
     <p>
-      Let <m>E</m> be one of <m>B,C,D</m>, with its coefficientwise Gauss norm and the
-displayed unit ball <m>E_0</m>.  Let <m>f_1,\dots,f_m,g\in E_0</m> generate the unit
-ideal in <m>E</m>.  Put
+      Let <m>E</m> be one of <m>B,C,D</m>, equipped with its coefficientwise Gauss norm, and
+let <m>E_0</m> denote its unit ball.  Let <m>f_1,\dots,f_m,g\in E_0</m> generate the
+unit ideal in <m>E</m>.  Put
 <me>T_E=E\langle T_1,\dots,T_m\rangle,
   \qquad
   T_{E,0}=E_0\langle T_1,\dots,T_m\rangle,</me>
@@ -20,12 +20,10 @@ and set <m>r_i=gT_i-f_i</m>.
     </p>
     <p>
       We give <m>T_E</m> the topology for which
-<m>\{\varpi^nT_{E,0}\}_{n\geq0}</m> is a basis of neighbourhoods of zero.  The term
-<m>\bigwedge^qT_E^m</m> has the finite-module topology defined by the lattice
-<m>\bigwedge^qT_{E,0}^m</m>; equivalently, in the standard exterior basis it has the
-finite product topology.  Images have the subspace topology.  Thus a
-differential is strict when it is open onto its image, or equivalently when its
-coimage is homeomorphic to its image.
+<m>\{\varpi^nT_{E,0}\}_{n\geq0}</m> is a basis of neighbourhoods of zero.  In the
+standard exterior basis, <m>\bigwedge^qT_E^m</m> has the finite product topology,
+and each image has the subspace topology.  Thus a differential is strict
+precisely when it is open onto its image.
     </p>
     <p>
       Applied to <m>E\in\{B,C,D\}</m>, the strict Koszul regularity theorem of
@@ -33,8 +31,8 @@ Bambozzi<ndash/>Kremnizer
 <xref ref="bib-BK" detail="Notation 4.3, Definitions 4.5--4.6, Proposition 4.9,
 Lemma 4.11, and Corollary 4.13"/> gives the exactness, strictness, and
 closed-image assertions below.  We include the direct proof followed in the
-formalisation because the two estimates relative to the displayed lattices
-are not stated there and are needed below.
+formalisation because the two bounds <xref ref="eq-ideal-denominators"/> and
+<xref ref="eq-syzygy-denominators"/> are not stated there and are needed below.
     </p>
     <lemma xml:id="lem-koszul">
       <statement>
@@ -178,8 +176,8 @@ coefficientwise, gives <m>u_A\in T_A^m</m> mapping to this pair.  Then
 <m>d_{1,A}(u_A)</m> maps to <m>(x_B,x_C)</m>.
         </p>
         <p>
-          The three displayed inequalities, continuity of <m>d_{2,C}</m>, and the
-norm-preserving coefficientwise section give a constant <m>C</m>, independent
+          These bounds, continuity of <m>d_{2,C}</m>, and the norm-preserving
+coefficientwise section give a constant <m>C</m>, independent
 of <m>(x_B,x_C)</m>, for which <m>x_A=d_{1,A}(u_A)</m> satisfies
 <me>\lVert x_A\rVert\leq
   C\max\{\lVert x_B\rVert,\lVert x_C\rVert\}.</me>
@@ -211,9 +209,9 @@ This proves <xref ref="eq-ideal-row"/>.
       <statement>
         <p>
           For every rational datum <m>\alpha</m> in <m>A</m>, the canonical sequence
-          <men xml:id="eq-localized-row">0\longrightarrow A_\alpha\longrightarrow
-  B_\alpha\oplus C_\alpha\longrightarrow D_\alpha\longrightarrow 0</men>
-          is strict exact, and <m>C_\alpha\to D_\alpha</m> is a strict surjection.  Equivalently,
+<me>0\longrightarrow A_\alpha\longrightarrow
+  B_\alpha\oplus C_\alpha\longrightarrow D_\alpha\longrightarrow 0</me>
+is strict exact, and <m>C_\alpha\to D_\alpha</m> is a strict surjection.  Equivalently,
 <me>A_\alpha\cong B_\alpha\times_{D_\alpha}C_\alpha.</me>
 The coefficient maps used in these identifications commute with rational
 restriction.
@@ -244,7 +242,7 @@ defect in <m>T_D</m> belongs to <m>I_D</m>.  Lift this defect to an element of <
 using the strict surjection in <xref ref="eq-ideal-row"/>, and add it to <m>c</m>.
 The corrected representatives agree in <m>T_D</m>, so
 <xref ref="eq-tate-ambient"/> lifts them to <m>T_A</m>.  This proves
-<xref ref="eq-localized-row"/>.
+algebraic exactness.
         </p>
         <p>
           For the topology on the left, let <m>x\in A_\alpha</m> and put

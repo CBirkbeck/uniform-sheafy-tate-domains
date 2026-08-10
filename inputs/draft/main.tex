@@ -1,4 +1,4 @@
-\documentclass[11pt]{amsart}
+\documentclass[11pt,reqno]{amsart}
 
 \usepackage[margin=1.15in]{geometry}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
@@ -132,8 +132,9 @@ However,
 so $A$ is not stably uniform.
 \end{theorem}
 
-Thus $Q$ remains nonzero on this rational chart, whereas $Q^2$ vanishes.
-This is why the chart is non-reduced although $A$ is a domain.
+After the rational localisation
+$A\to A\langle W/\varpi\rangle$, $Q^2$ vanishes whereas $Q$ does not.
+Thus the chart is non-reduced although $A$ is a domain.
 
 This construction also gives a new example solving Problems~24 and 28 of the
 \emph{Nonarchimedean Scottish Book}.  We recall the two problems and give the
@@ -190,7 +191,7 @@ localisation to these cases \cite[Lemmas~5.13--5.14]{BBK}.
 Bambozzi--Kremnizer formulate rational localisation in terms of Koszul
 complexes and prove strict Koszul regularity
 \cite[Notation~4.3, Definitions~4.5--4.6, Proposition~4.9,
-Lemma~4.11, and Corollary~4.13]{BK}.  The lattice estimates in
+Lemma~4.11, and Corollary~4.13]{BK}.  The bounded-denominator estimates in
 \Cref{lem:koszul} are the form needed to show that rational localisation
 preserves the finite-jet Milnor square.  The resulting uniform sheafy domain
 which is not stably uniform appears to be new.
@@ -220,7 +221,7 @@ Throughout, $E$ denotes a complete Tate $k$-algebra.  In the discretely valued s
   \qquad
   \{\varpi^nE_0\}_{n\geq0}
 \]
-is a basis of neighbourhoods of zero.  Such an $E_0$ is called a \emph{ring of definition}.  We always choose it closed, hence $\varpi$-adically complete.  A subset of $E$ is bounded if it is contained in $\varpi^{-r}E_0$ for some $r\geq0$.  If $M$ is a complete topological $k$-vector space, an open bounded $k^\circ$-submodule $M_0\subset M$ will be called a lattice.
+is a basis of neighbourhoods of zero.  Such an $E_0$ is called a \emph{ring of definition}.  We always choose it closed, hence $\varpi$-adically complete.  A subset of $E$ is bounded if it is contained in $\varpi^{-r}E_0$ for some $r\geq0$.
 
 \item \emph{Uniformity and noetherianity.}
 We write $E^\circ$ for the ring of power-bounded elements.  The ring $E$ is
@@ -238,11 +239,11 @@ with the subspace of $\prod_i\mathcal O(U_i)$ consisting of tuples whose
 restrictions to every $U_i\cap U_j$ agree.
 
 \item \emph{Strictness.}
-We use the following bounded-denominator form of strictness.  Let $u:M\to N$ be a continuous $k$-linear map and choose lattices $M_0\subset M$ and $N_0\subset N$.  Then $u$ is strict if and only if there exists $a\geq0$ such that
-\begin{equation}\label{eq:strictness}
+We use the following bounded-denominator form of strictness.  Let $u:M\to N$ be a continuous $k$-linear map, and let $M_0\subset M$ and $N_0\subset N$ be open bounded $k^\circ$-submodules.  Then $u$ is strict if and only if there exists $a\geq0$ such that
+\[
   \varpi^a\bigl(u(M)\cap N_0\bigr)\subset u(M_0).
-\end{equation}
-For a surjection this becomes $\varpi^aN_0\subset u(M_0)$.  For an injection it says that the lattice induced from the target is bounded in the source.  This is the criterion used by Buzzard--Verberkmoes \cite[Lemma~2]{BV}.  We use the term \emph{strict Milnor square} in the sense of \Cref{def:strict-milnor}; the underlying algebraic terminology is standard \cite{Milnor,KST}.
+\]
+For a surjection this becomes $\varpi^aN_0\subset u(M_0)$.  For an injection it says that the inverse image of $N_0$ is bounded in $M$.  This is the criterion used by Buzzard--Verberkmoes \cite[Lemma~2]{BV}.  We use the term \emph{strict Milnor square} in the sense of \Cref{def:strict-milnor}; the underlying algebraic terminology is standard \cite{Milnor,KST}.
 
 \item \emph{Rational localisation.}
 We take every rational datum to have at least one numerator; an empty list may be
@@ -268,14 +269,14 @@ domain, and it is transitive under rational refinement.  Put
   \qquad r_i=gT_i-f_i,
 \]
 and
-\begin{equation}\label{eq:graph-ideal-definition}
+\[
   I_{E,\alpha}:=(r_1,\dots,r_m)
   =\operatorname{im}\left(
     T_E^m\xrightarrow{\ d_{1,E}\ }T_E
   \right)\subset T_E,
   \qquad
   d_{1,E}(u_1,\dots,u_m)=\sum_i u_i(gT_i-f_i),
-\end{equation}
+\]
 Then
 \begin{equation}\label{eq:graph-model}
   E_\alpha\cong T_E/\overline{I_{E,\alpha}}.
@@ -338,8 +339,6 @@ A&\longrightarrow&C\\
 B&\longrightarrow&D.
 \end{matrix}
 \]
-In fact, the chosen rings of definition already make the integral row exact, so no powers of $\varpi$ are lost in the defining square.
-
 
 The map $B_0\to D_0$ is injective.  Projection to $C_0$ therefore identifies $A_0$ with the subring
 \begin{equation}\label{eq:coefficient-A0}
@@ -351,16 +350,16 @@ The map $B_0\to D_0$ is injective.  Projection to $C_0$ therefore identifies $A_
   \right\}.
 \end{equation}
 Equivalently, $A_0$ consists of the restricted series
-\begin{equation}\label{eq:monomial-support}
+\[
   \sum_{(a,b)\in S}c_{a,b}W^aQ^b,
   \qquad
   S=\{(a,b)\in\mathbb Z\times\mathbb N: b\leq 1\Rightarrow a\geq 0\},
-\end{equation}
+\]
 with $c_{a,b}\in k^\circ$.  Here restricted means that, for every $n$, only finitely many coefficients are nonzero modulo $\varpi^n$.  The set $S$ is closed under addition, so this is a subring of $C_0$.  The same description with coefficients in $k$ gives $A\subset C$.
 
 
-Equip $A,B,C,D$ with the coefficientwise Gauss norms whose unit balls are the
-displayed rings of definition.  Write
+Equip $A,B,C,D$ with the coefficientwise Gauss norms whose unit balls are
+$A_0,B_0,C_0,D_0$, respectively.  Write
 \[
   \iota_B:A\to B,\qquad \iota_C:A\to C,\qquad
   \rho_B:B\to D,\qquad \rho_C:C\to D
@@ -404,15 +403,15 @@ Thus $A^\circ=A_0$, and the unit ball is bounded, so $A$ is uniform.
 
 To see that $A$ is not noetherian, let $J=\ker(\iota_B)=Q^2C\subset A$.  If $J$ were
 generated by $a_1,\ldots,a_r$, write $b_i\in L$ for the coefficient of $Q^2$
-in $a_i$.  For every $\ell\in L$ we could write
+in $a_i$.  In this case, for every $\ell\in L$, we could then write
 \[
   Q^2\ell=\sum_i x_i a_i,\qquad x_i\in A,
 \]
 and write $c_i$ for the constant coefficient of $x_i$ as a series in $Q$.
-By \cref{eq:coefficient-A0}, we have $c_i\in k\langle W\rangle$.  Since
+By \eqref{eq:coefficient-A0}, we have $c_i\in k\langle W\rangle$.  Since
 $a_i\in Q^2C$, its coefficients in degrees $0$ and $1$ vanish.  The
-coefficient of $Q^2$ in $x_i a_i$ is therefore exactly $c_i b_i$.  Taking the
-coefficient of $Q^2$ in the displayed equality gives
+coefficient of $Q^2$ in $x_i a_i$ is therefore exactly $c_i b_i$.
+Comparing the coefficients of $Q^2$ on both sides gives
 \[
   \ell=\sum_i c_i b_i,\qquad c_i\in k\langle W\rangle.
 \]
@@ -538,8 +537,7 @@ In $T=k\langle X,Q\rangle/(Q^2)$, every element of the line $kQ$ is nilpotent an
 \[
   \varpi^r\bigl(\varpi^{-(r+1)}Q\bigr)=\varpi^{-1}Q\notin T_0.
 \]
-Thus $T$ is not uniform.  By \Cref{prop:bad-chart}, a rational localisation of the
-uniform ring $A$ is nonuniform.
+Thus $T$ is not uniform.  By \Cref{prop:bad-chart}, $A_\alpha$ is not uniform.
 \end{proof}
 
 
@@ -550,9 +548,9 @@ We first record the strict Koszul estimate needed for the proof.
 
 \subsection{Koszul complexes for rational localisations}
 
-Let $E$ be one of $B,C,D$, with its coefficientwise Gauss norm and the
-displayed unit ball $E_0$.  Let $f_1,\dots,f_m,g\in E_0$ generate the unit
-ideal in $E$.  Put
+Let $E$ be one of $B,C,D$, equipped with its coefficientwise Gauss norm, and
+let $E_0$ denote its unit ball.  Let $f_1,\dots,f_m,g\in E_0$ generate the
+unit ideal in $E$.  Put
 \[
   T_E=E\langle T_1,\dots,T_m\rangle,
   \qquad
@@ -561,20 +559,18 @@ ideal in $E$.  Put
 and set $r_i=gT_i-f_i$.
 
 We give $T_E$ the topology for which
-$\{\varpi^nT_{E,0}\}_{n\geq0}$ is a basis of neighbourhoods of zero.  The term
-$\bigwedge^qT_E^m$ has the finite-module topology defined by the lattice
-$\bigwedge^qT_{E,0}^m$; equivalently, in the standard exterior basis it has the
-finite product topology.  Images have the subspace topology.  Thus a
-differential is strict when it is open onto its image, or equivalently when its
-coimage is homeomorphic to its image.
+$\{\varpi^nT_{E,0}\}_{n\geq0}$ is a basis of neighbourhoods of zero.  In the
+standard exterior basis, $\bigwedge^qT_E^m$ has the finite product topology,
+and each image has the subspace topology.  Thus a differential is strict
+precisely when it is open onto its image.
 
 Applied to $E\in\{B,C,D\}$, the strict Koszul regularity theorem of
 Bambozzi--Kremnizer
 \cite[Notation~4.3, Definitions~4.5--4.6, Proposition~4.9,
 Lemma~4.11, and Corollary~4.13]{BK} gives the exactness, strictness, and
 closed-image assertions below.  We include the direct proof followed in the
-formalisation because the two estimates relative to the displayed lattices
-are not stated there and are needed below.
+formalisation because the two bounds \eqref{eq:ideal-denominators} and
+\eqref{eq:syzygy-denominators} are not stated there and are needed below.
 
 \begin{lemma}\label{lem:koszul}
 The Koszul complex
@@ -734,8 +730,8 @@ $T_D^m$ now agree.  Exactness of \eqref{eq:tate-ambient}, applied
 coefficientwise, gives $u_A\in T_A^m$ mapping to this pair.  Then
 $d_{1,A}(u_A)$ maps to $(x_B,x_C)$.
 
-The three displayed inequalities, continuity of $d_{2,C}$, and the
-norm-preserving coefficientwise section give a constant $C$, independent
+These bounds, continuity of $d_{2,C}$, and the norm-preserving
+coefficientwise section give a constant $C$, independent
 of $(x_B,x_C)$, for which $x_A=d_{1,A}(u_A)$ satisfies
 \[
   \lVert x_A\rVert\leq
@@ -766,10 +762,10 @@ This proves \eqref{eq:ideal-row}.
 
 \begin{proposition}\label{prop:localized-milnor}
 For every rational datum $\alpha$ in $A$, the canonical sequence
-\begin{equation}\label{eq:localized-row}
+\[
   0\longrightarrow A_\alpha\longrightarrow
   B_\alpha\oplus C_\alpha\longrightarrow D_\alpha\longrightarrow 0
-\end{equation}
+\]
 is strict exact, and $C_\alpha\to D_\alpha$ is a strict surjection.  Equivalently,
 \[
   A_\alpha\cong B_\alpha\times_{D_\alpha}C_\alpha.
@@ -796,7 +792,7 @@ defect in $T_D$ belongs to $I_D$.  Lift this defect to an element of $I_C$
 using the strict surjection in \eqref{eq:ideal-row}, and add it to $c$.
 The corrected representatives agree in $T_D$, so
 \eqref{eq:tate-ambient} lifts them to $T_A$.  This proves
-\eqref{eq:localized-row}.
+algebraic exactness.
 
 For the topology on the left, let $x\in A_\alpha$ and put
 \[
@@ -961,7 +957,7 @@ instead caused by an unbounded family of nonnilpotent power-bounded elements.
 There is a complete Tate $k$-algebra $\mathcal A$ with the following properties.
 \begin{enumerate}
 \item $\mathcal A$ is a uniform, non-noetherian integral domain and
-      $\mathcal A^\circ=\mathcal A_0$ for the ring of definition displayed below.
+      $\mathcal A^\circ=\mathcal A_0$, where $\mathcal A_0$ is defined below.
 \item The Huber pair $(\mathcal A,\mathcal A^\circ)$ is sheafy.
 \item The rational localisation
       \[
@@ -1011,13 +1007,13 @@ Its completion is
 where convergence to zero is over the discrete index set $S$.  Local finiteness makes the
 coefficientwise convolution finite, and the submultiplicativity of the Gauss norm on $k[S]$
 extends multiplication continuously to $\mathcal A$.  Put
-\begin{equation}\label{eq:parity-ring-of-definition}
+\[
   \mathcal A_0=
   \left\{
     \sum_{(a,\nu)\in S}c_{a,\nu}W^aU^\nu\in\mathcal A:
     c_{a,\nu}\in k^\circ
   \right\}.
-\end{equation}
+\]
 Then $\mathcal A_0$ is the closed unit ball for \eqref{eq:parity-gauss-norm}, it is
 $\varpi$-adically complete, and
 $\mathcal A=\mathcal A_0[1/\varpi]$.
@@ -1172,9 +1168,9 @@ universal property \cite[Proposition~1.3]{Huber94}.
 Fix $N\in\mathbb N$.  Let
 $\mu=(\mu_n)_{n>N}$ be a finitely supported family of nonnegative integers
 and put
-\begin{equation}\label{eq:coefficient-monomial}
+\[
   e_\mu=W^{\omega(\mu)}U^\mu,
-\end{equation}
+\]
 where $\mu$ is extended by zero for $n\leq N$.  Every
 $f\in\mathcal A$ has a unique convergent expression
 \begin{equation}\label{eq:coefficient-decomposition}
@@ -1195,35 +1191,35 @@ Multiplication is determined by
    e_{\mu+\lambda}.
 \end{equation}
 The map
-\begin{equation}\label{eq:finite-variable-retraction}
+\[
   \rho_N:\mathcal A\longrightarrow\mathcal A^{(N)},
   \qquad
   \sum_\mu f_\mu e_\mu\longmapsto f_0,
-\end{equation}
+\]
 is a norm-nonincreasing ring retraction.
 
 \begin{proposition}[Coefficientwise localisation]\label{prop:coefficientwise-localization}
 Let $\alpha$ be a rational datum whose entries lie in
 $\mathcal A^{(N)}$, and put
 $P=(\mathcal A^{(N)})_\alpha$.  There is a bicontinuous ring isomorphism
-\begin{equation}\label{eq:coefficientwise-localization}
+\[
   \mathcal A_\alpha
   \xrightarrow{\ \sim\ }
   \left\{
     \sum_\mu p_\mu e_\mu:
     p_\mu\in P,\quad \lVert p_\mu\rVert\longrightarrow0
   \right\}.
-\end{equation}
+\]
 The ring on the right has the supremum norm, and its multiplication is
 given by \eqref{eq:coefficient-multiplication}, with $W$ replaced by its
 image in $P$.  If a rational refinement is also represented by data in
 $\mathcal A^{(N)}$ and $P\to P'$ is the corresponding restriction map,
 then the induced restriction sends
-\begin{equation}\label{eq:coefficientwise-restriction}
+\[
   \sum_\mu p_\mu e_\mu
   \longmapsto
   \sum_\mu (p_\mu|_{P'})e_\mu.
-\end{equation}
+\]
 \end{proposition}
 
 \begin{proof}
@@ -1262,24 +1258,23 @@ and \eqref{eq:coefficient-multiplication} shows that it is multiplicative.
 The composite $\Phi\Psi$ fixes every term $p e_\mu$, and hence every
 finite sum of such terms.  These finite sums are dense.  The other composite
 fixes the dense image of $\mathcal A[1/g]$.  Continuity therefore gives
-$\Phi\Psi=1$ and $\Psi\Phi=1$, proving
-\eqref{eq:coefficientwise-localization}.
+$\Phi\Psi=1$ and $\Psi\Phi=1$.  This proves the claimed isomorphism.
 
 If $P\to P'$ comes from a rational refinement, all the maps just used
 commute with this restriction map.  On a finite sum, restriction simply
-applies $P\to P'$ to each coefficient; continuity gives
-\eqref{eq:coefficientwise-restriction} for every convergent sum.
+applies $P\to P'$ to each coefficient; continuity gives the stated formula
+for every convergent sum.
 \end{proof}
 
 \begin{corollary}[Finite-variable presentation]\label{cor:finite-variable-presentation}
 Every rational localisation of $\mathcal A$ is bicontinuously isomorphic
 to a ring of the form
-\begin{equation}\label{eq:arbitrary-finite-variable-presentation}
+\[
   \left\{
     \sum_\mu p_\mu e_\mu:
     p_\mu\in P,\quad \lVert p_\mu\rVert\longrightarrow0
   \right\},
-\end{equation}
+\]
 where $P$ is a rational localisation of one of the strongly noetherian Tate
 rings $\mathcal A^{(N)}$.
 \end{corollary}
@@ -1309,7 +1304,7 @@ rational datum in $\mathcal A^{(N)}$.  Now apply
 
 The ideal $(W,\varpi)$ is open because $\varpi$ is a unit of $\mathcal A$.
 Define the complete $k^\circ$-algebra
-\begin{equation}\label{eq:weighted-chart-lattice}
+\begin{equation}\label{eq:weighted-chart-ring}
   \mathcal B_0=
   \left\{
     \sum_{\substack{\nu\in\mathbb N^{(I)},\ d\geq\omega(\nu)}}
@@ -1329,11 +1324,11 @@ $\mathcal B=\mathcal B_0[1/\varpi]$.
 
 \begin{proposition}\label{prop:weighted-chart-identification}
 There is a bicontinuous ring isomorphism
-\begin{equation}\label{eq:weighted-chart-identification}
+\[
   \mathcal A\left\langle\frac{W}{\varpi}\right\rangle
   \xrightarrow{\ \sim\ }\mathcal B,
   \qquad W\longmapsto\varpi X.
-\end{equation}
+\]
 \end{proposition}
 
 \begin{proof}
@@ -1358,7 +1353,7 @@ rational chart as the ring of sums
   \qquad p_\nu\in P,\qquad \lVert p_\nu\rVert\longrightarrow0.
 \]
 Under $P\cong k\langle X\rangle$, this is precisely the model
-\eqref{eq:weighted-chart-lattice}.  Its sup norm is
+\eqref{eq:weighted-chart-ring}.  Its sup norm is
 \eqref{eq:weighted-chart-norm}, because the term indexed by $\nu$ is
 multiplied by $\varpi^{\omega(\nu)}$.  The map from
 $\mathcal A^{(0)}$ sends $W$ to $\varpi X$.
@@ -1722,7 +1717,7 @@ theorem structurePresheaf_isSheafOfTopologicalRings_iff :
 \end{lstlisting}
 
 The
-\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.structurePresheaf_isSheafOfTopologicalRings_iff.html}{displayed theorem},
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.structurePresheaf_isSheafOfTopologicalRings_iff.html}{preceding theorem},
 together with \texttt{isSheafy\_iff\_isLimitSheaf}, gives explicitly
 
 \begin{lstlisting}
@@ -1888,7 +1883,7 @@ unrestricted.  Thus \texttt{JetA K} is
               h\in L\langle Q\rangle}\right\},
 \]
 which is the coefficient description of $A$ in
-\cref{eq:coefficient-A0} after inverting $\varpi$.
+\eqref{eq:coefficient-A0} after inverting $\varpi$.
 \end{definition}
 
 The file also constructs the four maps in the Milnor square and proves
@@ -1896,7 +1891,7 @@ The file also constructs the four maps in the Milnor square and proves
 \texttt{JetB K} and \texttt{JetC K} comes from a unique element of
 \texttt{JetA K}.  This identifies \texttt{JetA K} with
 $B\times_D C$.  The sheaf argument produces the finite-rational-cover
-condition displayed above:
+condition in the following theorem:
 
 \begin{lstlisting}
 include ϖ hK₀ in
@@ -2053,7 +2048,8 @@ closed-ideal theorem.  The closed-range theorem gives a constant
 $C_{q,E}$ such that every $y\in\im(d_{q,E})$ has a preimage $x$ with
 $\lVert x\rVert\leq C_{q,E}\lVert y\rVert$.  This proves strictness, and
 multiplying such a preimage by a suitable power of $\varpi$ gives the two
-displayed denominator inclusions.
+denominator inclusions \eqref{eq:ideal-denominators} and
+\eqref{eq:syzygy-denominators}.
 
 The Lean proof of \Cref{lem:graph-pullback} uses these inequalities directly.
 Its localisation proof obtains the topological embedding from a quotient-norm
@@ -2086,7 +2082,10 @@ The definitions
 \href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.wpWeight.html}{\texttt{wpWeight}},
 \href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.WPMem.html}{\texttt{WPMem}}, and
 \href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.wpSupport.html}{\texttt{wpSupport}}
-are the direct translation of \eqref{eq:parity-weight}--\eqref{eq:parity-algebra}.
+are the direct translation of the formula for $\omega$ in
+\eqref{eq:parity-weight}, the definition of $S$ in
+\eqref{eq:parity-monoid}, and the description of
+$\mathcal A$ in \eqref{eq:parity-algebra}.
 The relevant part of the definition is as follows.
 
 \begin{lstlisting}

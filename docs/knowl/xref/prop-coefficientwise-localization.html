@@ -24,22 +24,22 @@
 <div class="para logical">
 <div class="para">Let <span class="process-math">\(\alpha\)</span> be a rational datum whose entries lie in <span class="process-math">\(\mathcal A^{(N)}\text{,}\)</span> and put <span class="process-math">\(P=(\mathcal A^{(N)})_\alpha\text{.}\)</span>  There is a bicontinuous ring isomorphism</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-coefficient-multiplication.html">
-\begin{equation}
+\begin{equation*}
 \mathcal A_\alpha
 \xrightarrow{\ \sim\ }
 \left\{
 \sum_\mu p_\mu e_\mu:
 p_\mu\in P,\quad \lVert p_\mu\rVert\longrightarrow0
-\right\}.\tag{8.13}
-\end{equation}
+\right\}.
+\end{equation*}
 </div>
-<div class="para">The ring on the right has the supremum norm, and its multiplication is given by <a href="#eq-coefficient-multiplication" class="xref" data-knowl="./knowl/xref/eq-coefficient-multiplication.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.11">(8.11)</a>, with <span class="process-math">\(W\)</span> replaced by its image in <span class="process-math">\(P\text{.}\)</span>  If a rational refinement is also represented by data in <span class="process-math">\(\mathcal A^{(N)}\)</span> and <span class="process-math">\(P\to P'\)</span> is the corresponding restriction map, then the induced restriction sends</div>
+<div class="para">The ring on the right has the supremum norm, and its multiplication is given by <a href="#eq-coefficient-multiplication" class="xref" data-knowl="./knowl/xref/eq-coefficient-multiplication.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.9">(8.9)</a>, with <span class="process-math">\(W\)</span> replaced by its image in <span class="process-math">\(P\text{.}\)</span>  If a rational refinement is also represented by data in <span class="process-math">\(\mathcal A^{(N)}\)</span> and <span class="process-math">\(P\to P'\)</span> is the corresponding restriction map, then the induced restriction sends</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-coefficient-multiplication.html">
-\begin{equation}
+\begin{equation*}
 \sum_\mu p_\mu e_\mu
 \longmapsto
-\sum_\mu (p_\mu|_{P'})e_\mu.\tag{8.14}
-\end{equation}
+\sum_\mu (p_\mu|_{P'})e_\mu.
+\end{equation*}
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -48,7 +48,7 @@ p_\mu\in P,\quad \lVert p_\mu\rVert\longrightarrow0
 <details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
 <article class="hiddenproof knowl__content">
 <div class="para logical">
-<div class="para">Apply the canonical map <span class="process-math">\(\mathcal A^{(N)}\to P\)</span> to every coefficient in <a href="#eq-coefficient-decomposition" class="xref" data-knowl="./knowl/xref/eq-coefficient-decomposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.10">(8.10)</a>.  This gives a continuous homomorphism</div>
+<div class="para">Apply the canonical map <span class="process-math">\(\mathcal A^{(N)}\to P\)</span> to every coefficient in <a href="#eq-coefficient-decomposition" class="xref" data-knowl="./knowl/xref/eq-coefficient-decomposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.8">(8.8)</a>.  This gives a continuous homomorphism</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-coefficient-decomposition.html">
 \begin{equation*}
 \Phi_0:\mathcal A\longrightarrow
@@ -77,12 +77,12 @@ p_\mu\in P,\quad \lVert p_\mu\rVert\longrightarrow0
 \sum_\mu p_\mu e_\mu
 \end{equation*}
 </div>
-<div class="para">converges in <span class="process-math">\(\mathcal A_\alpha\text{.}\)</span>  The resulting map <span class="process-math">\(\Psi\)</span> is continuous, and <a href="#eq-coefficient-multiplication" class="xref" data-knowl="./knowl/xref/eq-coefficient-multiplication.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.11">(8.11)</a> shows that it is multiplicative.</div>
+<div class="para">converges in <span class="process-math">\(\mathcal A_\alpha\text{.}\)</span>  The resulting map <span class="process-math">\(\Psi\)</span> is continuous, and <a href="#eq-coefficient-multiplication" class="xref" data-knowl="./knowl/xref/eq-coefficient-multiplication.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.9">(8.9)</a> shows that it is multiplicative.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para">The composite <span class="process-math">\(\Phi\Psi\)</span> fixes every term <span class="process-math">\(p e_\mu\text{,}\)</span> and hence every finite sum of such terms.  These finite sums are dense.  The other composite fixes the dense image of <span class="process-math">\(\mathcal A[1/g]\text{.}\)</span>  Continuity therefore gives <span class="process-math">\(\Phi\Psi=1\)</span> and <span class="process-math">\(\Psi\Phi=1\text{,}\)</span> proving <a href="#eq-coefficientwise-localization" class="xref" data-knowl="./knowl/xref/eq-coefficientwise-localization.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.13">(8.13)</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-7-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">The composite <span class="process-math">\(\Phi\Psi\)</span> fixes every term <span class="process-math">\(p e_\mu\text{,}\)</span> and hence every finite sum of such terms.  These finite sums are dense.  The other composite fixes the dense image of <span class="process-math">\(\mathcal A[1/g]\text{.}\)</span>  Continuity therefore gives <span class="process-math">\(\Phi\Psi=1\)</span> and <span class="process-math">\(\Psi\Phi=1\text{.}\)</span>  This proves the claimed isomorphism.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-7-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para">If <span class="process-math">\(P\to P'\)</span> comes from a rational refinement, all the maps just used commute with this restriction map.  On a finite sum, restriction simply applies <span class="process-math">\(P\to P'\)</span> to each coefficient; continuity gives <a href="#eq-coefficientwise-restriction" class="xref" data-knowl="./knowl/xref/eq-coefficientwise-restriction.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.14">(8.14)</a> for every convergent sum.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-7-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">If <span class="process-math">\(P\to P'\)</span> comes from a rational refinement, all the maps just used commute with this restriction map.  On a finite sum, restriction simply applies <span class="process-math">\(P\to P'\)</span> to each coefficient; continuity gives the stated formula for every convergent sum.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-coefficientwise-localization-7-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Proof 8.6.1"><a tabindex="-1" href="#prop-coefficientwise-localization-7" title="Copy heading and permalink for Proof 8.6.1" aria-label="Copy heading and permalink for Proof 8.6.1">🔗</a></div>
 </article></details><span class="incontext"><a class="internal" href="#prop-coefficientwise-localization">In Context</a></span>

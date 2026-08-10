@@ -8,6 +8,15 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:import href="core-local/latex-classic.xsl"/>
   <xsl:variable name="documentclass" select="'amsart'"/>
+  <!-- amsart defaults to equation numbers on the left.  Retain the
+       publication's one-/two-sided choice and request right-hand numbers. -->
+  <xsl:template name="sidedness">
+    <xsl:choose>
+      <xsl:when test="$latex-sides = 'one'"><xsl:text>oneside</xsl:text></xsl:when>
+      <xsl:when test="$latex-sides = 'two'"><xsl:text>twoside</xsl:text></xsl:when>
+    </xsl:choose>
+    <xsl:text>,reqno</xsl:text>
+  </xsl:template>
   <xsl:param name="latex.preamble.early">
     <xsl:text>\usepackage{booktabs}&#xa;</xsl:text>
     <xsl:text>\usepackage{xurl}&#xa;</xsl:text>

@@ -173,7 +173,7 @@ the structure presheaf the formalisation proves:
         </pre>
         <p>
           The
-<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.structurePresheaf_isSheafOfTopologicalRings_iff.html">displayed theorem</url>,
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.structurePresheaf_isSheafOfTopologicalRings_iff.html">preceding theorem</url>,
 together with <c>isSheafy_iff_isLimitSheaf</c>, gives explicitly
         </p>
         <pre>
@@ -377,7 +377,7 @@ which is the coefficient description of <m>A</m> in
 <c>JetB K</c> and <c>JetC K</c> comes from a unique element of
 <c>JetA K</c>.  This identifies <c>JetA K</c> with
 <m>B\times_D C</m>.  The sheaf argument produces the finite-rational-cover
-condition displayed above:
+condition in the following theorem:
     </p>
     <pre>
     include ϖ hK₀ in
@@ -536,7 +536,8 @@ closed-ideal theorem.  The closed-range theorem gives a constant
 <m>C_{q,E}</m> such that every <m>y\in\im(d_{q,E})</m> has a preimage <m>x</m> with
 <m>\lVert x\rVert\leq C_{q,E}\lVert y\rVert</m>.  This proves strictness, and
 multiplying such a preimage by a suitable power of <m>\varpi</m> gives the two
-displayed denominator inclusions.
+denominator inclusions <xref ref="eq-ideal-denominators"/> and
+<xref ref="eq-syzygy-denominators"/>.
     </p>
     <p>
       The Lean proof of <xref ref="lem-graph-pullback"/> uses these inequalities directly.
@@ -571,7 +572,10 @@ The definitions
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.wpWeight.html"><c>wpWeight</c></url>,
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.WPMem.html"><c>WPMem</c></url>, and
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.wpSupport.html"><c>wpSupport</c></url>
-are the direct translation of <xref ref="eq-parity-weight"/><ndash/><xref ref="eq-parity-algebra"/>.
+are the direct translation of the formula for <m>\omega</m> in
+<xref ref="eq-parity-weight"/>, the definition of <m>S</m> in
+<xref ref="eq-parity-monoid"/>, and the description of
+<m>\mathcal A</m> in <xref ref="eq-parity-algebra"/>.
 The relevant part of the definition is as follows.
     </p>
     <pre>

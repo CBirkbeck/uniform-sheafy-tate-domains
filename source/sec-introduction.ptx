@@ -64,8 +64,9 @@ so <m>A</m> is not stably uniform.
     <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_isSheafyFor_of_dvr">Lean (finiteJet_isSheafyFor_of_dvr)</lean>
   </theorem>
   <p>
-    Thus <m>Q</m> remains nonzero on this rational chart, whereas <m>Q^2</m> vanishes.
-This is why the chart is non-reduced although <m>A</m> is a domain.
+    After the rational localisation
+<m>A\to A\langle W/\varpi\rangle</m>, <m>Q^2</m> vanishes whereas <m>Q</m> does not.
+Thus the chart is non-reduced although <m>A</m> is a domain.
   </p>
   <p>
     This construction also gives a new example solving Problems<nbsp/>24 and 28 of the
@@ -129,7 +130,7 @@ localisation to these cases <xref ref="bib-BBK" detail="Lemmas 5.13--5.14"/>.
 Bambozzi<ndash/>Kremnizer formulate rational localisation in terms of Koszul
 complexes and prove strict Koszul regularity
 <xref ref="bib-BK" detail="Notation 4.3, Definitions 4.5--4.6, Proposition 4.9,
-Lemma 4.11, and Corollary 4.13"/>.  The lattice estimates in
+Lemma 4.11, and Corollary 4.13"/>.  The bounded-denominator estimates in
 <xref ref="lem-koszul"/> are the form needed to show that rational localisation
 preserves the finite-jet Milnor square.  The resulting uniform sheafy domain
 which is not stably uniform appears to be new.

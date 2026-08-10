@@ -18,7 +18,7 @@ Throughout, <m>E</m> denotes a complete Tate <m>k</m>-algebra.  In the discretel
 <me>E=E_0[1/\varpi],
   \qquad
   \{\varpi^nE_0\}_{n\geq0}</me>
-is a basis of neighbourhoods of zero.  Such an <m>E_0</m> is called a <em>ring of definition</em>.  We always choose it closed, hence <m>\varpi</m>-adically complete.  A subset of <m>E</m> is bounded if it is contained in <m>\varpi^{-r}E_0</m> for some <m>r\geq0</m>.  If <m>M</m> is a complete topological <m>k</m>-vector space, an open bounded <m>k^\circ</m>-submodule <m>M_0\subset M</m> will be called a lattice.
+is a basis of neighbourhoods of zero.  Such an <m>E_0</m> is called a <em>ring of definition</em>.  We always choose it closed, hence <m>\varpi</m>-adically complete.  A subset of <m>E</m> is bounded if it is contained in <m>\varpi^{-r}E_0</m> for some <m>r\geq0</m>.
       </p>
     </li>
     <li>
@@ -45,9 +45,9 @@ restrictions to every <m>U_i\cap U_j</m> agree.
     <li>
       <p>
         <em>Strictness.</em>
-We use the following bounded-denominator form of strictness.  Let <m>u:M\to N</m> be a continuous <m>k</m>-linear map and choose lattices <m>M_0\subset M</m> and <m>N_0\subset N</m>.  Then <m>u</m> is strict if and only if there exists <m>a\geq0</m> such that
-        <men xml:id="eq-strictness">\varpi^a\bigl(u(M)\cap N_0\bigr)\subset u(M_0).</men>
-        For a surjection this becomes <m>\varpi^aN_0\subset u(M_0)</m>.  For an injection it says that the lattice induced from the target is bounded in the source.  This is the criterion used by Buzzard<ndash/>Verberkmoes <xref ref="bib-BV" detail="Lemma 2"/>.  We use the term <em>strict Milnor square</em> in the sense of <xref ref="def-strict-milnor"/>; the underlying algebraic terminology is standard <xref ref="bib-Milnor"/>, <xref ref="bib-KST"/>.
+We use the following bounded-denominator form of strictness.  Let <m>u:M\to N</m> be a continuous <m>k</m>-linear map, and let <m>M_0\subset M</m> and <m>N_0\subset N</m> be open bounded <m>k^\circ</m>-submodules.  Then <m>u</m> is strict if and only if there exists <m>a\geq0</m> such that
+<me>\varpi^a\bigl(u(M)\cap N_0\bigr)\subset u(M_0).</me>
+For a surjection this becomes <m>\varpi^aN_0\subset u(M_0)</m>.  For an injection it says that the inverse image of <m>N_0</m> is bounded in <m>M</m>.  This is the criterion used by Buzzard<ndash/>Verberkmoes <xref ref="bib-BV" detail="Lemma 2"/>.  We use the term <em>strict Milnor square</em> in the sense of <xref ref="def-strict-milnor"/>; the underlying algebraic terminology is standard <xref ref="bib-Milnor"/>, <xref ref="bib-KST"/>.
       </p>
     </li>
     <li>
@@ -71,13 +71,13 @@ domain, and it is transitive under rational refinement.  Put
   =E_0\langle T_1,\dots,T_m\rangle[1/\varpi],
   \qquad r_i=gT_i-f_i,</me>
 and
-        <men xml:id="eq-graph-ideal-definition">I_{E,\alpha}:=(r_1,\dots,r_m)
+<me>I_{E,\alpha}:=(r_1,\dots,r_m)
   =\operatorname{im}\left(
     T_E^m\xrightarrow{\ d_{1,E}\ }T_E
   \right)\subset T_E,
   \qquad
-  d_{1,E}(u_1,\dots,u_m)=\sum_i u_i(gT_i-f_i),</men>
-        Then
+  d_{1,E}(u_1,\dots,u_m)=\sum_i u_i(gT_i-f_i),</me>
+Then
         <men xml:id="eq-graph-model">E_\alpha\cong T_E/\overline{I_{E,\alpha}}.</men>
         Here the bar is necessary until the ideal has been shown to be closed.  This is the
 standard quotient presentation of rational localisation; see
