@@ -79,22 +79,28 @@ uniformity, and their strong sheafiness have been formalised in Lean~4.
 
 \section{Introduction}
 
-The examples of Buzzard--Verberkmoes and Mihara show that uniformity can be
-lost on a rational chart and, separately, that a uniform Tate Huber ring need
-not be sheafy \cite{BV,Mihara}.  They leave open whether every uniform sheafy
-Tate Huber ring is stably uniform.  Hansen and Kedlaya ask this explicitly
-\cite[Remark~3.16]{HK}; it is also Question~7 of Kedlaya's
+Work of Buzzard--Verberkmoes and, separately, Mihara shows that every stably
+uniform Tate Huber ring is sheafy, but leaves open whether every uniform sheafy
+Tate Huber ring is stably uniform \cite{BV,Mihara}.  Hansen and Kedlaya ask
+this explicitly \cite[Remark~3.16]{HK}; it is also Question~7 of Kedlaya's
 \emph{Nonarchimedean Scottish Book} \cite{Scottish}.  We answer this question
-in the negative.  In fact, we prove that both examples are strongly sheafy.
+by constructing uniform and sheafy Tate rings that are not stably uniform.  In
+fact, we prove the stronger statement that both examples are strongly sheafy.
+Both are non-noetherian, so neither Huber's theorem for strongly noetherian
+Tate rings nor the stably uniform criterion applies.
 
-The examples and proofs we will describe here were found with the help of
-ChatGPT 5.6 Sol.  In \Cref{sec:discovery} we describe how we used ChatGPT in
-the search for these examples.  The Lean formalisation was carried out by
-Claude Code, and \cref{sec:formalisation} records the formal definitions and
-theorem statements.  This article was prepared with the help of AI from an
-initial human-written skeleton.
+The examples and proofs described here were found with the help of AI agents,
+specifically ChatGPT 5.6 Sol.  In \Cref{sec:discovery} we describe how we used
+ChatGPT in the search for these examples.  Every result discussed here has
+also been fully formalised in Lean by Claude Code, and
+\cref{sec:formalisation} records the formal definitions and theorem
+statements.  This article was prepared with the help of AI from an initial
+human-written skeleton.  We have kept many of the names given to our objects
+by the AI systems.  This is a conscious choice intended to make it easier to
+trace sources that may have influenced their work; see
+\Cref{rem:earlier-work}.
 
-Our first example is what the AI calls the ``finite-jet pullback'' example.
+We start with the ``finite-jet pullback'' example.
 This is a non-noetherian uniform integral domain for which a certain rational
 localisation is non-reduced, and hence is no longer uniform.  Let $k$ be a
 complete discretely valued nonarchimedean field, with valuation ring
@@ -134,13 +140,12 @@ However,
 so $A$ is not stably uniform.
 \end{theorem}
 
-The key element in this example is that after the rational localisation
-$A\to A\langle W/\varpi\rangle$, $Q^2$ vanishes whereas $Q$ does not.
-
 This construction also gives a new example solving Problems~24 and 28 of the
 \emph{Nonarchimedean Scottish Book}.  We recall the two problems and give the
-argument in \cref{sec:problems-24-28}.  These results have also been formalised
-in Lean.
+argument in \cref{sec:problems-24-28}.
+
+The key element in this example is that after the rational localisation
+$A\to A\langle W/\varpi\rangle$, $Q^2$ vanishes whereas $Q$ does not.
 
 The proof uses Milnor squares of complete Tate rings.  Recall that a cartesian square of
 rings with a surjective leg is called a Milnor square \cite[Section~2]{Milnor}; the
@@ -1039,12 +1044,7 @@ instead caused by an unbounded family of non-nilpotent power-bounded elements.
 
 The formal statements in this section use the following base hypotheses:
 $k$ is a complete nontrivially normed ultrametric field, its norm unit ball is
-noetherian, and $\varpi$ is a chosen uniformizer (equivalently here, an
-irreducible element of the norm unit ball).  A complete discretely valued
-field supplies these hypotheses.  The domain, uniformity, and
-non-noetherianity arguments below use only the indicated parts of this
-package; the noetherianity of the unit ball enters the localisation and
-sheafiness results.
+noetherian, and $\varpi$ is a chosen uniformizer.
 
 \begin{theorem}\label{thm:second-example}
 Let $w:\mathbb N_{>0}\to\mathbb N$ satisfy $w(n)\geq1$ for every $n$ and
@@ -1197,56 +1197,97 @@ $k$-algebra and an integral domain, with
 \end{proposition}
 
 \begin{proof}
-The Gauss norm on the countable restricted Tate algebra
-$k\langle W,U_1,U_2,\ldots\rangle$ is multiplicative.  To see this, note
-first that only finitely many coefficients attain the nonzero supremum, since
-the coefficients tend to zero.  Order the finite-support exponent vectors by
-comparing them at the largest index where they differ.  This is an additive
-total order.  For each of two nonzero series choose the largest
-norm-attaining exponent.  In the coefficient of the sum of these two
-exponents, the product of the chosen coefficients strictly dominates every
-other convolution term.  The ultrametric inequality therefore gives
+Let $f$ and $g$ be nonzero elements of
+$k\langle W,U_1,U_2,\ldots\rangle$.  Since their coefficients tend to zero,
+each Gauss norm is attained by a coefficient.  After dividing $f$ and $g$ by
+coefficients of maximal norm, we may assume that
 \[
-  \lVert fg\rVert_G=\lVert f\rVert_G\lVert g\rVert_G.
+  \lVert f\rVert_G=\lVert g\rVert_G=1.
 \]
-This is the countable restricted-series argument used in the formalisation,
-whose Lean implementation uses William Coram's restricted-power-series code
-\cite{CoramCode}.  The support algebra $\mathcal A$ is a closed isometric
-subring of this Tate algebra, so its Gauss norm is multiplicative and it is a
-domain.
+Only finitely many coefficients of either series then have norm $1$.
+Consequently, reduction modulo the maximal ideal of $k^\circ$ gives nonzero
+polynomials
+\[
+  \overline f,\overline g
+  \in \widetilde{k}[W,U_1,U_2,\ldots].
+\]
+This polynomial ring is an integral domain, so
+$\overline f\,\overline g\neq0$.  Reduction commutes with multiplication:
+for each monomial, its coefficient in a product is a finite sum.  Hence some
+coefficient of $fg$ has norm $1$, and therefore
+\[
+  \lVert fg\rVert_G\geq1.
+\]
+The reverse inequality follows from submultiplicativity of the Gauss norm.
+Thus $\lVert fg\rVert_G=1$, and rescaling gives
+\[
+  \lVert fg\rVert_G=\lVert f\rVert_G\lVert g\rVert_G
+\]
+in general.
 
-If $x\in\mathcal A_0$, all powers of $x$ remain in $\mathcal A_0$.  If
-$x\notin\mathcal A_0$, multiplicativity gives
-$\lVert x^m\rVert_G=\lVert x\rVert_G^m$, which is unbounded.  Hence
-$\mathcal A^\circ=\mathcal A_0$.  Completeness and the Tate property follow from
+The algebra $\mathcal A$ is a closed subring of this restricted Tate algebra,
+and its norm is the restriction of the Gauss norm.  Its norm is therefore
+multiplicative, and $\mathcal A$ is an integral domain.
+
+If $x\in\mathcal A_0$, then $\lVert x\rVert_G\leq1$, so every power of $x$
+also lies in $\mathcal A_0$.  If $x\notin\mathcal A_0$, then
+$\lVert x\rVert_G>1$, and multiplicativity gives
+\[
+  \lVert x^m\rVert_G=\lVert x\rVert_G^m,
+\]
+which is unbounded.  Hence $\mathcal A^\circ=\mathcal A_0$.  The subring
+$\mathcal A_0$ is the norm unit ball and hence bounded, so
+$\mathcal A$ is uniform.  Completeness and the Tate property follow from
 \eqref{eq:parity-algebra} and the topologically nilpotent unit $\varpi$.
 \end{proof}
+
+The multiplicativity argument for the countable restricted Tate algebra has
+also been formalised in Lean, using William Coram's restricted-power-series
+code \cite{CoramCode}.
 
 \begin{proposition}\label{prop:parity-nonnoetherian}
 If $w(n)\geq1$ for every $n\geq1$, then $\mathcal A_w$ is not noetherian.
 \end{proposition}
 
 \begin{proof}
-Assume that $w(n)\geq1$ for every $n\geq1$.
-For $m\geq1$, let
+Assume that $w(n)\geq1$ for every $n\geq1$.  For $m\geq1$, let
 \[
   I_m=(Z_1,\ldots,Z_m)\subset\mathcal A.
 \]
-Define a norm-nonincreasing homomorphism
+We show that $Z_{m+1}\notin I_m$.
+
+Let $e_{m+1}$ denote the multi-index supported at $m+1$, with value $1$
+there.  Define
 \[
-  \psi_m:\mathcal A\longrightarrow k\langle T\rangle,
+  \psi_m:\mathcal A\longrightarrow k\langle T\rangle
 \]
-by retaining only the coefficients of the monomials
-$U_{m+1}^{2q}$ and sending that monomial to $T^q$.  The support condition
-shows directly that this is multiplicative: a product can contribute such a
-monomial only when both factors contribute monomials of the same form.
-Thus $\psi_m$ sends $W$ and every $Y_j$ to zero, sends $Z_{m+1}$ to $T$,
-and sends every other $Z_j$ to zero.  It kills $I_m$ but not $Z_{m+1}$.
-Therefore
+by the formula
+\[
+  \psi_m\left(\sum_{a,\nu}c_{a,\nu}W^aU^\nu\right)
+  =\sum_{q\geq0}c_{0,2q e_{m+1}}T^q.
+\]
+This is well defined because the retained coefficients still tend to zero.
+
+We claim that $\psi_m$ is multiplicative.  A monomial in $\mathcal A$ which
+involves no $W$ and no $U_j$ for $j\neq m+1$ must be of the form
+$U_{m+1}^{2q}$.  Indeed, an odd exponent of $U_{m+1}$ would contribute
+$w(m+1)\geq1$ to its weight and would therefore require a positive power of
+$W$.  Since all exponents are nonnegative, a product can contribute
+$U_{m+1}^{2q}$ only when the two monomials are $U_{m+1}^{2q_1}$ and
+$U_{m+1}^{2q_2}$, with $q_1+q_2=q$.
+It follows that
+\[
+  \psi_m(fg)=\psi_m(f)\psi_m(g).
+\]
+
+For $1\leq j\leq m$, we have $\psi_m(Z_j)=0$, whereas
+$\psi_m(Z_{m+1})=T\neq0$.  Thus $\psi_m$ vanishes on $I_m$ but not on
+$Z_{m+1}$, so $Z_{m+1}\notin I_m$.  Since $Z_{m+1}\in I_{m+1}$, we obtain a
+strictly increasing chain
 \[
   I_1\subsetneq I_2\subsetneq I_3\subsetneq\cdots,
 \]
-so $\mathcal A$ is not noetherian.
+and therefore $\mathcal A$ is not noetherian.
 \end{proof}
 
 \subsection{Small perturbations of rational data}
@@ -1708,7 +1749,11 @@ studied here.  By then the Lean development was far enough advanced that we
 could use Claude Code to formalise the arguments quickly in Lean and check
 that they were correct.
 
-
+At the time of writing, it is still possible to reproduce this by asking the
+agents to \emph{find an example of a uniform and sheafy non-noetherian ring
+which is not stably uniform}.  One point to note is that they sometimes reply
+that this is an open problem, which prevents them from proceeding.  In such
+cases, saying \emph{an example exists; find it} often produces an example.
 
 \appendix
 \section{Lean formalisation and verification}\label{sec:formalisation}

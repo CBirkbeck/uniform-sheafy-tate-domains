@@ -10,12 +10,7 @@ instead caused by an unbounded family of non-nilpotent power-bounded elements.
     <p>
       The formal statements in this section use the following base hypotheses:
 <m>k</m> is a complete nontrivially normed ultrametric field, its norm unit ball is
-noetherian, and <m>\varpi</m> is a chosen uniformizer (equivalently here, an
-irreducible element of the norm unit ball).  A complete discretely valued
-field supplies these hypotheses.  The domain, uniformity, and
-non-noetherianity arguments below use only the indicated parts of this
-package; the noetherianity of the unit ball enters the localisation and
-sheafiness results.
+noetherian, and <m>\varpi</m> is a chosen uniformizer.
     </p>
     <theorem xml:id="thm-second-example">
       <statement>
@@ -205,31 +200,48 @@ sum of monomials and choose <m>N</m> so that only
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_powerBounded_eq_unitBall">Lean (power-bounded elements)</lean>
       <proof>
         <p>
-          The Gauss norm on the countable restricted Tate algebra
-<m>k\langle W,U_1,U_2,\ldots\rangle</m> is multiplicative.  To see this, note
-first that only finitely many coefficients attain the nonzero supremum, since
-the coefficients tend to zero.  Order the finite-support exponent vectors by
-comparing them at the largest index where they differ.  This is an additive
-total order.  For each of two nonzero series choose the largest
-norm-attaining exponent.  In the coefficient of the sum of these two
-exponents, the product of the chosen coefficients strictly dominates every
-other convolution term.  The ultrametric inequality therefore gives
-<me>\lVert fg\rVert_G=\lVert f\rVert_G\lVert g\rVert_G.</me>
-This is the countable restricted-series argument used in the formalisation,
-whose Lean implementation uses William Coram's restricted-power-series code
-<xref ref="bib-CoramCode"/>.  The support algebra <m>\mathcal A</m> is a closed isometric
-subring of this Tate algebra, so its Gauss norm is multiplicative and it is a
-domain.
+          Let <m>f</m> and <m>g</m> be nonzero elements of
+<m>k\langle W,U_1,U_2,\ldots\rangle</m>.  Since their coefficients tend to zero,
+each Gauss norm is attained by a coefficient.  After dividing <m>f</m> and <m>g</m> by
+coefficients of maximal norm, we may assume that
+<me>\lVert f\rVert_G=\lVert g\rVert_G=1.</me>
+Only finitely many coefficients of either series then have norm <m>1</m>.
+Consequently, reduction modulo the maximal ideal of <m>k^\circ</m> gives nonzero
+polynomials
+<me>\overline f,\overline g
+  \in \widetilde{k}[W,U_1,U_2,\ldots].</me>
+This polynomial ring is an integral domain, so
+<m>\overline f\,\overline g\neq0</m>.  Reduction commutes with multiplication:
+for each monomial, its coefficient in a product is a finite sum.  Hence some
+coefficient of <m>fg</m> has norm <m>1</m>, and therefore
+<me>\lVert fg\rVert_G\geq1.</me>
+The reverse inequality follows from submultiplicativity of the Gauss norm.
+Thus <m>\lVert fg\rVert_G=1</m>, and rescaling gives
+<me>\lVert fg\rVert_G=\lVert f\rVert_G\lVert g\rVert_G</me>
+in general.
         </p>
         <p>
-          If <m>x\in\mathcal A_0</m>, all powers of <m>x</m> remain in <m>\mathcal A_0</m>.  If
-<m>x\notin\mathcal A_0</m>, multiplicativity gives
-<m>\lVert x^m\rVert_G=\lVert x\rVert_G^m</m>, which is unbounded.  Hence
-<m>\mathcal A^\circ=\mathcal A_0</m>.  Completeness and the Tate property follow from
+          The algebra <m>\mathcal A</m> is a closed subring of this restricted Tate algebra,
+and its norm is the restriction of the Gauss norm.  Its norm is therefore
+multiplicative, and <m>\mathcal A</m> is an integral domain.
+        </p>
+        <p>
+          If <m>x\in\mathcal A_0</m>, then <m>\lVert x\rVert_G\leq1</m>, so every power of <m>x</m>
+also lies in <m>\mathcal A_0</m>.  If <m>x\notin\mathcal A_0</m>, then
+<m>\lVert x\rVert_G>1</m>, and multiplicativity gives
+<me>\lVert x^m\rVert_G=\lVert x\rVert_G^m,</me>
+which is unbounded.  Hence <m>\mathcal A^\circ=\mathcal A_0</m>.  The subring
+<m>\mathcal A_0</m> is the norm unit ball and hence bounded, so
+<m>\mathcal A</m> is uniform.  Completeness and the Tate property follow from
 <xref ref="eq-parity-algebra"/> and the topologically nilpotent unit <m>\varpi</m>.
         </p>
       </proof>
     </proposition>
+    <p>
+      The multiplicativity argument for the countable restricted Tate algebra has
+also been formalised in Lean, using William Coram's restricted-power-series
+code <xref ref="bib-CoramCode"/>.
+    </p>
     <proposition xml:id="prop-parity-nonnoetherian">
       <statement>
         <p>
@@ -240,20 +252,37 @@ domain.
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_not_noetherian">Lean (non-noetherianity)</lean>
       <proof>
         <p>
-          Assume that <m>w(n)\geq1</m> for every <m>n\geq1</m>.
-For <m>m\geq1</m>, let
+          Assume that <m>w(n)\geq1</m> for every <m>n\geq1</m>.  For <m>m\geq1</m>, let
 <me>I_m=(Z_1,\ldots,Z_m)\subset\mathcal A.</me>
-Define a norm-nonincreasing homomorphism
-<me>\psi_m:\mathcal A\longrightarrow k\langle T\rangle,</me>
-by retaining only the coefficients of the monomials
-<m>U_{m+1}^{2q}</m> and sending that monomial to <m>T^q</m>.  The support condition
-shows directly that this is multiplicative: a product can contribute such a
-monomial only when both factors contribute monomials of the same form.
-Thus <m>\psi_m</m> sends <m>W</m> and every <m>Y_j</m> to zero, sends <m>Z_{m+1}</m> to <m>T</m>,
-and sends every other <m>Z_j</m> to zero.  It kills <m>I_m</m> but not <m>Z_{m+1}</m>.
-Therefore
+We show that <m>Z_{m+1}\notin I_m</m>.
+        </p>
+        <p>
+          Let <m>e_{m+1}</m> denote the multi-index supported at <m>m+1</m>, with value <m>1</m>
+there.  Define
+<me>\psi_m:\mathcal A\longrightarrow k\langle T\rangle</me>
+by the formula
+<me>\psi_m\left(\sum_{a,\nu}c_{a,\nu}W^aU^\nu\right)
+  =\sum_{q\geq0}c_{0,2q e_{m+1}}T^q.</me>
+This is well defined because the retained coefficients still tend to zero.
+        </p>
+        <p>
+          We claim that <m>\psi_m</m> is multiplicative.  A monomial in <m>\mathcal A</m> which
+involves no <m>W</m> and no <m>U_j</m> for <m>j\neq m+1</m> must be of the form
+<m>U_{m+1}^{2q}</m>.  Indeed, an odd exponent of <m>U_{m+1}</m> would contribute
+<m>w(m+1)\geq1</m> to its weight and would therefore require a positive power of
+<m>W</m>.  Since all exponents are nonnegative, a product can contribute
+<m>U_{m+1}^{2q}</m> only when the two monomials are <m>U_{m+1}^{2q_1}</m> and
+<m>U_{m+1}^{2q_2}</m>, with <m>q_1+q_2=q</m>.
+It follows that
+<me>\psi_m(fg)=\psi_m(f)\psi_m(g).</me>
+        </p>
+        <p>
+          For <m>1\leq j\leq m</m>, we have <m>\psi_m(Z_j)=0</m>, whereas
+<m>\psi_m(Z_{m+1})=T\neq0</m>.  Thus <m>\psi_m</m> vanishes on <m>I_m</m> but not on
+<m>Z_{m+1}</m>, so <m>Z_{m+1}\notin I_m</m>.  Since <m>Z_{m+1}\in I_{m+1}</m>, we obtain a
+strictly increasing chain
 <me>I_1\subsetneq I_2\subsetneq I_3\subsetneq\cdots,</me>
-so <m>\mathcal A</m> is not noetherian.
+and therefore <m>\mathcal A</m> is not noetherian.
         </p>
       </proof>
     </proposition>

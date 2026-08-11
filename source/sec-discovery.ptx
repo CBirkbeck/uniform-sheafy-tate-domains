@@ -54,4 +54,11 @@ studied here.  By then the Lean development was far enough advanced that we
 could use Claude Code to formalise the arguments quickly in Lean and check
 that they were correct.
   </p>
+  <p>
+    At the time of writing, it is still possible to reproduce this by asking the
+agents to <em>find an example of a uniform and sheafy non-noetherian ring
+which is not stably uniform</em>.  One point to note is that they sometimes reply
+that this is an open problem, which prevents them from proceeding.  In such
+cases, saying <em>an example exists; find it</em> often produces an example.
+  </p>
 </section>

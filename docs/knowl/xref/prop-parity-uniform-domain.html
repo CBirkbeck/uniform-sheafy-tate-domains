@@ -35,16 +35,46 @@
 <details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
 <article class="hiddenproof knowl__content">
 <div class="para logical">
-<div class="para">The Gauss norm on the countable restricted Tate algebra <span class="process-math">\(k\langle W,U_1,U_2,\ldots\rangle\)</span> is multiplicative.  To see this, note first that only finitely many coefficients attain the nonzero supremum, since the coefficients tend to zero.  Order the finite-support exponent vectors by comparing them at the largest index where they differ.  This is an additive total order.  For each of two nonzero series choose the largest norm-attaining exponent.  In the coefficient of the sum of these two exponents, the product of the chosen coefficients strictly dominates every other convolution term.  The ultrametric inequality therefore gives</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/bib-CoramCode.html">
+<div class="para">Let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be nonzero elements of <span class="process-math">\(k\langle W,U_1,U_2,\ldots\rangle\text{.}\)</span>  Since their coefficients tend to zero, each Gauss norm is attained by a coefficient.  After dividing <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> by coefficients of maximal norm, we may assume that</div>
+<div class="displaymath process-math">
 \begin{equation*}
-\lVert fg\rVert_G=\lVert f\rVert_G\lVert g\rVert_G.
+\lVert f\rVert_G=\lVert g\rVert_G=1.
 \end{equation*}
 </div>
-<div class="para">This is the countable restricted-series argument used in the formalisation, whose Lean implementation uses William Coram’s restricted-power-series code <a href="#bib-CoramCode" class="xref" data-knowl="./knowl/xref/bib-CoramCode.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-CoramCode">[bib-CoramCode]</a>.  The support algebra <span class="process-math">\(\mathcal A\)</span> is a closed isometric subring of this Tate algebra, so its Gauss norm is multiplicative and it is a domain.</div>
+<div class="para">Only finitely many coefficients of either series then have norm <span class="process-math">\(1\text{.}\)</span> Consequently, reduction modulo the maximal ideal of <span class="process-math">\(k^\circ\)</span> gives nonzero polynomials</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\overline f,\overline g
+\in \widetilde{k}[W,U_1,U_2,\ldots].
+\end{equation*}
+</div>
+<div class="para">This polynomial ring is an integral domain, so <span class="process-math">\(\overline f\,\overline g\neq0\text{.}\)</span>  Reduction commutes with multiplication: for each monomial, its coefficient in a product is a finite sum.  Hence some coefficient of <span class="process-math">\(fg\)</span> has norm <span class="process-math">\(1\text{,}\)</span> and therefore</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lVert fg\rVert_G\geq1.
+\end{equation*}
+</div>
+<div class="para">The reverse inequality follows from submultiplicativity of the Gauss norm. Thus <span class="process-math">\(\lVert fg\rVert_G=1\text{,}\)</span> and rescaling gives</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lVert fg\rVert_G=\lVert f\rVert_G\lVert g\rVert_G
+\end{equation*}
+</div>
+<div class="para">in general.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-parity-uniform-domain-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para">If <span class="process-math">\(x\in\mathcal A_0\text{,}\)</span> all powers of <span class="process-math">\(x\)</span> remain in <span class="process-math">\(\mathcal A_0\text{.}\)</span>  If <span class="process-math">\(x\notin\mathcal A_0\text{,}\)</span> multiplicativity gives <span class="process-math">\(\lVert x^m\rVert_G=\lVert x\rVert_G^m\text{,}\)</span> which is unbounded.  Hence <span class="process-math">\(\mathcal A^\circ=\mathcal A_0\text{.}\)</span>  Completeness and the Tate property follow from <a href="#eq-parity-algebra" class="xref" data-knowl="./knowl/xref/eq-parity-algebra.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.5">(8.5)</a> and the topologically nilpotent unit <span class="process-math">\(\varpi\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-parity-uniform-domain-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">The algebra <span class="process-math">\(\mathcal A\)</span> is a closed subring of this restricted Tate algebra, and its norm is the restriction of the Gauss norm.  Its norm is therefore multiplicative, and <span class="process-math">\(\mathcal A\)</span> is an integral domain.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-parity-uniform-domain-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">If <span class="process-math">\(x\in\mathcal A_0\text{,}\)</span> then <span class="process-math">\(\lVert x\rVert_G\leq1\text{,}\)</span> so every power of <span class="process-math">\(x\)</span> also lies in <span class="process-math">\(\mathcal A_0\text{.}\)</span>  If <span class="process-math">\(x\notin\mathcal A_0\text{,}\)</span> then <span class="process-math">\(\lVert x\rVert_G&gt;1\text{,}\)</span> and multiplicativity gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-parity-algebra.html">
+\begin{equation*}
+\lVert x^m\rVert_G=\lVert x\rVert_G^m,
+\end{equation*}
+</div>
+<div class="para">which is unbounded.  Hence <span class="process-math">\(\mathcal A^\circ=\mathcal A_0\text{.}\)</span>  The subring <span class="process-math">\(\mathcal A_0\)</span> is the norm unit ball and hence bounded, so <span class="process-math">\(\mathcal A\)</span> is uniform.  Completeness and the Tate property follow from <a href="#eq-parity-algebra" class="xref" data-knowl="./knowl/xref/eq-parity-algebra.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.5">(8.5)</a> and the topologically nilpotent unit <span class="process-math">\(\varpi\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-parity-uniform-domain-9-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Proof 8.3.1"><a tabindex="-1" href="#prop-parity-uniform-domain-9" title="Copy heading and permalink for Proof 8.3.1" aria-label="Copy heading and permalink for Proof 8.3.1">🔗</a></div>
 </article></details><span class="incontext"><a class="internal" href="#prop-parity-uniform-domain">In Context</a></span>
