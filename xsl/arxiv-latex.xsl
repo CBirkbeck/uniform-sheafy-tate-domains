@@ -43,9 +43,12 @@
     <xsl:text>\DeclareUnicodeCharacter{2208}{\ensuremath{\in}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{2211}{\ensuremath{\sum}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{2227}{\ensuremath{\wedge}}&#xa;</xsl:text>
+    <xsl:text>\DeclareUnicodeCharacter{222A}{\ensuremath{\cup}}&#xa;</xsl:text>
+    <xsl:text>\DeclareUnicodeCharacter{2243}{\ensuremath{\simeq}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{2260}{\ensuremath{\neq}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{2286}{\ensuremath{\subseteq}}&#xa;</xsl:text>
+    <xsl:text>\DeclareUnicodeCharacter{22A4}{\ensuremath{\top}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{22C3}{\ensuremath{\bigcup}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{22D9}{\ensuremath{\mathbin{\gg}}}&#xa;</xsl:text>
     <xsl:text>\DeclareUnicodeCharacter{27E8}{\ensuremath{\langle}}&#xa;</xsl:text>

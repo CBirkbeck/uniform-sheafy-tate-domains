@@ -356,7 +356,7 @@
    "number": "A",
    "section": "A"
   },
-  "sec-formalisation-the-rational-cover-predicate-issheafy": {
+  "sec-formalisation-the-predicate-issheafy": {
    "kind": "subsection",
    "label": null,
    "number": "A.1",
@@ -374,25 +374,19 @@
    "number": "A.2",
    "section": "A"
   },
-  "def-lean-open-sections": {
-   "kind": "definition",
-   "label": "def:lean-open-sections",
-   "number": "A.2",
-   "section": "A"
-  },
   "rem-lean-sheaf-comparison": {
    "kind": "remark",
    "label": "rem:lean-sheaf-comparison",
-   "number": "A.3",
+   "number": "A.2",
    "section": "A"
   },
-  "sec-formalisation-choice-independent-sheafiness-for-tate": {
+  "sec-formalisation-sheafiness-for-tate-rings": {
    "kind": "subsection",
    "label": null,
    "number": "A.3",
    "section": "A"
   },
-  "sec-formalisation-strong-noetherianity-and-sheafiness": {
+  "sec-formalisation-strong-noetherianity": {
    "kind": "subsection",
    "label": null,
    "number": "A.4",
@@ -401,7 +395,7 @@
   "def-lean-strong-noetherianity": {
    "kind": "definition",
    "label": "def:lean-strong-noetherianity",
-   "number": "A.4",
+   "number": "A.3",
    "section": "A"
   },
   "sec-formalisation-the-finite-jet-example": {
@@ -413,25 +407,31 @@
   "def-lean-finite-jet-ring": {
    "kind": "definition",
    "label": "def:lean-finite-jet-ring",
-   "number": "A.5",
+   "number": "A.4",
    "section": "A"
   },
-  "sec-formalisation-scope-of-the-finite-jet": {
-   "kind": "subsection",
+  "sec-formalisation-the-finite-jet-example-the-scottish-book-statements": {
+   "kind": "subsubsection",
    "label": null,
-   "number": "A.6",
+   "number": "A.5.1",
+   "section": "A"
+  },
+  "sec-formalisation-the-finite-jet-example-koszul-complexes-and-milnor-descent": {
+   "kind": "subsubsection",
+   "label": null,
+   "number": "A.5.2",
    "section": "A"
   },
   "sec-formalisation-the-weighted-parity-example": {
    "kind": "subsection",
    "label": null,
-   "number": "A.7",
+   "number": "A.6",
    "section": "A"
   },
   "sec-formalisation-mathematical-and-code-provenance": {
    "kind": "subsection",
    "label": null,
-   "number": "A.8",
+   "number": "A.7",
    "section": "A"
   }
  }

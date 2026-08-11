@@ -150,14 +150,19 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-appendix">
 <div class="toc-title-box"><a href="#sec-formalisation" class="internal"><span class="codenumber">A</span> <span class="title">Lean formalisation and verification</span></a></div>
 <ul id="ptx-toc-group-sec-formalisation" class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="#sec-formalisation-the-rational-cover-predicate-issheafy" class="internal"><span class="codenumber">A.1</span> <span class="title">The rational-cover predicate <code class="code-inline tex2jax_ignore">IsSheafy</code></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="#sec-formalisation-the-predicate-issheafy" class="internal"><span class="codenumber">A.1</span> <span class="title">The predicate <code class="code-inline tex2jax_ignore">IsSheafy</code></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="#sec-formalisation-comparison-with-mathlib-s-sheaf" class="internal"><span class="codenumber">A.2</span> <span class="title">Comparison with Mathlib’s sheaf predicate</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="#sec-formalisation-choice-independent-sheafiness-for-tate" class="internal"><span class="codenumber">A.3</span> <span class="title">Choice-independent sheafiness for Tate rings</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="#sec-formalisation-strong-noetherianity-and-sheafiness" class="internal"><span class="codenumber">A.4</span> <span class="title">Strong noetherianity and sheafiness</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="#sec-formalisation-the-finite-jet-example" class="internal"><span class="codenumber">A.5</span> <span class="title">The finite-jet example</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="#sec-formalisation-scope-of-the-finite-jet" class="internal"><span class="codenumber">A.6</span> <span class="title">Scope of the finite-jet formalisation</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="#sec-formalisation-the-weighted-parity-example" class="internal"><span class="codenumber">A.7</span> <span class="title">The weighted-parity example</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="#sec-formalisation-mathematical-and-code-provenance" class="internal"><span class="codenumber">A.8</span> <span class="title">Mathematical and code provenance</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="#sec-formalisation-sheafiness-for-tate-rings" class="internal"><span class="codenumber">A.3</span> <span class="title">Sheafiness for Tate rings</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="#sec-formalisation-strong-noetherianity" class="internal"><span class="codenumber">A.4</span> <span class="title">Strong noetherianity</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="#sec-formalisation-the-finite-jet-example" class="internal"><span class="codenumber">A.5</span> <span class="title">The finite-jet example</span></a></div>
+<ul id="ptx-toc-group-sec-formalisation-the-finite-jet-example" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="#sec-formalisation-the-finite-jet-example-the-scottish-book-statements" class="internal"><span class="codenumber">A.5.1</span> <span class="title">The Scottish Book statements</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="#sec-formalisation-the-finite-jet-example-koszul-complexes-and-milnor-descent" class="internal"><span class="codenumber">A.5.2</span> <span class="title">Koszul complexes and Milnor descent</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="#sec-formalisation-the-weighted-parity-example" class="internal"><span class="codenumber">A.6</span> <span class="title">The weighted-parity example</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="#sec-formalisation-mathematical-and-code-provenance" class="internal"><span class="codenumber">A.7</span> <span class="title">Mathematical and code provenance</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-references"><div class="toc-title-box"><a href="#references" class="internal"><span class="title">References</span></a></div></li>
@@ -1854,20 +1859,16 @@ Q^2\in\bigcap_{n\geq1}\varpi^nA_0[W/\varpi].
 <span class="type">Appendix</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lean formalisation and verification</span>
 </h3>
 <section class="introduction" id="sec-formalisation-2">
-<div class="para" id="sec-formalisation-2-1">This appendix records the Lean formalisation of the two examples.  The core finite-jet declarations are taken from AINTLIB commit <code class="code-inline tex2jax_ignore">b007a4f3d</code>, and the general-base finite-jet and Scottish Book declarations from commit <code class="code-inline tex2jax_ignore">01116aca6</code>.  The weighted-parity declarations are taken from commit <code class="code-inline tex2jax_ignore">090a28921</code>, and the comparison with Mathlib’s sheaf predicate from commit <code class="code-inline tex2jax_ignore">d92f96504</code>.  The generic Koszul, pullback, Milnor-descent, and strong-sheafiness declarations are taken from commit <code class="code-inline tex2jax_ignore">f1436c8be</code> <a href="#bib-AINTLIB" class="xref" data-knowl="./knowl/xref/bib-AINTLIB.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-AINTLIB">[bib-AINTLIB]</a>.  For each example Lean proves the Tate structure and uniformity, proves that the ring is a domain but not noetherian, proves sheafiness and failure of stable uniformity, and verifies the rational chart calculation used in the proof.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sec-formalisation-2-2">All five pinned commits are public in AINTLIB.  The interactive version of the paper includes each declaration used below, extracted from the appropriate commit, and its archival page links to the pinned source on GitHub.  The <a class="external" href="https://github.com/CBirkbeck/uniform-sheafy-tate-domains/blob/main/PAPERFORGE_CHECK.md" target="_blank">verification report</a> records the Lean and mathlib versions, the build, and the axiom checks.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sec-formalisation-2-3">The code excerpts below retain the mathematically meaningful bodies of definitions.  Proof fields which only verify closure are omitted.  For theorems we display only the statement and replace the proof by <code class="code-inline tex2jax_ignore">...</code>; the links give the complete Lean declarations and their checked proofs.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-formalisation-2-1">This appendix records the Lean definitions and theorem statements.  Theorem listings stop before their proof terms, and the links open the checked declarations.  The main development is on the <a class="external" href="https://github.com/CBirkbeck/AINTLIB/tree/wp/strengthenings" target="_blank"><code class="code-inline tex2jax_ignore">wp/strengthenings</code> branch of AINTLIB</a> <a href="#bib-AINTLIB" class="xref" data-knowl="./knowl/xref/bib-AINTLIB.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-AINTLIB">[bib-AINTLIB]</a>, with exact links below for declarations on other public branches.  It uses Lean 4.33.0 <a href="#bib-Lean4" class="xref" data-knowl="./knowl/xref/bib-Lean4.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-Lean4">[bib-Lean4]</a> and mathlib 4.33.0 <a href="#bib-mathlib" class="xref" data-knowl="./knowl/xref/bib-mathlib.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-mathlib">[bib-mathlib]</a>.  The headline statements for both examples have been checked with <a class="external" href="https://github.com/leanprover/comparator" target="_blank">Comparator</a>, which compares them with independent challenge statements, checks their axiom dependencies, and replays the proofs through the Lean kernel.  The interactive appendix was prepared with <a class="external" href="https://github.com/roed-math/paperforge" target="_blank">PaperForge</a>; each Lean button opens the corresponding declaration.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></section>
-<section class="subsection" id="sec-formalisation-the-rational-cover-predicate-issheafy">
+<section class="subsection" id="sec-formalisation-the-predicate-issheafy">
 <h4 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The rational-cover predicate <code class="code-inline tex2jax_ignore">IsSheafy</code></span>
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The predicate <code class="code-inline tex2jax_ignore">IsSheafy</code></span>
 </h4>
 <article class="definition definition-like" id="def-lean-rational-sheafiness"><h5 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The rational-cover predicate.</span>
 </h5>
-<div class="para" id="def-lean-rational-sheafiness-2-1">The proofs are carried out on finite rational covers, so the formalisation uses the class <code class="code-inline tex2jax_ignore">IsSheafy</code>.  We chose this formulation because it is easier to work with for our purposes: it speaks directly about the completed rational localisations which occur in the proofs.  The equivalences below show that this choice does not change the notion of sheafiness.  The class is in the <code class="code-inline tex2jax_ignore">ValuationSpectrum</code> namespace and is defined in <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.IsSheafy.html" target="_blank"><code class="code-inline tex2jax_ignore">StructureSheaf.lean</code></a>. Here <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.RationalCoveringData.html" target="_blank"><code class="code-inline tex2jax_ignore">RationalCoveringData A</code></a> consists of a rational datum for the base and finitely many data whose rational subsets cover it.  The separate condition <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.RationalCoveringData.IsRational.html" target="_blank"><code class="code-inline tex2jax_ignore">C.IsRational</code></a> says that the numerator set in the base and in each member of the cover generates an open ideal.  For a Tate ring this is equivalent to generating the unit ideal.  Finally, <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.presheafValue.html" target="_blank"><code class="code-inline tex2jax_ignore">presheafValue D</code></a> is the completed rational localisation <span class="process-math">\(A\langle T/s\rangle\)</span> attached to <span class="process-math">\(D\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-lean-rational-sheafiness-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="def-lean-rational-sheafiness-2-1">The arguments in the paper use finite rational covers, and Lean therefore uses the following predicate.  Here <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.RationalCoveringData.html" target="_blank"><code class="code-inline tex2jax_ignore">RationalCoveringData A</code></a> consists of a rational domain together with a finite rational cover of it, <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.RationalCoveringData.IsRational.html" target="_blank"><code class="code-inline tex2jax_ignore">C.IsRational</code></a> imposes the usual open-ideal condition, and <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.presheafValue.html" target="_blank"><code class="code-inline tex2jax_ignore">presheafValue D</code></a> is the completed rational localisation attached to <span class="process-math">\(D\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-lean-rational-sheafiness-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <pre class="code-block tex2jax_ignore clipboardable">      class IsSheafy (A : Type u) [CommRing A] [TopologicalSpace A]
   [IsTopologicalRing A] [inst₁ : PlusSubring A]
@@ -1889,145 +1890,76 @@ gluing : ∀ (C : RationalCoveringData A), C.IsRational →
   ∃ x : presheafValue C.base, ∀ (D : ↥C.covers),
     restrictionMap C.base D.1 (C.hsubset D.1 D.2) x = f D
 </pre>
-<div class="para" id="def-lean-rational-sheafiness-2-3">The two fields say that restriction to a finite rational cover is a topological embedding and that every matching family glues.  Compatibility is written using common rational refinements; the exact-intersection theorem identifies this with the usual compatibility on pairwise intersections.  Thus <code class="code-inline tex2jax_ignore">IsSheafy A</code> is the topological sheaf condition on the rational basis.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-lean-rational-sheafiness-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="def-lean-rational-sheafiness-2-3">The first field says that restriction to a finite rational cover is a topological embedding.  The second says that every compatible family of sections glues; compatibility is expressed on common rational refinements. This is the topological sheaf condition on the rational basis.  We use this form because it speaks directly about the rational localisations occurring in the paper.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-lean-rational-sheafiness-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.RationalCoveringData#doc" data-lean-ref="ValuationSpectrum.RationalCoveringData" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.RationalCoveringData in AdicSpaces">Lean (covering data)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.RationalCoveringData.IsRational#doc" data-lean-ref="ValuationSpectrum.RationalCoveringData.IsRational" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.RationalCoveringData.IsRational in AdicSpaces">Lean (rationality condition)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.presheafValue#doc" data-lean-ref="ValuationSpectrum.presheafValue" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.presheafValue in AdicSpaces">Lean (completed rational localisation)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.IsSheafy#doc" data-lean-ref="ValuationSpectrum.IsSheafy" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.IsSheafy in AdicSpaces">Lean (rational-cover sheaf condition)</a><div class="autopermalink" aria-hidden="true" data-description="Definition A.1: The rational-cover predicate"><a tabindex="-1" href="#def-lean-rational-sheafiness" title="Copy heading and permalink for Definition A.1: The rational-cover predicate" aria-label="Copy heading and permalink for Definition A.1: The rational-cover predicate">🔗</a></div>
-</article><div class="autopermalink" aria-hidden="true" data-description="Subsection A.1: The rational-cover predicate IsSheafy"><a tabindex="-1" href="#sec-formalisation-the-rational-cover-predicate-issheafy" title="Copy heading and permalink for Subsection A.1: The rational-cover predicate IsSheafy" aria-label="Copy heading and permalink for Subsection A.1: The rational-cover predicate IsSheafy">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection A.1: The predicate IsSheafy"><a tabindex="-1" href="#sec-formalisation-the-predicate-issheafy" title="Copy heading and permalink for Subsection A.1: The predicate IsSheafy" aria-label="Copy heading and permalink for Subsection A.1: The predicate IsSheafy">🔗</a></div>
 </section>
 <section class="subsection" id="sec-formalisation-comparison-with-mathlib-s-sheaf">
 <h4 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Comparison with Mathlib’s sheaf predicate</span>
 </h4>
-<article class="definition definition-like" id="def-lean-open-sections"><h5 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Sections on arbitrary opens.</span>
-</h5>
-<div class="para" id="def-lean-open-sections-2-1">Let <span class="process-math">\(V\subseteq\Spa(A,A^+)\)</span> be open.  The ring <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.limitSections.html" target="_blank"><code class="code-inline tex2jax_ignore">limitSections V</code></a> consists of compatible sections over the rational subdomains contained in <span class="process-math">\(V\text{,}\)</span> or equivalently their projective limit.  If <span class="process-math">\(W\subseteq V\text{,}\)</span> then <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.limitRestrict.html" target="_blank"><code class="code-inline tex2jax_ignore">limitRestrict</code></a> is the map <span class="process-math">\(\mathcal O(V)\to\mathcal O(W)\)</span> obtained by reindexing this family.  The corresponding all-open condition is <code class="code-inline tex2jax_ignore">IsLimitSheaf</code>, from <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.IsLimitSheaf.html" target="_blank"><code class="code-inline tex2jax_ignore">SheafyPair.lean</code></a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-lean-open-sections-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<div class="para" id="def-lean-open-sections-2-2">The class <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.HasLocLiftPowerBounded.html" target="_blank"><code class="code-inline tex2jax_ignore">HasLocLiftPowerBounded</code></a> is used internally to construct the restriction maps between completed rational localisations.  For an inclusion <span class="process-math">\(R(D')\subseteq R(D)\text{,}\)</span> it says that the denominator of <span class="process-math">\(D\)</span> becomes a unit on <span class="process-math">\(R(D')\)</span> and that the fractions <span class="process-math">\(t/s\text{,}\)</span> for <span class="process-math">\(t\)</span> in the numerator set of <span class="process-math">\(D\text{,}\)</span> are power-bounded there.  This class is supplied automatically for the complete Tate pairs considered here; it is not an additional hypothesis in our results.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-lean-open-sections-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<pre class="code-block tex2jax_ignore clipboardable">      structure IsLimitSheaf (A : Type u) [CommRing A] [TopologicalSpace A]
-  [IsTopologicalRing A] [PlusSubring A] [IsHuberRing A]
-  [HasLocLiftPowerBounded A] : Prop where
-injective : ∀ {V : Opens ↥(Spa A A⁺)} {ι : Type u}
-  {U : ι → Opens ↥(Spa A A⁺)}
-  (hle : ∀ i, U i ≤ V)
-  (_ : (V : Set ↥(Spa A A⁺)) ⊆ ⋃ i, (U i : Set ↥(Spa A A⁺)))
-  {x y : ↥(limitSections V)},
-  (∀ i, limitRestrict (hle i) x = limitRestrict (hle i) y) → x = y
-glue : ∀ {V : Opens ↥(Spa A A⁺)} {ι : Type u}
-  {U : ι → Opens ↥(Spa A A⁺)}
-  (hle : ∀ i, U i ≤ V)
-  (_ : (V : Set ↥(Spa A A⁺)) ⊆ ⋃ i, (U i : Set ↥(Spa A A⁺)))
-  (s : ∀ i, ↥(limitSections (U i))),
-  (∀ i j : ι,
-    limitRestrict (inf_le_left (a := U i) (b := U j)) (s i) =
-    limitRestrict (inf_le_right (a := U i) (b := U j)) (s j)) →
-  ∃ x : ↥(limitSections V), ∀ i, limitRestrict (hle i) x = s i
-isEmbedding : ∀ {V : Opens ↥(Spa A A⁺)} {ι : Type u}
-  {U : ι → Opens ↥(Spa A A⁺)}
-  (hle : ∀ i, U i ≤ V)
-  (_ : (V : Set ↥(Spa A A⁺)) ⊆ ⋃ i, (U i : Set ↥(Spa A A⁺))),
-  Topology.IsEmbedding (limitRestrictProd hle)
-</pre>
-<div class="para" id="def-lean-open-sections-2-4">The fields <code class="code-inline tex2jax_ignore">injective</code> and <code class="code-inline tex2jax_ignore">glue</code> are the usual sheaf axioms on arbitrary opens.  The final field says that restriction identifies the sections over <span class="process-math">\(V\)</span> homeomorphically with the subspace of <span class="process-math">\(\prod_i\mathcal O(U_i)\)</span> consisting of tuples whose restrictions agree. Together these conditions give the concrete form of Wedhorn’s sheaf condition for topological rings.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-lean-open-sections-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.limitSections#doc" data-lean-ref="ValuationSpectrum.limitSections" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.limitSections in AdicSpaces">Lean (sections on arbitrary opens)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.limitRestrict#doc" data-lean-ref="ValuationSpectrum.limitRestrict" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.limitRestrict in AdicSpaces">Lean (restriction on arbitrary opens)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.HasLocLiftPowerBounded#doc" data-lean-ref="ValuationSpectrum.HasLocLiftPowerBounded" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.HasLocLiftPowerBounded in AdicSpaces">Lean (restriction-map hypothesis)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.IsLimitSheaf#doc" data-lean-ref="ValuationSpectrum.IsLimitSheaf" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.IsLimitSheaf in AdicSpaces">Lean (all-open sheaf condition)</a><div class="autopermalink" aria-hidden="true" data-description="Definition A.2: Sections on arbitrary opens"><a tabindex="-1" href="#def-lean-open-sections" title="Copy heading and permalink for Definition A.2: Sections on arbitrary opens" aria-label="Copy heading and permalink for Definition A.2: Sections on arbitrary opens">🔗</a></div>
-</article>
 <details id="rem-lean-sheaf-comparison" class="remark remark-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading">
-<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Comparison with Mathlib.</span>
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h5></summary>
 <article class="remark remark-like knowl__content">
-<div class="para" id="rem-lean-sheaf-comparison-2-1">For complete Tate pairs the rational-basis and all-open predicates are equivalent:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-lean-sheaf-comparison-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="rem-lean-sheaf-comparison-1-1">For an open subset <span class="process-math">\(V\subseteq\Spa(A,A^+)\text{,}\)</span> <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.limitSections.html" target="_blank"><code class="code-inline tex2jax_ignore">limitSections V</code></a> is the projective limit of the sections on rational subdomains contained in <span class="process-math">\(V\text{,}\)</span> and <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.limitRestrict.html" target="_blank"><code class="code-inline tex2jax_ignore">limitRestrict</code></a> is the restriction map between these limits.  The predicate <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.IsLimitSheaf.html" target="_blank"><code class="code-inline tex2jax_ignore">IsLimitSheaf</code></a> is the separation, gluing and topological-embedding condition for arbitrary open covers.  Lean proves:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-lean-sheaf-comparison-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<pre class="code-block tex2jax_ignore clipboardable">      theorem isSheafy_iff_isLimitSheaf :
-  IsSheafy A ↔ IsLimitSheaf A := by
-...
+<pre class="code-block tex2jax_ignore clipboardable">    theorem isSheafy_iff_isLimitSheaf :
+IsSheafy A ↔ IsLimitSheaf A
 </pre>
-<div class="para" id="rem-lean-sheaf-comparison-2-3">The forward implication is the sheaf-on-a-rational-basis theorem, and the converse is restriction to rational covers.  For a bundled presheaf <span class="process-math">\(F\text{,}\)</span> <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/TopCat.Presheaf.IsSheafOfTopologicalRings.html" target="_blank"><code class="code-inline tex2jax_ignore">F.IsSheafOfTopologicalRings</code></a> means that, for every topological commutative ring <span class="process-math">\(T\text{,}\)</span> the presheaf <span class="process-math">\(U\mapsto\operatorname{Hom}_{\mathrm{cont}}(T,F(U))\)</span> is a sheaf of sets. This is Wedhorn’s representable formulation <a href="#bib-Wedhorn" class="xref" data-knowl="./knowl/xref/bib-Wedhorn.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-Wedhorn">[bib-Wedhorn, Remark 8.20]</a>:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-lean-sheaf-comparison-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<pre class="code-block tex2jax_ignore clipboardable">      def IsSheafOfTopologicalRings : Prop :=
-∀ (T : Type u) (_ : CommRing T) (_ : TopologicalSpace T)
-  (_ : IsTopologicalRing T), ∀ {ι : Type u} (U : ι → Opens X)
-  (f : ∀ i, {g : T →+* (F.obj (op (U i)) : Type u) //
-    Continuous g}),
-  (∀ i j : ι,
-    (F.map (homOfLE (inf_le_left (a := U i) (b := U j))).op).1.comp
-        (f i).1 =
-      (F.map (homOfLE (inf_le_right (a := U i) (b := U j))).op).1.comp
-        (f j).1) →
-  ∃! g : {g : T →+* (F.obj (op (iSup U)) : Type u) //
-    Continuous g},
-    ∀ i, (F.map (homOfLE (le_iSup U i)).op).1.comp g.1 = (f i).1
-</pre>
-<div class="para" id="rem-lean-sheaf-comparison-2-5">For the structure presheaf the formalisation proves:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-lean-sheaf-comparison-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<pre class="code-block tex2jax_ignore clipboardable">      theorem structurePresheaf_isSheafOfTopologicalRings_iff :
-  TopCat.Presheaf.IsSheafOfTopologicalRings
-      (structurePresheaf A) ↔
-    IsLimitSheaf A := by
-...
-</pre>
-<div class="para logical" id="rem-lean-sheaf-comparison-2-7">
-<div class="para">The <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.structurePresheaf_isSheafOfTopologicalRings_iff.html" target="_blank">preceding theorem</a>, together with <code class="code-inline tex2jax_ignore">isSheafy_iff_isLimitSheaf</code>, gives</div>
-<div class="displaymath process-math" id="rem-lean-sheaf-comparison-2-7-3">
+<div class="para logical" id="rem-lean-sheaf-comparison-1-3">
+<div class="para">For a presheaf <span class="process-math">\(F\)</span> as above, <code class="code-inline tex2jax_ignore">IsSheafOfTopologicalRings</code> is Wedhorn’s condition that</div>
+<div class="displaymath process-math" id="rem-lean-sheaf-comparison-1-3-3">
 \begin{equation*}
-\texttt{IsSheafy A}
-\quad\Longleftrightarrow\quad
-\texttt{(structurePresheaf A).IsSheafOfTopologicalRings}.
+U\longmapsto\operatorname{Hom}_{\mathrm{cont}}(T,F(U))
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-lean-sheaf-comparison-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<div class="para" id="rem-lean-sheaf-comparison-2-8">Thus the bundled <code class="code-inline tex2jax_ignore">IsSheafOfTopologicalRings</code> condition and the rational-cover condition used in the proofs are equivalent; neither is merely a consequence of the other.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-lean-sheaf-comparison-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<div class="para" id="rem-lean-sheaf-comparison-2-9">There is also a direct comparison with Mathlib’s categorical definition. For an arbitrary presheaf <span class="process-math">\(F\)</span> of complete separated topological commutative rings, the <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/TopCat.Presheaf.isSheafOfTopologicalRings_iff_forgetToTopCommRingCat_isSheaf.html" target="_blank">general comparison theorem</a> is<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-lean-sheaf-comparison-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">is a sheaf of sets for every topological commutative ring <span class="process-math">\(T\text{.}\)</span>  For the structure presheaf:</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-lean-sheaf-comparison-1-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<pre class="code-block tex2jax_ignore clipboardable">      theorem isSheafOfTopologicalRings_iff_forgetToTopCommRingCat_isSheaf :
-  F.IsSheafOfTopologicalRings ↔
-    TopCat.Presheaf.IsSheaf
-      (F ⋙ CompleteTopCommRingCat.forgetToTopCommRingCat) := by
-...
+<pre class="code-block tex2jax_ignore clipboardable">    theorem structurePresheaf_isSheafOfTopologicalRings_iff :
+TopCat.Presheaf.IsSheafOfTopologicalRings
+    (structurePresheaf A) ↔
+  IsLimitSheaf A
 </pre>
-<div class="para" id="rem-lean-sheaf-comparison-2-11">The functor in this statement forgets completeness and separatedness, but not the topology.  The objects of <code class="code-inline tex2jax_ignore">TopCommRingCat</code> are all topological commutative rings, so Mathlib’s categorical condition tests exactly the presheaves <span class="process-math">\(U\mapsto\operatorname{Hom}_{\mathrm{cont}}(T,F(U))\)</span> appearing in Wedhorn’s definition.  By contrast, the categorical condition with values left in <code class="code-inline tex2jax_ignore">CompleteTopCommRingCat</code> tests only complete separated rings and is only a consequence of Wedhorn’s condition.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-lean-sheaf-comparison-2-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<div class="para" id="rem-lean-sheaf-comparison-2-12">Specialising the comparison to the structure presheaf gives the <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.structurePresheaf_forgetToTopCommRingCat_isSheaf_iff.html" target="_blank">all-open equivalence</a>. Its statement is<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-lean-sheaf-comparison-2-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="rem-lean-sheaf-comparison-1-5">It also proves the general comparison with Mathlib’s categorical predicate:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-lean-sheaf-comparison-1-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<pre class="code-block tex2jax_ignore clipboardable">      theorem structurePresheaf_forgetToTopCommRingCat_isSheaf_iff :
+<pre class="code-block tex2jax_ignore clipboardable">    theorem isSheafOfTopologicalRings_iff_forgetToTopCommRingCat_isSheaf :
+F.IsSheafOfTopologicalRings ↔ TopCat.Presheaf.IsSheaf
+  (F ⋙ CompleteTopCommRingCat.forgetToTopCommRingCat)
+</pre>
+<div class="para" id="rem-lean-sheaf-comparison-1-7">The forgetful functor retains the topology but forgets completeness and separatedness.  Its target has all topological commutative rings as objects, which is precisely the class of test rings in Wedhorn’s formulation.  Combining the preceding equivalences gives the direct comparison used here:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-lean-sheaf-comparison-1-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<pre class="code-block tex2jax_ignore clipboardable">    theorem isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf
+[DecidableEq A] [DecidableEq (RationalLocData A)] [IsTateRing A]
+[IsRingOfIntegralElements (A⁺ : Subring A)] [T2Space A]
+[NonarchimedeanRing A]
+[letI : UniformSpace A :=
+  IsTopologicalAddGroup.rightUniformSpace A; CompleteSpace A] :
+IsSheafy A ↔
   TopCat.Presheaf.IsSheaf
-      (structurePresheaf A ⋙
-        CompleteTopCommRingCat.forgetToTopCommRingCat) ↔
-    IsLimitSheaf A := by
-...
+    (structurePresheaf A ⋙
+      CompleteTopCommRingCat.forgetToTopCommRingCat)
 </pre>
-<div class="para" id="rem-lean-sheaf-comparison-2-14">Combining this with the rational-basis theorem above gives the <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf.html" target="_blank">final comparison</a>:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-lean-sheaf-comparison-2-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="rem-lean-sheaf-comparison-1-9">Thus <code class="code-inline tex2jax_ignore">IsSheafy</code> is equivalent both to Wedhorn’s representable formulation and to Mathlib’s sheaf condition for the structure presheaf.  It is used here because it is convenient, not because it defines a weaker or stronger notion.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-lean-sheaf-comparison-1-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="rem-lean-sheaf-comparison-1-10">The auxiliary class <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.HasLocLiftPowerBounded.html" target="_blank"><code class="code-inline tex2jax_ignore">HasLocLiftPowerBounded</code></a> constructs restriction maps between completed rational localisations.  For an inclusion of rational domains it says that the old denominator becomes a unit and that the old numerator fractions are power-bounded on the smaller domain. It is supplied by the theory for the complete Tate pairs used here and is not an additional hypothesis in the main results.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-lean-sheaf-comparison-1-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<pre class="code-block tex2jax_ignore clipboardable">      theorem isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf
-  [DecidableEq A] [DecidableEq (RationalLocData A)] [IsTateRing A]
-  [IsRingOfIntegralElements (A⁺ : Subring A)] [T2Space A]
-  [NonarchimedeanRing A]
-  [letI : UniformSpace A :=
-    IsTopologicalAddGroup.rightUniformSpace A; CompleteSpace A] :
-  IsSheafy A ↔
-    TopCat.Presheaf.IsSheaf
-      (structurePresheaf A ⋙
-        CompleteTopCommRingCat.forgetToTopCommRingCat) := by
-...
-</pre>
-<div class="para" id="rem-lean-sheaf-comparison-2-16">Thus the rational-cover predicate, the all-open predicate, Wedhorn’s Hom-sheaf condition, and Mathlib’s categorical predicate are equivalent.  We use <code class="code-inline tex2jax_ignore">IsSheafy</code> because it is the convenient form for the arguments in this paper, not because it defines a weaker or stronger notion of sheafiness.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rem-lean-sheaf-comparison-2-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.isSheafy_iff_isLimitSheaf#doc" data-lean-ref="ValuationSpectrum.isSheafy_iff_isLimitSheaf" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.isSheafy_iff_isLimitSheaf in AdicSpaces">Lean (rational covers ↔ all opens)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=TopCat.Presheaf.IsSheafOfTopologicalRings#doc" data-lean-ref="TopCat.Presheaf.IsSheafOfTopologicalRings" data-lean-project="AdicSpaces" title="Formalized as TopCat.Presheaf.IsSheafOfTopologicalRings in AdicSpaces">Lean (Wedhorn Hom-sheaf)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.structurePresheaf_isSheafOfTopologicalRings_iff#doc" data-lean-ref="ValuationSpectrum.structurePresheaf_isSheafOfTopologicalRings_iff" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.structurePresheaf_isSheafOfTopologicalRings_iff in AdicSpaces">Lean (all opens ↔ Wedhorn)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=TopCat.Presheaf.isSheafOfTopologicalRings_iff_forgetToTopCommRingCat_isSheaf#doc" data-lean-ref="TopCat.Presheaf.isSheafOfTopologicalRings_iff_forgetToTopCommRingCat_isSheaf" data-lean-project="AdicSpaces" title="Formalized as TopCat.Presheaf.isSheafOfTopologicalRings_iff_forgetToTopCommRingCat_isSheaf in AdicSpaces">Lean (Wedhorn ↔ Mathlib)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.structurePresheaf_forgetToTopCommRingCat_isSheaf_iff#doc" data-lean-ref="ValuationSpectrum.structurePresheaf_forgetToTopCommRingCat_isSheaf_iff" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.structurePresheaf_forgetToTopCommRingCat_isSheaf_iff in AdicSpaces">Lean (Mathlib ↔ all opens)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf#doc" data-lean-ref="ValuationSpectrum.isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf in AdicSpaces">Lean (IsSheafy ↔ Mathlib IsSheaf)</a><div class="autopermalink" aria-hidden="true" data-description="Remark A.3: Comparison with Mathlib"><a tabindex="-1" href="#rem-lean-sheaf-comparison" title="Copy heading and permalink for Remark A.3: Comparison with Mathlib" aria-label="Copy heading and permalink for Remark A.3: Comparison with Mathlib">🔗</a></div>
+<a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.isSheafy_iff_isLimitSheaf#doc" data-lean-ref="ValuationSpectrum.isSheafy_iff_isLimitSheaf" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.isSheafy_iff_isLimitSheaf in AdicSpaces">Lean (rational covers ↔ all opens)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=TopCat.Presheaf.IsSheafOfTopologicalRings#doc" data-lean-ref="TopCat.Presheaf.IsSheafOfTopologicalRings" data-lean-project="AdicSpaces" title="Formalized as TopCat.Presheaf.IsSheafOfTopologicalRings in AdicSpaces">Lean (Wedhorn Hom-sheaf)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.structurePresheaf_isSheafOfTopologicalRings_iff#doc" data-lean-ref="ValuationSpectrum.structurePresheaf_isSheafOfTopologicalRings_iff" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.structurePresheaf_isSheafOfTopologicalRings_iff in AdicSpaces">Lean (all opens ↔ Wedhorn)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=TopCat.Presheaf.isSheafOfTopologicalRings_iff_forgetToTopCommRingCat_isSheaf#doc" data-lean-ref="TopCat.Presheaf.isSheafOfTopologicalRings_iff_forgetToTopCommRingCat_isSheaf" data-lean-project="AdicSpaces" title="Formalized as TopCat.Presheaf.isSheafOfTopologicalRings_iff_forgetToTopCommRingCat_isSheaf in AdicSpaces">Lean (Wedhorn ↔ Mathlib)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.structurePresheaf_forgetToTopCommRingCat_isSheaf_iff#doc" data-lean-ref="ValuationSpectrum.structurePresheaf_forgetToTopCommRingCat_isSheaf_iff" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.structurePresheaf_forgetToTopCommRingCat_isSheaf_iff in AdicSpaces">Lean (Mathlib ↔ all opens)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf#doc" data-lean-ref="ValuationSpectrum.isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf in AdicSpaces">Lean (IsSheafy ↔ Mathlib IsSheaf)</a><div class="autopermalink" aria-hidden="true" data-description="Remark A.2"><a tabindex="-1" href="#rem-lean-sheaf-comparison" title="Copy heading and permalink for Remark A.2" aria-label="Copy heading and permalink for Remark A.2">🔗</a></div>
 </article></details><div class="autopermalink" aria-hidden="true" data-description="Subsection A.2: Comparison with Mathlib’s sheaf predicate"><a tabindex="-1" href="#sec-formalisation-comparison-with-mathlib-s-sheaf" title="Copy heading and permalink for Subsection A.2: Comparison with Mathlib’s sheaf predicate" aria-label="Copy heading and permalink for Subsection A.2: Comparison with Mathlib’s sheaf predicate">🔗</a></div>
 </section>
-<section class="subsection" id="sec-formalisation-choice-independent-sheafiness-for-tate">
+<section class="subsection" id="sec-formalisation-sheafiness-for-tate-rings">
 <h4 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Choice-independent sheafiness for Tate rings</span>
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Sheafiness for Tate rings</span>
 </h4>
-<div class="para" id="sec-formalisation-choice-independent-sheafiness-for-tate-2">For a complete Tate ring the following definitions fix a ring of integral elements and then remove the choices of plus ring and completion.  They are in <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.IsSheafyFor.html" target="_blank"><code class="code-inline tex2jax_ignore">SheafyRing.lean</code></a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-choice-independent-sheafiness-for-tate-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-formalisation-sheafiness-for-tate-rings-2">For a complete Tate ring, the following definitions fix a ring of integral elements and then quantify over all such choices.  The final definition also removes the choice of completion for a Tate ring which is not assumed complete.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-sheafiness-for-tate-rings-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <pre class="code-block tex2jax_ignore clipboardable">    def IsSheafyFor (Aplus : RingOfIntegralElements A) : Prop :=
   letI := Aplus.toPlusSubring
   haveI : IsRingOfIntegralElements (A⁺ : Subring A) := Aplus.2
-  haveI : HasLocLiftPowerBounded A := hasLocLiftPowerBounded_faithful
+  haveI : HasLocLiftPowerBounded A :=
+    hasLocLiftPowerBounded_faithful
   IsLimitSheaf A
 
 def IsSheafyComplete : Prop :=
@@ -2038,23 +1970,25 @@ def IsSheafyTateRing : Prop :=
     (Bplus : RingOfIntegralElements (CompletionModel A P)),
     IsSheafyFor (CompletionModel A P) Bplus
 </pre>
-<div class="para" id="sec-formalisation-choice-independent-sheafiness-for-tate-4">The predicate <code class="code-inline tex2jax_ignore">IsSheafyFor A Aplus</code> says that the Huber pair <span class="process-math">\((A,A^+)\)</span> is sheafy.  For complete Tate rings, the <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.isSheafyFor_iff_isSheafyComplete.html" target="_blank">chosen-plus-ring equivalence</a> proves that the choice of integral elements does not affect the condition.  The equivalences in <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.isSheafyTateRing_iff_for_completionModel.html" target="_blank"><code class="code-inline tex2jax_ignore">SheafyCompletionModel.lean</code></a> remove the choice of completion.  Consequently <code class="code-inline tex2jax_ignore">IsSheafyTateRing</code> is the analytic specialisation of Wedhorn’s Definition 8.26 <a href="#bib-Wedhorn" class="xref" data-knowl="./knowl/xref/bib-Wedhorn.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-Wedhorn">[bib-Wedhorn, Definition 8.26]</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-choice-independent-sheafiness-for-tate-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-formalisation-sheafiness-for-tate-rings-4">Thus <code class="code-inline tex2jax_ignore">IsSheafyFor A Aplus</code> is sheafiness of <span class="process-math">\((A,A^+)\text{,}\)</span> <code class="code-inline tex2jax_ignore">IsSheafyComplete A</code> requires this for every ring of integral elements, and <code class="code-inline tex2jax_ignore">IsSheafyTateRing A</code> requires it for every completion model.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-sheafiness-for-tate-rings-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Subsection A.3: Choice-independent sheafiness for Tate rings"><a tabindex="-1" href="#sec-formalisation-choice-independent-sheafiness-for-tate" title="Copy heading and permalink for Subsection A.3: Choice-independent sheafiness for Tate rings" aria-label="Copy heading and permalink for Subsection A.3: Choice-independent sheafiness for Tate rings">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection A.3: Sheafiness for Tate rings"><a tabindex="-1" href="#sec-formalisation-sheafiness-for-tate-rings" title="Copy heading and permalink for Subsection A.3: Sheafiness for Tate rings" aria-label="Copy heading and permalink for Subsection A.3: Sheafiness for Tate rings">🔗</a></div>
 </section>
-<section class="subsection" id="sec-formalisation-strong-noetherianity-and-sheafiness">
+<section class="subsection" id="sec-formalisation-strong-noetherianity">
 <h4 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Strong noetherianity and sheafiness</span>
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Strong noetherianity</span>
 </h4>
 <article class="definition definition-like" id="def-lean-strong-noetherianity"><h5 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Strong noetherianity.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Strong noetherianity.</span>
 </h5>
-<div class="para" id="def-lean-strong-noetherianity-2-1">We use the following definitions.  They are from <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/IsStronglyNoetherian.html" target="_blank"><code class="code-inline tex2jax_ignore">RestrictedPowerSeries.lean</code></a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-lean-strong-noetherianity-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
+<div class="para" id="def-lean-strong-noetherianity-2-1">Lean defines restricted power series and strong noetherianity as follows.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-lean-strong-noetherianity-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="def-lean-strong-noetherianity-2-2"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-lean-strong-noetherianity-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
 <pre class="code-block tex2jax_ignore clipboardable">        def MvPowerSeries.IsRestricted {k : ℕ} {A : Type*}
     [CommRing A] [TopologicalSpace A]
     (f : MvPowerSeries (Fin k) A) : Prop :=
-  Tendsto (fun s : Fin k →₀ ℕ =&gt; MvPowerSeries.coeff s f)
+  Tendsto
+    (fun s : Fin k →₀ ℕ =&gt; MvPowerSeries.coeff s f)
     cofinite (nhds 0)
 
 class IsStronglyNoetherian (A : Type*) [CommRing A]
@@ -2062,11 +1996,11 @@ class IsStronglyNoetherian (A : Type*) [CommRing A]
   isNoetherianRing_restricted : ∀ k : ℕ,
     IsNoetherianRing (restrictedMvPowerSeriesSubring k A)
 </pre>
-<div class="para" id="def-lean-strong-noetherianity-2-3">The cofinite convergence condition is the usual condition that the coefficients tend to zero, so <code class="code-inline tex2jax_ignore">restrictedMvPowerSeriesSubring k A</code> represents <span class="process-math">\(A\langle T_1,\ldots,T_k\rangle\text{.}\)</span>  The second declaration therefore says that these rings are noetherian for every <span class="process-math">\(k\text{.}\)</span>  Since <span class="process-math">\(A\)</span> is already complete, this is Wedhorn’s definition of strong noetherianity <a href="#bib-Wedhorn" class="xref" data-knowl="./knowl/xref/bib-Wedhorn.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-Wedhorn">[bib-Wedhorn, Proposition and Definition 6.36]</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-lean-strong-noetherianity-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="def-lean-strong-noetherianity-2-4">The first condition says exactly that the coefficients tend to zero.  Hence the subring in the second declaration is <span class="process-math">\(A\langle T_1,\ldots,T_k\rangle\text{,}\)</span> and the second declaration says that this ring is noetherian for every <span class="process-math">\(k\text{.}\)</span>  This is the usual notion of strong noetherianity <a href="#bib-Wedhorn" class="xref" data-knowl="./knowl/xref/bib-Wedhorn.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-Wedhorn">[bib-Wedhorn, Proposition and Definition 6.36]</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-lean-strong-noetherianity-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=MvPowerSeries.IsRestricted#doc" data-lean-ref="MvPowerSeries.IsRestricted" data-lean-project="AdicSpaces" title="Formalized as MvPowerSeries.IsRestricted in AdicSpaces">Lean (restricted series)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=restrictedMvPowerSeriesSubring#doc" data-lean-ref="restrictedMvPowerSeriesSubring" data-lean-project="AdicSpaces" title="Formalized as restrictedMvPowerSeriesSubring in AdicSpaces">Lean (restricted Tate algebra)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=IsStronglyNoetherian#doc" data-lean-ref="IsStronglyNoetherian" data-lean-project="AdicSpaces" title="Formalized as IsStronglyNoetherian in AdicSpaces">Lean (strong noetherianity)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.IsStronglyNoetherianTateRing#doc" data-lean-ref="ValuationSpectrum.IsStronglyNoetherianTateRing" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.IsStronglyNoetherianTateRing in AdicSpaces">Lean (IsStronglyNoetherianTateRing)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.isSheafyTateRing_of_stronglyNoetherianTateRing#doc" data-lean-ref="ValuationSpectrum.isSheafyTateRing_of_stronglyNoetherianTateRing" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.isSheafyTateRing_of_stronglyNoetherianTateRing in AdicSpaces">Lean (isSheafyTateRing_of_stronglyNoetherianTateRing)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.isSheafyFor_of_stronglyNoetherianTate#doc" data-lean-ref="ValuationSpectrum.isSheafyFor_of_stronglyNoetherianTate" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.isSheafyFor_of_stronglyNoetherianTate in AdicSpaces">Lean (isSheafyFor_of_stronglyNoetherianTate)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.isSheafyComplete_of_stronglyNoetherianTate#doc" data-lean-ref="ValuationSpectrum.isSheafyComplete_of_stronglyNoetherianTate" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.isSheafyComplete_of_stronglyNoetherianTate in AdicSpaces">Lean (isSheafyComplete_of_stronglyNoetherianTate)</a><div class="autopermalink" aria-hidden="true" data-description="Definition A.4: Strong noetherianity"><a tabindex="-1" href="#def-lean-strong-noetherianity" title="Copy heading and permalink for Definition A.4: Strong noetherianity" aria-label="Copy heading and permalink for Definition A.4: Strong noetherianity">🔗</a></div>
+<a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=MvPowerSeries.IsRestricted#doc" data-lean-ref="MvPowerSeries.IsRestricted" data-lean-project="AdicSpaces" title="Formalized as MvPowerSeries.IsRestricted in AdicSpaces">Lean (restricted series)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=restrictedMvPowerSeriesSubring#doc" data-lean-ref="restrictedMvPowerSeriesSubring" data-lean-project="AdicSpaces" title="Formalized as restrictedMvPowerSeriesSubring in AdicSpaces">Lean (restricted Tate algebra)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=IsStronglyNoetherian#doc" data-lean-ref="IsStronglyNoetherian" data-lean-project="AdicSpaces" title="Formalized as IsStronglyNoetherian in AdicSpaces">Lean (strong noetherianity)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.IsStronglyNoetherianTateRing#doc" data-lean-ref="ValuationSpectrum.IsStronglyNoetherianTateRing" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.IsStronglyNoetherianTateRing in AdicSpaces">Lean (IsStronglyNoetherianTateRing)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.isSheafyTateRing_of_stronglyNoetherianTateRing#doc" data-lean-ref="ValuationSpectrum.isSheafyTateRing_of_stronglyNoetherianTateRing" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.isSheafyTateRing_of_stronglyNoetherianTateRing in AdicSpaces">Lean (isSheafyTateRing_of_stronglyNoetherianTateRing)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.isSheafyFor_of_stronglyNoetherianTate#doc" data-lean-ref="ValuationSpectrum.isSheafyFor_of_stronglyNoetherianTate" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.isSheafyFor_of_stronglyNoetherianTate in AdicSpaces">Lean (isSheafyFor_of_stronglyNoetherianTate)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=ValuationSpectrum.isSheafyComplete_of_stronglyNoetherianTate#doc" data-lean-ref="ValuationSpectrum.isSheafyComplete_of_stronglyNoetherianTate" data-lean-project="AdicSpaces" title="Formalized as ValuationSpectrum.isSheafyComplete_of_stronglyNoetherianTate in AdicSpaces">Lean (isSheafyComplete_of_stronglyNoetherianTate)</a><div class="autopermalink" aria-hidden="true" data-description="Definition A.3: Strong noetherianity"><a tabindex="-1" href="#def-lean-strong-noetherianity" title="Copy heading and permalink for Definition A.3: Strong noetherianity" aria-label="Copy heading and permalink for Definition A.3: Strong noetherianity">🔗</a></div>
 </article>
-<div class="para" id="sec-formalisation-strong-noetherianity-and-sheafiness-3">For a Tate ring which is not assumed complete, Lean packages the definition using one completion model.  The completion-comparison theorem proves that one model is equivalent to every model.  Wedhorn’s sheafiness theorem is then formalised at the same level of generality:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-strong-noetherianity-and-sheafiness-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-formalisation-strong-noetherianity-3">For a Tate ring not assumed complete, the condition is imposed on a completion model.  Lean then records Wedhorn’s sheafiness theorem at the same level of generality:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-strong-noetherianity-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <pre class="code-block tex2jax_ignore clipboardable">    def IsStronglyNoetherianTateRing [IsTateRing A] : Prop :=
   ∃ P : PairOfDefinition A,
@@ -2074,41 +2008,31 @@ class IsStronglyNoetherian (A : Type*) [CommRing A]
 
 theorem isSheafyTateRing_of_stronglyNoetherianTateRing
     [IsTateRing A] (h : IsStronglyNoetherianTateRing A) :
-    IsSheafyTateRing A := by
-  ...
-</pre>
-<div class="para" id="sec-formalisation-strong-noetherianity-and-sheafiness-5">Thus one strongly noetherian completion model implies sheafiness for every completion model and every ring of integral elements.  For a complete Tate ring the specialization is:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-strong-noetherianity-and-sheafiness-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<pre class="code-block tex2jax_ignore clipboardable">    theorem isSheafyFor_of_stronglyNoetherianTate
-    [IsStronglyNoetherian A]
-    (Aplus : RingOfIntegralElements A) :
-    IsSheafyFor A Aplus := by
-  ...
+    IsSheafyTateRing A
 
 theorem isSheafyComplete_of_stronglyNoetherianTate
     [IsStronglyNoetherian A] :
-    IsSheafyComplete A := by
-  ...
+    IsSheafyComplete A
 </pre>
-<div class="para" id="sec-formalisation-strong-noetherianity-and-sheafiness-7">These are the formal versions of Wedhorn’s theorem that a strongly noetherian Tate ring is sheafy <a href="#bib-Wedhorn" class="xref" data-knowl="./knowl/xref/bib-Wedhorn.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-Wedhorn">[bib-Wedhorn, Theorem 8.28(b)]</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-strong-noetherianity-and-sheafiness-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-formalisation-strong-noetherianity-5">The first theorem is independent of the chosen completion model; the second is its complete-ring specialisation.  These are the formal versions of the strongly noetherian sheaf theorem <a href="#bib-Wedhorn" class="xref" data-knowl="./knowl/xref/bib-Wedhorn.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-Wedhorn">[bib-Wedhorn, Theorem 8.28(b)]</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-strong-noetherianity-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Subsection A.4: Strong noetherianity and sheafiness"><a tabindex="-1" href="#sec-formalisation-strong-noetherianity-and-sheafiness" title="Copy heading and permalink for Subsection A.4: Strong noetherianity and sheafiness" aria-label="Copy heading and permalink for Subsection A.4: Strong noetherianity and sheafiness">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection A.4: Strong noetherianity"><a tabindex="-1" href="#sec-formalisation-strong-noetherianity" title="Copy heading and permalink for Subsection A.4: Strong noetherianity" aria-label="Copy heading and permalink for Subsection A.4: Strong noetherianity">🔗</a></div>
 </section>
 <section class="subsection" id="sec-formalisation-the-finite-jet-example">
 <h4 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The finite-jet example</span>
 </h4>
+<section class="introduction" id="sec-formalisation-the-finite-jet-example-2">
 <article class="definition definition-like" id="def-lean-finite-jet-ring"><h5 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The finite-jet ring.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The finite-jet ring.</span>
 </h5>
-<div class="para" id="def-lean-finite-jet-ring-2-1">We finally record the definition of the example itself.  In the following code, <code class="code-inline tex2jax_ignore">PowerSeries.Restricted R 1</code> is the radius-one Tate algebra in one variable over <span class="process-math">\(R\text{,}\)</span> <code class="code-inline tex2jax_ignore">RestrictedLaurent K</code> is <span class="process-math">\(K\langle W,W^{-1}\rangle\text{,}\)</span> and <code class="code-inline tex2jax_ignore">DualNumber R</code> is <span class="process-math">\(R[Q]/(Q^2)\text{.}\)</span> The source is <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.JetA.html" target="_blank"><code class="code-inline tex2jax_ignore">FJP/Over/JetRings.lean</code></a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-lean-finite-jet-ring-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="def-lean-finite-jet-ring-2-1">The four rings in the defining square and the finite-jet ring itself are represented as follows.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-lean-finite-jet-ring-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<pre class="code-block tex2jax_ignore clipboardable">        abbrev L : Type u := RestrictedLaurent K
+<pre class="code-block tex2jax_ignore clipboardable">          abbrev L : Type u := RestrictedLaurent K
 
 abbrev JetC : Type u := PowerSeries.Restricted (L K) (1 : ℝ)
 
-abbrev JetB : Type u :=
-  DualNumber (PowerSeries.Restricted K (1 : ℝ))
+abbrev JetB : Type u := DualNumber (PowerSeries.Restricted K (1 : ℝ))
 
 abbrev JetD : Type u := DualNumber (L K)
 
@@ -2116,299 +2040,295 @@ noncomputable def jetSupport : Subring (JetC K) where
   carrier := {f |
     qCoeff K 0 f ∈ nonnegSubring K ∧
     qCoeff K 1 f ∈ nonnegSubring K}
-  zero_mem' := by
-    ...
-  one_mem' := by
-    ...
-  add_mem' := by
-    ...
-  neg_mem' := by
-    ...
-  mul_mem' := by
-    ...
+  ...
 
 abbrev JetA : Type u := ↥(jetSupport K)
 </pre>
 <div class="para logical" id="def-lean-finite-jet-ring-2-3">
-<div class="para">The predicate <code class="code-inline tex2jax_ignore">nonnegSubring K</code> cuts out <span class="process-math">\(K\langle W\rangle\)</span> inside <span class="process-math">\(K\langle W,W^{-1}\rangle\text{.}\)</span>  Consequently the carrier condition says that the coefficients of <span class="process-math">\(Q^0\)</span> and <span class="process-math">\(Q^1\)</span> have no negative powers of <span class="process-math">\(W\text{,}\)</span> while the coefficients of <span class="process-math">\(Q^n\)</span> for <span class="process-math">\(n\geq2\)</span> are unrestricted.  Thus <code class="code-inline tex2jax_ignore">JetA K</code> is</div>
+<div class="para">Here <code class="code-inline tex2jax_ignore">RestrictedLaurent K</code> is <span class="process-math">\(K\langle W,W^{-1}\rangle\text{,}\)</span> while <code class="code-inline tex2jax_ignore">PowerSeries.Restricted R 1</code> is the radius-one restricted power-series ring over <span class="process-math">\(R\text{.}\)</span>  The condition defining <code class="code-inline tex2jax_ignore">jetSupport</code> says that the coefficients of <span class="process-math">\(Q^0\)</span> and <span class="process-math">\(Q^1\)</span> have no negative powers of <span class="process-math">\(W\text{.}\)</span>  Thus <code class="code-inline tex2jax_ignore">JetA K</code> is precisely</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-coefficient-A0.html" id="def-lean-finite-jet-ring-2-3-10">
 \begin{equation*}
-\left\{f_0(W)+Qf_1(W)+Q^2h(W,W^{-1},Q)\ \middle|\
-\substack{f_0,f_1\in K\langle W\rangle\\
-h\in L\langle Q\rangle}\right\},
+\left\{
+f_0(W)+Qf_1(W)+Q^2h(W,W^{-1},Q):
+f_0,f_1\in K\langle W\rangle,\;
+h\in K\langle W,W^{-1}\rangle\langle Q\rangle
+\right\}.
 \end{equation*}
 </div>
-<div class="para">which is the coefficient description of <span class="process-math">\(A\)</span> in <a href="#eq-coefficient-A0" class="xref" data-knowl="./knowl/xref/eq-coefficient-A0.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1">(3.1)</a> after inverting <span class="process-math">\(\varpi\text{.}\)</span>
+<div class="para">This is the coefficient description of <span class="process-math">\(A\)</span> in <a href="#eq-coefficient-A0" class="xref" data-knowl="./knowl/xref/eq-coefficient-A0.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.1">(3.1)</a> after inverting <span class="process-math">\(\varpi\text{.}\)</span>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#def-lean-finite-jet-ring-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=FiniteJetOver.L#doc" data-lean-ref="FiniteJetOver.L" data-lean-project="AdicSpaces" title="Formalized as FiniteJetOver.L in AdicSpaces">Lean (Laurent algebra)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=FiniteJetOver.JetC#doc" data-lean-ref="FiniteJetOver.JetC" data-lean-project="AdicSpaces" title="Formalized as FiniteJetOver.JetC in AdicSpaces">Lean (vertex C)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=FiniteJetOver.JetB#doc" data-lean-ref="FiniteJetOver.JetB" data-lean-project="AdicSpaces" title="Formalized as FiniteJetOver.JetB in AdicSpaces">Lean (vertex B)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=FiniteJetOver.JetD#doc" data-lean-ref="FiniteJetOver.JetD" data-lean-project="AdicSpaces" title="Formalized as FiniteJetOver.JetD in AdicSpaces">Lean (vertex D)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=FiniteJetOver.jetSupport#doc" data-lean-ref="FiniteJetOver.jetSupport" data-lean-project="AdicSpaces" title="Formalized as FiniteJetOver.jetSupport in AdicSpaces">Lean (coefficient condition defining A)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=FiniteJetOver.JetA#doc" data-lean-ref="FiniteJetOver.JetA" data-lean-project="AdicSpaces" title="Formalized as FiniteJetOver.JetA in AdicSpaces">Lean (finite-jet ring A)</a><div class="autopermalink" aria-hidden="true" data-description="Definition A.5: The finite-jet ring"><a tabindex="-1" href="#def-lean-finite-jet-ring" title="Copy heading and permalink for Definition A.5: The finite-jet ring" aria-label="Copy heading and permalink for Definition A.5: The finite-jet ring">🔗</a></div>
+<a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=FiniteJetOver.L#doc" data-lean-ref="FiniteJetOver.L" data-lean-project="AdicSpaces" title="Formalized as FiniteJetOver.L in AdicSpaces">Lean (Laurent algebra)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=FiniteJetOver.JetC#doc" data-lean-ref="FiniteJetOver.JetC" data-lean-project="AdicSpaces" title="Formalized as FiniteJetOver.JetC in AdicSpaces">Lean (vertex C)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=FiniteJetOver.JetB#doc" data-lean-ref="FiniteJetOver.JetB" data-lean-project="AdicSpaces" title="Formalized as FiniteJetOver.JetB in AdicSpaces">Lean (vertex B)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=FiniteJetOver.JetD#doc" data-lean-ref="FiniteJetOver.JetD" data-lean-project="AdicSpaces" title="Formalized as FiniteJetOver.JetD in AdicSpaces">Lean (vertex D)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=FiniteJetOver.jetSupport#doc" data-lean-ref="FiniteJetOver.jetSupport" data-lean-project="AdicSpaces" title="Formalized as FiniteJetOver.jetSupport in AdicSpaces">Lean (coefficient condition defining A)</a><a class="lean-link lean-proj-AdicSpaces" href="../lean/AdicSpaces/find/?pattern=FiniteJetOver.JetA#doc" data-lean-ref="FiniteJetOver.JetA" data-lean-project="AdicSpaces" title="Formalized as FiniteJetOver.JetA in AdicSpaces">Lean (finite-jet ring A)</a><div class="autopermalink" aria-hidden="true" data-description="Definition A.4: The finite-jet ring"><a tabindex="-1" href="#def-lean-finite-jet-ring" title="Copy heading and permalink for Definition A.4: The finite-jet ring" aria-label="Copy heading and permalink for Definition A.4: The finite-jet ring">🔗</a></div>
 </article>
-<div class="para" id="sec-formalisation-the-finite-jet-example-3">The file also constructs the four maps in the Milnor square and proves <code class="code-inline tex2jax_ignore">milnorRow_exact</code>: every compatible pair in <code class="code-inline tex2jax_ignore">JetB K</code> and <code class="code-inline tex2jax_ignore">JetC K</code> comes from a unique element of <code class="code-inline tex2jax_ignore">JetA K</code>.  This identifies <code class="code-inline tex2jax_ignore">JetA K</code> with <span class="process-math">\(B\times_D C\text{.}\)</span>  The sheaf argument produces the finite-rational-cover condition in the following theorem:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-formalisation-the-finite-jet-example-2-2">For a complete nontrivially normed ultrametric field <span class="process-math">\(K\text{,}\)</span> a uniformizer <span class="process-math">\(\varpi\text{,}\)</span> and, where stated, a noetherian norm unit ball, the following are the formal counterparts of <a href="#prop-uniform-domain" class="xref" data-knowl="./knowl/xref/prop-uniform-domain.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 3.1">Proposition 3.1</a>, <a href="#prop-bad-chart" class="xref" data-knowl="./knowl/xref/prop-bad-chart.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.1">Proposition 4.1</a>, <a href="#prop-not-stably-uniform" class="xref" data-knowl="./knowl/xref/prop-not-stably-uniform.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.2">Proposition 4.2</a>:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<pre class="code-block tex2jax_ignore clipboardable">    include ϖ hK₀ in
-theorem isSheafy_JetA :
-    ValuationSpectrum.IsSheafy (JetA K) := by
-  ...
-</pre>
-<div class="para" id="sec-formalisation-the-finite-jet-example-5">Here <span class="process-math">\(\varpi\)</span> is a <code class="code-inline tex2jax_ignore">Uniformizer K</code>, and the remaining input is the noetherianity of <code class="code-inline tex2jax_ignore">unitBall K</code>.  This is the version of sheafiness proved directly for the example.  The equivalences above give the all-open and choice-independent statements.  The main theorems are collected in <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.finiteJet_isSheafyFor_of_dvr.html" target="_blank"><code class="code-inline tex2jax_ignore">SheafyEndpoints</code></a>, and include the following sheafiness statements.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<pre class="code-block tex2jax_ignore clipboardable">    theorem finiteJet_isSheafyFor_of_dvr
-    [IsDiscreteValuationRing 𝒪[K]] :
-    IsSheafyFor (JetA K) (finiteJetPlus K) := by
-  ...
+<pre class="code-block tex2jax_ignore clipboardable">      theorem finiteJet_isUniform (ϖ : Uniformizer K) :
+    TopologicalRing.IsUniform (JetA K)
 
-theorem finiteJet_isSheafyTateRing_of_dvr
-    [IsDiscreteValuationRing 𝒪[K]] :
-    IsSheafyTateRing (JetA K) := by
-  ...
-</pre>
-<div class="para logical" id="sec-formalisation-the-finite-jet-example-7">
-<div class="para">Here <span class="process-math">\(K\)</span> is any complete nontrivially normed ultrametric field for which <span class="process-math">\(\mathcal O[K]=\{x:\lVert x\rVert\leq1\}\)</span> is a discrete valuation ring.  No local compactness, finiteness of the residue field, characteristic, or perfection assumption is used.  The theorem <code class="code-inline tex2jax_ignore">finiteJet_isSheafyFor_of_dvr</code> proves that <span class="process-math">\((A,A^\circ)\)</span> is sheafy, whilst <code class="code-inline tex2jax_ignore">finiteJet_isSheafyTateRing_of_dvr</code> removes the choices of completion and ring of integral elements.  The corresponding all-open statement is</div>
-<div class="displaymath process-math" id="sec-formalisation-the-finite-jet-example-7-6">
-\begin{equation*}
-\begin{split}
-&amp;\texttt{TopCat.Presheaf.IsSheafOfTopologicalRings}\\[-2pt]
-&amp;\qquad
-\texttt{(ValuationSpectrum.structurePresheaf (JetA K))},
-\end{split}
-\end{equation*}
-</div>
-<div class="para">The <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr.html" target="_blank">corresponding Lean theorem</a> proves this statement directly.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sec-formalisation-the-finite-jet-example-8">Strong sheafiness is expressed by the following theorem from <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.finiteJet_tateExt_isSheafyComplete.html" target="_blank"><code class="code-inline tex2jax_ignore">StrongSheafy.lean</code></a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<pre class="code-block tex2jax_ignore clipboardable">    variable (K : Type*) [NontriviallyNormedField K]
-  [IsUltrametricDist K] [CompleteSpace K]
-
-theorem finiteJet_tateExt_isSheafyComplete
-    (ϖ : Uniformizer K)
-    (hK₀ : IsNoetherianRing (FiniteJet.unitBall K))
-    (n : ℕ) :
-    letI := mvTateAlgebraTopology' (A := JetA K) n
-    haveI := mvTate_isTateRing (A := JetA K) n
-    haveI := mvTate_t2Space (A := JetA K) n
-    haveI := mvTate_nonarchimedean (A := JetA K) n
-    haveI := mvTateAlgebraTopology'_isTopologicalRing
-      (A := JetA K) n
-    haveI : @CompleteSpace
-      ↥(restrictedMvPowerSeriesSubring n (JetA K))
-      (IsTopologicalAddGroup.rightUniformSpace _) :=
-        finiteJet_tateExt_completeSpace K n
-    IsSheafyComplete
-      ↥(restrictedMvPowerSeriesSubring n (JetA K)) := by
-  ...
-</pre>
-<div class="para" id="sec-formalisation-the-finite-jet-example-10">The restricted power-series subring in this statement is <span class="process-math">\(A\langle V_1,\ldots,V_n\rangle\text{,}\)</span> with its canonical Tate-algebra topology, and <code class="code-inline tex2jax_ignore">IsSheafyComplete</code> says that it is sheafy for every ring of integral elements.  The theorem <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.finiteJet_tateExt_isSheafyComplete_of_dvr.html" target="_blank"><code class="code-inline tex2jax_ignore">finiteJet_tateExt_isSheafyComplete_of_dvr</code></a> supplies the uniformizer and noetherianity hypothesis when <span class="process-math">\(\mathcal O[K]\)</span> is a discrete valuation ring.  Thus the formalised theorem has the DVR-base scope used throughout the paper; no Laurent-series specialisation is needed.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Subsection A.5: The finite-jet example"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example" title="Copy heading and permalink for Subsection A.5: The finite-jet example" aria-label="Copy heading and permalink for Subsection A.5: The finite-jet example">🔗</a></div>
-</section>
-<section class="subsection" id="sec-formalisation-scope-of-the-finite-jet">
-<h4 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Scope of the finite-jet formalisation</span>
-</h4>
-<div class="para" id="sec-formalisation-scope-of-the-finite-jet-2">The paper’s <span class="process-math">\(A_0\)</span> is represented by the Gauss-norm unit ball. The theorem <code class="code-inline tex2jax_ignore">isPowerBounded_JetA_iff</code> identifies this unit ball with the power-bounded elements, giving <span class="process-math">\(A^\circ=A_0\text{.}\)</span>  Completeness and the Tate structure are supplied by the corresponding instances.  As in the weighted-parity development, the constant-series map from <span class="process-math">\(K\)</span> is explicit and isometric but is not installed as an <code class="code-inline tex2jax_ignore">Algebra K</code> instance.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-scope-of-the-finite-jet-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sec-formalisation-scope-of-the-finite-jet-3">For the bad chart, <code class="code-inline tex2jax_ignore">chartEquiv</code> is an exported ring equivalence. The two continuity theorems make it a homeomorphism, and the canonical-map theorem identifies <span class="process-math">\(W\)</span> and <span class="process-math">\(Q\text{.}\)</span>  It is not bundled as a <code class="code-inline tex2jax_ignore">K</code>-<code class="code-inline tex2jax_ignore">AlgEquiv</code>, which is why <a href="#prop-bad-chart" class="xref" data-knowl="./knowl/xref/prop-bad-chart.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.1">Proposition 4.1</a> is stated for complete topological rings.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-scope-of-the-finite-jet-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sec-formalisation-scope-of-the-finite-jet-4">The results in <a href="#sec-problems-24-28" class="internal" title="Section 7: Problems 24 and 28">Section 7</a> are formalised for any complete ultrametric normed field <span class="process-math">\(K\)</span> equipped with a nonzero element <span class="process-math">\(\varpi\)</span> satisfying <span class="process-math">\(\lVert\varpi\rVert&lt;1\text{;}\)</span> this is the class <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.IsFJPBase.html" target="_blank"><code class="code-inline tex2jax_ignore">IsFJPBase K</code></a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-scope-of-the-finite-jet-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<pre class="code-block tex2jax_ignore clipboardable">  class IsFJPBase (K : Type u) [NormedField K]
-  [IsUltrametricDist K] [CompleteSpace K] where
-pseudoUniformizer : K
-pseudoUniformizer_ne_zero : pseudoUniformizer ≠ 0
-norm_pseudoUniformizer_lt_one :
-  ‖pseudoUniformizer‖ &lt; 1
-</pre>
-<div class="para" id="sec-formalisation-scope-of-the-finite-jet-6">At this weaker level Lean proves the conclusions of <a href="#prop-uniform-domain" class="xref" data-knowl="./knowl/xref/prop-uniform-domain.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 3.1">Proposition 3.1</a>, <a href="#prop-bad-chart" class="xref" data-knowl="./knowl/xref/prop-bad-chart.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.1">Proposition 4.1</a>, <a href="#prop-not-stably-uniform" class="xref" data-knowl="./knowl/xref/prop-not-stably-uniform.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.2">Proposition 4.2</a>; discreteness is not used:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-scope-of-the-finite-jet-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<pre class="code-block tex2jax_ignore clipboardable">    variable (K : Type*) [NormedField K] [IsUltrametricDist K]
-  [CompleteSpace K] [IsFJPBase K]
-
-theorem finiteJet_isUniform :
-    TopologicalRing.IsUniform (JetA K) := by
-  ...
-
-theorem finiteJet_isDomain : IsDomain (JetA K) := by
-  ...
+theorem finiteJet_isDomain :
+    IsDomain (JetA K)
 
 theorem finiteJet_not_noetherian :
-    ¬ IsNoetherianRing (JetA K) := by
-  ...
+    ¬ IsNoetherianRing (JetA K)
 
-theorem finiteJet_not_stablyUniform :
-    ¬ TopologicalRing.IsStablyUniform (JetA K) := by
-  ...
+def chartEquiv (ϖ : Uniformizer K) :
+    presheafValue (chartDatum K ϖ) ≃+* JetB K := ...
+
+theorem chartEquiv_continuous (ϖ : Uniformizer K) :
+    Continuous (chartEquiv K ϖ)
+
+theorem chartEquiv_symm_continuous (ϖ : Uniformizer K) :
+    Continuous (chartEquiv K ϖ).symm
+
+theorem finiteJet_not_stablyUniform (ϖ : Uniformizer K) :
+    ¬ TopologicalRing.IsStablyUniform (JetA K)
 </pre>
-<div class="para" id="sec-formalisation-scope-of-the-finite-jet-8">In fact, the domain and non-noetherianity declarations do not use <code class="code-inline tex2jax_ignore">IsFJPBase</code>; the pseudouniformizer is needed for the Tate topology, uniformity, and the bad chart.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-scope-of-the-finite-jet-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sec-formalisation-scope-of-the-finite-jet-9">Sheafiness is a separate assertion in this newer interface.  The <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_witnessRing_quality.html" target="_blank">corresponding Lean theorem</a> assumes the additional class <code class="code-inline tex2jax_ignore">IsFJPNoetherianBase K</code>, which supplies the noetherian Gauss-unit-ball input used in the sheaf proof.  The independent <code class="code-inline tex2jax_ignore">FiniteJetOver</code> development used for the main theorem proves sheafiness under the complete discretely valued hypothesis of the paper.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-scope-of-the-finite-jet-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para logical" id="sec-formalisation-scope-of-the-finite-jet-10">
-<div class="para">Under the weaker <code class="code-inline tex2jax_ignore">IsFJPBase</code> hypothesis, the theorem <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_problem28.html" target="_blank"><code class="code-inline tex2jax_ignore">finiteJet_problem28</code></a> records in one statement that <span class="process-math">\((W;\varpi)\)</span> is rational, its rational subset and section ring are nonempty and nonzero, multiplication by <span class="process-math">\(Q^2\)</span> is a continuous strict injection with closed image, and <span class="process-math">\(Q^2\)</span> restricts to zero. The nonempty point is constructed from the norm valuation pulled back along <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.ev00.html" target="_blank"><code class="code-inline tex2jax_ignore">ev00</code></a>, the map</div>
-<div class="displaymath process-math" id="sec-formalisation-scope-of-the-finite-jet-10-7">
+<div class="para logical" id="sec-formalisation-the-finite-jet-example-2-4">
+<div class="para">The equivalence and the two continuity statements identify the completed rational localisation with</div>
+<div class="displaymath process-math" id="sec-formalisation-the-finite-jet-example-2-4-1">
 \begin{equation*}
-f_0(W)+Qf_1(W)+Q^2h\longmapsto f_0(0).
+A\left\langle\frac{W}{\varpi}\right\rangle
+\simeq K\langle X,Q\rangle/(Q^2)
 \end{equation*}
 </div>
-<div class="para">The separate declarations saying that <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.scottishWitness_mul_isometry.html" target="_blank">multiplication by <span class="process-math">\(Q^2\)</span> is an isometry</a> and that <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.canonicalMap_scottishWitness.html" target="_blank"><span class="process-math">\(Q^2\)</span> restricts to zero</a> are the inputs used below.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-scope-of-the-finite-jet-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">as a topological ring.  The domain and non-noetherianity statements do not require a uniformizer.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<pre class="code-block tex2jax_ignore clipboardable">    variable (F : Type*) [NormedField F] [IsUltrametricDist F]
-  [CompleteSpace F] [IsFJPBase F]
+<div class="para" id="sec-formalisation-the-finite-jet-example-2-5">Ordinary sheafiness, independently of the choice of ring of integral elements, is recorded by<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<pre class="code-block tex2jax_ignore clipboardable">  theorem finiteJet_isSheafyComplete
+(ϖ : Uniformizer K)
+(hK₀ : IsNoetherianRing (FiniteJet.unitBall K)) :
+IsSheafyComplete (JetA K)
+</pre>
+<div class="para" id="sec-formalisation-the-finite-jet-example-2-7">The formal statement of strong sheafiness is:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<pre class="code-block tex2jax_ignore clipboardable">  theorem finiteJet_tateExt_isSheafyComplete
+(ϖ : Uniformizer K)
+(hK₀ : IsNoetherianRing (FiniteJet.unitBall K))
+(n : ℕ) :
+letI := mvTateAlgebraTopology' (A := JetA K) n
+haveI := mvTate_isTateRing (A := JetA K) n
+haveI := mvTate_t2Space (A := JetA K) n
+haveI := mvTate_nonarchimedean (A := JetA K) n
+haveI := mvTateAlgebraTopology'_isTopologicalRing
+  (A := JetA K) n
+haveI : @CompleteSpace
+  ↥(restrictedMvPowerSeriesSubring n (JetA K))
+  (IsTopologicalAddGroup.rightUniformSpace _) :=
+    finiteJet_tateExt_completeSpace K n
+IsSheafyComplete
+  ↥(restrictedMvPowerSeriesSubring n (JetA K))
+</pre>
+<div class="para" id="sec-formalisation-the-finite-jet-example-2-9">The restricted power-series subring here is <span class="process-math">\(A\langle V_1,\ldots,V_n\rangle\text{,}\)</span> with its canonical Tate-algebra topology, and <code class="code-inline tex2jax_ignore">IsSheafyComplete</code> says that it is sheafy for every ring of integral elements.  This is precisely the strong-sheafiness assertion of <a href="#thm-sheafy" class="xref" data-knowl="./knowl/xref/thm-sheafy.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 6.2">Corollary 6.2</a>.  The separate <code class="code-inline tex2jax_ignore">_of_dvr</code> theorem supplies <span class="process-math">\(\varpi\)</span> and the noetherianity hypothesis from the assumption that <span class="process-math">\(\mathcal O[K]\)</span> is a discrete valuation ring.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-2-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="subsubsection" id="sec-formalisation-the-finite-jet-example-the-scottish-book-statements">
+<h5 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.5.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Scottish Book statements</span>
+</h5>
+<div class="para" id="sec-formalisation-the-finite-jet-example-the-scottish-book-statements-2">For <a href="#prop-problems-24-28" class="xref" data-knowl="./knowl/xref/prop-problems-24-28.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 7.1">Proposition 7.1</a>, the base need only be a complete ultrametric normed field with a chosen nonzero element <span class="process-math">\(\varpi\)</span> satisfying <span class="process-math">\(\lVert\varpi\rVert&lt;1\text{;}\)</span> Lean packages this as <code class="code-inline tex2jax_ignore">IsFJPBase</code>.  The element <code class="code-inline tex2jax_ignore">scottishWitness K</code> is <span class="process-math">\(Q^2\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-the-scottish-book-statements-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<pre class="code-block tex2jax_ignore clipboardable">      class IsFJPBase (K : Type u) [NormedField K]
+    [IsUltrametricDist K] [CompleteSpace K] where
+  pseudoUniformizer : K
+  pseudoUniformizer_ne_zero : pseudoUniformizer ≠ 0
+  norm_pseudoUniformizer_lt_one :
+    ‖pseudoUniformizer‖ &lt; 1
 
 theorem finiteJet_problem28 :
-    (chartDatum F).IsRational ∧
-    (rationalOpen (chartDatum F).T (chartDatum F).s).Nonempty ∧
-    Nontrivial (presheafValue (chartDatum F)) ∧
+    (chartDatum K).IsRational ∧
+    (rationalOpen
+      (chartDatum K).T (chartDatum K).s).Nonempty ∧
+    Nontrivial (presheafValue (chartDatum K)) ∧
     Function.Injective
-      (fun a : JetA F =&gt; scottishWitness F * a) ∧
-    Continuous (fun a : JetA F =&gt; scottishWitness F * a) ∧
-    IsStrictMap (fun a : JetA F =&gt; scottishWitness F * a) ∧
-    IsClosed (Set.range
-      fun a : JetA F =&gt; scottishWitness F * a) ∧
-    (chartDatum F).canonicalMap (scottishWitness F) = 0 := by
-  ...
+      (fun a : JetA K =&gt; scottishWitness K * a) ∧
+    Continuous
+      (fun a : JetA K =&gt; scottishWitness K * a) ∧
+    IsStrictMap
+      (fun a : JetA K =&gt; scottishWitness K * a) ∧
+    IsClosed
+      (Set.range
+        (fun a : JetA K =&gt; scottishWitness K * a)) ∧
+    (chartDatum K).canonicalMap
+      (scottishWitness K) = 0
+
+theorem finiteJet_not_flat_canonicalMap :
+    ¬ @Module.Flat
+      (JetA K)
+      (presheafValue (chartDatum K))
+      _ _
+      (RingHom.toModule (chartDatum K).canonicalMap)
 </pre>
-<div class="para" id="sec-formalisation-scope-of-the-finite-jet-12">For Problem 24, Lean uses the module structure induced by the canonical map to the completed localisation and proves <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_not_flat_canonicalMap.html" target="_blank"><code class="code-inline tex2jax_ignore">finiteJet_not_flat_canonicalMap</code></a>. The proof is the one given in <a href="#prop-problems-24-28" class="xref" data-knowl="./knowl/xref/prop-problems-24-28.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 7.1">Proposition 7.1</a>: <span class="process-math">\(Q^2\)</span> is a non-zero-divisor of <span class="process-math">\(A\text{,}\)</span> so flatness would make its image act injectively on the chart; that image is zero and the chart is nonzero.  The ordinary ring localisation <code class="code-inline tex2jax_ignore">Localization.Away</code> is always flat.  The failure is a property of the completion defining <code class="code-inline tex2jax_ignore">presheafValue</code>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-scope-of-the-finite-jet-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-formalisation-the-finite-jet-example-the-scottish-book-statements-4">The first theorem says that multiplication by the non-zero-divisor <span class="process-math">\(Q^2\)</span> is a continuous strict injection with closed image, while <span class="process-math">\(Q^2\)</span> becomes zero on a nonempty rational subspace with nonzero section ring.  The second says that the canonical map to this completed rational localisation is not flat.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-the-scottish-book-statements-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-formalisation-scope-of-the-finite-jet-13">The conclusions of <a href="#lem-koszul" class="xref" data-knowl="./knowl/xref/lem-koszul.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.1">Lemma 5.1</a> are formalised for an arbitrary complete ultrametric normed commutative ring <span class="process-math">\(E\)</span> with a norm-scaling topologically nilpotent unit, subject to the noetherianity hypotheses stated there.  The ring <span class="process-math">\(T_E\)</span> has its Gauss norm, <span class="process-math">\(T_{E,0}\)</span> is its unit ball, and the finite free terms have their sup norms. Positive-degree exactness is transported from the polynomial sequence by flat base change.  Closedness in positive degree comes from exactness and continuity, whilst the degree-zero ideal is closed by the noetherian closed-ideal theorem.  The closed-range theorem gives a constant <span class="process-math">\(C_{q,E}\)</span> such that every <span class="process-math">\(y\in\im(d_{q,E})\)</span> has a preimage <span class="process-math">\(x\)</span> with <span class="process-math">\(\lVert x\rVert\leq C_{q,E}\lVert y\rVert\text{.}\)</span>  This proves strictness, and multiplying such a preimage by a suitable power of <span class="process-math">\(\varpi\)</span> gives the two denominator inclusions <a href="#eq-ideal-denominators" class="xref" data-knowl="./knowl/xref/eq-ideal-denominators.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.1">(5.1)</a> and <a href="#eq-syzygy-denominators" class="xref" data-knowl="./knowl/xref/eq-syzygy-denominators.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.2">(5.2)</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-scope-of-the-finite-jet-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsubsection A.5.1: The Scottish Book statements"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-the-scottish-book-statements" title="Copy heading and permalink for Subsubsection A.5.1: The Scottish Book statements" aria-label="Copy heading and permalink for Subsubsection A.5.1: The Scottish Book statements">🔗</a></div>
+</section>
+<section class="subsubsection" id="sec-formalisation-the-finite-jet-example-koszul-complexes-and-milnor-descent">
+<h5 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.5.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Koszul complexes and Milnor descent</span>
+</h5>
+<div class="para" id="sec-formalisation-the-finite-jet-example-koszul-complexes-and-milnor-descent-2">The statement formalised for <a href="#lem-koszul" class="xref" data-knowl="./knowl/xref/lem-koszul.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.1">Lemma 5.1</a> is more general than its use in the finite-jet example.  Let <span class="process-math">\(E\)</span> be the complete ultrametric normed commutative ring appearing in the theorem below and put <span class="process-math">\(P(E,m)=E\langle T_1,\ldots,T_m\rangle\text{.}\)</span>  The graph sequence is <span class="process-math">\(r_i=gT_i-f_i\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-koszul-complexes-and-milnor-descent-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-formalisation-scope-of-the-finite-jet-14">The Lean proof of <a href="#lem-graph-pullback" class="xref" data-knowl="./knowl/xref/lem-graph-pullback.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.2">Lemma 5.2</a> uses these inequalities directly. Its localisation proof obtains the topological embedding from a quotient-norm estimate, and proves openness of <span class="process-math">\(C_\alpha\to D_\alpha\)</span> from the norm-preserving coefficientwise section.  The components of <a href="#prop-localized-milnor" class="xref" data-knowl="./knowl/xref/prop-localized-milnor.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 5.3">Proposition 5.3</a> are therefore separate declarations.  The transfer step is formalised for arbitrary complete nonarchimedean Huber rings carrying the local equaliser data of <a href="#thm-milnor-sheaf-transfer" class="xref" data-knowl="./knowl/xref/thm-milnor-sheaf-transfer.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.1: Milnor descent">Theorem 6.1</a>:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-scope-of-the-finite-jet-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<pre class="code-block tex2jax_ignore clipboardable">  theorem koszulGraph_exact_strict_closed
+[IsNoetherianRing (P E m)]
+(hE₀ : IsNoetherianRing (unitBall E))
+(t : E) (htu : IsUnit t)
+(ht1 : ‖t‖ &lt; 1) (ht0 : 0 &lt; ‖t‖)
+(hscale : ∀ x : E, ‖t * x‖ = ‖t‖ * ‖x‖)
+(hE₀P : IsNoetherianRing (unitBall (P E m)))
+(g : E) (f : Fin m → E)
+(hunit : Ideal.span ({g} ∪ Set.range f) = ⊤)
+(r : Fin m → P E m)
+(hr : ∀ i, r i =
+  polyToP
+    (MvPolynomial.C g * MvPolynomial.X i -
+      MvPolynomial.C (f i))) :
+(∀ q, Function.Exact
+  (koszulDifferential r (q + 1))
+  (koszulDifferential r q)) ∧
+(∀ q, IsStrictLinearMap
+  (koszulDifferential r q)) ∧
+(∀ q, IsClosed
+  (Set.range (koszulDifferential r q)))
+</pre>
+<div class="para" id="sec-formalisation-the-finite-jet-example-koszul-complexes-and-milnor-descent-4">This is exactly the positive-degree exactness, strictness and closed-image part of <a href="#lem-koszul" class="xref" data-knowl="./knowl/xref/lem-koszul.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.1">Lemma 5.1</a>.  The <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.GraphKoszul.pow_smul_graphIdeal_inter_unitBall_subset.html" target="_blank">ideal-denominator declaration</a> and <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.GraphKoszul.pow_smul_ker_d1_inter_subset.html" target="_blank">syzygy-denominator declaration</a> state respectively the two denominator inclusions <a href="#eq-ideal-denominators" class="xref" data-knowl="./knowl/xref/eq-ideal-denominators.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.1">(5.1)</a> and <a href="#eq-syzygy-denominators" class="xref" data-knowl="./knowl/xref/eq-syzygy-denominators.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.2">(5.2)</a>. The declarations attached to <a href="#lem-graph-pullback" class="xref" data-knowl="./knowl/xref/lem-graph-pullback.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.2">Lemma 5.2</a>, <a href="#prop-localized-milnor" class="xref" data-knowl="./knowl/xref/prop-localized-milnor.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 5.3">Proposition 5.3</a> state the corresponding ideal pullback, exactness and topological-embedding results for the general corner square used there.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-koszul-complexes-and-milnor-descent-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-formalisation-the-finite-jet-example-koszul-complexes-and-milnor-descent-5">Finally, <code class="code-inline tex2jax_ignore">MilnorSquareData</code> packages exactly the transport of rational data, covers and matching families, together with the local equaliser and topological-embedding conditions of <a href="#thm-milnor-sheaf-transfer" class="xref" data-knowl="./knowl/xref/thm-milnor-sheaf-transfer.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.1: Milnor descent">Theorem 6.1</a>.  The abstract theorem is:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-koszul-complexes-and-milnor-descent-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <pre class="code-block tex2jax_ignore clipboardable">  theorem isSheafy_of_milnorSquare
-  (phiB : R →+* B) (phiC : R →+* C) (phiD : R →+* D)
-  (hphiB : Continuous phiB) (hphiC : Continuous phiC)
-  (hphiD : Continuous phiD)
-  (sq : MilnorSquareData phiB phiC phiD hphiB hphiC hphiD)
-  (hB : IsSheafy B) (hC : IsSheafy C) (hD : IsSheafy D) :
-  IsSheafy R := by
-...
+[DecidableEq (RationalLocData B)]
+[DecidableEq (RationalLocData C)]
+[DecidableEq (RationalLocData D)]
+(phiB : R →+* B) (phiC : R →+* C)
+(phiD : R →+* D)
+(hphiB : Continuous phiB)
+(hphiC : Continuous phiC)
+(hphiD : Continuous phiD)
+(sq : MilnorSquareData
+  phiB phiC phiD hphiB hphiC hphiD)
+(hB : IsSheafy B)
+(hC : IsSheafy C)
+(hD : IsSheafy D) :
+IsSheafy R
 </pre>
-<div class="para" id="sec-formalisation-scope-of-the-finite-jet-16">The concrete finite-jet instance pushes finite rational covers to <span class="process-math">\(B,C,D\)</span> and supplies the required local rows and their compatibility with restriction.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-scope-of-the-finite-jet-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-formalisation-the-finite-jet-example-koszul-complexes-and-milnor-descent-7">The finite-jet square supplies this data, so the theorem specialises to the sheafiness statement used in the paper.  No claim is made that an arbitrary strict Milnor square is sufficient.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-koszul-complexes-and-milnor-descent-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-formalisation-scope-of-the-finite-jet-17">The Koszul argument, the rational-chart calculation, and the transfer of sheafiness through the concrete Milnor square are contained respectively in <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.GraphKoszul.koszulGraph_restricted_exact.html" target="_blank">the restricted-exactness file</a> and <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.GraphKoszul.koszulDifferential_isStrict.html" target="_blank">the strictness and closed-image file</a>, <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.chartEquiv.html" target="_blank"><code class="code-inline tex2jax_ignore">FJP/Over/Chart.lean</code></a>, and <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.isSheafy_JetA.html" target="_blank"><code class="code-inline tex2jax_ignore">FJP/Over/SheafTransfer.lean</code></a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-scope-of-the-finite-jet-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Subsection A.6: Scope of the finite-jet formalisation"><a tabindex="-1" href="#sec-formalisation-scope-of-the-finite-jet" title="Copy heading and permalink for Subsection A.6: Scope of the finite-jet formalisation" aria-label="Copy heading and permalink for Subsection A.6: Scope of the finite-jet formalisation">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsubsection A.5.2: Koszul complexes and Milnor descent"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example-koszul-complexes-and-milnor-descent" title="Copy heading and permalink for Subsubsection A.5.2: Koszul complexes and Milnor descent" aria-label="Copy heading and permalink for Subsubsection A.5.2: Koszul complexes and Milnor descent">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Subsection A.5: The finite-jet example"><a tabindex="-1" href="#sec-formalisation-the-finite-jet-example" title="Copy heading and permalink for Subsection A.5: The finite-jet example" aria-label="Copy heading and permalink for Subsection A.5: The finite-jet example">🔗</a></div>
 </section>
 <section class="subsection" id="sec-formalisation-the-weighted-parity-example">
 <h4 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.7</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The weighted-parity example</span>
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The weighted-parity example</span>
 </h4>
-<div class="para logical" id="sec-formalisation-the-weighted-parity-example-2">
-<div class="para">The second development uses the same restricted-series infrastructure.  Its ambient ring is the countable restricted Tate algebra</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-parity-weight.html ./knowl/xref/eq-parity-monoid.html ./knowl/xref/eq-parity-algebra.html" id="sec-formalisation-the-weighted-parity-example-2-1">
-\begin{equation*}
-K\langle W,U_1,U_2,\ldots\rangle.
-\end{equation*}
+<div class="para" id="sec-formalisation-the-weighted-parity-example-2">Let <span class="process-math">\(K\)</span> be a complete nontrivially normed ultrametric field and let <span class="process-math">\(w:\mathbb N\to\mathbb N\text{.}\)</span>  Lean indexes the variables by <span class="process-math">\(\mathbb N\text{:}\)</span> index <span class="process-math">\(0\)</span> represents <span class="process-math">\(W\text{,}\)</span> and index <span class="process-math">\(n\geq1\)</span> represents <span class="process-math">\(U_n\text{.}\)</span>  The ambient restricted Tate algebra and the support condition defining <span class="process-math">\(\mathcal A_w\)</span> are:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-weighted-parity-example-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para">The definitions <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.wpWeight.html" target="_blank"><code class="code-inline tex2jax_ignore">wpWeight</code></a>, <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.WPMem.html" target="_blank"><code class="code-inline tex2jax_ignore">WPMem</code></a>, and <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.wpSupport.html" target="_blank"><code class="code-inline tex2jax_ignore">wpSupport</code></a> are the direct translation of the formula for <span class="process-math">\(\omega\)</span> in <a href="#eq-parity-weight" class="xref" data-knowl="./knowl/xref/eq-parity-weight.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.1">(8.1)</a>, the definition of <span class="process-math">\(S\)</span> in <a href="#eq-parity-monoid" class="xref" data-knowl="./knowl/xref/eq-parity-monoid.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.2">(8.2)</a>, and the description of <span class="process-math">\(\mathcal A\)</span> in <a href="#eq-parity-algebra" class="xref" data-knowl="./knowl/xref/eq-parity-algebra.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.5">(8.5)</a>. The relevant part of the definition is as follows.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-weighted-parity-example-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<pre class="code-block tex2jax_ignore clipboardable">    def wpWeight (w : ℕ → ℕ) (t : ℕ →₀ ℕ) : ℕ :=
+<pre class="code-block tex2jax_ignore clipboardable">    abbrev Amb : Type _ :=
+  MvPowerSeries.Restricted K (fun _ : ℕ =&gt; (1 : ℝ))
+
+def wpWeight (w : ℕ → ℕ) (t : ℕ →₀ ℕ) : ℕ :=
   ∑ n ∈ t.support,
     if (t n).mod 2 = 1 ∧ n ≠ 0 then w n else 0
 
 def WPMem (w : ℕ → ℕ) (t : ℕ →₀ ℕ) : Prop :=
   wpWeight w t ≤ t 0
 
+noncomputable def wpSupport : Subring (Amb K) where
+  carrier := {f | ∀ t : ℕ →₀ ℕ, ¬ WPMem w t →
+    MvPowerSeries.coeff t f.1 = 0}
+  ...
+
 abbrev WPA : Type _ := ↥(wpSupport K w)
-
-def idWeight : ℕ → ℕ := fun n =&gt; n
-
-abbrev WPAid : Type _ := WPA K idWeight
 </pre>
-<div class="para" id="sec-formalisation-the-weighted-parity-example-4">Lean indexes the variables by <span class="process-math">\(\mathbb N\)</span> rather than <span class="process-math">\(\mathbb N_{&gt;0}\text{;}\)</span> the two conventions are equivalent here because the value <code class="code-inline tex2jax_ignore">w 0</code> is ignored. The coordinate <span class="process-math">\(t(0)\)</span> is the exponent of <span class="process-math">\(W\text{;}\)</span> the other coordinates are the exponents of the <span class="process-math">\(U_n\text{.}\)</span>  Thus <code class="code-inline tex2jax_ignore">WPMem w t</code> says exactly that <span class="process-math">\(a\geq\omega_w(\nu)\text{,}\)</span> and <code class="code-inline tex2jax_ignore">wpSupport</code> requires the coefficients outside this monoid to vanish.  It follows that <code class="code-inline tex2jax_ignore">WPA K w</code> is the ring <span class="process-math">\(\mathcal A_w\)</span> of <a href="#eq-parity-algebra" class="xref" data-knowl="./knowl/xref/eq-parity-algebra.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.5">(8.5)</a>; <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.WPAid.html" target="_blank"><code class="code-inline tex2jax_ignore">WPAid K</code></a> is the specialization <span class="process-math">\(w(n)=n\text{.}\)</span>  The maps <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.constA.html" target="_blank"><code class="code-inline tex2jax_ignore">constA</code></a> and <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.norm_constA.html" target="_blank"><code class="code-inline tex2jax_ignore">norm_constA</code></a> give the isometric embedding of <span class="process-math">\(K\)</span> as the constant series.  This map is explicit in the development, although it is not bundled as an <code class="code-inline tex2jax_ignore">Algebra K</code> instance.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-weighted-parity-example-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="sec-formalisation-the-weighted-parity-example-4">
+<div class="para">For an exponent <span class="process-math">\(t\text{,}\)</span> <code class="code-inline tex2jax_ignore">t 0</code> is the exponent of <span class="process-math">\(W\text{,}\)</span> while <code class="code-inline tex2jax_ignore">wpWeight w t</code> is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-parity-monoid.html ./knowl/xref/eq-parity-algebra.html" id="sec-formalisation-the-weighted-parity-example-4-5">
+\begin{equation*}
+\sum_{\substack{n\geq1\\t(n)\ {\rm odd}}}w(n).
+\end{equation*}
 </div>
-<div class="para" id="sec-formalisation-the-weighted-parity-example-5">Suppose that <span class="process-math">\(K\)</span> is complete, nontrivially normed and ultrametric, let <span class="process-math">\(w:\mathbb N\to\mathbb N\text{,}\)</span> choose a <code class="code-inline tex2jax_ignore">Uniformizer K</code>, and assume the norm unit ball of <span class="process-math">\(K\)</span> is noetherian where indicated.  The principal generic statements are:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-weighted-parity-example-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">Thus <code class="code-inline tex2jax_ignore">WPMem w t</code> is precisely the condition <span class="process-math">\(a\geq\omega_w(\nu)\)</span> in <a href="#eq-parity-monoid" class="xref" data-knowl="./knowl/xref/eq-parity-monoid.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.2">(8.2)</a>, and <code class="code-inline tex2jax_ignore">wpSupport</code> says that all coefficients outside this monoid vanish. Consequently <code class="code-inline tex2jax_ignore">WPA K w</code> is exactly the ring <span class="process-math">\(\mathcal A_w\)</span> of <a href="#eq-parity-algebra" class="xref" data-knowl="./knowl/xref/eq-parity-algebra.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.5">(8.5)</a>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-weighted-parity-example-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-formalisation-the-weighted-parity-example-5">The formal counterparts of <a href="#prop-parity-uniform-domain" class="xref" data-knowl="./knowl/xref/prop-parity-uniform-domain.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 8.3">Proposition 8.3</a>, <a href="#prop-parity-nonnoetherian" class="xref" data-knowl="./knowl/xref/prop-parity-nonnoetherian.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 8.4">Proposition 8.4</a> are:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-weighted-parity-example-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <pre class="code-block tex2jax_ignore clipboardable">    theorem norm_wpa_mul (a b : WPA K w) :
-    ‖a * b‖ = ‖a‖ * ‖b‖ := by
-  ...
+    ‖a * b‖ = ‖a‖ * ‖b‖
 
-instance : IsDomain (WPA K w) := by
-  ...
+instance : IsDomain (WPA K w)
+
+theorem powerBoundedSubring_eq_unitBall
+    (ϖ : Uniformizer K) :
+    powerBoundedSubring (WPA K w) =
+      (FiniteJet.unitBall (WPA K w) : Set (WPA K w))
 
 theorem isUniform_WPA (ϖ : Uniformizer K) :
-    IsUniform (WPA K w) := by
-  ...
-
-theorem powerBoundedSubring_eq_unitBall (ϖ : Uniformizer K) :
-    powerBoundedSubring (WPA K w) =
-      (FiniteJet.unitBall (WPA K w) : Set (WPA K w)) := by
-  ...
+    IsUniform (WPA K w)
 
 theorem not_isNoetherianRing_WPA
     (hw : ∀ n, 1 ≤ n → 1 ≤ w n) :
-    ¬ IsNoetherianRing (WPA K w) := by
-  ...
+    ¬ IsNoetherianRing (WPA K w)
+</pre>
+<div class="para" id="sec-formalisation-the-weighted-parity-example-7">The equality with <code class="code-inline tex2jax_ignore">FiniteJet.unitBall</code> says exactly that <span class="process-math">\(\mathcal A_w^\circ=\mathcal A_{w,0}\text{,}\)</span> and <code class="code-inline tex2jax_ignore">hw</code> is the condition <span class="process-math">\(w(n)\geq1\)</span> for <span class="process-math">\(n\geq1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-weighted-parity-example-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-formalisation-the-weighted-parity-example-8">Strong sheafiness, including ordinary sheafiness when (s=0), is stated directly for the finite Tate extensions:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-weighted-parity-example-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<pre class="code-block tex2jax_ignore clipboardable">theorem wp_tateExt_isSheafyComplete
+(ϖ : Uniformizer K)
+(hK₀ : IsNoetherianRing (FiniteJet.unitBall K))
+(s : ℕ) :
+letI := mvTateAlgebraTopology' (A := WPA K w) s
+haveI := mvTate_isTateRing (A := WPA K w) s
+haveI := mvTate_t2Space (A := WPA K w) s
+haveI := mvTate_nonarchimedean (A := WPA K w) s
+haveI := mvTateAlgebraTopology'_isTopologicalRing
+  (A := WPA K w) s
+haveI : @CompleteSpace
+  ↥(restrictedMvPowerSeriesSubring s (WPA K w))
+  (IsTopologicalAddGroup.rightUniformSpace _) :=
+    wp_tateExt_completeSpace (w := w) s
+IsSheafyComplete
+  ↥(restrictedMvPowerSeriesSubring s (WPA K w))
+</pre>
+<div class="para" id="sec-formalisation-the-weighted-parity-example-10">Here the restricted power-series subring is <span class="process-math">\(\mathcal A_w\langle V_1,\ldots,V_s\rangle\text{.}\)</span>  Hence this theorem is precisely the strong-sheafiness assertion of <a href="#thm-parity-sheafy" class="xref" data-knowl="./knowl/xref/thm-parity-sheafy.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.10">Theorem 8.10</a>; it holds for every <span class="process-math">\(w\text{,}\)</span> without a positivity or unboundedness assumption.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-weighted-parity-example-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-formalisation-the-weighted-parity-example-11">Finally, <code class="code-inline tex2jax_ignore">chartDatum</code> is the rational datum <span class="process-math">\((W;\varpi)\text{.}\)</span>  The statements corresponding to <a href="#prop-weighted-chart-identification" class="xref" data-knowl="./knowl/xref/prop-weighted-chart-identification.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 8.8">Proposition 8.8</a>, <a href="#prop-weighted-chart-domain-nonuniform" class="xref" data-knowl="./knowl/xref/prop-weighted-chart-domain-nonuniform.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 8.9">Proposition 8.9</a> are:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-weighted-parity-example-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<pre class="code-block tex2jax_ignore clipboardable">    theorem chartDatum_isRational (ϖ : Uniformizer K) :
+    (chartDatum (w := w) ϖ).IsRational
 
-theorem wp_isSheafyComplete (ϖ : Uniformizer K)
-    (hK₀ : IsNoetherianRing (FiniteJet.unitBall K)) :
-    IsSheafyComplete (WPA K w) := by
-  ...
-
-theorem isDomain_chart (ϖ : Uniformizer K)
+theorem isDomain_chart
+    (ϖ : Uniformizer K)
     (hK₀ : IsNoetherianRing (FiniteJet.unitBall K)) :
     IsDomain (presheafValue
-      (chartDatum (w := w) ϖ)) := by
-  ...
+      (chartDatum (w := w) ϖ))
 
 theorem not_isUniform_chart
     (hwu : ∀ M, ∃ n, 1 ≤ n ∧ M ≤ w n)
     (ϖ : Uniformizer K)
     (hK₀ : IsNoetherianRing (FiniteJet.unitBall K)) :
     ¬ IsUniform (presheafValue
-      (chartDatum (w := w) ϖ)) := by
-  ...
+      (chartDatum (w := w) ϖ))
 
 theorem not_isStablyUniform_WPA
     (hwu : ∀ M, ∃ n, 1 ≤ n ∧ M ≤ w n)
     (ϖ : Uniformizer K)
     (hK₀ : IsNoetherianRing (FiniteJet.unitBall K)) :
-    ¬ IsStablyUniform (WPA K w) := by
-  ...
+    ¬ IsStablyUniform (WPA K w)
 </pre>
-<div class="para" id="sec-formalisation-the-weighted-parity-example-7">The strong-sheafiness statement is in <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.wp_tateExt_isSheafyComplete.html" target="_blank"><code class="code-inline tex2jax_ignore">WP/StrongSheafy.lean</code></a>:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-weighted-parity-example-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-formalisation-the-weighted-parity-example-13">The condition <code class="code-inline tex2jax_ignore">hwu</code> says exactly that <span class="process-math">\(w\)</span> is unbounded.  Thus every positive unbounded weight gives all the assertions of <a href="#thm-second-example" class="xref" data-knowl="./knowl/xref/thm-second-example.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.1">Theorem 8.1</a>; the paper takes <span class="process-math">\(w(n)=n\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-weighted-parity-example-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<pre class="code-block tex2jax_ignore clipboardable">  theorem wp_tateExt_isSheafyComplete
-  (ϖ : Uniformizer K)
-  (hK₀ : IsNoetherianRing (FiniteJet.unitBall K))
-  (s : ℕ) :
-  letI := mvTateAlgebraTopology' (A := WPA K w) s
-  haveI := mvTate_isTateRing (A := WPA K w) s
-  haveI := mvTate_t2Space (A := WPA K w) s
-  haveI := mvTate_nonarchimedean (A := WPA K w) s
-  haveI := mvTateAlgebraTopology'_isTopologicalRing
-    (A := WPA K w) s
-  haveI : @CompleteSpace
-    ↥(restrictedMvPowerSeriesSubring s (WPA K w))
-    (IsTopologicalAddGroup.rightUniformSpace _) :=
-      wp_tateExt_completeSpace (w := w) s
-  IsSheafyComplete
-    ↥(restrictedMvPowerSeriesSubring s (WPA K w)) := by
-...
-</pre>
-<div class="para" id="sec-formalisation-the-weighted-parity-example-9">For every <span class="process-math">\(w\text{,}\)</span> the restricted power-series subring is <span class="process-math">\(\mathcal A_w\langle V_1,\ldots,V_s\rangle\text{.}\)</span>  Thus this theorem is precisely the general strong-sheafiness assertion in <a href="#thm-parity-sheafy" class="xref" data-knowl="./knowl/xref/thm-parity-sheafy.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 8.10">Theorem 8.10</a>; the separate <code class="code-inline tex2jax_ignore">_of_dvr</code> endpoint packages the uniformizer and noetherianity hypotheses for a discretely valued base.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-weighted-parity-example-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sec-formalisation-the-weighted-parity-example-10">Here <code class="code-inline tex2jax_ignore">IsSheafyComplete</code> is the predicate defined above: it quantifies over every ring of integral elements.  In particular it proves the sheaf condition for <span class="process-math">\((\mathcal A,\mathcal A^\circ)\text{.}\)</span>  The <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.wp_structurePresheaf_isSheaf_all.html" target="_blank">all-open theorem</a> also records the corresponding statement directly for the structure presheaf.  The datum <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.chartDatum.html" target="_blank"><code class="code-inline tex2jax_ignore">chartDatum</code></a> is <span class="process-math">\((W;\varpi)\text{,}\)</span> and <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.chartDatum_isRational.html" target="_blank"><code class="code-inline tex2jax_ignore">chartDatum_isRational</code></a> checks that it defines the chart <span class="process-math">\(|W|\leq|\varpi|\text{.}\)</span>  The chart is a domain for every <span class="process-math">\(w\text{,}\)</span> and it is not uniform whenever <span class="process-math">\(w\)</span> is unbounded.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-weighted-parity-example-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sec-formalisation-the-weighted-parity-example-11">The proof routes are the ones used in <a href="#sec-second-example" class="internal" title="Section 8: A second example">Section 8</a>. Multiplicativity of the countable Gauss norm gives the domain and unit-ball statements.  For rational data in <span class="process-math">\(\mathcal A^{(N)}\text{,}\)</span> localisation is proved by taking the completed quotient of <span class="process-math">\(\mathcal A^{(N)}\text{,}\)</span> applying its evaluation map to each coefficient in <a href="#eq-coefficient-decomposition" class="xref" data-knowl="./knowl/xref/eq-coefficient-decomposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.8">(8.8)</a>, and constructing the inverse by summing coefficients that tend to zero; it does not invoke the Koszul lemma.  For sheafiness, one <span class="process-math">\(N\)</span> is chosen for the base datum and all members of a finite cover.  Strong noetherianity of <span class="process-math">\(\mathcal A^{(N)}\)</span> glues each coefficient, and the restriction embedding shows that the resulting coefficients tend to zero. The final topological embedding is obtained by applying the nonarchimedean open mapping theorem over <span class="process-math">\(K\)</span> to the closed subspace of compatible tuples. Strong sheafiness is transported across the bicontinuous equivalence between a finite Tate extension and the corresponding weighted-parity algebra with shifted weight.  For the bad chart, the quotient formed from <span class="process-math">\(\mathcal A^{(0)}=K\langle W\rangle\)</span> is <span class="process-math">\(K\langle X\rangle\text{,}\)</span> and the coefficientwise ring embeds in formal multivariable power series over this domain.  The formalisation also contains, under <code class="code-inline tex2jax_ignore">WeightedParity.PerturbSetup</code>, a quantitative norm-unit-ball version of the standard perturbation result cited in <a href="#lem-small-perturbation" class="xref" data-knowl="./knowl/xref/lem-small-perturbation.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 8.5: Small perturbation lemma">Lemma 8.5</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-weighted-parity-example-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sec-formalisation-the-weighted-parity-example-12">These declarations, including the <a class="external" href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.not_isStablyUniform_WPA.html" target="_blank">final failure of stable uniformity</a>, have been checked to use only the usual logical axioms <code class="code-inline tex2jax_ignore">propext</code>, <code class="code-inline tex2jax_ignore">Classical.choice</code>, and <code class="code-inline tex2jax_ignore">Quot.sound</code>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-the-weighted-parity-example-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Subsection A.7: The weighted-parity example"><a tabindex="-1" href="#sec-formalisation-the-weighted-parity-example" title="Copy heading and permalink for Subsection A.7: The weighted-parity example" aria-label="Copy heading and permalink for Subsection A.7: The weighted-parity example">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection A.6: The weighted-parity example"><a tabindex="-1" href="#sec-formalisation-the-weighted-parity-example" title="Copy heading and permalink for Subsection A.6: The weighted-parity example" aria-label="Copy heading and permalink for Subsection A.6: The weighted-parity example">🔗</a></div>
 </section>
 <section class="subsection" id="sec-formalisation-mathematical-and-code-provenance">
 <h4 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.8</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Mathematical and code provenance</span>
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">A.7</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Mathematical and code provenance</span>
 </h4>
-<div class="para" id="sec-formalisation-mathematical-and-code-provenance-2">The formal structure presheaf, rational-cover criterion, and the strongly-noetherian sheaf theorem follow Huber’s construction <a href="#bib-Huber94" class="xref" data-knowl="./knowl/xref/bib-Huber94.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-Huber94">[bib-Huber94, Theorem 2.2 and Lemmas 2.3--2.6]</a> and Wedhorn’s systematic formulation <a href="#bib-Wedhorn" class="xref" data-knowl="./knowl/xref/bib-Wedhorn.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-Wedhorn">[bib-Wedhorn, Proposition and Definition 6.36, Remark 8.20, Definition 8.26, Theorem 8.28(b), Corollary 8.32, and Lemmas 8.33--8.34]</a>. The passage between a fixed plus ring and all plus rings follows the standard rational-refinement argument recorded by Kedlaya <a href="#bib-KedlayaAWS" class="xref" data-knowl="./knowl/xref/bib-KedlayaAWS.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-KedlayaAWS">[bib-KedlayaAWS, Lemma 1.6.8 and Remark 1.6.9]</a>. Bambozzi–Kremnizer formulate the general construction in terms of Koszul complexes and prove strict Koszul regularity <a href="#bib-BK" class="xref" data-knowl="./knowl/xref/bib-BK.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-BK">[bib-BK, Notation 4.3, Definitions 4.5--4.6, and Corollary 4.13]</a>.  The formalisation does not invoke this result. Positive-degree exactness is instead proved by flat base change from the polynomial sequence; closedness and the nonarchimedean open mapping theorem <a href="#bib-KST" class="xref" data-knowl="./knowl/xref/bib-KST.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-KST">[bib-KST, Lemma 3.1]</a> give constants bounding the norm of a preimage by a fixed multiple of the norm of its image.  Multiplication by a suitable power of <span class="process-math">\(\varpi\)</span> then yields the bounded-denominator criterion used by Buzzard–Verberkmoes <a href="#bib-BV" class="xref" data-knowl="./knowl/xref/bib-BV.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-BV">[bib-BV, Lemma 2]</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-mathematical-and-code-provenance-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-formalisation-mathematical-and-code-provenance-2">The definitions of rational localisation, the structure presheaf and the sheaf condition follow Huber <a href="#bib-Huber94" class="xref" data-knowl="./knowl/xref/bib-Huber94.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-Huber94">[bib-Huber94]</a> and Wedhorn <a href="#bib-Wedhorn" class="xref" data-knowl="./knowl/xref/bib-Wedhorn.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-Wedhorn">[bib-Wedhorn]</a>.  The independence of the choice of ring of integral elements uses the standard rational-refinement formalism described by Kedlaya <a href="#bib-KedlayaAWS" class="xref" data-knowl="./knowl/xref/bib-KedlayaAWS.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-KedlayaAWS">[bib-KedlayaAWS, Lemma 1.6.8 and Remark 1.6.9]</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-mathematical-and-code-provenance-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-formalisation-mathematical-and-code-provenance-3">The development is written in Lean 4 <a href="#bib-Lean4" class="xref" data-knowl="./knowl/xref/bib-Lean4.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-Lean4">[bib-Lean4]</a> on top of mathlib <a href="#bib-mathlib" class="xref" data-knowl="./knowl/xref/bib-mathlib.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-mathlib">[bib-mathlib]</a>.  The formalisation-specific files live in AINTLIB <a href="#bib-AINTLIB" class="xref" data-knowl="./knowl/xref/bib-AINTLIB.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-AINTLIB">[bib-AINTLIB]</a>.  AINTLIB includes code adapted from William Coram’s restricted-power-series development <a href="#bib-CoramCode" class="xref" data-knowl="./knowl/xref/bib-CoramCode.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-CoramCode">[bib-CoramCode]</a>; its univariate Gauss-norm layer builds on Fabrizio Barroero’s mathlib code <a href="#bib-BarroeroCode" class="xref" data-knowl="./knowl/xref/bib-BarroeroCode.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-BarroeroCode">[bib-BarroeroCode]</a>.  It separately uses Bingyu Xia’s multivariable power-series equivalences <a href="#bib-XiaCode" class="xref" data-knowl="./knowl/xref/bib-XiaCode.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-XiaCode">[bib-XiaCode]</a>.  The vendored source headers and commit history retain the respective attributions.  The finite-jet and weighted-parity definitions, localisation proofs, and sheaf endpoints discussed in this appendix are the AINTLIB-specific part of the development.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-mathematical-and-code-provenance-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sec-formalisation-mathematical-and-code-provenance-3">The restricted-power-series implementation includes code adapted from William Coram’s development <a href="#bib-CoramCode" class="xref" data-knowl="./knowl/xref/bib-CoramCode.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-CoramCode">[bib-CoramCode]</a>.  Its univariate Gauss-norm layer uses Fabrizio Barroero’s mathlib code <a href="#bib-BarroeroCode" class="xref" data-knowl="./knowl/xref/bib-BarroeroCode.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-BarroeroCode">[bib-BarroeroCode]</a>, while the multivariable power-series equivalences use code of Bingyu Xia <a href="#bib-XiaCode" class="xref" data-knowl="./knowl/xref/bib-XiaCode.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-XiaCode">[bib-XiaCode]</a>.  These are separate sources, and their attribution is retained in the corresponding source-file headers.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sec-formalisation-mathematical-and-code-provenance-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Subsection A.8: Mathematical and code provenance"><a tabindex="-1" href="#sec-formalisation-mathematical-and-code-provenance" title="Copy heading and permalink for Subsection A.8: Mathematical and code provenance" aria-label="Copy heading and permalink for Subsection A.8: Mathematical and code provenance">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection A.7: Mathematical and code provenance"><a tabindex="-1" href="#sec-formalisation-mathematical-and-code-provenance" title="Copy heading and permalink for Subsection A.7: Mathematical and code provenance" aria-label="Copy heading and permalink for Subsection A.7: Mathematical and code provenance">🔗</a></div>
 </section><div class="autopermalink" aria-hidden="true" data-description="Appendix A: Lean formalisation and verification"><a tabindex="-1" href="#sec-formalisation" title="Copy heading and permalink for Appendix A: Lean formalisation and verification" aria-label="Copy heading and permalink for Appendix A: Lean formalisation and verification">🔗</a></div>
 </section>
 <section class="references" id="references">
@@ -2508,6 +2428,6 @@ theorem not_isStablyUniform_WPA
 <div id="ptx-page-footer" class="ptx-page-footer">
 <a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="paperforge-link" href="https://github.com/roed-math/paperforge" title="PaperForge">Built with PaperForge</a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
-<script src="detail-ui.4d23969d906c.js"></script>
+<script src="detail-ui.516ce5f58fb5.js"></script>
 </body>
 </html>
