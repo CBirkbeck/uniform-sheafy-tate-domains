@@ -2,45 +2,34 @@
 <section xml:id="sec-milnor-descent-and-strong-sheafiness">
   <title>Milnor descent and strong sheafiness</title>
   <p>
-    We first state the general descent result proved in the formalisation.  It is
-a result about local section rings attached to rational-localisation data, rather than about an
-arbitrary cartesian square of global rings.
+    The preceding localisation result gives the following general descent
+criterion.
   </p>
   <theorem xml:id="thm-milnor-sheaf-transfer">
     <title>Milnor descent</title>
     <statement>
       <p>
-        Let <m>R,B,C,D</m> be the underlying rings of complete nonarchimedean Huber pairs,
-with continuous maps from <m>R</m> to <m>B</m>, <m>C</m>, and <m>D</m>, and from <m>B</m> and <m>C</m> to
-<m>D</m>.  Suppose that rational-localisation data on <m>R</m> can be carried functorially to the
-other three vertices, that the resulting maps on section rings commute, and
-that this construction transports rational covers, is natural under
-refinement, and carries matching families to compatible families on common
-refinements.  Suppose also that for every rational-localisation datum <m>U</m> the map
-<me>\mathcal O_R(U)\longrightarrow
-  \mathcal O_B(U_B)\oplus\mathcal O_C(U_C)</me>
-is a topological embedding whose image is the equaliser of the two maps to
-<m>\mathcal O_D(U_D)</m>, compatibly with restriction and matching families.  If
-<m>B,C,D</m> are sheafy, then <m>R</m> is sheafy.
+        Let <m>R,B,C,D</m> be complete nonarchimedean Huber rings in a commutative square
+<me>\begin{matrix}
+    R&amp;\longrightarrow&amp;C\\
+    \big\downarrow&amp;&amp;\big\downarrow\\
+    B&amp;\longrightarrow&amp;D.
+  \end{matrix}</me>
+Suppose that, for every rational datum on <m>R</m>, the equaliser and
+topological-embedding conclusions of <xref ref="prop-localized-milnor"/> hold for the
+induced data, compatibly with restriction.  If <m>B,C,D</m> are sheafy, then <m>R</m>
+is sheafy.
       </p>
     </statement>
     <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="ValuationSpectrum.isSheafy_of_milnorSquare">Lean</lean>
     <proof>
       <p>
-        Push a finite rational cover of <m>U</m> to the other vertices.  Separation over
-<m>B</m> and <m>C</m>, followed by injectivity of the map in the theorem, gives separation
-over <m>R</m>.  A matching family glues over <m>B</m> and <m>C</m>; the two sections have the
-same image over <m>D</m>, and the equaliser hypothesis gives the unique section
-over <m>R</m>.
-      </p>
-      <p>
-        For the topology, the restriction map for <m>R</m> factors, through the
-topological embedding in the theorem, into the product of the restriction maps for <m>B</m> and
-<m>C</m>.  Those maps are topological embeddings because <m>B</m> and <m>C</m> are sheafy.
-The factorisation therefore shows that the restriction map for <m>R</m> is also a
-topological embedding.  This is the topological sheaf condition on finite
-rational covers; the rational-basis theorem gives the sheaf condition on all
-opens <xref ref="bib-Stacks" detail="Tag 009O"/>.
+        Let <m>U=\bigcup_iU_i</m> be a finite rational cover.  A matching family glues over
+<m>B</m> and <m>C</m>.  The two resulting sections have the same image over <m>D</m>, so the
+equaliser property gives a unique section over <m>R</m>.  The topological-embedding
+property, together with the corresponding property for <m>B</m> and <m>C</m>, gives the
+topological sheaf condition.  The rational-basis theorem now gives the sheaf
+condition on all opens <xref ref="bib-Stacks" detail="Tag 009O"/>.
       </p>
     </proof>
   </theorem>

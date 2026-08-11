@@ -86,11 +86,7 @@ not be sheafy \cite{BV,Mihara}.  They leave open whether every uniform sheafy
 Tate Huber ring is stably uniform.  Hansen and Kedlaya ask this explicitly
 \cite[Remark~3.16]{HK}; it is also Question~7 of Kedlaya's
 \emph{Nonarchimedean Scottish Book} \cite{Scottish}.  We answer this question
-in the negative.
-
-Following Hansen--Kedlaya \cite[Definition~4.1]{HK}, a Huber ring $R$ is
-\emph{strongly sheafy} if $R\langle V_1,\ldots,V_s\rangle$ is sheafy for every
-$s\geq0$.  In fact, both examples below are strongly sheafy.
+in the negative.  In fact, we prove that both examples are strongly sheafy.
 
 The examples and proofs we will describe here were found with the help of
 ChatGPT 5.6 Sol.  In \Cref{sec:discovery} we describe how we used ChatGPT in
@@ -901,41 +897,31 @@ abstract result applies after adjoining any finite number of Tate variables.
 
 \section{Milnor descent and strong sheafiness}
 
-We first state the general descent result proved in the formalisation.  It is
-a result about local section rings attached to rational-localisation data, rather than about an
-arbitrary cartesian square of global rings.
+The preceding localisation result gives the following general descent
+criterion.
 
 \begin{theorem}[Milnor descent]\label{thm:milnor-sheaf-transfer}
-Let $R,B,C,D$ be the underlying rings of complete nonarchimedean Huber pairs,
-with continuous maps from $R$ to $B$, $C$, and $D$, and from $B$ and $C$ to
-$D$.  Suppose that rational-localisation data on $R$ can be carried functorially to the
-other three vertices, that the resulting maps on section rings commute, and
-that this construction transports rational covers, is natural under
-refinement, and carries matching families to compatible families on common
-refinements.  Suppose also that for every rational-localisation datum $U$ the map
+Let $R,B,C,D$ be complete nonarchimedean Huber rings in a commutative square
 \[
-  \mathcal O_R(U)\longrightarrow
-  \mathcal O_B(U_B)\oplus\mathcal O_C(U_C)
+  \begin{matrix}
+    R&\longrightarrow&C\\
+    \big\downarrow&&\big\downarrow\\
+    B&\longrightarrow&D.
+  \end{matrix}
 \]
-is a topological embedding whose image is the equaliser of the two maps to
-$\mathcal O_D(U_D)$, compatibly with restriction and matching families.  If
-$B,C,D$ are sheafy, then $R$ is sheafy.
+Suppose that, for every rational datum on $R$, the equaliser and
+topological-embedding conclusions of \Cref{prop:localized-milnor} hold for the
+induced data, compatibly with restriction.  If $B,C,D$ are sheafy, then $R$
+is sheafy.
 \end{theorem}
 
 \begin{proof}
-Push a finite rational cover of $U$ to the other vertices.  Separation over
-$B$ and $C$, followed by injectivity of the map in the theorem, gives separation
-over $R$.  A matching family glues over $B$ and $C$; the two sections have the
-same image over $D$, and the equaliser hypothesis gives the unique section
-over $R$.
-
-For the topology, the restriction map for $R$ factors, through the
-topological embedding in the theorem, into the product of the restriction maps for $B$ and
-$C$.  Those maps are topological embeddings because $B$ and $C$ are sheafy.
-The factorisation therefore shows that the restriction map for $R$ is also a
-topological embedding.  This is the topological sheaf condition on finite
-rational covers; the rational-basis theorem gives the sheaf condition on all
-opens \cite[Tag~009O]{Stacks}.
+Let $U=\bigcup_iU_i$ be a finite rational cover.  A matching family glues over
+$B$ and $C$.  The two resulting sections have the same image over $D$, so the
+equaliser property gives a unique section over $R$.  The topological-embedding
+property, together with the corresponding property for $B$ and $C$, gives the
+topological sheaf condition.  The rational-basis theorem now gives the sheaf
+condition on all opens \cite[Tag~009O]{Stacks}.
 \end{proof}
 
 \begin{corollary}\label{thm:sheafy}

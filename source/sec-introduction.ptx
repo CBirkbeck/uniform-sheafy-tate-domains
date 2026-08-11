@@ -8,12 +8,7 @@ not be sheafy <xref ref="bib-BV"/>, <xref ref="bib-Mihara"/>.  They leave open w
 Tate Huber ring is stably uniform.  Hansen and Kedlaya ask this explicitly
 <xref ref="bib-HK" detail="Remark 3.16"/>; it is also Question<nbsp/>7 of Kedlaya's
 <em>Nonarchimedean Scottish Book</em> <xref ref="bib-Scottish"/>.  We answer this question
-in the negative.
-  </p>
-  <p>
-    Following Hansen<ndash/>Kedlaya <xref ref="bib-HK" detail="Definition 4.1"/>, a Huber ring <m>R</m> is
-<em>strongly sheafy</em> if <m>R\langle V_1,\ldots,V_s\rangle</m> is sheafy for every
-<m>s\geq0</m>.  In fact, both examples below are strongly sheafy.
+in the negative.  In fact, we prove that both examples are strongly sheafy.
   </p>
   <p>
     The examples and proofs we will describe here were found with the help of
