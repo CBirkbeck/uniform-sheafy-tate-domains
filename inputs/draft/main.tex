@@ -62,14 +62,15 @@
 
 \begin{abstract}
 Buzzard--Verberkmoes and Mihara show that a stably uniform Tate Huber
-ring is sheafy.  We construct examples of uniform and sheafy Tate rings
+ring is sheafy.  We construct examples of uniform and strongly sheafy Tate rings
 which are not stably uniform, answering Question~7 of Kedlaya's
 \emph{Nonarchimedean Scottish Book}.  In the first example a rational
-localisation is non-reduced, whilst in the second the nonuniform rational
-localisation is an integral domain.  The two main results are due to
+localisation is non-reduced, whilst in the second the rational localisation
+is an integral domain but is not uniform.  The two main results are due to
 ChatGPT 5.6 Sol.
-Both constructions, including their sheafiness and the rational localisations
-witnessing failure of stable uniformity, have been formalised in Lean~4.
+Both constructions and the rational localisations witnessing failure of stable
+uniformity have been formalised in Lean~4; the strong-sheafiness formalisation
+is complete for the second example and for the Laurent-series case of the first.
 \end{abstract}
 
 \subjclass[2020]{Primary 14G22; Secondary 13J10}
@@ -81,10 +82,15 @@ witnessing failure of stable uniformity, have been formalised in Lean~4.
 
 The examples of Buzzard--Verberkmoes and Mihara show that uniformity can be
 lost on a rational chart and, separately, that a uniform Tate Huber ring need
-not be sheafy \cite{BV,Mihara}.  They leave open the possibility of a
-uniform sheafy ring which is not stably uniform.  Hansen and Kedlaya ask this
-explicitly \cite[Remark~3.16]{HK}; it is also Question~7 of Kedlaya's
-\emph{Nonarchimedean Scottish Book} \cite{Scottish}.  The answer is no.
+not be sheafy \cite{BV,Mihara}.  They leave open whether every uniform sheafy
+Tate Huber ring is stably uniform.  Hansen and Kedlaya ask this explicitly
+\cite[Remark~3.16]{HK}; it is also Question~7 of Kedlaya's
+\emph{Nonarchimedean Scottish Book} \cite{Scottish}.  We answer this question
+in the negative.
+
+Following Hansen--Kedlaya \cite[Definition~4.1]{HK}, a Huber ring $R$ is
+\emph{strongly sheafy} if $R\langle V_1,\ldots,V_s\rangle$ is sheafy for every
+$s\geq0$.  In fact, both examples below are strongly sheafy.
 
 The examples and proofs we will describe here were found with the help of
 ChatGPT 5.6 Sol.  In \Cref{sec:discovery} we describe how we used ChatGPT in
@@ -122,7 +128,8 @@ The main result is the following.
 
 \begin{theorem}\label{thm:main}
 The ring $A$ is a complete uniform non-noetherian Tate $k$-algebra and an
-integral domain, with $A^\circ=A_0$.  The Huber pair $(A,A^\circ)$ is sheafy.
+integral domain, with $A^\circ=A_0$.  It is strongly sheafy; in particular,
+the Huber pair $(A,A^\circ)$ is sheafy.
 However,
 \[
   A\left\langle \frac{W}{\varpi}\right\rangle
@@ -179,8 +186,9 @@ ChatGPT may have used in doing this work.  In the interest of giving
 appropriate credit, we have listed here closely related work that may have
 been used in the development of the results here.
 
-Buzzard--Verberkmoes construct a uniform affinoid ring with a nonuniform rational
-localisation and, separately, a uniform affinoid ring whose structure presheaf is not a
+Buzzard--Verberkmoes construct a uniform affinoid ring with a rational
+localisation which is not uniform
+and, separately, a uniform affinoid ring whose structure presheaf is not a
 sheaf \cite[Propositions 17 and 18]{BV}.  Mihara gives further examples of both
 phenomena \cite{Mihara}.  These examples do not give a uniform sheafy ring which is not
 stably uniform.
@@ -389,9 +397,12 @@ integral domain.  Moreover,
 The Gauss norm on $L=k\langle W,W^{-1}\rangle$ is multiplicative, and the
 restricted Gauss norm on $C=L\langle Q\rangle$ is therefore multiplicative as
 well.  In particular, $C$ is a domain, and hence so is its subring $A$.  The
-conditions on the constant and linear $Q$-coefficients which define $A$ are
-closed conditions in $C$, so $A$ is complete.  The image of $\varpi$ in $A$
-is a topologically nilpotent unit, and therefore $A$ is a Tate ring.
+constant- and linear-coefficient maps $C\to L$ are continuous, and
+$k\langle W\rangle$ is closed in $L=k\langle W,W^{-1}\rangle$ for the Gauss
+norm.  Hence the condition that these two coefficients lie in
+$k\langle W\rangle$ defines a closed subring of $C$, so $A$ is complete.  The
+image of $\varpi$ in $A$ is a topologically nilpotent unit, and therefore $A$
+is a Tate ring.
 
 The coefficient description of $A_0$ shows that it is exactly the unit ball
 for the restricted Gauss norm on $A$.  Since this norm is multiplicative,
@@ -424,7 +435,7 @@ is not noetherian.
 \end{proof}
 
 
-\section{A nonuniform rational localisation}
+\section{A rational localisation which is not uniform}
 
 We next compute the rational chart which witnesses the failure of stable
 uniformity.
@@ -601,13 +612,27 @@ There also exists $z_E\in\mathbb Z_{\geq0}$ such that
 
 \begin{proof}
 Over the polynomial ring $E[T_1,\ldots,T_m]$, the sequence
-$gT_i-f_i$ has Koszul complex exact in positive degrees.  The map
+$gT_i-f_i$ has Koszul complex exact in positive degrees.  Indeed, this may be
+checked after localising at a prime.  If one of the $gT_i-f_i$ is not in the
+prime, it is a unit after localisation and the Koszul complex is contractible.
+If all of them lie in the prime, then $g$ does not: otherwise all the $f_i$
+would also lie in the prime, contrary to $(g,f_1,\ldots,f_m)=E$.  Thus $g$ is
+invertible there and
+\[
+  gT_i-f_i=g(T_i-f_i/g).
+\]
+The elements $T_i-f_i/g$ form a regular sequence, since they are monic linear
+polynomials in distinct variables.  This proves the assertion over the
+polynomial ring.
+
+The map
 \[
   E[T_1,\ldots,T_m]\longrightarrow T_E
 \]
-is flat: this is the usual identification of $T_E$ with the
-$\varpi$-adic completion of $E_0[T_1,\ldots,T_m]$, followed by inverting
-$\varpi$.  Tensoring the polynomial Koszul complex with $T_E$, and using the
+is flat.  In fact, $E_0$ is noetherian for $E=B,C,D$, so
+$E_0[T_1,\ldots,T_m]$ is noetherian and its $\varpi$-adic completion is flat
+over it \cite[Tag~00MB]{Stacks}.  Inverting $\varpi$ gives the displayed flat
+map.  Tensoring the polynomial Koszul complex with $T_E$, and using the
 standard base-change identification of its finite free terms, proves
 positive-degree exactness.  Notice that this does not assert exactness in
 degree zero.
@@ -832,17 +857,18 @@ Applying this to rational restriction, and then using presentation independence
 and transitivity, proves the asserted compatibility under refinement.
 \end{proof}
 
-\section{Sheafiness}
+\section{Strong sheafiness}
 
 \begin{theorem}\label{thm:sheafy}
-The Huber pair $(A,A^\circ)$ is sheafy.
+The ring $A$ is strongly sheafy.  In particular, the Huber pair
+$(A,A^\circ)$ is sheafy.
 \end{theorem}
 
 \begin{proof}
 Give $B,C,D$ their maximal rings of integral elements.  The max/Gauss estimates \eqref{eq:structural-map-bounds} show that every structural map is norm-nonincreasing.  Consequently it sends bounded subsets to bounded subsets; in particular, if $x$ is power-bounded, then the set of powers of its image is the image of the bounded set $\{x^n:n\geq0\}$.  The structural maps therefore send power-bounded elements to power-bounded elements and define morphisms of Huber pairs.
 
-Each of $B,C,D$ is an affinoid $k$-algebra and is therefore sheafy by
-Huber's theorem \cite[Theorem 2.2]{Huber94}.  Let
+Each of $B,C,D$ is a classical strongly noetherian affinoid $k$-algebra and
+is therefore sheafy by Huber's theorem \cite[Theorem 2.2]{Huber94}.  Let
 $U=\bigcup_iU_i$ in $\Spa(A,A^\circ)$.  Push the datum for $U$ and the data
 for the $U_i$ to $B,C,D$.  If a section over $U$ restricts to zero on every
 $U_i$, its images over $B$ and $C$ vanish by separatedness there.
@@ -863,20 +889,24 @@ of
 \]
 is exactly the subspace of tuples whose two restrictions to every
 $U_i\cap U_j$ agree.  This subspace is closed: it is the common zero locus
-of the continuous difference maps to
-$\mathcal O(U_i\cap U_j)$.  The restriction map is continuous and
-injective, so the nonarchimedean closed-range theorem, using the
-topologically nilpotent unit of $A$, shows that its inverse on this image is
-continuous.  Hence the restriction map is a topological embedding.  This
-proves the sheaf condition on finite rational covers.  The
+of the continuous difference maps to $\mathcal O(U_i\cap U_j)$, and hence is
+a Banach $k$-space.  The restriction map is a continuous bijection from the
+Banach $k$-space $\mathcal O(U)$ to this closed subspace.  The
+nonarchimedean open mapping theorem therefore makes it a homeomorphism.
+This proves the sheaf condition on finite rational covers.  The
 sheaf-on-a-rational-basis theorem \cite[Tag 009O]{Stacks} then gives the
 all-open topological sheaf condition for $(A,A^\circ)$.
+
+The same proof applies after adjoining $V_1,\ldots,V_s$.  The split Milnor
+row extends coefficientwise, the three other vertices remain strongly
+noetherian affinoid $k$-algebras, and the Koszul argument above is unchanged.
+Thus $A\langle V_1,\ldots,V_s\rangle$ is sheafy for every $s\geq0$.
 \end{proof}
 
 \begin{proof}[Proof of \Cref{thm:main}]
 \Cref{prop:uniform-domain} proves that $A$ is complete, uniform,
-non-noetherian, and a domain.  Sheafiness is \Cref{thm:sheafy}, and failure
-of stable uniformity is \Cref{prop:not-stably-uniform}.
+non-noetherian, and a domain.  Strong sheafiness is \Cref{thm:sheafy}, and
+failure of stable uniformity is \Cref{prop:not-stably-uniform}.
 \end{proof}
 
 
@@ -951,14 +981,15 @@ the nonzero ring $\mathcal O(U)$, a contradiction.
 
 In the finite-jet construction, the bad rational localisation is non-reduced.
 In our second example it is an integral domain; the loss of uniformity is
-instead caused by an unbounded family of nonnilpotent power-bounded elements.
+instead caused by an unbounded family of non-nilpotent power-bounded elements.
 
 \begin{theorem}\label{thm:second-example}
 There is a complete Tate $k$-algebra $\mathcal A$ with the following properties.
 \begin{enumerate}
 \item $\mathcal A$ is a uniform, non-noetherian integral domain and
       $\mathcal A^\circ=\mathcal A_0$, where $\mathcal A_0$ is defined below.
-\item The Huber pair $(\mathcal A,\mathcal A^\circ)$ is sheafy.
+\item The ring $\mathcal A$ is strongly sheafy; in particular, the Huber pair
+      $(\mathcal A,\mathcal A^\circ)$ is sheafy.
 \item The rational localisation
       \[
         \mathcal B=\mathcal A\left\langle\frac{W}{\varpi}\right\rangle
@@ -1094,9 +1125,11 @@ The ring $\mathcal A$ is a complete uniform Tate $k$-algebra and an integral dom
 \begin{proof}
 The Gauss norm on the countable restricted Tate algebra
 $k\langle W,U_1,U_2,\ldots\rangle$ is multiplicative.  To see this, note
-first that the norm of a nonzero restricted series is attained.  For each of
-two such series choose, among the norm-attaining exponents, the
-lexicographically largest one.  In the coefficient of the sum of these two
+first that only finitely many coefficients attain the nonzero supremum, since
+the coefficients tend to zero.  Order the finite-support exponent vectors by
+comparing them at the largest index where they differ.  This is an additive
+total order.  For each of two nonzero series choose the largest
+norm-attaining exponent.  In the coefficient of the sum of these two
 exponents, the product of the chosen coefficients strictly dominates every
 other convolution term.  The ultrametric inequality therefore gives
 \[
@@ -1246,8 +1279,10 @@ topology, and then to the completion:
 
 In the other direction, the inclusion
 $\mathcal A^{(N)}\to\mathcal A$ gives a continuous homomorphism
-$P\to\mathcal A_\alpha$.  The family $(e_\mu)_\mu$ is bounded in
-$\mathcal A_\alpha$.  Apply the homomorphism to every coefficient.  If
+$P\to\mathcal A_\alpha$.  Each $e_\mu$ lies in $\mathcal A_0$, and the
+canonical map to a rational localisation is bounded.  Hence the family
+$(e_\mu)_\mu$ is bounded in $\mathcal A_\alpha$.  Apply the homomorphism to
+every coefficient.  If
 $\lVert p_\mu\rVert\to0$, the series
 \[
   \sum_\mu p_\mu e_\mu
@@ -1300,7 +1335,7 @@ rational datum in $\mathcal A^{(N)}$.  Now apply
 \Cref{prop:coefficientwise-localization}.
 \end{proof}
 
-\subsection{A reduced nonuniform rational chart}
+\subsection{A reduced rational chart which is not uniform}
 
 The ideal $(W,\varpi)$ is open because $\varpi$ is a unit of $\mathcal A$.
 Define the complete $k^\circ$-algebra
@@ -1364,10 +1399,24 @@ The ring $\mathcal B$ is an integral domain but is not uniform.
 \end{proposition}
 
 \begin{proof}
+Put $R=k\langle X\rangle$.  Here
+\[
+  R[[U_1,U_2,\ldots]]
+  =\left\{\sum_{\nu\in\mathbb N^{(I)}}a_\nu U^\nu:a_\nu\in R\right\}
+\]
+denotes the ring of all coefficient families indexed by finite-support
+multi-indices.  Multiplication is convolution.  For a fixed $\nu$ there are
+only finitely many decompositions $\nu=\lambda+\mu$, so every coefficient of
+a product is a finite sum.  Order $\mathbb N^{(I)}$ by comparing two vectors
+at the largest index where they differ.  This is an additive well-order.  If
+two series are nonzero, the coefficient at the sum of their least nonzero
+exponents is the product of the corresponding coefficients and is nonzero.
+Thus $R[[U_1,U_2,\ldots]]$ is a domain.
+
 The coefficient description gives a homomorphism
 \[
   \mathcal B\longrightarrow
-  k\langle X\rangle[[U_1,U_2,\ldots]],
+  R[[U_1,U_2,\ldots]],
   \qquad
   \sum_\nu p_\nu e_\nu\longmapsto
   \sum_\nu(\varpi X)^{\omega(\nu)}p_\nu(X)U^\nu.
@@ -1378,8 +1427,8 @@ is zero, then
   (\varpi X)^{\omega(\nu)}p_\nu(X)=0
 \]
 for every $\nu$.  Since $k\langle X\rangle$ is a domain, every
-$p_\nu$ is zero.  The map is therefore injective.  Its target is a domain,
-and hence so is $\mathcal B$.
+$p_\nu$ is zero.  The map is therefore injective, and hence $\mathcal B$ is
+a domain.
 
 Inside $\mathcal A$ write $Y_n=W^nU_n$ and put
 \[
@@ -1398,17 +1447,20 @@ $|\varpi|^{-n}$ are unbounded.  Hence
 $\mathcal B^\circ$ is unbounded and $\mathcal B$ is not uniform.
 \end{proof}
 
-\subsection{Sheafiness}
+\subsection{Strong sheafiness}
 
 \begin{theorem}\label{thm:parity-sheafy}
-The Huber pair $(\mathcal A,\mathcal A^\circ)$ is sheafy.
+The ring $\mathcal A$ is strongly sheafy.  In particular, the Huber pair
+$(\mathcal A,\mathcal A^\circ)$ is sheafy.
 \end{theorem}
 
 \begin{proof}
 We first work with a finite rational cover $U=\bigcup_iU_i$.  Choose one
 $N$ large enough to approximate the datum for $U$ and the data for all the
-$U_i$ in $\mathcal A^{(N)}$.  The small perturbation lemma does not change
-the rational domains, and \Cref{prop:coefficientwise-localization} gives
+$U_i$ in $\mathcal A^{(N)}$.  The standard combined data for every pairwise
+intersection $U_i\cap U_j$ then also lie in $\mathcal A^{(N)}$.  The small
+perturbation lemma does not change the rational domains, and
+\Cref{prop:coefficientwise-localization} gives
 compatible identifications
 \[
   \mathcal O_X(U)\cong
@@ -1453,24 +1505,31 @@ The same coefficientwise argument proves separation.
 The image of the product restriction map for $\mathcal A$ is therefore the
 subspace of tuples whose restrictions to every pairwise intersection agree.
 This subspace is closed: it is the common zero locus of the continuous
-difference maps.  The restriction map is continuous and injective.  The
-nonarchimedean closed-range theorem over the Tate ring $\mathcal A$ shows
-that its inverse on this image is continuous, so restriction is a
-topological embedding.  We have proved the topological sheaf condition on
-finite rational covers.  The
+difference maps, and hence is a Banach $k$-space.  The restriction map is a
+continuous bijection from the Banach $k$-space $\mathcal O_X(U)$ to this
+closed subspace.  The nonarchimedean open mapping theorem therefore makes it
+a homeomorphism.  We have proved the topological sheaf condition on finite
+rational covers.  The
 general rational-basis theorem upgrades this to the all-open structure
 presheaf, and its plus-ring independence gives the same conclusion for every
 ring of integral elements.  In particular, $(\mathcal A,\mathcal A^\circ)$
 is sheafy.
+
+For $s\geq0$, the Tate extension
+$\mathcal A\langle V_1,\ldots,V_s\rangle$ is bicontinuously isomorphic to the
+same weighted-parity construction with the first $s$ weights equal to zero
+and the remaining weights shifted by $s$.  The argument above applies to
+every weight function, so this Tate extension is sheafy.  Hence $\mathcal A$
+is strongly sheafy.
 \end{proof}
 
 \begin{proof}[Proof of \Cref{thm:second-example}]
 The fact that $\mathcal A$ is a uniform domain is
 \Cref{prop:parity-uniform-domain}, and its failure to be noetherian is
-\Cref{prop:parity-nonnoetherian}.  Sheafiness is
+\Cref{prop:parity-nonnoetherian}.  Strong sheafiness is
 \Cref{thm:parity-sheafy}.  Finally,
 \Cref{prop:weighted-chart-identification,prop:weighted-chart-domain-nonuniform} identify the
-rational chart $|W|\leq|\varpi|$ as a nonuniform integral domain.
+rational chart $|W|\leq|\varpi|$ as an integral domain which is not uniform.
 \end{proof}
 
 \begin{remark}[Admissible blow-ups]\label{rem:second-example-relation}
@@ -1500,7 +1559,7 @@ This intersection is the kernel of the completion map.  Thus $Q^2$ is killed,
 while $Q$ survives, so this rational chart is non-reduced.  The map from $A$ to
 this completed rational localisation is also not flat by
 \Cref{prop:problems-24-28}.  For $R_0=\mathcal A_0$, the completed
-chart remains a domain, but its generic fibre is nonuniform because the
+chart remains a domain, but its generic fibre is not uniform because the
 power-bounded elements $T_n=X^nU_n$ form an unbounded family.  Thus the two
 examples give different failures on the same kind of affine blow-up chart.
 
@@ -1571,16 +1630,15 @@ finite-jet declarations are taken from AINTLIB commit
 \texttt{b007a4f3d}, and the weighted-parity declarations from commit
 \texttt{090a28921}.  The comparison with Mathlib's sheaf predicate is taken
 from commit \texttt{d92f96504}, and the results on Scottish Book
-Problems~24 and 28 from commit \texttt{01116aca6} \cite{AINTLIB}.  For each
+Problems~24 and 28 from commit \texttt{01116aca6}.  The strong-sheafiness
+statements are taken from commit \texttt{870d0eed2} \cite{AINTLIB}.  For each
 example Lean proves the Tate structure and uniformity, proves that the ring is
 a domain but not noetherian, proves sheafiness and failure of stable
 uniformity, and verifies the rational chart calculation used in the proof.
 
-Neither example snapshot was available from the public AINTLIB repository at
-the time of writing.  The interactive version of the paper includes each
-declaration used below, extracted from the appropriate commit.  The later
-sheaf-comparison and Scottish Book commits are public, and their archival
-pages also link to the pinned source on GitHub.  The
+All five pinned commits are public in AINTLIB.  The interactive version of
+the paper includes each declaration used below, extracted from the appropriate
+commit, and its archival page links to the pinned source on GitHub.  The
 \href{https://github.com/CBirkbeck/uniform-sheafy-tate-domains/blob/main/PAPERFORGE_CHECK.md}{verification report}
 records the Lean and mathlib versions, the build, and the axiom checks.
 
@@ -1990,6 +2048,36 @@ The
 \href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr.html}{corresponding Lean theorem}
 proves this statement directly.
 
+Strong sheafiness is expressed by the following theorem from
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_tateExt_isSheafyComplete.html}{\texttt{FJP/StrongSheafy.lean}}.
+
+\begin{lstlisting}
+variable (F : Type*) [Field F]
+
+theorem finiteJet_tateExt_isSheafyComplete (n : ℕ) :
+    letI := mvTateAlgebraTopology' (A := JetA F) n
+    haveI := mvTate_isTateRing (A := JetA F) n
+    haveI := mvTate_t2Space (A := JetA F) n
+    haveI := mvTate_nonarchimedean (A := JetA F) n
+    haveI := mvTateAlgebraTopology'_isTopologicalRing
+      (A := JetA F) n
+    haveI : @CompleteSpace
+      ↥(restrictedMvPowerSeriesSubring n (JetA F))
+      (IsTopologicalAddGroup.rightUniformSpace _) :=
+        finiteJet_tateExt_completeSpace F n
+    IsSheafyComplete
+      ↥(restrictedMvPowerSeriesSubring n (JetA F)) := by
+  ...
+\end{lstlisting}
+
+The restricted power-series subring in this statement is
+$A\langle V_1,\ldots,V_n\rangle$, with its canonical Tate-algebra topology,
+and \texttt{IsSheafyComplete} says that it is sheafy for every ring of
+integral elements.  This strong-sheafiness endpoint is currently formalised
+for the Laurent-series model over $F((t))$.  The ordinary sheafiness,
+uniformity, domain and chart theorems above have the more general DVR-base
+scope used elsewhere in the appendix.
+
 \subsection{Scope of the finite-jet formalisation}
 
 The paper's $A_0$ is represented by the Gauss-norm unit ball.
@@ -2191,6 +2279,32 @@ theorem weightedParity_not_stablyUniform_of_dvr :
   ...
 \end{lstlisting}
 
+The strong-sheafiness statement is in
+\href{https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.wp_tateExt_isSheafyComplete_of_dvr.html}{\texttt{WP/StrongSheafy.lean}}:
+
+\begin{lstlisting}
+theorem wp_tateExt_isSheafyComplete_of_dvr
+    [IsDiscreteValuationRing 𝒪[K]] (s : ℕ) :
+    letI := mvTateAlgebraTopology' (A := WPA K w) s
+    haveI := mvTate_isTateRing (A := WPA K w) s
+    haveI := mvTate_t2Space (A := WPA K w) s
+    haveI := mvTate_nonarchimedean (A := WPA K w) s
+    haveI := mvTateAlgebraTopology'_isTopologicalRing
+      (A := WPA K w) s
+    haveI : @CompleteSpace
+      ↥(restrictedMvPowerSeriesSubring s (WPA K w))
+      (IsTopologicalAddGroup.rightUniformSpace _) :=
+        wp_tateExt_completeSpace (w := w) s
+    IsSheafyComplete
+      ↥(restrictedMvPowerSeriesSubring s (WPA K w)) := by
+  ...
+\end{lstlisting}
+
+Taking $w=\texttt{idWeight}$, the restricted power-series subring is
+$\mathcal A\langle V_1,\ldots,V_s\rangle$.  Thus this theorem is precisely
+the strong sheafiness asserted in \Cref{thm:parity-sheafy}, for the full
+DVR-base scope of the paper.
+
 Here \texttt{IsSheafyComplete} is the predicate defined above: it quantifies
 over every ring of integral elements.  In particular it proves the sheaf
 condition for $(\mathcal A,\mathcal A^\circ)$.  The
@@ -2214,8 +2328,11 @@ Koszul lemma.  For sheafiness, one $N$ is chosen for the base datum and all
 members of a finite cover.  Strong noetherianity of
 $\mathcal A^{(N)}$ glues each coefficient, and the restriction embedding
 shows that the resulting coefficients tend to zero.
-The final topological embedding is obtained from the closed matching
-equaliser by the Tate closed-range theorem.  For the bad chart, the quotient
+The final topological embedding is obtained by applying the nonarchimedean
+open mapping theorem over $K$ to the closed subspace of compatible tuples.
+Strong sheafiness is transported across the bicontinuous equivalence between
+a finite Tate extension and the corresponding weighted-parity algebra with
+shifted weight.  For the bad chart, the quotient
 formed from $\mathcal A^{(0)}=K\langle W\rangle$ is
 $K\langle X\rangle$, and the coefficientwise ring embeds in formal
 multivariable power series over this domain.  The formalisation also
@@ -2273,8 +2390,10 @@ weighted-parity snapshot
 \href{https://github.com/CBirkbeck/AINTLIB/commit/090a289211deb69117413e329325fe819aa7dbc2}{\texttt{090a28921}},
 sheaf-comparison snapshot
 \href{https://github.com/CBirkbeck/AINTLIB/commit/d92f96504f949ca43a27a817cb8d2f70b6486744}{\texttt{d92f96504}},
-and abstract-base Scottish Book snapshot
+abstract-base Scottish Book snapshot
 \href{https://github.com/CBirkbeck/AINTLIB/commit/01116aca6070283726008536cba16d165a01b505}{\texttt{01116aca6}},
+and strong-sheafiness snapshot
+\href{https://github.com/CBirkbeck/AINTLIB/commit/870d0eed2c48a020109d766d2af89c3f47469a94}{\texttt{870d0eed2}},
 2026, \href{https://github.com/CBirkbeck/AINTLIB}{GitHub repository}.
 
 \bibitem{BBK}

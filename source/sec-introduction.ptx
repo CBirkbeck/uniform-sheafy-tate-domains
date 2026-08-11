@@ -4,10 +4,16 @@
   <p>
     The examples of Buzzard<ndash/>Verberkmoes and Mihara show that uniformity can be
 lost on a rational chart and, separately, that a uniform Tate Huber ring need
-not be sheafy <xref ref="bib-BV"/>, <xref ref="bib-Mihara"/>.  They leave open the possibility of a
-uniform sheafy ring which is not stably uniform.  Hansen and Kedlaya ask this
-explicitly <xref ref="bib-HK" detail="Remark 3.16"/>; it is also Question<nbsp/>7 of Kedlaya's
-<em>Nonarchimedean Scottish Book</em> <xref ref="bib-Scottish"/>.  The answer is no.
+not be sheafy <xref ref="bib-BV"/>, <xref ref="bib-Mihara"/>.  They leave open whether every uniform sheafy
+Tate Huber ring is stably uniform.  Hansen and Kedlaya ask this explicitly
+<xref ref="bib-HK" detail="Remark 3.16"/>; it is also Question<nbsp/>7 of Kedlaya's
+<em>Nonarchimedean Scottish Book</em> <xref ref="bib-Scottish"/>.  We answer this question
+in the negative.
+  </p>
+  <p>
+    Following Hansen<ndash/>Kedlaya <xref ref="bib-HK" detail="Definition 4.1"/>, a Huber ring <m>R</m> is
+<em>strongly sheafy</em> if <m>R\langle V_1,\ldots,V_s\rangle</m> is sheafy for every
+<m>s\geq0</m>.  In fact, both examples below are strongly sheafy.
   </p>
   <p>
     The examples and proofs we will describe here were found with the help of
@@ -44,7 +50,8 @@ and endow <m>A</m> with the topology defined by the ring of definition <m>A_0</m
     <statement>
       <p>
         The ring <m>A</m> is a complete uniform non-noetherian Tate <m>k</m>-algebra and an
-integral domain, with <m>A^\circ=A_0</m>.  The Huber pair <m>(A,A^\circ)</m> is sheafy.
+integral domain, with <m>A^\circ=A_0</m>.  It is strongly sheafy; in particular,
+the Huber pair <m>(A,A^\circ)</m> is sheafy.
 However,
 <me>A\left\langle \frac{W}{\varpi}\right\rangle
   \cong k\langle X,Q\rangle/(Q^2),
@@ -62,6 +69,7 @@ so <m>A</m> is not stably uniform.
     <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_not_noetherian">Lean (finiteJet_not_noetherian)</lean>
     <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_not_stablyUniform_of_dvr">Lean (finiteJet_not_stablyUniform_of_dvr)</lean>
     <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_isSheafyFor_of_dvr">Lean (finiteJet_isSheafyFor_of_dvr)</lean>
+    <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.finiteJet_tateExt_isSheafyComplete">Lean (finiteJet_tateExt_isSheafyComplete)</lean>
   </theorem>
   <p>
     The key element in this example is that after the rational localisation
@@ -117,8 +125,9 @@ appropriate credit, we have listed here closely related work that may have
 been used in the development of the results here.
       </p>
       <p>
-        Buzzard<ndash/>Verberkmoes construct a uniform affinoid ring with a nonuniform rational
-localisation and, separately, a uniform affinoid ring whose structure presheaf is not a
+        Buzzard<ndash/>Verberkmoes construct a uniform affinoid ring with a rational
+localisation which is not uniform
+and, separately, a uniform affinoid ring whose structure presheaf is not a
 sheaf <xref ref="bib-BV" detail="Propositions 17 and 18"/>.  Mihara gives further examples of both
 phenomena <xref ref="bib-Mihara"/>.  These examples do not give a uniform sheafy ring which is not
 stably uniform.

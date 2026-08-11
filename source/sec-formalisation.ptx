@@ -8,17 +8,16 @@ finite-jet declarations are taken from AINTLIB commit
 <c>b007a4f3d</c>, and the weighted-parity declarations from commit
 <c>090a28921</c>.  The comparison with Mathlib's sheaf predicate is taken
 from commit <c>d92f96504</c>, and the results on Scottish Book
-Problems<nbsp/>24 and 28 from commit <c>01116aca6</c> <xref ref="bib-AINTLIB"/>.  For each
+Problems<nbsp/>24 and 28 from commit <c>01116aca6</c>.  The strong-sheafiness
+statements are taken from commit <c>870d0eed2</c> <xref ref="bib-AINTLIB"/>.  For each
 example Lean proves the Tate structure and uniformity, proves that the ring is
 a domain but not noetherian, proves sheafiness and failure of stable
 uniformity, and verifies the rational chart calculation used in the proof.
     </p>
     <p>
-      Neither example snapshot was available from the public AINTLIB repository at
-the time of writing.  The interactive version of the paper includes each
-declaration used below, extracted from the appropriate commit.  The later
-sheaf-comparison and Scottish Book commits are public, and their archival
-pages also link to the pinned source on GitHub.  The
+      All five pinned commits are public in AINTLIB.  The interactive version of
+the paper includes each declaration used below, extracted from the appropriate
+commit, and its archival page links to the pinned source on GitHub.  The
 <url href="https://github.com/CBirkbeck/uniform-sheafy-tate-domains/blob/main/PAPERFORGE_CHECK.md">verification report</url>
 records the Lean and mathlib versions, the build, and the axiom checks.
     </p>
@@ -476,6 +475,37 @@ The
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr.html">corresponding Lean theorem</url>
 proves this statement directly.
     </p>
+    <p>
+      Strong sheafiness is expressed by the following theorem from
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_tateExt_isSheafyComplete.html"><c>FJP/StrongSheafy.lean</c></url>.
+    </p>
+    <pre>
+    variable (F : Type*) [Field F]
+
+theorem finiteJet_tateExt_isSheafyComplete (n : ℕ) :
+    letI := mvTateAlgebraTopology' (A := JetA F) n
+    haveI := mvTate_isTateRing (A := JetA F) n
+    haveI := mvTate_t2Space (A := JetA F) n
+    haveI := mvTate_nonarchimedean (A := JetA F) n
+    haveI := mvTateAlgebraTopology'_isTopologicalRing
+      (A := JetA F) n
+    haveI : @CompleteSpace
+      ↥(restrictedMvPowerSeriesSubring n (JetA F))
+      (IsTopologicalAddGroup.rightUniformSpace _) :=
+        finiteJet_tateExt_completeSpace F n
+    IsSheafyComplete
+      ↥(restrictedMvPowerSeriesSubring n (JetA F)) := by
+  ...
+    </pre>
+    <p>
+      The restricted power-series subring in this statement is
+<m>A\langle V_1,\ldots,V_n\rangle</m>, with its canonical Tate-algebra topology,
+and <c>IsSheafyComplete</c> says that it is sheafy for every ring of
+integral elements.  This strong-sheafiness endpoint is currently formalised
+for the Laurent-series model over <m>F((t))</m>.  The ordinary sheafiness,
+uniformity, domain and chart theorems above have the more general DVR-base
+scope used elsewhere in the appendix.
+    </p>
   </subsection>
   <subsection xml:id="sec-formalisation-scope-of-the-finite-jet">
     <title>Scope of the finite-jet formalisation</title>
@@ -684,6 +714,33 @@ theorem weightedParity_not_stablyUniform_of_dvr :
   ...
     </pre>
     <p>
+      The strong-sheafiness statement is in
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.wp_tateExt_isSheafyComplete_of_dvr.html"><c>WP/StrongSheafy.lean</c></url>:
+    </p>
+    <pre>
+    theorem wp_tateExt_isSheafyComplete_of_dvr
+    [IsDiscreteValuationRing 𝒪[K]] (s : ℕ) :
+    letI := mvTateAlgebraTopology' (A := WPA K w) s
+    haveI := mvTate_isTateRing (A := WPA K w) s
+    haveI := mvTate_t2Space (A := WPA K w) s
+    haveI := mvTate_nonarchimedean (A := WPA K w) s
+    haveI := mvTateAlgebraTopology'_isTopologicalRing
+      (A := WPA K w) s
+    haveI : @CompleteSpace
+      ↥(restrictedMvPowerSeriesSubring s (WPA K w))
+      (IsTopologicalAddGroup.rightUniformSpace _) :=
+        wp_tateExt_completeSpace (w := w) s
+    IsSheafyComplete
+      ↥(restrictedMvPowerSeriesSubring s (WPA K w)) := by
+  ...
+    </pre>
+    <p>
+      Taking <m>w=\texttt{idWeight}</m>, the restricted power-series subring is
+<m>\mathcal A\langle V_1,\ldots,V_s\rangle</m>.  Thus this theorem is precisely
+the strong sheafiness asserted in <xref ref="thm-parity-sheafy"/>, for the full
+DVR-base scope of the paper.
+    </p>
+    <p>
       Here <c>IsSheafyComplete</c> is the predicate defined above: it quantifies
 over every ring of integral elements.  In particular it proves the sheaf
 condition for <m>(\mathcal A,\mathcal A^\circ)</m>.  The
@@ -708,8 +765,11 @@ Koszul lemma.  For sheafiness, one <m>N</m> is chosen for the base datum and all
 members of a finite cover.  Strong noetherianity of
 <m>\mathcal A^{(N)}</m> glues each coefficient, and the restriction embedding
 shows that the resulting coefficients tend to zero.
-The final topological embedding is obtained from the closed matching
-equaliser by the Tate closed-range theorem.  For the bad chart, the quotient
+The final topological embedding is obtained by applying the nonarchimedean
+open mapping theorem over <m>K</m> to the closed subspace of compatible tuples.
+Strong sheafiness is transported across the bicontinuous equivalence between
+a finite Tate extension and the corresponding weighted-parity algebra with
+shifted weight.  For the bad chart, the quotient
 formed from <m>\mathcal A^{(0)}=K\langle W\rangle</m> is
 <m>K\langle X\rangle</m>, and the coefficientwise ring embeds in formal
 multivariable power series over this domain.  The formalisation also

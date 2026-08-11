@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WeightedParity.wp_tateExt_isSheafyComplete_of_dvr · Lean source</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font: 16px/1.55 system-ui, sans-serif; }
+    main { max-width: 72rem; margin: 0 auto; padding: 2rem 1.2rem 4rem; }
+    nav { margin-bottom: 1.5rem; }
+    a { color: #176b43; }
+    @media (prefers-color-scheme: dark) { a { color: #84d8aa; } }
+    h1 { overflow-wrap: anywhere; font: 650 1.45rem/1.25 ui-monospace, monospace; }
+    .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
+             letter-spacing: .06em; }
+    .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
+    pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
+           background: color-mix(in srgb, CanvasText 7%, Canvas); }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .meta, .used-for { color: color-mix(in srgb, CanvasText 70%, Canvas);
+                        font-size: .9rem; }
+    .provenance { margin-top: 2rem; padding-top: 1rem;
+                   border-top: 1px solid color-mix(in srgb, CanvasText 18%, Canvas);
+                   font-size: .9rem; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../../../paper.html">← Return to the paper</a></nav>
+  <div class="kind">theorem</div>
+  <h1>WeightedParity.wp_tateExt_isSheafyComplete_of_dvr</h1>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>If the valuation ring of <code>K</code> is a discrete valuation ring, then every finite Tate extension <code>𝒜⟨V₁,…,V_s⟩</code> of the weighted-parity algebra is sheafy for every ring of integral elements. Lean identifies this extension bicontinuously with the weighted-parity algebra having its first <code>s</code> weights equal to zero and the remaining weights shifted, then transports the existing sheaf theorem across that equivalence.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>Layer 2: strong sheafiness of <code>𝒜⟨V₁,…,Vₛ⟩</code> over a base whose valuation ring is<br>a DVR (the uniformizer is chosen, not carried).</p></div></details>
+  <p class="used-for"><strong>Used in the paper for:</strong> Theorem 8.1 (strong sheafiness); Theorem 8.10 (strong sheafiness); Appendix: strong sheafiness of the weighted-parity example</p>
+  <pre><code>theorem wp_tateExt_isSheafyComplete_of_dvr [IsDiscreteValuationRing 𝒪[K]] (s : ℕ) :
+    letI := mvTateAlgebraTopology&#x27; (A := WPA K w) s
+    haveI := mvTate_isTateRing (A := WPA K w) s
+    haveI := mvTate_t2Space (A := WPA K w) s
+    haveI := mvTate_nonarchimedean (A := WPA K w) s
+    haveI := mvTateAlgebraTopology&#x27;_isTopologicalRing (A := WPA K w) s
+    haveI : @CompleteSpace ↥(restrictedMvPowerSeriesSubring s (WPA K w))
+      (IsTopologicalAddGroup.rightUniformSpace _) := wp_tateExt_completeSpace (w := w) s
+    IsSheafyComplete ↥(restrictedMvPowerSeriesSubring s (WPA K w))</code></pre>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/WP/StrongSheafy.lean:82–90</code><br>
+  AINTLIB commit <code>870d0eed2c48a020109d766d2af89c3f47469a94</code>.</p>
+  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/870d0eed2c48a020109d766d2af89c3f47469a94/projects/AdicSpaces/Adic%20spaces/WP/StrongSheafy.lean#L82-L90">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
+  <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
+  The weighted-parity development uses restricted power-series code adapted from
+  <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,
+  whose univariate Gauss-norm layer builds on
+  <a href="https://github.com/leanprover-community/mathlib4/blob/fd1d54bcac5caba4eff2ea3421c47d907333f515/Mathlib/RingTheory/PowerSeries/GaussNorm.lean">Fabrizio Barroero's mathlib code</a>.
+  It separately uses
+  <a href="https://github.com/leanprover-community/mathlib4/pull/36507">Bingyu Xia's multivariable power-series equivalences</a>.
+  This is infrastructure provenance, not an attribution of this paper-specific
+  declaration.</aside>
+</main>
+</body>
+</html>

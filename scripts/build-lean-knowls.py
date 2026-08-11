@@ -41,8 +41,11 @@ except ModuleNotFoundError as exc:  # pragma: no cover - Python < 3.11
 PRIMARY_COMMIT = "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
 PROJECT = "AdicSpaces"
 PUBLIC_COMMITS = {
+    "b007a4f3d4226f00a684b402715aa542e2f0bcdc",
+    "090a289211deb69117413e329325fe819aa7dbc2",
     "d92f96504f949ca43a27a817cb8d2f70b6486744",
     "01116aca6070283726008536cba16d165a01b505",
+    "870d0eed2c48a020109d766d2af89c3f47469a94",
 }
 
 DECL_LINE_RE = re.compile(
@@ -333,7 +336,38 @@ def body_marker(block: str, name: str) -> int | None:
             continue
         if depth == 0 and pair == ":=":
             line_prefix = block[block.rfind("\n", 0, pos) + 1 : pos]
-            if not re.search(r"\b(?:let|letI|have|haveI)\b", line_prefix):
+            is_local_binding = bool(
+                re.search(r"\b(?:let|letI|have|haveI)\b", line_prefix)
+            )
+            # A dependent theorem statement may split a local instance across
+            # several lines, for example
+            #
+            #   haveI : @CompleteSpace ...
+            #     (...) := someInstance
+            #
+            # The proof marker is not this assignment.  If the marker lies on
+            # a continuation line, find the nearest less-indented line; a
+            # leading have/let there identifies the enclosing local binder.
+            if not is_local_binding:
+                line_start = block.rfind("\n", 0, pos) + 1
+                current_line = block[line_start:pos]
+                current_indent = len(current_line) - len(current_line.lstrip())
+                previous_end = line_start - 1
+                while previous_end >= 0:
+                    previous_start = block.rfind("\n", 0, previous_end) + 1
+                    previous_line = block[previous_start:previous_end].rstrip()
+                    previous_end = previous_start - 1
+                    if not previous_line.strip():
+                        continue
+                    previous_indent = len(previous_line) - len(previous_line.lstrip())
+                    if previous_indent < current_indent:
+                        is_local_binding = bool(
+                            re.match(
+                                r"\s*(?:let|letI|have|haveI)\b", previous_line
+                            )
+                        )
+                        break
+            if not is_local_binding:
                 return pos
             pos += 2
             continue

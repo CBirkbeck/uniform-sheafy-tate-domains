@@ -59,14 +59,24 @@ d_{1,E}(u_1,\ldots,u_m)=\sum_i u_ir_i,
 <details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
 <article class="hiddenproof knowl__content">
 <div class="para logical">
-<div class="para">Over the polynomial ring <span class="process-math">\(E[T_1,\ldots,T_m]\text{,}\)</span> the sequence <span class="process-math">\(gT_i-f_i\)</span> has Koszul complex exact in positive degrees.  The map</div>
+<div class="para">Over the polynomial ring <span class="process-math">\(E[T_1,\ldots,T_m]\text{,}\)</span> the sequence <span class="process-math">\(gT_i-f_i\)</span> has Koszul complex exact in positive degrees.  Indeed, this may be checked after localising at a prime.  If one of the <span class="process-math">\(gT_i-f_i\)</span> is not in the prime, it is a unit after localisation and the Koszul complex is contractible. If all of them lie in the prime, then <span class="process-math">\(g\)</span> does not: otherwise all the <span class="process-math">\(f_i\)</span> would also lie in the prime, contrary to <span class="process-math">\((g,f_1,\ldots,f_m)=E\text{.}\)</span>  Thus <span class="process-math">\(g\)</span> is invertible there and</div>
 <div class="displaymath process-math">
+\begin{equation*}
+gT_i-f_i=g(T_i-f_i/g).
+\end{equation*}
+</div>
+<div class="para">The elements <span class="process-math">\(T_i-f_i/g\)</span> form a regular sequence, since they are monic linear polynomials in distinct variables.  This proves the assertion over the polynomial ring.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-koszul-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">The map</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/bib-Stacks.html">
 \begin{equation*}
 E[T_1,\ldots,T_m]\longrightarrow T_E
 \end{equation*}
 </div>
-<div class="para">is flat: this is the usual identification of <span class="process-math">\(T_E\)</span> with the <span class="process-math">\(\varpi\)</span>-adic completion of <span class="process-math">\(E_0[T_1,\ldots,T_m]\text{,}\)</span> followed by inverting <span class="process-math">\(\varpi\text{.}\)</span>  Tensoring the polynomial Koszul complex with <span class="process-math">\(T_E\text{,}\)</span> and using the standard base-change identification of its finite free terms, proves positive-degree exactness.  Notice that this does not assert exactness in degree zero.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-koszul-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">is flat.  In fact, <span class="process-math">\(E_0\)</span> is noetherian for <span class="process-math">\(E=B,C,D\text{,}\)</span> so <span class="process-math">\(E_0[T_1,\ldots,T_m]\)</span> is noetherian and its <span class="process-math">\(\varpi\)</span>-adic completion is flat over it <a href="#bib-Stacks" class="xref" data-knowl="./knowl/xref/bib-Stacks.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry bib-Stacks">[bib-Stacks, Tag 00MB]</a>.  Inverting <span class="process-math">\(\varpi\)</span> gives the displayed flat map.  Tensoring the polynomial Koszul complex with <span class="process-math">\(T_E\text{,}\)</span> and using the standard base-change identification of its finite free terms, proves positive-degree exactness.  Notice that this does not assert exactness in degree zero.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-koszul-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical">
 <div class="para">Each differential is continuous because its coordinates are finite sums of multiplication maps.  The image of <span class="process-math">\(d_{1,E}\)</span> is closed by the noetherian closed-ideal theorem.  In higher degree, exactness identifies an image with the kernel of the next continuous differential, and hence that image is closed.  The nonarchimedean open mapping theorem therefore shows that, for each differential <span class="process-math">\(d_{q,E}\text{,}\)</span> there is a constant <span class="process-math">\(C_{q,E}\geq1\)</span> such that every <span class="process-math">\(y\in\im(d_{q,E})\)</span> has a preimage <span class="process-math">\(x\)</span> satisfying</div>
@@ -78,7 +88,7 @@ d_{q,E}(x)=y,
 \end{equation*}
 </div>
 <div class="para">This also proves that each differential is strict onto its image.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-koszul-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-koszul-8-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical">
 <div class="para">Choose <span class="process-math">\(h_E\geq0\)</span> such that <span class="process-math">\(|\varpi|^{h_E}C_{1,E}\leq1\text{.}\)</span>  If <span class="process-math">\(x\in I_E\cap T_{E,0}\text{,}\)</span> choose <span class="process-math">\(u\in T_E^m\)</span> with</div>
@@ -90,7 +100,7 @@ d_{1,E}(u)=x,
 \end{equation*}
 </div>
 <div class="para">Then <span class="process-math">\(\varpi^{h_E}u\in T_{E,0}^m\)</span> and <span class="process-math">\(d_{1,E}(\varpi^{h_E}u)=\varpi^{h_E}x\text{,}\)</span> which proves <a href="#eq-ideal-denominators" class="xref" data-knowl="./knowl/xref/eq-ideal-denominators.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.1">(5.1)</a>.  Similarly, choose <span class="process-math">\(z_E\geq0\)</span> such that <span class="process-math">\(|\varpi|^{z_E}C_{2,E}\leq1\text{.}\)</span>  If <span class="process-math">\(u\in\ker(d_{1,E})\cap T_{E,0}^m\text{,}\)</span> choose <span class="process-math">\(v\)</span> with <span class="process-math">\(d_{2,E}(v)=u\)</span> and <span class="process-math">\(\lVert v\rVert\leq C_{2,E}\lVert u\rVert\text{.}\)</span>  Then <span class="process-math">\(\varpi^{z_E}v\in\bigwedge^2T_{E,0}^m\text{,}\)</span> proving <a href="#eq-syzygy-denominators" class="xref" data-knowl="./knowl/xref/eq-syzygy-denominators.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.2">(5.2)</a>.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-koszul-8-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-koszul-8-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Proof 5.1.1"><a tabindex="-1" href="#lem-koszul-8" title="Copy heading and permalink for Proof 5.1.1" aria-label="Copy heading and permalink for Proof 5.1.1">🔗</a></div>
 </article></details><span class="incontext"><a class="internal" href="#lem-koszul">In Context</a></span>

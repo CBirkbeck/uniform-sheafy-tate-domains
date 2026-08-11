@@ -5,7 +5,7 @@
     <p>
       In the finite-jet construction, the bad rational localisation is non-reduced.
 In our second example it is an integral domain; the loss of uniformity is
-instead caused by an unbounded family of nonnilpotent power-bounded elements.
+instead caused by an unbounded family of non-nilpotent power-bounded elements.
     </p>
     <theorem xml:id="thm-second-example">
       <statement>
@@ -21,7 +21,8 @@ instead caused by an unbounded family of nonnilpotent power-bounded elements.
           </li>
           <li>
             <p>
-              The Huber pair <m>(\mathcal A,\mathcal A^\circ)</m> is sheafy.
+              The ring <m>\mathcal A</m> is strongly sheafy; in particular, the Huber pair
+      <m>(\mathcal A,\mathcal A^\circ)</m> is sheafy.
             </p>
           </li>
           <li>
@@ -47,6 +48,7 @@ localisation.
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_chart_isDomain">Lean (chart is a domain)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_chart_not_isUniform">Lean (chart is nonuniform)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_not_stablyUniform_of_dvr">Lean (weightedParity_not_stablyUniform_of_dvr)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.wp_tateExt_isSheafyComplete_of_dvr">Lean (wp_tateExt_isSheafyComplete_of_dvr)</lean>
     </theorem>
   </introduction>
   <subsection xml:id="sec-second-example-the-weighted-parity-algebra">
@@ -171,9 +173,11 @@ sum of monomials and choose <m>N</m> so that only
         <p>
           The Gauss norm on the countable restricted Tate algebra
 <m>k\langle W,U_1,U_2,\ldots\rangle</m> is multiplicative.  To see this, note
-first that the norm of a nonzero restricted series is attained.  For each of
-two such series choose, among the norm-attaining exponents, the
-lexicographically largest one.  In the coefficient of the sum of these two
+first that only finitely many coefficients attain the nonzero supremum, since
+the coefficients tend to zero.  Order the finite-support exponent vectors by
+comparing them at the largest index where they differ.  This is an additive
+total order.  For each of two nonzero series choose the largest
+norm-attaining exponent.  In the coefficient of the sum of these two
 exponents, the product of the chosen coefficients strictly dominates every
 other convolution term.  The ultrametric inequality therefore gives
 <me>\lVert fg\rVert_G=\lVert f\rVert_G\lVert g\rVert_G.</me>
@@ -325,8 +329,10 @@ topology, and then to the completion:
         <p>
           In the other direction, the inclusion
 <m>\mathcal A^{(N)}\to\mathcal A</m> gives a continuous homomorphism
-<m>P\to\mathcal A_\alpha</m>.  The family <m>(e_\mu)_\mu</m> is bounded in
-<m>\mathcal A_\alpha</m>.  Apply the homomorphism to every coefficient.  If
+<m>P\to\mathcal A_\alpha</m>.  Each <m>e_\mu</m> lies in <m>\mathcal A_0</m>, and the
+canonical map to a rational localisation is bounded.  Hence the family
+<m>(e_\mu)_\mu</m> is bounded in <m>\mathcal A_\alpha</m>.  Apply the homomorphism to
+every coefficient.  If
 <m>\lVert p_\mu\rVert\to0</m>, the series
 <me>\sum_\mu p_\mu e_\mu</me>
 converges in <m>\mathcal A_\alpha</m>.  The resulting map <m>\Psi</m> is continuous,
@@ -384,8 +390,8 @@ rational datum in <m>\mathcal A^{(N)}</m>.  Now apply
       </proof>
     </corollary>
   </subsection>
-  <subsection xml:id="sec-second-example-a-reduced-nonuniform-rational-chart">
-    <title>A reduced nonuniform rational chart</title>
+  <subsection xml:id="sec-second-example-a-reduced-rational-chart-which">
+    <title>A reduced rational chart which is not uniform</title>
     <p>
       The ideal <m>(W,\varpi)</m> is open because <m>\varpi</m> is a unit of <m>\mathcal A</m>.
 Define the complete <m>k^\circ</m>-algebra
@@ -456,9 +462,22 @@ multiplied by <m>\varpi^{\omega(\nu)}</m>.  The map from
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_chart_not_isUniform">Lean (chart is nonuniform)</lean>
       <proof>
         <p>
+          Put <m>R=k\langle X\rangle</m>.  Here
+<me>R[[U_1,U_2,\ldots]]
+  =\left\{\sum_{\nu\in\mathbb N^{(I)}}a_\nu U^\nu:a_\nu\in R\right\}</me>
+denotes the ring of all coefficient families indexed by finite-support
+multi-indices.  Multiplication is convolution.  For a fixed <m>\nu</m> there are
+only finitely many decompositions <m>\nu=\lambda+\mu</m>, so every coefficient of
+a product is a finite sum.  Order <m>\mathbb N^{(I)}</m> by comparing two vectors
+at the largest index where they differ.  This is an additive well-order.  If
+two series are nonzero, the coefficient at the sum of their least nonzero
+exponents is the product of the corresponding coefficients and is nonzero.
+Thus <m>R[[U_1,U_2,\ldots]]</m> is a domain.
+        </p>
+        <p>
           The coefficient description gives a homomorphism
 <me>\mathcal B\longrightarrow
-  k\langle X\rangle[[U_1,U_2,\ldots]],
+  R[[U_1,U_2,\ldots]],
   \qquad
   \sum_\nu p_\nu e_\nu\longmapsto
   \sum_\nu(\varpi X)^{\omega(\nu)}p_\nu(X)U^\nu.</me>
@@ -466,8 +485,8 @@ It is a homomorphism by <xref ref="eq-coefficient-multiplication"/>.  If its ima
 is zero, then
 <me>(\varpi X)^{\omega(\nu)}p_\nu(X)=0</me>
 for every <m>\nu</m>.  Since <m>k\langle X\rangle</m> is a domain, every
-<m>p_\nu</m> is zero.  The map is therefore injective.  Its target is a domain,
-and hence so is <m>\mathcal B</m>.
+<m>p_\nu</m> is zero.  The map is therefore injective, and hence <m>\mathcal B</m> is
+a domain.
         </p>
         <p>
           Inside <m>\mathcal A</m> write <m>Y_n=W^nU_n</m> and put
@@ -485,21 +504,25 @@ power-bounded.  The family <m>(T_n)_{n\geq1}</m> is not bounded, since its norms
       </proof>
     </proposition>
   </subsection>
-  <subsection xml:id="sec-second-example-sheafiness">
-    <title>Sheafiness</title>
+  <subsection xml:id="sec-second-example-strong-sheafiness">
+    <title>Strong sheafiness</title>
     <theorem xml:id="thm-parity-sheafy">
       <statement>
         <p>
-          The Huber pair <m>(\mathcal A,\mathcal A^\circ)</m> is sheafy.
+          The ring <m>\mathcal A</m> is strongly sheafy.  In particular, the Huber pair
+<m>(\mathcal A,\mathcal A^\circ)</m> is sheafy.
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isSheafyComplete_of_dvr">Lean</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isSheafyComplete_of_dvr">Lean (sheafiness)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.wp_tateExt_isSheafyComplete_of_dvr">Lean (wp_tateExt_isSheafyComplete_of_dvr)</lean>
       <proof>
         <p>
           We first work with a finite rational cover <m>U=\bigcup_iU_i</m>.  Choose one
 <m>N</m> large enough to approximate the datum for <m>U</m> and the data for all the
-<m>U_i</m> in <m>\mathcal A^{(N)}</m>.  The small perturbation lemma does not change
-the rational domains, and <xref ref="prop-coefficientwise-localization"/> gives
+<m>U_i</m> in <m>\mathcal A^{(N)}</m>.  The standard combined data for every pairwise
+intersection <m>U_i\cap U_j</m> then also lie in <m>\mathcal A^{(N)}</m>.  The small
+perturbation lemma does not change the rational domains, and
+<xref ref="prop-coefficientwise-localization"/> gives
 compatible identifications
 <me>\mathcal O_X(U)\cong
   \left\{\sum_\mu p_\mu e_\mu:
@@ -538,15 +561,23 @@ The same coefficientwise argument proves separation.
           The image of the product restriction map for <m>\mathcal A</m> is therefore the
 subspace of tuples whose restrictions to every pairwise intersection agree.
 This subspace is closed: it is the common zero locus of the continuous
-difference maps.  The restriction map is continuous and injective.  The
-nonarchimedean closed-range theorem over the Tate ring <m>\mathcal A</m> shows
-that its inverse on this image is continuous, so restriction is a
-topological embedding.  We have proved the topological sheaf condition on
-finite rational covers.  The
+difference maps, and hence is a Banach <m>k</m>-space.  The restriction map is a
+continuous bijection from the Banach <m>k</m>-space <m>\mathcal O_X(U)</m> to this
+closed subspace.  The nonarchimedean open mapping theorem therefore makes it
+a homeomorphism.  We have proved the topological sheaf condition on finite
+rational covers.  The
 general rational-basis theorem upgrades this to the all-open structure
 presheaf, and its plus-ring independence gives the same conclusion for every
 ring of integral elements.  In particular, <m>(\mathcal A,\mathcal A^\circ)</m>
 is sheafy.
+        </p>
+        <p>
+          For <m>s\geq0</m>, the Tate extension
+<m>\mathcal A\langle V_1,\ldots,V_s\rangle</m> is bicontinuously isomorphic to the
+same weighted-parity construction with the first <m>s</m> weights equal to zero
+and the remaining weights shifted by <m>s</m>.  The argument above applies to
+every weight function, so this Tate extension is sheafy.  Hence <m>\mathcal A</m>
+is strongly sheafy.
         </p>
       </proof>
     </theorem>
@@ -555,10 +586,10 @@ is sheafy.
       <p>
         The fact that <m>\mathcal A</m> is a uniform domain is
 <xref ref="prop-parity-uniform-domain"/>, and its failure to be noetherian is
-<xref ref="prop-parity-nonnoetherian"/>.  Sheafiness is
+<xref ref="prop-parity-nonnoetherian"/>.  Strong sheafiness is
 <xref ref="thm-parity-sheafy"/>.  Finally,
 <xref ref="prop-weighted-chart-identification"/>, <xref ref="prop-weighted-chart-domain-nonuniform"/> identify the
-rational chart <m>|W|\leq|\varpi|</m> as a nonuniform integral domain.
+rational chart <m>|W|\leq|\varpi|</m> as an integral domain which is not uniform.
       </p>
     </proof>
     <remark xml:id="rem-second-example-relation">
@@ -588,7 +619,7 @@ This intersection is the kernel of the completion map.  Thus <m>Q^2</m> is kille
 while <m>Q</m> survives, so this rational chart is non-reduced.  The map from <m>A</m> to
 this completed rational localisation is also not flat by
 <xref ref="prop-problems-24-28"/>.  For <m>R_0=\mathcal A_0</m>, the completed
-chart remains a domain, but its generic fibre is nonuniform because the
+chart remains a domain, but its generic fibre is not uniform because the
 power-bounded elements <m>T_n=X^nU_n</m> form an unbounded family.  Thus the two
 examples give different failures on the same kind of affine blow-up chart.
         </p>

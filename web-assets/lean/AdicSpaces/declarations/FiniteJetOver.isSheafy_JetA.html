@@ -32,16 +32,14 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">theorem</div>
   <h1>FiniteJetOver.isSheafy_JetA</h1>
-  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>Choose a uniformizer of <code>K</code> and suppose that the unit ball of <code>K</code> is noetherian. Then the maximal pair <code>(𝓐,𝓐°)</code> satisfies the finite rational-cover condition <code>IsSheafy</code>. Lean pushes a cover and compatible family to the sheafy vertices <code>𝓑,𝓒,𝓓</code>, glues over <code>𝓑</code> and <code>𝓒</code>, uses separation over <code>𝓓</code>, and pulls the result back through the localized Milnor row. The range of the restriction map is the closed subspace of tuples agreeing on pairwise intersections, so a closed-range theorem makes it a topological embedding.</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>Choose a uniformizer of <code>K</code> and suppose that the unit ball of <code>K</code> is noetherian. Then the maximal pair <code>(𝓐,𝓐°)</code> satisfies the finite rational-cover condition <code>IsSheafy</code>. Lean pushes a cover and compatible family to the sheafy vertices <code>𝓑,𝓒,𝓓</code>, glues over <code>𝓑</code> and <code>𝓒</code>, uses separation over <code>𝓓</code>, and pulls the result back through the localized Milnor row. The range of restriction is a closed Banach <code>K</code>-subspace, so the nonarchimedean open mapping theorem makes restriction a topological embedding.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>The finite-jet pinching algebra over a CDVF base is sheafy</strong><br>([FJP] Theorem 5.3, layer-1 form: an explicit uniformizer <code>ϖ</code> and the noetherianity of<br>the base unit ball). This is the priority theorem of the campaign.</p></div></details>
   <p class="used-for"><strong>Used in the paper for:</strong> Appendix: finite-rational-cover theorem actually constructed</p>
   <pre><code>theorem isSheafy_JetA : ValuationSpectrum.IsSheafy (JetA K)</code></pre>
   <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/Over/SheafTransfer.lean:730–730</code><br>
   AINTLIB commit <code>b007a4f3d4226f00a684b402715aa542e2f0bcdc</code>.</p>
-  <p class="meta">This is the archival declaration extracted from the pinned
-  source tree.  The corresponding AINTLIB commit was not publicly reachable
-  when this page was built, so no external upstream link is offered here.</p>
+  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/b007a4f3d4226f00a684b402715aa542e2f0bcdc/projects/AdicSpaces/Adic%20spaces/FJP/Over/SheafTransfer.lean#L730-L730">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
   The finite-jet development uses restricted power-series code adapted from
   <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,

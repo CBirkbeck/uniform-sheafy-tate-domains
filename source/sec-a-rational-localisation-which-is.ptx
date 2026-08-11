@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xml:id="sec-a-nonuniform-rational-localisation">
-  <title>A nonuniform rational localisation</title>
+<section xml:id="sec-a-rational-localisation-which-is">
+  <title>A rational localisation which is not uniform</title>
   <p>
     We next compute the rational chart which witnesses the failure of stable
 uniformity.

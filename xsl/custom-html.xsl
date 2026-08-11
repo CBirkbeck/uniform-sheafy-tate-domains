@@ -34,6 +34,25 @@
        title="PaperForge">Built with PaperForge</a>
   </xsl:template>
 
+  <!-- tex2ptx supplies “References” as an explicit title, while PreTeXt also
+       supplies it as the specialised division type.  Render it only once. -->
+  <xsl:template match="references" mode="heading-content">
+    <span class="title">
+      <xsl:apply-templates select="." mode="title-full"/>
+    </span>
+  </xsl:template>
+
+  <xsl:template match="references" mode="tooltip-text">
+    <xsl:choose>
+      <xsl:when test="title">
+        <xsl:apply-templates select="." mode="title-plain"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:apply-templates select="." mode="type-name"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
   <!-- Employment status is an author footnote, not PreTeXt's funding
        <support>.  Standard author data remains in source/main.ptx; the
        sidecar (content/authors.xml) supplies only this format-specific

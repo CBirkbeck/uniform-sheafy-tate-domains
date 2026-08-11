@@ -411,6 +411,22 @@
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
     {
+      "decl": "FiniteJet.finiteJet_tateExt_isSheafyComplete",
+      "file": "Adic spaces/FJP/StrongSheafy.lean",
+      "line": 295,
+      "kind": "theorem",
+      "cited": "Appendix: strong sheafiness of the finite-jet Laurent-series model",
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "WeightedParity.wp_tateExt_isSheafyComplete_of_dvr",
+      "file": "Adic spaces/WP/StrongSheafy.lean",
+      "line": 81,
+      "kind": "theorem",
+      "cited": "Appendix: strong sheafiness of the weighted-parity example",
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
       "decl": "FiniteJet.finiteJet_witnessRing_quality",
       "file": "Adic spaces/FJP/FiniteJetScottishBook.lean",
       "line": 67,

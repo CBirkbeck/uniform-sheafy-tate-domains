@@ -16,7 +16,10 @@ strong noetherianity, and the two example constructions.  For both examples
 it records the completed formalisation of uniformity, sheafiness, the
 distinguished rational chart, and failure of stable uniformity.  It also
 records the formalised finite-jet witnesses for Scottish Book Problems 24
-and 28.  These declarations use an abstract complete ultrametric base with a
+and 28, together with the strong-sheafiness theorems for both examples.  The
+finite-jet strong theorem currently uses the Laurent-series model, while the
+weighted-parity theorem has the paper's DVR-base scope.  The other declarations
+use an abstract complete ultrametric base with a
 chosen pseudouniformizer, with both Laurent-series and p-adic instances.  The
 appendix keeps this separate from the additional noetherian-base hypothesis
 used by the newer sheafiness interface.  It also credits William Coram's
@@ -105,17 +108,16 @@ checkout, for example:
 root = "/absolute/path/to/aintlib/projects/AdicSpaces"
 ```
 
-That AINTLIB checkout must contain all four Git objects listed below.  A
-shallow clone is therefore insufficient.  The two original example snapshots
-are not yet available under permanent public refs, as noted below; publishing
-them remains necessary for a build from a fresh public clone.
+That AINTLIB checkout must contain all five Git objects listed below.  A
+shallow clone may therefore be insufficient.  All five snapshots are reachable
+from public AINTLIB branches.
 
 See `PAPERFORGE_CHECK.md` for the reference audit and `STYLE_REVIEW.md` for the
 first author-voice pass.
 
 ## Lean source and publication note
 
-The interactive code is extracted from four audited AINTLIB snapshots:
+The interactive code is extracted from five audited AINTLIB snapshots:
 
 ```text
 finite-jet branch: fjp/cdvf-lemma51
@@ -126,18 +128,16 @@ sheaf-comparison branch: dev/adic-spaces
 sheaf-comparison commit: d92f96504f949ca43a27a817cb8d2f70b6486744
 Scottish Book branch: dev/adic-spaces
 abstract-base Scottish Book commit: 01116aca6070283726008536cba16d165a01b505
+strong-sheafiness branch: wp/strengthenings
+strong-sheafiness commit: 870d0eed2c48a020109d766d2af89c3f47469a94
 project: projects/AdicSpaces
 ```
 
-At the time of this build, GitHub did not serve either original example
-snapshot; the sheaf-comparison and Scottish Book snapshots are on the public
-`dev/adic-spaces` branch.  To keep
-the interactive paper independent of branch movement,
+All five commits are publicly reachable in AINTLIB.  To keep the interactive
+paper independent of branch movement,
 `scripts/build-lean-knowls.py` extracts each declaration from the Git object
 recorded for that declaration.  Every Paperforge Lean badge opens that code
 inline, Roe-style, and its ordinary link opens a standalone archival page under
 `lean/AdicSpaces/declarations/`.
 
-Before archival publication, the two example snapshots should be published
-under permanent branches or tags.  No AINTLIB branch is pushed by the paper
-build.
+No AINTLIB branch is pushed by the paper build.

@@ -28,11 +28,22 @@
 <details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
 <article class="hiddenproof knowl__content">
 <div class="para logical">
+<div class="para">Put <span class="process-math">\(R=k\langle X\rangle\text{.}\)</span>  Here</div>
+<div class="displaymath process-math">
+\begin{equation*}
+R[[U_1,U_2,\ldots]]
+=\left\{\sum_{\nu\in\mathbb N^{(I)}}a_\nu U^\nu:a_\nu\in R\right\}
+\end{equation*}
+</div>
+<div class="para">denotes the ring of all coefficient families indexed by finite-support multi-indices.  Multiplication is convolution.  For a fixed <span class="process-math">\(\nu\)</span> there are only finitely many decompositions <span class="process-math">\(\nu=\lambda+\mu\text{,}\)</span> so every coefficient of a product is a finite sum.  Order <span class="process-math">\(\mathbb N^{(I)}\)</span> by comparing two vectors at the largest index where they differ.  This is an additive well-order.  If two series are nonzero, the coefficient at the sum of their least nonzero exponents is the product of the corresponding coefficients and is nonzero. Thus <span class="process-math">\(R[[U_1,U_2,\ldots]]\)</span> is a domain.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-weighted-chart-domain-nonuniform-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
 <div class="para">The coefficient description gives a homomorphism</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-coefficient-multiplication.html">
 \begin{equation*}
 \mathcal B\longrightarrow
-k\langle X\rangle[[U_1,U_2,\ldots]],
+R[[U_1,U_2,\ldots]],
 \qquad
 \sum_\nu p_\nu e_\nu\longmapsto
 \sum_\nu(\varpi X)^{\omega(\nu)}p_\nu(X)U^\nu.
@@ -44,9 +55,8 @@ k\langle X\rangle[[U_1,U_2,\ldots]],
 (\varpi X)^{\omega(\nu)}p_\nu(X)=0
 \end{equation*}
 </div>
-<div class="para">for every <span class="process-math">\(\nu\text{.}\)</span>  Since <span class="process-math">\(k\langle X\rangle\)</span> is a domain, every <span class="process-math">\(p_\nu\)</span> is zero.  The map is therefore injective.  Its target is a domain, and hence so is <span class="process-math">\(\mathcal B\text{.}\)</span>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-weighted-chart-domain-nonuniform-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">for every <span class="process-math">\(\nu\text{.}\)</span>  Since <span class="process-math">\(k\langle X\rangle\)</span> is a domain, every <span class="process-math">\(p_\nu\)</span> is zero.  The map is therefore injective, and hence <span class="process-math">\(\mathcal B\)</span> is a domain.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-weighted-chart-domain-nonuniform-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical">
 <div class="para">Inside <span class="process-math">\(\mathcal A\)</span> write <span class="process-math">\(Y_n=W^nU_n\)</span> and put</div>
@@ -64,7 +74,7 @@ T_n=\varpi^{-n}Y_n=X^nU_n\in\mathcal B.
 \end{equation*}
 </div>
 <div class="para">The even powers of <span class="process-math">\(T_n\)</span> have norm at most <span class="process-math">\(1\text{,}\)</span> and the odd powers have norm at most <span class="process-math">\(\lVert T_n\rVert_{\mathcal B}\text{.}\)</span>  Thus every <span class="process-math">\(T_n\)</span> is power-bounded.  The family <span class="process-math">\((T_n)_{n\geq1}\)</span> is not bounded, since its norms <span class="process-math">\(|\varpi|^{-n}\)</span> are unbounded.  Hence <span class="process-math">\(\mathcal B^\circ\)</span> is unbounded and <span class="process-math">\(\mathcal B\)</span> is not uniform.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-weighted-chart-domain-nonuniform-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-weighted-chart-domain-nonuniform-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Proof 8.9.1"><a tabindex="-1" href="#prop-weighted-chart-domain-nonuniform-4" title="Copy heading and permalink for Proof 8.9.1" aria-label="Copy heading and permalink for Proof 8.9.1">🔗</a></div>
 </article></details><span class="incontext"><a class="internal" href="#prop-weighted-chart-domain-nonuniform">In Context</a></span>

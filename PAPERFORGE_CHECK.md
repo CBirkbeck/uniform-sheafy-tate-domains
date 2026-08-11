@@ -20,7 +20,7 @@ The build uses Paperforge commit
 `e6affebffbcc5eb05f17cc3ba57cdf3ff5c618ad`, together with the compatibility
 patch recorded in `patches/paperforge-compatibility.patch`, and PreTeXt
 `2.45.0`.  Paperforge's installation self-test passes in full.  Its unit and
-validator suites pass with 20 tests and one skipped test.  All 120 Lean badges
+validator suites pass with 20 tests and one skipped test.  All 135 Lean badges
 now name an immutable formalisation commit explicitly; commit-aware validation
 therefore checks the same source that is displayed in the corresponding
 knowl.
@@ -45,7 +45,7 @@ The following claims were also read in context:
 | Huber, Theorem 2.2 and Lemmas 2.3--2.4 | These support sheafiness for strongly noetherian Tate rings and the strictness/closed-image input for finite modules. |
 | Huber, Lemma 3.10; Kedlaya--Liu, Remark 2.4.7 | These give the first two assertions of Lemma 8.5: sufficiently small changes still give rational data and define the same rational subset. The canonical identification of completed rational localisations then follows from Huber, Proposition 1.3. |
 | Wedhorn, Proposition and Definition 6.36; Remark 8.20; Definition 8.26; Theorem 8.28(b); Lemmas 8.31--8.34 | These support the definitions of strong noetherianity and sheafiness, the representable topological-ring formulation, and the strongly-noetherian proof route used by the formalisation. |
-| Stacks Project, Tag 009O | This supports checking a sheaf on a basis. |
+| Stacks Project, Tags 00MB and 009O | Tag 00MB gives flatness of adic completion for noetherian rings, as used in Lemma 5.1. Tag 009O supports checking a sheaf on a basis. |
 | Ben-Bassat--Kremnizer, Definition 5.7, Remark 5.8, and Lemmas 5.13--5.14 | These define rational localisations, prove the strict two-term resolutions for the Weierstrass and Laurent cases, and factor a general rational localisation into those cases. The paper does not use Koszul terminology or state the simultaneous multivariable result. |
 | Bambozzi--Kremnizer, Notation 4.3, Definitions 4.5--4.6, Proposition 4.9, Lemma 4.11, and Corollary 4.13 | These define the relevant Koszul complex and prove strict Koszul regularity for rational localisations. This supports the exactness and strictness assertions in Lemma 5.1; the two displayed lattice estimates are derived separately by open mapping and scaling. |
 
@@ -62,14 +62,14 @@ proof crosswalk is:
 |---|---|
 | Proposition 3.1 | `JetA` is a closed support subring of `JetC`; multiplicativity of the restricted Gauss norm supplies the domain and power-bounded calculation, and nonnoetherianity is proved from the `Q²` coefficient. The paper now follows this route. |
 | Proposition 4.1 | `chartEquiv` first applies the quotient `A → B`, which discards the terms divisible by `Q²`, and then substitutes `W = ϖX`. An element in `Q²C` is killed in the completion by writing it as `ϖⁿXⁿ` times a bounded element. The inverse evaluates at `W/ϖ`, and the inverse identities use the decomposition into the terms of `Q`-degree at most one and the part in `Q²C`, together with polynomial density. The paper now follows this proof. |
-| Lemma 5.1 | Positive-degree Koszul exactness is transported from the polynomial sequence along the flat map to the restricted Tate algebra. The degree-zero image is closed by noetherianity; higher images are closed kernels. The nonarchimedean closed-range theorem bounds the norm of a preimage by a fixed multiple of the norm of its image; this gives strictness and, after multiplication by a power of `ϖ`, the two lattice inclusions. |
+| Lemma 5.1 | Polynomial exactness is checked locally: away from the common zero locus one generator is a unit, while at a prime containing every generator, \(g\) is invertible and the sequence becomes the regular sequence \(g(T_i-f_i/g)\). Since \(E_0[T]\) is noetherian, its \(\varpi\)-adic completion is flat (Stacks Tag 00MB); inverting \(\varpi\) gives the base-change map used by Lean. The degree-zero image is closed by noetherianity, higher images are closed kernels, and open mapping supplies the two denominator bounds. |
 | Lemma 5.2 | Choose preimages under `d₁` over `B` and `C` satisfying the norm bounds of Lemma 5.1. Their difference over `D` lies in `ker(d₁)`; choose a preimage under `d₂` with the corresponding norm bound and lift it coefficientwise to `C`. The ambient Milnor pullback then gives the element over `A`. The same inequalities prove closedness of `I_A` and strict exactness. |
 | Proposition 5.3 | Lean proves algebraic exactness by correcting defects of quotient representatives through `I_C`. A quotient-norm estimate gives the left-hand topological embedding, while the norm-preserving coefficient section proves that `C_α → D_α` is open. The proof has been rewritten accordingly. |
-| Theorem 6.1 | A rational cover and compatible family are pushed to `B,C,D`; sheafiness there and the localised Milnor row give separation and gluing over `A`. The subspace of tuples agreeing on pairwise intersections is closed, and the closed-range theorem gives the required topological embedding. Lean proves this concrete argument. |
+| Theorem 6.1 | A rational cover and compatible family are pushed to `B,C,D`; sheafiness there and the localised Milnor row give separation and gluing over `A`. The subspace of tuples agreeing on pairwise intersections is a closed Banach \(k\)-space, and the nonarchimedean open mapping theorem gives the required topological embedding. The strong form repeats the Milnor-square argument after adjoining finitely many Tate variables; this is formalised for the Laurent-series model. |
 | Proposition 7.1 | Over any complete ultrametric normed field `K` with an `IsFJPBase K` instance, Lean defines `ev00(f₀(W)+Qf₁(W)+Q²h)=f₀(0)` and pulls the norm valuation back along it to obtain a point of the chart. Multiplicativity of the Gauss norm gives `‖Q²a‖=‖a‖`; the resulting range factorisation is a homeomorphism, and completeness makes the range closed. The previously proved identity `canonicalMap_Qa_sq` gives `ρ(Q²)=0`. For nonflatness, Lean applies `Module.Flat.isSMulRegular_of_nonZeroDivisors`: flatness would make the image of the non-zero-divisor `Q²` act injectively on the nonzero chart, whereas that image is zero. The paper now follows this route. |
 | Lemma 8.2 | Lean decomposes each finite-variable ring into the finitely many exponent-parity classes, identifies the even-exponent subring isometrically with an ordinary Tate algebra, and proves module-finiteness over it. The inclusions are the subtype inclusions in the common countable Tate algebra, hence isometric, and `exists_head_approx` gives the quantitative approximation used for density. |
-| Propositions 8.3--8.4 and 8.8--8.9 | The weighted-parity development proves multiplicativity of the countable Gauss norm by choosing lexicographically maximal norm-attaining exponents, proves nonnoetherianity by direct coefficient extraction, and handles the distinguished chart by a completed quotient over \(K\langle W\rangle\) and an embedding into formal power series. The paper now uses these arguments. |
-| Proposition 8.6 and Theorem 8.10 | For data in the finite-variable subring \(\mathcal A^{(N)}\), localisation is constructed by applying its quotient map to every coefficient indexed by the remaining variables and summing coefficientwise for the inverse; it does not use the Koszul complex. In the sheaf proof, the retraction \(\rho_N:\mathcal A\to\mathcal A^{(N)}\) pulls any point outside the proposed finite-variable cover back to a point outside the original cover, so the finite-variable rational subsets really do cover. Strong noetherian sheafiness then glues the coefficients, and the restriction embedding proves that they tend to zero; the closed-range theorem supplies the final topological statement. |
+| Propositions 8.3--8.4 and 8.8--8.9 | The weighted-parity development proves multiplicativity of the countable Gauss norm by choosing maximal norm-attaining exponents in an additive order, proves nonnoetherianity by direct coefficient extraction, and handles the distinguished chart by a completed quotient over \(K\langle W\rangle\) and an embedding into the explicitly defined countable-variable formal power-series domain. The paper now supplies both omitted order/domain arguments. |
+| Proposition 8.6 and Theorem 8.10 | For data in the finite-variable subring \(\mathcal A^{(N)}\), localisation is constructed by applying its quotient map to every coefficient indexed by the remaining variables and summing coefficientwise for the inverse; it does not use the Koszul complex. The retraction \(\rho_N\) shows that the finite-stage rational subsets cover, and the pairwise-intersection data remain in the same finite stage. Strong noetherian sheafiness glues the coefficients, the restriction embedding proves that they tend to zero, and open mapping gives the final topological statement. Strong sheafiness is formalised by a bicontinuous identification of every finite Tate extension with a shifted-weight algebra. |
 | Lemma 8.5 | The paper cites Huber, Lemma 3.10, and Kedlaya--Liu, Remark 2.4.7, for this standard result. Lean independently proves the quantitative norm-unit-ball specialisation used to move the rational data for a finite cover into one finite-variable strongly noetherian subring. |
 
 ## Lean crosswalk
@@ -92,6 +92,8 @@ Witt-vector declaration.  The accepted map now covers, clause by clause:
 - the finite-rational-cover, chosen-pair all-open, completion-independent, and
   public structure-presheaf sheafiness endpoints, together with the exact
   equivalence with Mathlib's `TopCommRingCat`-valued sheaf predicate;
+- the finite-jet Tate-extension sheafiness endpoint for the Laurent-series
+  model, which is the formal strong-sheafiness statement available there;
 - the weighted-parity support definition, Tate structure, uniformity, domain,
   nonnoetherianity, and identification of the power-bounded elements;
 - the finite-variable subrings, their finite-module decomposition, strong
@@ -100,11 +102,11 @@ Witt-vector declaration.  The accepted map now covers, clause by clause:
   directions and restriction compatibility, together with the finite-variable
   presentation and the complete two-step identification of the distinguished
   chart; and
-- the weighted-parity all-pairs sheaf theorem, nonuniform domain chart, and
-  failure of stable uniformity.
+- the weighted-parity all-pairs and finite-Tate-extension sheaf theorems, the
+  domain chart which is not uniform, and failure of stable uniformity.
 
-No doc-gen4 site exists for the audited snapshots, and the two example commits
-are not currently public.  The web build therefore extracts each exact
+No doc-gen4 site exists for the audited snapshots.  All five pinned commits
+are publicly reachable in AINTLIB.  The web build extracts each exact
 declaration from its pinned local Git object.  Every automatic theorem badge
 opens a Roe-style inline knowl and has a working standalone archival page as
 its ordinary link.  The generator also covers the appendix definitions and
@@ -126,7 +128,7 @@ small-perturbation statement cited in the paper.
 
 For the weighted-parity example, Lean proves uniformity, the domain and
 nonnoetherianity statements, sheafiness for every ring of integral elements,
-the nonuniform domain chart, and failure of stable uniformity.  The code also
+the domain chart which is not uniform, and failure of stable uniformity.  The code also
 supplies an isometric constant-series map from the coefficient field.
 
 The AINTLIB audit used Lean `4.33.0-rc1` with mathlib commit
@@ -183,11 +185,22 @@ The weighted-parity audit used pinned commit
 nonnoetherianity, power-bounded, sheafiness, chart, and non-stable-uniformity
 endpoints again report only `propext`, `Classical.choice`, and `Quot.sound`.
 
+The strong-sheafiness audit uses public commit
+`870d0eed2c48a020109d766d2af89c3f47469a94`.  The declarations
+`FiniteJet.finiteJet_tateExt_isSheafyComplete` and
+`WeightedParity.wp_tateExt_isSheafyComplete_of_dvr` elaborate, and
+`#print axioms` reports only `propext`, `Classical.choice`, and `Quot.sound`.
+The finite-jet declaration currently concerns the Laurent-series model
+`F((t))`; the weighted-parity declaration has the full DVR-base scope of the
+paper.
+
 ## Build-level warnings
 
 Both PDFs compile without undefined references, overfull boxes, or package
-warnings.  They have only underfull-box diagnostics where page-broken code
+errors.  They have only underfull-box diagnostics where page-broken code
 listings leave short lines; a visual check confirms that there is no clipping.
+The arXiv conversion also produces the harmless standard `amsart` warning that
+the abstract follows `\maketitle` in the generated file.
 PreTeXt itself reports deprecations for the legacy title-page shape and for
 generated `<me>`/`<men>` elements; these are converter maintenance notices
 rather than defects in the resulting paper.

@@ -88,9 +88,12 @@ integral domain.  Moreover,
         The Gauss norm on <m>L=k\langle W,W^{-1}\rangle</m> is multiplicative, and the
 restricted Gauss norm on <m>C=L\langle Q\rangle</m> is therefore multiplicative as
 well.  In particular, <m>C</m> is a domain, and hence so is its subring <m>A</m>.  The
-conditions on the constant and linear <m>Q</m>-coefficients which define <m>A</m> are
-closed conditions in <m>C</m>, so <m>A</m> is complete.  The image of <m>\varpi</m> in <m>A</m>
-is a topologically nilpotent unit, and therefore <m>A</m> is a Tate ring.
+constant- and linear-coefficient maps <m>C\to L</m> are continuous, and
+<m>k\langle W\rangle</m> is closed in <m>L=k\langle W,W^{-1}\rangle</m> for the Gauss
+norm.  Hence the condition that these two coefficients lie in
+<m>k\langle W\rangle</m> defines a closed subring of <m>C</m>, so <m>A</m> is complete.  The
+image of <m>\varpi</m> in <m>A</m> is a topologically nilpotent unit, and therefore <m>A</m>
+is a Tate ring.
       </p>
       <p>
         The coefficient description of <m>A_0</m> shows that it is exactly the unit ball

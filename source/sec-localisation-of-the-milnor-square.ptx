@@ -64,11 +64,24 @@ then <m>I_E</m> is closed.  Moreover, there exists
       <proof>
         <p>
           Over the polynomial ring <m>E[T_1,\ldots,T_m]</m>, the sequence
-<m>gT_i-f_i</m> has Koszul complex exact in positive degrees.  The map
+<m>gT_i-f_i</m> has Koszul complex exact in positive degrees.  Indeed, this may be
+checked after localising at a prime.  If one of the <m>gT_i-f_i</m> is not in the
+prime, it is a unit after localisation and the Koszul complex is contractible.
+If all of them lie in the prime, then <m>g</m> does not: otherwise all the <m>f_i</m>
+would also lie in the prime, contrary to <m>(g,f_1,\ldots,f_m)=E</m>.  Thus <m>g</m> is
+invertible there and
+<me>gT_i-f_i=g(T_i-f_i/g).</me>
+The elements <m>T_i-f_i/g</m> form a regular sequence, since they are monic linear
+polynomials in distinct variables.  This proves the assertion over the
+polynomial ring.
+        </p>
+        <p>
+          The map
 <me>E[T_1,\ldots,T_m]\longrightarrow T_E</me>
-is flat: this is the usual identification of <m>T_E</m> with the
-<m>\varpi</m>-adic completion of <m>E_0[T_1,\ldots,T_m]</m>, followed by inverting
-<m>\varpi</m>.  Tensoring the polynomial Koszul complex with <m>T_E</m>, and using the
+is flat.  In fact, <m>E_0</m> is noetherian for <m>E=B,C,D</m>, so
+<m>E_0[T_1,\ldots,T_m]</m> is noetherian and its <m>\varpi</m>-adic completion is flat
+over it <xref ref="bib-Stacks" detail="Tag 00MB"/>.  Inverting <m>\varpi</m> gives the displayed flat
+map.  Tensoring the polynomial Koszul complex with <m>T_E</m>, and using the
 standard base-change identification of its finite free terms, proves
 positive-degree exactness.  Notice that this does not assert exactness in
 degree zero.

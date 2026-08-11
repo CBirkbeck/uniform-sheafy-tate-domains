@@ -68,7 +68,7 @@
    "number": "3.1",
    "section": "3"
   },
-  "sec-a-nonuniform-rational-localisation": {
+  "sec-a-rational-localisation-which-is": {
    "kind": "section",
    "label": null,
    "number": "4",
@@ -152,7 +152,7 @@
    "number": "5.3",
    "section": "5"
   },
-  "sec-sheafiness": {
+  "sec-strong-sheafiness": {
    "kind": "section",
    "label": null,
    "number": "6",
@@ -296,7 +296,7 @@
    "number": "8.7",
    "section": "8"
   },
-  "sec-second-example-a-reduced-nonuniform-rational-chart": {
+  "sec-second-example-a-reduced-rational-chart-which": {
    "kind": "subsection",
    "label": null,
    "number": "8.4",
@@ -326,7 +326,7 @@
    "number": "8.9",
    "section": "8"
   },
-  "sec-second-example-sheafiness": {
+  "sec-second-example-strong-sheafiness": {
    "kind": "subsection",
    "label": null,
    "number": "8.5",

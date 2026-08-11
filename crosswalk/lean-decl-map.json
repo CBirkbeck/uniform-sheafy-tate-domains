@@ -94,6 +94,16 @@
       "kind": "theorem",
       "flagged": true,
       "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
+      "decl": "FiniteJet.finiteJet_tateExt_isSheafyComplete",
+      "via": "manual",
+      "file": "Adic spaces/FJP/StrongSheafy.lean",
+      "line": 295,
+      "cited": "Theorem 1.1 (strong sheafiness, formalised for the Laurent-series model)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
     }
   ],
   "prop-uniform-domain": [
@@ -510,6 +520,16 @@
       "kind": "theorem",
       "flagged": true,
       "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
+      "decl": "FiniteJet.finiteJet_tateExt_isSheafyComplete",
+      "via": "manual",
+      "file": "Adic spaces/FJP/StrongSheafy.lean",
+      "line": 295,
+      "cited": "Theorem 6.1 (strong sheafiness, formalised for the Laurent-series model)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
     }
   ],
   "thm-second-example": [
@@ -600,6 +620,16 @@
       "kind": "theorem",
       "flagged": true,
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.wp_tateExt_isSheafyComplete_of_dvr",
+      "via": "manual",
+      "file": "Adic spaces/WP/StrongSheafy.lean",
+      "line": 81,
+      "cited": "Theorem 8.1 (strong sheafiness)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
     }
   ],
   "prop-parity-uniform-domain": [
@@ -664,6 +694,16 @@
       "kind": "theorem",
       "flagged": true,
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.wp_tateExt_isSheafyComplete_of_dvr",
+      "via": "manual",
+      "file": "Adic spaces/WP/StrongSheafy.lean",
+      "line": 81,
+      "cited": "Theorem 8.10 (strong sheafiness)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
     }
   ],
   "prop-weighted-chart-domain-nonuniform": [

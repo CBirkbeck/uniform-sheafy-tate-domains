@@ -21,23 +21,24 @@
       <abstract>
 <p>
   Buzzard<ndash/>Verberkmoes and Mihara show that a stably uniform Tate Huber
-ring is sheafy.  We construct examples of uniform and sheafy Tate rings
+ring is sheafy.  We construct examples of uniform and strongly sheafy Tate rings
 which are not stably uniform, answering Question<nbsp/>7 of Kedlaya's
 <em>Nonarchimedean Scottish Book</em>.  In the first example a rational
-localisation is non-reduced, whilst in the second the nonuniform rational
-localisation is an integral domain.  The two main results are due to
+localisation is non-reduced, whilst in the second the rational localisation
+is an integral domain but is not uniform.  The two main results are due to
 ChatGPT 5.6 Sol.
-Both constructions, including their sheafiness and the rational localisations
-witnessing failure of stable uniformity, have been formalised in Lean<nbsp/>4.
+Both constructions and the rational localisations witnessing failure of stable
+uniformity have been formalised in Lean<nbsp/>4; the strong-sheafiness formalisation
+is complete for the second example and for the Laurent-series case of the first.
 </p>
       </abstract>
     </frontmatter>
     <xi:include href="./sec-introduction.ptx"/>
     <xi:include href="./sec-conventions.ptx"/>
     <xi:include href="./sec-the-global-ring.ptx"/>
-    <xi:include href="./sec-a-nonuniform-rational-localisation.ptx"/>
+    <xi:include href="./sec-a-rational-localisation-which-is.ptx"/>
     <xi:include href="./sec-localisation-of-the-milnor-square.ptx"/>
-    <xi:include href="./sec-sheafiness.ptx"/>
+    <xi:include href="./sec-strong-sheafiness.ptx"/>
     <xi:include href="./sec-problems-24-28.ptx"/>
     <xi:include href="./sec-second-example.ptx"/>
     <xi:include href="./sec-discovery.ptx"/>
@@ -46,7 +47,7 @@ witnessing failure of stable uniformity, have been formalised in Lean<nbsp/>4.
       <references xml:id="references">
       <title>References</title>
       <biblio type="raw" xml:id="bib-AINTLIB">
-      C.<nbsp/>Birkbeck and contributors, <em>AINTLIB: AdicSpaces formalisation</em>, Lean<nbsp/>4 source code, finite-jet snapshot <url href="https://github.com/CBirkbeck/AINTLIB/commit/b007a4f3d4226f00a684b402715aa542e2f0bcdc"><c>b007a4f3d</c></url>, weighted-parity snapshot <url href="https://github.com/CBirkbeck/AINTLIB/commit/090a289211deb69117413e329325fe819aa7dbc2"><c>090a28921</c></url>, sheaf-comparison snapshot <url href="https://github.com/CBirkbeck/AINTLIB/commit/d92f96504f949ca43a27a817cb8d2f70b6486744"><c>d92f96504</c></url>, and abstract-base Scottish Book snapshot <url href="https://github.com/CBirkbeck/AINTLIB/commit/01116aca6070283726008536cba16d165a01b505"><c>01116aca6</c></url>, 2026, <url href="https://github.com/CBirkbeck/AINTLIB">GitHub repository</url>.
+      C.<nbsp/>Birkbeck and contributors, <em>AINTLIB: AdicSpaces formalisation</em>, Lean<nbsp/>4 source code, finite-jet snapshot <url href="https://github.com/CBirkbeck/AINTLIB/commit/b007a4f3d4226f00a684b402715aa542e2f0bcdc"><c>b007a4f3d</c></url>, weighted-parity snapshot <url href="https://github.com/CBirkbeck/AINTLIB/commit/090a289211deb69117413e329325fe819aa7dbc2"><c>090a28921</c></url>, sheaf-comparison snapshot <url href="https://github.com/CBirkbeck/AINTLIB/commit/d92f96504f949ca43a27a817cb8d2f70b6486744"><c>d92f96504</c></url>, abstract-base Scottish Book snapshot <url href="https://github.com/CBirkbeck/AINTLIB/commit/01116aca6070283726008536cba16d165a01b505"><c>01116aca6</c></url>, and strong-sheafiness snapshot <url href="https://github.com/CBirkbeck/AINTLIB/commit/870d0eed2c48a020109d766d2af89c3f47469a94"><c>870d0eed2</c></url>, 2026, <url href="https://github.com/CBirkbeck/AINTLIB">GitHub repository</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-BBK">
       O.<nbsp/>Ben-Bassat and K.<nbsp/>Kremnizer, <em>Non-Archimedean analytic geometry as relative algebraic geometry</em>, Ann. Fac. Sci. Toulouse Math. (6) <alert>26</alert> (2017), no.<nbsp/>1, 49<ndash/>126, <url href="https://doi.org/10.5802/afst.1526">DOI</url>.
