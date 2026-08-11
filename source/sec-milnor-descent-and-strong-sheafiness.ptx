@@ -15,13 +15,14 @@ criterion.
     \big\downarrow&amp;&amp;\big\downarrow\\
     B&amp;\longrightarrow&amp;D.
   \end{matrix}</me>
-Suppose that, for every rational datum on <m>R</m>, the equaliser and
-topological-embedding conclusions of <xref ref="prop-localized-milnor"/> hold for the
-induced data, compatibly with restriction.  If <m>B,C,D</m> are sheafy, then <m>R</m>
-is sheafy.
+Assume that rational data, covers, and matching families can be transported
+around the square, compatibly with restriction and passage to common
+refinements.  Suppose also that, for every rational datum on <m>R</m>, the equaliser
+and topological-embedding conclusions of <xref ref="prop-localized-milnor"/> hold for
+the induced data.  If <m>B,C,D</m> are sheafy, then <m>R</m> is sheafy.
       </p>
     </statement>
-    <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="ValuationSpectrum.isSheafy_of_milnorSquare">Lean</lean>
+    <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="ValuationSpectrum.isSheafy_of_milnorSquare">Lean</lean>
     <proof>
       <p>
         Let <m>U=\bigcup_iU_i</m> be a finite rational cover.  A matching family glues over
@@ -47,13 +48,13 @@ is sheafy.  In particular, <m>A</m> is strongly sheafy.
     <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_isSheafyFor_of_dvr">Lean (finiteJet_isSheafyFor_of_dvr)</lean>
     <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_isSheafyTateRing_of_dvr">Lean (finiteJet_isSheafyTateRing_of_dvr)</lean>
     <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr">Lean (finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr)</lean>
-    <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.finiteJet_tateExt_isSheafyComplete">Lean (finiteJet_tateExt_isSheafyComplete)</lean>
+    <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJetOver.finiteJet_tateExt_isSheafyComplete">Lean (finiteJet_tateExt_isSheafyComplete)</lean>
   </corollary>
   <p>
     The proof below works over the complete discretely valued base fixed in the
-introduction.  The pinned Lean formalisation of this strong form currently
-covers the Laurent-series model over <m>F((t))</m>; ordinary sheafiness is
-formalised over an arbitrary complete discretely valued base.
+introduction.  The Lean formalisation has the same scope.  Its most general
+form only assumes that the base is a complete ultrametric field with a chosen
+uniformizer and noetherian norm unit ball.
   </p>
   <proof>
     <p>

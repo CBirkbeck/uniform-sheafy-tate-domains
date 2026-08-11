@@ -9,7 +9,7 @@ the general-base finite-jet and Scottish Book declarations from commit
 <c>01116aca6</c>.  The weighted-parity declarations are taken from commit
 <c>090a28921</c>, and the comparison with Mathlib's sheaf predicate from
 commit <c>d92f96504</c>.  The generic Koszul, pullback, Milnor-descent, and
-strong-sheafiness declarations are taken from commit <c>870d0eed2</c>
+strong-sheafiness declarations are taken from commit <c>f1436c8be</c>
 <xref ref="bib-AINTLIB"/>.  For each example Lean proves the Tate structure and
 uniformity, proves that the ring is a domain but not noetherian, proves
 sheafiness and failure of stable uniformity, and verifies the rational chart
@@ -502,34 +502,40 @@ proves this statement directly.
     </p>
     <p>
       Strong sheafiness is expressed by the following theorem from
-<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_tateExt_isSheafyComplete.html"><c>FJP/StrongSheafy.lean</c></url>.
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.finiteJet_tateExt_isSheafyComplete.html"><c>StrongSheafy.lean</c></url>.
     </p>
     <pre>
-    variable (F : Type*) [Field F]
+    variable (K : Type*) [NontriviallyNormedField K]
+  [IsUltrametricDist K] [CompleteSpace K]
 
-theorem finiteJet_tateExt_isSheafyComplete (n : ℕ) :
-    letI := mvTateAlgebraTopology' (A := JetA F) n
-    haveI := mvTate_isTateRing (A := JetA F) n
-    haveI := mvTate_t2Space (A := JetA F) n
-    haveI := mvTate_nonarchimedean (A := JetA F) n
+theorem finiteJet_tateExt_isSheafyComplete
+    (ϖ : Uniformizer K)
+    (hK₀ : IsNoetherianRing (FiniteJet.unitBall K))
+    (n : ℕ) :
+    letI := mvTateAlgebraTopology' (A := JetA K) n
+    haveI := mvTate_isTateRing (A := JetA K) n
+    haveI := mvTate_t2Space (A := JetA K) n
+    haveI := mvTate_nonarchimedean (A := JetA K) n
     haveI := mvTateAlgebraTopology'_isTopologicalRing
-      (A := JetA F) n
+      (A := JetA K) n
     haveI : @CompleteSpace
-      ↥(restrictedMvPowerSeriesSubring n (JetA F))
+      ↥(restrictedMvPowerSeriesSubring n (JetA K))
       (IsTopologicalAddGroup.rightUniformSpace _) :=
-        finiteJet_tateExt_completeSpace F n
+        finiteJet_tateExt_completeSpace K n
     IsSheafyComplete
-      ↥(restrictedMvPowerSeriesSubring n (JetA F)) := by
+      ↥(restrictedMvPowerSeriesSubring n (JetA K)) := by
   ...
     </pre>
     <p>
       The restricted power-series subring in this statement is
 <m>A\langle V_1,\ldots,V_n\rangle</m>, with its canonical Tate-algebra topology,
 and <c>IsSheafyComplete</c> says that it is sheafy for every ring of
-integral elements.  This strong-sheafiness endpoint is currently formalised
-for the Laurent-series model over <m>F((t))</m>.  The ordinary sheafiness,
-uniformity, domain and chart theorems above have the more general DVR-base
-scope used elsewhere in the appendix.
+integral elements.  The theorem
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.finiteJet_tateExt_isSheafyComplete_of_dvr.html"><c>finiteJet_tateExt_isSheafyComplete_of_dvr</c></url>
+supplies the uniformizer and noetherianity hypothesis when
+<m>\mathcal O[K]</m> is a discrete valuation ring.  Thus the formalised theorem
+has the DVR-base scope used throughout the paper; no Laurent-series
+specialisation is needed.
     </p>
   </subsection>
   <subsection xml:id="sec-formalisation-scope-of-the-finite-jet">

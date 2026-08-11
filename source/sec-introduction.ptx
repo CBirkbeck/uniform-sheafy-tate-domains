@@ -70,7 +70,7 @@ so <m>A</m> is not stably uniform.
     <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_not_noetherian">Lean (finiteJet_not_noetherian)</lean>
     <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_not_stablyUniform_of_dvr">Lean (finiteJet_not_stablyUniform_of_dvr)</lean>
     <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_isSheafyFor_of_dvr">Lean (finiteJet_isSheafyFor_of_dvr)</lean>
-    <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.finiteJet_tateExt_isSheafyComplete">Lean (finiteJet_tateExt_isSheafyComplete)</lean>
+    <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJetOver.finiteJet_tateExt_isSheafyComplete_of_dvr">Lean (finiteJet_tateExt_isSheafyComplete_of_dvr)</lean>
   </theorem>
   <p>
     The key element in this example is that after the rational localisation

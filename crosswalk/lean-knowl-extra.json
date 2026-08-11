@@ -411,20 +411,28 @@
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
     {
-      "decl": "FiniteJet.finiteJet_tateExt_isSheafyComplete",
-      "file": "Adic spaces/FJP/StrongSheafy.lean",
-      "line": 295,
+      "decl": "FiniteJetOver.finiteJet_tateExt_isSheafyComplete",
+      "file": "Adic spaces/FJP/Over/StrongSheafy.lean",
+      "line": 40,
       "kind": "theorem",
-      "cited": "Appendix: strong sheafiness of the finite-jet Laurent-series model",
-      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+      "cited": "Appendix: strong sheafiness of the finite-jet construction over a general noetherian nonarchimedean base",
+      "commit": "f1436c8be64350bf652c58c074d0576a58006886"
+    },
+    {
+      "decl": "FiniteJetOver.finiteJet_tateExt_isSheafyComplete_of_dvr",
+      "file": "Adic spaces/FJP/Over/StrongSheafy.lean",
+      "line": 62,
+      "kind": "theorem",
+      "cited": "Appendix: strong sheafiness of the finite-jet construction over a discretely valued base",
+      "commit": "f1436c8be64350bf652c58c074d0576a58006886"
     },
     {
       "decl": "WeightedParity.wp_tateExt_isSheafyComplete_of_dvr",
       "file": "Adic spaces/WP/StrongSheafy.lean",
-      "line": 81,
+      "line": 82,
       "kind": "theorem",
       "cited": "Appendix: strong sheafiness of the weighted-parity example",
-      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+      "commit": "f1436c8be64350bf652c58c074d0576a58006886"
     },
     {
       "decl": "FiniteJet.finiteJet_witnessRing_quality",

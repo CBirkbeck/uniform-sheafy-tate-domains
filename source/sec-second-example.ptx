@@ -52,15 +52,15 @@ localisation.
         </p>
       </statement>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.isTateRing_WPA">Lean (Tate structure)</lean>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.norm_wpa_mul">Lean (norm_wpa_mul)</lean>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.isUniform_WPA">Lean (isUniform_WPA)</lean>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.powerBoundedSubring_eq_unitBall">Lean (powerBoundedSubring_eq_unitBall)</lean>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.not_isNoetherianRing_WPA">Lean (not_isNoetherianRing_WPA)</lean>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.wp_isSheafyComplete">Lean (wp_isSheafyComplete)</lean>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.isDomain_chart">Lean (isDomain_chart)</lean>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.not_isUniform_chart">Lean (not_isUniform_chart)</lean>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.not_isStablyUniform_WPA">Lean (not_isStablyUniform_WPA)</lean>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.wp_tateExt_isSheafyComplete">Lean (wp_tateExt_isSheafyComplete)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.norm_wpa_mul">Lean (norm_wpa_mul)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.isUniform_WPA">Lean (isUniform_WPA)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.powerBoundedSubring_eq_unitBall">Lean (powerBoundedSubring_eq_unitBall)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.not_isNoetherianRing_WPA">Lean (not_isNoetherianRing_WPA)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.wp_isSheafyComplete">Lean (wp_isSheafyComplete)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.isDomain_chart">Lean (isDomain_chart)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.not_isUniform_chart">Lean (not_isUniform_chart)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.not_isStablyUniform_WPA">Lean (not_isStablyUniform_WPA)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.wp_tateExt_isSheafyComplete">Lean (wp_tateExt_isSheafyComplete)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isUniform_of_dvr">Lean (uniformity)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isDomain">Lean (domain)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_powerBounded_eq_unitBall">Lean (power-bounded elements)</lean>
@@ -69,7 +69,7 @@ localisation.
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_chart_isDomain">Lean (chart is a domain)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_chart_not_isUniform">Lean (chart is nonuniform)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_not_stablyUniform_of_dvr">Lean (weightedParity_not_stablyUniform_of_dvr)</lean>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.wp_tateExt_isSheafyComplete_of_dvr">Lean (wp_tateExt_isSheafyComplete_of_dvr)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.wp_tateExt_isSheafyComplete_of_dvr">Lean (wp_tateExt_isSheafyComplete_of_dvr)</lean>
     </theorem>
     <p>
       Taking <m>w(n)=n</m> gives the example announced in the introduction.  We prove
@@ -197,9 +197,9 @@ sum of monomials and choose <m>N</m> so that only
         </p>
       </statement>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.isTateRing_WPA">Lean (Tate structure)</lean>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.norm_wpa_mul">Lean (norm_wpa_mul)</lean>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.isUniform_WPA">Lean (isUniform_WPA)</lean>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.powerBoundedSubring_eq_unitBall">Lean (powerBoundedSubring_eq_unitBall)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.norm_wpa_mul">Lean (norm_wpa_mul)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.isUniform_WPA">Lean (isUniform_WPA)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.powerBoundedSubring_eq_unitBall">Lean (powerBoundedSubring_eq_unitBall)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isUniform_of_dvr">Lean (uniformity)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isDomain">Lean (domain)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_powerBounded_eq_unitBall">Lean (power-bounded elements)</lean>
@@ -236,7 +236,7 @@ domain.
           If <m>w(n)\geq1</m> for every <m>n\geq1</m>, then <m>\mathcal A_w</m> is not noetherian.
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.not_isNoetherianRing_WPA">Lean (not_isNoetherianRing_WPA)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.not_isNoetherianRing_WPA">Lean (not_isNoetherianRing_WPA)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_not_noetherian">Lean (non-noetherianity)</lean>
       <proof>
         <p>
@@ -498,9 +498,9 @@ multiplied by <m>\varpi^{\omega(\nu)}</m>.  The map from
 is unbounded, then <m>\mathcal B_w</m> is not uniform.
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.isDomain_chart">Lean (isDomain_chart)</lean>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.not_isUniform_chart">Lean (not_isUniform_chart)</lean>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.not_isStablyUniform_WPA">Lean (not_isStablyUniform_WPA)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.isDomain_chart">Lean (isDomain_chart)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.not_isUniform_chart">Lean (not_isUniform_chart)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.not_isStablyUniform_WPA">Lean (not_isStablyUniform_WPA)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_chart_isDomain">Lean (chart is a domain)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_chart_not_isUniform">Lean (chart is nonuniform)</lean>
       <proof>
@@ -562,11 +562,11 @@ is sheafy.  In particular, <m>\mathcal A_w</m> is strongly sheafy.  No positivit
 or unboundedness hypothesis on <m>w</m> is needed here.
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.wp_isSheafyComplete">Lean (wp_isSheafyComplete)</lean>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.wp_stronglySheafy">Lean (wp_stronglySheafy)</lean>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.wp_tateExt_isSheafyComplete">Lean (wp_tateExt_isSheafyComplete)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.wp_isSheafyComplete">Lean (wp_isSheafyComplete)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.wp_stronglySheafy">Lean (wp_stronglySheafy)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.wp_tateExt_isSheafyComplete">Lean (wp_tateExt_isSheafyComplete)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isSheafyComplete_of_dvr">Lean (sheafiness)</lean>
-      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.wp_tateExt_isSheafyComplete_of_dvr">Lean (wp_tateExt_isSheafyComplete_of_dvr)</lean>
+      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.wp_tateExt_isSheafyComplete_of_dvr">Lean (wp_tateExt_isSheafyComplete_of_dvr)</lean>
       <proof>
         <p>
           We first work with a finite rational cover <m>U=\bigcup_iU_i</m>.  Choose one

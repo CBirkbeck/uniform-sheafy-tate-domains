@@ -20,8 +20,8 @@ The build uses Paperforge commit
 `e6affebffbcc5eb05f17cc3ba57cdf3ff5c618ad`, together with the compatibility
 patch recorded in `patches/paperforge-compatibility.patch`, and PreTeXt
 `2.45.0`.  Paperforge's installation self-test passes in full.  Its unit and
-validator suites pass with 20 tests and one skipped test.  All 180 Lean badges
-now name an immutable formalisation commit explicitly; commit-aware validation
+validator suites pass with 20 tests and one skipped test.  All Lean badges now
+name an immutable formalisation commit explicitly; commit-aware validation
 therefore checks the same source that is displayed in the corresponding
 knowl.
 
@@ -66,7 +66,7 @@ proof crosswalk is:
 | Lemma 5.2 | Choose preimages under `d₁` over `B` and `C` satisfying the norm bounds of Lemma 5.1. Their difference over `D` lies in `ker(d₁)`; choose a preimage under `d₂` with the corresponding norm bound and lift it coefficientwise to `C`. The ambient Milnor pullback then gives the element over `A`. The same inequalities prove closedness of `I_A` and strict exactness. |
 | Proposition 5.3 | Lean proves algebraic exactness by correcting defects of quotient representatives through `I_C`. A quotient-norm estimate gives the left-hand topological embedding, while the norm-preserving coefficient section proves that `C_α → D_α` is open. The proof has been rewritten accordingly. |
 | Theorem 6.1 | This is the abstract declaration `ValuationSpectrum.isSheafy_of_milnorSquare`. Rational data and covers are pushed to `B,C,D`; the local equaliser rows give separation and gluing, while the topological-embedding clause is obtained by factoring through the product restriction embeddings for `B` and `C`. Lean does not require surjectivity onto the `D`-sections. |
-| Corollary 6.2 | The finite-jet square supplies the abstract rational-domain data. The same construction after adjoining finitely many Tate variables proves strong sheafiness; the strong endpoint is formalised for the Laurent-series model and quantifies over every ring of integral elements. |
+| Corollary 6.2 | The finite-jet square supplies the abstract rational-domain data. The same construction after adjoining finitely many Tate variables proves strong sheafiness over any complete ultrametric field with a uniformizer and noetherian norm unit ball, for every ring of integral elements. A separate DVR endpoint supplies these hypotheses at the scope used in the paper. |
 | Proposition 7.1 | Over any complete ultrametric normed field `K` with an `IsFJPBase K` instance, Lean defines `ev00(f₀(W)+Qf₁(W)+Q²h)=f₀(0)` and pulls the norm valuation back along it to obtain a point of the chart. Multiplicativity of the Gauss norm gives `‖Q²a‖=‖a‖`; the resulting range factorisation is a homeomorphism, and completeness makes the range closed. The previously proved identity `canonicalMap_Qa_sq` gives `ρ(Q²)=0`. For nonflatness, Lean applies `Module.Flat.isSMulRegular_of_nonZeroDivisors`: flatness would make the image of the non-zero-divisor `Q²` act injectively on the nonzero chart, whereas that image is zero. The paper now follows this route. |
 | Lemma 8.2 | Lean decomposes each finite-variable ring into the finitely many exponent-parity classes, identifies the even-exponent subring isometrically with an ordinary Tate algebra, and proves module-finiteness over it. The inclusions are the subtype inclusions in the common countable Tate algebra, hence isometric, and `exists_head_approx` gives the quantitative approximation used for density. |
 | Propositions 8.3--8.4 and 8.8--8.9 | The weighted-parity development proves multiplicativity of the countable Gauss norm by choosing maximal norm-attaining exponents in an additive order, proves nonnoetherianity by direct coefficient extraction, and handles the distinguished chart by a completed quotient over \(K\langle W\rangle\) and an embedding into the explicitly defined countable-variable formal power-series domain. The paper now supplies both omitted order/domain arguments. |
@@ -84,7 +84,7 @@ statement should be made.  A collection of declarations is recorded as
 
 | Paper result | Exact formal scope and generality verdict |
 |---|---|
-| `thm:main` (first example) | **Composite.** Completeness, the Tate structure, domain, non-noetherianity, uniformity, the unit-ball calculation, the chart, and failure of stable uniformity are proved over an arbitrary complete ultrametric normed field with a chosen nonzero `ϖ` satisfying `‖ϖ‖ < 1`. Sheafiness additionally assumes that the base unit ball is noetherian. The currently pinned strong-sheafiness endpoint is only for the Laurent-series model `F((t))`, so Lean does not yet package the full headline uniformly over every base field allowed by the paper. |
+| `thm:main` (first example) | **Composite.** Completeness, the Tate structure, domain, non-noetherianity, uniformity, the unit-ball calculation, the chart, and failure of stable uniformity are proved over an arbitrary complete ultrametric normed field with a chosen nonzero `ϖ` satisfying `‖ϖ‖ < 1`. Strong sheafiness additionally assumes a uniformizer and a noetherian base unit ball. The dedicated DVR endpoint supplies these hypotheses and therefore packages the strong-sheafiness clause at the complete discretely valued scope used in the paper. |
 | `def:strict-milnor` | **No exact Lean counterpart.** `Pinch` is a stronger corner-square package with max-norm, section, scaling, and noetherian hypotheses. `MilnorSquareData` instead packages rational-domain equaliser rows, topological embeddings, cover transport, refinement naturality, and matching-family compatibility. Neither is literally the paper's bare strict-Milnor definition. |
 | `prop:uniform-domain` | **More general.** Lean only needs a complete ultrametric normed field and a chosen nonzero `ϖ` with `‖ϖ‖ < 1`; no discrete-valuation or noetherian hypothesis is used. |
 | `prop:bad-chart` | **More general.** The bicontinuous chart equivalence is proved over every complete ultrametric normed field with a chosen nonzero `ϖ` of norm less than one; it is not restricted to a Laurent-series or discrete-valuation base. |
@@ -93,7 +93,7 @@ statement should be made.  A collection of declarations is recorded as
 | `lem:graph-pullback` | **More general than the finite-jet square.** The generic `Pinch` theorem applies to a cartesian square of complete ultrametric normed rings when the norm on the upper-left vertex is the maximum of the component norms, the structural maps have the stated isometry/contraction properties, `C → D` has a norm-preserving additive section, norm-scaling topologically nilpotent units are present at the three other vertices, and those vertices satisfy `NoethPack`. It is not a theorem about every strict Milnor square. |
 | `prop:localized-milnor` | **More general than the finite-jet square.** Under the same `Pinch` and `NoethPack` hypotheses, Lean proves the quotient-row equaliser, left topological embedding, and open surjective `C`-leg. The finite-jet result is an application of this abstract corner-square theorem; compatibility with rational refinement is proved separately for that concrete square. |
 | `thm:milnor-sheaf-transfer` | **Exact abstract scope.** `isSheafy_of_milnorSquare` applies to arbitrary complete nonarchimedean Huber-ring vertices satisfying `MilnorSquareData`; no finite-jet hypothesis occurs. The formal package is precisely the functorial rational-domain equaliser and topological-embedding hypothesis stated in the paper, together with preservation of covers and matching-family compatibility. |
-| `thm:sheafy` | **Application plus strong form.** Finite-jet sheafiness is proved over any complete ultrametric base with a uniformizer and noetherian unit ball. Repeating the construction after adjoining Tate variables is formalised at the pinned snapshot for the Laurent-series finite-jet model. |
+| `thm:sheafy` | **Application plus strong form.** Finite-jet sheafiness, and the same result after adjoining any finite number of Tate variables, are proved over any complete ultrametric base with a uniformizer and noetherian unit ball. A DVR specialization gives exactly the base-field scope of the corollary in the paper. |
 | `prop:problems-24-28` | **More general.** Both conclusions are proved under `IsFJPBase K`: `K` is a complete ultrametric normed field with a chosen nonzero `ϖ` satisfying `‖ϖ‖ < 1`. Discreteness, noetherianity of the unit ball, and sheafiness are not used. |
 | `thm:second-example` | **A family, not only one example.** Lean treats every weight `w : ℕ → ℕ`. Uniformity, the domain property, and strong sheafiness hold for arbitrary `w` (with a uniformizer and a noetherian base unit ball where required); non-noetherianity assumes `w(n) ≥ 1` for `n ≥ 1`, and the bad chart is nonuniform when `w` is unbounded. The paper's choice `w(n) = n` is one specialization. |
 | `lem:finite-variable-subrings` | **More general.** The even-exponent Tate-algebra identification, finite-module decomposition, isometric inclusions, and density are proved for arbitrary `w`. Strong noetherianity of each finite-variable ring uses a uniformizer and noetherianity of the base unit ball. |
@@ -131,8 +131,9 @@ Witt-vector declaration.  The accepted map now covers, clause by clause:
 - the finite-rational-cover, chosen-pair all-open, completion-independent, and
   public structure-presheaf sheafiness endpoints, together with the exact
   equivalence with Mathlib's `TopCommRingCat`-valued sheaf predicate;
-- the finite-jet Tate-extension sheafiness endpoint for the Laurent-series
-  model, which is the formal strong-sheafiness statement available there;
+- the finite-jet Tate-extension sheafiness endpoints over a complete
+  ultrametric field with a uniformizer and noetherian norm unit ball, and over
+  a base whose valuation ring is a discrete valuation ring;
 - the weighted-parity support definition, Tate structure, uniformity, domain,
   nonnoetherianity, and identification of the power-bounded elements;
 - the finite-variable subrings, their finite-module decomposition, strong
@@ -202,8 +203,10 @@ axioms` for
 There are explicit `IsFJPBase` instances for `F((t))` and for `ℚ_p`.  The
 separate sheafy quality package `finiteJet_witnessRing_quality` assumes the
 stronger class `IsFJPNoetherianBase K`; a sorry-free instance of this stronger
-class is currently supplied for `F((t))`, but not for `ℚ_p`.  Neither Scottish
-Book argument uses that additional assumption.
+class is currently supplied for `F((t))`, but not for `ℚ_p`.  This does not
+restrict the newer strong-sheafiness theorem: its DVR endpoint applies in
+particular to `ℚ_p`.  Neither Scottish Book argument uses the additional
+noetherian-base assumption.
 
 The paper deliberately links the concrete `FiniteJet.*` declarations, rather
 than the generic `ScottishBook.*` wrappers.  The concrete declarations prove
@@ -225,13 +228,14 @@ nonnoetherianity, power-bounded, sheafiness, chart, and non-stable-uniformity
 endpoints again report only `propext`, `Classical.choice`, and `Quot.sound`.
 
 The strong-sheafiness audit uses public commit
-`870d0eed2c48a020109d766d2af89c3f47469a94`.  The declarations
-`FiniteJet.finiteJet_tateExt_isSheafyComplete` and
-`WeightedParity.wp_tateExt_isSheafyComplete` elaborate, and
-`#print axioms` reports only `propext`, `Classical.choice`, and `Quot.sound`.
-The finite-jet declaration currently concerns the Laurent-series model
-`F((t))`; the weighted-parity declaration has the full DVR-base scope of the
-paper.
+`f1436c8be64350bf652c58c074d0576a58006886`.  The declarations
+`FiniteJetOver.finiteJet_tateExt_isSheafyComplete`,
+`FiniteJetOver.finiteJet_tateExt_isSheafyComplete_of_dvr`, and
+`WeightedParity.wp_tateExt_isSheafyComplete` elaborate, and `#print axioms`
+reports only `propext`, `Classical.choice`, and `Quot.sound`.  The first
+finite-jet declaration works over a complete ultrametric field with a
+uniformizer and noetherian norm unit ball; the second and the weighted-parity
+declaration have the full DVR-base scope of the paper.
 
 ## Build-level warnings
 

@@ -17,12 +17,13 @@ it records the completed formalisation of uniformity, sheafiness, the
 distinguished rational chart, and failure of stable uniformity.  It also
 records the formalised finite-jet witnesses for Scottish Book Problems 24
 and 28, together with the strong-sheafiness theorems for both examples.  The
-finite-jet strong theorem currently uses the Laurent-series model, while the
-weighted-parity theorem has the paper's DVR-base scope.  The other declarations
-use an abstract complete ultrametric base with a
-chosen pseudouniformizer, with both Laurent-series and p-adic instances.  The
-appendix keeps this separate from the additional noetherian-base hypothesis
-used by the newer sheafiness interface.  It also credits William Coram's
+finite-jet theorem is proved over any complete ultrametric field with a
+uniformizer and noetherian norm unit ball, and a second endpoint supplies these
+hypotheses from a discrete valuation ring structure on the valuation ring.  The
+weighted-parity theorem likewise has the paper's DVR-base scope.  The other
+declarations use an abstract complete ultrametric base with a chosen
+pseudouniformizer, with both Laurent-series and p-adic instances.  It also
+credits William Coram's
 restricted-series code, Fabrizio Barroero's
 univariate Gauss-norm code, and Bingyu Xia's power-series equivalences.
 
@@ -129,7 +130,7 @@ sheaf-comparison commit: d92f96504f949ca43a27a817cb8d2f70b6486744
 Scottish Book branch: dev/adic-spaces
 abstract-base Scottish Book commit: 01116aca6070283726008536cba16d165a01b505
 strong-sheafiness branch: wp/strengthenings
-strong-sheafiness commit: 870d0eed2c48a020109d766d2af89c3f47469a94
+strong-sheafiness commit: f1436c8be64350bf652c58c074d0576a58006886
 project: projects/AdicSpaces
 ```
 

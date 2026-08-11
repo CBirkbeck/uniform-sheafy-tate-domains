@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WeightedParity.isDomain_chart · Lean source</title>
+  <title>FiniteJetOver.finiteJet_tateExt_isSheafyComplete_of_dvr · Lean source</title>
   <style>
     :root { color-scheme: light dark; }
     body { margin: 0; font: 16px/1.55 system-ui, sans-serif; }
@@ -31,19 +31,25 @@
 <main>
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">theorem</div>
-  <h1>WeightedParity.isDomain_chart</h1>
-  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For every weight <code>w</code>, if the base-field norm unit ball is noetherian, then the section ring of <code>𝒜_w</code> on <code>{|W|≤|ϖ|}</code> is an integral domain. Lean identifies it with a ring of coefficient families and embeds that model into formal multivariable power series over <code>K⟨X⟩</code>.</p></div></div>
+  <h1>FiniteJetOver.finiteJet_tateExt_isSheafyComplete_of_dvr</h1>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>Let <code>K</code> be a complete nontrivially normed ultrametric field whose valuation ring is a discrete valuation ring. For every <code>n≥0</code>, the finite Tate extension <code>𝓐⟨V₁,…,Vₙ⟩</code> is sheafy for every ring of integral elements. Lean obtains the required uniformizer and noetherian norm unit ball from the discrete valuation ring hypothesis and applies <code>finiteJet_tateExt_isSheafyComplete</code>. This is the formal strong-sheafiness theorem at the scope used in the paper.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
-  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>The bad chart is an integral domain</strong> ([WP]<br>prop:weighted-chart-domain-nonuniform: &quot;coefficientwise inclusion gives an injective<br>homomorphism <code>ℬ ↪ k⟨X,U_1,U_2,…⟩</code>; the target is a domain … therefore <code>ℬ</code> is a<br>domain&quot; — realized through the <code>Φ</code>-embedding of the <code>TailC0</code> model into<br><code>MvPowerSeries</code> over the domain <code>K⟨X⟩</code>).</p></div></details>
-  <p class="used-for"><strong>Used in the paper for:</strong> Theorem 8.1 (the rational chart is a domain for every weight); Weighted-parity chart proposition (domain, arbitrary weight)</p>
-  <pre><code>theorem isDomain_chart (ϖ : Uniformizer K)
-    (hK₀ : IsNoetherianRing (FiniteJet.unitBall K)) :
-    IsDomain (presheafValue (chartDatum (w := w) ϖ))</code></pre>
-  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/WP/Chart.lean:852–854</code><br>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>Strong sheafiness over a base whose valuation ring is a discrete valuation ring.</p></div></details>
+  <p class="used-for"><strong>Used in the paper for:</strong> Theorem 1.1 (strong sheafiness over a discretely valued base); Appendix: strong sheafiness of the finite-jet construction over a discretely valued base</p>
+  <pre><code>theorem finiteJet_tateExt_isSheafyComplete_of_dvr [IsDiscreteValuationRing 𝒪[K]] (n : ℕ) :
+    letI := mvTateAlgebraTopology&#x27; (A := JetA K) n
+    haveI := mvTate_isTateRing (A := JetA K) n
+    haveI := mvTate_t2Space (A := JetA K) n
+    haveI := mvTate_nonarchimedean (A := JetA K) n
+    haveI := mvTateAlgebraTopology&#x27;_isTopologicalRing (A := JetA K) n
+    haveI : @CompleteSpace ↥(restrictedMvPowerSeriesSubring n (JetA K))
+      (IsTopologicalAddGroup.rightUniformSpace _) := finiteJet_tateExt_completeSpace K n
+    IsSheafyComplete ↥(restrictedMvPowerSeriesSubring n (JetA K))</code></pre>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/Over/StrongSheafy.lean:62–70</code><br>
   AINTLIB commit <code>f1436c8be64350bf652c58c074d0576a58006886</code>.</p>
-  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/f1436c8be64350bf652c58c074d0576a58006886/projects/AdicSpaces/Adic%20spaces/WP/Chart.lean#L852-L854">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
+  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/f1436c8be64350bf652c58c074d0576a58006886/projects/AdicSpaces/Adic%20spaces/FJP/Over/StrongSheafy.lean#L62-L70">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
-  The weighted-parity development uses restricted power-series code adapted from
+  The finite-jet development uses restricted power-series code adapted from
   <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,
   whose univariate Gauss-norm layer builds on
   <a href="https://github.com/leanprover-community/mathlib4/blob/fd1d54bcac5caba4eff2ea3421c47d907333f515/Mathlib/RingTheory/PowerSeries/GaussNorm.lean">Fabrizio Barroero's mathlib code</a>.
