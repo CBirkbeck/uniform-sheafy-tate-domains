@@ -37,8 +37,8 @@ is complete for the second example and for the Laurent-series case of the first.
     <xi:include href="./sec-conventions.ptx"/>
     <xi:include href="./sec-the-global-ring.ptx"/>
     <xi:include href="./sec-a-rational-localisation-which-is.ptx"/>
-    <xi:include href="./sec-localisation-of-the-milnor-square.ptx"/>
-    <xi:include href="./sec-strong-sheafiness.ptx"/>
+    <xi:include href="./sec-localisation-milnor.ptx"/>
+    <xi:include href="./sec-milnor-descent-and-strong-sheafiness.ptx"/>
     <xi:include href="./sec-problems-24-28.ptx"/>
     <xi:include href="./sec-second-example.ptx"/>
     <xi:include href="./sec-discovery.ptx"/>

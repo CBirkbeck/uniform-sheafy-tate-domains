@@ -24,15 +24,22 @@ Each of these Tate rings carries the topology defined by the corresponding
 subscript-zero ring.
   </p>
   <p>
+    The results in this section and the next do not require the valuation on <m>k</m>
+to be discrete.  They hold for any complete ultrametric normed field <m>k</m> and
+any chosen <m>\varpi\in k^\times</m> with <m>0&lt;|\varpi|&lt;1</m>, with the same definitions
+using the norm unit ball <m>k^\circ</m>.  We return to the discretely valued
+hypothesis in <xref ref="sec-localisation-milnor"/>.
+  </p>
+  <p>
     The quotient map <m>C_0\to D_0</m> has a continuous <m>k^\circ</m>-linear section
 <me>\sigma:D_0\longrightarrow C_0,\qquad
   \sigma(f_0+Qf_1)=f_0+Qf_1,</me>
 obtained by viewing the unique representative of <m>Q</m>-degree at most one as
 an element of <m>C_0</m>.
 Consequently
-    <men xml:id="eq-integral-milnor">0\longrightarrow A_0\longrightarrow B_0\oplus C_0
-  \longrightarrow D_0\longrightarrow 0</men>
-    is exact, and <m>A_0</m> is <m>\varpi</m>-adically complete.  After inverting <m>\varpi</m> we obtain a strict Milnor square
+<me>0\longrightarrow A_0\longrightarrow B_0\oplus C_0
+  \longrightarrow D_0\longrightarrow 0</me>
+is exact, and <m>A_0</m> is <m>\varpi</m>-adically complete.  After inverting <m>\varpi</m> we obtain a strict Milnor square
 <me>\begin{matrix}
 A&amp;\longrightarrow&amp;C\\
 \downarrow&amp;&amp;\downarrow\\
@@ -77,6 +84,9 @@ integral domain.  Moreover,
 <me>A^\circ=A_0.</me>
       </p>
     </statement>
+    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_isUniform">Lean (finiteJet_isUniform)</lean>
+    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_isDomain">Lean (finiteJet_isDomain)</lean>
+    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_not_noetherian">Lean (finiteJet_not_noetherian)</lean>
     <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.isClosed_jetSupport">Lean (isClosed_jetSupport)</lean>
     <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.isTateRing_JetA">Lean (isTateRing_JetA)</lean>
     <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_isUniform_of_dvr">Lean (finiteJet_isUniform_of_dvr)</lean>

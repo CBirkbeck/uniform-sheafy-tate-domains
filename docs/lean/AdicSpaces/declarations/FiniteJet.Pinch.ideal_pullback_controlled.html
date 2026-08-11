@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FiniteJet.Pinch.ideal_pullback_controlled · Lean source</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font: 16px/1.55 system-ui, sans-serif; }
+    main { max-width: 72rem; margin: 0 auto; padding: 2rem 1.2rem 4rem; }
+    nav { margin-bottom: 1.5rem; }
+    a { color: #176b43; }
+    @media (prefers-color-scheme: dark) { a { color: #84d8aa; } }
+    h1 { overflow-wrap: anywhere; font: 650 1.45rem/1.25 ui-monospace, monospace; }
+    .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
+             letter-spacing: .06em; }
+    .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
+    pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
+           background: color-mix(in srgb, CanvasText 7%, Canvas); }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .meta, .used-for { color: color-mix(in srgb, CanvasText 70%, Canvas);
+                        font-size: .9rem; }
+    .provenance { margin-top: 2rem; padding-top: 1rem;
+                   border-top: 1px solid color-mix(in srgb, CanvasText 18%, Canvas);
+                   font-size: .9rem; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../../../paper.html">← Return to the paper</a></nav>
+  <div class="kind">theorem</div>
+  <h1>FiniteJet.Pinch.ideal_pullback_controlled</h1>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For an abstract pinch square satisfying the noetherian vertex hypotheses, every compatible pair <code>(x_B,x_C)∈I_B×_{I_D}I_C</code> comes from an element <code>x_A∈I_A</code>, with <code>‖x_A‖≤C max(‖x_B‖,‖x_C‖)</code> for one fixed constant <code>C</code>. The proof uses bounded lifts for <code>d₁</code>, corrects the resulting discrepancy by a bounded <code>d₂</code>-lift over <code>D</code>, and pulls the corrected coefficients back through the original square.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p>The controlled pullback ([FJP] (4.12)–(4.16)): a matching pair of graph-ideal<br>elements comes from an element of <code>I_A</code> with a uniformly bounded representative.<br>This is where the <code>d₂</code>-syzygy correction (<code>exists_d2_lift</code> at the <code>D</code>-vertex)<br>enters.</p></div></details>
+  <p class="used-for"><strong>Used in the paper for:</strong> Lemma 5.2 (bounded ideal pullback for an abstract pinch square)</p>
+  <pre><code>theorem ideal_pullback_controlled (hN : NoethPack B C D m)
+    (hspan : Ideal.span ({g} ∪ Set.range f) = ⊤) :
+    ∃ Cs : ℝ, 1 ≤ Cs ∧
+      ∀ xb ∈ S.IB m g f, ∀ xc ∈ S.IC m g f,
+        S.extDB m xb = S.extDC m xc →
+        ∃ xa ∈ IA m g f,
+          S.extB m xa = xb ∧ S.extC m xa = xc ∧ ‖xa‖ ≤ Cs * max ‖xb‖ ‖xc‖</code></pre>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/CornerSquareLocalization.lean:418–424</code><br>
+  AINTLIB commit <code>870d0eed2c48a020109d766d2af89c3f47469a94</code>.</p>
+  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/870d0eed2c48a020109d766d2af89c3f47469a94/projects/AdicSpaces/Adic%20spaces/FJP/CornerSquareLocalization.lean#L418-L424">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
+  <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
+  The finite-jet development uses restricted power-series code adapted from
+  <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,
+  whose univariate Gauss-norm layer builds on
+  <a href="https://github.com/leanprover-community/mathlib4/blob/fd1d54bcac5caba4eff2ea3421c47d907333f515/Mathlib/RingTheory/PowerSeries/GaussNorm.lean">Fabrizio Barroero's mathlib code</a>.
+  It separately uses
+  <a href="https://github.com/leanprover-community/mathlib4/pull/36507">Bingyu Xia's multivariable power-series equivalences</a>.
+  This is infrastructure provenance, not an attribution of this paper-specific
+  declaration.</aside>
+</main>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WeightedParity.wp_stronglySheafy · Lean source</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font: 16px/1.55 system-ui, sans-serif; }
+    main { max-width: 72rem; margin: 0 auto; padding: 2rem 1.2rem 4rem; }
+    nav { margin-bottom: 1.5rem; }
+    a { color: #176b43; }
+    @media (prefers-color-scheme: dark) { a { color: #84d8aa; } }
+    h1 { overflow-wrap: anywhere; font: 650 1.45rem/1.25 ui-monospace, monospace; }
+    .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
+             letter-spacing: .06em; }
+    .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
+    pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
+           background: color-mix(in srgb, CanvasText 7%, Canvas); }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .meta, .used-for { color: color-mix(in srgb, CanvasText 70%, Canvas);
+                        font-size: .9rem; }
+    .provenance { margin-top: 2rem; padding-top: 1rem;
+                   border-top: 1px solid color-mix(in srgb, CanvasText 18%, Canvas);
+                   font-size: .9rem; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../../../paper.html">← Return to the paper</a></nav>
+  <div class="kind">theorem</div>
+  <h1>WeightedParity.wp_stronglySheafy</h1>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For every weight <code>w</code> and every <code>s≥0</code>, the shifted-weight algebra <code>WPA K (shiftWeight w s)</code>, which models adjoining <code>s</code> Tate variables to <code>𝒜_w</code>, is sheafy for every ring of integral elements.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>Strong sheafiness</strong> ([WP] thm 6.2 (2): &quot;(𝒜,𝒜°) is strongly sheafy&quot;): for every<br><code>s</code>, the weighted-parity model of the Tate extension <code>𝒜⟨V_1,…,V_s⟩</code> is sheafy for<br>every valid ring of integral elements.  Combined with the identification<br><code>tateExtEquiv</code> this is the statement in the project&#x27;s own Tate-extension<br>vocabulary.</p></div></details>
+  <p class="used-for"><strong>Used in the paper for:</strong> Weighted-parity strong-sheafiness theorem in the shifted-weight model</p>
+  <pre><code>theorem wp_stronglySheafy (ϖ : Uniformizer K)
+    (hK₀ : IsNoetherianRing (FiniteJet.unitBall K)) (s : ℕ) :
+    IsSheafyComplete (WPA K (shiftWeight w s))</code></pre>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/WP/Sheafy.lean:2421–2423</code><br>
+  AINTLIB commit <code>870d0eed2c48a020109d766d2af89c3f47469a94</code>.</p>
+  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/870d0eed2c48a020109d766d2af89c3f47469a94/projects/AdicSpaces/Adic%20spaces/WP/Sheafy.lean#L2421-L2423">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
+  <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
+  The weighted-parity development uses restricted power-series code adapted from
+  <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,
+  whose univariate Gauss-norm layer builds on
+  <a href="https://github.com/leanprover-community/mathlib4/blob/fd1d54bcac5caba4eff2ea3421c47d907333f515/Mathlib/RingTheory/PowerSeries/GaussNorm.lean">Fabrizio Barroero's mathlib code</a>.
+  It separately uses
+  <a href="https://github.com/leanprover-community/mathlib4/pull/36507">Bingyu Xia's multivariable power-series equivalences</a>.
+  This is infrastructure provenance, not an attribution of this paper-specific
+  declaration.</aside>
+</main>
+</body>
+</html>

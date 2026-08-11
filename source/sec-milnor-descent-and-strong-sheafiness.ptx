@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<section xml:id="sec-milnor-descent-and-strong-sheafiness">
+  <title>Milnor descent and strong sheafiness</title>
+  <p>
+    We first state the general descent result proved in the formalisation.  It is
+a result about local section rings attached to rational-localisation data, rather than about an
+arbitrary cartesian square of global rings.
+  </p>
+  <theorem xml:id="thm-milnor-sheaf-transfer">
+    <title>Milnor descent</title>
+    <statement>
+      <p>
+        Let <m>R,B,C,D</m> be the underlying rings of complete nonarchimedean Huber pairs,
+with continuous maps from <m>R</m> to <m>B</m>, <m>C</m>, and <m>D</m>, and from <m>B</m> and <m>C</m> to
+<m>D</m>.  Suppose that rational-localisation data on <m>R</m> can be carried functorially to the
+other three vertices, that the resulting maps on section rings commute, and
+that this construction transports rational covers, is natural under
+refinement, and carries matching families to compatible families on common
+refinements.  Suppose also that for every rational-localisation datum <m>U</m> the map
+<me>\mathcal O_R(U)\longrightarrow
+  \mathcal O_B(U_B)\oplus\mathcal O_C(U_C)</me>
+is a topological embedding whose image is the equaliser of the two maps to
+<m>\mathcal O_D(U_D)</m>, compatibly with restriction and matching families.  If
+<m>B,C,D</m> are sheafy, then <m>R</m> is sheafy.
+      </p>
+    </statement>
+    <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="ValuationSpectrum.isSheafy_of_milnorSquare">Lean</lean>
+    <proof>
+      <p>
+        Push a finite rational cover of <m>U</m> to the other vertices.  Separation over
+<m>B</m> and <m>C</m>, followed by injectivity of the map in the theorem, gives separation
+over <m>R</m>.  A matching family glues over <m>B</m> and <m>C</m>; the two sections have the
+same image over <m>D</m>, and the equaliser hypothesis gives the unique section
+over <m>R</m>.
+      </p>
+      <p>
+        For the topology, the restriction map for <m>R</m> factors, through the
+topological embedding in the theorem, into the product of the restriction maps for <m>B</m> and
+<m>C</m>.  Those maps are topological embeddings because <m>B</m> and <m>C</m> are sheafy.
+The factorisation therefore shows that the restriction map for <m>R</m> is also a
+topological embedding.  This is the topological sheaf condition on finite
+rational covers; the rational-basis theorem gives the sheaf condition on all
+opens <xref ref="bib-Stacks" detail="Tag 009O"/>.
+      </p>
+    </proof>
+  </theorem>
+  <corollary xml:id="thm-sheafy">
+    <statement>
+      <p>
+        For every <m>s\geq0</m> and every ring of integral elements
+<me>A_s^+\subseteq A\langle V_1,\ldots,V_s\rangle^\circ,</me>
+the Huber pair
+<me>\bigl(A\langle V_1,\ldots,V_s\rangle,A_s^+\bigr)</me>
+is sheafy.  In particular, <m>A</m> is strongly sheafy.
+      </p>
+    </statement>
+    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.isSheafy_JetA_of_dvr">Lean (isSheafy_JetA_of_dvr)</lean>
+    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_isSheafyFor_of_dvr">Lean (finiteJet_isSheafyFor_of_dvr)</lean>
+    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_isSheafyTateRing_of_dvr">Lean (finiteJet_isSheafyTateRing_of_dvr)</lean>
+    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr">Lean (finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr)</lean>
+    <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.finiteJet_tateExt_isSheafyComplete">Lean (finiteJet_tateExt_isSheafyComplete)</lean>
+  </corollary>
+  <p>
+    The proof below works over the complete discretely valued base fixed in the
+introduction.  The pinned Lean formalisation of this strong form currently
+covers the Laurent-series model over <m>F((t))</m>; ordinary sheafiness is
+formalised over an arbitrary complete discretely valued base.
+  </p>
+  <proof>
+    <p>
+      The estimates <xref ref="eq-structural-map-bounds"/> make the structural maps
+morphisms of Huber pairs.  The rings <m>B,C,D</m> are strongly noetherian affinoid
+<m>k</m>-algebras and hence sheafy by Huber's theorem
+<xref ref="bib-Huber94" detail="Theorem 2.2"/>.  <xref ref="prop-localized-milnor"/>, together
+with its compatibility under refinement, supplies the hypotheses of
+<xref ref="thm-milnor-sheaf-transfer"/>.  This proves sheafiness for <m>A</m>, independently
+of the choice of its ring of integral elements.
+    </p>
+    <p>
+      After adjoining <m>V_1,\ldots,V_s</m>, the coefficientwise split square and the
+localised equaliser rows persist, while the other three vertices remain
+strongly noetherian.  Applying the same theorem proves the assertion for every
+<m>s</m> and every <m>A_s^+</m>.
+    </p>
+  </proof>
+  <proof>
+    <title>Proof of <xref ref="thm-main"/></title>
+    <p>
+      <xref ref="prop-uniform-domain"/> proves that <m>A</m> is complete, uniform,
+non-noetherian, and a domain.  Strong sheafiness is <xref ref="thm-sheafy"/>, and
+failure of stable uniformity is <xref ref="prop-not-stably-uniform"/>.
+    </p>
+  </proof>
+</section>

@@ -76,7 +76,7 @@ and
     T_E^m\xrightarrow{\ d_{1,E}\ }T_E
   \right)\subset T_E,
   \qquad
-  d_{1,E}(u_1,\dots,u_m)=\sum_i u_i(gT_i-f_i),</me>
+  d_{1,E}(u_1,\dots,u_m)=\sum_i u_i(gT_i-f_i).</me>
 Then
         <men xml:id="eq-graph-model">E_\alpha\cong T_E/\overline{I_{E,\alpha}}.</men>
         Here the bar is necessary until the ideal has been shown to be closed.  This is the

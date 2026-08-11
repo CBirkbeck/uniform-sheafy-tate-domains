@@ -44,22 +44,16 @@
    "number": "3",
    "section": "3"
   },
-  "eq-integral-milnor": {
-   "kind": "equation",
-   "label": "eq:integral-milnor",
-   "number": "(2)",
-   "section": "3"
-  },
   "eq-coefficient-A0": {
    "kind": "equation",
    "label": "eq:coefficient-A0",
-   "number": "(3)",
+   "number": "(2)",
    "section": "3"
   },
   "eq-structural-map-bounds": {
    "kind": "equation",
    "label": "eq:structural-map-bounds",
-   "number": "(4)",
+   "number": "(3)",
    "section": "3"
   },
   "prop-uniform-domain": {
@@ -83,7 +77,7 @@
   "eq-q2-killed-on-chart": {
    "kind": "equation",
    "label": "eq:q2-killed-on-chart",
-   "number": "(5)",
+   "number": "(4)",
    "section": "4"
   },
   "prop-not-stably-uniform": {
@@ -92,13 +86,13 @@
    "number": "4.2",
    "section": "4"
   },
-  "sec-localisation-of-the-milnor-square": {
+  "sec-localisation-milnor": {
    "kind": "section",
-   "label": null,
+   "label": "sec:localisation-milnor",
    "number": "5",
    "section": "5"
   },
-  "sec-localisation-of-the-milnor-square-koszul-complexes-for-rational-localisations": {
+  "sec-localisation-milnor-koszul-complexes-for-rational-localisations": {
    "kind": "subsection",
    "label": null,
    "number": "5.1",
@@ -113,16 +107,16 @@
   "eq-ideal-denominators": {
    "kind": "equation",
    "label": "eq:ideal-denominators",
-   "number": "(6)",
+   "number": "(5)",
    "section": "5"
   },
   "eq-syzygy-denominators": {
    "kind": "equation",
    "label": "eq:syzygy-denominators",
-   "number": "(7)",
+   "number": "(6)",
    "section": "5"
   },
-  "sec-localisation-of-the-milnor-square-the-defining-ideals-under-pullback": {
+  "sec-localisation-milnor-the-defining-ideals-under-pullback": {
    "kind": "subsection",
    "label": null,
    "number": "5.2",
@@ -131,7 +125,7 @@
   "eq-tate-ambient": {
    "kind": "equation",
    "label": "eq:tate-ambient",
-   "number": "(8)",
+   "number": "(7)",
    "section": "5"
   },
   "lem-graph-pullback": {
@@ -143,7 +137,7 @@
   "eq-ideal-row": {
    "kind": "equation",
    "label": "eq:ideal-row",
-   "number": "(9)",
+   "number": "(8)",
    "section": "5"
   },
   "prop-localized-milnor": {
@@ -152,16 +146,22 @@
    "number": "5.3",
    "section": "5"
   },
-  "sec-strong-sheafiness": {
+  "sec-milnor-descent-and-strong-sheafiness": {
    "kind": "section",
    "label": null,
    "number": "6",
    "section": "6"
   },
-  "thm-sheafy": {
+  "thm-milnor-sheaf-transfer": {
    "kind": "theorem",
-   "label": "thm:sheafy",
+   "label": "thm:milnor-sheaf-transfer",
    "number": "6.1",
+   "section": "6"
+  },
+  "thm-sheafy": {
+   "kind": "corollary",
+   "label": "thm:sheafy",
+   "number": "6.2",
    "section": "6"
   },
   "sec-problems-24-28": {
@@ -197,31 +197,31 @@
   "eq-parity-weight": {
    "kind": "equation",
    "label": "eq:parity-weight",
-   "number": "(10)",
+   "number": "(9)",
    "section": "8"
   },
   "eq-parity-monoid": {
    "kind": "equation",
    "label": "eq:parity-monoid",
-   "number": "(11)",
+   "number": "(10)",
    "section": "8"
   },
   "eq-omega-subadditive": {
    "kind": "equation",
    "label": "eq:omega-subadditive",
-   "number": "(12)",
+   "number": "(11)",
    "section": "8"
   },
   "eq-parity-gauss-norm": {
    "kind": "equation",
    "label": "eq:parity-gauss-norm",
-   "number": "(13)",
+   "number": "(12)",
    "section": "8"
   },
   "eq-parity-algebra": {
    "kind": "equation",
    "label": "eq:parity-algebra",
-   "number": "(14)",
+   "number": "(13)",
    "section": "8"
   },
   "lem-finite-variable-subrings": {
@@ -233,13 +233,13 @@
   "eq-finite-variable-decomposition": {
    "kind": "equation",
    "label": "eq:finite-variable-decomposition",
-   "number": "(15)",
+   "number": "(14)",
    "section": "8"
   },
   "eq-A-completion-finite-variables": {
    "kind": "equation",
    "label": "eq:A-completion-finite-variables",
-   "number": "(16)",
+   "number": "(15)",
    "section": "8"
   },
   "prop-parity-uniform-domain": {
@@ -275,13 +275,13 @@
   "eq-coefficient-decomposition": {
    "kind": "equation",
    "label": "eq:coefficient-decomposition",
-   "number": "(17)",
+   "number": "(16)",
    "section": "8"
   },
   "eq-coefficient-multiplication": {
    "kind": "equation",
    "label": "eq:coefficient-multiplication",
-   "number": "(18)",
+   "number": "(17)",
    "section": "8"
   },
   "prop-coefficientwise-localization": {
@@ -305,13 +305,13 @@
   "eq-weighted-chart-ring": {
    "kind": "equation",
    "label": "eq:weighted-chart-ring",
-   "number": "(19)",
+   "number": "(18)",
    "section": "8"
   },
   "eq-weighted-chart-norm": {
    "kind": "equation",
    "label": "eq:weighted-chart-norm",
-   "number": "(20)",
+   "number": "(19)",
    "section": "8"
   },
   "prop-weighted-chart-identification": {
@@ -392,7 +392,7 @@
    "number": "A.3",
    "section": "A"
   },
-  "sec-formalisation-strong-noetherianity": {
+  "sec-formalisation-strong-noetherianity-and-sheafiness": {
    "kind": "subsection",
    "label": null,
    "number": "A.4",

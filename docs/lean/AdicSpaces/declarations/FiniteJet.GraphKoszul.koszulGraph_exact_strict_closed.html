@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FiniteJet.GraphKoszul.koszulGraph_exact_strict_closed · Lean source</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font: 16px/1.55 system-ui, sans-serif; }
+    main { max-width: 72rem; margin: 0 auto; padding: 2rem 1.2rem 4rem; }
+    nav { margin-bottom: 1.5rem; }
+    a { color: #176b43; }
+    @media (prefers-color-scheme: dark) { a { color: #84d8aa; } }
+    h1 { overflow-wrap: anywhere; font: 650 1.45rem/1.25 ui-monospace, monospace; }
+    .kind { color: #176b43; font-size: .82rem; text-transform: uppercase;
+             letter-spacing: .06em; }
+    .doc { max-width: 62rem; }
+    details.source-doc { max-width: 62rem; margin: 1rem 0; }
+    details.source-doc summary { cursor: pointer; }
+    pre { padding: 1rem; overflow-x: auto; border-radius: .45rem;
+           background: color-mix(in srgb, CanvasText 7%, Canvas); }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .meta, .used-for { color: color-mix(in srgb, CanvasText 70%, Canvas);
+                        font-size: .9rem; }
+    .provenance { margin-top: 2rem; padding-top: 1rem;
+                   border-top: 1px solid color-mix(in srgb, CanvasText 18%, Canvas);
+                   font-size: .9rem; }
+  </style>
+</head>
+<body>
+<main>
+  <nav><a href="../../../paper.html">← Return to the paper</a></nav>
+  <div class="kind">theorem</div>
+  <h1>FiniteJet.GraphKoszul.koszulGraph_exact_strict_closed</h1>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>Let <code>E</code> be a complete ultrametric normed commutative ring with <code>‖1‖=1</code>. Assume that the norm unit ball <code>E°</code>, the restricted power-series ring <code>T_E=E⟨T₁,…,T_m⟩</code>, and the norm unit ball of <code>T_E</code> are noetherian. Suppose that <code>t∈E</code> is a unit with <code>0&lt;‖t‖&lt;1</code> and <code>‖tx‖=‖t‖‖x‖</code> for every <code>x</code>. If <code>g,f₁,…,f_m</code> generate the unit ideal and <code>r_i=gT_i-f_i</code>, then the Koszul complex on <code>(r_i)</code> is exact in every positive degree, every differential is strict onto its image, and every image is closed. This is the full generality of the exactness, strictness, and closed-image part of Lemma 5.1 formalised in Lean.</p></div></div>
+  <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
+  <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>[FJP] Lemma 5.1, clauses 1–3</strong>, for the graph datum over a noetherian Tate vertex<br><code>E</code>: the graph Koszul complex over <code>P_E = E⟨T₁,…,T_m⟩</code> is (i) exact in every positive<br>degree, (ii) strict in every degree, and (iii) has closed image in every degree.  The<br>loss-of-precision inclusions (9)/(10) are the separate theorems <code>exists_d1_lift_pow</code>,<br><code>pow_smul_graphIdeal_inter_unitBall_subset</code>, <code>exists_d2_lift_pow</code>,<br><code>pow_smul_ker_d1_inter_subset</code> below (this theorem does not assert full Lemma 5.1).</p></div></details>
+  <p class="used-for"><strong>Used in the paper for:</strong> Lemma 5.1 (general graph-Koszul exactness, strictness, and closed images)</p>
+  <pre><code>theorem koszulGraph_exact_strict_closed [IsNoetherianRing (P E m)]
+    (hE₀ : IsNoetherianRing (unitBall E))
+    (t : E) (htu : IsUnit t) (ht1 : ‖t‖ &lt; 1) (ht0 : 0 &lt; ‖t‖)
+    (hscale : ∀ x : E, ‖t * x‖ = ‖t‖ * ‖x‖)
+    (hE₀P : IsNoetherianRing (unitBall (P E m)))
+    (g : E) (f : Fin m → E) (hunit : Ideal.span ({g} ∪ Set.range f) = ⊤)
+    (r : Fin m → P E m)
+    (hr : ∀ i, r i = polyToP (MvPolynomial.C g * MvPolynomial.X i - MvPolynomial.C (f i))) :
+    (∀ q, Function.Exact (koszulDifferential r (q + 1)) (koszulDifferential r q)) ∧
+      (∀ q, IsStrictLinearMap (koszulDifferential r q)) ∧
+      (∀ q, IsClosed (Set.range (koszulDifferential r q)))</code></pre>
+  <p class="meta">Pinned source: <code>projects/AdicSpaces/Adic spaces/FJP/KoszulStrictClosed.lean:230–240</code><br>
+  AINTLIB commit <code>870d0eed2c48a020109d766d2af89c3f47469a94</code>.</p>
+  <p class="meta"><a href="https://github.com/CBirkbeck/AINTLIB/blob/870d0eed2c48a020109d766d2af89c3f47469a94/projects/AdicSpaces/Adic%20spaces/FJP/KoszulStrictClosed.lean#L230-L240">View this pinned source on GitHub</a>. The declaration above is also embedded here so that the paper remains independent of branch movement.</p>
+  <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
+  The finite-jet development uses restricted power-series code adapted from
+  <a href="https://github.com/WilliamCoram/PhD/tree/e8fcf8fbff848a95475ab62ae2568cbb73961de8">William Coram's repository</a>,
+  whose univariate Gauss-norm layer builds on
+  <a href="https://github.com/leanprover-community/mathlib4/blob/fd1d54bcac5caba4eff2ea3421c47d907333f515/Mathlib/RingTheory/PowerSeries/GaussNorm.lean">Fabrizio Barroero's mathlib code</a>.
+  It separately uses
+  <a href="https://github.com/leanprover-community/mathlib4/pull/36507">Bingyu Xia's multivariable power-series equivalences</a>.
+  This is infrastructure provenance, not an attribution of this paper-specific
+  declaration.</aside>
+</main>
+</body>
+</html>

@@ -7,39 +7,60 @@
 In our second example it is an integral domain; the loss of uniformity is
 instead caused by an unbounded family of non-nilpotent power-bounded elements.
     </p>
+    <p>
+      The formal statements in this section use the following base hypotheses:
+<m>k</m> is a complete nontrivially normed ultrametric field, its norm unit ball is
+noetherian, and <m>\varpi</m> is a chosen uniformizer (equivalently here, an
+irreducible element of the norm unit ball).  A complete discretely valued
+field supplies these hypotheses.  The domain, uniformity, and
+non-noetherianity arguments below use only the indicated parts of this
+package; the noetherianity of the unit ball enters the localisation and
+sheafiness results.
+    </p>
     <theorem xml:id="thm-second-example">
       <statement>
         <p>
-          There is a complete Tate <m>k</m>-algebra <m>\mathcal A</m> with the following properties.
+          Let <m>w:\mathbb N_{>0}\to\mathbb N</m> satisfy <m>w(n)\geq1</m> for every <m>n</m> and
+be unbounded.  The complete Tate <m>k</m>-algebra <m>\mathcal A_w</m> defined below has
+the following properties.
         </p>
         <ol>
           <li>
             <p>
-              <m>\mathcal A</m> is a uniform, non-noetherian integral domain and
-      <m>\mathcal A^\circ=\mathcal A_0</m>, where <m>\mathcal A_0</m> is defined below.
+              <m>\mathcal A_w</m> is a uniform, non-noetherian integral domain and
+      <m>\mathcal A_w^\circ=\mathcal A_{w,0}</m>, where <m>\mathcal A_{w,0}</m> is defined below.
             </p>
           </li>
           <li>
             <p>
-              The ring <m>\mathcal A</m> is strongly sheafy; in particular, the Huber pair
-      <m>(\mathcal A,\mathcal A^\circ)</m> is sheafy.
+              The ring <m>\mathcal A_w</m> is strongly sheafy; in particular, the Huber pair
+      <m>(\mathcal A_w,\mathcal A_w^\circ)</m> is sheafy.
             </p>
           </li>
           <li>
             <p>
               The rational localisation
-      <me>\mathcal B=\mathcal A\left\langle\frac{W}{\varpi}\right\rangle</me>
+      <me>\mathcal B_w=\mathcal A_w\left\langle\frac{W}{\varpi}\right\rangle</me>
       is an integral domain but is not uniform.
             </p>
           </li>
         </ol>
         <p>
-          Consequently <m>\mathcal A</m> is not stably uniform.  In particular, failure of
+          Consequently <m>\mathcal A_w</m> is not stably uniform.  In particular, failure of
 stable uniformity need not be caused by a nilpotent in the bad rational
 localisation.
         </p>
       </statement>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.isTateRing_WPA">Lean (Tate structure)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.norm_wpa_mul">Lean (norm_wpa_mul)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.isUniform_WPA">Lean (isUniform_WPA)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.powerBoundedSubring_eq_unitBall">Lean (powerBoundedSubring_eq_unitBall)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.not_isNoetherianRing_WPA">Lean (not_isNoetherianRing_WPA)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.wp_isSheafyComplete">Lean (wp_isSheafyComplete)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.isDomain_chart">Lean (isDomain_chart)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.not_isUniform_chart">Lean (not_isUniform_chart)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.not_isStablyUniform_WPA">Lean (not_isStablyUniform_WPA)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.wp_tateExt_isSheafyComplete">Lean (wp_tateExt_isSheafyComplete)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isUniform_of_dvr">Lean (uniformity)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isDomain">Lean (domain)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_powerBounded_eq_unitBall">Lean (power-bounded elements)</lean>
@@ -50,15 +71,21 @@ localisation.
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_not_stablyUniform_of_dvr">Lean (weightedParity_not_stablyUniform_of_dvr)</lean>
       <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.wp_tateExt_isSheafyComplete_of_dvr">Lean (wp_tateExt_isSheafyComplete_of_dvr)</lean>
     </theorem>
+    <p>
+      Taking <m>w(n)=n</m> gives the example announced in the introduction.  We prove
+the component statements below for the weakest hypotheses on <m>w</m> that they
+require.
+    </p>
   </introduction>
   <subsection xml:id="sec-second-example-the-weighted-parity-algebra">
     <title>The weighted-parity algebra</title>
     <p>
-      We write <m>\mathbb N=\{0,1,2,\ldots\}</m> and put
-<m>I=\mathbb N_{>0}</m>.  For a finite-support multi-index
+      We write <m>\mathbb N=\{0,1,2,\ldots\}</m>, put <m>I=\mathbb N_{>0}</m>, and fix an
+arbitrary function <m>w:I\to\mathbb N</m>.  For a finite-support multi-index
 <m>\nu=(\nu_n)_{n\in I}\in\mathbb N^{(I)}</m>, put
-      <men xml:id="eq-parity-weight">\omega(\nu)=\sum_{\substack{n\geq1\\ \nu_n\text{ odd}}} n.</men>
-      Consider the submonoid
+      <men xml:id="eq-parity-weight">\omega_w(\nu)=\sum_{\substack{n\geq1\\ \nu_n\text{ odd}}} w(n).</men>
+      To lighten the notation, write <m>\omega=\omega_w</m> for the rest of the section.
+Consider the submonoid
       <men xml:id="eq-parity-monoid">S=\left\{(a,\nu)\in\mathbb N\times\mathbb N^{(I)}:
        a\geq\omega(\nu)\right\}.</men>
       The inequality
@@ -71,8 +98,9 @@ only finitely many decompositions as a sum of two elements of <m>S</m>.
 <m>U^\nu=\prod_nU_n^{\nu_n}</m>.  Give it the Gauss norm
       <men xml:id="eq-parity-gauss-norm">\left\lVert\sum_{(a,\nu)\in S}c_{a,\nu}W^aU^\nu\right\rVert_G
   =\sup_{a,\nu}|c_{a,\nu}|.</men>
-      Its completion is
-      <men xml:id="eq-parity-algebra">\mathcal A=
+      Its completion is denoted by <m>\mathcal A_w</m>, or simply <m>\mathcal A</m> when
+<m>w</m> is understood:
+      <men xml:id="eq-parity-algebra">\mathcal A_w=
   \left\{
     \sum_{(a,\nu)\in S}c_{a,\nu}W^aU^\nu:
     c_{a,\nu}\in k,\quad c_{a,\nu}\longrightarrow0
@@ -80,18 +108,19 @@ only finitely many decompositions as a sum of two elements of <m>S</m>.
       where convergence to zero is over the discrete index set <m>S</m>.  Local finiteness makes the
 coefficientwise convolution finite, and the submultiplicativity of the Gauss norm on <m>k[S]</m>
 extends multiplication continuously to <m>\mathcal A</m>.  Put
-<me>\mathcal A_0=
+<me>\mathcal A_{w,0}=
   \left\{
-    \sum_{(a,\nu)\in S}c_{a,\nu}W^aU^\nu\in\mathcal A:
+    \sum_{(a,\nu)\in S}c_{a,\nu}W^aU^\nu\in\mathcal A_w:
     c_{a,\nu}\in k^\circ
   \right\}.</me>
+We henceforth abbreviate these rings to <m>\mathcal A</m> and <m>\mathcal A_0</m>.
 Then <m>\mathcal A_0</m> is the closed unit ball for <xref ref="eq-parity-gauss-norm"/>, it is
 <m>\varpi</m>-adically complete, and
 <m>\mathcal A=\mathcal A_0[1/\varpi]</m>.
     </p>
     <p>
       Put
-<me>Y_n=W^nU_n,\qquad Z_n=U_n^2,</me>
+<me>Y_n=W^{w(n)}U_n,\qquad Z_n=U_n^2,</me>
 and, for <m>N\in\mathbb N</m>, let <m>\mathcal A^{(N)}\subset\mathcal A</m> be the
 closed subring supported on monomials involving only
 <m>W,U_1,\ldots,U_N</m>.  Thus
@@ -103,7 +132,8 @@ closed subring supported on monomials involving only
       <title>Finite-variable subrings</title>
       <statement>
         <p>
-          For every <m>N\in\mathbb N</m>, substitution <m>Z_n\mapsto U_n^2</m> gives a
+          For every weight <m>w</m> and every <m>N\in\mathbb N</m>, substitution
+<m>Z_n\mapsto U_n^2</m> gives a
 norm-preserving ring isomorphism
 <me>k\langle W,Z_1,\ldots,Z_N\rangle
   \xrightarrow{\ \sim\ }\mathcal T^{(N)}.</me>
@@ -139,7 +169,7 @@ monoid with that of the Tate algebra
 <m>k\langle W,Z_1,\ldots,Z_N\rangle</m>; the coefficient map and its inverse
 preserve the Gauss norm.  Write each exponent uniquely as
 <m>\nu_n=2q_n+\epsilon_n</m>, with <m>\epsilon_n\in\{0,1\}</m>.  Since
-<m>\omega(\nu)=\sum_{\epsilon_n=1}n</m>, every allowed monomial factors as
+<m>\omega(\nu)=\sum_{\epsilon_n=1}w(n)</m>, every allowed monomial factors as
 <me>W^aU^\nu
   =W^{a-\omega(\nu)}
    \prod_{n=1}^NZ_n^{q_n}
@@ -161,11 +191,15 @@ sum of monomials and choose <m>N</m> so that only
     <proposition xml:id="prop-parity-uniform-domain">
       <statement>
         <p>
-          The ring <m>\mathcal A</m> is a complete uniform Tate <m>k</m>-algebra and an integral domain, with
-<me>\mathcal A^\circ=\mathcal A_0.</me>
+          For every weight <m>w</m>, the ring <m>\mathcal A_w</m> is a complete uniform Tate
+<m>k</m>-algebra and an integral domain, with
+<me>\mathcal A_w^\circ=\mathcal A_{w,0}.</me>
         </p>
       </statement>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.isTateRing_WPA">Lean (Tate structure)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.norm_wpa_mul">Lean (norm_wpa_mul)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.isUniform_WPA">Lean (isUniform_WPA)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.powerBoundedSubring_eq_unitBall">Lean (powerBoundedSubring_eq_unitBall)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isUniform_of_dvr">Lean (uniformity)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isDomain">Lean (domain)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_powerBounded_eq_unitBall">Lean (power-bounded elements)</lean>
@@ -199,13 +233,15 @@ domain.
     <proposition xml:id="prop-parity-nonnoetherian">
       <statement>
         <p>
-          The ring <m>\mathcal A</m> is not noetherian.
+          If <m>w(n)\geq1</m> for every <m>n\geq1</m>, then <m>\mathcal A_w</m> is not noetherian.
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_not_noetherian">Lean</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.not_isNoetherianRing_WPA">Lean (not_isNoetherianRing_WPA)</lean>
+      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_not_noetherian">Lean (non-noetherianity)</lean>
       <proof>
         <p>
-          For <m>m\geq1</m>, let
+          Assume that <m>w(n)\geq1</m> for every <m>n\geq1</m>.
+For <m>m\geq1</m>, let
 <me>I_m=(Z_1,\ldots,Z_m)\subset\mathcal A.</me>
 Define a norm-nonincreasing homomorphism
 <me>\psi_m:\mathcal A\longrightarrow k\langle T\rangle,</me>
@@ -356,14 +392,14 @@ for every convergent sum.
       <title>Finite-variable presentation</title>
       <statement>
         <p>
-          Every rational localisation of <m>\mathcal A</m> is bicontinuously isomorphic
-to a ring of the form
+          For every rational localisation of <m>\mathcal A_w</m>, there is <m>N_0</m> such that,
+for every <m>N\geq N_0</m>, it is bicontinuously isomorphic to a ring of the form
 <me>\left\{
     \sum_\mu p_\mu e_\mu:
     p_\mu\in P,\quad \lVert p_\mu\rVert\longrightarrow0
   \right\},</me>
-where <m>P</m> is a rational localisation of one of the strongly noetherian Tate
-rings <m>\mathcal A^{(N)}</m>.
+where <m>P</m> is a rational localisation of the strongly noetherian Tate ring
+<m>\mathcal A^{(N)}</m>.
         </p>
       </statement>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.HeadModelData">Lean (finite-variable model)</lean>
@@ -384,8 +420,10 @@ By <xref ref="lem-small-perturbation"/>, the datum
 <m>\alpha'=(f_1',\ldots,f_m';g')</m> gives the same rational subset and the same
 completed localisation.  It is rational in <m>\mathcal A</m>, so applying
 <m>\rho_N</m> to a Bezout identity for its entries shows that it is already a
-rational datum in <m>\mathcal A^{(N)}</m>.  Now apply
-<xref ref="prop-coefficientwise-localization"/>.
+rational datum in <m>\mathcal A^{(N)}</m>.  The same datum belongs to every larger
+finite-variable ring, and the corresponding retraction shows from the same
+Bezout identity that it is rational there.  Now apply
+<xref ref="prop-coefficientwise-localization"/> at every stage beyond <m>N</m>.
         </p>
       </proof>
     </corollary>
@@ -395,7 +433,7 @@ rational datum in <m>\mathcal A^{(N)}</m>.  Now apply
     <p>
       The ideal <m>(W,\varpi)</m> is open because <m>\varpi</m> is a unit of <m>\mathcal A</m>.
 Define the complete <m>k^\circ</m>-algebra
-      <men xml:id="eq-weighted-chart-ring">\mathcal B_0=
+      <men xml:id="eq-weighted-chart-ring">\mathcal B_{w,0}=
   \left\{
     \sum_{\substack{\nu\in\mathbb N^{(I)},\ d\geq\omega(\nu)}}
       b_{d,\nu}X^dU^\nu:
@@ -406,15 +444,16 @@ Define the complete <m>k^\circ</m>-algebra
       with norm
       <men xml:id="eq-weighted-chart-norm">\left\lVert\sum b_{d,\nu}X^dU^\nu\right\rVert_{\mathcal B}
   =\sup_{d,\nu}|\varpi|^{-\omega(\nu)}|b_{d,\nu}|.</men>
-      The subadditivity <xref ref="eq-omega-subadditive"/> shows that <m>\mathcal B_0</m> is a ring.  Put
-<m>\mathcal B=\mathcal B_0[1/\varpi]</m>.
+      The subadditivity <xref ref="eq-omega-subadditive"/> shows that <m>\mathcal B_{w,0}</m>
+is a ring.  Put <m>\mathcal B_w=\mathcal B_{w,0}[1/\varpi]</m>, and abbreviate
+these rings to <m>\mathcal B</m> and <m>\mathcal B_0</m> when <m>w</m> is understood.
     </p>
     <proposition xml:id="prop-weighted-chart-identification">
       <statement>
         <p>
-          There is a bicontinuous ring isomorphism
-<me>\mathcal A\left\langle\frac{W}{\varpi}\right\rangle
-  \xrightarrow{\ \sim\ }\mathcal B,
+          For every weight <m>w</m>, there is a bicontinuous ring isomorphism
+<me>\mathcal A_w\left\langle\frac{W}{\varpi}\right\rangle
+  \xrightarrow{\ \sim\ }\mathcal B_w,
   \qquad W\longmapsto\varpi X.</me>
         </p>
       </statement>
@@ -455,9 +494,13 @@ multiplied by <m>\varpi^{\omega(\nu)}</m>.  The map from
     <proposition xml:id="prop-weighted-chart-domain-nonuniform">
       <statement>
         <p>
-          The ring <m>\mathcal B</m> is an integral domain but is not uniform.
+          For every weight <m>w</m>, the ring <m>\mathcal B_w</m> is an integral domain.  If <m>w</m>
+is unbounded, then <m>\mathcal B_w</m> is not uniform.
         </p>
       </statement>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.isDomain_chart">Lean (isDomain_chart)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.not_isUniform_chart">Lean (not_isUniform_chart)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.not_isStablyUniform_WPA">Lean (not_isStablyUniform_WPA)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_chart_isDomain">Lean (chart is a domain)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_chart_not_isUniform">Lean (chart is nonuniform)</lean>
       <proof>
@@ -489,16 +532,17 @@ for every <m>\nu</m>.  Since <m>k\langle X\rangle</m> is a domain, every
 a domain.
         </p>
         <p>
-          Inside <m>\mathcal A</m> write <m>Y_n=W^nU_n</m> and put
-<me>T_n=\varpi^{-n}Y_n=X^nU_n\in\mathcal B.</me>
+          Assume now that <m>w</m> is unbounded.  Inside <m>\mathcal A</m> write
+<m>Y_n=W^{w(n)}U_n</m> and put
+<me>T_n=\varpi^{-w(n)}Y_n=X^{w(n)}U_n\in\mathcal B.</me>
 Formula <xref ref="eq-weighted-chart-norm"/> gives
-<me>\lVert T_n\rVert_{\mathcal B}=|\varpi|^{-n},
+<me>\lVert T_n\rVert_{\mathcal B}=|\varpi|^{-w(n)},
   \qquad
   \lVert T_n^2\rVert_{\mathcal B}=1.</me>
 The even powers of <m>T_n</m> have norm at most <m>1</m>, and the odd powers have
 norm at most <m>\lVert T_n\rVert_{\mathcal B}</m>.  Thus every <m>T_n</m> is
 power-bounded.  The family <m>(T_n)_{n\geq1}</m> is not bounded, since its norms
-<m>|\varpi|^{-n}</m> are unbounded.  Hence
+<m>|\varpi|^{-w(n)}</m> are unbounded.  Hence
 <m>\mathcal B^\circ</m> is unbounded and <m>\mathcal B</m> is not uniform.
         </p>
       </proof>
@@ -509,10 +553,18 @@ power-bounded.  The family <m>(T_n)_{n\geq1}</m> is not bounded, since its norms
     <theorem xml:id="thm-parity-sheafy">
       <statement>
         <p>
-          The ring <m>\mathcal A</m> is strongly sheafy.  In particular, the Huber pair
-<m>(\mathcal A,\mathcal A^\circ)</m> is sheafy.
+          For every weight <m>w</m>, every <m>s\geq0</m>, and every ring of integral elements
+<m>\mathcal A_{w,s}^+</m> of
+<m>\mathcal A_w\langle V_1,\ldots,V_s\rangle</m>, the Huber pair
+<me>\bigl(\mathcal A_w\langle V_1,\ldots,V_s\rangle,
+        \mathcal A_{w,s}^+\bigr)</me>
+is sheafy.  In particular, <m>\mathcal A_w</m> is strongly sheafy.  No positivity
+or unboundedness hypothesis on <m>w</m> is needed here.
         </p>
       </statement>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.wp_isSheafyComplete">Lean (wp_isSheafyComplete)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.wp_stronglySheafy">Lean (wp_stronglySheafy)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.wp_tateExt_isSheafyComplete">Lean (wp_tateExt_isSheafyComplete)</lean>
       <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isSheafyComplete_of_dvr">Lean (sheafiness)</lean>
       <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="WeightedParity.wp_tateExt_isSheafyComplete_of_dvr">Lean (wp_tateExt_isSheafyComplete_of_dvr)</lean>
       <proof>
@@ -524,10 +576,10 @@ intersection <m>U_i\cap U_j</m> then also lie in <m>\mathcal A^{(N)}</m>.  The s
 perturbation lemma does not change the rational domains, and
 <xref ref="prop-coefficientwise-localization"/> gives
 compatible identifications
-<me>\mathcal O_X(U)\cong
+<me>\mathcal O(U)\cong
   \left\{\sum_\mu p_\mu e_\mu:
     p_\mu\in P,\ \lVert p_\mu\rVert\to0\right\},</me>
-<me>\mathcal O_X(U_i)\cong
+<me>\mathcal O(U_i)\cong
   \left\{\sum_\mu p_{i,\mu}e_\mu:
     p_{i,\mu}\in P_i,\ \lVert p_{i,\mu}\rVert\to0\right\},</me>
 with coefficientwise restriction maps.  Here <m>P</m> is a rational localisation
@@ -562,7 +614,7 @@ The same coefficientwise argument proves separation.
 subspace of tuples whose restrictions to every pairwise intersection agree.
 This subspace is closed: it is the common zero locus of the continuous
 difference maps, and hence is a Banach <m>k</m>-space.  The restriction map is a
-continuous bijection from the Banach <m>k</m>-space <m>\mathcal O_X(U)</m> to this
+continuous bijection from the Banach <m>k</m>-space <m>\mathcal O(U)</m> to this
 closed subspace.  The nonarchimedean open mapping theorem therefore makes it
 a homeomorphism.  We have proved the topological sheaf condition on finite
 rational covers.  The
@@ -576,7 +628,8 @@ is sheafy.
 <m>\mathcal A\langle V_1,\ldots,V_s\rangle</m> is bicontinuously isomorphic to the
 same weighted-parity construction with the first <m>s</m> weights equal to zero
 and the remaining weights shifted by <m>s</m>.  The argument above applies to
-every weight function, so this Tate extension is sheafy.  Hence <m>\mathcal A</m>
+every weight function and is independent of the ring of integral elements,
+so this Tate extension is sheafy for every such choice.  Hence <m>\mathcal A</m>
 is strongly sheafy.
         </p>
       </proof>
@@ -620,7 +673,7 @@ while <m>Q</m> survives, so this rational chart is non-reduced.  The map from <m
 this completed rational localisation is also not flat by
 <xref ref="prop-problems-24-28"/>.  For <m>R_0=\mathcal A_0</m>, the completed
 chart remains a domain, but its generic fibre is not uniform because the
-power-bounded elements <m>T_n=X^nU_n</m> form an unbounded family.  Thus the two
+power-bounded elements <m>T_n=X^{w(n)}U_n</m> form an unbounded family.  Thus the two
 examples give different failures on the same kind of affine blow-up chart.
         </p>
         <p>

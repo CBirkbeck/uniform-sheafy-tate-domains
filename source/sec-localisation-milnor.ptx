@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<section xml:id="sec-localisation-of-the-milnor-square">
+<section xml:id="sec-localisation-milnor">
   <title>Localisation of the Milnor square</title>
   <introduction>
     <p>
       In this section we prove that rational localisation preserves the defining pullback.
-We first record the strict Koszul estimate needed for the proof.
+For the application to the finite-jet ring we again assume that <m>k</m> is
+complete and discretely valued.  We first record the strict Koszul estimate
+needed for the proof in the greater generality in which it was formalised.
     </p>
   </introduction>
-  <subsection xml:id="sec-localisation-of-the-milnor-square-koszul-complexes-for-rational-localisations">
+  <subsection xml:id="sec-localisation-milnor-koszul-complexes-for-rational-localisations">
     <title>Koszul complexes for rational localisations</title>
     <p>
-      Let <m>E</m> be one of <m>B,C,D</m>, equipped with its coefficientwise Gauss norm, and
-let <m>E_0</m> denote its unit ball.  Let <m>f_1,\dots,f_m,g\in E_0</m> generate the
-unit ideal in <m>E</m>.  Put
+      Let <m>E</m> be a complete ultrametric normed commutative ring with
+<m>\lVert1\rVert=1</m>, and let <m>t\in E^\times</m> satisfy
+<me>0&lt;\lVert t\rVert&lt;1,
+  \qquad
+  \lVert tx\rVert=\lVert t\rVert\lVert x\rVert
+  \quad(x\in E).</me>
+Write <m>E_0=\{x\in E:\lVert x\rVert\leq1\}</m> for its norm unit ball.  Assume that <m>E_0</m>,
+<m>E\langle T_1,\ldots,T_m\rangle</m>, and the norm unit ball of this Tate algebra
+are noetherian.  Let <m>f_1,\dots,f_m,g\in E</m> generate the unit ideal in <m>E</m>.
+Put
 <me>T_E=E\langle T_1,\dots,T_m\rangle,
   \qquad
   T_{E,0}=E_0\langle T_1,\dots,T_m\rangle,</me>
@@ -20,13 +29,13 @@ and set <m>r_i=gT_i-f_i</m>.
     </p>
     <p>
       We give <m>T_E</m> the topology for which
-<m>\{\varpi^nT_{E,0}\}_{n\geq0}</m> is a basis of neighbourhoods of zero.  In the
+<m>\{t^nT_{E,0}\}_{n\geq0}</m> is a basis of neighbourhoods of zero.  In the
 standard exterior basis, <m>\bigwedge^qT_E^m</m> has the finite product topology,
 and each image has the subspace topology.  Thus a differential is strict
 precisely when it is open onto its image.
     </p>
     <p>
-      Applied to <m>E\in\{B,C,D\}</m>, the strict Koszul regularity theorem of
+      The strict Koszul regularity theorem of
 Bambozzi<ndash/>Kremnizer
 <xref ref="bib-BK" detail="Notation 4.3, Definitions 4.5--4.6, Proposition 4.9,
 Lemma 4.11, and Corollary 4.13"/> gives the exactness, strictness, and
@@ -48,13 +57,14 @@ its image, and every image is closed.  In particular, if
   d_{1,E}(u_1,\ldots,u_m)=\sum_i u_ir_i,</me>
 then <m>I_E</m> is closed.  Moreover, there exists
 <m>h_E\in\mathbb Z_{\geq0}</m> such that
-          <men xml:id="eq-ideal-denominators">\varpi^{h_E}(I_E\cap T_{E,0})
+          <men xml:id="eq-ideal-denominators">t^{h_E}(I_E\cap T_{E,0})
   \subset d_{1,E}(T_{E,0}^m).</men>
           There also exists <m>z_E\in\mathbb Z_{\geq0}</m> such that
-          <men xml:id="eq-syzygy-denominators">\varpi^{z_E}\bigl(\ker(d_{1,E})\cap T_{E,0}^m\bigr)
+          <men xml:id="eq-syzygy-denominators">t^{z_E}\bigl(\ker(d_{1,E})\cap T_{E,0}^m\bigr)
   \subset d_{2,E}\bigl(\textstyle\bigwedge^2 T_{E,0}^m\bigr).</men>
         </p>
       </statement>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.GraphKoszul.koszulGraph_exact_strict_closed">Lean (koszulGraph_exact_strict_closed)</lean>
       <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJet.GraphKoszul.koszulGraph_restricted_exact">Lean (koszulGraph_restricted_exact)</lean>
       <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJet.KoszulFree.koszulDifferential_continuous">Lean (koszulDifferential_continuous)</lean>
       <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJet.GraphKoszul.koszulDifferential_isStrict">Lean (koszulDifferential_isStrict)</lean>
@@ -78,10 +88,10 @@ polynomial ring.
         <p>
           The map
 <me>E[T_1,\ldots,T_m]\longrightarrow T_E</me>
-is flat.  In fact, <m>E_0</m> is noetherian for <m>E=B,C,D</m>, so
-<m>E_0[T_1,\ldots,T_m]</m> is noetherian and its <m>\varpi</m>-adic completion is flat
-over it <xref ref="bib-Stacks" detail="Tag 00MB"/>.  Inverting <m>\varpi</m> gives the displayed flat
-map.  Tensoring the polynomial Koszul complex with <m>T_E</m>, and using the
+is flat.  Indeed, <m>E_0</m> is noetherian by assumption, so
+<m>E_0[T_1,\ldots,T_m]</m> is noetherian and its <m>t</m>-adic completion is flat
+over it <xref ref="bib-Stacks" detail="Tag 00MB"/>.  After inverting <m>t</m>, the resulting map
+<m>E[T_1,\ldots,T_m]\to T_E</m> is flat.  Tensoring the polynomial Koszul complex with <m>T_E</m>, and using the
 standard base-change identification of its finite free terms, proves
 positive-degree exactness.  Notice that this does not assert exactness in
 degree zero.
@@ -101,45 +111,69 @@ This also proves that each differential is strict onto its image.
         </p>
         <p>
           Choose <m>h_E\geq0</m> such that
-<m>|\varpi|^{h_E}C_{1,E}\leq1</m>.  If
+<m>\lVert t\rVert^{h_E}C_{1,E}\leq1</m>.  If
 <m>x\in I_E\cap T_{E,0}</m>, choose <m>u\in T_E^m</m> with
 <me>d_{1,E}(u)=x,
   \qquad
   \lVert u\rVert\leq C_{1,E}\lVert x\rVert\leq C_{1,E}.</me>
-Then <m>\varpi^{h_E}u\in T_{E,0}^m</m> and
-<m>d_{1,E}(\varpi^{h_E}u)=\varpi^{h_E}x</m>, which proves
+Then <m>t^{h_E}u\in T_{E,0}^m</m> and
+<m>d_{1,E}(t^{h_E}u)=t^{h_E}x</m>, which proves
 <xref ref="eq-ideal-denominators"/>.  Similarly, choose <m>z_E\geq0</m> such that
-<m>|\varpi|^{z_E}C_{2,E}\leq1</m>.  If
+<m>\lVert t\rVert^{z_E}C_{2,E}\leq1</m>.  If
 <m>u\in\ker(d_{1,E})\cap T_{E,0}^m</m>, choose <m>v</m> with
 <m>d_{2,E}(v)=u</m> and
 <m>\lVert v\rVert\leq C_{2,E}\lVert u\rVert</m>.  Then
-<m>\varpi^{z_E}v\in\bigwedge^2T_{E,0}^m</m>, proving
+<m>t^{z_E}v\in\bigwedge^2T_{E,0}^m</m>, proving
 <xref ref="eq-syzygy-denominators"/>.
         </p>
       </proof>
     </lemma>
   </subsection>
-  <subsection xml:id="sec-localisation-of-the-milnor-square-the-defining-ideals-under-pullback">
+  <subsection xml:id="sec-localisation-milnor-the-defining-ideals-under-pullback">
     <title>The defining ideals under pullback</title>
     <p>
-      Fix a rational datum
+      The formal result used here is not specific to the finite-jet rings.  Let
+<me>\begin{matrix}
+A&amp;\xrightarrow{\phi_C}&amp;C\\
+\scriptstyle\phi_B\downarrow&amp;&amp;\downarrow\scriptstyle\psi_C\\
+B&amp;\xrightarrow{\psi_B}&amp;D
+\end{matrix}</me>
+be a cartesian square of complete ultrametric normed commutative rings.  We
+assume that <m>\phi_C</m> and <m>\psi_B</m> preserve the norm, that <m>\phi_B</m> and
+<m>\psi_C</m> do not increase it, and that
+<me>\lVert a\rVert=\max\{\lVert\phi_B(a)\rVert,
+                         \lVert\phi_C(a)\rVert\}.</me>
+We also assume that <m>\psi_C</m> has a norm-preserving section as a map of sets,
+that <m>B,C,D</m> have norm-scaling topologically nilpotent units as in
+<xref ref="lem-koszul"/>.  For the present number of variables, assume that the
+three Tate algebras <m>T_B,T_C,T_D</m> and their norm unit balls are noetherian,
+and that the norm unit ball of <m>D</m> is noetherian.  These are precisely the
+noetherian inputs used in the formalisation; no noetherianity of the norm unit
+balls of <m>B</m> and <m>C</m> is required here.  The finite-jet square satisfies
+them, with the coefficientwise section described in <xref ref="sec-the-global-ring"/>
+and with <m>t=\varpi</m> at each vertex.
+    </p>
+    <p>
+      Fix elements
 <me>\alpha=(f_1,\dots,f_m;g)</me>
-in <m>A</m>.  Multiplying all entries by a common power of <m>\varpi</m>, we assume
-<m>f_1,\dots,f_m,g\in A_0</m>.  Put
+in <m>A</m> which generate the unit ideal.  In the Tate setting this is a rational
+datum.  Put
 <me>r_i=gT_i-f_i\in T_A,</me>
 and use the same notation for its image in <m>T_B,T_C</m>, and <m>T_D</m>.  For
 <m>E\in\{A,B,C,D\}</m> put
 <me>I_E=(r_1,\ldots,r_m)=\im(d_{1,E})\subset T_E.</me>
+Write <m>E_\alpha=T_E/I_E</m> for the graph quotient.  When the vertices are Tate
+rings, this is the completed rational localisation by <xref ref="eq-graph-model"/>.
     </p>
     <p>
-      The exact integral row <xref ref="eq-integral-milnor"/> and the coefficientwise section of
-<m>C_0\to D_0</m> give an exact sequence
+      The cartesian property and the section of <m>C\to D</m>, applied coefficientwise,
+give an exact sequence
       <men xml:id="eq-tate-ambient">0\longrightarrow T_{A,0}\longrightarrow
   T_{B,0}\oplus T_{C,0}\longrightarrow T_{D,0}\longrightarrow 0.</men>
       The map <m>T_{C,0}\to T_{D,0}</m> is surjective, as are the induced maps on
 finite free modules and their exterior powers.  Exactness is coefficientwise:
-a compatible restricted coefficient pair lifts to <m>A_0</m>, and the lifted
-coefficients still tend to zero <m>\varpi</m>-adically.
+a compatible restricted coefficient pair lifts to <m>A_0</m>, and the max-norm
+identity ensures that the lifted coefficients still tend to zero.
     </p>
     <lemma xml:id="lem-graph-pullback">
       <statement>
@@ -148,7 +182,7 @@ coefficients still tend to zero <m>\varpi</m>-adically.
 <me>I_A\longrightarrow I_B\times_{I_D}I_C</me>
 is an isomorphism.  Give each <m>I_E</m> the subspace topology inherited from
 <m>T_E</m>, and give <m>I_B\oplus I_C</m> the max norm.  Then the sequence of
-topological <m>k</m>-vector spaces
+topological abelian groups
           <men xml:id="eq-ideal-row">0\longrightarrow I_A\longrightarrow I_B\oplus I_C
   \longrightarrow I_D\longrightarrow0</men>
           is strict exact.  Here the maps are
@@ -157,6 +191,10 @@ topological <m>k</m>-vector spaces
   (x_B,x_C)\longmapsto (x_B)_D-(x_C)_D.</me>
         </p>
       </statement>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.Pinch.ext_pair_injective">Lean (ext_pair_injective)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.Pinch.ideal_row_surjective">Lean (ideal_row_surjective)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.Pinch.ideal_pullback_controlled">Lean (ideal_pullback_controlled)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.Pinch.isClosed_IA">Lean (isClosed_IA)</lean>
       <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.ext_pair_injective">Lean (ext_pair_injective)</lean>
       <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.ideal_row_surjective">Lean (ideal_row_surjective)</lean>
       <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.ideal_pullback_controlled">Lean (ideal_pullback_controlled)</lean>
@@ -221,15 +259,26 @@ This proves <xref ref="eq-ideal-row"/>.
     <proposition xml:id="prop-localized-milnor">
       <statement>
         <p>
-          For every rational datum <m>\alpha</m> in <m>A</m>, the canonical sequence
+          For every unit-ideal datum <m>\alpha</m> as above, the canonical sequence of graph
+quotients
 <me>0\longrightarrow A_\alpha\longrightarrow
   B_\alpha\oplus C_\alpha\longrightarrow D_\alpha\longrightarrow 0</me>
 is strict exact, and <m>C_\alpha\to D_\alpha</m> is a strict surjection.  Equivalently,
 <me>A_\alpha\cong B_\alpha\times_{D_\alpha}C_\alpha.</me>
-The coefficient maps used in these identifications commute with rational
-restriction.
         </p>
       </statement>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.Pinch.loc_row_exact">Lean (loc_row_exact)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.Pinch.loc_pair_isEmbedding">Lean (loc_pair_isEmbedding)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.Pinch.locψC_lipschitz">Lean (locψC_lipschitz)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.Pinch.locψC_surjective">Lean (locψC_surjective)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.Pinch.locψC_isOpenMap">Lean (locψC_isOpenMap)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.Pinch.bridgeFwd_natural_B">Lean (bridgeFwd_natural_B)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.Pinch.bridgeFwd_natural_C">Lean (bridgeFwd_natural_C)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.Pinch.bridgeFwd_natural_legB">Lean (bridgeFwd_natural_legB)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.Pinch.bridgeFwd_natural_legC">Lean (bridgeFwd_natural_legC)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.Pinch.valueRow_injective">Lean (valueRow_injective)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.Pinch.valueRow_glue">Lean (valueRow_glue)</lean>
+      <lean project="AdicSpaces" commit="870d0eed2c48a020109d766d2af89c3f47469a94" ref="FiniteJet.Pinch.valueRow_embedding">Lean (valueRow_embedding)</lean>
       <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.loc_row_exact">Lean (loc_row_exact)</lean>
       <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.loc_pair_isEmbedding">Lean (loc_pair_isEmbedding)</lean>
       <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.locRhoC_surjective">Lean (locRhoC_surjective)</lean>
@@ -240,7 +289,7 @@ restriction.
       <proof>
         <p>
           The ideals <m>I_B,I_C,I_D</m> are closed by <xref ref="lem-koszul"/>, and <m>I_A</m> is
-closed by <xref ref="lem-graph-pullback"/>.  Hence <xref ref="eq-graph-model"/> gives
+closed by <xref ref="lem-graph-pullback"/>.  Thus
 <me>E_\alpha=T_E/I_E
   \qquad(E=A,B,C,D).</me>
         </p>
@@ -282,16 +331,14 @@ of a given class in <m>D_\alpha</m>, and apply the norm-preserving section.  Its
 class in <m>C_\alpha</m> has no larger norm.  Thus the surjection is open;
 together with continuity, this says that it is strict.
         </p>
-        <p>
-          All maps used above come from the coefficient maps
-<m>A\to B,C</m> and <m>B,C\to D</m>.  More generally, a homomorphism <m>E\to E'</m> carrying
-a rational datum <m>\alpha</m> to <m>\alpha'</m> induces a coefficientwise map
-<m>T_E\to T_{E'}</m> which sends the relations for <m>\alpha</m> to those for
-<m>\alpha'</m>.  The pullback identifications therefore commute with these maps.
-Applying this to rational restriction, and then using presentation independence
-and transitivity, proves the asserted compatibility under refinement.
-        </p>
       </proof>
     </proposition>
+    <p>
+      Applying the preceding two results to the finite-jet square gives the strict
+localised Milnor rows used below.  For this square, the coefficient maps in
+the identifications commute with rational restriction; this is proved
+separately from presentation independence and transitivity.  The same
+abstract result applies after adjoining any finite number of Tate variables.
+    </p>
   </subsection>
 </section>

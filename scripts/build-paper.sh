@@ -21,6 +21,11 @@ python3 "$paper_root/scripts/build-lean-knowls.py" "$paper_root"
 cd "$paper_root"
 "$paperforge_bin" doctor
 
+# The LaTeX-to-PreTeXt conversion rewrites every section file, but a renamed
+# section otherwise leaves its old generated file behind.  Clear only those
+# generated divisions before conversion so validation cannot see an orphan.
+find "$paper_root/source" -maxdepth 1 -type f -name 'sec-*.ptx' -delete
+
 # PreTeXt updates the knowls needed by the current source but does not remove
 # obsolete xref knowls from an earlier build.  Clear only this generated
 # directory so withdrawn statements cannot survive into the Pages snapshot.

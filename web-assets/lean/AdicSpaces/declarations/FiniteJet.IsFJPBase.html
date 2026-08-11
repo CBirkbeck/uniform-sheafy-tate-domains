@@ -35,7 +35,7 @@
   <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>An <code>IsFJPBase K</code> is a complete ultrametric normed field together with a chosen element <code>ϖ</code> such that <code>ϖ ≠ 0</code> and <code>‖ϖ‖ &lt; 1</code>. These are the only base-field hypotheses used by the finite-jet ring theory, the bad chart, and the Scottish Book Problem 24 and 28 arguments; no discreteness assumption is imposed.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <details class="source-doc"><summary>Original Lean docstring</summary><div class="lean-doc"><p><strong>The base of the finite-jet construction</strong>: a complete ultrametric nonarchimedean<br>field together with a pseudouniformizer <code>ϖ</code> (<code>ϖ ≠ 0</code>, <code>‖ϖ‖ &lt; 1</code>). No discreteness is<br>required.</p></div></details>
-  <p class="used-for"><strong>Used in the paper for:</strong> Proposition 7.1 and Appendix A (hypothesis on the abstract base field)</p>
+  <p class="used-for"><strong>Used in the paper for:</strong> Theorem 1.1 (the general complete ultrametric base-field hypothesis); Proposition 7.1 and Appendix A (hypothesis on the abstract base field)</p>
   <pre><code>class IsFJPBase (K : Type u) [NormedField K] [IsUltrametricDist K] [CompleteSpace K] where
   /-- The chosen pseudouniformizer. -/
   pseudoUniformizer : K

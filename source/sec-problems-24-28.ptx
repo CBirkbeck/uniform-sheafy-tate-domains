@@ -9,18 +9,20 @@ restrict to zero on a nonempty rational subspace <xref ref="bib-Scottish" detail
 The same rational datum, together with multiplicativity of the Gauss norm,
 answers both questions.  We keep the notation of the introduction.  In fact,
 the argument only uses that <m>k</m> is complete and ultrametric and that
-<m>0&lt;|\varpi|&lt;1</m>; neither conclusion uses sheafiness.
+<m>0&lt;|\varpi|&lt;1</m>; neither conclusion uses sheafiness.  For Problem<nbsp/>28 this
+answers the Tate-ring case; we do not address the separate perfectoid case.
   </p>
   <proposition xml:id="prop-problems-24-28">
     <statement>
       <p>
-        Let
+        Let <m>k</m> be any complete ultrametric normed field, choose
+<m>\varpi\in k^\times</m> with <m>0&lt;|\varpi|&lt;1</m>, and form <m>A</m> as above.  Let
 <me>U=\{x\in\Spa(A,A^\circ):|W(x)|\leq|\varpi(x)|\}.</me>
 Then <m>U</m> is nonempty, the rational localisation
 <me>A\longrightarrow \mathcal O(U)
     =A\left\langle\frac{W}{\varpi}\right\rangle</me>
-is not flat, and multiplication by <m>Q^2</m> is a strict inclusion on <m>A</m> even
-though <m>Q^2</m> maps to zero in <m>\mathcal O(U)</m>.
+is not flat, and multiplication by <m>Q^2</m> is a strict embedding with closed
+image even though <m>Q^2</m> maps to zero in <m>\mathcal O(U)</m>.
       </p>
     </statement>
     <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.IsFJPBase">Lean (hypothesis on the base field)</lean>

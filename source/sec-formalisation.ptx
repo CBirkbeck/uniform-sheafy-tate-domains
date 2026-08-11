@@ -3,16 +3,17 @@
   <title>Lean formalisation and verification</title>
   <introduction>
     <p>
-      This appendix records the Lean formalisation of the two examples.  The
-finite-jet declarations are taken from AINTLIB commit
-<c>b007a4f3d</c>, and the weighted-parity declarations from commit
-<c>090a28921</c>.  The comparison with Mathlib's sheaf predicate is taken
-from commit <c>d92f96504</c>, and the results on Scottish Book
-Problems<nbsp/>24 and 28 from commit <c>01116aca6</c>.  The strong-sheafiness
-statements are taken from commit <c>870d0eed2</c> <xref ref="bib-AINTLIB"/>.  For each
-example Lean proves the Tate structure and uniformity, proves that the ring is
-a domain but not noetherian, proves sheafiness and failure of stable
-uniformity, and verifies the rational chart calculation used in the proof.
+      This appendix records the Lean formalisation of the two examples.  The core
+finite-jet declarations are taken from AINTLIB commit <c>b007a4f3d</c>, and
+the general-base finite-jet and Scottish Book declarations from commit
+<c>01116aca6</c>.  The weighted-parity declarations are taken from commit
+<c>090a28921</c>, and the comparison with Mathlib's sheaf predicate from
+commit <c>d92f96504</c>.  The generic Koszul, pullback, Milnor-descent, and
+strong-sheafiness declarations are taken from commit <c>870d0eed2</c>
+<xref ref="bib-AINTLIB"/>.  For each example Lean proves the Tate structure and
+uniformity, proves that the ring is a domain but not noetherian, proves
+sheafiness and failure of stable uniformity, and verifies the rational chart
+calculation used in the proof.
     </p>
     <p>
       All five pinned commits are public in AINTLIB.  The interactive version of
@@ -98,7 +99,7 @@ identifies this with the usual compatibility on pairwise intersections.  Thus
 consists of compatible sections over the rational subdomains contained in
 <m>V</m>, or equivalently their projective limit.  If <m>W\subseteq V</m>, then
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.limitRestrict.html"><c>limitRestrict</c></url>
-is the map <m>\mathcal O_X(V)\to\mathcal O_X(W)</m> obtained by reindexing this
+is the map <m>\mathcal O(V)\to\mathcal O(W)</m> obtained by reindexing this
 family.  The corresponding all-open condition is <c>IsLimitSheaf</c>, from
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.IsLimitSheaf.html"><c>SheafyPair.lean</c></url>.
         </p>
@@ -177,7 +178,7 @@ This is Wedhorn's representable formulation <xref ref="bib-Wedhorn" detail="Rema
     (_ : IsTopologicalRing T), ∀ {ι : Type u} (U : ι → Opens X)
     (f : ∀ i, {g : T →+* (F.obj (op (U i)) : Type u) //
       Continuous g}),
-    (∀ i j,
+    (∀ i j : ι,
       (F.map (homOfLE (inf_le_left (a := U i) (b := U j))).op).1.comp
           (f i).1 =
         (F.map (homOfLE (inf_le_right (a := U i) (b := U j))).op).1.comp
@@ -311,8 +312,8 @@ the analytic specialisation of Wedhorn's Definition<nbsp/>8.26
 <xref ref="bib-Wedhorn" detail="Definition 8.26"/>.
     </p>
   </subsection>
-  <subsection xml:id="sec-formalisation-strong-noetherianity">
-    <title>Strong noetherianity</title>
+  <subsection xml:id="sec-formalisation-strong-noetherianity-and-sheafiness">
+    <title>Strong noetherianity and sheafiness</title>
     <definition xml:id="def-lean-strong-noetherianity">
       <title>Strong noetherianity</title>
       <statement>
@@ -345,7 +346,48 @@ is Wedhorn's definition of strong noetherianity
       <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="MvPowerSeries.IsRestricted">Lean (restricted series)</lean>
       <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="restrictedMvPowerSeriesSubring">Lean (restricted Tate algebra)</lean>
       <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="IsStronglyNoetherian">Lean (strong noetherianity)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="ValuationSpectrum.IsStronglyNoetherianTateRing">Lean (IsStronglyNoetherianTateRing)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="ValuationSpectrum.isSheafyTateRing_of_stronglyNoetherianTateRing">Lean (isSheafyTateRing_of_stronglyNoetherianTateRing)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="ValuationSpectrum.isSheafyFor_of_stronglyNoetherianTate">Lean (isSheafyFor_of_stronglyNoetherianTate)</lean>
+      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="ValuationSpectrum.isSheafyComplete_of_stronglyNoetherianTate">Lean (isSheafyComplete_of_stronglyNoetherianTate)</lean>
     </definition>
+    <p>
+      For a Tate ring which is not assumed complete, Lean packages the definition
+using one completion model.  The completion-comparison theorem proves that
+one model is equivalent to every model.  Wedhorn's sheafiness theorem is then
+formalised at the same level of generality:
+    </p>
+    <pre>
+    def IsStronglyNoetherianTateRing [IsTateRing A] : Prop :=
+  ∃ P : PairOfDefinition A,
+    IsStronglyNoetherian (CompletionModel A P)
+
+theorem isSheafyTateRing_of_stronglyNoetherianTateRing
+    [IsTateRing A] (h : IsStronglyNoetherianTateRing A) :
+    IsSheafyTateRing A := by
+  ...
+    </pre>
+    <p>
+      Thus one strongly noetherian completion model implies sheafiness for every
+completion model and every ring of integral elements.  For a complete Tate
+ring the specialization is:
+    </p>
+    <pre>
+    theorem isSheafyFor_of_stronglyNoetherianTate
+    [IsStronglyNoetherian A]
+    (Aplus : RingOfIntegralElements A) :
+    IsSheafyFor A Aplus := by
+  ...
+
+theorem isSheafyComplete_of_stronglyNoetherianTate
+    [IsStronglyNoetherian A] :
+    IsSheafyComplete A := by
+  ...
+    </pre>
+    <p>
+      These are the formal versions of Wedhorn's theorem that a strongly
+noetherian Tate ring is sheafy <xref ref="bib-Wedhorn" detail="Theorem 8.28(b)"/>.
+    </p>
   </subsection>
   <subsection xml:id="sec-formalisation-the-finite-jet-example">
     <title>The finite-jet example</title>
@@ -427,27 +469,10 @@ noetherianity of <c>unitBall K</c>.  This is the version of sheafiness proved
 directly for the example.  The equivalences above give the all-open and
 choice-independent statements.  The main theorems are collected in
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJetOver.finiteJet_isSheafyFor_of_dvr.html"><c>SheafyEndpoints</c></url>,
-and include the following.
+and include the following sheafiness statements.
     </p>
     <pre>
-    theorem finiteJet_isDomain : IsDomain (JetA K) := by
-  ...
-
-theorem finiteJet_not_noetherian :
-    ¬ IsNoetherianRing (JetA K) := by
-  ...
-
-theorem finiteJet_isUniform_of_dvr
-    [IsDiscreteValuationRing 𝒪[K]] :
-    TopologicalRing.IsUniform (JetA K) := by
-  ...
-
-theorem finiteJet_not_stablyUniform_of_dvr
-    [IsDiscreteValuationRing 𝒪[K]] :
-    ¬ TopologicalRing.IsStablyUniform (JetA K) := by
-  ...
-
-theorem finiteJet_isSheafyFor_of_dvr
+    theorem finiteJet_isSheafyFor_of_dvr
     [IsDiscreteValuationRing 𝒪[K]] :
     IsSheafyFor (JetA K) (finiteJetPlus K) := by
   ...
@@ -539,6 +564,35 @@ ultrametric normed field <m>K</m> equipped with a nonzero element <m>\varpi</m> 
     ‖pseudoUniformizer‖ &lt; 1
     </pre>
     <p>
+      At this weaker level Lean proves the conclusions of
+<xref ref="prop-uniform-domain"/>, <xref ref="prop-bad-chart"/>, <xref ref="prop-not-stably-uniform"/>; discreteness
+is not used:
+    </p>
+    <pre>
+    variable (K : Type*) [NormedField K] [IsUltrametricDist K]
+  [CompleteSpace K] [IsFJPBase K]
+
+theorem finiteJet_isUniform :
+    TopologicalRing.IsUniform (JetA K) := by
+  ...
+
+theorem finiteJet_isDomain : IsDomain (JetA K) := by
+  ...
+
+theorem finiteJet_not_noetherian :
+    ¬ IsNoetherianRing (JetA K) := by
+  ...
+
+theorem finiteJet_not_stablyUniform :
+    ¬ TopologicalRing.IsStablyUniform (JetA K) := by
+  ...
+    </pre>
+    <p>
+      In fact, the domain and non-noetherianity declarations do not use
+<c>IsFJPBase</c>; the pseudouniformizer is needed for the Tate topology,
+uniformity, and the bad chart.
+    </p>
+    <p>
       Sheafiness is a separate assertion in this newer interface.  The
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/FiniteJet.finiteJet_witnessRing_quality.html">corresponding Lean theorem</url>
 assumes the additional class <c>IsFJPNoetherianBase K</c>, which supplies the
@@ -589,9 +643,11 @@ localisation <c>Localization.Away</c> is always flat.  The failure is a
 property of the completion defining <c>presheafValue</c>.
     </p>
     <p>
-      The conclusions of <xref ref="lem-koszul"/> are formalised in the normed setting used
-for the example: <m>E</m> is one of <m>B,C,D</m>, <m>T_E</m> has its Gauss norm,
-<m>T_{E,0}</m> is its unit ball, and the finite free terms have their sup norms.
+      The conclusions of <xref ref="lem-koszul"/> are formalised for an arbitrary complete
+ultrametric normed commutative ring <m>E</m> with a norm-scaling topologically
+nilpotent unit, subject to the noetherianity hypotheses stated there.  The
+ring <m>T_E</m> has its Gauss norm, <m>T_{E,0}</m> is its unit ball, and the finite free
+terms have their sup norms.
 Positive-degree exactness is transported from the polynomial sequence
 by flat base change.  Closedness in positive degree comes from exactness and
 continuity, whilst the degree-zero ideal is closed by the noetherian
@@ -607,10 +663,23 @@ denominator inclusions <xref ref="eq-ideal-denominators"/> and
 Its localisation proof obtains the topological embedding from a quotient-norm
 estimate, and proves openness of <m>C_\alpha\to D_\alpha</m> from the
 norm-preserving coefficientwise section.  The components of
-<xref ref="prop-localized-milnor"/> are therefore separate declarations.  Finally,
-the development proves the concrete finite-jet transfer
-<c>isSheafy_JetA</c>: it pushes finite rational covers to <m>B,C,D</m>, glues
-there, and uses the localised Milnor row and a closed-range theorem.
+<xref ref="prop-localized-milnor"/> are therefore separate declarations.  The
+transfer step is formalised for arbitrary complete nonarchimedean Huber rings
+carrying the local equaliser data of <xref ref="thm-milnor-sheaf-transfer"/>:
+    </p>
+    <pre>
+    theorem isSheafy_of_milnorSquare
+    (phiB : R →+* B) (phiC : R →+* C) (phiD : R →+* D)
+    (hphiB : Continuous phiB) (hphiC : Continuous phiC)
+    (hphiD : Continuous phiD)
+    (sq : MilnorSquareData phiB phiC phiD hphiB hphiC hphiD)
+    (hB : IsSheafy B) (hC : IsSheafy C) (hD : IsSheafy D) :
+    IsSheafy R := by
+  ...
+    </pre>
+    <p>
+      The concrete finite-jet instance pushes finite rational covers to <m>B,C,D</m>
+and supplies the required local rows and their compatibility with restriction.
     </p>
     <p>
       The Koszul argument, the rational-chart calculation, and the transfer of
@@ -656,12 +725,15 @@ def idWeight : ℕ → ℕ := fun n => n
 abbrev WPAid : Type _ := WPA K idWeight
     </pre>
     <p>
-      The coordinate <m>t(0)</m> is the exponent of <m>W</m>; the other coordinates are the
-exponents of the <m>U_n</m>.  Thus <c>WPMem idWeight t</c> says exactly that
-<m>a\geq\omega(\nu)</m>, and <c>wpSupport</c> requires the coefficients outside
-this monoid to vanish.  It follows that
+      Lean indexes the variables by <m>\mathbb N</m> rather than <m>\mathbb N_{>0}</m>; the
+two conventions are equivalent here because the value <c>w 0</c> is ignored.
+The coordinate <m>t(0)</m> is the exponent of <m>W</m>; the other coordinates are the
+exponents of the <m>U_n</m>.  Thus <c>WPMem w t</c> says exactly that
+<m>a\geq\omega_w(\nu)</m>, and <c>wpSupport</c> requires the coefficients outside
+this monoid to vanish.  It follows that <c>WPA K w</c> is the ring
+<m>\mathcal A_w</m> of <xref ref="eq-parity-algebra"/>;
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.WPAid.html"><c>WPAid K</c></url>
-is the ring <m>\mathcal A</m> of <xref ref="eq-parity-algebra"/>.  The maps
+is the specialization <m>w(n)=n</m>.  The maps
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.constA.html"><c>constA</c></url> and
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.norm_constA.html"><c>norm_constA</c></url>
 give the isometric embedding of <m>K</m> as the constant series.  This map is
@@ -669,57 +741,68 @@ explicit in the development, although it is not bundled as an
 <c>Algebra K</c> instance.
     </p>
     <p>
-      Suppose that <m>K</m> is complete and nontrivially normed and that
-<m>\mathcal O[K]</m> is a DVR.  The principal exported statements are:
+      Suppose that <m>K</m> is complete, nontrivially normed and ultrametric, let
+<m>w:\mathbb N\to\mathbb N</m>, choose a <c>Uniformizer K</c>, and assume the
+norm unit ball of <m>K</m> is noetherian where indicated.  The principal generic
+statements are:
     </p>
     <pre>
-    theorem weightedParity_isUniform_of_dvr :
-    IsUniform (WPAid K) := by
+    theorem norm_wpa_mul (a b : WPA K w) :
+    ‖a * b‖ = ‖a‖ * ‖b‖ := by
   ...
 
-theorem weightedParity_isDomain :
-    IsDomain (WPAid K) := by
+instance : IsDomain (WPA K w) := by
   ...
 
-theorem weightedParity_not_noetherian :
-    ¬ IsNoetherianRing (WPAid K) := by
+theorem isUniform_WPA (ϖ : Uniformizer K) :
+    IsUniform (WPA K w) := by
   ...
 
-theorem weightedParity_powerBounded_eq_unitBall
-    (ϖ : Uniformizer K) :
-    powerBoundedSubring (WPAid K) =
-      (FiniteJet.unitBall (WPAid K) : Set (WPAid K)) := by
+theorem powerBoundedSubring_eq_unitBall (ϖ : Uniformizer K) :
+    powerBoundedSubring (WPA K w) =
+      (FiniteJet.unitBall (WPA K w) : Set (WPA K w)) := by
   ...
 
-theorem weightedParity_isSheafyComplete_of_dvr :
-    IsSheafyComplete (WPAid K) := by
+theorem not_isNoetherianRing_WPA
+    (hw : ∀ n, 1 ≤ n → 1 ≤ w n) :
+    ¬ IsNoetherianRing (WPA K w) := by
   ...
 
-theorem weightedParity_chart_isDomain
-    (ϖ : Uniformizer K)
+theorem wp_isSheafyComplete (ϖ : Uniformizer K)
+    (hK₀ : IsNoetherianRing (FiniteJet.unitBall K)) :
+    IsSheafyComplete (WPA K w) := by
+  ...
+
+theorem isDomain_chart (ϖ : Uniformizer K)
     (hK₀ : IsNoetherianRing (FiniteJet.unitBall K)) :
     IsDomain (presheafValue
-      (chartDatum (w := idWeight) ϖ)) := by
+      (chartDatum (w := w) ϖ)) := by
   ...
 
-theorem weightedParity_chart_not_isUniform
+theorem not_isUniform_chart
+    (hwu : ∀ M, ∃ n, 1 ≤ n ∧ M ≤ w n)
     (ϖ : Uniformizer K)
     (hK₀ : IsNoetherianRing (FiniteJet.unitBall K)) :
     ¬ IsUniform (presheafValue
-      (chartDatum (w := idWeight) ϖ)) := by
+      (chartDatum (w := w) ϖ)) := by
   ...
 
-theorem weightedParity_not_stablyUniform_of_dvr :
-    ¬ IsStablyUniform (WPAid K) := by
+theorem not_isStablyUniform_WPA
+    (hwu : ∀ M, ∃ n, 1 ≤ n ∧ M ≤ w n)
+    (ϖ : Uniformizer K)
+    (hK₀ : IsNoetherianRing (FiniteJet.unitBall K)) :
+    ¬ IsStablyUniform (WPA K w) := by
   ...
     </pre>
     <p>
       The strong-sheafiness statement is in
-<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.wp_tateExt_isSheafyComplete_of_dvr.html"><c>WP/StrongSheafy.lean</c></url>:
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.wp_tateExt_isSheafyComplete.html"><c>WP/StrongSheafy.lean</c></url>:
     </p>
     <pre>
-    theorem wp_tateExt_isSheafyComplete_of_dvr
-    [IsDiscreteValuationRing 𝒪[K]] (s : ℕ) :
+    theorem wp_tateExt_isSheafyComplete
+    (ϖ : Uniformizer K)
+    (hK₀ : IsNoetherianRing (FiniteJet.unitBall K))
+    (s : ℕ) :
     letI := mvTateAlgebraTopology' (A := WPA K w) s
     haveI := mvTate_isTateRing (A := WPA K w) s
     haveI := mvTate_t2Space (A := WPA K w) s
@@ -735,10 +818,11 @@ theorem weightedParity_not_stablyUniform_of_dvr :
   ...
     </pre>
     <p>
-      Taking <m>w=\texttt{idWeight}</m>, the restricted power-series subring is
-<m>\mathcal A\langle V_1,\ldots,V_s\rangle</m>.  Thus this theorem is precisely
-the strong sheafiness asserted in <xref ref="thm-parity-sheafy"/>, for the full
-DVR-base scope of the paper.
+      For every <m>w</m>, the restricted power-series subring is
+<m>\mathcal A_w\langle V_1,\ldots,V_s\rangle</m>.  Thus this theorem is precisely
+the general strong-sheafiness assertion in <xref ref="thm-parity-sheafy"/>; the
+separate <c>_of_dvr</c> endpoint packages the uniformizer and
+noetherianity hypotheses for a discretely valued base.
     </p>
     <p>
       Here <c>IsSheafyComplete</c> is the predicate defined above: it quantifies
@@ -750,8 +834,8 @@ presheaf.  The datum
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.chartDatum.html"><c>chartDatum</c></url>
 is <m>(W;\varpi)</m>, and
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.chartDatum_isRational.html"><c>chartDatum_isRational</c></url>
-checks that it defines the chart <m>|W|\leq|\varpi|</m>.  The two chart theorems
-then say precisely that its section ring is a domain but is not uniform.
+checks that it defines the chart <m>|W|\leq|\varpi|</m>.  The chart is a domain
+for every <m>w</m>, and it is not uniform whenever <m>w</m> is unbounded.
     </p>
     <p>
       The proof routes are the ones used in <xref ref="sec-second-example"/>.
@@ -779,7 +863,7 @@ norm-unit-ball version of the standard perturbation result cited in
     </p>
     <p>
       These declarations, including the
-<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.weightedParity_not_stablyUniform_of_dvr.html">final failure of stable uniformity</url>,
+<url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/WeightedParity.not_isStablyUniform_WPA.html">final failure of stable uniformity</url>,
 have been checked to use only the usual logical axioms
 <c>propext</c>, <c>Classical.choice</c>, and <c>Quot.sound</c>.
     </p>

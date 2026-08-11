@@ -59,6 +59,12 @@ However,
 so <m>A</m> is not stably uniform.
       </p>
     </statement>
+    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.IsFJPBase">Lean (hypothesis on the base field)</lean>
+    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_isUniform">Lean (finiteJet_isUniform)</lean>
+    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_isDomain">Lean (finiteJet_isDomain)</lean>
+    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_not_noetherian">Lean (finiteJet_not_noetherian)</lean>
+    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_not_stablyUniform">Lean (finiteJet_not_stablyUniform)</lean>
+    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.chartEquiv">Lean (chartEquiv)</lean>
     <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.JetA">Lean (finite-jet ring A)</lean>
     <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.jetSupport">Lean (coefficient condition defining A)</lean>
     <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.isClosed_jetSupport">Lean (isClosed_jetSupport)</lean>

@@ -1,6 +1,66 @@
 {
   "thm-main": [
     {
+      "decl": "FiniteJet.IsFJPBase",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FJPBase.lean",
+      "line": 45,
+      "cited": "Theorem 1.1 (the general complete ultrametric base-field hypothesis)",
+      "kind": "class",
+      "include_body": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
+      "decl": "FiniteJet.finiteJet_isUniform",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FiniteJetMain.lean",
+      "line": 37,
+      "cited": "Theorem 1.1 (uniformity over an arbitrary IsFJPBase field)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
+      "decl": "FiniteJet.finiteJet_isDomain",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FiniteJetMain.lean",
+      "line": 41,
+      "cited": "Theorem 1.1 (domain over an arbitrary IsFJPBase field)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
+      "decl": "FiniteJet.finiteJet_not_noetherian",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FiniteJetMain.lean",
+      "line": 45,
+      "cited": "Theorem 1.1 (non-noetherianity over an arbitrary IsFJPBase field)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
+      "decl": "FiniteJet.finiteJet_not_stablyUniform",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FiniteJetMain.lean",
+      "line": 49,
+      "cited": "Theorem 1.1 (failure of stable uniformity over an arbitrary IsFJPBase field)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
+      "decl": "FiniteJet.chartEquiv",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FiniteJetChart.lean",
+      "line": 1477,
+      "cited": "Theorem 1.1 (the bad rational chart over an arbitrary IsFJPBase field)",
+      "kind": "def",
+      "flagged": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
       "decl": "FiniteJetOver.JetA",
       "via": "manual",
       "file": "Adic spaces/FJP/Over/JetRings.lean",
@@ -108,6 +168,36 @@
   ],
   "prop-uniform-domain": [
     {
+      "decl": "FiniteJet.finiteJet_isUniform",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FiniteJetMain.lean",
+      "line": 37,
+      "cited": "Proposition 3.1 (uniformity over an arbitrary IsFJPBase field)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
+      "decl": "FiniteJet.finiteJet_isDomain",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FiniteJetMain.lean",
+      "line": 41,
+      "cited": "Proposition 3.1 (domain over an arbitrary IsFJPBase field)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
+      "decl": "FiniteJet.finiteJet_not_noetherian",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FiniteJetMain.lean",
+      "line": 45,
+      "cited": "Proposition 3.1 (non-noetherianity over an arbitrary IsFJPBase field)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
       "decl": "FiniteJetOver.isClosed_jetSupport",
       "via": "manual",
       "file": "Adic spaces/FJP/Over/JetRings.lean",
@@ -166,6 +256,44 @@
     }
   ],
   "prop-bad-chart": [
+    {
+      "decl": "FiniteJet.chartEquiv",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FiniteJetChart.lean",
+      "line": 1477,
+      "cited": "Proposition 4.1 (chart identification over an arbitrary IsFJPBase field)",
+      "kind": "def",
+      "flagged": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
+      "decl": "FiniteJet.chartEquiv_continuous",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FiniteJetChart.lean",
+      "line": 1482,
+      "cited": "Proposition 4.1 (continuity in the IsFJPBase formulation)",
+      "kind": "theorem",
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
+      "decl": "FiniteJet.chartEquiv_symm_continuous",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FiniteJetChart.lean",
+      "line": 1485,
+      "cited": "Proposition 4.1 (continuity of the inverse in the IsFJPBase formulation)",
+      "kind": "theorem",
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
+      "decl": "FiniteJet.chartEquiv_canonicalMap_W",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FiniteJetChart.lean",
+      "line": 1491,
+      "cited": "Proposition 4.1 (images of W and Q in the IsFJPBase formulation)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
     {
       "decl": "FiniteJetOver.chartDatum_isRational",
       "via": "manual",
@@ -298,6 +426,26 @@
   ],
   "prop-not-stably-uniform": [
     {
+      "decl": "FiniteJet.not_isUniform_chart",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FiniteJetChart.lean",
+      "line": 1555,
+      "cited": "Proposition 4.2 (nonuniform chart over an arbitrary IsFJPBase field)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
+      "decl": "FiniteJet.finiteJet_not_stablyUniform",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FiniteJetMain.lean",
+      "line": 49,
+      "cited": "Proposition 4.2 (failure of stable uniformity over an arbitrary IsFJPBase field)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
       "decl": "FiniteJetOver.not_isUniform_chart",
       "via": "manual",
       "file": "Adic spaces/FJP/Over/Chart.lean",
@@ -319,6 +467,16 @@
     }
   ],
   "lem-koszul": [
+    {
+      "decl": "FiniteJet.GraphKoszul.koszulGraph_exact_strict_closed",
+      "via": "manual",
+      "file": "Adic spaces/FJP/KoszulStrictClosed.lean",
+      "line": 230,
+      "cited": "Lemma 5.1 (general graph-Koszul exactness, strictness, and closed images)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
     {
       "decl": "FiniteJet.GraphKoszul.koszulGraph_restricted_exact",
       "via": "manual",
@@ -377,6 +535,45 @@
   ],
   "lem-graph-pullback": [
     {
+      "decl": "FiniteJet.Pinch.ext_pair_injective",
+      "via": "manual",
+      "file": "Adic spaces/FJP/CornerSquareLocalization.lean",
+      "line": 235,
+      "cited": "Lemma 5.2 (injectivity of the extended row for an abstract pinch square)",
+      "kind": "theorem",
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "FiniteJet.Pinch.ideal_row_surjective",
+      "via": "manual",
+      "file": "Adic spaces/FJP/CornerSquareLocalization.lean",
+      "line": 360,
+      "cited": "Lemma 5.2 (strict surjectivity of the ideal row for an abstract pinch square)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "FiniteJet.Pinch.ideal_pullback_controlled",
+      "via": "manual",
+      "file": "Adic spaces/FJP/CornerSquareLocalization.lean",
+      "line": 418,
+      "cited": "Lemma 5.2 (bounded ideal pullback for an abstract pinch square)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "FiniteJet.Pinch.isClosed_IA",
+      "via": "manual",
+      "file": "Adic spaces/FJP/CornerSquareLocalization.lean",
+      "line": 656,
+      "cited": "Lemma 5.2 (closed graph ideal for an abstract pinch square)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
       "decl": "FiniteJetOver.StrictLoc.ext_pair_injective",
       "via": "manual",
       "file": "Adic spaces/FJP/Over/StrictLocalization.lean",
@@ -415,6 +612,120 @@
     }
   ],
   "prop-localized-milnor": [
+    {
+      "decl": "FiniteJet.Pinch.loc_row_exact",
+      "via": "manual",
+      "file": "Adic spaces/FJP/CornerSquareLocalization.lean",
+      "line": 844,
+      "cited": "Proposition 5.3 (localized exact row for an abstract pinch square)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "FiniteJet.Pinch.loc_pair_isEmbedding",
+      "via": "manual",
+      "file": "Adic spaces/FJP/CornerSquareLocalization.lean",
+      "line": 1036,
+      "cited": "Proposition 5.3 (localized topological embedding for an abstract pinch square)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "FiniteJet.Pinch.locψC_lipschitz",
+      "via": "manual",
+      "file": "Adic spaces/FJP/CornerSquareLocalization.lean",
+      "line": 936,
+      "cited": "Proposition 5.3 (continuity of the abstract localized right leg)",
+      "kind": "theorem",
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "FiniteJet.Pinch.locψC_surjective",
+      "via": "manual",
+      "file": "Adic spaces/FJP/CornerSquareLocalization.lean",
+      "line": 1064,
+      "cited": "Proposition 5.3 (surjectivity of the abstract localized right leg)",
+      "kind": "theorem",
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "FiniteJet.Pinch.locψC_isOpenMap",
+      "via": "manual",
+      "file": "Adic spaces/FJP/CornerSquareLocalization.lean",
+      "line": 1088,
+      "cited": "Proposition 5.3 (openness and strictness of the abstract localized right leg)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "FiniteJet.Pinch.bridgeFwd_natural_B",
+      "via": "manual",
+      "file": "Adic spaces/FJP/CornerSquareBridge.lean",
+      "line": 758,
+      "cited": "Proposition 5.3 (naturality of the B-vertex graph bridge)",
+      "kind": "theorem",
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "FiniteJet.Pinch.bridgeFwd_natural_C",
+      "via": "manual",
+      "file": "Adic spaces/FJP/CornerSquareBridge.lean",
+      "line": 812,
+      "cited": "Proposition 5.3 (naturality of the C-vertex graph bridge)",
+      "kind": "theorem",
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "FiniteJet.Pinch.bridgeFwd_natural_legB",
+      "via": "manual",
+      "file": "Adic spaces/FJP/CornerSquareBridge.lean",
+      "line": 867,
+      "cited": "Proposition 5.3 (naturality along the B-to-D leg)",
+      "kind": "theorem",
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "FiniteJet.Pinch.bridgeFwd_natural_legC",
+      "via": "manual",
+      "file": "Adic spaces/FJP/CornerSquareBridge.lean",
+      "line": 947,
+      "cited": "Proposition 5.3 (naturality along the C-to-D leg)",
+      "kind": "theorem",
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "FiniteJet.Pinch.valueRow_injective",
+      "via": "manual",
+      "file": "Adic spaces/FJP/CornerSquareBridge.lean",
+      "line": 1030,
+      "cited": "Proposition 5.3 (value-level left exactness for an abstract pinch square)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "FiniteJet.Pinch.valueRow_glue",
+      "via": "manual",
+      "file": "Adic spaces/FJP/CornerSquareBridge.lean",
+      "line": 1064,
+      "cited": "Proposition 5.3 (value-level middle exactness for an abstract pinch square)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "FiniteJet.Pinch.valueRow_embedding",
+      "via": "manual",
+      "file": "Adic spaces/FJP/CornerSquareBridge.lean",
+      "line": 1133,
+      "cited": "Proposition 5.3 (value-level topological embedding for an abstract pinch square)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
     {
       "decl": "FiniteJetOver.StrictLoc.loc_row_exact",
       "via": "manual",
@@ -480,13 +791,25 @@
       "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     }
   ],
+  "thm-milnor-sheaf-transfer": [
+    {
+      "decl": "ValuationSpectrum.isSheafy_of_milnorSquare",
+      "via": "manual",
+      "file": "Adic spaces/MilnorSheafTransfer.lean",
+      "line": 366,
+      "cited": "Abstract Milnor-square transfer theorem for sheafiness",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    }
+  ],
   "thm-sheafy": [
     {
       "decl": "FiniteJetOver.isSheafy_JetA_of_dvr",
       "via": "manual",
       "file": "Adic spaces/FJP/Over/SheafTransfer.lean",
       "line": 737,
-      "cited": "Theorem 6.1 (finite rational-cover criterion constructed by Milnor transfer)",
+      "cited": "Corollary 6.2 (finite rational-cover criterion constructed by Milnor transfer)",
       "kind": "theorem",
       "flagged": true,
       "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
@@ -496,7 +819,7 @@
       "via": "manual",
       "file": "Adic spaces/FJP/Over/SheafyEndpoints.lean",
       "line": 274,
-      "cited": "Theorem 6.1 (the pair (A,A\u00b0))",
+      "cited": "Corollary 6.2 (the pair (A,A\u00b0))",
       "kind": "theorem",
       "flagged": true,
       "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
@@ -506,7 +829,7 @@
       "via": "manual",
       "file": "Adic spaces/FJP/Over/SheafyEndpoints.lean",
       "line": 330,
-      "cited": "Theorem 6.1 (completion- and plus-ring-independent strengthening)",
+      "cited": "Corollary 6.2 (completion- and plus-ring-independent strengthening)",
       "kind": "theorem",
       "flagged": true,
       "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
@@ -516,7 +839,7 @@
       "via": "manual",
       "file": "Adic spaces/FJP/Over/SheafyEndpoints.lean",
       "line": 337,
-      "cited": "Theorem 6.1 (all-open structure presheaf)",
+      "cited": "Corollary 6.2 (all-open structure presheaf)",
       "kind": "theorem",
       "flagged": true,
       "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
@@ -526,7 +849,7 @@
       "via": "manual",
       "file": "Adic spaces/FJP/StrongSheafy.lean",
       "line": 295,
-      "cited": "Theorem 6.1 (strong sheafiness, formalised for the Laurent-series model)",
+      "cited": "Corollary 6.2 (strong sheafiness, formalised for the Laurent-series model)",
       "kind": "theorem",
       "flagged": true,
       "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
@@ -541,6 +864,94 @@
       "cited": "Theorem 8.1 (Tate structure)",
       "kind": "theorem",
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+    },
+    {
+      "decl": "WeightedParity.norm_wpa_mul",
+      "via": "manual",
+      "file": "Adic spaces/WP/UniformDomain.lean",
+      "line": 41,
+      "cited": "Theorem 8.1 (multiplicative norm and domain, for an arbitrary weight)",
+      "kind": "theorem",
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "WeightedParity.isUniform_WPA",
+      "via": "manual",
+      "file": "Adic spaces/WP/UniformDomain.lean",
+      "line": 137,
+      "cited": "Theorem 8.1 (uniformity, for an arbitrary weight)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "WeightedParity.powerBoundedSubring_eq_unitBall",
+      "via": "manual",
+      "file": "Adic spaces/WP/UniformDomain.lean",
+      "line": 127,
+      "cited": "Theorem 8.1 (power-bounded elements, for an arbitrary weight)",
+      "kind": "theorem",
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "WeightedParity.not_isNoetherianRing_WPA",
+      "via": "manual",
+      "file": "Adic spaces/WP/Nonnoetherian.lean",
+      "line": 239,
+      "cited": "Theorem 8.1 (non-noetherianity for every positive weight)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "WeightedParity.wp_isSheafyComplete",
+      "via": "manual",
+      "file": "Adic spaces/WP/Sheafy.lean",
+      "line": 1771,
+      "cited": "Theorem 8.1 (sheafiness for every weight and every ring of integral elements)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "WeightedParity.isDomain_chart",
+      "via": "manual",
+      "file": "Adic spaces/WP/Chart.lean",
+      "line": 852,
+      "cited": "Theorem 8.1 (the rational chart is a domain for every weight)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "WeightedParity.not_isUniform_chart",
+      "via": "manual",
+      "file": "Adic spaces/WP/Chart.lean",
+      "line": 1080,
+      "cited": "Theorem 8.1 (nonuniform rational chart for every unbounded weight)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "WeightedParity.not_isStablyUniform_WPA",
+      "via": "manual",
+      "file": "Adic spaces/WP/Chart.lean",
+      "line": 1096,
+      "cited": "Theorem 8.1 (failure of stable uniformity for every unbounded weight)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "WeightedParity.wp_tateExt_isSheafyComplete",
+      "via": "manual",
+      "file": "Adic spaces/WP/StrongSheafy.lean",
+      "line": 57,
+      "cited": "Theorem 8.1 (strong sheafiness for an arbitrary weight)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
     },
     {
       "decl": "WeightedParity.weightedParity_isUniform_of_dvr",
@@ -643,6 +1054,34 @@
       "commit": "090a289211deb69117413e329325fe819aa7dbc2"
     },
     {
+      "decl": "WeightedParity.norm_wpa_mul",
+      "via": "manual",
+      "file": "Adic spaces/WP/UniformDomain.lean",
+      "line": 41,
+      "cited": "Weighted-parity uniform-domain proposition (multiplicative norm and domain, arbitrary weight)",
+      "kind": "theorem",
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "WeightedParity.isUniform_WPA",
+      "via": "manual",
+      "file": "Adic spaces/WP/UniformDomain.lean",
+      "line": 137,
+      "cited": "Weighted-parity uniform-domain proposition (uniformity, arbitrary weight)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "WeightedParity.powerBoundedSubring_eq_unitBall",
+      "via": "manual",
+      "file": "Adic spaces/WP/UniformDomain.lean",
+      "line": 127,
+      "cited": "Weighted-parity uniform-domain proposition (power-bounded elements, arbitrary weight)",
+      "kind": "theorem",
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
       "decl": "WeightedParity.weightedParity_isUniform_of_dvr",
       "via": "manual",
       "file": "Adic spaces/WP/Main.lean",
@@ -674,6 +1113,16 @@
   ],
   "prop-parity-nonnoetherian": [
     {
+      "decl": "WeightedParity.not_isNoetherianRing_WPA",
+      "via": "manual",
+      "file": "Adic spaces/WP/Nonnoetherian.lean",
+      "line": 239,
+      "cited": "Weighted-parity non-noetherianity proposition (arbitrary positive weight)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
       "decl": "WeightedParity.weightedParity_not_noetherian",
       "via": "manual",
       "file": "Adic spaces/WP/Main.lean",
@@ -685,6 +1134,36 @@
     }
   ],
   "thm-parity-sheafy": [
+    {
+      "decl": "WeightedParity.wp_isSheafyComplete",
+      "via": "manual",
+      "file": "Adic spaces/WP/Sheafy.lean",
+      "line": 1771,
+      "cited": "Weighted-parity sheafiness theorem (arbitrary weight, every ring of integral elements)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "WeightedParity.wp_stronglySheafy",
+      "via": "manual",
+      "file": "Adic spaces/WP/Sheafy.lean",
+      "line": 2421,
+      "cited": "Weighted-parity strong-sheafiness theorem in the shifted-weight model",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "WeightedParity.wp_tateExt_isSheafyComplete",
+      "via": "manual",
+      "file": "Adic spaces/WP/StrongSheafy.lean",
+      "line": 57,
+      "cited": "Weighted-parity strong-sheafiness theorem for the actual Tate extensions",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
     {
       "decl": "WeightedParity.weightedParity_isSheafyComplete_of_dvr",
       "via": "manual",
@@ -707,6 +1186,36 @@
     }
   ],
   "prop-weighted-chart-domain-nonuniform": [
+    {
+      "decl": "WeightedParity.isDomain_chart",
+      "via": "manual",
+      "file": "Adic spaces/WP/Chart.lean",
+      "line": 852,
+      "cited": "Weighted-parity chart proposition (domain, arbitrary weight)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "WeightedParity.not_isUniform_chart",
+      "via": "manual",
+      "file": "Adic spaces/WP/Chart.lean",
+      "line": 1080,
+      "cited": "Weighted-parity chart proposition (nonuniformity, arbitrary unbounded weight)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
+    {
+      "decl": "WeightedParity.not_isStablyUniform_WPA",
+      "via": "manual",
+      "file": "Adic spaces/WP/Chart.lean",
+      "line": 1096,
+      "cited": "Weighted-parity chart proposition (consequent failure of stable uniformity)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "870d0eed2c48a020109d766d2af89c3f47469a94"
+    },
     {
       "decl": "WeightedParity.weightedParity_chart_isDomain",
       "via": "manual",
@@ -1030,6 +1539,46 @@
       "line": 243,
       "cited": "Appendix A (strong noetherianity)",
       "kind": "class",
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
+      "decl": "ValuationSpectrum.IsStronglyNoetherianTateRing",
+      "via": "manual",
+      "file": "Adic spaces/StronglyNoetherianTransport.lean",
+      "line": 142,
+      "cited": "Appendix A (strong noetherianity for a possibly incomplete Tate ring)",
+      "kind": "def",
+      "include_body": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
+      "decl": "ValuationSpectrum.isSheafyTateRing_of_stronglyNoetherianTateRing",
+      "via": "manual",
+      "file": "Adic spaces/StronglyNoetherianTransport.lean",
+      "line": 159,
+      "cited": "Appendix A (strongly noetherian Tate rings are sheafy)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
+      "decl": "ValuationSpectrum.isSheafyFor_of_stronglyNoetherianTate",
+      "via": "manual",
+      "file": "Adic spaces/SheafyRing.lean",
+      "line": 125,
+      "cited": "Appendix A (complete strongly noetherian Tate ring, one chosen pair)",
+      "kind": "theorem",
+      "flagged": true,
+      "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+    },
+    {
+      "decl": "ValuationSpectrum.isSheafyComplete_of_stronglyNoetherianTate",
+      "via": "manual",
+      "file": "Adic spaces/SheafyRing.lean",
+      "line": 140,
+      "cited": "Appendix A (complete strongly noetherian Tate ring, every chosen pair)",
+      "kind": "theorem",
       "flagged": true,
       "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
     }

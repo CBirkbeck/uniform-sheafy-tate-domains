@@ -32,7 +32,7 @@
   <nav><a href="../../../paper.html">← Return to the paper</a></nav>
   <div class="kind">theorem</div>
   <h1>WeightedParity.wpHeadSupport_mono</h1>
-  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>If <code>N≤M</code>, every series involving only <code>W,U₁,…,U_N</code> also belongs to the ring involving only <code>W,U₁,…,U_M</code>; this is the inclusion <code>𝒜⁽ᴺ⁾⊆𝒜⁽ᴹ⁾</code>.</p></div></div>
+  <div class="doc"><div class="lean-doc lean-doc-curated"><p class="lean-doc-label"><strong>Mathematical summary.</strong></p><p>For every weight <code>w</code>, if <code>N≤M</code>, then every series involving only <code>W,U₁,…,U_N</code> also belongs to the ring involving only <code>W,U₁,…,U_M</code>; thus <code>𝒜_w⁽ᴺ⁾⊆𝒜_w⁽ᴹ⁾</code>.</p></div></div>
   <p class="meta">The mathematical summary is editorial text for this paper. The declaration below is extracted verbatim from the pinned source.</p>
   <p class="used-for"><strong>Used in the paper for:</strong> Lemma 8.2 (nested finite-variable rings)</p>
   <pre><code>theorem wpHeadSupport_mono {N M : ℕ} (h : N ≤ M) :
