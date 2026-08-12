@@ -15,7 +15,7 @@ criterion.
     \big\downarrow&amp;&amp;\big\downarrow\\
     B&amp;\longrightarrow&amp;D.
   \end{matrix}</me>
-Assume that rational data, covers, and matching families can be transported
+Assume that rational data, covers, and compatible families can be transported
 around the square, compatibly with restriction and passage to common
 refinements.  Suppose also that, for every rational datum on <m>R</m>, the equaliser
 and topological-embedding conclusions of <xref ref="prop-localized-milnor"/> hold for
@@ -25,7 +25,7 @@ the induced data.  If <m>B,C,D</m> are sheafy, then <m>R</m> is sheafy.
     <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="ValuationSpectrum.isSheafy_of_milnorSquare">Lean</lean>
     <proof>
       <p>
-        Let <m>U=\bigcup_iU_i</m> be a finite rational cover.  A matching family glues over
+        Let <m>U=\bigcup_iU_i</m> be a finite rational cover.  A compatible family glues over
 <m>B</m> and <m>C</m>.  The two resulting sections have the same image over <m>D</m>, so the
 equaliser property gives a unique section over <m>R</m>.  The topological-embedding
 property, together with the corresponding property for <m>B</m> and <m>C</m>, gives the

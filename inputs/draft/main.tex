@@ -910,7 +910,7 @@ Let $R,B,C,D$ be complete nonarchimedean Huber rings in a commutative square
     B&\longrightarrow&D.
   \end{matrix}
 \]
-Assume that rational data, covers, and matching families can be transported
+Assume that rational data, covers, and compatible families can be transported
 around the square, compatibly with restriction and passage to common
 refinements.  Suppose also that, for every rational datum on $R$, the equaliser
 and topological-embedding conclusions of \Cref{prop:localized-milnor} hold for
@@ -918,7 +918,7 @@ the induced data.  If $B,C,D$ are sheafy, then $R$ is sheafy.
 \end{theorem}
 
 \begin{proof}
-Let $U=\bigcup_iU_i$ be a finite rational cover.  A matching family glues over
+Let $U=\bigcup_iU_i$ be a finite rational cover.  A compatible family glues over
 $B$ and $C$.  The two resulting sections have the same image over $D$, so the
 equaliser property gives a unique section over $R$.  The topological-embedding
 property, together with the corresponding property for $B$ and $C$, gives the
@@ -1614,9 +1614,9 @@ $U$, and hence to some $U_i$, which gives $v\in V_i$.  We may therefore
 apply sheafiness of the strongly noetherian ring $\mathcal A^{(N)}$ to the
 cover $V=\bigcup_iV_i$.
 
-Let $(x_i)_i$ be a matching family and write
+Let $(x_i)_i$ be a compatible family and write
 $x_i=\sum_\mu x_{i,\mu}e_\mu$.  Since $\mathcal A^{(N)}$ is sheafy,
-the matching family $(x_{i,\mu})_i$ glues to a unique $q_\mu\in P$ for every
+the compatible family $(x_{i,\mu})_i$ glues to a unique $q_\mu\in P$ for every
 $\mu$.  It remains to check that $\lVert q_\mu\rVert\to0$.  The restrictions
 of the $q_\mu$ to every $P_i$ tend to zero because the coefficients of each
 $x_i$ do.  The product restriction map
@@ -2174,7 +2174,7 @@ state the corresponding ideal pullback, exactness and topological-embedding
 results for the general corner square used there.
 
 Finally, \texttt{MilnorSquareData} packages exactly the transport of rational
-data, covers and matching families, together with the local equaliser and
+data, covers and compatible families, together with the local equaliser and
 topological-embedding conditions of \Cref{thm:milnor-sheaf-transfer}.  The
 abstract theorem is:
 

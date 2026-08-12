@@ -469,7 +469,7 @@ results for the general corner square used there.
       </p>
       <p>
         Finally, <c>MilnorSquareData</c> packages exactly the transport of rational
-data, covers and matching families, together with the local equaliser and
+data, covers and compatible families, together with the local equaliser and
 topological-embedding conditions of <xref ref="thm-milnor-sheaf-transfer"/>.  The
 abstract theorem is:
       </p>

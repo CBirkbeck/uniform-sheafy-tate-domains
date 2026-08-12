@@ -627,9 +627,9 @@ apply sheafiness of the strongly noetherian ring <m>\mathcal A^{(N)}</m> to the
 cover <m>V=\bigcup_iV_i</m>.
         </p>
         <p>
-          Let <m>(x_i)_i</m> be a matching family and write
+          Let <m>(x_i)_i</m> be a compatible family and write
 <m>x_i=\sum_\mu x_{i,\mu}e_\mu</m>.  Since <m>\mathcal A^{(N)}</m> is sheafy,
-the matching family <m>(x_{i,\mu})_i</m> glues to a unique <m>q_\mu\in P</m> for every
+the compatible family <m>(x_{i,\mu})_i</m> glues to a unique <m>q_\mu\in P</m> for every
 <m>\mu</m>.  It remains to check that <m>\lVert q_\mu\rVert\to0</m>.  The restrictions
 of the <m>q_\mu</m> to every <m>P_i</m> tend to zero because the coefficients of each
 <m>x_i</m> do.  The product restriction map
