@@ -86,10 +86,7 @@ argument in <xref ref="sec-problems-24-28"/>.
   </p>
   <p>
     The key element in this example is that after the rational localisation
-<m>A\to A\langle W/\varpi\rangle</m>, <m>Q^2</m> vanishes whereas <m>Q</m> does not.
-  </p>
-  <p>
-    The proof uses Milnor squares of complete Tate rings.  Recall that a cartesian square of
+<m>A\to A\langle W/\varpi\rangle</m>, <m>Q^2</m> vanishes whereas <m>Q</m> does not. The proof uses Milnor squares of complete Tate rings.  Recall that a cartesian square of
 rings with a surjective leg is called a Milnor square <xref ref="bib-Milnor" detail="Section 2"/>; the
 complete Tate setting is used by Kerz<ndash/>Saito<ndash/>Tamme in their work on analytic
 <m>K</m>-theory <xref ref="bib-KST" detail="Section 3"/>.

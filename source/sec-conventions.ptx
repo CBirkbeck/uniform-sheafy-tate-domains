@@ -74,10 +74,9 @@ and
 <me>I_{E,\alpha}:=(r_1,\dots,r_m)
   =\operatorname{im}\left(
     T_E^m\xrightarrow{\ d_{1,E}\ }T_E
-  \right)\subset T_E,
-  \qquad
-  d_{1,E}(u_1,\dots,u_m)=\sum_i u_i(gT_i-f_i).</me>
-Then
+  \right)\subset T_E,</me>
+  where
+  <m>d_{1,E}(u_1,\dots,u_m)=\sum_i u_i(gT_i-f_i).</m> Then we have
         <men xml:id="eq-graph-model">E_\alpha\cong T_E/\overline{I_{E,\alpha}}.</men>
         Here the bar is necessary until the ideal has been shown to be closed.  This is the
 standard quotient presentation of rational localisation; see

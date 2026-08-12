@@ -336,8 +336,7 @@ together with continuity, this says that it is strict.
     <p>
       Applying the preceding two results to the finite-jet square gives the strict
 localised Milnor rows used below.  For this square, the coefficient maps in
-the identifications commute with rational restriction; this is proved
-separately from presentation independence and transitivity.  The same
+the identifications commute with rational restriction.  The same
 abstract result applies after adjoining any finite number of Tate variables.
     </p>
   </subsection>
