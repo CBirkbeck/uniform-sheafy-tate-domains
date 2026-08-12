@@ -84,8 +84,9 @@ uniform Tate Huber ring is sheafy, but leaves open whether every uniform sheafy
 Tate Huber ring is stably uniform \cite{BV,Mihara}.  Hansen and Kedlaya ask
 this explicitly \cite[Remark~3.16]{HK}; it is also Question~7 of Kedlaya's
 \emph{Nonarchimedean Scottish Book} \cite{Scottish}.  We answer this question
-by constructing uniform and sheafy Tate rings that are not stably uniform.  In
-fact, we prove the stronger statement that both examples are strongly sheafy.
+in the negative, by constructing uniform and sheafy Tate rings that are not
+stably uniform.  In fact, we prove the stronger statement that both examples
+are strongly sheafy.
 Both are non-noetherian, so neither Huber's theorem for strongly noetherian
 Tate rings nor the stably uniform criterion applies.
 
@@ -1760,8 +1761,13 @@ cases, saying \emph{an example exists; find it} often produces an example.
 
 This appendix records the Lean definitions and theorem statements.  Theorem
 listings stop before their proof terms, and the links open the checked declarations.  The
-main development is on the
-\href{https://github.com/CBirkbeck/AINTLIB/tree/wp/strengthenings}{\texttt{wp/strengthenings} branch of AINTLIB} \cite{AINTLIB}, with exact links below for declarations on other public branches.  It uses
+formalisation is available as a self-contained repository,
+\href{https://github.com/CBirkbeck/uniform-sheafy-tate-domains-lean}{\texttt{uniform-sheafy-tate-domains-lean}} \cite{SheafyLean},
+which carries the adic-spaces library, both examples and the Comparator
+certificates, and has mathlib as its only dependency.  It is extracted from the
+development repository AINTLIB \cite{AINTLIB}, whose commits the per-declaration
+links below pin; a few of those declarations sit on other public branches there.
+It uses
 Lean~4.33.0 \cite{Lean4} and mathlib~4.33.0 \cite{mathlib}.  The headline
 statements for both examples have been checked with
 \href{https://github.com/leanprover/comparator}{Comparator}, which compares
@@ -2341,17 +2347,17 @@ source-file headers.
 \bibitem{AINTLIB}
 C.~Birkbeck and contributors,
 \emph{AINTLIB: AdicSpaces formalisation},
-Lean~4 source code, finite-jet snapshot
-\href{https://github.com/CBirkbeck/AINTLIB/commit/b007a4f3d4226f00a684b402715aa542e2f0bcdc}{\texttt{b007a4f3d}},
-weighted-parity snapshot
-\href{https://github.com/CBirkbeck/AINTLIB/commit/090a289211deb69117413e329325fe819aa7dbc2}{\texttt{090a28921}},
-sheaf-comparison snapshot
-\href{https://github.com/CBirkbeck/AINTLIB/commit/d92f96504f949ca43a27a817cb8d2f70b6486744}{\texttt{d92f96504}},
-abstract-base Scottish Book snapshot
+Lean~4 source code, Scottish Book snapshot
 \href{https://github.com/CBirkbeck/AINTLIB/commit/01116aca6070283726008536cba16d165a01b505}{\texttt{01116aca6}},
-and strong-sheafiness snapshot
-\href{https://github.com/CBirkbeck/AINTLIB/commit/f1436c8be64350bf652c58c074d0576a58006886}{\texttt{f1436c8be}},
 2026, \href{https://github.com/CBirkbeck/AINTLIB}{GitHub repository}.
+
+\bibitem{SheafyLean}
+C.~Birkbeck and A.~Torzewski,
+\emph{Uniform sheafy Tate rings that are not stably uniform: the Lean
+formalisation},
+Lean~4 source code, snapshot
+\href{https://github.com/CBirkbeck/uniform-sheafy-tate-domains-lean/commit/97cdc6dc6227281061062a3c924281433ce91253}{\texttt{97cdc6dc6}},
+2026, \href{https://github.com/CBirkbeck/uniform-sheafy-tate-domains-lean}{GitHub repository}.
 
 \bibitem{BBK}
 O.~Ben-Bassat and K.~Kremnizer,

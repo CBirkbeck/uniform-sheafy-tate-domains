@@ -46,25 +46,25 @@ stable uniformity need not be caused by a nilpotent in the bad rational
 localisation.
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.isTateRing_WPA">Lean (Tate structure)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.norm_wpa_mul">Lean (norm_wpa_mul)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.isUniform_WPA">Lean (isUniform_WPA)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.powerBoundedSubring_eq_unitBall">Lean (powerBoundedSubring_eq_unitBall)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.not_isNoetherianRing_WPA">Lean (not_isNoetherianRing_WPA)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.wp_isSheafyComplete">Lean (wp_isSheafyComplete)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.isDomain_chart">Lean (isDomain_chart)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.not_isUniform_chart">Lean (not_isUniform_chart)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.not_isStablyUniform_WPA">Lean (not_isStablyUniform_WPA)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.wp_tateExt_isSheafyComplete">Lean (wp_tateExt_isSheafyComplete)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isUniform_of_dvr">Lean (uniformity)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isDomain">Lean (domain)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_powerBounded_eq_unitBall">Lean (power-bounded elements)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_not_noetherian">Lean (non-noetherianity)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isSheafyComplete_of_dvr">Lean (sheafiness)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_chart_isDomain">Lean (chart is a domain)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_chart_not_isUniform">Lean (chart is nonuniform)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_not_stablyUniform_of_dvr">Lean (weightedParity_not_stablyUniform_of_dvr)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.wp_tateExt_isSheafyComplete_of_dvr">Lean (wp_tateExt_isSheafyComplete_of_dvr)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.isTateRing_WPA">Lean (Tate structure)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.norm_wpa_mul">Lean (norm_wpa_mul)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.isUniform_WPA">Lean (isUniform_WPA)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.powerBoundedSubring_eq_unitBall">Lean (powerBoundedSubring_eq_unitBall)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.not_isNoetherianRing_WPA">Lean (not_isNoetherianRing_WPA)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.wp_isSheafyComplete">Lean (wp_isSheafyComplete)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.isDomain_chart">Lean (isDomain_chart)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.not_isUniform_chart">Lean (not_isUniform_chart)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.not_isStablyUniform_WPA">Lean (not_isStablyUniform_WPA)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.wp_tateExt_isSheafyComplete">Lean (wp_tateExt_isSheafyComplete)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.weightedParity_isUniform_of_dvr">Lean (uniformity)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.weightedParity_isDomain">Lean (domain)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.weightedParity_powerBounded_eq_unitBall">Lean (power-bounded elements)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.weightedParity_not_noetherian">Lean (non-noetherianity)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.weightedParity_isSheafyComplete_of_dvr">Lean (sheafiness)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.weightedParity_chart_isDomain">Lean (chart is a domain)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.weightedParity_chart_not_isUniform">Lean (chart is nonuniform)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.weightedParity_not_stablyUniform_of_dvr">Lean (weightedParity_not_stablyUniform_of_dvr)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.wp_tateExt_isSheafyComplete_of_dvr">Lean (wp_tateExt_isSheafyComplete_of_dvr)</lean>
     </theorem>
     <p>
       Taking <m>w(n)=n</m> gives the example announced in the introduction.  We prove
@@ -148,15 +148,15 @@ In particular,
           <men xml:id="eq-A-completion-finite-variables">\mathcal A=\widehat{\bigcup_{N\geq0}\mathcal A^{(N)}}.</men>
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.evenSupportEquiv">Lean (even Tate algebra)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.norm_evenSupportEquiv">Lean (norm preservation)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.sum_slice_mul_Ypat">Lean (finite decomposition)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.moduleFinite_head_over_even">Lean (finite module)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.isTateRing_WPHead">Lean (Tate structure)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.isStronglyNoetherian_WPHead">Lean (strong noetherianity)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.wpHeadSupport_mono">Lean (nested finite-variable rings)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.norm_headIncl">Lean (isometric inclusion)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.exists_head_approx">Lean (approximation and density)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.evenSupportEquiv">Lean (even Tate algebra)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.norm_evenSupportEquiv">Lean (norm preservation)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.sum_slice_mul_Ypat">Lean (finite decomposition)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.moduleFinite_head_over_even">Lean (finite module)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.isTateRing_WPHead">Lean (Tate structure)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.isStronglyNoetherian_WPHead">Lean (strong noetherianity)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.wpHeadSupport_mono">Lean (nested finite-variable rings)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.norm_headIncl">Lean (isometric inclusion)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.exists_head_approx">Lean (approximation and density)</lean>
       <proof>
         <p>
           On even exponents, halving the <m>U_n</m>-coordinates identifies the support
@@ -191,13 +191,13 @@ sum of monomials and choose <m>N</m> so that only
 <me>\mathcal A_w^\circ=\mathcal A_{w,0}.</me>
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.isTateRing_WPA">Lean (Tate structure)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.norm_wpa_mul">Lean (norm_wpa_mul)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.isUniform_WPA">Lean (isUniform_WPA)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.powerBoundedSubring_eq_unitBall">Lean (powerBoundedSubring_eq_unitBall)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isUniform_of_dvr">Lean (uniformity)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isDomain">Lean (domain)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_powerBounded_eq_unitBall">Lean (power-bounded elements)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.isTateRing_WPA">Lean (Tate structure)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.norm_wpa_mul">Lean (norm_wpa_mul)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.isUniform_WPA">Lean (isUniform_WPA)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.powerBoundedSubring_eq_unitBall">Lean (powerBoundedSubring_eq_unitBall)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.weightedParity_isUniform_of_dvr">Lean (uniformity)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.weightedParity_isDomain">Lean (domain)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.weightedParity_powerBounded_eq_unitBall">Lean (power-bounded elements)</lean>
       <proof>
         <p>
           Let <m>f</m> and <m>g</m> be nonzero elements of
@@ -248,8 +248,8 @@ code <xref ref="bib-CoramCode"/>.
           If <m>w(n)\geq1</m> for every <m>n\geq1</m>, then <m>\mathcal A_w</m> is not noetherian.
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.not_isNoetherianRing_WPA">Lean (not_isNoetherianRing_WPA)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_not_noetherian">Lean (non-noetherianity)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.not_isNoetherianRing_WPA">Lean (not_isNoetherianRing_WPA)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.weightedParity_not_noetherian">Lean (non-noetherianity)</lean>
       <proof>
         <p>
           Assume that <m>w(n)\geq1</m> for every <m>n\geq1</m>.  For <m>m\geq1</m>, let
@@ -303,12 +303,12 @@ the tuple <m>\alpha'=(f_1',\ldots,f_m';g')</m> is a rational datum and
 bicontinuously isomorphic over <m>E</m>.
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.PerturbSetup.datum_isRational">Lean (datum_isRational)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.PerturbSetup.rationalOpen_datum">Lean (rationalOpen_datum)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.PerturbSetup.equiv">Lean (equiv)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.PerturbSetup.equiv_continuous">Lean (equiv_continuous)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.PerturbSetup.equiv_symm_continuous">Lean (equiv_symm_continuous)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.PerturbSetup.equiv_canonicalMap">Lean (equiv_canonicalMap)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.PerturbSetup.datum_isRational">Lean (datum_isRational)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.PerturbSetup.rationalOpen_datum">Lean (rationalOpen_datum)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.PerturbSetup.equiv">Lean (equiv)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.PerturbSetup.equiv_continuous">Lean (equiv_continuous)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.PerturbSetup.equiv_symm_continuous">Lean (equiv_symm_continuous)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.PerturbSetup.equiv_canonicalMap">Lean (equiv_canonicalMap)</lean>
       <proof>
         <p>
           Apply <xref ref="bib-Huber93" detail="Lemma 3.10"/> after including <m>g</m> among the
@@ -368,10 +368,10 @@ then the induced restriction sends
   \sum_\mu (p_\mu|_{P'})e_\mu.</me>
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.coeffLocEquiv">Lean (coefficientwise equivalence)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.coeffLocEquiv_continuous">Lean (continuity)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.coeffLocEquiv_symm_continuous">Lean (continuous inverse)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.coeffLoc_restriction_squareP">Lean (restriction is coefficientwise)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.coeffLocEquiv">Lean (coefficientwise equivalence)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.coeffLocEquiv_continuous">Lean (continuity)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.coeffLocEquiv_symm_continuous">Lean (continuous inverse)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.coeffLoc_restriction_squareP">Lean (restriction is coefficientwise)</lean>
       <proof>
         <p>
           Apply the canonical map <m>\mathcal A^{(N)}\to P</m> to every coefficient in
@@ -431,8 +431,8 @@ where <m>P</m> is a rational localisation of the strongly noetherian Tate ring
 <m>\mathcal A^{(N)}</m>.
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.HeadModelData">Lean (finite-variable model)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.nonempty_headModelData">Lean (existence of the model)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.HeadModelData">Lean (finite-variable model)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.nonempty_headModelData">Lean (existence of the model)</lean>
       <proof>
         <p>
           Start with a rational datum
@@ -486,13 +486,13 @@ these rings to <m>\mathcal B</m> and <m>\mathcal B_0</m> when <m>w</m> is unders
   \qquad W\longmapsto\varpi X.</me>
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.chartDatum">Lean (chartDatum)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.coeffLocEquiv">Lean (coefficientwise equivalence)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.coeffLocEquiv_continuous">Lean (continuity)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.coeffLocEquiv_symm_continuous">Lean (continuous inverse)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.chartQHeadEquiv">Lean (finite-variable chart ≃ k⟨X⟩)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.chartQHeadEquiv_norm">Lean (isometric identification)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.chartCoeff_WaHead">Lean (W ↦ ϖX)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.chartDatum">Lean (chartDatum)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.coeffLocEquiv">Lean (coefficientwise equivalence)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.coeffLocEquiv_continuous">Lean (continuity)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.coeffLocEquiv_symm_continuous">Lean (continuous inverse)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.chartQHeadEquiv">Lean (finite-variable chart ≃ k⟨X⟩)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.chartQHeadEquiv_norm">Lean (isometric identification)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.chartCoeff_WaHead">Lean (W ↦ ϖX)</lean>
       <proof>
         <p>
           The datum <m>(W;\varpi)</m> lies in
@@ -527,11 +527,11 @@ multiplied by <m>\varpi^{\omega(\nu)}</m>.  The map from
 is unbounded, then <m>\mathcal B_w</m> is not uniform.
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.isDomain_chart">Lean (isDomain_chart)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.not_isUniform_chart">Lean (not_isUniform_chart)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.not_isStablyUniform_WPA">Lean (not_isStablyUniform_WPA)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_chart_isDomain">Lean (chart is a domain)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_chart_not_isUniform">Lean (chart is nonuniform)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.isDomain_chart">Lean (isDomain_chart)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.not_isUniform_chart">Lean (not_isUniform_chart)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.not_isStablyUniform_WPA">Lean (not_isStablyUniform_WPA)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.weightedParity_chart_isDomain">Lean (chart is a domain)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.weightedParity_chart_not_isUniform">Lean (chart is nonuniform)</lean>
       <proof>
         <p>
           Put <m>R=k\langle X\rangle</m>.  Here
@@ -591,11 +591,11 @@ is sheafy.  In particular, <m>\mathcal A_w</m> is strongly sheafy.  No positivit
 or unboundedness hypothesis on <m>w</m> is needed here.
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.wp_isSheafyComplete">Lean (wp_isSheafyComplete)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.wp_stronglySheafy">Lean (wp_stronglySheafy)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.wp_tateExt_isSheafyComplete">Lean (wp_tateExt_isSheafyComplete)</lean>
-      <lean project="AdicSpaces" commit="090a289211deb69117413e329325fe819aa7dbc2" ref="WeightedParity.weightedParity_isSheafyComplete_of_dvr">Lean (sheafiness)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="WeightedParity.wp_tateExt_isSheafyComplete_of_dvr">Lean (wp_tateExt_isSheafyComplete_of_dvr)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.wp_isSheafyComplete">Lean (wp_isSheafyComplete)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.wp_stronglySheafy">Lean (wp_stronglySheafy)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.wp_tateExt_isSheafyComplete">Lean (wp_tateExt_isSheafyComplete)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.weightedParity_isSheafyComplete_of_dvr">Lean (sheafiness)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="WeightedParity.wp_tateExt_isSheafyComplete_of_dvr">Lean (wp_tateExt_isSheafyComplete_of_dvr)</lean>
       <proof>
         <p>
           We first work with a finite rational cover <m>U=\bigcup_iU_i</m>.  Choose one

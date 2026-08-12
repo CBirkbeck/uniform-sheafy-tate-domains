@@ -84,15 +84,15 @@ integral domain.  Moreover,
 <me>A^\circ=A_0.</me>
       </p>
     </statement>
-    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_isUniform">Lean (finiteJet_isUniform)</lean>
-    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_isDomain">Lean (finiteJet_isDomain)</lean>
-    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_not_noetherian">Lean (finiteJet_not_noetherian)</lean>
-    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.isClosed_jetSupport">Lean (isClosed_jetSupport)</lean>
-    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.isTateRing_JetA">Lean (isTateRing_JetA)</lean>
-    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_isUniform_of_dvr">Lean (finiteJet_isUniform_of_dvr)</lean>
-    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.isPowerBounded_JetA_iff">Lean (isPowerBounded_JetA_iff)</lean>
-    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_isDomain">Lean (finiteJet_isDomain)</lean>
-    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_not_noetherian">Lean (finiteJet_not_noetherian)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.finiteJet_isUniform">Lean (finiteJet_isUniform)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.finiteJet_isDomain">Lean (finiteJet_isDomain)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.finiteJet_not_noetherian">Lean (finiteJet_not_noetherian)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.isClosed_jetSupport">Lean (isClosed_jetSupport)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.isTateRing_JetA">Lean (isTateRing_JetA)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.finiteJet_isUniform_of_dvr">Lean (finiteJet_isUniform_of_dvr)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.isPowerBounded_JetA_iff">Lean (isPowerBounded_JetA_iff)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.finiteJet_isDomain">Lean (finiteJet_isDomain)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.finiteJet_not_noetherian">Lean (finiteJet_not_noetherian)</lean>
     <proof>
       <p>
         The Gauss norm on <m>L=k\langle W,W^{-1}\rangle</m> is multiplicative, and the

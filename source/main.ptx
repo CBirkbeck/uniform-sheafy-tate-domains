@@ -46,7 +46,10 @@ uniformity, and their strong sheafiness have been formalised in Lean<nbsp/>4.
       <references xml:id="references">
       <title>References</title>
       <biblio type="raw" xml:id="bib-AINTLIB">
-      C.<nbsp/>Birkbeck and contributors, <em>AINTLIB: AdicSpaces formalisation</em>, Lean<nbsp/>4 source code, finite-jet snapshot <url href="https://github.com/CBirkbeck/AINTLIB/commit/b007a4f3d4226f00a684b402715aa542e2f0bcdc"><c>b007a4f3d</c></url>, weighted-parity snapshot <url href="https://github.com/CBirkbeck/AINTLIB/commit/090a289211deb69117413e329325fe819aa7dbc2"><c>090a28921</c></url>, sheaf-comparison snapshot <url href="https://github.com/CBirkbeck/AINTLIB/commit/d92f96504f949ca43a27a817cb8d2f70b6486744"><c>d92f96504</c></url>, abstract-base Scottish Book snapshot <url href="https://github.com/CBirkbeck/AINTLIB/commit/01116aca6070283726008536cba16d165a01b505"><c>01116aca6</c></url>, and strong-sheafiness snapshot <url href="https://github.com/CBirkbeck/AINTLIB/commit/f1436c8be64350bf652c58c074d0576a58006886"><c>f1436c8be</c></url>, 2026, <url href="https://github.com/CBirkbeck/AINTLIB">GitHub repository</url>.
+      C.<nbsp/>Birkbeck and contributors, <em>AINTLIB: AdicSpaces formalisation</em>, Lean<nbsp/>4 source code, Scottish Book snapshot <url href="https://github.com/CBirkbeck/AINTLIB/commit/01116aca6070283726008536cba16d165a01b505"><c>01116aca6</c></url>, 2026, <url href="https://github.com/CBirkbeck/AINTLIB">GitHub repository</url>.
+      </biblio>
+      <biblio type="raw" xml:id="bib-SheafyLean">
+      C.<nbsp/>Birkbeck and A.<nbsp/>Torzewski, <em>Uniform sheafy Tate rings that are not stably uniform: the Lean formalisation</em>, Lean<nbsp/>4 source code, snapshot <url href="https://github.com/CBirkbeck/uniform-sheafy-tate-domains-lean/commit/97cdc6dc6227281061062a3c924281433ce91253"><c>97cdc6dc6</c></url>, 2026, <url href="https://github.com/CBirkbeck/uniform-sheafy-tate-domains-lean">GitHub repository</url>.
       </biblio>
       <biblio type="raw" xml:id="bib-BBK">
       O.<nbsp/>Ben-Bassat and K.<nbsp/>Kremnizer, <em>Non-Archimedean analytic geometry as relative algebraic geometry</em>, Ann. Fac. Sci. Toulouse Math. (6) <alert>26</alert> (2017), no.<nbsp/>1, 49<ndash/>126, <url href="https://doi.org/10.5802/afst.1526">DOI</url>.

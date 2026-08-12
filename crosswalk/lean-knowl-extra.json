@@ -1,5 +1,5 @@
 {
-  "commit": "b007a4f3d4226f00a684b402715aa542e2f0bcdc",
+  "commit": "97cdc6dc6227281061062a3c924281433ce91253",
   "declarations": [
     {
       "decl": "ValuationSpectrum.presheafValue",
@@ -7,7 +7,8 @@
       "line": 296,
       "kind": "def",
       "include_body": true,
-      "cited": "Appendix: sections on a rational domain"
+      "cited": "Appendix: sections on a rational domain",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.HasLocLiftPowerBounded",
@@ -15,7 +16,8 @@
       "line": 1569,
       "kind": "class",
       "include_body": true,
-      "cited": "Appendix: construction of rational restriction maps"
+      "cited": "Appendix: construction of rational restriction maps",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.RationalCoveringData",
@@ -23,7 +25,8 @@
       "line": 1895,
       "kind": "structure",
       "include_body": true,
-      "cited": "Appendix: finite rational covering data"
+      "cited": "Appendix: finite rational covering data",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.RationalCoveringData.IsRational",
@@ -31,7 +34,8 @@
       "line": 1912,
       "kind": "def",
       "include_body": true,
-      "cited": "Appendix: rationality of a finite covering"
+      "cited": "Appendix: rationality of a finite covering",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.limitSections",
@@ -39,7 +43,8 @@
       "line": 132,
       "kind": "def",
       "include_body": true,
-      "cited": "Appendix: sections on an arbitrary open"
+      "cited": "Appendix: sections on an arbitrary open",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.limitRestrict",
@@ -47,7 +52,8 @@
       "line": 218,
       "kind": "def",
       "include_body": true,
-      "cited": "Appendix: restriction between arbitrary opens"
+      "cited": "Appendix: restriction between arbitrary opens",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.IsSheafy",
@@ -55,7 +61,8 @@
       "line": 371,
       "kind": "class",
       "include_body": true,
-      "cited": "Appendix: finite-rational-cover sheafiness"
+      "cited": "Appendix: finite-rational-cover sheafiness",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.IsLimitSheaf",
@@ -63,14 +70,16 @@
       "line": 525,
       "kind": "structure",
       "include_body": true,
-      "cited": "Appendix: all-open sheaf condition"
+      "cited": "Appendix: all-open sheaf condition",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.isSheafy_iff_isLimitSheaf",
       "file": "Adic spaces/SheafyPair.lean",
       "line": 727,
       "kind": "theorem",
-      "cited": "Appendix: equivalence of rational-cover and all-open definitions"
+      "cited": "Appendix: equivalence of rational-cover and all-open definitions",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.IsSheafOfTopologicalRings",
@@ -78,14 +87,16 @@
       "line": 291,
       "kind": "def",
       "include_body": true,
-      "cited": "Appendix: Wedhorn's representable formulation"
+      "cited": "Appendix: Wedhorn's representable formulation",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.isSheafOfTopologicalRings_iff_isLimitSheaf",
       "file": "Adic spaces/StructurePresheafBundled.lean",
       "line": 442,
       "kind": "theorem",
-      "cited": "Appendix: equivalence with Wedhorn's formulation"
+      "cited": "Appendix: equivalence with Wedhorn's formulation",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "TopCat.Presheaf.IsSheafOfTopologicalRings",
@@ -94,7 +105,7 @@
       "kind": "def",
       "include_body": true,
       "cited": "Appendix: generic bundled form of Wedhorn's sheaf condition",
-      "commit": "d92f96504f949ca43a27a817cb8d2f70b6486744"
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.structurePresheaf_isSheafOfTopologicalRings_iff",
@@ -102,7 +113,7 @@
       "line": 629,
       "kind": "theorem",
       "cited": "Appendix: equivalence of IsSheafy with the bundled Hom-sheaf formulation",
-      "commit": "d92f96504f949ca43a27a817cb8d2f70b6486744"
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "TopCat.Presheaf.isSheafOfTopologicalRings_iff_forgetToTopCommRingCat_isSheaf",
@@ -110,7 +121,7 @@
       "line": 100,
       "kind": "theorem",
       "cited": "Appendix: equivalence of Wedhorn's condition with Mathlib's TopCommRingCat sheaf predicate",
-      "commit": "d92f96504f949ca43a27a817cb8d2f70b6486744"
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.structurePresheaf_forgetToTopCommRingCat_isSheaf_iff",
@@ -118,7 +129,7 @@
       "line": 685,
       "kind": "theorem",
       "cited": "Appendix: all-open structure-presheaf comparison with Mathlib",
-      "commit": "d92f96504f949ca43a27a817cb8d2f70b6486744"
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf",
@@ -126,7 +137,7 @@
       "line": 700,
       "kind": "theorem",
       "cited": "Appendix: rational-cover criterion compared with Mathlib's sheaf predicate",
-      "commit": "d92f96504f949ca43a27a817cb8d2f70b6486744"
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.IsSheafyFor",
@@ -134,7 +145,8 @@
       "line": 100,
       "kind": "def",
       "include_body": true,
-      "cited": "Appendix: sheafiness for a chosen ring of integral elements"
+      "cited": "Appendix: sheafiness for a chosen ring of integral elements",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.IsSheafyComplete",
@@ -142,7 +154,8 @@
       "line": 110,
       "kind": "def",
       "include_body": true,
-      "cited": "Appendix: complete-ring sheafiness"
+      "cited": "Appendix: complete-ring sheafiness",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.IsSheafyTateRing",
@@ -150,42 +163,48 @@
       "line": 229,
       "kind": "def",
       "include_body": true,
-      "cited": "Appendix: Tate-ring sheafiness"
+      "cited": "Appendix: Tate-ring sheafiness",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.isSheafyFor_congr",
       "file": "Adic spaces/RelativeStandardRefinement.lean",
       "line": 185,
       "kind": "theorem",
-      "cited": "Appendix: independence of the plus ring"
+      "cited": "Appendix: independence of the plus ring",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.isSheafyFor_iff_standardSheafCondition",
       "file": "Adic spaces/RelativeStandardRefinement.lean",
       "line": 193,
       "kind": "theorem",
-      "cited": "Appendix: standard-cover equivalence"
+      "cited": "Appendix: standard-cover equivalence",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.isSheafyFor_iff_isSheafyComplete",
       "file": "Adic spaces/RelativeStandardRefinement.lean",
       "line": 201,
       "kind": "theorem",
-      "cited": "Appendix: chosen-pair/all-pairs equivalence"
+      "cited": "Appendix: chosen-pair/all-pairs equivalence",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.isSheafyTateRing_iff_for_completionModel",
       "file": "Adic spaces/SheafyCompletionModel.lean",
       "line": 204,
       "kind": "theorem",
-      "cited": "Appendix: completion-model independence"
+      "cited": "Appendix: completion-model independence",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "ValuationSpectrum.isSheafyTateRing_iff_isSheafyComplete",
       "file": "Adic spaces/SheafyCompletionModel.lean",
       "line": 232,
       "kind": "theorem",
-      "cited": "Appendix: complete Tate-ring equivalence"
+      "cited": "Appendix: complete Tate-ring equivalence",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "MvPowerSeries.IsRestricted",
@@ -193,14 +212,16 @@
       "line": 68,
       "kind": "def",
       "include_body": true,
-      "cited": "Appendix: restricted power series"
+      "cited": "Appendix: restricted power series",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "restrictedMvPowerSeriesSubring",
       "file": "Adic spaces/RestrictedPowerSeries.lean",
       "line": 78,
       "kind": "def",
-      "cited": "Appendix: the restricted power-series ring"
+      "cited": "Appendix: the restricted power-series ring",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "IsStronglyNoetherian",
@@ -208,7 +229,8 @@
       "line": 243,
       "kind": "class",
       "include_body": true,
-      "cited": "Appendix: strong noetherianity"
+      "cited": "Appendix: strong noetherianity",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "FiniteJetOver.L",
@@ -216,7 +238,8 @@
       "line": 60,
       "kind": "abbrev",
       "include_body": true,
-      "cited": "Appendix: finite-jet coefficient ring"
+      "cited": "Appendix: finite-jet coefficient ring",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "FiniteJetOver.JetC",
@@ -224,7 +247,8 @@
       "line": 63,
       "kind": "abbrev",
       "include_body": true,
-      "cited": "Appendix: finite-jet Milnor square"
+      "cited": "Appendix: finite-jet Milnor square",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "FiniteJetOver.JetB",
@@ -232,7 +256,8 @@
       "line": 67,
       "kind": "abbrev",
       "include_body": true,
-      "cited": "Appendix: finite-jet Milnor square"
+      "cited": "Appendix: finite-jet Milnor square",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "FiniteJetOver.JetD",
@@ -240,7 +265,8 @@
       "line": 71,
       "kind": "abbrev",
       "include_body": true,
-      "cited": "Appendix: finite-jet Milnor square"
+      "cited": "Appendix: finite-jet Milnor square",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "FiniteJetOver.jetSupport",
@@ -248,7 +274,8 @@
       "line": 269,
       "kind": "def",
       "include_body": true,
-      "cited": "Appendix: support definition of the FJP algebra"
+      "cited": "Appendix: support definition of the FJP algebra",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "FiniteJetOver.JetA",
@@ -256,56 +283,64 @@
       "line": 294,
       "kind": "abbrev",
       "include_body": true,
-      "cited": "Appendix: the FJP algebra"
+      "cited": "Appendix: the FJP algebra",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "FiniteJetOver.milnorRow_exact",
       "file": "Adic spaces/FJP/Over/JetRings.lean",
       "line": 448,
       "kind": "theorem",
-      "cited": "Appendix: exactness of the Milnor row"
+      "cited": "Appendix: exactness of the Milnor row",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "FiniteJetOver.isSheafy_JetA",
       "file": "Adic spaces/FJP/Over/SheafTransfer.lean",
       "line": 730,
       "kind": "theorem",
-      "cited": "Appendix: finite-rational-cover theorem actually constructed"
+      "cited": "Appendix: finite-rational-cover theorem actually constructed",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "FiniteJetOver.finiteJet_isSheafyFor",
       "file": "Adic spaces/FJP/Over/SheafyEndpoints.lean",
       "line": 95,
       "kind": "theorem",
-      "cited": "Appendix: chosen-pair all-open endpoint"
+      "cited": "Appendix: chosen-pair all-open endpoint",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "FiniteJetOver.finiteJet_isSheafyComplete",
       "file": "Adic spaces/FJP/Over/SheafyEndpoints.lean",
       "line": 175,
       "kind": "theorem",
-      "cited": "Appendix: all-plus-rings endpoint"
+      "cited": "Appendix: all-plus-rings endpoint",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "FiniteJetOver.finiteJet_isSheafyTateRing",
       "file": "Adic spaces/FJP/Over/SheafyEndpoints.lean",
       "line": 191,
       "kind": "theorem",
-      "cited": "Appendix: Tate-ring endpoint"
+      "cited": "Appendix: Tate-ring endpoint",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "FiniteJetOver.finiteJet_isSheafyFor_of_dvr",
       "file": "Adic spaces/FJP/Over/SheafyEndpoints.lean",
       "line": 274,
       "kind": "theorem",
-      "cited": "Appendix: public DVR chosen-pair endpoint"
+      "cited": "Appendix: public DVR chosen-pair endpoint",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "FiniteJetOver.finiteJet_isSheafyComplete_of_dvr",
       "file": "Adic spaces/FJP/Over/SheafyEndpoints.lean",
       "line": 319,
       "kind": "theorem",
-      "cited": "Appendix: public DVR all-plus-rings endpoint"
+      "cited": "Appendix: public DVR all-plus-rings endpoint",
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "WeightedParity.wpWeight",
@@ -314,7 +349,7 @@
       "kind": "def",
       "include_body": true,
       "cited": "Appendix: weighted-parity weight",
-      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "WeightedParity.WPMem",
@@ -323,7 +358,7 @@
       "kind": "def",
       "include_body": true,
       "cited": "Appendix: weighted-parity support monoid",
-      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "WeightedParity.wpSupport",
@@ -332,7 +367,7 @@
       "kind": "def",
       "include_body": true,
       "cited": "Appendix: weighted-parity support subring",
-      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "WeightedParity.WPA",
@@ -341,7 +376,7 @@
       "kind": "abbrev",
       "include_body": true,
       "cited": "Appendix: generalized weighted-parity algebra",
-      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "WeightedParity.constA",
@@ -350,7 +385,7 @@
       "kind": "def",
       "include_body": true,
       "cited": "Appendix: coefficient-field map",
-      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "WeightedParity.norm_constA",
@@ -358,7 +393,7 @@
       "line": 170,
       "kind": "theorem",
       "cited": "Appendix: isometry of the coefficient-field map",
-      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "WeightedParity.idWeight",
@@ -367,7 +402,7 @@
       "kind": "def",
       "include_body": true,
       "cited": "Appendix: the paper's weight",
-      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "WeightedParity.WPAid",
@@ -376,7 +411,7 @@
       "kind": "abbrev",
       "include_body": true,
       "cited": "Appendix: the paper's weighted-parity algebra",
-      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "WeightedParity.chartDatum",
@@ -384,7 +419,7 @@
       "line": 83,
       "kind": "def",
       "cited": "Appendix: the distinguished rational chart",
-      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "WeightedParity.chartDatum_isRational",
@@ -392,7 +427,7 @@
       "line": 87,
       "kind": "theorem",
       "cited": "Appendix: rationality of the distinguished chart",
-      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "WeightedParity.wp_structurePresheaf_isSheaf_all",
@@ -400,7 +435,7 @@
       "line": 1787,
       "kind": "theorem",
       "cited": "Appendix: all-open weighted-parity sheaf endpoint",
-      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "WeightedParity.weightedParity_not_stablyUniform_of_dvr",
@@ -408,7 +443,7 @@
       "line": 154,
       "kind": "theorem",
       "cited": "Appendix: failure of stable uniformity",
-      "commit": "090a289211deb69117413e329325fe819aa7dbc2"
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "FiniteJetOver.finiteJet_tateExt_isSheafyComplete",
@@ -416,7 +451,7 @@
       "line": 40,
       "kind": "theorem",
       "cited": "Appendix: strong sheafiness of the finite-jet construction over a general noetherian nonarchimedean base",
-      "commit": "f1436c8be64350bf652c58c074d0576a58006886"
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "FiniteJetOver.finiteJet_tateExt_isSheafyComplete_of_dvr",
@@ -424,7 +459,7 @@
       "line": 62,
       "kind": "theorem",
       "cited": "Appendix: strong sheafiness of the finite-jet construction over a discretely valued base",
-      "commit": "f1436c8be64350bf652c58c074d0576a58006886"
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "WeightedParity.wp_tateExt_isSheafyComplete_of_dvr",
@@ -432,7 +467,7 @@
       "line": 82,
       "kind": "theorem",
       "cited": "Appendix: strong sheafiness of the weighted-parity example",
-      "commit": "f1436c8be64350bf652c58c074d0576a58006886"
+      "commit": "97cdc6dc6227281061062a3c924281433ce91253"
     },
     {
       "decl": "FiniteJet.finiteJet_witnessRing_quality",

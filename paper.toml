@@ -16,10 +16,25 @@ ai_draft = "inputs/draft/main.tex"
 
 [formalizations.primary]
 name = "AdicSpaces"
-root = "../GitHub/aintlib-adic-fjp/projects/AdicSpaces"
+# The standalone formalisation repository; the Lean project is its root, so the
+# declmap's `file` paths are already repo-relative.
+root = "../GitHub/uniform-sheafy-tate-domains-lean"
 # module = "TopModuleDir"      # census/docs subset inside root
 # docs_root = "../lean/"       # deployed docs URL prefix
 declmap = "crosswalk/lean-decl-map.json"
+
+# The Scottish Book declarations (Problems 24 and 28, IsFJPBase, the p-adic
+# instance) are not in the standalone repository: they sit on AINTLIB's
+# dev/adic-spaces branch, on a different base abstraction and mathlib pin.  They
+# stay pinned at commit 01116aca and are read from the monorepo checkout.
+[formalizations.legacy]
+name = "AINTLIB"
+root = "../GitHub/aintlib-adic-fjp/projects/AdicSpaces"
+url = "https://github.com/CBirkbeck/AINTLIB"
+# Its own declmap: a formalization emits one badge per declaration in its map,
+# so the Scottish Book declarations live here and are removed from the primary
+# map.  Sharing one map would badge every statement twice.
+declmap = "crosswalk/lean-decl-map-legacy.json"
 
 [ingest]
 mathbb_letters = ""

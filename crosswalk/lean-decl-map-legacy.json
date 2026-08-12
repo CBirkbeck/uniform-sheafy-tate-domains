@@ -1,0 +1,96 @@
+{
+  "thm-main": [
+    {
+      "decl": "FiniteJet.IsFJPBase",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FJPBase.lean",
+      "line": 45,
+      "cited": "Theorem 1.1 (the general complete ultrametric base-field hypothesis)",
+      "kind": "class",
+      "include_body": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    }
+  ],
+  "prop-problems-24-28": [
+    {
+      "decl": "FiniteJet.IsFJPBase",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FJPBase.lean",
+      "line": 45,
+      "cited": "Proposition 7.1 and Appendix A (hypothesis on the abstract base field)",
+      "kind": "class",
+      "include_body": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
+      "decl": "FiniteJet.finiteJet_padic_quality",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FJPBasePadic.lean",
+      "line": 46,
+      "cited": "Proposition 7.1 and Appendix A (the mixed-characteristic specialization)",
+      "kind": "theorem",
+      "include_body": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
+      "decl": "FiniteJet.ev00",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FiniteJetScottishBook.lean",
+      "line": 197,
+      "cited": "Proposition 7.1 (point of the rational subset)",
+      "kind": "def",
+      "include_body": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
+      "decl": "FiniteJet.innerPoint_mem_rationalOpen",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FiniteJetScottishBook.lean",
+      "line": 267,
+      "cited": "Proposition 7.1 (the point lies in the rational subset)",
+      "kind": "theorem",
+      "include_body": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
+      "decl": "FiniteJet.scottishWitness_mul_isometry",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FiniteJetScottishBook.lean",
+      "line": 110,
+      "cited": "Proposition 7.1 (strict multiplication by Q²)",
+      "kind": "theorem",
+      "include_body": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
+      "decl": "FiniteJet.canonicalMap_scottishWitness",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FiniteJetScottishBook.lean",
+      "line": 152,
+      "cited": "Proposition 7.1 (Q² restricts to zero)",
+      "kind": "theorem",
+      "include_body": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
+      "decl": "FiniteJet.finiteJet_problem28",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FiniteJetScottishBook.lean",
+      "line": 302,
+      "cited": "Proposition 7.1 (Problem 28 witness over an IsFJPBase)",
+      "kind": "theorem",
+      "include_body": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    },
+    {
+      "decl": "FiniteJet.finiteJet_not_flat_canonicalMap",
+      "via": "manual",
+      "file": "Adic spaces/FJP/FiniteJetScottishBook.lean",
+      "line": 329,
+      "cited": "Proposition 7.1 (nonflat completed rational localisation)",
+      "kind": "theorem",
+      "include_body": true,
+      "commit": "01116aca6070283726008536cba16d165a01b505"
+    }
+  ]
+}

@@ -64,13 +64,13 @@ then <m>I_E</m> is closed.  Moreover, there exists
   \subset d_{2,E}\bigl(\textstyle\bigwedge^2 T_{E,0}^m\bigr).</men>
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJet.GraphKoszul.koszulGraph_exact_strict_closed">Lean (koszulGraph_exact_strict_closed)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJet.GraphKoszul.koszulGraph_restricted_exact">Lean (koszulGraph_restricted_exact)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJet.KoszulFree.koszulDifferential_continuous">Lean (koszulDifferential_continuous)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJet.GraphKoszul.koszulDifferential_isStrict">Lean (koszulDifferential_isStrict)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJet.GraphKoszul.isClosed_range_koszulDifferential">Lean (isClosed_range_koszulDifferential)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJet.GraphKoszul.pow_smul_graphIdeal_inter_unitBall_subset">Lean (pow_smul_graphIdeal_inter_unitBall_subset)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJet.GraphKoszul.pow_smul_ker_d1_inter_subset">Lean (pow_smul_ker_d1_inter_subset)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.GraphKoszul.koszulGraph_exact_strict_closed">Lean (koszulGraph_exact_strict_closed)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.GraphKoszul.koszulGraph_restricted_exact">Lean (koszulGraph_restricted_exact)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.KoszulFree.koszulDifferential_continuous">Lean (koszulDifferential_continuous)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.GraphKoszul.koszulDifferential_isStrict">Lean (koszulDifferential_isStrict)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.GraphKoszul.isClosed_range_koszulDifferential">Lean (isClosed_range_koszulDifferential)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.GraphKoszul.pow_smul_graphIdeal_inter_unitBall_subset">Lean (pow_smul_graphIdeal_inter_unitBall_subset)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.GraphKoszul.pow_smul_ker_d1_inter_subset">Lean (pow_smul_ker_d1_inter_subset)</lean>
       <proof>
         <p>
           Over the polynomial ring <m>E[T_1,\ldots,T_m]</m>, the sequence
@@ -191,14 +191,14 @@ topological abelian groups
   (x_B,x_C)\longmapsto (x_B)_D-(x_C)_D.</me>
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJet.Pinch.ext_pair_injective">Lean (ext_pair_injective)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJet.Pinch.ideal_row_surjective">Lean (ideal_row_surjective)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJet.Pinch.ideal_pullback_controlled">Lean (ideal_pullback_controlled)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJet.Pinch.isClosed_IA">Lean (isClosed_IA)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.ext_pair_injective">Lean (ext_pair_injective)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.ideal_row_surjective">Lean (ideal_row_surjective)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.ideal_pullback_controlled">Lean (ideal_pullback_controlled)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.isClosed_IA">Lean (isClosed_IA)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.Pinch.ext_pair_injective">Lean (ext_pair_injective)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.Pinch.ideal_row_surjective">Lean (ideal_row_surjective)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.Pinch.ideal_pullback_controlled">Lean (ideal_pullback_controlled)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.Pinch.isClosed_IA">Lean (isClosed_IA)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.StrictLoc.ext_pair_injective">Lean (ext_pair_injective)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.StrictLoc.ideal_row_surjective">Lean (ideal_row_surjective)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.StrictLoc.ideal_pullback_controlled">Lean (ideal_pullback_controlled)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.StrictLoc.isClosed_IA">Lean (isClosed_IA)</lean>
       <proof>
         <p>
           For <m>E=B,C,D</m>, let <m>C_{1,E}</m> be as in the proof of
@@ -267,25 +267,25 @@ is strict exact, and <m>C_\alpha\to D_\alpha</m> is a strict surjection.  Equiva
 <me>A_\alpha\cong B_\alpha\times_{D_\alpha}C_\alpha.</me>
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJet.Pinch.loc_row_exact">Lean (loc_row_exact)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJet.Pinch.loc_pair_isEmbedding">Lean (loc_pair_isEmbedding)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJet.Pinch.locψC_lipschitz">Lean (locψC_lipschitz)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJet.Pinch.locψC_surjective">Lean (locψC_surjective)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJet.Pinch.locψC_isOpenMap">Lean (locψC_isOpenMap)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJet.Pinch.bridgeFwd_natural_B">Lean (bridgeFwd_natural_B)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJet.Pinch.bridgeFwd_natural_C">Lean (bridgeFwd_natural_C)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJet.Pinch.bridgeFwd_natural_legB">Lean (bridgeFwd_natural_legB)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJet.Pinch.bridgeFwd_natural_legC">Lean (bridgeFwd_natural_legC)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJet.Pinch.valueRow_injective">Lean (valueRow_injective)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJet.Pinch.valueRow_glue">Lean (valueRow_glue)</lean>
-      <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJet.Pinch.valueRow_embedding">Lean (valueRow_embedding)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.loc_row_exact">Lean (loc_row_exact)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.loc_pair_isEmbedding">Lean (loc_pair_isEmbedding)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.locRhoC_surjective">Lean (locRhoC_surjective)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.locRhoC_continuous">Lean (locRhoC_continuous)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.StrictLoc.locRhoC_isOpenMap">Lean (locRhoC_isOpenMap)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.presheafValueMapC_restriction">Lean (presheafValueMapC_restriction)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.presheafValueMapB_restriction">Lean (presheafValueMapB_restriction)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.Pinch.loc_row_exact">Lean (loc_row_exact)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.Pinch.loc_pair_isEmbedding">Lean (loc_pair_isEmbedding)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.Pinch.locψC_lipschitz">Lean (locψC_lipschitz)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.Pinch.locψC_surjective">Lean (locψC_surjective)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.Pinch.locψC_isOpenMap">Lean (locψC_isOpenMap)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.Pinch.bridgeFwd_natural_B">Lean (bridgeFwd_natural_B)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.Pinch.bridgeFwd_natural_C">Lean (bridgeFwd_natural_C)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.Pinch.bridgeFwd_natural_legB">Lean (bridgeFwd_natural_legB)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.Pinch.bridgeFwd_natural_legC">Lean (bridgeFwd_natural_legC)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.Pinch.valueRow_injective">Lean (valueRow_injective)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.Pinch.valueRow_glue">Lean (valueRow_glue)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.Pinch.valueRow_embedding">Lean (valueRow_embedding)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.StrictLoc.loc_row_exact">Lean (loc_row_exact)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.StrictLoc.loc_pair_isEmbedding">Lean (loc_pair_isEmbedding)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.StrictLoc.locRhoC_surjective">Lean (locRhoC_surjective)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.locRhoC_continuous">Lean (locRhoC_continuous)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.StrictLoc.locRhoC_isOpenMap">Lean (locRhoC_isOpenMap)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.presheafValueMapC_restriction">Lean (presheafValueMapC_restriction)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.presheafValueMapB_restriction">Lean (presheafValueMapB_restriction)</lean>
       <proof>
         <p>
           The ideals <m>I_B,I_C,I_D</m> are closed by <xref ref="lem-koszul"/>, and <m>I_A</m> is

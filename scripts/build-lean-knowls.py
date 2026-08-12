@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build self-contained Lean declaration knowls from pinned AINTLIB snapshots.
+"""Build self-contained Lean declaration knowls from pinned formalisation snapshots.
 
 Paperforge normally builds its inline Lean registry from doc-gen4 output.  The
 formalization snapshot used by this paper is not currently published with
@@ -11,9 +11,8 @@ doc-gen4 pages, so this script extracts the declaration source directly with
   navigation.
 
 The generated pages are fixed source snapshots: they do not depend on the
-AINTLIB commits being reachable on GitHub at run time.  Entries may override
-the primary snapshot with a ``commit`` field; this is used for work that was
-formalised after the finite-jet snapshot.
+pinned commits being reachable on GitHub at run time.  Entries may override
+the primary snapshot with a ``commit`` field.
 
 Reader-facing mathematical summaries may be supplied in
 ``crosswalk/lean-knowl-doc-overrides.json``.  The inline knowl uses the curated
@@ -38,15 +37,40 @@ except ModuleNotFoundError as exc:  # pragma: no cover - Python < 3.11
     raise SystemExit("build-lean-knowls.py requires Python 3.11 or newer") from exc
 
 
-PRIMARY_COMMIT = "b007a4f3d4226f00a684b402715aa542e2f0bcdc"
+# The formalisation now lives in its own repository, so declarations are pinned
+# to a single snapshot there rather than to the five AINTLIB commits the paper
+# used while the code was still part of that monorepo.
+REPO_URL = "https://github.com/CBirkbeck/uniform-sheafy-tate-domains-lean"
+PRIMARY_COMMIT = "97cdc6dc6227281061062a3c924281433ce91253"
 PROJECT = "AdicSpaces"
-PUBLIC_COMMITS = {
-    "b007a4f3d4226f00a684b402715aa542e2f0bcdc",
-    "090a289211deb69117413e329325fe819aa7dbc2",
-    "d92f96504f949ca43a27a817cb8d2f70b6486744",
-    "01116aca6070283726008536cba16d165a01b505",
-    "f1436c8be64350bf652c58c074d0576a58006886",
-}
+
+# The Scottish Book declarations (Problems 24 and 28, the abstract-base class
+# `IsFJPBase`, and the p-adic instance) are the one exception.  They live on
+# AINTLIB's `dev/adic-spaces` branch, whose FJP tower rests on a different base
+# abstraction and a different mathlib pin, so they cannot be carried into the
+# standalone repository without merging two branches that are ~1000 commits
+# apart.  They stay pinned in the monorepo, and `[formalizations.legacy]` in
+# paper.toml says where to read them from.
+LEGACY_COMMIT = "01116aca6070283726008536cba16d165a01b505"
+LEGACY_REPO_URL = "https://github.com/CBirkbeck/AINTLIB"
+
+PUBLIC_COMMITS = {PRIMARY_COMMIT, LEGACY_COMMIT}
+
+
+class SourceRepo:
+    """A git checkout a pinned declaration can be read out of."""
+
+    def __init__(self, repo: Path, prefix: str | None, url: str) -> None:
+        self.repo = repo
+        self.prefix = prefix
+        self.url = url
+
+    def path_for(self, file: str) -> str:
+        return file if self.prefix is None else f"{self.prefix}/{file}"
+
+
+def repo_url_for(commit: str) -> str:
+    return LEGACY_REPO_URL if commit == LEGACY_COMMIT else REPO_URL
 
 DECL_LINE_RE = re.compile(
     r"^(?P<indent>[ \t]*)"
@@ -118,8 +142,43 @@ def formalization_root(root: Path, override: str | None) -> Path:
     return candidate
 
 
+def build_source(lean_root: Path, url: str) -> "SourceRepo":
+    """Wrap a Lean project checkout, working out its path prefix inside its repo."""
+    repo = Path(run_git(lean_root, "rev-parse", "--show-toplevel").strip())
+    prefix = lean_root.relative_to(repo).as_posix()
+    # In the standalone formalisation repository the Lean project *is* the repo
+    # root, so relative_to yields "." and there is no prefix to prepend.
+    return SourceRepo(repo, None if prefix in ("", ".") else prefix, url)
+
+
+def legacy_source(root: Path) -> "SourceRepo":
+    """The monorepo checkout holding the Scottish Book declarations."""
+    config = load_config(root)
+    legacy = config.get("formalizations", {}).get("legacy", {})
+    candidate = legacy.get("root")
+    if not candidate:
+        raise RuntimeError(
+            "paper.toml has no [formalizations.legacy] root; it is needed for the "
+            f"declarations pinned at {LEGACY_COMMIT[:9]}"
+        )
+    path = Path(candidate).expanduser()
+    if not path.is_absolute():
+        path = root / path
+    path = path.resolve()
+    if not path.is_dir():
+        raise RuntimeError(f"legacy Lean project root does not exist: {path}")
+    return build_source(path, legacy.get("url", LEGACY_REPO_URL))
+
+
 def collect_declarations(root: Path, declmap_path: Path, extra_path: Path) -> list[dict]:
     declmap = json.loads((root / declmap_path).read_text())
+    # The legacy formalization keeps its own declmap so that paperforge emits one
+    # badge per declaration rather than one per formalization; its declarations
+    # still need knowls, so merge it in here.
+    legacy_map = root / "crosswalk" / "lean-decl-map-legacy.json"
+    if legacy_map.is_file():
+        for label, entries in json.loads(legacy_map.read_text()).items():
+            declmap.setdefault(label, []).extend(entries)
     extra_data = json.loads((root / extra_path).read_text())
     if extra_data.get("commit") not in (None, PRIMARY_COMMIT):
         raise RuntimeError(
@@ -480,7 +539,8 @@ def standalone_html(
         )
     if commit in PUBLIC_COMMITS:
         github_url = (
-            "https://github.com/CBirkbeck/AINTLIB/blob/"
+            repo_url_for(commit)
+            + "/blob/"
             + commit
             + "/"
             + quote(repo_path, safe="/")
@@ -496,7 +556,7 @@ def standalone_html(
     else:
         source_access = (
             '<p class="meta">This is the archival declaration extracted from '
-            "the pinned\n  source tree.  The corresponding AINTLIB commit was "
+            "the pinned\n  source tree.  The corresponding upstream commit was "
             "not publicly reachable\n  when this page was built, so no external "
             "upstream link is offered here.</p>"
         )
@@ -538,7 +598,7 @@ def standalone_html(
   {summary_note}{source_doc_details}{uses_html}
   <pre><code>{html.escape(code)}</code></pre>
   <p class="meta">Pinned source: <code>{html.escape(repo_path)}:{line_start}–{line_end}</code><br>
-  AINTLIB commit <code>{commit}</code>.</p>
+  Commit <code>{commit}</code>.</p>
   {source_access}
   <aside class="provenance"><strong>Restricted-series infrastructure.</strong>
   {development} uses restricted power-series code adapted from
@@ -575,13 +635,13 @@ def main() -> int:
     args = parser.parse_args()
 
     root = args.instance.resolve()
-    lean_root = formalization_root(root, args.lean_root)
-    repo = Path(run_git(lean_root, "rev-parse", "--show-toplevel").strip())
-    project_prefix = lean_root.relative_to(repo).as_posix()
+    primary = build_source(formalization_root(root, args.lean_root), REPO_URL)
+    sources = {LEGACY_COMMIT: legacy_source(root)}
     declarations = collect_declarations(root, args.declmap, args.extra)
     commits = sorted({entry["commit"] for entry in declarations})
     for commit in commits:
-        run_git(repo, "cat-file", "-e", commit + "^{commit}")
+        src = sources.get(commit, primary)
+        run_git(src.repo, "cat-file", "-e", commit + "^{commit}")
     doc_overrides = load_doc_overrides(root, args.doc_overrides)
     declaration_names = {entry["decl"] for entry in declarations}
     unknown_overrides = sorted(set(doc_overrides) - declaration_names)
@@ -598,8 +658,9 @@ def main() -> int:
 
     for entry in declarations:
         commit = entry["commit"]
-        repo_path = f"{project_prefix}/{entry['file']}"
-        source = run_git(repo, "show", f"{commit}:{repo_path}")
+        src = sources.get(commit, primary)
+        repo_path = src.path_for(entry["file"])
+        source = run_git(src.repo, "show", f"{commit}:{repo_path}")
         start, line_index, kind, written_name = declaration_at(
             source, entry["decl"], entry.get("line")
         )
@@ -656,7 +717,7 @@ def main() -> int:
 
     registry_path = root / "web-assets" / f"lean-knowls-{PROJECT}.js"
     registry_path.write_text(
-        "// Generated by scripts/build-lean-knowls.py from AINTLIB commits "
+        "// Generated by scripts/build-lean-knowls.py from pinned commits "
         + ", ".join(commits)
         + ".\nwindow.PAPERFORGE_LEAN_KNOWLS = Object.assign(\n"
         + "  window.PAPERFORGE_LEAN_KNOWLS || {},\n  "

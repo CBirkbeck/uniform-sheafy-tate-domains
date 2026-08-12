@@ -22,7 +22,7 @@ and topological-embedding conclusions of <xref ref="prop-localized-milnor"/> hol
 the induced data.  If <m>B,C,D</m> are sheafy, then <m>R</m> is sheafy.
       </p>
     </statement>
-    <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="ValuationSpectrum.isSheafy_of_milnorSquare">Lean</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="ValuationSpectrum.isSheafy_of_milnorSquare">Lean</lean>
     <proof>
       <p>
         Let <m>U=\bigcup_iU_i</m> be a finite rational cover.  A matching family glues over
@@ -44,11 +44,11 @@ the Huber pair
 is sheafy.  In particular, <m>A</m> is strongly sheafy.
       </p>
     </statement>
-    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.isSheafy_JetA_of_dvr">Lean (isSheafy_JetA_of_dvr)</lean>
-    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_isSheafyFor_of_dvr">Lean (finiteJet_isSheafyFor_of_dvr)</lean>
-    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_isSheafyTateRing_of_dvr">Lean (finiteJet_isSheafyTateRing_of_dvr)</lean>
-    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr">Lean (finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr)</lean>
-    <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJetOver.finiteJet_tateExt_isSheafyComplete">Lean (finiteJet_tateExt_isSheafyComplete)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.isSheafy_JetA_of_dvr">Lean (isSheafy_JetA_of_dvr)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.finiteJet_isSheafyFor_of_dvr">Lean (finiteJet_isSheafyFor_of_dvr)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.finiteJet_isSheafyTateRing_of_dvr">Lean (finiteJet_isSheafyTateRing_of_dvr)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr">Lean (finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.finiteJet_tateExt_isSheafyComplete">Lean (finiteJet_tateExt_isSheafyComplete)</lean>
   </corollary>
   <p>
     The proof below works over the complete discretely valued base fixed in the

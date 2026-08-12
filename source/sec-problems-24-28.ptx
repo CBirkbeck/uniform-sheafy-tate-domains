@@ -25,14 +25,14 @@ is not flat, and multiplication by <m>Q^2</m> is a strict embedding with closed
 image even though <m>Q^2</m> maps to zero in <m>\mathcal O(U)</m>.
       </p>
     </statement>
-    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.IsFJPBase">Lean (hypothesis on the base field)</lean>
-    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_padic_quality">Lean (the p-adic finite-jet ring)</lean>
-    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.ev00">Lean (evaluation at W=Q=0)</lean>
-    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.innerPoint_mem_rationalOpen">Lean (the point lies in the chart)</lean>
-    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.scottishWitness_mul_isometry">Lean (multiplication by Q² is an isometry)</lean>
-    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.canonicalMap_scottishWitness">Lean (Q² restricts to zero)</lean>
-    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_problem28">Lean (Problem 28 witness)</lean>
-    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_not_flat_canonicalMap">Lean (nonflat completed chart)</lean>
+    <lean project="AINTLIB" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.IsFJPBase">Lean (hypothesis on the base field)</lean>
+    <lean project="AINTLIB" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_padic_quality">Lean (the p-adic finite-jet ring)</lean>
+    <lean project="AINTLIB" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.ev00">Lean (evaluation at W=Q=0)</lean>
+    <lean project="AINTLIB" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.innerPoint_mem_rationalOpen">Lean (the point lies in the chart)</lean>
+    <lean project="AINTLIB" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.scottishWitness_mul_isometry">Lean (multiplication by Q² is an isometry)</lean>
+    <lean project="AINTLIB" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.canonicalMap_scottishWitness">Lean (Q² restricts to zero)</lean>
+    <lean project="AINTLIB" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_problem28">Lean (Problem 28 witness)</lean>
+    <lean project="AINTLIB" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_not_flat_canonicalMap">Lean (nonflat completed chart)</lean>
     <proof>
       <p>
         The composite

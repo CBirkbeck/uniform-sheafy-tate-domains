@@ -7,8 +7,9 @@ uniform Tate Huber ring is sheafy, but leaves open whether every uniform sheafy
 Tate Huber ring is stably uniform <xref ref="bib-BV"/>, <xref ref="bib-Mihara"/>.  Hansen and Kedlaya ask
 this explicitly <xref ref="bib-HK" detail="Remark 3.16"/>; it is also Question<nbsp/>7 of Kedlaya's
 <em>Nonarchimedean Scottish Book</em> <xref ref="bib-Scottish"/>.  We answer this question
-by constructing uniform and sheafy Tate rings that are not stably uniform.  In
-fact, we prove the stronger statement that both examples are strongly sheafy.
+in the negative, by constructing uniform and sheafy Tate rings that are not
+stably uniform.  In fact, we prove the stronger statement that both examples
+are strongly sheafy.
 Both are non-noetherian, so neither Huber's theorem for strongly noetherian
 Tate rings nor the stably uniform criterion applies.
   </p>
@@ -60,23 +61,23 @@ However,
 so <m>A</m> is not stably uniform.
       </p>
     </statement>
-    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.IsFJPBase">Lean (hypothesis on the base field)</lean>
-    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_isUniform">Lean (finiteJet_isUniform)</lean>
-    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_isDomain">Lean (finiteJet_isDomain)</lean>
-    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_not_noetherian">Lean (finiteJet_not_noetherian)</lean>
-    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.finiteJet_not_stablyUniform">Lean (finiteJet_not_stablyUniform)</lean>
-    <lean project="AdicSpaces" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.chartEquiv">Lean (chartEquiv)</lean>
-    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.JetA">Lean (finite-jet ring A)</lean>
-    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.jetSupport">Lean (coefficient condition defining A)</lean>
-    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.isClosed_jetSupport">Lean (isClosed_jetSupport)</lean>
-    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.isTateRing_JetA">Lean (isTateRing_JetA)</lean>
-    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_isUniform_of_dvr">Lean (finiteJet_isUniform_of_dvr)</lean>
-    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.isPowerBounded_JetA_iff">Lean (isPowerBounded_JetA_iff)</lean>
-    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_isDomain">Lean (finiteJet_isDomain)</lean>
-    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_not_noetherian">Lean (finiteJet_not_noetherian)</lean>
-    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_not_stablyUniform_of_dvr">Lean (finiteJet_not_stablyUniform_of_dvr)</lean>
-    <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.finiteJet_isSheafyFor_of_dvr">Lean (finiteJet_isSheafyFor_of_dvr)</lean>
-    <lean project="AdicSpaces" commit="f1436c8be64350bf652c58c074d0576a58006886" ref="FiniteJetOver.finiteJet_tateExt_isSheafyComplete_of_dvr">Lean (finiteJet_tateExt_isSheafyComplete_of_dvr)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.finiteJet_isUniform">Lean (finiteJet_isUniform)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.finiteJet_isDomain">Lean (finiteJet_isDomain)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.finiteJet_not_noetherian">Lean (finiteJet_not_noetherian)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.finiteJet_not_stablyUniform">Lean (finiteJet_not_stablyUniform)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJet.chartEquiv">Lean (chartEquiv)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.JetA">Lean (finite-jet ring A)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.jetSupport">Lean (coefficient condition defining A)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.isClosed_jetSupport">Lean (isClosed_jetSupport)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.isTateRing_JetA">Lean (isTateRing_JetA)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.finiteJet_isUniform_of_dvr">Lean (finiteJet_isUniform_of_dvr)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.isPowerBounded_JetA_iff">Lean (isPowerBounded_JetA_iff)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.finiteJet_isDomain">Lean (finiteJet_isDomain)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.finiteJet_not_noetherian">Lean (finiteJet_not_noetherian)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.finiteJet_not_stablyUniform_of_dvr">Lean (finiteJet_not_stablyUniform_of_dvr)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.finiteJet_isSheafyFor_of_dvr">Lean (finiteJet_isSheafyFor_of_dvr)</lean>
+    <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.finiteJet_tateExt_isSheafyComplete_of_dvr">Lean (finiteJet_tateExt_isSheafyComplete_of_dvr)</lean>
+    <lean project="AINTLIB" commit="01116aca6070283726008536cba16d165a01b505" ref="FiniteJet.IsFJPBase">Lean</lean>
   </theorem>
   <p>
     This construction also gives a new example solving Problems<nbsp/>24 and 28 of the

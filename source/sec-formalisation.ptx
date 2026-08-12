@@ -5,8 +5,13 @@
     <p>
       This appendix records the Lean definitions and theorem statements.  Theorem
 listings stop before their proof terms, and the links open the checked declarations.  The
-main development is on the
-<url href="https://github.com/CBirkbeck/AINTLIB/tree/wp/strengthenings"><c>wp/strengthenings</c> branch of AINTLIB</url> <xref ref="bib-AINTLIB"/>, with exact links below for declarations on other public branches.  It uses
+formalisation is available as a self-contained repository,
+<url href="https://github.com/CBirkbeck/uniform-sheafy-tate-domains-lean"><c>uniform-sheafy-tate-domains-lean</c></url> <xref ref="bib-SheafyLean"/>,
+which carries the adic-spaces library, both examples and the Comparator
+certificates, and has mathlib as its only dependency.  It is extracted from the
+development repository AINTLIB <xref ref="bib-AINTLIB"/>, whose commits the per-declaration
+links below pin; a few of those declarations sit on other public branches there.
+It uses
 Lean<nbsp/>4.33.0 <xref ref="bib-Lean4"/> and mathlib<nbsp/>4.33.0 <xref ref="bib-mathlib"/>.  The headline
 statements for both examples have been checked with
 <url href="https://github.com/leanprover/comparator">Comparator</url>, which compares
@@ -61,10 +66,10 @@ form because it speaks directly about the rational localisations occurring in
 the paper.
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="ValuationSpectrum.RationalCoveringData">Lean (covering data)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="ValuationSpectrum.RationalCoveringData.IsRational">Lean (rationality condition)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="ValuationSpectrum.presheafValue">Lean (completed rational localisation)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="ValuationSpectrum.IsSheafy">Lean (rational-cover sheaf condition)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="ValuationSpectrum.RationalCoveringData">Lean (covering data)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="ValuationSpectrum.RationalCoveringData.IsRational">Lean (rationality condition)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="ValuationSpectrum.presheafValue">Lean (completed rational localisation)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="ValuationSpectrum.IsSheafy">Lean (rational-cover sheaf condition)</lean>
     </definition>
   </subsection>
   <subsection xml:id="sec-formalisation-comparison-with-mathlib-s-sheaf">
@@ -72,7 +77,7 @@ the paper.
     <remark xml:id="rem-lean-sheaf-comparison">
       <statement>
         <p>
-
+          
 For an open subset <m>V\subseteq\Spa(A,A^+)</m>,
 <url href="https://cbirkbeck.github.io/uniform-sheafy-tate-domains/lean/AdicSpaces/declarations/ValuationSpectrum.limitSections.html"><c>limitSections V</c></url>
 is the projective limit of the sections on rational subdomains contained in
@@ -142,12 +147,12 @@ It is supplied by the theory for the complete Tate pairs used here and is not
 an additional hypothesis in the main results.
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="ValuationSpectrum.isSheafy_iff_isLimitSheaf">Lean (rational covers ↔ all opens)</lean>
-      <lean project="AdicSpaces" commit="d92f96504f949ca43a27a817cb8d2f70b6486744" ref="TopCat.Presheaf.IsSheafOfTopologicalRings">Lean (Wedhorn Hom-sheaf)</lean>
-      <lean project="AdicSpaces" commit="d92f96504f949ca43a27a817cb8d2f70b6486744" ref="ValuationSpectrum.structurePresheaf_isSheafOfTopologicalRings_iff">Lean (all opens ↔ Wedhorn)</lean>
-      <lean project="AdicSpaces" commit="d92f96504f949ca43a27a817cb8d2f70b6486744" ref="TopCat.Presheaf.isSheafOfTopologicalRings_iff_forgetToTopCommRingCat_isSheaf">Lean (Wedhorn ↔ Mathlib)</lean>
-      <lean project="AdicSpaces" commit="d92f96504f949ca43a27a817cb8d2f70b6486744" ref="ValuationSpectrum.structurePresheaf_forgetToTopCommRingCat_isSheaf_iff">Lean (Mathlib ↔ all opens)</lean>
-      <lean project="AdicSpaces" commit="d92f96504f949ca43a27a817cb8d2f70b6486744" ref="ValuationSpectrum.isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf">Lean (IsSheafy ↔ Mathlib IsSheaf)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="ValuationSpectrum.isSheafy_iff_isLimitSheaf">Lean (rational covers ↔ all opens)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="TopCat.Presheaf.IsSheafOfTopologicalRings">Lean (Wedhorn Hom-sheaf)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="ValuationSpectrum.structurePresheaf_isSheafOfTopologicalRings_iff">Lean (all opens ↔ Wedhorn)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="TopCat.Presheaf.isSheafOfTopologicalRings_iff_forgetToTopCommRingCat_isSheaf">Lean (Wedhorn ↔ Mathlib)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="ValuationSpectrum.structurePresheaf_forgetToTopCommRingCat_isSheaf_iff">Lean (Mathlib ↔ all opens)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="ValuationSpectrum.isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf">Lean (IsSheafy ↔ Mathlib IsSheaf)</lean>
     </remark>
   </subsection>
   <subsection xml:id="sec-formalisation-sheafiness-for-tate-rings">
@@ -188,7 +193,7 @@ and <c>IsSheafyTateRing A</c> requires it for every completion model.
           Lean defines restricted power series and strong noetherianity as follows.
         </p>
         <p>
-
+          
         </p>
         <pre>
         def MvPowerSeries.IsRestricted {k : ℕ} {A : Type*}
@@ -211,13 +216,13 @@ ring is noetherian for every <m>k</m>.  This is the usual notion of strong
 noetherianity <xref ref="bib-Wedhorn" detail="Proposition and Definition 6.36"/>.
         </p>
       </statement>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="MvPowerSeries.IsRestricted">Lean (restricted series)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="restrictedMvPowerSeriesSubring">Lean (restricted Tate algebra)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="IsStronglyNoetherian">Lean (strong noetherianity)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="ValuationSpectrum.IsStronglyNoetherianTateRing">Lean (IsStronglyNoetherianTateRing)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="ValuationSpectrum.isSheafyTateRing_of_stronglyNoetherianTateRing">Lean (isSheafyTateRing_of_stronglyNoetherianTateRing)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="ValuationSpectrum.isSheafyFor_of_stronglyNoetherianTate">Lean (isSheafyFor_of_stronglyNoetherianTate)</lean>
-      <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="ValuationSpectrum.isSheafyComplete_of_stronglyNoetherianTate">Lean (isSheafyComplete_of_stronglyNoetherianTate)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="MvPowerSeries.IsRestricted">Lean (restricted series)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="restrictedMvPowerSeriesSubring">Lean (restricted Tate algebra)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="IsStronglyNoetherian">Lean (strong noetherianity)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="ValuationSpectrum.IsStronglyNoetherianTateRing">Lean (IsStronglyNoetherianTateRing)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="ValuationSpectrum.isSheafyTateRing_of_stronglyNoetherianTateRing">Lean (isSheafyTateRing_of_stronglyNoetherianTateRing)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="ValuationSpectrum.isSheafyFor_of_stronglyNoetherianTate">Lean (isSheafyFor_of_stronglyNoetherianTate)</lean>
+      <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="ValuationSpectrum.isSheafyComplete_of_stronglyNoetherianTate">Lean (isSheafyComplete_of_stronglyNoetherianTate)</lean>
     </definition>
     <p>
       For a Tate ring not assumed complete, the condition is imposed on a completion
@@ -286,12 +291,12 @@ This is the coefficient description of <m>A</m> in
 <xref ref="eq-coefficient-A0"/> after inverting <m>\varpi</m>.
           </p>
         </statement>
-        <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.L">Lean (Laurent algebra)</lean>
-        <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.JetC">Lean (vertex C)</lean>
-        <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.JetB">Lean (vertex B)</lean>
-        <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.JetD">Lean (vertex D)</lean>
-        <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.jetSupport">Lean (coefficient condition defining A)</lean>
-        <lean project="AdicSpaces" commit="b007a4f3d4226f00a684b402715aa542e2f0bcdc" ref="FiniteJetOver.JetA">Lean (finite-jet ring A)</lean>
+        <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.L">Lean (Laurent algebra)</lean>
+        <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.JetC">Lean (vertex C)</lean>
+        <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.JetB">Lean (vertex B)</lean>
+        <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.JetD">Lean (vertex D)</lean>
+        <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.jetSupport">Lean (coefficient condition defining A)</lean>
+        <lean project="AdicSpaces" commit="97cdc6dc6227281061062a3c924281433ce91253" ref="FiniteJetOver.JetA">Lean (finite-jet ring A)</lean>
       </definition>
       <p>
         For a complete nontrivially normed ultrametric field <m>K</m>, a uniformizer
