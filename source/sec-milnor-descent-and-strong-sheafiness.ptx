@@ -66,10 +66,11 @@ with its compatibility under refinement, supplies the hypotheses of
 of the choice of its ring of integral elements.
     </p>
     <p>
-      After adjoining <m>V_1,\ldots,V_s</m>, the coefficientwise split square and the
-localised equaliser rows persist, while the other three vertices remain
-strongly noetherian.  Applying the same theorem proves the assertion for every
-<m>s</m> and every <m>A_s^+</m>.
+      After adjoining <m>V_1,\ldots,V_s</m>, the square retains its coefficientwise
+section of <m>C\to D</m>, and the strict exact rows of
+<xref ref="prop-localized-milnor"/> remain strict exact for every unit-ideal datum,
+while <m>B</m>, <m>C</m> and <m>D</m> remain strongly noetherian.  Applying the same theorem
+proves the assertion for every <m>s</m> and every <m>A_s^+</m>.
     </p>
   </proof>
   <proof>
