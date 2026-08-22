@@ -473,25 +473,25 @@
   },
   "def-lean-strong-noetherianity": {
    "statement": {
-    "start": 78193,
-    "end": 79074,
+    "start": 79376,
+    "end": 80257,
     "sha": "9720ff414e29eae3"
    },
    "envelope": {
-    "start": 78115,
-    "end": 79090,
+    "start": 79298,
+    "end": 80273,
     "sha": "aac7c83a2d3ff5b6"
    }
   },
   "def-lean-finite-jet-ring": {
    "statement": {
-    "start": 80001,
-    "end": 81130,
+    "start": 81184,
+    "end": 82313,
     "sha": "a84896969575e4c1"
    },
    "envelope": {
-    "start": 79929,
-    "end": 81146,
+    "start": 81112,
+    "end": 82329,
     "sha": "987ce29db62a6197"
    }
   }
@@ -733,118 +733,123 @@
    "sha": "d9b241ba58652ef1"
   },
   {
-   "start": 79092,
-   "end": 79258,
+   "start": 78080,
+   "end": 79261,
+   "sha": "a040c4c4703d92d8"
+  },
+  {
+   "start": 80275,
+   "end": 80441,
    "sha": "a3f5164e52fcf0d6"
   },
   {
-   "start": 79673,
-   "end": 79890,
+   "start": 80856,
+   "end": 81073,
    "sha": "58a8974e4432bcec"
   },
   {
-   "start": 81148,
-   "end": 81393,
+   "start": 82331,
+   "end": 82576,
    "sha": "2e17b88de7f8520b"
   },
   {
-   "start": 82018,
-   "end": 82303,
+   "start": 83201,
+   "end": 83486,
    "sha": "acf639d6ce3ad00f"
   },
   {
-   "start": 82305,
-   "end": 82398,
+   "start": 83488,
+   "end": 83581,
    "sha": "1da838a56121310f"
   },
   {
-   "start": 82580,
-   "end": 82625,
+   "start": 83763,
+   "end": 83808,
    "sha": "24c360e815e09a58"
   },
   {
-   "start": 83313,
-   "end": 83764,
+   "start": 84496,
+   "end": 84947,
    "sha": "3537ec0d20e2c0cf"
   },
   {
-   "start": 83812,
-   "end": 84073,
+   "start": 84995,
+   "end": 85256,
    "sha": "220827e8b45e24fc"
   },
   {
-   "start": 85052,
-   "end": 85357,
+   "start": 86235,
+   "end": 86540,
    "sha": "d8df5c04af940231"
   },
   {
-   "start": 85412,
-   "end": 85700,
+   "start": 86595,
+   "end": 86883,
    "sha": "fcd70439691c95d4"
   },
   {
-   "start": 86449,
-   "end": 87250,
+   "start": 87632,
+   "end": 88433,
    "sha": "00e1523fad110c46"
   },
   {
-   "start": 87252,
-   "end": 87501,
+   "start": 88435,
+   "end": 88684,
    "sha": "4e5d3f22c49185df"
   },
   {
-   "start": 87986,
-   "end": 88173,
+   "start": 89169,
+   "end": 89356,
    "sha": "e363448ac7e6f641"
   },
   {
-   "start": 88217,
-   "end": 88526,
+   "start": 89400,
+   "end": 89709,
    "sha": "2cade459d905d1b5"
   },
   {
-   "start": 89000,
-   "end": 89425,
+   "start": 90183,
+   "end": 90608,
    "sha": "61b1d3a1c6f96ec7"
   },
   {
-   "start": 89427,
-   "end": 89518,
+   "start": 90610,
+   "end": 90701,
    "sha": "98a0c7f9e84c6e46"
   },
   {
-   "start": 89977,
-   "end": 90144,
+   "start": 91160,
+   "end": 91327,
    "sha": "3600bbaf57f897cf"
   },
   {
-   "start": 90146,
-   "end": 90257,
+   "start": 91329,
+   "end": 91440,
    "sha": "3f48bcc2eddfe373"
   },
   {
-   "start": 90945,
-   "end": 91205,
+   "start": 92128,
+   "end": 92388,
    "sha": "a56b66b0a3570205"
   },
   {
-   "start": 91207,
-   "end": 91391,
+   "start": 92390,
+   "end": 92574,
    "sha": "81e64e5b58b580e2"
   },
   {
-   "start": 92070,
-   "end": 92255,
+   "start": 93253,
+   "end": 93438,
    "sha": "1ff307682d51d54b"
   },
   {
-   "start": 92304,
-   "end": 92627,
+   "start": 93487,
+   "end": 93810,
    "sha": "e4017946aca121e8"
   },
   {
-   "start": 92629,
-   "end": 93030,
+   "start": 93812,
+   "end": 94213,
    "sha": "7b32fe5e0ea085e9"
   }
  ]

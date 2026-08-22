@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3",
+  "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838",
   "overrides": {
     "FiniteJet.GraphKoszul.koszulGraph_exact_strict_closed": "Let `E` be a complete ultrametric normed commutative ring with `‖1‖=1`. Assume that the norm unit ball `E°`, the restricted power-series ring `T_E=E⟨T₁,…,T_m⟩`, and the norm unit ball of `T_E` are noetherian. Suppose that `t∈E` is a unit with `0<‖t‖<1` and `‖tx‖=‖t‖‖x‖` for every `x`. If `g,f₁,…,f_m` generate the unit ideal and `r_i=gT_i-f_i`, then the Koszul complex on `(r_i)` is exact in every positive degree, every differential is strict onto its image, and every image is closed. This is the full generality of the exactness, strictness, and closed-image part of Lemma 5.1 formalised in Lean.",
     "FiniteJet.GraphKoszul.koszulGraph_restricted_exact": "Let `E` be a complete nonarchimedean normed commutative ring whose norm unit ball is noetherian, and suppose that `E` has a topologically nilpotent unit which scales the norm multiplicatively. Put `T_E = E⟨T₁,…,T_m⟩` and `r_i = gT_i-f_i`, where `g,f₁,…,f_m` generate the unit ideal of `E`. Then, for every `q ≥ 0`, `im(d_{q+2,E}) = ker(d_{q+1,E})`. Thus every positive-degree Koszul cycle is a boundary.\n\nIn Lean, `P E m` is the ring denoted `T_E` in the paper. The theorem is obtained by transporting polynomial Koszul exactness along the flat map `E[T₁,…,T_m] → T_E`.",

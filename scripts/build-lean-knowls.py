@@ -41,7 +41,7 @@ except ModuleNotFoundError as exc:  # pragma: no cover - Python < 3.11
 # to a single snapshot there rather than to the five AINTLIB commits the paper
 # used while the code was still part of that monorepo.
 REPO_URL = "https://github.com/CBirkbeck/uniform-sheafy-tate-domains-lean"
-PRIMARY_COMMIT = "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+PRIMARY_COMMIT = "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
 PROJECT = "AdicSpaces"
 
 # The Scottish Book declarations (Problems 24 and 28, the abstract-base class

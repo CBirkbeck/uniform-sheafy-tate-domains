@@ -8,7 +8,7 @@
       "cited": "Theorem 1.1 (uniformity over an arbitrary IsFJPBase field)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.finiteJet_isDomain",
@@ -18,7 +18,7 @@
       "cited": "Theorem 1.1 (domain over an arbitrary IsFJPBase field)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.finiteJet_not_noetherian",
@@ -28,7 +28,7 @@
       "cited": "Theorem 1.1 (non-noetherianity over an arbitrary IsFJPBase field)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.finiteJet_not_stablyUniform",
@@ -38,7 +38,7 @@
       "cited": "Theorem 1.1 (failure of stable uniformity over an arbitrary IsFJPBase field)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.chartEquiv",
@@ -48,7 +48,7 @@
       "cited": "Theorem 1.1 (the bad rational chart over an arbitrary IsFJPBase field)",
       "kind": "def",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.JetA",
@@ -57,7 +57,7 @@
       "line": 294,
       "cited": "Theorem 1.1 (the finite-jet ring A)",
       "kind": "abbrev",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.jetSupport",
@@ -66,7 +66,7 @@
       "line": 269,
       "cited": "Theorem 1.1 (definition of the finite-jet algebra)",
       "kind": "def",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.isClosed_jetSupport",
@@ -75,7 +75,7 @@
       "line": 298,
       "cited": "Theorem 1.1 (closedness, hence completeness)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.isTateRing_JetA",
@@ -84,7 +84,7 @@
       "line": 679,
       "cited": "Theorem 1.1 (Tate structure)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.finiteJet_isUniform_of_dvr",
@@ -94,7 +94,7 @@
       "cited": "Theorem 1.1 (uniformity)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.isPowerBounded_JetA_iff",
@@ -103,7 +103,7 @@
       "line": 127,
       "cited": "Theorem 1.1 (power-bounded elements are the unit ball)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.finiteJet_isDomain",
@@ -113,7 +113,7 @@
       "cited": "Theorem 1.1 (domain)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.finiteJet_not_noetherian",
@@ -123,7 +123,7 @@
       "cited": "Theorem 1.1 (non-noetherianity)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.finiteJet_not_stablyUniform_of_dvr",
@@ -133,7 +133,7 @@
       "cited": "Theorem 1.1 (failure of stable uniformity)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.finiteJet_isSheafyFor_of_dvr",
@@ -143,7 +143,7 @@
       "cited": "Theorem 1.1 (sheafiness of the pair (A,A°))",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.finiteJet_tateExt_isSheafyComplete_of_dvr",
@@ -153,7 +153,7 @@
       "cited": "Theorem 1.1 (strong sheafiness over a discretely valued base)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "prop-uniform-domain": [
@@ -165,7 +165,7 @@
       "cited": "Proposition 3.1 (uniformity over an arbitrary IsFJPBase field)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.finiteJet_isDomain",
@@ -175,7 +175,7 @@
       "cited": "Proposition 3.1 (domain over an arbitrary IsFJPBase field)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.finiteJet_not_noetherian",
@@ -185,7 +185,7 @@
       "cited": "Proposition 3.1 (non-noetherianity over an arbitrary IsFJPBase field)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.isClosed_jetSupport",
@@ -194,7 +194,7 @@
       "line": 298,
       "cited": "Proposition 3.1 (closedness, hence completeness)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.isTateRing_JetA",
@@ -203,7 +203,7 @@
       "line": 679,
       "cited": "Proposition 3.1 (Tate structure)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.finiteJet_isUniform_of_dvr",
@@ -213,7 +213,7 @@
       "cited": "Proposition 3.1 (uniformity)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.isPowerBounded_JetA_iff",
@@ -222,7 +222,7 @@
       "line": 127,
       "cited": "Proposition 3.1 (A° is the Gauss-norm unit ball)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.finiteJet_isDomain",
@@ -232,7 +232,7 @@
       "cited": "Proposition 3.1 (domain)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.finiteJet_not_noetherian",
@@ -242,7 +242,7 @@
       "cited": "Proposition 3.1 (non-noetherianity)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "prop-bad-chart": [
@@ -254,7 +254,7 @@
       "cited": "Proposition 4.1 (chart identification over an arbitrary IsFJPBase field)",
       "kind": "def",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.chartEquiv_continuous",
@@ -263,7 +263,7 @@
       "line": 1482,
       "cited": "Proposition 4.1 (continuity in the IsFJPBase formulation)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.chartEquiv_symm_continuous",
@@ -272,7 +272,7 @@
       "line": 1485,
       "cited": "Proposition 4.1 (continuity of the inverse in the IsFJPBase formulation)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.chartEquiv_canonicalMap_W",
@@ -282,7 +282,7 @@
       "cited": "Proposition 4.1 (images of W and Q in the IsFJPBase formulation)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.chartDatum_isRational",
@@ -291,7 +291,7 @@
       "line": 93,
       "cited": "Proposition 4.1 (rational datum)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.chartEquiv",
@@ -301,7 +301,7 @@
       "cited": "Proposition 4.1 (chart identification)",
       "kind": "def",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.chartEquiv_continuous",
@@ -310,7 +310,7 @@
       "line": 1436,
       "cited": "Proposition 4.1 (continuity)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.chartEquiv_symm_continuous",
@@ -319,7 +319,7 @@
       "line": 1439,
       "cited": "Proposition 4.1 (continuity of the inverse)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.chartEquiv_canonicalMap_W",
@@ -329,7 +329,7 @@
       "cited": "Proposition 4.1 (canonical generators)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "prop-not-stably-uniform": [
@@ -341,7 +341,7 @@
       "cited": "Proposition 4.2 (nonuniform chart over an arbitrary IsFJPBase field)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.finiteJet_not_stablyUniform",
@@ -351,7 +351,7 @@
       "cited": "Proposition 4.2 (failure of stable uniformity over an arbitrary IsFJPBase field)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.not_isUniform_chart",
@@ -361,7 +361,7 @@
       "cited": "Proposition 4.2 (nonuniform rational chart)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.finiteJet_not_stablyUniform_of_dvr",
@@ -371,7 +371,7 @@
       "cited": "Proposition 4.2",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "lem-koszul": [
@@ -383,7 +383,7 @@
       "cited": "Lemma 5.1 (general graph-Koszul exactness, strictness, and closed images)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.GraphKoszul.koszulGraph_restricted_exact",
@@ -393,7 +393,7 @@
       "cited": "Lemma 5.1 (unit-ball specialization: positive-degree exactness)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.KoszulFree.koszulDifferential_continuous",
@@ -402,7 +402,7 @@
       "line": 330,
       "cited": "Lemma 5.1 (continuity)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.GraphKoszul.koszulDifferential_isStrict",
@@ -411,7 +411,7 @@
       "line": 208,
       "cited": "Lemma 5.1 (unit-ball specialization: strictness)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.GraphKoszul.isClosed_range_koszulDifferential",
@@ -420,7 +420,7 @@
       "line": 122,
       "cited": "Lemma 5.1 (unit-ball specialization: closed image)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.GraphKoszul.pow_smul_graphIdeal_inter_unitBall_subset",
@@ -429,7 +429,7 @@
       "line": 288,
       "cited": "Lemma 5.1 (unit-ball specialization: ideal denominators)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.GraphKoszul.pow_smul_ker_d1_inter_subset",
@@ -438,7 +438,7 @@
       "line": 361,
       "cited": "Lemma 5.1 (unit-ball specialization: syzygy denominators)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "lem-graph-pullback": [
@@ -449,7 +449,7 @@
       "line": 235,
       "cited": "Lemma 5.2 (injectivity of the extended row for an abstract pinch square)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.Pinch.ideal_row_surjective",
@@ -459,7 +459,7 @@
       "cited": "Lemma 5.2 (strict surjectivity of the ideal row for an abstract pinch square)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.Pinch.ideal_pullback_controlled",
@@ -469,7 +469,7 @@
       "cited": "Lemma 5.2 (bounded ideal pullback for an abstract pinch square)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.Pinch.isClosed_IA",
@@ -479,7 +479,7 @@
       "cited": "Lemma 5.2 (closed graph ideal for an abstract pinch square)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.StrictLoc.ext_pair_injective",
@@ -488,7 +488,7 @@
       "line": 187,
       "cited": "Lemma 5.2 (injectivity of the ideal pullback map)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.StrictLoc.ideal_row_surjective",
@@ -497,7 +497,7 @@
       "line": 455,
       "cited": "Lemma 5.2 (surjectivity of the ideal row)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.StrictLoc.ideal_pullback_controlled",
@@ -507,7 +507,7 @@
       "cited": "Lemma 5.2 (norm estimate for the pullback)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.StrictLoc.isClosed_IA",
@@ -516,7 +516,7 @@
       "line": 751,
       "cited": "Lemma 5.2 (closed defining ideal)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "prop-localized-milnor": [
@@ -528,7 +528,7 @@
       "cited": "Proposition 5.3 (localized exact row for an abstract pinch square)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.Pinch.loc_pair_isEmbedding",
@@ -538,7 +538,7 @@
       "cited": "Proposition 5.3 (localized topological embedding for an abstract pinch square)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.Pinch.locψC_lipschitz",
@@ -547,7 +547,7 @@
       "line": 936,
       "cited": "Proposition 5.3 (continuity of the abstract localized right leg)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.Pinch.locψC_surjective",
@@ -556,7 +556,7 @@
       "line": 1064,
       "cited": "Proposition 5.3 (surjectivity of the abstract localized right leg)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.Pinch.locψC_isOpenMap",
@@ -566,7 +566,7 @@
       "cited": "Proposition 5.3 (openness and strictness of the abstract localized right leg)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.Pinch.bridgeFwd_natural_B",
@@ -575,7 +575,7 @@
       "line": 758,
       "cited": "Proposition 5.3 (naturality of the B-vertex graph bridge)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.Pinch.bridgeFwd_natural_C",
@@ -584,7 +584,7 @@
       "line": 812,
       "cited": "Proposition 5.3 (naturality of the C-vertex graph bridge)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.Pinch.bridgeFwd_natural_legB",
@@ -593,7 +593,7 @@
       "line": 867,
       "cited": "Proposition 5.3 (naturality along the B-to-D leg)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.Pinch.bridgeFwd_natural_legC",
@@ -602,7 +602,7 @@
       "line": 947,
       "cited": "Proposition 5.3 (naturality along the C-to-D leg)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.Pinch.valueRow_injective",
@@ -612,7 +612,7 @@
       "cited": "Proposition 5.3 (value-level left exactness for an abstract pinch square)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.Pinch.valueRow_glue",
@@ -622,7 +622,7 @@
       "cited": "Proposition 5.3 (value-level middle exactness for an abstract pinch square)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJet.Pinch.valueRow_embedding",
@@ -632,7 +632,7 @@
       "cited": "Proposition 5.3 (value-level topological embedding for an abstract pinch square)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.StrictLoc.loc_row_exact",
@@ -642,7 +642,7 @@
       "cited": "Proposition 5.3 (exact row)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.StrictLoc.loc_pair_isEmbedding",
@@ -651,7 +651,7 @@
       "line": 1094,
       "cited": "Proposition 5.3 (topological embedding)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.StrictLoc.locRhoC_surjective",
@@ -660,7 +660,7 @@
       "line": 1122,
       "cited": "Proposition 5.3 (surjective leg)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.locRhoC_continuous",
@@ -669,7 +669,7 @@
       "line": 1833,
       "cited": "Proposition 5.3 (continuous surjective leg)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.StrictLoc.locRhoC_isOpenMap",
@@ -678,7 +678,7 @@
       "line": 1144,
       "cited": "Proposition 5.3 (open, hence strict, surjective leg)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.presheafValueMapC_restriction",
@@ -687,7 +687,7 @@
       "line": 2081,
       "cited": "Proposition 5.3 (C-map commutes with rational restriction)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.presheafValueMapB_restriction",
@@ -696,7 +696,7 @@
       "line": 2119,
       "cited": "Proposition 5.3 (B-map commutes with rational restriction)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "thm-milnor-sheaf-transfer": [
@@ -708,7 +708,7 @@
       "cited": "Abstract Milnor-square transfer theorem for sheafiness",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "thm-sheafy": [
@@ -720,7 +720,7 @@
       "cited": "Corollary 6.2 (finite rational-cover criterion constructed by Milnor transfer)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.finiteJet_isSheafyFor_of_dvr",
@@ -730,7 +730,7 @@
       "cited": "Corollary 6.2 (the pair (A,A°))",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.finiteJet_isSheafyTateRing_of_dvr",
@@ -740,7 +740,7 @@
       "cited": "Corollary 6.2 (completion- and plus-ring-independent strengthening)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.finiteJet_structurePresheaf_isSheafOfTopologicalRings_all_of_dvr",
@@ -750,7 +750,7 @@
       "cited": "Corollary 6.2 (all-open structure presheaf)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.finiteJet_tateExt_isSheafyComplete",
@@ -760,7 +760,7 @@
       "cited": "Corollary 6.2 (strong sheafiness over a complete ultrametric base with a uniformizer and noetherian norm unit ball)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "thm-second-example": [
@@ -771,7 +771,7 @@
       "line": 236,
       "cited": "Theorem 8.1 (Tate structure)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.norm_wpa_mul",
@@ -780,7 +780,7 @@
       "line": 41,
       "cited": "Theorem 8.1 (multiplicative norm and domain, for an arbitrary weight)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.isUniform_WPA",
@@ -790,7 +790,7 @@
       "cited": "Theorem 8.1 (uniformity, for an arbitrary weight)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.powerBoundedSubring_eq_unitBall",
@@ -799,7 +799,7 @@
       "line": 127,
       "cited": "Theorem 8.1 (power-bounded elements, for an arbitrary weight)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.not_isNoetherianRing_WPA",
@@ -809,7 +809,7 @@
       "cited": "Theorem 8.1 (non-noetherianity for every positive weight)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.wp_isSheafyComplete",
@@ -819,7 +819,7 @@
       "cited": "Theorem 8.1 (sheafiness for every weight and every ring of integral elements)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.isDomain_chart",
@@ -829,7 +829,7 @@
       "cited": "Theorem 8.1 (the rational chart is a domain for every weight)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.not_isUniform_chart",
@@ -839,7 +839,7 @@
       "cited": "Theorem 8.1 (nonuniform rational chart for every unbounded weight)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.not_isStablyUniform_WPA",
@@ -849,7 +849,7 @@
       "cited": "Theorem 8.1 (failure of stable uniformity for every unbounded weight)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.wp_tateExt_isSheafyComplete",
@@ -859,7 +859,7 @@
       "cited": "Theorem 8.1 (strong sheafiness for an arbitrary weight)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.weightedParity_isUniform_of_dvr",
@@ -869,7 +869,7 @@
       "cited": "Theorem 8.1 (uniformity)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.weightedParity_isDomain",
@@ -879,7 +879,7 @@
       "cited": "Theorem 8.1 (domain)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.weightedParity_powerBounded_eq_unitBall",
@@ -888,7 +888,7 @@
       "line": 66,
       "cited": "Theorem 8.1 (power-bounded elements are the unit ball)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.weightedParity_not_noetherian",
@@ -898,7 +898,7 @@
       "cited": "Theorem 8.1 (non-noetherianity)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.weightedParity_isSheafyComplete_of_dvr",
@@ -908,7 +908,7 @@
       "cited": "Theorem 8.1 (sheafiness)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.weightedParity_chart_isDomain",
@@ -918,7 +918,7 @@
       "cited": "Theorem 8.1 (the displayed rational chart is a domain)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.weightedParity_chart_not_isUniform",
@@ -928,7 +928,7 @@
       "cited": "Theorem 8.1 (the displayed rational chart is not uniform)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.weightedParity_not_stablyUniform_of_dvr",
@@ -938,7 +938,7 @@
       "cited": "Theorem 8.1 (failure of stable uniformity)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.wp_tateExt_isSheafyComplete_of_dvr",
@@ -948,7 +948,7 @@
       "cited": "Theorem 8.1 (strong sheafiness)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "prop-parity-uniform-domain": [
@@ -959,7 +959,7 @@
       "line": 236,
       "cited": "Weighted-parity uniform-domain proposition (Tate structure)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.norm_wpa_mul",
@@ -968,7 +968,7 @@
       "line": 41,
       "cited": "Weighted-parity uniform-domain proposition (multiplicative norm and domain, arbitrary weight)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.isUniform_WPA",
@@ -978,7 +978,7 @@
       "cited": "Weighted-parity uniform-domain proposition (uniformity, arbitrary weight)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.powerBoundedSubring_eq_unitBall",
@@ -987,7 +987,7 @@
       "line": 127,
       "cited": "Weighted-parity uniform-domain proposition (power-bounded elements, arbitrary weight)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.weightedParity_isUniform_of_dvr",
@@ -997,7 +997,7 @@
       "cited": "Weighted-parity uniform-domain proposition (uniformity)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.weightedParity_isDomain",
@@ -1007,7 +1007,7 @@
       "cited": "Weighted-parity uniform-domain proposition (domain)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.weightedParity_powerBounded_eq_unitBall",
@@ -1016,7 +1016,7 @@
       "line": 66,
       "cited": "Weighted-parity uniform-domain proposition (power-bounded elements)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "prop-parity-nonnoetherian": [
@@ -1028,7 +1028,7 @@
       "cited": "Weighted-parity non-noetherianity proposition (arbitrary positive weight)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.weightedParity_not_noetherian",
@@ -1038,7 +1038,7 @@
       "cited": "Weighted-parity non-noetherianity proposition",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "thm-parity-sheafy": [
@@ -1050,7 +1050,7 @@
       "cited": "Weighted-parity sheafiness theorem (arbitrary weight, every ring of integral elements)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.wp_stronglySheafy",
@@ -1060,7 +1060,7 @@
       "cited": "Weighted-parity strong-sheafiness theorem in the shifted-weight model",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.wp_tateExt_isSheafyComplete",
@@ -1070,7 +1070,7 @@
       "cited": "Weighted-parity strong-sheafiness theorem for the actual Tate extensions",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.weightedParity_isSheafyComplete_of_dvr",
@@ -1080,7 +1080,7 @@
       "cited": "Weighted-parity sheafiness theorem (every ring of integral elements)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.wp_tateExt_isSheafyComplete_of_dvr",
@@ -1090,7 +1090,7 @@
       "cited": "Theorem 8.10 (strong sheafiness)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "prop-weighted-chart-domain-nonuniform": [
@@ -1102,7 +1102,7 @@
       "cited": "Weighted-parity chart proposition (domain, arbitrary weight)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.not_isUniform_chart",
@@ -1112,7 +1112,7 @@
       "cited": "Weighted-parity chart proposition (nonuniformity, arbitrary unbounded weight)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.not_isStablyUniform_WPA",
@@ -1122,7 +1122,7 @@
       "cited": "Weighted-parity chart proposition (consequent failure of stable uniformity)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.weightedParity_chart_isDomain",
@@ -1132,7 +1132,7 @@
       "cited": "Weighted-parity chart proposition (domain)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.weightedParity_chart_not_isUniform",
@@ -1142,7 +1142,7 @@
       "cited": "Weighted-parity chart proposition (nonuniformity)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "lem-small-perturbation": [
@@ -1153,7 +1153,7 @@
       "line": 468,
       "cited": "Small perturbation lemma (the perturbed datum is rational)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.PerturbSetup.rationalOpen_datum",
@@ -1162,7 +1162,7 @@
       "line": 495,
       "cited": "Small perturbation lemma (equality of rational subsets)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.PerturbSetup.equiv",
@@ -1171,7 +1171,7 @@
       "line": 645,
       "cited": "Small perturbation lemma (canonical completed-localization isomorphism)",
       "kind": "def",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.PerturbSetup.equiv_continuous",
@@ -1180,7 +1180,7 @@
       "line": 672,
       "cited": "Small perturbation lemma (continuity)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.PerturbSetup.equiv_symm_continuous",
@@ -1189,7 +1189,7 @@
       "line": 682,
       "cited": "Small perturbation lemma (continuity of the inverse)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.PerturbSetup.equiv_canonicalMap",
@@ -1198,7 +1198,7 @@
       "line": 694,
       "cited": "Small perturbation lemma (compatibility with canonical maps)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "lem-finite-variable-subrings": [
@@ -1209,7 +1209,7 @@
       "line": 566,
       "cited": "Lemma 8.2 (even-exponent Tate algebra)",
       "kind": "def",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.norm_evenSupportEquiv",
@@ -1218,7 +1218,7 @@
       "line": 570,
       "cited": "Lemma 8.2 (norm preservation)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.sum_slice_mul_Ypat",
@@ -1227,7 +1227,7 @@
       "line": 876,
       "cited": "Lemma 8.2 (finite decomposition)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.moduleFinite_head_over_even",
@@ -1236,7 +1236,7 @@
       "line": 927,
       "cited": "Lemma 8.2 (finite module)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.isTateRing_WPHead",
@@ -1245,7 +1245,7 @@
       "line": 157,
       "cited": "Lemma 8.2 (Tate structure)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.isStronglyNoetherian_WPHead",
@@ -1254,7 +1254,7 @@
       "line": 1306,
       "cited": "Lemma 8.2 (strong noetherianity)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.wpHeadSupport_mono",
@@ -1263,7 +1263,7 @@
       "line": 76,
       "cited": "Lemma 8.2 (nested finite-variable rings)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.norm_headIncl",
@@ -1272,7 +1272,7 @@
       "line": 84,
       "cited": "Lemma 8.2 (isometric inclusion)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.exists_head_approx",
@@ -1281,7 +1281,7 @@
       "line": 1364,
       "cited": "Lemma 8.2 (approximation and density)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "def-lean-rational-sheafiness": [
@@ -1292,7 +1292,7 @@
       "line": 1895,
       "cited": "Appendix A (finite rational-cover data)",
       "kind": "structure",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "ValuationSpectrum.RationalCoveringData.IsRational",
@@ -1301,7 +1301,7 @@
       "line": 1912,
       "cited": "Appendix A (rationality condition)",
       "kind": "def",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "ValuationSpectrum.presheafValue",
@@ -1310,7 +1310,7 @@
       "line": 296,
       "cited": "Appendix A (completed rational localisation)",
       "kind": "def",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "ValuationSpectrum.IsSheafy",
@@ -1320,7 +1320,7 @@
       "cited": "Appendix A (rational-cover sheaf condition)",
       "kind": "class",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "def-lean-open-sections": [
@@ -1331,7 +1331,7 @@
       "line": 132,
       "cited": "Appendix A (sections on an arbitrary open)",
       "kind": "def",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "ValuationSpectrum.limitRestrict",
@@ -1340,7 +1340,7 @@
       "line": 218,
       "cited": "Appendix A (restriction on arbitrary opens)",
       "kind": "def",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "ValuationSpectrum.HasLocLiftPowerBounded",
@@ -1350,7 +1350,7 @@
       "cited": "Appendix A (restriction-map hypothesis)",
       "kind": "class",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "ValuationSpectrum.IsLimitSheaf",
@@ -1359,7 +1359,7 @@
       "line": 525,
       "cited": "Appendix A (all-open sheaf condition)",
       "kind": "structure",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "rem-lean-sheaf-comparison": [
@@ -1370,7 +1370,7 @@
       "line": 727,
       "cited": "Appendix A (rational covers versus all opens)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "TopCat.Presheaf.IsSheafOfTopologicalRings",
@@ -1379,7 +1379,7 @@
       "line": 64,
       "cited": "Appendix A (Wedhorn's representable predicate)",
       "kind": "def",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "ValuationSpectrum.structurePresheaf_isSheafOfTopologicalRings_iff",
@@ -1388,7 +1388,7 @@
       "line": 629,
       "cited": "Appendix A (all opens versus Wedhorn's predicate)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "TopCat.Presheaf.isSheafOfTopologicalRings_iff_forgetToTopCommRingCat_isSheaf",
@@ -1398,7 +1398,7 @@
       "cited": "Appendix A (Wedhorn versus Mathlib)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "ValuationSpectrum.structurePresheaf_forgetToTopCommRingCat_isSheaf_iff",
@@ -1408,7 +1408,7 @@
       "cited": "Appendix A (Mathlib versus all opens)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "ValuationSpectrum.isSheafy_iff_structurePresheaf_forgetToTopCommRingCat_isSheaf",
@@ -1418,7 +1418,7 @@
       "cited": "Appendix A (IsSheafy versus Mathlib IsSheaf)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "def-lean-strong-noetherianity": [
@@ -1429,7 +1429,7 @@
       "line": 68,
       "cited": "Appendix A (restricted power series)",
       "kind": "def",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "restrictedMvPowerSeriesSubring",
@@ -1438,7 +1438,7 @@
       "line": 78,
       "cited": "Appendix A (restricted Tate algebra)",
       "kind": "def",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "IsStronglyNoetherian",
@@ -1448,7 +1448,7 @@
       "cited": "Appendix A (strong noetherianity)",
       "kind": "class",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "ValuationSpectrum.IsStronglyNoetherianTateRing",
@@ -1458,7 +1458,7 @@
       "cited": "Appendix A (strong noetherianity for a possibly incomplete Tate ring)",
       "kind": "def",
       "include_body": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "ValuationSpectrum.isSheafyTateRing_of_stronglyNoetherianTateRing",
@@ -1468,7 +1468,7 @@
       "cited": "Appendix A (strongly noetherian Tate rings are sheafy)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "ValuationSpectrum.isSheafyFor_of_stronglyNoetherianTate",
@@ -1478,7 +1478,7 @@
       "cited": "Appendix A (complete strongly noetherian Tate ring, one chosen pair)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "ValuationSpectrum.isSheafyComplete_of_stronglyNoetherianTate",
@@ -1488,7 +1488,7 @@
       "cited": "Appendix A (complete strongly noetherian Tate ring, every chosen pair)",
       "kind": "theorem",
       "flagged": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "def-lean-finite-jet-ring": [
@@ -1499,7 +1499,7 @@
       "line": 60,
       "cited": "Appendix A (the Laurent algebra)",
       "kind": "abbrev",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.JetC",
@@ -1508,7 +1508,7 @@
       "line": 63,
       "cited": "Appendix A (the vertex C)",
       "kind": "abbrev",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.JetB",
@@ -1517,7 +1517,7 @@
       "line": 67,
       "cited": "Appendix A (the vertex B)",
       "kind": "abbrev",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.JetD",
@@ -1526,7 +1526,7 @@
       "line": 71,
       "cited": "Appendix A (the vertex D)",
       "kind": "abbrev",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.jetSupport",
@@ -1535,7 +1535,7 @@
       "line": 269,
       "cited": "Appendix A (support subring)",
       "kind": "def",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "FiniteJetOver.JetA",
@@ -1544,7 +1544,7 @@
       "line": 294,
       "cited": "Appendix A (the finite-jet ring A)",
       "kind": "abbrev",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "prop-coefficientwise-localization": [
@@ -1555,7 +1555,7 @@
       "line": 1982,
       "cited": "Proposition 8.6 (ring equivalence)",
       "kind": "def",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.coeffLocEquiv_continuous",
@@ -1564,7 +1564,7 @@
       "line": 1994,
       "cited": "Proposition 8.6 (continuity)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.coeffLocEquiv_symm_continuous",
@@ -1573,7 +1573,7 @@
       "line": 2001,
       "cited": "Proposition 8.6 (continuity of the inverse)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.coeffLoc_restriction_squareP",
@@ -1582,7 +1582,7 @@
       "line": 1011,
       "cited": "Proposition 8.6 (restriction acts coefficientwise)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "cor-finite-variable-presentation": [
@@ -1594,7 +1594,7 @@
       "cited": "Corollary 8.7 (finite-variable model and bicontinuous equivalence)",
       "kind": "structure",
       "include_body": true,
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.nonempty_headModelData",
@@ -1603,7 +1603,7 @@
       "line": 2295,
       "cited": "Corollary 8.7 (existence of a finite-variable model)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ],
   "prop-weighted-chart-identification": [
@@ -1614,7 +1614,7 @@
       "line": 83,
       "cited": "Proposition 8.8 (the datum (W; ϖ))",
       "kind": "def",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.coeffLocEquiv",
@@ -1623,7 +1623,7 @@
       "line": 1982,
       "cited": "Proposition 8.8 (the chart as a coefficient-family ring)",
       "kind": "def",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.coeffLocEquiv_continuous",
@@ -1632,7 +1632,7 @@
       "line": 1994,
       "cited": "Proposition 8.8 (continuity of the coefficient model)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.coeffLocEquiv_symm_continuous",
@@ -1641,7 +1641,7 @@
       "line": 2001,
       "cited": "Proposition 8.8 (continuity of the inverse coefficient model)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.chartQHeadEquiv",
@@ -1650,7 +1650,7 @@
       "line": 712,
       "cited": "Proposition 8.8 (the finite-variable quotient is k⟨X⟩)",
       "kind": "def",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.chartQHeadEquiv_norm",
@@ -1659,7 +1659,7 @@
       "line": 815,
       "cited": "Proposition 8.8 (the finite-variable identification is isometric)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     },
     {
       "decl": "WeightedParity.chartCoeff_WaHead",
@@ -1668,7 +1668,7 @@
       "line": 304,
       "cited": "Proposition 8.8 (W maps to ϖX)",
       "kind": "theorem",
-      "commit": "0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3"
+      "commit": "e3514f12e382a8ef8f0d2b8822ed9b792bcaf838"
     }
   ]
 }

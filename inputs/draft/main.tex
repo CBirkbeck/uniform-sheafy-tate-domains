@@ -1918,6 +1918,21 @@ Thus \texttt{IsSheafyFor A Aplus} is sheafiness of \((A,A^+)\),
 \texttt{IsSheafyComplete A} requires this for every ring of integral elements,
 and \texttt{IsSheafyTateRing A} requires it for every completion model.
 
+Two remarks on what these universal statements exclude, since a universally quantified
+claim can hold for the wrong reason.  \texttt{RingOfIntegralElements A} is a subtype, so
+\texttt{IsSheafyComplete} would hold vacuously if \(A\) admitted no valid \(A^+\); the
+certified statements therefore include, for each ring they quantify over, that its maximal
+plus ring \(A^\circ\) is one.  This holds in any Huber ring --- \(A^\circ\) is open
+because it contains a ring of definition, and integrally closed by Wedhorn 5.30(4) --- so it
+covers the Tate algebras \(A\langle X_1,\ldots,X_n\rangle\) as well as \(A\) itself.
+Separately, \texttt{IsStablyUniform} quantifies only over localisation data satisfying
+\texttt{D.IsRational}, Wedhorn 7.29's condition that \(T\cdot A\) be open.  The
+distinction matters in the direction the paper uses: \texttt{RationalLocData} is raw data,
+so dropping the condition would strengthen the class and thereby weaken its negation,
+turning the failure of stable uniformity into a claim about data that need not present a
+rational subset at all.  The witness here is the genuine rational chart
+\(A\langle W/\varpi\rangle\), and its rationality is proved.
+
 \subsection{Strong noetherianity}
 
 \begin{definition}[Strong noetherianity]
@@ -2353,7 +2368,7 @@ C.~Birkbeck and A.~Torzewski,
 \emph{Uniform sheafy Tate rings that are not stably uniform: the Lean
 formalisation},
 Lean~4 source code, snapshot
-\href{https://github.com/CBirkbeck/uniform-sheafy-tate-domains-lean/commit/0a0d2be4c1104e5f52dc147cd28f1fec59fec6a3}{\texttt{0a0d2be4c}},
+\href{https://github.com/CBirkbeck/uniform-sheafy-tate-domains-lean/commit/e3514f12e382a8ef8f0d2b8822ed9b792bcaf838}{\texttt{e3514f12e}},
 2026, \href{https://github.com/CBirkbeck/uniform-sheafy-tate-domains-lean}{GitHub repository}.
 
 \bibitem{BBK}
